@@ -1,0 +1,40 @@
+name: 誤植の報告
+description: 本アプリに存在する誤植の報告を作成します
+assignees:
+  - chika3742
+labels:
+  - typo
+title: "[TYPO] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 作成する前の注意事項
+        - [Issues](https://github.com/chika3742/genshin-material/issues)で検索し、同様の報告がないか確認してから作成してください。
+
+  - type: textarea
+    id: place
+    attributes:
+      label: 誤植の場所
+      description: 誤植がある場所を記載してください。表示される条件があれば、併せて記入してください。
+      placeholder: 誤植の場所
+    validations:
+      required: true
+
+  - type: textarea
+    id: incorrect
+    attributes:
+      label: 現在の表記
+      description: 誤っている現在の表記を記載してください
+      placeholder: 現在の表記
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct
+    attributes:
+      label: 正しい表記
+      description: どう修正するべきか記入してください。
+      placeholder: 正しい表記
+    validations:
+      required: true

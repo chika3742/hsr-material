@@ -1,0 +1,25 @@
+name: 新機能の提案
+description: 本アプリに実装する機能の提案を作成します
+assignees:
+  - chika3742
+labels:
+  - enhancement
+title: "[FEAT] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 起因する問題点
+      description: この新機能は、どのような問題を解決するために必要ですか？
+      placeholder: 起因する問題点
+    validations:
+      required: true
+
+  - type: textarea
+    id: resolution
+    attributes:
+      label: 希望する解決策
+      description: どうすれば上記の問題を解決できると考えますか？
+      placeholder: 希望する解決策
+    validations:
+      required: true

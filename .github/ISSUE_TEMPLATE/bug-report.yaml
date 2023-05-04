@@ -1,0 +1,65 @@
+name: 不具合の報告
+description: 本アプリの不具合の報告を作成します
+assignees:
+  - chika3742
+labels:
+  - bug
+title: "[BUG] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 作成する前の注意事項
+        - 報告しようとしているそれは本当に不具合なのか確認してから送信してください。不確かな場合は、[こちら](https://www.chikach.net/hsrm-v4-alpha-feedback/)で質問してから送信してください。
+        - [Issues](https://github.com/chika3742/hsr-material/issues) で検索し、同様の不具合の報告がないか確認してから作成してください。
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 再現手順
+      description: |
+        不具合を再現する手順を記載してください。
+        例:
+          1. '...' の画面を開く
+          2. '...' をクリックする
+          3. '...' へスクロールする
+          4. エラーが発生する
+      placeholder: 再現手順
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待される動作
+      description: これは本来どう動作するべきか、明確で簡潔に記入してください。
+      placeholder: 期待される動作
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の動作
+      description: 実際にはどのように動作するか、明確で簡潔に記入してください。可能であれば、スクリーンショットも添付してください。
+      placeholder: 例) 「〜」というエラーが表示される
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: ブラウザーの名称とバージョン
+      description: ブラウザーの名称とバージョンを記載してください
+      placeholder: 例) Google Chrome 112.0.5615.137
+    validations:
+      required: true
+
+  - type: input
+    id: app-version
+    attributes:
+      label: 本アプリのバージョン
+      description: フッターの右下に記載されています。
+      placeholder: 例) v1.0.0_D1.0.0
+    validations:
+      required: true
