@@ -36,4 +36,8 @@ export default defineNuxtConfig({
   nitro: {
     preset: "node-server",
   },
+
+  alias: {
+    "#shared": "../firebase/functions/src/types/shared",
+  },
 })
