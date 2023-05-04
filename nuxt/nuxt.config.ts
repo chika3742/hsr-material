@@ -1,3 +1,6 @@
+import yaml from "@rollup/plugin-yaml"
+import {generateSchemas} from "./scripts/generate-schemas"
+
 export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
@@ -6,7 +9,36 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
   ],
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
+    plugins: [
+      yaml({
+        exclude: "locales/**",
+      }),
+    ],
+  },
+  nitro: {
+    preset: "node-server",
+  },
+  alias: {
+    "#shared": "../firebase/functions/src/types/shared",
+  },
+  hooks: {
+    async "build:before"() {
+      await generateSchemas()
+    },
+    async "builder:watch"(_, path) {
+      if (path.startsWith("schemas/")) {
+        await generateSchemas()
+      }
+    },
+  },
+
   i18n: {
     locales: [
       {
@@ -45,11 +77,7 @@ export default defineNuxtConfig({
     },
   },
 
-  nitro: {
-    preset: "node-server",
-  },
-
-  alias: {
-    "#shared": "../firebase/functions/src/types/shared",
+  piniaPersistedstate: {
+    storage: "localStorage",
   },
 })

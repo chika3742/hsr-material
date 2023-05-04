@@ -1,0 +1,8 @@
+# コピー用改行
+
+- date: 2023/5/4
+  funcVersion: 0.0.0-alpha.01
+  dataVersion: 1.0.0
+  isMajor: true
+  content: |
+    初回バージョン

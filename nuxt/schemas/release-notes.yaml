@@ -1,0 +1,33 @@
+$schema: https://json-schema.org/draft-07/schema
+
+type: array
+
+items:
+  $ref: "#/definitions/releaseNote"
+
+definitions:
+  releaseNote:
+    type: object
+    additionalProperties: false
+    required:
+      - date
+      - funcVersion
+      - dataVersion
+      - content
+      - isMajor
+    properties:
+      date:
+        type: string
+        description: リリース日
+      funcVersion:
+        type: string
+        description: 機能バージョン
+      dataVersion:
+        type: string
+        description: データバージョン
+      content:
+        type: string
+        description: 更新内容
+      isMajor:
+        type: boolean
+        description: メジャーバージョンアップかどうか
