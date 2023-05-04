@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "ts-build-server": "cd firebase/functions && yarn build --watch",
+    "emulators": "cd firebase && firebase emulators:start --import ./emulators-data --export-on-exit",
+    "firebase-deploy:prod": "cd firebase && firebase deploy -P prod",
+    "firebase-deploy:dev": "cd firebase && firebase deploy -P dev"
+  }
+}
