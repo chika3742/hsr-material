@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "prod": "hsr-material",
+    "dev": "hsr-material-dev"
+  },
+  "targets": {},
+  "etags": {}
+}

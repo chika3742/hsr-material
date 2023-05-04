@@ -1,0 +1,23 @@
+root: true
+
+env:
+  es6: true
+  node: true
+  browser: false
+
+overrides: []
+
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - "@nuxtjs/eslint-config-typescript"
+  - ../../.eslintrc.yml
+
+parser: "@typescript-eslint/parser"
+
+parserOptions:
+  project:
+    - tsconfig.json
+
+ignorePatterns:
+  - /lib/**/*
