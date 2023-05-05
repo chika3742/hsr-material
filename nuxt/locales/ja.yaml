@@ -1,3 +1,20 @@
+common:
+  appName: 崩壊：スターレイル素材ノート
+
 pageTitles:
   home: ホーム
   warps: 跳躍天井カウンター
+  tpCalc: 開拓力回復時刻計算機
+  releaseNotes: 更新履歴
+  terms: 利用規約
+  termsSummarized: 利用規約 (要約)
+  privacy: プライバシーポリシー
+
+footer:
+  feedback: フィードバック
+  theme: テーマ
+  disclaimer: このアプリは非公式です。画像・データの著作権はmiHoYo/COGNOSPHEREに帰属します。
+  themeOptions:
+    light: ライト
+    dark: ダーク
+    auto: システム設定に従う

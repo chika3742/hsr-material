@@ -1,3 +1,20 @@
+common:
+  appName: "Honkai: Star Rail Material Notes"
+
 pageTitles:
   home: Home
   warps: Warps Pity Counter
+  tpCalc: TP Replenish Calc
+  releaseNotes: Release Notes
+  terms: Terms of Use
+  termsSummarized: Terms of Use (Summarized)
+  privacy: Privacy Policy
+
+footer:
+  feedback: Feedback
+  theme: Theme
+  disclaimer: This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE.
+  themeOptions:
+    light: Light
+    dark: Dark
+    auto: Follow system settings

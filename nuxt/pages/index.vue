@@ -1,5 +1,7 @@
 <template>
-  <div />
+  <div>
+    <h1>{{ $t("common.appName") }}</h1>
+  </div>
 </template>
 
 <script lang="ts" setup>
