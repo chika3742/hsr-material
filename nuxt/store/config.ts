@@ -4,6 +4,7 @@ import {ThemeSetting} from "~/types/strings"
 export const useConfigStore = defineStore("config", {
   state: () => ({
     theme: "auto" as ThemeSetting,
+    warpsUrl: "",
   }),
   actions: {
     getCurrentTheme() {

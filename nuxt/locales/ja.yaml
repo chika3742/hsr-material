@@ -1,9 +1,12 @@
 common:
   appName: 崩壊：スターレイル素材ノート
+  warp: 跳躍
+  ok: OK
+  cancel: キャンセル
 
 pageTitles:
   home: ホーム
-  warps: 跳躍天井カウンター
+  warps: 跳躍天井カウンター(β)
   tpCalc: 開拓力回復時刻計算機
   releaseNotes: 更新履歴
   terms: 利用規約
@@ -18,3 +21,63 @@ footer:
     light: ライト
     dark: ダーク
     auto: システム設定に従う
+
+warpsPage:
+  warpTypes:
+    11: イベント跳躍・キャラクター
+    12: イベント跳躍・光円錐
+    1: 通常跳躍
+  urlInput: URL入力
+  get: "@:{'common.warp'}を取得"
+  clear: "@:{'common.warp'}をクリア"
+  progress: "{count} 件の跳躍を取得しました"
+  preparing: 履歴取得の準備をしています...
+  invalidUrl: URLが無効です
+  getUntilLatestRare: 最新の☆4/☆5まで取得
+  getUntilLatestRareDesc: チェックを外すと、過去6ヶ月のすべての@:{'common.warp'}履歴を取得します。変更するには、@:{'common.warp'}履歴をクリアする必要があります。
+  noNewWarps: 新しい@:{'common.warp'}はありません。引いたばかりの場合は、最長1時間後に再度お試しください。
+  clearDialog: "@:{'common.warp'}履歴をすべて削除しますか？"
+  cleared: "@:{'common.warp'}をクリアしました"
+  pityCountWithStar: "☆{star} 天井カウント"
+  pityCount: 天井カウント
+  dateTime: 日時
+  rarity: レアリティ
+  itemName: アイテム名
+  details: 詳細
+  lastPulled: "最後に引いた ☆{star}"
+  prob: 次の10連で☆5が出る確率
+  errors:
+    authKeyExpired: URLの有効期限が切れています。再度ゲームより取得してください。
+    authKeyInvalid: URLが無効です。再度ゲームより取得してください。
+    tooManyRequests: リクエストが多すぎます。しばらく待ってから再度お試しください。
+    internal: サーバーでエラーが発生しました。しばらく待ってから再度お試しください。
+  aboutTitle: 初めての方はこちら
+  about: |
+    ## 本機能について
+
+    本機能は、@:{'common.warp'}履歴をゲームより自動的に取得して天井カウントを表示します。これを利用するには、下記の方法で取得したURLが必要になります。
+
+    ## 安全性について
+
+    本機能で使用するURLには、__@:{'common.warp'}履歴の取得のみを許可された__ アクセスキーが付帯しています。そのため、このアクセスキーを使用してメールアドレスやユーザー名など個人情報にアクセスしたり、ゲームにログインしたりすることはできません。ご安心ください。
+
+    また、このアクセスキーはサーバーのメモリ内でのみ処理され、処理完了後は破棄されます。ログ等に記録されたり、miHoYoのAPI以外のサーバーに送信したりすることはありません。
+
+    ## 注意事項
+
+    - <span class="text-red">このURLは24時間で有効期限が切れます。切れた後は再度同じ方法で新しく取得する必要があります。</span>
+    - <span class="text-red">現在、Android端末単体でURLを取得する方法が存在しません。</span>
+    - URLは端末内にのみ保存され、リロードしても保持されます。
+    - macOS(PlayCover)の場合はmitmproxyなどのツールを使用してURLを取得できます。詳しくはご自身で調べてください。
+  howToGetUrl:
+    windows:
+      title: URL取得方法 (Windows)
+      contents: |
+        ※Windows 11でのみ動作確認済み。
+        
+        1. スタートボタンを右クリックし、「Windows ターミナル」もしくは「Windows PowerShell」を選択します。
+        2. 以下のコマンドをコピー＆ペーストし、Enterキーを押します。<div id="windows-script"></div>
+        3. URLがコピーされるので、本ページに貼り付けてください。
+    ios:
+      title: URL取得方法 (iOS)
+      contents: |

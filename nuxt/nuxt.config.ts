@@ -53,6 +53,29 @@ export default defineNuxtConfig({
       }
     },
   },
+  runtimeConfig: {
+    public: {
+      isFirebaseDev: process.env.CF_PAGES_BRANCH !== "main",
+      useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
+      firebaseConfigDev: {
+        apiKey: "AIzaSyDNEmiGxBoKLpT0Tf9SNR16sjPBacIoTic",
+        authDomain: "chikach.net",
+        projectId: "hsr-material-dev",
+        storageBucket: "hsr-material-dev.appspot.com",
+        messagingSenderId: "599812122174",
+        appId: "1:599812122174:web:6f0365509fa6cb15c1536f",
+      },
+      firebaseConfigProd: {
+        apiKey: "AIzaSyA1OsOCOJLXJRTweW380HjVPij87mY8weI",
+        authDomain: "chikach.net",
+        projectId: "hsr-material",
+        storageBucket: "hsr-material.appspot.com",
+        messagingSenderId: "14422071885",
+        appId: "1:14422071885:web:1120af7eab909844861a04",
+      },
+      recaptchaSiteKey: "6Le1pOIlAAAAAJk7pXcslkL7zaEUsPPxnMGmXyOx",
+    },
+  },
 
   i18n: {
     locales: [
