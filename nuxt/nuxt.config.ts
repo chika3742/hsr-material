@@ -2,6 +2,21 @@ import yaml from "@rollup/plugin-yaml"
 import {generateSchemas} from "./scripts/generate-schemas"
 
 export default defineNuxtConfig({
+  app: {
+    pageTransition: {
+      name: "scroll-y-reverse-transition",
+      leaveActiveClass: "position-absolute d-none",
+      duration: 200,
+    },
+    head: {
+      link: [
+        {
+          rel: "shortcut icon",
+          href: "/favicon.webp",
+        },
+      ],
+    },
+  },
   build: {
     transpile: ["vuetify"],
   },
