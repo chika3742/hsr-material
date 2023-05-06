@@ -1,10 +1,13 @@
 import {defineStore} from "pinia"
+import {DateTime} from "luxon"
 import {ThemeSetting} from "~/types/strings"
 
 export const useConfigStore = defineStore("config", {
   state: () => ({
     theme: "auto" as ThemeSetting,
     warpsUrl: "",
+    tpCount: 0,
+    tpBaseTime: DateTime.now().toISOTime()!,
   }),
   actions: {
     getCurrentTheme() {

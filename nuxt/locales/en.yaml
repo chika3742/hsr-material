@@ -96,3 +96,18 @@ warpsPage:
         1. Return to @:{'common.gameName'} and tap @:{'common.gacha'} History.
         1. Return to the Stream app and tap "Stop Sniffing", then tap "Sniff History" on the right.
         1. Tap the one at the top, tap the one that starts with "GET https://api-os-takumi.mihoyo.com", and tap "Request" at the top, then tap the bottom of "REQUEST LINE" and tap "Copy Url" to copy the URL.
+
+tpCalcPage:
+  baseTime: Base Time
+  currentTpCount: Current TP
+  fullReplenishmentTime: Full Replenishment Time
+  remainingTime: Until Full Replenishment
+  duration: "{hours} hour(s) {minutes} minute(s)"
+  alreadyReplenished: Already fully replenished.
+  rangeError: Please enter a number between 0 and 180.
+  howToUse: |
+    ## How to use
+    
+    - Enter the current TP count, and the time when it is fully replenished and the time until it is fully replenished will be displayed based on the time when it was entered.
+    - The entered time and TP count will be retained even if you reload the page.
+    - Please note that the base time will be updated when the number is changed.

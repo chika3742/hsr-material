@@ -96,3 +96,18 @@ warpsPage:
         1. Streamアプリに戻り、「Stop Sniffing」をタップし、右の「Sniff History」をタップします。
         1. 一番上の時刻のものをタップし、「GET https://api-os-takumi.mihoyo.com」で始まるものを探し、タップします。
         1. 上部の「Request」をタップし、「REQUEST LINE」の下の部分をタップし、「Copy Url」をタップするとURLをコピーできます。
+
+tpCalcPage:
+  baseTime: 基準時間
+  currentTpCount: 現在の開拓力
+  fullReplenishmentTime: 満タンになる時間
+  remainingTime: 全回復まであと
+  duration: "{hours} 時間 {minutes} 分"
+  alreadyReplenished: すでに全回復しました
+  rangeError: 0以上180未満の値を入力してください
+  howToUse: |
+    ## 使い方
+    
+    - 現在の開拓力の数値を入力すると、それを入力した時刻を基準に、開拓力が全回復する時刻と全回復するまでの時間が表示されます。
+    - 入力した時刻と樹脂数はリロードしても保持されます。
+    - 数値を変更すると基準時刻が更新されるためご注意ください。
