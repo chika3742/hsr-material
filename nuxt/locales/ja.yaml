@@ -1,6 +1,7 @@
 common:
   appName: 崩壊：スターレイル素材ノート
-  warp: 跳躍
+  gameName: 崩壊：スターレイル
+  gacha: 跳躍
   ok: OK
   cancel: キャンセル
 
@@ -28,22 +29,23 @@ warpsPage:
     12: イベント跳躍・光円錐
     1: 通常跳躍
   urlInput: URL入力
-  get: "@:{'common.warp'}を取得"
-  clear: "@:{'common.warp'}をクリア"
+  get: "@:{'common.gacha'}を取得"
+  clear: "@:{'common.gacha'}をクリア"
   progress: "{count} 件の跳躍を取得しました"
   preparing: 履歴取得の準備をしています...
   invalidUrl: URLが無効です
-  getUntilLatestRare: 最新の☆4/☆5まで取得
-  getUntilLatestRareDesc: チェックを外すと、過去6ヶ月のすべての@:{'common.warp'}履歴を取得します。変更するには、@:{'common.warp'}履歴をクリアする必要があります。
-  noNewWarps: 新しい@:{'common.warp'}はありません。引いたばかりの場合は、最長1時間後に再度お試しください。
-  clearDialog: "@:{'common.warp'}履歴をすべて削除しますか？"
-  cleared: "@:{'common.warp'}をクリアしました"
+  getPityHistory: 天井カウントの履歴を表示
+  getPityHistoryDesc: オンにすると過去6ヶ月の全ての履歴を取得し、☆4/☆5天井カウントの履歴を確認できますが、初回の取得に時間がかかります。変更するには、@:{'common.gacha'}履歴をクリアする必要があります。
+  noNewWarps: 新しい@:{'common.gacha'}はありません。引いたばかりの場合は、最長1時間後に再度お試しください。
+  fetched: "{count} 件の@:{'common.gacha'}を取得しました。"
+  clearDialog: "@:{'common.gacha'}履歴をすべて削除しますか？"
+  cleared: "@:{'common.gacha'}をクリアしました"
   pityCountWithStar: "☆{star} 天井カウント"
   pityCount: 天井カウント
   dateTime: 日時
   rarity: レアリティ
   itemName: アイテム名
-  details: 詳細
+  pityHistory: 天井カウントの履歴
   lastPulled: "最後に引いた ☆{star}"
   prob: 次の10連で☆5が出る確率
   errors:
@@ -75,9 +77,22 @@ warpsPage:
       contents: |
         ※Windows 11でのみ動作確認済み。
         
-        1. スタートボタンを右クリックし、「Windows ターミナル」もしくは「Windows PowerShell」を選択します。
-        2. 以下のコマンドをコピー＆ペーストし、Enterキーを押します。<div id="windows-script"></div>
-        3. URLがコピーされるので、本ページに貼り付けてください。
+        1. @:{'common.gameName'}を起動し、「@:{'common.gacha'}」→「詳細を確認」→「@:{'common.gacha'}履歴」を選択します。
+        1. デスクトップに戻ってスタートボタンを右クリックし、「ターミナル」もしくは「Windows PowerShell」を選択します。
+        1. 以下のコマンドをコピー＆ペーストし、Enterキーを押します。<div id="windows-script"></div>
+        1. URLがコピーされるので、本ページに貼り付けてください。
     ios:
       title: URL取得方法 (iOS)
       contents: |
+        1. <span class="text-red">ここからの手順は初回のみ必要です。</span>App Storeより[Stream]({streamUrl})アプリをインストールします。 
+        1. Streamアプリを起動し、「Sniff Now」をタップして「"Stream"がVPN構成の追加を求めています」というダイアログが表示されたら「許可」をタップします。(パスコードの入力が要求されるので、入力します。) 
+        1. Streamアプリに戻ると「You must install CA」という内容のダイアログが表示されるので、「Install CA」をタップし、「Install CA Certificate」をタップします。 
+        1. 「このWebサイトは構成プロファイルを・・・」と表示されるので、「許可」をタップします。
+        1. 本体設定を開き、一般 ＞ VPNとデバイス管理 ＞ Stream Generated CA 〜 ＞ 右上の「インストール」＞ パスコード入力 ＞ 右上の「インストール」 ＞ インストール の順にタップします。 
+        1. アプリに戻ると「For iOS 10.3+ and iOS 11・・・」と表示されることがありますが、青の「I've trusted」をタップします。
+        1. <span class="text-red">2回目以降はここからの手順のみで構いません。</span>@:{'common.gameName'}を起動し、「@:{'common.gacha'}」→「詳細を確認」を開きます。
+        1. Streamアプリを開き、「Sniff Now」をタップします。
+        1. @:{'common.gameName'}に戻り、「@:{'common.gacha'}履歴」をタップします。
+        1. Streamアプリに戻り、「Stop Sniffing」をタップし、右の「Sniff History」をタップします。
+        1. 一番上の時刻のものをタップし、「GET https://api-os-takumi.mihoyo.com」で始まるものを探し、タップします。
+        1. 上部の「Request」をタップし、「REQUEST LINE」の下の部分をタップし、「Copy Url」をタップするとURLをコピーできます。

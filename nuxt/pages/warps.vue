@@ -15,15 +15,15 @@
         />
         <div class="mb-4">
           <v-checkbox
-            v-model="warps.untilLatestRare"
+            v-model="isGetPityHistory"
             :disabled="warps.warps.length > 0 || fetching"
-            :label="$t('warpsPage.getUntilLatestRare')"
+            :label="$t('warpsPage.getPityHistory')"
             color="primary"
             density="compact"
             hide-details
           />
           <div style="font-size: 0.9em">
-            {{ $t('warpsPage.getUntilLatestRareDesc') }}
+            {{ $t('warpsPage.getPityHistoryDesc') }}
           </div>
         </div>
         <v-row no-gutters style="gap: 16px">
@@ -51,6 +51,7 @@
           :single-prob="warpType.singleProb"
           :star5-pity="warpType.star5Pity"
           :warps="warps.warps.filter(e => warpType.type === e.gachaType)"
+          :show-pity-history="isGetPityHistory"
           class="my-2"
         />
       </section>
@@ -112,6 +113,15 @@ const warpTypes: {
   },
 ]
 
+const isGetPityHistory = computed({
+  get() {
+    return !warps.untilLatestRare
+  },
+  set(value: boolean) {
+    warps.untilLatestRare = !value
+  },
+})
+
 const getWarps = () => {
   fetchedCount.value = null
   error.value = ""
@@ -160,6 +170,8 @@ const registerStatusListener = (api: WarpsApi) => {
 
         if (data.result!.length === 0) {
           snackbar.show(i18n.t("warpsPage.noNewWarps"))
+        } else {
+          snackbar.show(i18n.t("warpsPage.fetched", {count: data.result!.length}))
         }
         break
 

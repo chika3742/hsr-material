@@ -56,9 +56,9 @@
       </v-card>
     </v-row>
 
-    <v-expansion-panels class="mt-4" style="max-width: 600px">
+    <v-expansion-panels v-if="showPityHistory" class="mt-4" style="max-width: 600px">
       <v-expansion-panel>
-        <v-expansion-panel-title>{{ $t("warpsPage.details") }}</v-expansion-panel-title>
+        <v-expansion-panel-title>{{ $t("warpsPage.pityHistory") }}</v-expansion-panel-title>
         <v-expansion-panel-text>
           <v-table>
             <thead>
@@ -112,6 +112,7 @@ const props = defineProps<{
   star5Pity: number
   singleProb: number
   pseudoPityBorder: number
+  showPityHistory: boolean
 }>()
 
 interface PityCountListItem {
