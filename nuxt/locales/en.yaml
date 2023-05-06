@@ -47,7 +47,7 @@ warpsPage:
   itemName: Item Name
   pityHistory: Pity History
   lastPulled: "☆{star} Last Pulled"
-  prob: ☆5 Prob. in the next 10 pulls
+  prob: Prob of Getting ☆5 in the Next 10 Pulls
   errors:
     authKeyExpired: The URL has expired. Please get a new one from the game.
     authKeyInvalid: The URL is invalid. Please get a new one from the game.
