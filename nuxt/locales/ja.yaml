@@ -31,13 +31,13 @@ warpsPage:
   urlInput: URL入力
   get: "@:{'common.gacha'}を取得"
   clear: "@:{'common.gacha'}をクリア"
-  progress: "{count} 件の跳躍を取得しました"
+  progress: "{n} 件の@:{'common.gacha'}を取得しました"
   preparing: 履歴取得の準備をしています...
   invalidUrl: URLが無効です
   getPityHistory: 天井カウントの履歴を表示
   getPityHistoryDesc: オンにすると過去6ヶ月の全ての履歴を取得し、☆4/☆5天井カウントの履歴を確認できますが、初回の取得に時間がかかります。変更するには、@:{'common.gacha'}履歴をクリアする必要があります。
   noNewWarps: 新しい@:{'common.gacha'}はありません。引いたばかりの場合は、最長1時間後に再度お試しください。
-  fetched: "{count} 件の@:{'common.gacha'}を取得しました。"
+  fetched: "{n} 件の@:{'common.gacha'}を取得しました。"
   clearDialog: "@:{'common.gacha'}履歴をすべて削除しますか？"
   cleared: "@:{'common.gacha'}をクリアしました"
   pityCountWithStar: "☆{star} 天井カウント"

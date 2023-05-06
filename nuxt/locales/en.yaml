@@ -1,5 +1,9 @@
 common:
-  appName: "Honkai: Star Rail Material Notes"
+  appName: "Honkai: Star Rail Material Note"
+  gameName: "Honkai: Star Rail"
+  gacha: Warp | Warps
+  ok: OK
+  cancel: Cancel
 
 pageTitles:
   home: Home
@@ -18,3 +22,77 @@ footer:
     light: Light
     dark: Dark
     auto: Follow system settings
+
+warpsPage:
+  warpTypes:
+    11: Character Event Warp
+    12: Light Cone Event Warp
+    1: Standard Warp
+  urlInput: Paste the URL here
+  get: "Get @:{'common.gacha'}"
+  clear: "Clear @:{'common.gacha'}"
+  progress: "Fetched {n} @:{'common.gacha'}"
+  preparing: Preparing...
+  invalidUrl: Invalid URL
+  getPityHistory: Show Pity History
+  getPityHistoryDesc: If enabled, all history of the past 6 months will be fetched and you can check the pity count history of ☆4/☆5. However, it takes more to fetch the first time. You need to clear the @:{'common.gacha'} history to change this setting.
+  noNewWarps: No new @:{'common.gacha'} found. If you just pulled, please try again in up to 1 hour.
+  fetched: "Fetched {n} @:{'common.gacha'}"
+  clearDialog: Do you want to clear all @:{'common.gacha'} history?
+  cleared: Cleared @:{'common.gacha'}s
+  pityCountWithStar: "☆{star} Pity Count"
+  pityCount: Pity Count
+  dateTime: Date & Time
+  rarity: Rarity
+  itemName: Item Name
+  pityHistory: Pity History
+  lastPulled: "☆{star} Last Pulled"
+  prob: ☆5 Prob. in the next 10 pulls
+  errors:
+    authKeyExpired: The URL has expired. Please get a new one from the game.
+    authKeyInvalid: The URL is invalid. Please get a new one from the game.
+    tooManyRequests: Too many requests. Please try again later.
+    internal: An error occurred on the server. Please try again later.
+    unknown: An unknown error occurred. Please try again later.
+  aboutTitle: About
+  about: |
+    ## About this feature
+
+    This feature automatically fetches @:{'common.gacha'} history from the game and displays the pity count. To use this, you need to get the URL below.
+
+    ## About security
+
+    The URL used in this feature has an access key that allows only fetching @:{'common.gacha'} history. Therefore, it cannot be used to access personal information such as email addresses and usernames, or to log in to the game. Please be assured.
+
+    Also, this access key is processed only in the memory of the server and is destroyed after the processing is completed. It will not be recorded in the log or sent to a server other than miHoYo's API.
+
+    ## Notes
+
+    - <span class="text-red">This URL expires in 24 hours. After it expires, you need to get a new one in the same way.</span>
+    - <span class="text-red">Currently, there is no way to get the URL on Android devices alone.</span>
+    - The URL is saved only in the device and will be retained even if you reload the page.
+    - On macOS (PlayCover), you can get the URL using tools such as mitmproxy. Please check it yourself for details.
+  howToGetUrl:
+    windows:
+      title: How to get URL (Windows)
+      contents: |
+        *Confirmed to work only on Windows 11.
+
+        1. Launch @:{'common.gameName'}, select @:{'common.gacha'} > Details > @:{'common.gacha'} History.
+        1. Return to the desktop, right-click the Start button, and select "Terminal" or "Windows PowerShell".
+        1. Copy and paste the following command then press Enter key. <div id="windows-script"></div>
+        1. The URL will be copied, so paste it into this page.
+    ios:
+      title: How to get URL (iOS)
+      contents: |
+        1. <span class="text-red">The following steps are only required for the first time.</span> Install the [Stream]({streamUrl}) app from the App Store.
+        1. Launch the Stream app, tap "Sniff Now", and when the dialog "Stream is requesting to add VPN configurations" is displayed, tap "Allow". (Enter the passcode when prompted.)
+        1. Return to the Stream app and a dialog with the content "You must install CA" will be displayed, so tap "Install CA" and then tap "Install CA Certificate".
+        1. "This website is trying to download a configuration profile" will be displayed, so tap "Allow".
+        1. Open the device settings, tap General > VPN & Device Management > Stream Generated CA XXXXXXXX > "Install" in the upper right corner > Enter the passcode > "Install" in the upper right corner > Install.
+        1. When you return to the app, "For iOS 10.3+ and iOS 11..." may be displayed, but tap the blue "I've trusted".
+        1. <span class="text-red">From the second time onwards, you only need to follow the steps from here.</span> Launch @:{'common.gameName'}, and open @:{'common.gacha'} > Details.
+        1. Open the Stream app and tap "Sniff Now".
+        1. Return to @:{'common.gameName'} and tap @:{'common.gacha'} History.
+        1. Return to the Stream app and tap "Stop Sniffing", then tap "Sniff History" on the right.
+        1. Tap the one at the top, tap the one that starts with "GET https://api-os-takumi.mihoyo.com", and tap "Request" at the top, then tap the bottom of "REQUEST LINE" and tap "Copy Url" to copy the URL.

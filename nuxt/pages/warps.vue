@@ -37,7 +37,7 @@
         </v-row>
         <div v-show="fetching" class="mt-2" style="text-align: end">
           {{
-            fetchedCount !== null ? i18n.t("warpsPage.progress", {count: fetchedCount}) : $t('warpsPage.preparing')
+            fetchedCount !== null ? i18n.t("warpsPage.progress", fetchedCount) : $t('warpsPage.preparing')
           }}
         </div>
       </section>
@@ -171,7 +171,7 @@ const registerStatusListener = (api: WarpsApi) => {
         if (data.result!.length === 0) {
           snackbar.show(i18n.t("warpsPage.noNewWarps"))
         } else {
-          snackbar.show(i18n.t("warpsPage.fetched", {count: data.result!.length}))
+          snackbar.show(i18n.t("warpsPage.fetched", data.result!.length))
         }
         break
 
