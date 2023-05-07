@@ -53,6 +53,7 @@ const remainingTime = computed(() => {
       class="mb-4"
       :label="$t('tpCalcPage.currentTpCount')"
       style="max-width: 250px"
+      clearable
       suffix="/ 180"
     />
 
