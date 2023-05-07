@@ -13,6 +13,7 @@ const copyWindowsCommand = () => {
   window.navigator.clipboard.writeText(windowsCommandCode.value!.innerText)
   snackbar.show("コピーしました")
 }
+
 </script>
 
 <template>
@@ -26,7 +27,7 @@ const copyWindowsCommand = () => {
 
     <v-expansion-panel>
       <v-expansion-panel-title>{{ $t("warpsPage.howToGetUrl.windows.title") }}</v-expansion-panel-title>
-      <v-expansion-panel-text eager>
+      <v-expansion-panel-text>
         <div v-html="marked.parse(i18n.t('warpsPage.howToGetUrl.windows.contents'))" />
         <client-only>
           <teleport to="#windows-script">
@@ -50,6 +51,7 @@ const copyWindowsCommand = () => {
   </v-expansion-panels>
 </template>
 
-<style scoped>
-
+<style lang="sass">
+#windows-script
+  height: 48px
 </style>
