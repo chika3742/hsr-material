@@ -20,6 +20,6 @@ export const getTpReplenishmentRemainingTime = (tpCount: number, baseTime: DateT
 }
 
 export const getRealtimeTpCount = (tpCount: number, baseTime: DateTime): number => {
-  const diff = baseTime.diffNow()
-  return tpCount + Math.floor(diff.minutes / singleTpReplenishmentTime)
+  const diff = baseTime.diffNow().shiftTo("minutes")
+  return tpCount + Math.floor(-diff.minutes / singleTpReplenishmentTime)
 }
