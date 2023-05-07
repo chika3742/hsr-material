@@ -1,3 +1,4 @@
+import {execSync} from "child_process"
 import yaml from "@rollup/plugin-yaml"
 import {generateSchemas} from "./scripts/generate-schemas"
 
@@ -58,7 +59,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      isFirebaseDev: process.env.CF_PAGES_BRANCH !== "main",
+      isProdBranch: process.env.CF_PAGES_BRANCH === "main",
       useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
       firebaseConfigDev: {
         apiKey: "AIzaSyDNEmiGxBoKLpT0Tf9SNR16sjPBacIoTic",
@@ -77,6 +78,7 @@ export default defineNuxtConfig({
         appId: "1:14422071885:web:1120af7eab909844861a04",
       },
       recaptchaSiteKey: "6Le1pOIlAAAAAJk7pXcslkL7zaEUsPPxnMGmXyOx",
+      pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
     },
   },
 
