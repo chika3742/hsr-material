@@ -6,17 +6,14 @@ const singleTpReplenishmentTime = 6
 export const getTpFullReplenishmentTime = (tpCount: number, baseTime: DateTime): DateTime | null => {
   if (tpCount >= maxTpCount || tpCount < 0) { return null }
 
-  const added = baseTime.plus({minutes: (maxTpCount - tpCount) * singleTpReplenishmentTime})
-  if (added.diffNow().milliseconds < 0) { return null }
-
-  return added
+  return baseTime.plus({minutes: (maxTpCount - tpCount) * singleTpReplenishmentTime})
 }
 
 export const getTpReplenishmentRemainingTime = (tpCount: number, baseTime: DateTime): Duration | null => {
-  const tpFullReplenishmentTime = getTpFullReplenishmentTime(tpCount, baseTime)
-  if (tpFullReplenishmentTime === null) { return null }
+  const diff = getTpFullReplenishmentTime(tpCount, baseTime)?.diffNow()
+  if (!diff || diff.milliseconds < 0) { return null }
 
-  return tpFullReplenishmentTime.diffNow()
+  return diff
 }
 
 export const getRealtimeTpCount = (tpCount: number, baseTime: DateTime): number => {
