@@ -2,6 +2,7 @@
   <v-footer elevation="4" color="footer" class="flex-grow-0">
     <div class="d-flex flex-column w-100">
       <div class="d-flex align-center justify-end flex-wrap mb-4">
+        <v-btn icon="mdi-twitter" href="https://twitter.com/gms_material" target="_blank" variant="text" density="comfortable" />
         <v-btn icon="mdi-github" href="https://github.com/chika3742/hsr-material" target="_blank" variant="text" density="comfortable" />
         <client-only>
           <v-btn :href="feedbackUrl" variant="text" density="comfortable">
