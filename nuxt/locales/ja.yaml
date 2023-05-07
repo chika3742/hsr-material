@@ -100,7 +100,7 @@ warpsPage:
 tpCalcPage:
   baseTime: 基準時間
   currentTpCount: 現在の開拓力
-  fullReplenishmentTime: 満タンになる時間
+  fullReplenishmentTime: 全回復する時間
   remainingTime: 全回復まであと
   duration: "{hours} 時間 {minutes} 分"
   alreadyReplenished: すでに全回復しました
