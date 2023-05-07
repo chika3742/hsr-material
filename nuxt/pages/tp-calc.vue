@@ -9,27 +9,20 @@ definePageMeta({
 const config = useConfigStore()
 const {$marked} = useNuxtApp()
 const i18n = useI18n()
-const snackbar = useSnackbar()
 
 const marked = $marked({})
 
-const validate = (value: string) => {
+const validate = (value: string): string | true => {
   const intValue = Number(value)
-  return (!isNaN(intValue) && intValue >= 0 && intValue < 180)
+  return (!isNaN(intValue) && intValue >= 0 && intValue < 180) || i18n.t("tpCalcPage.rangeError")
 }
 
-const currentTpCount = computed({
-  get() {
-    return config.tpCount.toString()
-  },
-  set(value: string) {
-    if (validate(value)) {
-      config.tpCount = Number(value)
-      config.tpBaseTime = DateTime.now().toISO()!
-    } else {
-      snackbar.show(i18n.t("tpCalcPage.rangeError"), "error")
-    }
-  },
+const currentTpCount = ref(config.tpCount.toString())
+watch(currentTpCount, (value: string) => {
+  if (validate(value) === true) {
+    config.tpCount = Number(value)
+    config.tpBaseTime = DateTime.now().toISO()!
+  }
 })
 
 const baseTime = computed(() => {
@@ -53,6 +46,8 @@ const remainingTime = computed(() => {
       class="mb-4"
       :label="$t('tpCalcPage.currentTpCount')"
       style="max-width: 250px"
+      :rules="[validate]"
+      validate-on="input"
       clearable
       suffix="/ 180"
     />
