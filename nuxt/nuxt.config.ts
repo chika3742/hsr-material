@@ -1,5 +1,6 @@
 import {execSync} from "child_process"
 import yaml from "@rollup/plugin-yaml"
+import {DateTime} from "luxon"
 import {generateSchemas} from "./scripts/generate-schemas"
 
 export default defineNuxtConfig({
@@ -79,6 +80,7 @@ export default defineNuxtConfig({
       },
       recaptchaSiteKey: "6Le1pOIlAAAAAJk7pXcslkL7zaEUsPPxnMGmXyOx",
       pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
+      builtAt: DateTime.now().toISO(),
     },
   },
 

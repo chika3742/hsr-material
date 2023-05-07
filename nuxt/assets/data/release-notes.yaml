@@ -1,17 +1,8 @@
 # コピー用改行
 
-- date: 2023/5/6
-  funcVersion: 0.0.0-alpha.04
+- date: TBD
+  funcVersion: 1.0.0
   dataVersion: 1.0.0
   isMajor: false
   content: |
-    ### 追加
-    
-    - 祈願天井カウンター、開拓力回復時刻計算機の追加
-
-- date: 2023/5/4
-  funcVersion: 0.0.0-alpha.01
-  dataVersion: 1.0.0
-  isMajor: true
-  content: |
-    初回バージョン
+    ### 初回リリース版
