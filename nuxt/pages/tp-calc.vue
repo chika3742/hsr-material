@@ -9,20 +9,28 @@ definePageMeta({
 const config = useConfigStore()
 const {$marked} = useNuxtApp()
 const i18n = useI18n()
+const snackbar = useSnackbar()
 
 const marked = $marked({})
 
-const error = ref("")
-
-const onValueUpdate = (value: number) => {
+const validate = (value: string) => {
   const intValue = Number(value)
-  if (isNaN(intValue) || intValue < 0 || intValue >= 180) {
-    error.value = i18n.t("tpCalcPage.rangeError")
-    return
-  }
-  error.value = ""
-  config.tpBaseTime = DateTime.now().toISOTime()!
+  return (!isNaN(intValue) && intValue >= 0 && intValue < 180)
 }
+
+const currentTpCount = computed({
+  get() {
+    return config.tpCount.toString()
+  },
+  set(value: string) {
+    if (validate(value)) {
+      config.tpCount = Number(value)
+      config.tpBaseTime = DateTime.now().toISOTime()!
+    } else {
+      snackbar.show(i18n.t("tpCalcPage.rangeError"), "error")
+    }
+  },
+})
 
 const baseTime = computed(() => {
   return DateTime.fromISO(config.tpBaseTime)
@@ -41,13 +49,11 @@ const remainingTime = computed(() => {
   <div>
     <!--suppress TypeScriptValidateTypes -->
     <v-text-field
-      v-model="config.tpCount"
+      v-model="currentTpCount"
       class="mb-4"
       :label="$t('tpCalcPage.currentTpCount')"
-      :error-messages="error"
       style="max-width: 250px"
       suffix="/ 180"
-      @update:model-value="onValueUpdate"
     />
 
     <client-only>
