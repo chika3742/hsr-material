@@ -72,6 +72,10 @@ const remainingTime = computed(() => {
             <td>{{ $t('tpCalcPage.remainingTime') }}</td>
             <td>{{ remainingTime }}</td>
           </tr>
+          <tr>
+            <td>{{ $t('tpCalcPage.currentTpCount') }}</td>
+            <td>{{ getRealtimeTpCount(config.tpCount, baseTime) }}</td>
+          </tr>
         </tbody>
       </v-table>
 

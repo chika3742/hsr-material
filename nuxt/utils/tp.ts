@@ -1,9 +1,12 @@
 import {DateTime, Duration} from "luxon"
 
-export const getTpFullReplenishmentTime = (tpCount: number, baseTime: DateTime): DateTime | null => {
-  if (tpCount >= 180 || tpCount < 0) { return null }
+const maxTpCount = 180
+const singleTpReplenishmentTime = 6
 
-  const added = baseTime.plus({minutes: (180 - tpCount) * 6})
+export const getTpFullReplenishmentTime = (tpCount: number, baseTime: DateTime): DateTime | null => {
+  if (tpCount >= maxTpCount || tpCount < 0) { return null }
+
+  const added = baseTime.plus({minutes: (maxTpCount - tpCount) * singleTpReplenishmentTime})
   if (added.diffNow().milliseconds < 0) { return null }
 
   return added
@@ -14,4 +17,9 @@ export const getTpReplenishmentRemainingTime = (tpCount: number, baseTime: DateT
   if (tpFullReplenishmentTime === null) { return null }
 
   return tpFullReplenishmentTime.diffNow()
+}
+
+export const getRealtimeTpCount = (tpCount: number, baseTime: DateTime): number => {
+  const diff = baseTime.diffNow()
+  return tpCount + Math.floor(diff.minutes / singleTpReplenishmentTime)
 }
