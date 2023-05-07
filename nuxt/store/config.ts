@@ -7,7 +7,7 @@ export const useConfigStore = defineStore("config", {
     theme: "auto" as ThemeSetting,
     warpsUrl: "",
     tpCount: 0,
-    tpBaseTime: DateTime.now().toISOTime()!,
+    tpBaseTime: DateTime.now().toISO()!,
   }),
   actions: {
     getCurrentTheme() {

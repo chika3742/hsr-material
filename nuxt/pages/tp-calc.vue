@@ -25,7 +25,7 @@ const currentTpCount = computed({
   set(value: string) {
     if (validate(value)) {
       config.tpCount = Number(value)
-      config.tpBaseTime = DateTime.now().toISOTime()!
+      config.tpBaseTime = DateTime.now().toISO()!
     } else {
       snackbar.show(i18n.t("tpCalcPage.rangeError"), "error")
     }
