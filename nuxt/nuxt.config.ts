@@ -53,6 +53,9 @@ export default defineNuxtConfig({
       }
     },
   },
+  experimental: {
+    payloadExtraction: false,
+  },
   runtimeConfig: {
     public: {
       isFirebaseDev: process.env.CF_PAGES_BRANCH !== "main",
