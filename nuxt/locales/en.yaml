@@ -13,6 +13,7 @@ pageTitles:
   terms: Terms of Use
   termsSummarized: Terms of Use (Summarized)
   privacy: Privacy Policy
+  about: About This App
 
 footer:
   feedback: Feedback
@@ -100,11 +101,12 @@ warpsPage:
 tpCalcPage:
   baseTime: Base time
   currentTpCount: Current TP
-  fullReplenishmentTime: Full replenishment time
+  fullReplenishmentTime: Fully replenished at
   remainingTime: Until full replenishment
   duration: "{hours} hour(s) {minutes} minute(s)"
   alreadyReplenished: Already fully replenished.
   rangeError: Please enter a number between 0 and 180.
+  wastedTp: Wasted TP
   howToUse: |
     ## How to Use
     

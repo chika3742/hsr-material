@@ -20,3 +20,11 @@ export const getRealtimeTpCount = (tpCount: number, baseTime: DateTime): number 
   const diff = baseTime.diffNow().shiftTo("minutes")
   return Math.min(maxTpCount, tpCount + Math.floor(-diff.minutes / singleTpReplenishmentTime))
 }
+
+export const getWastedTpCount = (tpCount: number, baseTime: DateTime): number | null => {
+  const tpFullReplenishmentTime = getTpFullReplenishmentTime(tpCount, baseTime)
+  if (!tpFullReplenishmentTime) { return null }
+
+  const diff = tpFullReplenishmentTime.diffNow().shiftTo("minutes")
+  return Math.max(0, Math.floor(-diff.minutes / singleTpReplenishmentTime)) || null
+}

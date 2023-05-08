@@ -13,6 +13,7 @@ pageTitles:
   terms: 利用規約
   termsSummarized: 利用規約 (要約)
   privacy: プライバシーポリシー
+  about: このアプリについて
 
 footer:
   feedback: フィードバック
@@ -100,11 +101,12 @@ warpsPage:
 tpCalcPage:
   baseTime: 基準時間
   currentTpCount: 現在の開拓力
-  fullReplenishmentTime: 全回復する時間
+  fullReplenishmentTime: 全回復時刻
   remainingTime: 全回復まであと
   duration: "{hours} 時間 {minutes} 分"
   alreadyReplenished: すでに全回復しました
   rangeError: 0以上180未満の値を入力してください
+  wastedTp: 無駄にした開拓力
   howToUse: |
     ## 使い方
     

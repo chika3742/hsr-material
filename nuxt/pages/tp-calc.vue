@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {DateTime} from "luxon"
+import {getWastedTpCount} from "~/utils/tp"
 import {useConfigStore} from "~/store/config"
 
 definePageMeta({
@@ -11,6 +12,13 @@ const {$marked} = useNuxtApp()
 const i18n = useI18n()
 
 const marked = $marked({})
+
+const currentSecond = ref(DateTime.now().second)
+onMounted(() => {
+  setInterval(() => {
+    currentSecond.value = DateTime.now().second
+  }, 1000)
+})
 
 const validate = (value: string): string | true => {
   const intValue = Number(value)
@@ -53,11 +61,11 @@ const remainingTime = computed(() => {
     />
 
     <client-only>
-      <v-table style="max-width: 500px">
+      <v-table :key="currentSecond" style="max-width: 500px">
         <tbody>
           <tr>
             <td>{{ $t('tpCalcPage.baseTime') }}</td>
-            <td>{{ baseTime.toFormat("MM/dd HH:mm") }}</td>
+            <td>{{ baseTime.toFormat("MM/dd HH:mm") }} ({{ baseTime.toRelative() }})</td>
           </tr>
           <tr>
             <td>{{ $t('tpCalcPage.fullReplenishmentTime') }}</td>
@@ -70,6 +78,10 @@ const remainingTime = computed(() => {
           <tr>
             <td>{{ $t('tpCalcPage.currentTpCount') }}</td>
             <td>{{ getRealtimeTpCount(config.tpCount, baseTime) }}</td>
+          </tr>
+          <tr>
+            <td>{{ $t('tpCalcPage.wastedTp') }}</td>
+            <td>{{ getWastedTpCount(config.tpCount, baseTime) ?? "-" }}</td>
           </tr>
         </tbody>
       </v-table>
