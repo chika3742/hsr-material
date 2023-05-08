@@ -122,12 +122,20 @@ const isGetPityHistory = computed({
   },
 })
 
-const getWarps = () => {
+const getWarps = async() => {
   fetchedCount.value = null
   error.value = ""
   fetching.value = true
 
   const api = new WarpsApi($functions, url.value)
+
+  const validationResult = await api.validateUrl()
+
+  if (!validationResult.valid) {
+    error.value = i18n.t(`warpsPage.errors.${validationResult.errorCode}`)
+    fetching.value = false
+    return
+  }
 
   api.createTicket(warps.lastIds, warps.untilLatestRare).then(() => {
     config.warpsUrl = url.value
@@ -136,7 +144,7 @@ const getWarps = () => {
     return null
   }).catch((e) => {
     console.error(e)
-    error.value = i18n.t("warpsPage.invalidUrl")
+    error.value = i18n.t("warpsPage.errors.internal")
     fetching.value = false
   })
 }

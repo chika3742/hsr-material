@@ -1,5 +1,6 @@
 import {Functions, httpsCallable} from "@firebase/functions"
 import {DispatchGetWarpHistoryParams, DispatchGetWarpHistoryResult} from "#shared/dispatch-get-warp-history"
+import {GetWarpHistoryErrorCode} from "#shared/get-warp-history-error"
 
 export class WarpsApi {
   constructor(
@@ -8,6 +9,36 @@ export class WarpsApi {
   ) {}
 
   currentTicket?: string
+
+  async validateUrl(): Promise<{ valid: boolean, errorCode?: GetWarpHistoryErrorCode | "invalidUrl" }> {
+    let url: URL
+    try {
+      url = new URL(this.url)
+    } catch (e) {
+      return {
+        valid: false,
+        errorCode: "invalidUrl",
+      }
+    }
+
+    if (!url.searchParams.has("authkey") || !url.searchParams.has("region")) {
+      return {
+        valid: false,
+        errorCode: "invalidUrl",
+      }
+    }
+
+    const params = new URLSearchParams({
+      authKey: url.searchParams.get("authkey")!,
+      region: url.searchParams.get("region")!,
+    })
+    const result = await fetch(`/api/v1/validateUrl?${params.toString()}`)
+    const json = await result.json() as { success: boolean, errorCode?: GetWarpHistoryErrorCode }
+    return {
+      valid: json.success,
+      errorCode: json.errorCode,
+    }
+  }
 
   async createTicket(lastIds: Record<string, string>, untilLatestRare: boolean): Promise<void> {
     const url = new URL(this.url)

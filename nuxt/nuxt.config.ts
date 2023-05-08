@@ -45,6 +45,11 @@ export default defineNuxtConfig({
   alias: {
     "#shared": "../firebase/functions/src/types/shared",
   },
+  typescript: {
+    tsConfig: {
+      exclude: ["functions"],
+    },
+  },
   hooks: {
     async "build:before"() {
       await generateSchemas()
@@ -80,7 +85,7 @@ export default defineNuxtConfig({
       },
       recaptchaSiteKey: "6Le1pOIlAAAAAJk7pXcslkL7zaEUsPPxnMGmXyOx",
       pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
-      builtAt: DateTime.now().toISO(),
+      builtAt: DateTime.now().toISO()!,
     },
   },
 

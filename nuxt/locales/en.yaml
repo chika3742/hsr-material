@@ -50,6 +50,7 @@ warpsPage:
   lastPulled: "☆{star} Last Pulled"
   prob: Prob of Getting ☆5 in the Next 10 Pulls
   errors:
+    invalidUrl: URL is invalid.
     authKeyExpired: The URL has expired. Please get a new one from the game.
     authKeyInvalid: The URL is invalid. Please get a new one from the game.
     tooManyRequests: Too many requests. Please try again later.

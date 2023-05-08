@@ -34,7 +34,6 @@ warpsPage:
   clear: "@:{'common.gacha'}をクリア"
   progress: "{n} 件の@:{'common.gacha'}を取得しました"
   preparing: 履歴取得の準備をしています...
-  invalidUrl: URLが無効です
   getPityHistory: 天井カウントの履歴を表示
   getPityHistoryDesc: オンにすると過去6ヶ月の全ての履歴を取得し、☆4/☆5天井カウントの履歴を確認できますが、初回の取得に時間がかかります。変更するには、@:{'common.gacha'}履歴をクリアする必要があります。
   noNewWarps: 新しい@:{'common.gacha'}はありません。引いたばかりの場合は、最長1時間後に再度お試しください。
@@ -50,6 +49,7 @@ warpsPage:
   lastPulled: "最後に引いた ☆{star}"
   prob: 次の10連で☆5が出る確率
   errors:
+    invalidUrl: URLが無効です。
     authKeyExpired: URLの有効期限が切れています。再度ゲームより取得してください。
     authKeyInvalid: URLが無効です。再度ゲームより取得してください。
     tooManyRequests: リクエストが多すぎます。しばらく待ってから再度お試しください。
