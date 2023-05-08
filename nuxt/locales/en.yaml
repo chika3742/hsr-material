@@ -102,7 +102,7 @@ warpsPage:
 tpCalcPage:
   baseTime: Base time
   currentTpCount: Current TP
-  fullReplenishmentTime: Fully replenished at
+  fullReplenishmentTime: Fully replenished by
   remainingTime: Until full replenishment
   duration: "{hours} hour(s) {minutes} minute(s)"
   alreadyReplenished: Already fully replenished.
