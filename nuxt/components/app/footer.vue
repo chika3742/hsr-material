@@ -5,7 +5,7 @@
         <v-btn icon="mdi-twitter" href="https://twitter.com/gms_material" target="_blank" variant="text" density="comfortable" />
         <v-btn icon="mdi-github" href="https://github.com/chika3742/hsr-material" target="_blank" variant="text" density="comfortable" />
         <client-only>
-          <v-btn :href="feedbackUrl" variant="text" density="comfortable">
+          <v-btn :href="feedbackUrl" variant="text" density="comfortable" target="_blank">
             {{ $t('footer.feedback') }}
           </v-btn>
         </client-only>
