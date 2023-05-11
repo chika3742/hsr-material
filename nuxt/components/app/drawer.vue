@@ -45,6 +45,11 @@ const drawerItems: (DrawerItem | Divider)[] = [
     icon: "ms:history",
     to: "/warps",
   },
+  "---" as const,
+  {
+    icon: "mdi-information",
+    to: "/about",
+  },
 ]
 </script>
 

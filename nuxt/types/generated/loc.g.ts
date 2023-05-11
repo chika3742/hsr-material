@@ -61,4 +61,6 @@ export type Loc =
   | "tpCalcPage.wastedTp"
   | "tpCalcPage.howToUse"
   | "aboutPage.feedback"
+  | "aboutPage.support"
+  | "aboutPage.supportButton"
   | "aboutPage.developer"
