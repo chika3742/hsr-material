@@ -100,7 +100,7 @@ const feedbackUrl = computed(() => {
 
   const ua = new UAParser(navigator.userAgent)
   const browser = ua.getBrowser()
-  return `https://github.com/chika3742/hsr-material/issues/new/choose?browser=${browser.name} ${browser.version}&app-version=${getCurrentVersion()}`
+  return `https://github.com/chika3742/hsr-material/issues/new/choose?browser=${browser.name} ${browser.version}&app-version=${getCurrentVersionText()}`
 })
 
 </script>
