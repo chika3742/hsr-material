@@ -20,3 +20,24 @@ export const generateSchemas = async() => {
     fs.writeFileSync(outputFilePath, result)
   }
 }
+
+export const generateLocType = () => {
+  const inputPath = "./locales/ja.yaml"
+  const outputDir = "./types/generated"
+
+  const loc = parse(fs.readFileSync(path.resolve(inputPath)).toString())
+  let locTs = "export type Loc =\n"
+
+  const recursiveGenerate = (obj: Record<string, unknown>, prefix = "") => {
+    for (const [k, v] of Object.entries(obj)) {
+      if (typeof v === "string") {
+        locTs += `  | "${prefix}${k}"\n`
+      } else {
+        recursiveGenerate(v as Record<string, unknown>, `${prefix}${k}.`)
+      }
+    }
+  }
+
+  recursiveGenerate(loc)
+  fs.writeFileSync(path.join(outputDir, "loc.g.ts"), locTs)
+}

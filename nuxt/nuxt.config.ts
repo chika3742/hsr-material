@@ -1,7 +1,7 @@
 import {execSync} from "child_process"
 import yaml from "@rollup/plugin-yaml"
 import {DateTime} from "luxon"
-import {generateSchemas} from "./scripts/generate-schemas"
+import {generateLocType, generateSchemas} from "./scripts/generate-schemas"
 
 export default defineNuxtConfig({
   app: {
@@ -53,10 +53,14 @@ export default defineNuxtConfig({
   hooks: {
     async "build:before"() {
       await generateSchemas()
+      await generateLocType()
     },
     async "builder:watch"(_, path) {
       if (path.startsWith("schemas/")) {
         await generateSchemas()
+      }
+      if (path.startsWith("locales/")) {
+        await generateLocType()
       }
     },
   },
@@ -107,13 +111,6 @@ export default defineNuxtConfig({
     vueI18n: {
       legacy: false,
       fallbackLocale: "ja",
-      datetimeFormats: {
-        ja: {
-          time: {
-            hour12: false,
-          },
-        },
-      },
     },
   },
 
