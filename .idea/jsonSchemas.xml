@@ -15,6 +15,49 @@
                   <Item>
                     <option name="path" value="nuxt/schemas/release-notes.yaml" />
                   </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/characters.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/materials.yaml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="characters">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="characters" />
+              <option name="relativePathToSchema" value="nuxt/schemas/characters.yaml" />
+              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="nuxt/assets/data/characters.yaml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="materials">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="materials" />
+              <option name="relativePathToSchema" value="nuxt/schemas/materials.yaml" />
+              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="nuxt/assets/data/generated/materials.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="nuxt/assets/data/materials.yaml" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>

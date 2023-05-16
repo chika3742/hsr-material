@@ -1,7 +1,9 @@
 import {execSync} from "child_process"
 import yaml from "@rollup/plugin-yaml"
 import {DateTime} from "luxon"
-import {generateLocType, generateSchemas} from "./scripts/generate-schemas"
+import dsv from "@rollup/plugin-dsv"
+import {generateSchemas} from "./scripts/generate-schemas"
+import {generateLocType} from "./scripts/generate-loc-type"
 
 export default defineNuxtConfig({
   app: {
@@ -36,6 +38,20 @@ export default defineNuxtConfig({
     plugins: [
       yaml({
         exclude: "locales/**",
+      }),
+      dsv({
+        // @ts-ignore: https://github.com/rollup/plugins/pull/1493
+        processRow(row) {
+          const result: Record<string, unknown> = {}
+          for (const key of Object.keys(row)) {
+            const value = row[key]!
+            if (value !== "") {
+              result[key] = isNaN(+value) ? value : +value
+            }
+          }
+
+          return result
+        },
       }),
     ],
   },

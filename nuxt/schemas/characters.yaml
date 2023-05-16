@@ -1,0 +1,70 @@
+$schema: https://json-schema.org/draft-07/schema
+
+type: array
+
+items:
+  $ref: "#/definitions/character"
+
+definitions:
+  character:
+    type: object
+    additionalProperties: false
+    required:
+      - id
+      - $nameJA
+      - rarity
+      - path
+      - combatType
+      - materials
+    properties:
+      id:
+        type: string
+      $nameJA:
+        type: string
+      rarity:
+        type: integer
+      path:
+        $ref: "#/definitions/path"
+      combatType:
+        $ref: "#/definitions/combatType"
+      materials:
+        $ref: "#/definitions/characterMaterialDefinitions"
+
+  path:
+    type: string
+    enum:
+      - destruction
+      - the_hunt
+      - erudition
+      - harmony
+      - nihility
+      - preservation
+      - abundance
+
+  combatType:
+    type: string
+    enum:
+      - physical
+      - fire
+      - ice
+      - lightning
+      - wind
+      - quantum
+      - imaginary
+
+  characterMaterialDefinitions:
+    type: object
+    additionalProperties: false
+    required:
+      - common
+      - ascension
+      - skillsAdvanced
+    properties:
+      common:
+        type: string
+      ascension:
+        type: string
+      skills:
+        type: string
+      skillsAdvanced:
+        type: string
