@@ -81,15 +81,17 @@ const mounted = ref(false)
 const loadingPage = ref(false)
 
 const title = computed(() => {
-  if (!route.meta.title) {
+  const titleKey = route.meta.title
+  if (!titleKey) {
     throw new Error("No title found in route meta")
   }
-  const [base, paramName] = route.meta.title.split("__")
-  if (paramName) {
-    return i18n.t(`pageTitles.${base}`, {name: i18n.t(`${base}.${route.params[paramName]}`)})
-  } else {
-    return i18n.t(`pageTitles.${base}`)
+
+  const named: Record<string, string> = {}
+  for (const key in route.params) {
+    named[key] = i18n.t(`${route.meta.itemI18nKey}.${route.params[key]}`)
   }
+
+  return i18n.t(`pageTitles.${titleKey}`, named)
 })
 
 useHead({
