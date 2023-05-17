@@ -1,7 +1,9 @@
 <template>
   <div>
     <v-app>
-      <AppDrawer v-model="isDrawerOpenOnMobile" />
+      <client-only>
+        <AppDrawer v-model="isDrawerOpenOnMobile" />
+      </client-only>
 
       <v-app-bar>
         <template #prepend>
