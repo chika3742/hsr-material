@@ -45,7 +45,7 @@ const filteredCharacters = computed(() => {
                   </div>
                   <v-list v-model:selected="filter.rarity">
                     <v-list-item v-for="rarity in [4, 5]" :key="rarity" :value="rarity">
-                      <v-icon v-for="i of rarity" :key="i" size="18" color="star">
+                      <v-icon v-for="i of rarity" :key="i" :class="i !== 1 ? 'ml-n1' : ''" size="18" color="star">
                         mdi-star
                       </v-icon>
                     </v-list-item>
