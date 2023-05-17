@@ -64,7 +64,7 @@ const filteredCharacters = computed(() => {
                           :src="getPathImage(path)"
                           width="25"
                           aspect-ratio="1"
-                          style="filter: brightness(0)"
+                          :style="!$vuetify.theme.global.current.dark ? 'filter: brightness(0)' : ''"
                         />
                       </template>
                     </v-list-item>
