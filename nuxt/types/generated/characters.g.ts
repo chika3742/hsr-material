@@ -8,8 +8,8 @@ export interface Character {
   id: string;
   $nameJA: string;
   rarity: number;
-  path: Path;
-  combatType: CombatType;
+  path?: Path;
+  combatType?: CombatType;
   materials: CharacterMaterialDefinitions;
 }
 export interface CharacterMaterialDefinitions {

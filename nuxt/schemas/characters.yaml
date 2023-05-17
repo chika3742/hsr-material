@@ -13,8 +13,6 @@ definitions:
       - id
       - $nameJA
       - rarity
-      - path
-      - combatType
       - materials
     properties:
       id:

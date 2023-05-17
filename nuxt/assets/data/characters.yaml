@@ -1,8 +1,6 @@
 - id: trailblazer
   $nameJA: 開拓者
   rarity: 5
-  path: destruction
-  combatType: physical
   materials:
     common: group:com001
     ascension: id:enigmatic-ectostella
@@ -217,17 +215,6 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs006
     skillsAdvanced: id:destroyers-final-road
-
-- id: luocha
-  $nameJA: 羅刹
-  rarity: 5
-  path: abundance
-  combatType: imaginary
-  materials:
-    common: group:com006
-    ascension: id:golden-crown-of-the-past-shadow
-    skills: group:lcs007
-    skillsAdvanced: id:guardians-lament
 
 - id: jing-yuan
   $nameJA: 景元
