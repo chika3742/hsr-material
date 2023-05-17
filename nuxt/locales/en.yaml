@@ -115,31 +115,6 @@ tpCalcPage:
     - The entered time and TP count will be retained even if you reload the page.
     - Please note that the base time will be updated when the number is changed.
 
-# Page:
-#  feedback: |
-#    ## フィードバックについて
-#
-#    本アプリにおいて、
-#
-#    - 新機能の提案
-#    - 不具合の報告
-#    - 誤植の報告
-#    - 質問
-#
-#    などがある場合、[HoYoLABの記事]({hoyolabUrl})のコメント欄に投稿するか、フッターの「フィードバック」から直接GitHubでIssueを立てていただけると大変助かります。
-#
-#  support: |
-#    ## 支援について
-#
-#    このアプリの維持や改善のため、コーヒー1杯分でもご支援いただけると幸いです。(PayPalもしくはクレジットカードで決済が可能です。)
-#
-#  supportButton: 支援する
-#
-#  developer: |
-#    ## 開発者について
-#
-#    大学2年(休学中)。ごちうさ難民。
-
 aboutPage:
   feedback: |
     ## Feedback
@@ -156,3 +131,33 @@ aboutPage:
     ## Developer
     
     2nd year of university (on leave).
+
+characterNames:
+  march-7th: March 7th
+  dan-heng: Dan Heng
+  himeko: Himeko
+  welt: Welt
+  kafka: Kafka
+  silver-wolf: Silver Wolf
+  arlan: Arlan
+  asta: Asta
+  herta: Herta
+  bronya: Bronya
+  seele: Seele
+  serval: Serval
+  gepard: Gepard
+  natasha: Natasha
+  pela: Pela
+  clara: Clara
+  sampo: Sampo
+  hook: Hook
+  qingque: Qingque
+  tingyun: Tingyun
+  luocha: Luocha
+  jing-yuan: Jing Yuan
+  sushang: Sushang
+  yukong: Yukong
+  yanqing: Yanqing
+  bailu: Bailu
+  trailblazer: Trailblazer
+
