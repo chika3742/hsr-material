@@ -4,9 +4,15 @@ common:
   gacha: Warp | Warps
   ok: OK
   cancel: Cancel
+  rarity: Rarity
+  filter: Filter
+  path: Path
+  combatType: Combat Type
 
 pageTitles:
   home: Home
+  characters: Characters
+  characterDetails: Characters / {characterId}
   warps: Warps Pity Counter
   tpCalc: TP Replenish Calc
   releaseNotes: Release Notes
@@ -131,6 +137,24 @@ aboutPage:
     ## Developer
     
     2nd year of university (on leave).
+
+paths:
+  abundance: Abundance
+  destruction: Destruction
+  erudition: Erudition
+  harmony: Harmony
+  nihility: Nihility
+  preservation: Preservation
+  the_hunt: The Hunt
+
+combatTypes:
+  fire: Fire
+  ice: Ice
+  imaginary: Imaginary
+  lightning: Lightning
+  physical: Physical
+  wind: Wind
+  quantum: Quantum
 
 characterNames:
   march-7th: March 7th

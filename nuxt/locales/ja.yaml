@@ -4,9 +4,15 @@ common:
   gacha: 跳躍
   ok: OK
   cancel: キャンセル
+  rarity: レアリティ
+  path: 運命
+  combatType: 属性
+  filter: 絞り込み
 
 pageTitles:
   home: ホーム
+  characters: キャラクター
+  characterDetails: キャラクター / {characterId}
   warps: 跳躍天井カウンター(β)
   tpCalc: 開拓力回復時刻計算機
   releaseNotes: 更新履歴
@@ -138,6 +144,24 @@ aboutPage:
     ## 開発者について
     
     大学2年(休学中)。ごちうさ難民。
+
+paths:
+  abundance: 豊穣
+  destruction: 壊滅
+  erudition: 知恵
+  harmony: 調和
+  nihility: 虚無
+  preservation: 存護
+  the_hunt: 巡狩
+
+combatTypes:
+  fire: 炎
+  ice: 氷
+  imaginary: 虚数
+  lightning: 雷
+  physical: 物理
+  wind: 風
+  quantum: 量子
 
 characterNames:
   trailblazer: 開拓者
