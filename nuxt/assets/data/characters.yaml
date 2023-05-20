@@ -1,11 +1,21 @@
 - id: trailblazer
   $nameJA: 開拓者
   rarity: 5
-  materials:
-    common: group:com001
-    ascension: id:enigmatic-ectostella
-    skills: group:lcs005
-    skillsAdvanced: id:destroyers-final-road
+  variants:
+    - path: destruction
+      combatType: physical
+      materials:
+        common: group:com001
+        ascension: id:enigmatic-ectostella
+        skills: group:lcs005
+        skillsAdvanced: id:destroyers-final-road
+    - path: preservation
+      combatType: fire
+      materials:
+        common: group:com001
+        ascension: id:enigmatic-ectostella
+        skills: group:lcs001
+        skillsAdvanced: id:destroyers-final-road
 
 - id: march-7th
   $nameJA: 三月なのか

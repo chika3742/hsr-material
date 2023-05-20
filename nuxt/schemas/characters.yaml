@@ -13,7 +13,15 @@ definitions:
       - id
       - $nameJA
       - rarity
-      - materials
+    oneOf:
+      - additionalProperties: false
+        required:
+          - materials
+
+      - additionalProperties: false
+        required:
+          - variants
+
     properties:
       id:
         type: string
@@ -21,6 +29,25 @@ definitions:
         type: string
       rarity:
         type: integer
+      path:
+        $ref: "#/definitions/path"
+      combatType:
+        $ref: "#/definitions/combatType"
+      materials:
+        $ref: "#/definitions/characterMaterialDefinitions"
+      variants:
+        type: array
+        items:
+          $ref: "#/definitions/characterVariant"
+
+  characterVariant:
+    type: object
+    additionalProperties: false
+    required:
+      - path
+      - combatType
+      - materials
+    properties:
       path:
         $ref: "#/definitions/path"
       combatType:
@@ -56,6 +83,7 @@ definitions:
     required:
       - common
       - ascension
+      - skills
       - skillsAdvanced
     properties:
       common:
