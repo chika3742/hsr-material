@@ -119,8 +119,97 @@ basicAttack:
       - fixedId: credit
         quantity: 4000
 
-skill: []
+skill: &skill
+  - level: 2
+    ingredients:
+      - type: common
+        craftLevel: 1
+        quantity: 2
+      - fixedId: credit
+        quantity: 2000
+  - level: 3
+    ingredients:
+      - type: skills
+        craftLevel: 1
+        quantity: 2
+      - type: common
+        craftLevel: 1
+        quantity: 4
+      - fixedId: credit
+        quantity: 4000
+  - level: 4
+    ingredients:
+      - type: skills
+        craftLevel: 2
+        quantity: 2
+      - type: common
+        craftLevel: 2
+        quantity: 2
+      - fixedId: credit
+        quantity: 8000
+  - level: 5
+    ingredients:
+      - type: skills
+        craftLevel: 2
+        quantity: 4
+      - type: common
+        craftLevel: 2
+        quantity: 3
+      - fixedId: credit
+        quantity: 16000
+  - level: 6
+    ingredients:
+      - type: skills
+        craftLevel: 2
+        quantity: 6
+      - type: common
+        craftLevel: 2
+        quantity: 5
+      - fixedId: credit
+        quantity: 24000
+  - level: 7
+    ingredients:
+      - type: skills
+        craftLevel: 3
+        quantity: 2
+      - type: common
+        craftLevel: 3
+        quantity: 2
+      - fixedId: credit
+        quantity: 36000
+  - level: 8
+    ingredients:
+      - type: skills
+        craftLevel: 3
+        quantity: 4
+      - type: common
+        craftLevel: 3
+        quantity: 3
+      - type: skillsAdvanced
+        quantity: 1
+      - fixedId: credit
+        quantity: 64000
+  - level: 9
+    ingredients:
+      - type: skills
+        craftLevel: 3
+        quantity: 6
+      - type: skillsAdvanced
+        quantity: 1
+      - fixedId: credit
+        quantity: 128000
+  - level: 10
+    ingredients:
+      - type: skills
+        craftLevel: 3
+        quantity: 11
+      - type: skillsAdvanced
+        quantity: 1
+      - fixedId: tracks-of-destiny
+        quantity: 1
+      - fixedId: credit
+        quantity: 240000
 
-talent: []
+ultimate: *skill
 
-ultimate: []
+talent: *skill
