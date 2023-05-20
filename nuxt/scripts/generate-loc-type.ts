@@ -28,6 +28,9 @@ export const generateLocType = () => {
   }
 
   recursiveGenerate(locJa)
+
+  locTs += "  | string\n"
+
   fs.writeFileSync(path.join(outputDir, "loc.g.ts"), locTs)
 
   if (missingKeys.length > 0) {
