@@ -15,3 +15,7 @@ export const getCombatTypeImage = (type: CombatType) => {
 export const getPathImage = (path: Path) => {
   return new URL(`../assets/img/paths/${path}.webp`, import.meta.url).toString()
 }
+
+export const getMaterialImage = (materialId: string) => {
+  return new URL(`../assets/img/materials/${materialId}.webp`, import.meta.url).toString()
+}
