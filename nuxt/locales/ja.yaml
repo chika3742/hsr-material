@@ -8,11 +8,18 @@ common:
   path: 運命
   combatType: 属性
   filter: 絞り込み
+  skillTypes:
+    basicAttack: 通常攻撃
+    skill: 戦闘スキル
+    ultimate: 必殺技
+    talent: 天賦
 
 pageTitles:
   home: ホーム
   characters: キャラクター
   characterDetails: キャラクター / {characterId}
+  materials: 素材一覧(逆引き)
+  materialDetails: 素材 / {materialId}
   warps: 跳躍天井カウンター(β)
   tpCalc: 開拓力回復時刻計算機
   releaseNotes: 更新履歴
@@ -29,6 +36,10 @@ footer:
     light: ライト
     dark: ダーク
     auto: システム設定に従う
+
+characterDetailsPage:
+  ascension: キャラLvアップ/昇格素材
+  skills: スキルLvアップ素材
 
 warpsPage:
   warpTypes:
@@ -192,4 +203,74 @@ characterNames:
   yanqing: 彦卿
   bailu: 白露
 
+materialNames:
+  travel-encounters: 旅の見聞
+  adventure-log: 冒険記録
+  travelers-guide: 漫遊指南
+  horn-of-snow: 吹雪の角
+  storm-eye: 暴風の眼
+  endotherm-chitin: 恒温晶殻
+  golden-crown-of-the-past-shadow: 過去の影の金装飾
+  shape-shifters-lightning-staff: 鍛錬者の雷枝
+  void-cast-iron: 虚幻鋳鉄
+  lightning-crown-of-the-past-shadow: 過去の影の雷冠
+  broken-teeth-of-iron-wolf: 鉄狼の砕けた刃
+  enigmatic-ectostella: 深邃な星外物質
+  thiefs-instinct: 略奪の本能
+  usurpers-scheme: 改ざんの野心
+  conquerors-will: 踏みにじる意志
+  extinguished-core: 消滅した原核
+  glimmering-core: 微かに光る原核
+  squirming-core: 脈動する原核
+  silvermane-badge: シルバーメインの釦
+  silvermane-insignia: シルバーメインの記章
+  silvermane-medal: シルバーメインの勲章
+  ancient-part: 古代パーツ
+  ancient-spindle: 古代シャフト
+  ancient-engine: 古代エンジン
+  immortal-scionette: 永寿の萌芽
+  immortal-aeroblossom: 永寿の天華
+  immortal-lumintwig: 永寿の栄枝
+  artifexs-module: 工造機関
+  artifexs-cogwheel: 工造迴輪
+  artifexs-gyreheart: 工造渾心
+  endurance-of-bronze: 青銅の執着
+  oath-of-steel: 寒鉄の誓い
+  safeguard-of-amber: 琥珀の堅守
+  arrow-of-the-beast-hunter: 狩獣の矢
+  arrow-of-the-demon-slayer: 屠魔の矢
+  arrow-of-the-starchaser: 逐星の矢
+  key-of-inspiration: 着想のカギ
+  key-of-knowledge: 啓発のカギ
+  key-of-wisdom: 叡智のカギ
+  obsidian-of-dread: 黯淡な黒曜
+  obsidian-of-desolation: 虚空の黒曜
+  obsidian-of-obsession: 沈淪せし黒曜
+  shattered-blade: 破砕の刃切
+  lifeless-blade: 無生の刃切
+  worldbreaker-blade: 浄世の刃切
+  harmonic-tune: 調和のハーモニー
+  ancestral-hymn: ファミリー賛歌
+  stellaris-symphony: 群星の楽章
+  seed-of-abundance: 豊穣の種
+  sprout-of-life: 生命の芽
+  flower-of-eternity: 永久の花
+  destroyers-final-road: 壊滅者の末路
+  guardians-lament: 守護者の悲願
+  tracks-of-destiny: 運命の足跡
+  credit: 信用ポイント
 
+skillTitles:
+  trailblazer:
+    destruction:
+      basicAttack: サヨナラ安打
+      skill: 安息ホームラン
+      ultimate: スターダストエース
+      talent: 盗塁牽制
+    preservation:
+      basicAttack: 堅氷を貫く烈火
+      skill: 不滅のアンバー
+      ultimate: 陥陣無帰の炎槍
+      talent: 建創者の失われし宝
+  match-7th:
+    basicAttack: 極寒の弓矢
