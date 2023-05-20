@@ -1,6 +1,7 @@
 common:
   appName: "Honkai: Star Rail Material Note"
   gameName: "Honkai: Star Rail"
+  alphaWarning: This app is in alpha version, so it may contain bugs or features that will be changed in the future.
   gacha: Warp | Warps
   ok: OK
   cancel: Cancel
@@ -22,7 +23,7 @@ pageTitles:
   about: About This App
 
 footer:
-  feedback: Feedback
+  feedback: Submit Issue
   theme: Theme
   disclaimer: This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE.
   themeOptions:

@@ -16,17 +16,23 @@
         <v-app-bar-title>{{ title }}</v-app-bar-title>
       </v-app-bar>
 
-      <v-main class="d-flex flex-column">
+      <v-main class="h-100">
         <div class="position-sticky" style="top: 64px; z-index: 9999">
           <v-progress-linear :active="loadingPage" color="primary" indeterminate />
         </div>
 
-        <v-container>
-          <NuxtPage :keepalive="{max: 5, exclude: ['v-tooltip']}" :page-key="$route.fullPath" />
-        </v-container>
+        <div class="d-flex flex-column h-100">
+          <v-container>
+            <NuxtPage :keepalive="{max: 5, exclude: ['v-tooltip']}" :page-key="$route.fullPath" />
+          </v-container>
 
-        <v-spacer />
-        <AppFooter />
+          <v-spacer />
+
+          <div v-if="!isProd" class="alpha-warning-overlay">
+            <span>{{ tx("common.alphaWarning") }}</span>
+          </div>
+          <AppFooter />
+        </div>
 
         <client-only>
           <v-snackbar v-model="snackbar.ref.value.displayed" :color="snackbar.ref.value.color ?? undefined">
@@ -75,6 +81,9 @@ const dialog = useDialog()
 const snackbar = useSnackbar()
 const theme = useTheme()
 const config = useConfigStore()
+const rConfig = useRuntimeConfig()
+
+const isProd = rConfig.public.isProdBranch
 
 const isDrawerOpenOnMobile = ref(false)
 const mounted = ref(false)
@@ -150,5 +159,15 @@ router.afterEach(() => {
         transform: rotate(0deg)
       to
         transform: rotate(360deg)
+
+.alpha-warning-overlay
+  width: 100%
+  position: sticky
+  padding: 8px
+  bottom: 0
+  z-index: 999
+  background: rgba(255, 166, 0, 0.4)
+  font-weight: bold
+  backdrop-filter: blur(8px)
 
 </style>

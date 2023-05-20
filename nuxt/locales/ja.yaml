@@ -1,6 +1,7 @@
 common:
   appName: 崩壊：スターレイル素材ノート
   gameName: 崩壊：スターレイル
+  alphaWarning: このアプリはアルファ版であり、不具合や今後変更される機能が含まれる可能性が比較的高いです。
   gacha: 跳躍
   ok: OK
   cancel: キャンセル
@@ -29,7 +30,7 @@ pageTitles:
   about: このアプリについて
 
 footer:
-  feedback: フィードバック
+  feedback: Issueを立てる
   theme: テーマ
   disclaimer: このアプリは非公式です。画像・データの著作権はmiHoYo/COGNOSPHEREに帰属します。
   themeOptions:
