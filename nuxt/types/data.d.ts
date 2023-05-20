@@ -10,6 +10,12 @@ declare module "~/assets/data/characters.yaml" {
   export default characters
 }
 
+declare module "~/assets/data/character-ingredients.yaml" {
+  import {CharacterIngredients} from "~/types/generated/character-ingredients.g"
+  const characterIngredients: CharacterIngredients
+  export default characterIngredients
+}
+
 declare module "~/assets/data/materials.csv" {
   import {Material} from "~/types/data/materials"
   const materials: Material[]

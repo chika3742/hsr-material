@@ -1,0 +1,87 @@
+$schema: https://json-schema.org/draft-07/schema
+
+type: object
+additionalProperties: false
+required:
+  - exp
+  - ascension
+  - basicAttack
+  - skill
+  - ultimate
+  - talent
+
+properties:
+  exp:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - itemId
+        - expPerItem
+      properties:
+        itemId:
+          type: string
+        expPerItem:
+          type: integer
+
+  ascension:
+    type: array
+    items:
+      $ref: "#/definitions/levelIngredients"
+
+  basicAttack:
+    type: array
+    items:
+      $ref: "#/definitions/levelIngredients"
+
+  skill:
+    type: array
+    items:
+      $ref: "#/definitions/levelIngredients"
+
+  ultimate:
+    type: array
+    items:
+      $ref: "#/definitions/levelIngredients"
+
+  talent:
+    type: array
+    items:
+      $ref: "#/definitions/levelIngredients"
+
+definitions:
+  ingredient:
+    type: object
+    additionalProperties: false
+
+    properties:
+      fixedId:
+        type: string
+      type:
+        type: string
+        enum:
+          - common
+          - ascension
+          - skills
+          - skillsAdvanced
+      quantity:
+        type: integer
+      exp:
+        type: integer
+      craftLevel:
+        type: integer
+
+  levelIngredients:
+    type: object
+    additionalProperties: false
+    required:
+      - level
+      - ingredients
+    properties:
+      level:
+        type: integer
+      ingredients:
+        type: array
+        items:
+          $ref: "#/definitions/ingredient"

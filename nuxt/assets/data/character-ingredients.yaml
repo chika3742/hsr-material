@@ -1,0 +1,126 @@
+exp:
+  - itemId: travelers-guide
+    expPerItem: 20000
+  - itemId: adventure-log
+    expPerItem: 5000
+  - itemId: travel-encounters
+    expPerItem: 1000
+
+ascension:
+  - level: 20
+    ingredients:
+      - exp: 113000
+  - level: 30
+    ingredients:
+      - exp: 178000
+      - type: common
+        craftLevel: 1
+        quantity: 4
+      - fixedId: credit
+        quantity: 3200
+  - level: 40
+    ingredients:
+      - exp: 207000
+      - type: common
+        craftLevel: 1
+        quantity: 8
+      - fixedId: credit
+        quantity: 6400
+  - level: 50
+    ingredients:
+      - exp: 390000
+      - type: ascension
+        quantity: 2
+      - type: common
+        craftLevel: 2
+        quantity: 5
+      - fixedId: credit
+        quantity: 12800
+  - level: 60
+    ingredients:
+      - exp: 823000
+      - type: ascension
+        quantity: 5
+      - type: common
+        craftLevel: 2
+        quantity: 8
+      - fixedId: credit
+        quantity: 32000
+  - level: 70
+    ingredients:
+      - exp: 1327000
+      - type: ascension
+        quantity: 15
+      - type: common
+        craftLevel: 3
+        quantity: 5
+      - fixedId: credit
+        quantity: 64000
+  - level: 80
+    ingredients:
+      - exp: 2763000
+      - type: ascension
+        quantity: 28
+      - type: common
+        craftLevel: 3
+        quantity: 7
+      - fixedId: credit
+        quantity: 128000
+
+basicAttack:
+  - level: 2
+    ingredients:
+      - type: skills
+        craftLevel: 1
+        quantity: 2
+      - type: common
+        craftLevel: 1
+        quantity: 4
+      - fixedId: credit
+        quantity: 4000
+  - level: 3
+    ingredients:
+      - type: skills
+        craftLevel: 2
+        quantity: 2
+      - type: common
+        craftLevel: 2
+        quantity: 2
+      - fixedId: credit
+        quantity: 8000
+  - level: 4
+    ingredients:
+      - type: skills
+        craftLevel: 2
+        quantity: 4
+      - type: common
+        craftLevel: 2
+        quantity: 3
+      - fixedId: credit
+        quantity: 16000
+  - level: 5
+    ingredients:
+      - type: skills
+        craftLevel: 3
+        quantity: 2
+      - type: common
+        craftLevel: 3
+        quantity: 2
+      - fixedId: credit
+        quantity: 36000
+  - level: 6
+    ingredients:
+      - type: skills
+        craftLevel: 3
+        quantity: 6
+      - type: common
+        craftLevel: 3
+        quantity: 3
+      - fixedId: credit
+        quantity: 4000
+
+skill: []
+
+talent: []
+
+ultimate: []

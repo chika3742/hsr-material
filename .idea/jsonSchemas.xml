@@ -21,6 +21,26 @@
                   <Item>
                     <option name="path" value="nuxt/schemas/materials.yaml" />
                   </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/character-ingredients.yaml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="character-ingredients">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="character-ingredients" />
+              <option name="relativePathToSchema" value="nuxt/schemas/character-ingredients.yaml" />
+              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="nuxt/assets/data/character-ingredients.yaml" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>
