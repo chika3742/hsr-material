@@ -163,10 +163,11 @@ router.afterEach(() => {
 .alpha-warning-overlay
   width: 100%
   position: sticky
-  padding: 8px
+  padding: 8px 16px
+  font-size: 0.8em
   bottom: 0
   z-index: 999
-  background: rgba(255, 166, 0, 0.4)
+  background: rgba(var(--v-theme-warning), 0.6)
   font-weight: bold
   backdrop-filter: blur(8px)
 
