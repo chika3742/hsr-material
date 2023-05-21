@@ -9,6 +9,8 @@ common:
   path: 運命
   combatType: 属性
   filter: 絞り込み
+  currentLevel: 現在のLv
+  targetLevel: 目標のLv
   skillTypes:
     basicAttack: 通常攻撃
     skill: 戦闘スキル
@@ -273,5 +275,119 @@ skillTitles:
       skill: 不滅のアンバー
       ultimate: 陥陣無帰の炎槍
       talent: 建創者の失われし宝
-  match-7th:
+  march-7th:
     basicAttack: 極寒の弓矢
+    skill: 可愛いは正義
+    ultimate: 氷刻矢雨の時
+    talent: 少女の特権
+  dan-heng:
+    basicAttack: 雲騎槍術・朔風
+    skill: 雲騎槍術・疾雨
+    ultimate: 洞天幻化、長夢一覚
+    talent: 寸長寸強
+  himeko:
+    basicAttack: 武装調律
+    skill: 溶核爆裂
+    ultimate: 天墜の火
+    talent: 乗勝追撃
+  welt:
+    basicAttack: 重力制圧
+    skill: 虚空断界
+    ultimate: 疑似ブラックホール
+    talent: 時空の歪み
+  silver-wolf:
+    basicAttack: "{'|'}システム警告{'|'}"
+    skill: 変更を許可しますか？
+    ultimate: "{'|'}アカウントがBANされた{'|'}"
+    talent: プログラム応答なし…
+  arlan:
+    basicAttack: 疾行する雷の如し
+    skill: 禁錮解除
+    ultimate: 狂者の制裁
+    talent: 痛みと怒りの極み
+  asta:
+    basicAttack: スペクトル光線
+    skill: スターフォール
+    ultimate: 星空祝言
+    talent: 天象学
+  herta:
+    basicAttack: 何見てるの？
+    skill: 一度限りの取引
+    ultimate: 私がかけた魔法だよ
+    talent: やっぱり私がやる
+  bronya:
+    basicAttack: 疾風の弾丸
+    skill: 作戦再展開
+    ultimate: ベロブルグ行進曲
+    talent: 先人一歩
+  seele:
+    basicAttack: 強襲
+    skill: 還刃
+    ultimate: 乱れ蝶
+    talent: 再現
+  serval:
+    basicAttack: 雷鳴音階
+    skill: スパーク
+    ultimate: 機械ブーム登場！
+    talent: 情熱コード
+  gepard:
+    basicAttack: 一意の拳
+    skill: 震撼の一撃
+    ultimate: 永屹の壁
+    talent: 不屈の体躯
+  natasha:
+    basicAttack: 慈心の裏側
+    skill: 愛、救済と選択
+    ultimate: 新生の礼
+    talent: 生命の輝き
+  pela:
+    basicAttack: 氷点狙撃
+    skill: 低温妨害
+    ultimate: 領域制圧
+    talent: データ採取
+  clara:
+    basicAttack: クラーラもお手伝いします
+    skill: スヴァローグが見てる
+    ultimate: 命令じゃなくて約束
+    talent: 家族なんだから
+  sampo:
+    basicAttack: 眩い刃紋
+    skill: 反復横跳びの愛
+    ultimate: サプライズボックス
+    talent: 風を切り裂く匕首
+  hook:
+    basicAttack: おい！火の元に気をつけな
+    skill: おい！フックを覚えてるか？
+    ultimate: ドカン！飛んでけ花火！
+    talent: はっ！火に油を注ぐ
+  qingque:
+    basicAttack: 門前清
+    skill: 海底撈月
+    ultimate: 幺魚暗カン？アガリ！
+    talent: 帝垣美玉
+  tingyun:
+    basicAttack: 逐客令
+    skill: 祥音和韻
+    ultimate: 慶雲光覆儀祷
+    talent: 揺れる紫電
+  jing-yuan:
+    basicAttack: 電光石火
+    skill: 紫霄の雷鳴
+    ultimate: 我が身の輝き
+    talent: 退魔の形神
+  sushang:
+    basicAttack: 雲騎剣経・月虹
+    skill: 雲騎剣経・山傾
+    ultimate: 太虚形蘊・燭夜
+    talent: 游刃若水
+  yanqing:
+    basicAttack: 寒光刺す霜鋒
+    skill: 三尺秋水
+    ultimate: 快雨に戯れる燕
+    talent: 呼影剣
+  bailu:
+    basicAttack: 望・聞・問…蹴！
+    skill: 雲吟乍然、零れる珠露
+    ultimate: 雷鳴率いる躍渊の蛟龍
+    talent: 懸壺済世
+

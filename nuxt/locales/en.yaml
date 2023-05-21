@@ -9,11 +9,20 @@ common:
   filter: Filter
   path: Path
   combatType: Combat Type
+  currentLevel: Current Level
+  targetLevel: Target Level
+  skillTypes:
+    basicAttack: Basic Attack
+    skill: Skill
+    ultimate: Ultimate
+    talent: Talent
 
 pageTitles:
   home: Home
   characters: Characters
   characterDetails: Characters / {characterId}
+  materials: Materials
+  materialDetails: Materials / {materialId}
   warps: Warps Pity Counter
   tpCalc: TP Replenish Calc
   releaseNotes: Release Notes
@@ -30,6 +39,10 @@ footer:
     light: Light
     dark: Dark
     auto: Follow system settings
+
+characterDetailsPage:
+  ascension: Ascension / Character Level Up Materials
+  skills: Skill Leveling Materials
 
 warpsPage:
   warpTypes:
@@ -186,3 +199,188 @@ characterNames:
   bailu: Bailu
   trailblazer: Trailblazer
 
+materialNames:
+  travel-encounters: Travel Encounters
+  adventure-log: Adventure Log
+  travelers-guide: Traveler’s Guide
+  horn-of-snow: Horn of Snow
+  storm-eye: Storm Eye
+  endotherm-chitin: Endotherm Chitin
+  golden-crown-of-the-past-shadow: Golden Crown of the Past Shadow
+  shape-shifters-lightning-staff: Shape Shifter’s Lightning Staff
+  void-cast-iron: Void Cast Iron
+  lightning-crown-of-the-past-shadow: Lightning Crown of the Past Shadow
+  broken-teeth-of-iron-wolf: Broken Teeth of Iron Wolf
+  enigmatic-ectostella: Enigmatic Ectostella
+  thiefs-instinct: Thief’s Instinct
+  usurpers-scheme: Usurper’s Scheme
+  conquerors-will: Conqueror’s Will
+  extinguished-core: Extinguished Core
+  glimmering-core: Glimmering Core
+  squirming-core: Squirming Core
+  silvermane-badge: Silvermane Badge
+  silvermane-insignia: Silvermane Insignia
+  silvermane-medal: Silvermane Medal
+  ancient-part: Ancient Part
+  ancient-spindle: Ancient Spindle
+  ancient-engine: Ancient Engine
+  immortal-scionette: Immortal Scionette
+  immortal-aeroblossom: Immortal Aeroblossom
+  immortal-lumintwig: Immortal Lumintwig
+  artifexs-module: Artifex’s Module
+  artifexs-cogwheel: Artifex’s Cogwheel
+  artifexs-gyreheart: Artifex’s Gyreheart
+  endurance-of-bronze: Endurance of Bronze
+  oath-of-steel: Oath of Steel
+  safeguard-of-amber: Safeguard of Amber
+  arrow-of-the-beast-hunter: Arrow of the Beast Hunter
+  arrow-of-the-demon-slayer: Arrow of the Demon Slayer
+  arrow-of-the-starchaser: Arrow of the Starchaser
+  key-of-inspiration: Key of Inspiration
+  key-of-knowledge: Key of Knowledge
+  key-of-wisdom: Key of Wisdom
+  obsidian-of-dread: Obsidian of Dread
+  obsidian-of-desolation: Obsidian of Desolation
+  obsidian-of-obsession: Obsidian of Obsession
+  shattered-blade: Shattered Blade
+  lifeless-blade: Lifeless Blade
+  worldbreaker-blade: Worldbreaker Blade
+  harmonic-tune: Harmonic Tune
+  ancestral-hymn: Ancestral Hymn
+  stellaris-symphony: Stellaris Symphony
+  seed-of-abundance: Seed of Abundance
+  sprout-of-life: Sprout of Life
+  flower-of-eternity: Flower of Eternity
+  destroyers-final-road: Destroyer’s Final Road
+  guardians-lament: Guardian’s Lament
+  tracks-of-destiny: Tracks of Destiny
+  credit: Credit
+
+
+skillTitles:
+  trailblazer:
+    destruction:
+      basicAttack: Farewell Hit
+      skill: RIP Home Run
+      ultimate: Stardust Ace
+      talent: Perfect Pickoff
+    preservation:
+      basicAttack: Ice-Breaking Light
+      skill: Ever-Burning Amber
+      ultimate: War-Flaming Lance
+      talent: Treasure of the Architects
+  march-7th:
+    basicAttack: Frigid Cold Arrow
+    skill: The Power of Cuteness
+    ultimate: Glacial Cascade
+    talent: Girl Power
+  dan-heng:
+    basicAttack: 'Cloudlancer Art: North Wind'
+    skill: 'Cloudlancer Art: Torrent'
+    ultimate: Ethereal Dream
+    talent: Superiority of Reach
+  himeko:
+    basicAttack: Sawblade Tuning
+    skill: Molten Detonation
+    ultimate: Heavenly Flare
+    talent: Victory Rush
+  welt:
+    basicAttack: Gravity Suppression
+    skill: Edge of the Void
+    ultimate: Synthetic Black Hole
+    talent: Time Distortion
+  silver-wolf:
+    basicAttack: System Warning
+    skill: Allow Changes?
+    ultimate: User Banned
+    talent: Awaiting System Response...
+  arlan:
+    basicAttack: Lightning Rush
+    skill: Shackle Breaker
+    ultimate: Frenzied Punishment
+    talent: Pain and Anger
+  asta:
+    basicAttack: Spectrum Beam
+    skill: Meteor Storm
+    ultimate: Astral Blessing
+    talent: Astrometry
+  herta:
+    basicAttack: What Are You Looking At?
+    skill: One-Time Offer
+    ultimate: It's Magic, I Added Some Magic
+    talent: Fine, I'll Do It Myself
+  bronya:
+    basicAttack: Windrider Bullet
+    skill: Combat Redeployment
+    ultimate: The Belobog March
+    talent: Leading the Way
+  seele:
+    basicAttack: Thwack
+    skill: Sheathed Blade
+    ultimate: Butterfly Flurry
+    talent: Resurgence
+  serval:
+    basicAttack: Roaring Thunderclap
+    skill: Lightning Flash
+    ultimate: Here Comes the Mechanical Fever
+    talent: Galvanic Chords
+  gepard:
+    basicAttack: Fist of Conviction
+    skill: Daunting Smite
+    ultimate: Enduring Bulwark
+    talent: Unyielding Will
+  natasha:
+    basicAttack: Behind the Kindness
+    skill: Love, Heal, and Choose
+    ultimate: Gift of Rebirth
+    talent: Innervation
+  pela:
+    basicAttack: Frost Shot
+    skill: Frostbite
+    ultimate: Zone Suppression
+    talent: Data Collecting
+  clara:
+    basicAttack: I Want to Help
+    skill: Svarog Watches Over You
+    ultimate: Promise, Not Command
+    talent: Because We're Family
+  sampo:
+    basicAttack: Dazzling Blades
+    skill: Ricochet Love
+    ultimate: Surprise Present
+    talent: Windtorn Dagger
+  hook:
+    basicAttack: Hehe! Don't Get Burned!
+    skill: Hey! Remember Hook?
+    ultimate: Boom! Here Comes the Fire!
+    talent: Ha! Oil to the Flames!
+  qingque:
+    basicAttack: Flower Pick
+    skill: A Scoop of Moon
+    ultimate: A Quartet? Woo-hoo!
+    talent: Celestial Jade
+  tingyun:
+    basicAttack: Dislodged
+    skill: Soothing Melody
+    ultimate: Amidst the Rejoicing Clouds
+    talent: Violet Sparknado
+  jing-yuan:
+    basicAttack: Glistening Light
+    skill: Rifting Zenith
+    ultimate: Lightbringer
+    talent: Prana Extirpated
+  sushang:
+    basicAttack: 'Cloudfencer Art: Starshine'
+    skill: 'Cloudfencer Art: Mountainfall'
+    ultimate: 'Shape of Taixu: Dawn Herald'
+    talent: Dancing Blade
+  yanqing:
+    basicAttack: Frost Thorn
+    skill: Darting Ironthorn
+    ultimate: Amidst the Raining Bliss
+    talent: One With the Sword
+  bailu:
+    basicAttack: Diagnostic Kick
+    skill: Singing Among Clouds
+    ultimate: Felicitous Thunderleap
+    talent: Gourdful of Elixir

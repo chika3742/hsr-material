@@ -13,8 +13,8 @@
       thumb-label
     >
       <template #thumb-label="{modelValue: _modelValue}">
-        <div style="width: 52px">
-          {{ _modelValue === rangeIndexes[0] ? "現在のLv" : "目標のLv" }}
+        <div style="white-space: nowrap">
+          {{ _modelValue === rangeIndexes[0] ? tx("common.currentLevel") : tx("common.targetLevel") }}
         </div>
       </template>
     </v-range-slider>
