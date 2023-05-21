@@ -3,6 +3,7 @@
     <div class="py-2 px-3 d-flex align-center">
       <v-btn
         v-if="items[0].purposeType === 'exp'"
+        color="transparent"
         class="my-n2 ml-n3"
         flat
         icon="mdi-swap-horizontal"

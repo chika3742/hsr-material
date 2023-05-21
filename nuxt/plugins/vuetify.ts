@@ -19,6 +19,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             "button-activated": "#d24700",
             rank5: "#f1931d",
             rank4: "#c488fd",
+            card: "#3a3a3a",
           },
         },
         light: {
@@ -28,6 +29,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             "button-activated": "#ff5900",
             rank5: "#f1931d",
             rank4: "#c488fd",
+            card: "#ececec",
           },
         },
       },
