@@ -2,7 +2,6 @@ export type Loc =
   | "common.appName"
   | "common.gameName"
   | "common.alphaWarning"
-  | "common.gacha"
   | "common.ok"
   | "common.cancel"
   | "common.rarity"

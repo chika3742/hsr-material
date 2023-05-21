@@ -2,7 +2,6 @@ common:
   appName: "Honkai: Star Rail Material Note"
   gameName: "Honkai: Star Rail"
   alphaWarning: This app is in alpha version, so it may contain bugs or features that will be changed in the future.
-  gacha: Warp | Warps
   ok: OK
   cancel: Cancel
   rarity: Rarity
@@ -23,7 +22,7 @@ pageTitles:
   characterDetails: Characters / {characterId}
   materials: Materials
   materialDetails: Materials / {materialId}
-  warps: Warps Pity Counter
+  warps: Warp Pity Counter
   tpCalc: TP Replenish Calc
   releaseNotes: Release Notes
   terms: Terms of Use
@@ -45,22 +44,23 @@ characterDetailsPage:
   skills: Skill Leveling Materials
 
 warpsPage:
+  warp: Warp | Warps
   warpTypes:
     11: Character Event Warp
     12: Light Cone Event Warp
     1: Standard Warp
-  urlInput: Paste the URL here
-  get: "Get @:{'common.gacha'}"
-  clear: "Clear @:{'common.gacha'}"
-  progress: "Fetched {n} @:{'common.gacha'}"
+  urlInput: URL Input
+  get: "Get Warps"
+  clear: "Clear Warps"
+  progress: "Fetched {n} @:{'warpsPage.warp'}"
   preparing: Preparing...
   invalidUrl: Invalid URL
   getPityHistory: Show Pity History
-  getPityHistoryDesc: If enabled, all history of the past 6 months will be fetched and you can check the pity count history of ☆4/☆5. However, it takes more to fetch the first time. You need to clear the @:{'common.gacha'} history to change this setting.
-  noNewWarps: No new @:{'common.gacha'} found. If you just pulled, please try again in up to 1 hour.
-  fetched: "Fetched {n} @:{'common.gacha'}"
-  clearDialog: Do you want to clear all @:{'common.gacha'} history?
-  cleared: Cleared @:{'common.gacha'}s
+  getPityHistoryDesc: If enabled, all history of the past 6 months will be fetched and you can check the pity count history of ☆4/☆5. However, it takes more to fetch the first time. You need to clear the warp history to change this setting.
+  noNewWarps: No new warp found. If you just pulled, please try again in up to 1 hour.
+  fetched: "Fetched {n} @:{'warpsPage.warp'}"
+  clearDialog: Do you want to clear all warp history?
+  cleared: Cleared warps
   pityCountWithStar: "☆{star} Pity Count"
   pityCount: Pity Count
   dateTime: Date & Time
@@ -80,11 +80,11 @@ warpsPage:
   about: |
     ## About This Feature
 
-    This feature automatically fetches @:{'common.gacha'} history from the game and displays the pity count. To use this, you need to get the URL below.
+    This feature automatically fetches warp history from the game and displays the pity count. To use this, you need to get the URL below.
 
     ## About Security
 
-    The URL used in this feature has an access key that allows only fetching @:{'common.gacha'} history. Therefore, it cannot be used to access personal information such as email addresses and usernames, or to log in to the game. Please be assured.
+    The URL used in this feature has an access key that allows only fetching warp history. Therefore, it cannot be used to access personal information such as email addresses and usernames, or to log in to the game. Please be assured.
 
     Also, this access key is processed only in the memory of the server and is destroyed after the processing is completed. It will not be recorded in the log or sent to a server other than miHoYo's API.
 
@@ -100,7 +100,7 @@ warpsPage:
       contents: |
         *Confirmed to work only on Windows 11.
 
-        1. Launch @:{'common.gameName'}, select @:{'common.gacha'} > Details > @:{'common.gacha'} History.
+        1. Launch @:{'common.gameName'}, select "Warp" > "View Details" > "Records".
         1. Return to the desktop, right-click the Start button, and select "Terminal" or "Windows PowerShell".
         1. Copy and paste the following command then press Enter key. <div id="windows-script"></div>
         1. The URL will be copied, so paste it into this page.
@@ -113,9 +113,9 @@ warpsPage:
         1. "This website is trying to download a configuration profile" will be displayed, so tap "Allow".
         1. Open the device settings, tap General > VPN & Device Management > Stream Generated CA XXXXXXXX > "Install" in the upper right corner > Enter the passcode > "Install" in the upper right corner > Install.
         1. When you return to the app, "For iOS 10.3+ and iOS 11..." may be displayed, but tap the blue "I've trusted".
-        1. <span class="text-red">From the second time onwards, you only need to follow the steps from here.</span> Launch @:{'common.gameName'}, and open @:{'common.gacha'} > Details.
+        1. <span class="text-red">From the second time onwards, you only need to follow the steps from here.</span> Launch @:{'common.gameName'}, and open "Warp" > "View Details".
         1. Open the Stream app and tap "Sniff Now".
-        1. Return to @:{'common.gameName'} and tap @:{'common.gacha'} History.
+        1. Return to @:{'common.gameName'} and tap "Records".
         1. Return to the Stream app and tap "Stop Sniffing", then tap "Sniff History" on the right.
         1. Tap the one at the top, tap the one that starts with "GET https://api-os-takumi.mihoyo.com", and tap "Request" at the top, then tap the bottom of "REQUEST LINE" and tap "Copy Url" to copy the URL.
 
