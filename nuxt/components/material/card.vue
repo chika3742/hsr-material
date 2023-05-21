@@ -14,6 +14,8 @@
       <span class="ml-2 font-cairo" style="font-size: 1.2em">×{{ quantity }}</span>
     </div>
 
+    <div class="corner-marker" />
+
     <!-- avoid node mismatch error -->
     <client-only>
       <v-tooltip :open-delay="100" activator="parent" location="bottom">
@@ -24,13 +26,17 @@
 </template>
 
 <script lang="ts" setup>
+import {useTheme} from "vuetify"
 import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types/bookmarkable-ingredient"
 import {computed} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
+import materials from "~/assets/data/materials.csv"
 
 const props = defineProps<{
   items: BookmarkableItem[]
 }>()
+
+const theme = useTheme()
 
 const expDefs = computed(() => {
   switch (props.items[0].targetType) {
@@ -62,7 +68,35 @@ const quantity = computed(() => {
   }
 })
 
+const markerColor = computed(() => {
+  switch (materials.find(e => e.id === materialId.value)?.rarity) {
+    case 5:
+      return theme.current.value.colors.rank5
+    case 4:
+      return theme.current.value.colors.rank4
+    case 3:
+      return theme.current.value.colors.rank3
+    case 2:
+      return theme.current.value.colors.rank2
+    default:
+      return theme.current.value.colors.card
+  }
+})
+
 const isExpList = (e: BookmarkableItem[]): e is BookmarkableExp[] => {
   return e.every(e => e.purposeType === "exp")
 }
 </script>
+
+<style lang="sass" scoped>
+.corner-marker
+  position: absolute
+  top: 0
+  left: 0
+  width: 0
+  height: 0
+  border-style: solid
+  border-width: 0 0 16px 16px
+  border-color: transparent transparent transparent v-bind(markerColor)
+  z-index: 1
+</style>
