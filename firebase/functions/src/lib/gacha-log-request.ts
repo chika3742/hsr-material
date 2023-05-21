@@ -86,8 +86,6 @@ export class GachaLogRequest {
       end_id: lastId ?? "0",
     }
 
-    console.log(this.params.authKey)
-
     const url = new URL(`${endpoint}?${new URLSearchParams(params).toString()}`)
 
     const result = await axios.get<{
