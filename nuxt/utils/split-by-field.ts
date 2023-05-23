@@ -1,5 +1,5 @@
-export const splitByField = (source: Record<string, unknown>[], field: string) => {
-  const result: Record<string, unknown>[][] = []
+export const splitByField = <T extends Record<string, unknown>, U extends keyof T>(source: T[], field: U): T[][] => {
+  const result: T[][] = []
 
   for (const element of source) {
     const existingGroup = result.find(group => group[0][field] === element[field])
