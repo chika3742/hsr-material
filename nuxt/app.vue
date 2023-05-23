@@ -17,7 +17,7 @@
       </v-app-bar>
 
       <v-main class="h-100">
-        <div class="position-sticky" style="top: 64px; z-index: 9999">
+        <div class="position-fixed" style="top: 64px; width: 100%; z-index: 9999">
           <v-progress-linear :active="loadingPage" color="primary" indeterminate />
         </div>
 
