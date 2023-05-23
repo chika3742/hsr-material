@@ -43,6 +43,10 @@ characterDetailsPage:
   ascension: Ascension / Character Level Up Materials
   skills: Skill Leveling Materials
 
+materialDetailsPage:
+  characterUsage: Characters for Which This Material Is Used
+  lightConeUsage: Light Cones for Which This Material Is Used
+
 warpsPage:
   warp: Warp | Warps
   warpTypes:
