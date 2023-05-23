@@ -6,7 +6,7 @@ export type MaterialCategory =
   | "advanced_skill_upgrade"
   | "others"
 
-export interface Material {
+export interface Material extends Record<string, unknown> {
   id: string
   $nameJA: string
   yomi?: string
