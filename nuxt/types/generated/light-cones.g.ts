@@ -9,7 +9,6 @@ export interface LightCone {
   path: "destruction" | "the_hunt" | "erudition" | "harmony" | "nihility" | "preservation" | "abundance";
   materials: LightConeMaterialDefinitions;
 }
-
 export interface LightConeMaterialDefinitions {
   primary: string;
   common: string;

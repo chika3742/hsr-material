@@ -6,20 +6,66 @@ definePageMeta({
   title: "lightCones",
 })
 
+const filteringRarity = ref<number[]>([])
+const expanded = ref<number[]>([])
+
 const items = computed(() => {
-  return lightCones.sort((a, b) => b.rarity - a.rarity)
+  return lightCones.filter(e => filteringRarity.value.length === 0 || e.rarity === filteringRarity.value[0]).sort((a, b) => b.rarity - a.rarity)
 })
+
+const splitedByRarity = splitByField(lightCones, "rarity")
+const splitedByPath = splitByField(lightCones, "path")
 </script>
 
 <template>
-  <GroupedList
-    :image-func="getLightConeImage"
-    :items="items"
-    category-field="path"
-    category-i18n-key="paths"
-    item-i18n-key="lightConeNames"
-    link-base-path="/light-cones"
-  />
+  <div>
+    <v-row no-gutters style="gap: 8px">
+      <v-btn :color="filteringRarity.length >= 1 ? 'star' : ''" prepend-icon="mdi-filter">
+        <span>{{ tx("common.filter") }}</span>
+
+        <client-only>
+          <v-menu activator="parent">
+            <v-list v-model:selected="filteringRarity">
+              <v-list-item
+                v-for="g in splitedByRarity"
+                :key="g[0].rarity"
+                :value="g[0].rarity"
+              >
+                <v-row no-gutters>
+                  <v-icon v-for="i in g[0].rarity" :key="i" color="star" size="18">
+                    mdi-star
+                  </v-icon>
+                </v-row>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </client-only>
+      </v-btn>
+
+      <v-btn
+        :disabled="expanded.length === splitedByPath.length"
+        prepend-icon="mdi-expand-all"
+        @click="expanded = splitedByPath.map((_, i) => i)"
+      >
+        {{ tx("common.expandAll") }}
+      </v-btn>
+
+      <v-btn :disabled="expanded.length === 0" prepend-icon="mdi-collapse-all" @click="expanded = []">
+        {{ tx("common.collapseAll") }}
+      </v-btn>
+    </v-row>
+
+    <GroupedList
+      v-model="expanded"
+      :image-func="getLightConeImage"
+      :items="items"
+      category-field="path"
+      category-i18n-key="paths"
+      class="mt-4"
+      item-i18n-key="lightConeNames"
+      link-base-path="/light-cones"
+    />
+  </div>
 </template>
 
 <style lang="sass" scoped />

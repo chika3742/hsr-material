@@ -8,6 +8,8 @@ common:
   path: 運命
   combatType: 属性
   filter: 絞り込み
+  expandAll: 全て展開
+  collapseAll: 全て折りたたむ
   currentLevel: 現在のLv
   targetLevel: 目標のLv
   skillTypes:

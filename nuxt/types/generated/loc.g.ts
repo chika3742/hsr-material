@@ -8,6 +8,8 @@ export type Loc =
   | "common.path"
   | "common.combatType"
   | "common.filter"
+  | "common.expandAll"
+  | "common.collapseAll"
   | "common.currentLevel"
   | "common.targetLevel"
   | "common.skillTypes.basicAttack"

@@ -6,6 +6,8 @@ common:
   cancel: Cancel
   rarity: Rarity
   filter: Filter
+  expandAll: Expand All
+  collapseAll: Collapse All
   path: Path
   combatType: Combat Type
   currentLevel: Current Level
