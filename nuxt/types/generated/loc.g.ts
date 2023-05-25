@@ -182,6 +182,7 @@ export type Loc =
   | "materialNames.guardians-lament"
   | "materialNames.tracks-of-destiny"
   | "materialNames.credit"
+  | "materialNames.gelid-chitin"
   | "skillTitles.trailblazer.destruction.basicAttack"
   | "skillTitles.trailblazer.destruction.skill"
   | "skillTitles.trailblazer.destruction.ultimate"
