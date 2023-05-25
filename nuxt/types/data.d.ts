@@ -16,6 +16,12 @@ declare module "~/assets/data/character-ingredients.yaml" {
   export default characterIngredients
 }
 
+declare module "~/assets/data/light-cones.yaml" {
+  import {LightCone} from "~/types/generated/light-cones.g"
+  const lightCones: (LightCone & Record<string, unknown>)[]
+  export default lightCones
+}
+
 declare module "~/assets/data/materials.csv" {
   import {Material} from "~/types/data/materials"
   const materials: Material[]
