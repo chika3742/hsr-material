@@ -33,7 +33,7 @@ const filteredCharacters = computed(() => {
 <template>
   <div>
     <v-row no-gutters>
-      <v-btn prepend-icon="mdi-filter">
+      <v-btn :color="Object.values(filter).some(e => e.length >= 1) ? 'star' : ''" prepend-icon="mdi-filter">
         <span>{{ tx("common.filter") }}</span>
         <client-only>
           <v-menu activator="parent" :close-on-content-click="false" max-width="400px">

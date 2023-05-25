@@ -207,6 +207,14 @@ characterNames:
   yanqing: 彦卿
   bailu: 白露
 
+materialCategories:
+  exp: 経験値素材
+  character_ascension: キャラクター昇格素材
+  light_cone_or_skill_upgrade: 光円錐・スキル強化素材
+  common: 一般素材
+  advanced_skill_upgrade: 上級スキル強化素材
+  others: その他
+
 materialNames:
   travel-encounters: 旅の見聞
   adventure-log: 冒険記録
@@ -263,6 +271,7 @@ materialNames:
   guardians-lament: 守護者の悲願
   tracks-of-destiny: 運命の足跡
   credit: 信用ポイント
+  gelid-chitin: 苦寒晶殻
 
 skillTitles:
   trailblazer:

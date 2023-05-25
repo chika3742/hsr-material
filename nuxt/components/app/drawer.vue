@@ -45,6 +45,10 @@ const drawerItems: (DrawerItem | Divider)[] = [
     icon: "mdi-cone",
     to: "/light-cones",
   },
+  {
+    icon: "mdi-grass",
+    to: "/materials",
+  },
   "---" as const,
   {
     icon: "mdi-sphere",

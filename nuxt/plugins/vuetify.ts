@@ -15,6 +15,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         dark: {
           dark: true,
           colors: {
+            primary: "#ee8411",
             star: "#ffff00",
             "button-activated": "#d24700",
             rank5: "#f1931d",
@@ -27,6 +28,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         light: {
           dark: false,
           colors: {
+            primary: "#008cff",
             star: "#ff8c00",
             "button-activated": "#ff5900",
             rank5: "#f1931d",

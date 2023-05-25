@@ -201,6 +201,14 @@ characterNames:
   bailu: Bailu
   trailblazer: Trailblazer
 
+materialCategories:
+  exp: EXP Materials
+  character_ascension: Character Ascension Materials
+  light_cone_or_skill_upgrade: Light Cone or Skill Upgrade Materials
+  common: Common Materials
+  advanced_skill_upgrade: Advanced Skill Upgrade Materials
+  others: Others
+
 materialNames:
   travel-encounters: Travel Encounters
   adventure-log: Adventure Log
@@ -257,7 +265,7 @@ materialNames:
   guardians-lament: Guardian’s Lament
   tracks-of-destiny: Tracks of Destiny
   credit: Credit
-
+  gelid-chitin: Gelid Chitin
 
 skillTitles:
   trailblazer:
