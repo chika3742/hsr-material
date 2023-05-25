@@ -8,6 +8,10 @@ export const getCharacterImage = (characterId: string, variant: "full" | "small"
   }
 }
 
+export const getLightConeImage = (lightConeId: string) => {
+  return new URL(`../assets/img/light-cones/${lightConeId}.webp`, import.meta.url).toString()
+}
+
 export const getCombatTypeImage = (type: CombatType) => {
   return new URL(`../assets/img/combat-types/${type}.webp`, import.meta.url).toString()
 }

@@ -8,6 +8,8 @@ common:
   path: 運命
   combatType: 属性
   filter: 絞り込み
+  expandAll: 全て展開
+  collapseAll: 全て折りたたむ
   currentLevel: 現在のLv
   targetLevel: 目標のLv
   skillTypes:
@@ -20,6 +22,8 @@ pageTitles:
   home: ホーム
   characters: キャラクター
   characterDetails: キャラクター / {characterId}
+  lightCones: 光円錐
+  lightConeDetails: 光円錐 / {lightConeId}
   materials: 素材一覧(逆引き)
   materialDetails: 素材 / {materialId}
   warps: 跳躍天井カウンター(β)
@@ -398,4 +402,145 @@ skillTitles:
     skill: 雲吟乍然、零れる珠露
     ultimate: 雷鳴率いる躍渊の蛟龍
     talent: 懸壺済世
+
+lightConeNames:
+  arrows: 矢じり
+  cornucopia: 物穣
+  collapsing-sky: 天傾
+  amber: 琥珀
+  void: 幽邃
+  chorus: 斉頌
+  data-bank: アーカイブ
+  darting-arrow: 離弦
+  fine-fruit: 嘉果
+  shattered-home: 楽壊
+  defense: 防衛
+  loop: 淵環
+  meshing-cogs: 輪契
+  passkey: 霊鍵
+  adversarial: 相抗
+  multiplication: 蕃殖
+  mutual-demise: 倶歿
+  pioneering: 新天地
+  hidden-shadow: 匿影
+  mediation: 同調
+  sagacity: 見識
+  post-op-conversation: 手術後の会話
+  good-night-and-sleep-well: おやすみなさいと寝顔
+  day-one-of-my-new-life: 余生の初日
+  only-silence-remains: 沈黙のみ
+  memories-of-the-past: 記憶の中の姿
+  the-moles-welcome-you: モグラ党へようこそ
+  the-birth-of-the-self: 「私」の誕生
+  shared-feeling: 同じ気持ち
+  eyes-of-the-prey: 獲物の視線
+  landaus-choice: ランドゥーの選択
+  swordplay: 論剣
+  planetary-rendezvous: 惑星との出会い
+  a-secret-vow: 秘密の誓い
+  perfect-timing: 今が丁度
+  resolution-shines-as-pearls-of-sweat: 決意は汗のように輝く
+  trend-of-the-universal-market: 星間市場のトレンド
+  subscribe-for-more: フォローして！
+  quid-pro-quo: 等価交換
+  warmth-shortens-cold-nights: 暖かい夜は長くない
+  in-the-night: 夜の帳の中で
+  but-the-battle-isnt-over: だが戦争は終わらない
+  in-the-name-of-the-world: 世界の名を以て
+  moment-of-victory: 勝利の刹那
+  sleep-like-the-dead: 泥の如き眠り
+  time-waits-for-no-one: 時節は居らず
+  on-the-fall-of-an-aeon: とある星神の殞落を記す
+  cruising-in-the-stellar-sea: 星海巡航
+  texture-of-memories: 記憶の素材
+  make-the-world-clamor: この世界に喧噪を
+  night-on-the-milky-way: 銀河鉄道の夜
+  before-dawn: 夜明け前
+  under-the-blue-sky: 青空の下で
+  geniuses-repose: 天才たちの休息
+  we-are-wildfire: 我ら地炎
+  river-flows-in-spring: 春水に初生する
+  fermata: フェルマータ
+  woof-walk-time: ワン！散歩の時間！
+  the-seriousness-of-breakfast: 朝食の儀式感
+  we-will-meet-again: またお会いしましょう
+  this-is-me: これがウチだよ！
+  return-to-darkness: 幽冥に帰す
+  carve-the-moon-weave-the-clouds: 彫月裁雲の意
+  nowhere-to-run: 逃げ場なし
+  today-is-another-peaceful-day: 今日も平和な一日
+  something-irreplaceable: かけがえのないもの
+  dance-dance-dance: ダンス！ダンス！ダンス！
+  past-and-future: 過去と未来
+
+lightConeSkillDescriptions:
+  arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
+  cornucopia: 装備キャラが戦闘スキル、または必殺技を発動した時、治癒量+<12%>。
+  collapsing-sky: 装備キャラの通常攻撃と戦闘スキルの与ダメージ+<20%>。
+  amber: 装備キャラの防御力+<16%>。
+  void: 戦闘開始時、装備キャラの効果命中+<20%>、3ターン継続。
+  chorus: 戦闘に入った後、味方全体の攻撃力+<8%>。同系統のスキルは重ね掛け不可。
+  data-bank: 装備キャラの必殺技の与ダメージ+<28%>。
+  darting-arrow: 装備キャラが敵を倒した後、攻撃力+<24%>、3ターン持続。
+  fine-fruit: 戦闘開始時、味方全体のEPを<6>回復する。
+  shattered-home: 残りHPが50%を超える敵に対する、装備キャラの与ダメージ+<20%>。
+  defense: 装備キャラが必殺技を発動した時、HPを最大HP<18%>分回復する。
+  loop: 減速状態の敵に対する、装備キャラの与ダメージ+<24%>。
+  meshing-cogs: 装備キャラが攻撃を行った後、または攻撃を受けた後、さらにEPを<4>回復する、この効果は1ターンに1回まで発動できる。
+  passkey: 装備キャラが戦闘スキルを発動した後、さらにEPを<8>回復する、この効果は1ターンに1回まで発動できる。
+  adversarial: 装備キャラが敵を倒した後、速度+<10%>、2ターン持続。
+  multiplication: 装備キャラが通常攻撃を行った後、次の行動順が<12%>早まる。
+  mutual-demise: 装備キャラの残りHPが80%未満の場合、会心率+<12%>。
+  pioneering: 装備キャラが敵を弱点撃破した時、HPを最大HP<12%>分回復する。
+  hidden-shadow: 戦闘スキルを発動した後、装備キャラの次の通常攻撃が、敵に自身の攻撃力<60%>分の付加ダメージを与える。
+  mediation: 戦闘に入る時、味方全体の速度+<12>、1ターン継続。
+  sagacity: 装備キャラが必殺技を発動した時、攻撃力+<24%>、2ターン継続。
+  post-op-conversation: 装備キャラのEP回復効率+<12%>。
+  good-night-and-sleep-well: 敵にデバフが1つあるごとに、その敵に対する装備キャラの与ダメージ+<12%>、最大で3層累積できる。この効果は持続ダメージにも有効。
+  day-one-of-my-new-life: 装備キャラの防御力+<8%>。同系統のスキルは重ね掛け不可。
+  only-silence-remains: 装備キャラの攻撃力+<12%>。
+  memories-of-the-past: 装備キャラの撃破特効+<4>回復する、この効果は1ターンに1回まで発動できる。
+  the-moles-welcome-you: 装備キャラが通常攻撃、戦闘スキルまたは必殺技で敵に攻撃を行った後、それぞれ「わんぱく値」を1層まで獲得できる。1層につき、装備キャラの攻撃力+<12%>。
+  the-birth-of-the-self: 装備キャラの追加攻撃の与ダメージ+<24%>。
+  shared-feeling: 装備キャラの治癒量+<2>回復する。
+  eyes-of-the-prey: 装備キャラの効果命中+<24%>。
+  landaus-choice: 装備キャラが敵の攻撃を受ける確率がアップする、被ダメージ-<16%>。
+  swordplay: 装備キャラの攻撃が連続で同じ敵に命中するたびに、与ダメージ+<8%>、この効果は最大で5層累積できる。ターゲットが変わると、バフはリセットされる。
+  planetary-rendezvous: 戦闘に入った後、味方が装備キャラと同じ属性のダメージを与えた時、与ダメージ+<12%>。
+  a-secret-vow: 装備キャラの与ダメージ+<20%>。
+  perfect-timing: 装備キャラの効果抵抗+<15%>アップできる。
+  resolution-shines-as-pearls-of-sweat: 装備キャラの攻撃が敵に命中した時、その敵が「陥落」状態でない場合、<12%>、1ターン継続。
+  trend-of-the-universal-market: 装備キャラの防御力+<40%>分の持続ダメージを受ける、2ターン継続。
+  subscribe-for-more: 装備キャラの通常攻撃と戦闘スキルの与ダメージ+<24%>。
+  quid-pro-quo: 装備キャラのターンが回って来た時、自身以外のEPが50%未満の味方からランダムに1人選択し、EPを<8>回復させる。
+  warmth-shortens-cold-nights: 装備キャラの最大HP+<2%>分回復する。
+  in-the-night: 装備キャラの会心率+<12%>、最大で6層累積できる。
+  but-the-battle-isnt-over: 装備キャラのEP回復効率+<30%>、1ターン継続。
+  in-the-name-of-the-world: デバフ状態の敵に対して、装備キャラの与ダメージ+<24%>。
+  moment-of-victory: 装備キャラの防御力+<24%>、効果は自身のターンが終了するまで継続。
+  sleep-like-the-dead: 装備キャラの会心ダメージ+<36%>、1ターン継続。この効果は3ターンごとに1回発動できる。
+  time-waits-for-no-one: 装備キャラの最大HP+<36%>分の付加ダメージを与える。このダメージはバフの影響を受けず、ターンが回ってくるたびに1回まで発生する。
+  on-the-fall-of-an-aeon: 装備キャラが攻撃した時、今回の戦闘中、装備キャラの攻撃力+<12%>、2ターン継続。
+  cruising-in-the-stellar-sea: 装備キャラの会心率+<20%>、2ターン継続。
+  texture-of-memories: 装備キャラの効果抵抗+<12%>。
+  make-the-world-clamor: 戦闘に入る時、装備キャラはEPを<32%>。
+  night-on-the-milky-way: フィールド上にいる敵1体につき、装備キャラの攻撃力+<30%>、1ターン継続。
+  before-dawn: 装備キャラの会心ダメージ+<48%>。
+  under-the-blue-sky: 装備キャラの攻撃力+<12%>、3ターン継続。
+  geniuses-repose: 装備キャラの攻撃力+<24%>、3ターン継続。
+  we-are-wildfire: 戦闘開始時、味方全体の被ダメージ-<30%>分回復する。
+  river-flows-in-spring: 戦闘に入った後、装備キャラの速度+<12%>。この効果は装備キャラがダメージを受けた後に失効し、装備キャラの次のターンが終了した時に再度効力を発生する。
+  fermata: 装備キャラの撃破特効+<16%>、この効果は持続ダメージにも有効。
+  woof-walk-time: 装備キャラの攻撃力+<16%>、この効果は持続ダメージにも有効。
+  the-seriousness-of-breakfast: 装備キャラの与ダメージ+<4%>、この効果は最大で3層累積できる。
+  we-will-meet-again: 装備キャラが通常攻撃または戦闘スキルを発動した後、攻撃を受けた敵からランダムに1体選択し、装備キャラの攻撃力<48%>分の付加ダメージを与える。
+  this-is-me: 装備キャラの防御力+<60%>分アップする。この効果は必殺技を発動するたび、1体の敵に対して1回まで発動できる。
+  return-to-darkness: 装備キャラの会心率+<16%>の固定確率で攻撃を受けた敵のバフを1つ解除する、この効果は1回の攻撃で1回まで発動できる。
+  carve-the-moon-weave-the-clouds: |
+    戦闘開始時、および装備キャラのターンが回ってきた時、ランダムで効果を1つ発動する。この効果が発動されるたび、前回の効果を上書きする。同じ効果は連続で発動されない。効果は以下を含む：味方全体の攻撃力+<6%>。同系統のスキルは累積できず、装備キャラが戦闘不能状態になると効果は解除される。
+  nowhere-to-run: 装備キャラの攻撃力+<12%>分のHPを回復する。
+  today-is-another-peaceful-day: 戦闘に入った後、装備キャラの最大EPに応じて、装備キャラの与ダメージをアップする。1EPにつき+<0.2%>、最大で160までカウントされる。
+  something-irreplaceable: 装備キャラの攻撃力+<24%>、効果は自身の次のターンが終了するまで継続。この効果は累積できず、ターンが回ってくるたびに1回まで発動できる。
+  dance-dance-dance: 装備キャラが必殺技を発動した後、味方全体の行動順が<16%>早まる。
+  past-and-future: 装備キャラが戦闘スキルを発動した後、次に行動する他の味方の与ダメージ+<16%>、1ターン継続。
 
