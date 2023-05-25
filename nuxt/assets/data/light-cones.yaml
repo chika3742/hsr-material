@@ -1,0 +1,476 @@
+- id: collapsing-sky
+  $nameJA: 天傾
+  rarity: 3
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:conquerors-will
+- id: shattered-home
+  $nameJA: 楽壊
+  rarity: 3
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:squirming-core
+- id: mutual-demise
+  $nameJA: 倶歿
+  rarity: 3
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:silvermane-medal
+- id: the-moles-welcome-you
+  $nameJA: モグラ党へようこそ
+  rarity: 4
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:conquerors-will
+- id: a-secret-vow
+  $nameJA: 秘密の誓い
+  rarity: 4
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:silvermane-medal
+- id: on-the-fall-of-an-aeon
+  $nameJA: とある星神の殞落を記す
+  rarity: 5
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:squirming-core
+- id: under-the-blue-sky
+  $nameJA: 青空の下で
+  rarity: 4
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:immortal-lumintwig
+- id: woof-walk-time
+  $nameJA: ワン！散歩の時間！
+  rarity: 4
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:squirming-core
+- id: nowhere-to-run
+  $nameJA: 逃げ場なし
+  rarity: 4
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:silvermane-medal
+- id: something-irreplaceable
+  $nameJA: かけがえのないもの
+  rarity: 5
+  path: destruction
+  materials:
+    primary: idtogroup:worldbreaker-blade
+    common: idtogroup:ancient-engine
+- id: arrows
+  $nameJA: 矢じり
+  rarity: 3
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:conquerors-will
+- id: darting-arrow
+  $nameJA: 離弦
+  rarity: 3
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:silvermane-medal
+- id: adversarial
+  $nameJA: 相抗
+  rarity: 3
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:ancient-engine
+- id: only-silence-remains
+  $nameJA: 沈黙のみ
+  rarity: 4
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:silvermane-medal
+- id: swordplay
+  $nameJA: 論剣
+  rarity: 4
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:squirming-core
+- id: subscribe-for-more
+  $nameJA: フォローして！
+  rarity: 4
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:artifexs-gyreheart
+- id: in-the-night
+  $nameJA: 夜の帳の中で
+  rarity: 5
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:conquerors-will
+- id: sleep-like-the-dead
+  $nameJA: 泥の如き眠り
+  rarity: 5
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:conquerors-will
+- id: cruising-in-the-stellar-sea
+  $nameJA: 星海巡航
+  rarity: 5
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:squirming-core
+- id: river-flows-in-spring
+  $nameJA: 春水に初生する
+  rarity: 4
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:ancient-engine
+- id: return-to-darkness
+  $nameJA: 幽冥に帰す
+  rarity: 4
+  path: the_hunt
+  materials:
+    primary: idtogroup:arrow-of-the-starchaser
+    common: idtogroup:immortal-lumintwig
+- id: data-bank
+  $nameJA: アーカイブ
+  rarity: 3
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:squirming-core
+- id: passkey
+  $nameJA: 霊鍵
+  rarity: 3
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:squirming-core
+- id: sagacity
+  $nameJA: 見識
+  rarity: 3
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:conquerors-will
+- id: the-birth-of-the-self
+  $nameJA: 「私」の誕生
+  rarity: 4
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:ancient-engine
+- id: make-the-world-clamor
+  $nameJA: この世界に喧噪を
+  rarity: 4
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:ancient-engine
+- id: night-on-the-milky-way
+  $nameJA: 銀河鉄道の夜
+  rarity: 5
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:squirming-core
+- id: before-dawn
+  $nameJA: 夜明け前
+  rarity: 5
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:immortal-lumintwig
+- id: geniuses-repose
+  $nameJA: 天才たちの休息
+  rarity: 4
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:immortal-lumintwig
+- id: the-seriousness-of-breakfast
+  $nameJA: 朝食の儀式感
+  rarity: 4
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:squirming-core
+- id: today-is-another-peaceful-day
+  $nameJA: 今日も平和な一日
+  rarity: 4
+  path: erudition
+  materials:
+    primary: idtogroup:key-of-wisdom
+    common: idtogroup:immortal-lumintwig
+- id: chorus
+  $nameJA: 斉頌
+  rarity: 3
+  path: harmony
+  materials:
+    primary: idtogroup:stellaris-symphony
+    common: idtogroup:silvermane-medal
+- id: meshing-cogs
+  $nameJA: 輪契
+  rarity: 3
+  path: harmony
+  materials:
+    primary: idtogroup:stellaris-symphony
+    common: idtogroup:silvermane-medal
+- id: mediation
+  $nameJA: 同調
+  rarity: 3
+  path: harmony
+  materials:
+    primary: idtogroup:stellaris-symphony
+    common: idtogroup:squirming-core
+- id: memories-of-the-past
+  $nameJA: 記憶の中の姿
+  rarity: 4
+  path: harmony
+  materials:
+    primary: idtogroup:stellaris-symphony
+    common: idtogroup:silvermane-medal
+- id: planetary-rendezvous
+  $nameJA: 惑星との出会い
+  rarity: 4
+  path: harmony
+  materials:
+    primary: idtogroup:stellaris-symphony
+    common: idtogroup:conquerors-will
+- id: but-the-battle-isnt-over
+  $nameJA: だが戦争は終わらない
+  rarity: 5
+  path: harmony
+  materials:
+    primary: idtogroup:stellaris-symphony
+    common: idtogroup:silvermane-medal
+- id: carve-the-moon-weave-the-clouds
+  $nameJA: 彫月裁雲の意
+  rarity: 4
+  path: harmony
+  materials:
+    primary: idtogroup:stellaris-symphony
+    common: idtogroup:conquerors-will
+- id: dance-dance-dance
+  $nameJA: ダンス！ダンス！ダンス！
+  rarity: 4
+  path: harmony
+  materials:
+    primary: idtogroup:stellaris-symphony
+    common: idtogroup:artifexs-gyreheart
+- id: past-and-future
+  $nameJA: 過去と未来
+  rarity: 4
+  path: harmony
+  materials:
+    primary: idtogroup:stellaris-symphony
+    common: idtogroup:squirming-core
+- id: void
+  $nameJA: 幽邃
+  rarity: 3
+  path: nihility
+  materials:
+    primary: idtogroup:obsidian-of-obsession
+    common: idtogroup:ancient-engine
+- id: loop
+  $nameJA: 淵環
+  rarity: 3
+  path: nihility
+  materials:
+    primary: idtogroup:obsidian-of-obsession
+    common: idtogroup:ancient-engine
+- id: hidden-shadow
+  $nameJA: 匿影
+  rarity: 3
+  path: nihility
+  materials:
+    primary: idtogroup:obsidian-of-obsession
+    common: idtogroup:artifexs-gyreheart
+- id: good-night-and-sleep-well
+  $nameJA: おやすみなさいと寝顔
+  rarity: 4
+  path: nihility
+  materials:
+    primary: idtogroup:obsidian-of-obsession
+    common: idtogroup:silvermane-medal
+- id: eyes-of-the-prey
+  $nameJA: 獲物の視線
+  rarity: 4
+  path: nihility
+  materials:
+    primary: idtogroup:obsidian-of-obsession
+    common: idtogroup:ancient-engine
+- id: resolution-shines-as-pearls-of-sweat
+  $nameJA: 決意は汗のように輝く
+  rarity: 4
+  path: nihility
+  materials:
+    primary: idtogroup:obsidian-of-obsession
+    common: idtogroup:artifexs-gyreheart
+- id: in-the-name-of-the-world
+  $nameJA: 世界の名を以て
+  rarity: 5
+  path: nihility
+  materials:
+    primary: idtogroup:obsidian-of-obsession
+    common: idtogroup:silvermane-medal
+- id: fermata
+  $nameJA: フェルマータ
+  rarity: 4
+  path: nihility
+  materials:
+    primary: idtogroup:obsidian-of-obsession
+    common: idtogroup:silvermane-medal
+- id: we-will-meet-again
+  $nameJA: またお会いしましょう
+  rarity: 4
+  path: nihility
+  materials:
+    primary: idtogroup:obsidian-of-obsession
+    common: idtogroup:ancient-engine
+- id: amber
+  $nameJA: 琥珀
+  rarity: 3
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:squirming-core
+- id: defense
+  $nameJA: 防衛
+  rarity: 3
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:conquerors-will
+- id: pioneering
+  $nameJA: 新天地
+  rarity: 3
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:squirming-core
+- id: day-one-of-my-new-life
+  $nameJA: 余生の初日
+  rarity: 4
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:squirming-core
+- id: landaus-choice
+  $nameJA: ランドゥーの選択
+  rarity: 4
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:squirming-core
+- id: trend-of-the-universal-market
+  $nameJA: 星間市場のトレンド
+  rarity: 4
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:immortal-lumintwig
+- id: moment-of-victory
+  $nameJA: 勝利の刹那
+  rarity: 5
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:silvermane-medal
+- id: texture-of-memories
+  $nameJA: 記憶の素材
+  rarity: 5
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:squirming-core
+- id: we-are-wildfire
+  $nameJA: 我ら地炎
+  rarity: 4
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:ancient-engine
+- id: this-is-me
+  $nameJA: これがウチだよ！
+  rarity: 4
+  path: preservation
+  materials:
+    primary: idtogroup:safeguard-of-amber
+    common: idtogroup:conquerors-will
+- id: cornucopia
+  $nameJA: 物穣
+  rarity: 3
+  path: abundance
+  materials:
+    primary: idtogroup:flower-of-eternity
+    common: idtogroup:silvermane-medal
+- id: fine-fruit
+  $nameJA: 嘉果
+  rarity: 3
+  path: abundance
+  materials:
+    primary: idtogroup:flower-of-eternity
+    common: idtogroup:squirming-core
+- id: multiplication
+  $nameJA: 蕃殖
+  rarity: 3
+  path: abundance
+  materials:
+    primary: idtogroup:flower-of-eternity
+    common: idtogroup:immortal-lumintwig
+- id: post-op-conversation
+  $nameJA: 手術後の会話
+  rarity: 4
+  path: abundance
+  materials:
+    primary: idtogroup:flower-of-eternity
+    common: idtogroup:squirming-core
+- id: shared-feeling
+  $nameJA: 同じ気持ち
+  rarity: 4
+  path: abundance
+  materials:
+    primary: idtogroup:flower-of-eternity
+    common: idtogroup:artifexs-gyreheart
+- id: perfect-timing
+  $nameJA: 今が丁度
+  rarity: 4
+  path: abundance
+  materials:
+    primary: idtogroup:flower-of-eternity
+    common: idtogroup:artifexs-gyreheart
+- id: quid-pro-quo
+  $nameJA: 等価交換
+  rarity: 4
+  path: abundance
+  materials:
+    primary: idtogroup:flower-of-eternity
+    common: idtogroup:silvermane-medal
+- id: warmth-shortens-cold-nights
+  $nameJA: 暖かい夜は長くない
+  rarity: 4
+  path: abundance
+  materials:
+    primary: idtogroup:flower-of-eternity
+    common: idtogroup:squirming-core
+- id: time-waits-for-no-one
+  $nameJA: 時節は居らず
+  rarity: 5
+  path: abundance
+  materials:
+    primary: idtogroup:flower-of-eternity
+    common: idtogroup:squirming-core
