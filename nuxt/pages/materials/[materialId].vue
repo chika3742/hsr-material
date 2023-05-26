@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import materials from "~/assets/data/materials.csv"
+import ItemListItem from "~/components/item-list-item.vue"
 
 definePageMeta({
   title: "materialDetails",
@@ -15,6 +16,7 @@ if (!materials.some(e => e.id === route.params.materialId)) {
 const material = materials.find(e => e.id === route.params.materialId)!
 
 const characterUsage = getMaterialUsageCharacter(material.id)
+const lightConeUsage = getMaterialUsageLightCone(material.id)
 </script>
 
 <template>
@@ -37,6 +39,25 @@ const characterUsage = getMaterialUsageCharacter(material.id)
           <CharacterIconCard v-for="characterId in characterUsage" :key="characterId" :character-id="characterId" />
         </v-row>
       </v-card-text>
+    </v-card>
+
+    <v-card v-if="lightConeUsage.length >= 1" :title="tx('materialDetailsPage.lightConeUsage')">
+      <v-list>
+        <template v-for="group in splitByField(lightConeUsage, 'path')" :key="group[0].id">
+          <v-list-subheader>
+            {{ $t(`paths.${group[0].path}`) }}
+          </v-list-subheader>
+
+          <ItemListItem
+            v-for="lightCone in group"
+            :key="lightCone.id"
+            :image-func="getLightConeImage"
+            :item="lightCone"
+            item-i18n-key="lightConeNames"
+            link-base-path="/light-cones"
+          />
+        </template>
+      </v-list>
     </v-card>
   </div>
 </template>
