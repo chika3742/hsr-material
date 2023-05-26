@@ -22,6 +22,12 @@ declare module "~/assets/data/light-cones.yaml" {
   export default lightCones
 }
 
+declare module "~/assets/data/light-cone-ingredients.yaml" {
+  import {LightConeIngredients} from "~/types/generated/light-cone-ingredients.g"
+  const lightConeIngredients: LightConeIngredients
+  export default lightConeIngredients
+}
+
 declare module "~/assets/data/materials.csv" {
   import {Material} from "~/types/data/materials"
   const materials: Material[]
