@@ -1,0 +1,41 @@
+$schema: https://json-schema.org/draft-07/schema
+
+type: array
+
+items:
+  $ref: "#/definitions/lightCone"
+
+definitions:
+  lightCone:
+    type: object
+    additionalProperties: false
+    required:
+      - id
+      - $nameJA
+      - rarity
+      - path
+      - materials
+
+    properties:
+      id:
+        type: string
+      $nameJA:
+        type: string
+      rarity:
+        type: integer
+      path:
+        $ref: "./characters.yaml#/definitions/path"
+      materials:
+        $ref: "#/definitions/lightConeMaterialDefinitions"
+
+  lightConeMaterialDefinitions:
+    type: object
+    additionalProperties: false
+    required:
+      - primary
+      - common
+    properties:
+      primary:
+        type: string
+      common:
+        type: string
