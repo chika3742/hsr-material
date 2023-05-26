@@ -1,5 +1,5 @@
 import {DateTime} from "luxon"
-import releaseNotes from "assets/data/release-notes.yaml"
+import releaseNotes from "~/assets/data/release-notes.yaml"
 import {ReleaseNote} from "~/types/generated/release-notes.g"
 
 export const getCurrentVersion = () => releaseNotes[0]

@@ -47,6 +47,10 @@ characterDetailsPage:
   ascension: キャラLvアップ/昇格素材
   skills: スキルLvアップ素材
 
+materialDetailsPage:
+  characterUsage: この素材を使用するキャラクター
+  lightConeUsage: この素材を使用する光円錐
+
 warpsPage:
   warpTypes:
     11: イベント跳躍・キャラクター

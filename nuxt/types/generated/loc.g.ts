@@ -38,6 +38,8 @@ export type Loc =
   | "footer.themeOptions.auto"
   | "characterDetailsPage.ascension"
   | "characterDetailsPage.skills"
+  | "materialDetailsPage.characterUsage"
+  | "materialDetailsPage.lightConeUsage"
   | "warpsPage.warpTypes.1"
   | "warpsPage.warpTypes.11"
   | "warpsPage.warpTypes.12"
