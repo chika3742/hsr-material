@@ -41,7 +41,7 @@ pageTitles:
 footer:
   feedback: Submit Issue
   theme: Theme
-  disclaimer: This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE.
+  disclaimer: This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE. If you find any mistranslations, please report them via @:pageTitles.about > Feedback.
   themeOptions:
     light: Light
     dark: Dark
