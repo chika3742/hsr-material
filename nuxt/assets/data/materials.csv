@@ -2,6 +2,9 @@ id,$nameJA,yomi,rarity,category,groupId,craftLevel
 travel-encounters,旅の見聞,タビノケンブン,2,exp,exp001,1
 adventure-log,冒険記録,ボウケンキロク,3,exp,exp001,2
 travelers-guide,漫遊指南,マンユウシナン,4,exp,exp001,3
+sparse-aether,希薄なエーテル,キハクナエーテル,2,exp,exp002,1
+condensed-aether,濃縮エーテル,ノウシュクエーテル,3,exp,exp002,2
+refined-aether,精製エーテル,セイセイエーテル,4,exp,exp002,3
 horn-of-snow,吹雪の角,フブキノツノ,4,character_ascension,,
 storm-eye,暴風の眼,ボウフウノメ,4,character_ascension,,
 endotherm-chitin,恒温晶殻,コウオンカイガラ,4,character_ascension,,

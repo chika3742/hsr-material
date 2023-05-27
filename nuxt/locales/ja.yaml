@@ -274,6 +274,9 @@ materialNames:
   tracks-of-destiny: 運命の足跡
   credit: 信用ポイント
   gelid-chitin: 苦寒晶殻
+  sparse-aether: 希薄なエーテル
+  condensed-aether: 濃縮エーテル
+  refined-aether: 精製エーテル
 
 skillTitles:
   trailblazer:
