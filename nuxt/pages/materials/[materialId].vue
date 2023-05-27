@@ -10,7 +10,7 @@ definePageMeta({
 const route = useRoute()
 
 if (!materials.some(e => e.id === route.params.materialId)) {
-  throw createError({statusCode: 404, message: "Page not found"})
+  throw createError({statusCode: 404, message: "Page not found", fatal: true})
 }
 
 const material = materials.find(e => e.id === route.params.materialId)!

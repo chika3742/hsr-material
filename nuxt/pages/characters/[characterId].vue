@@ -10,7 +10,7 @@ definePageMeta({
 const route = useRoute()
 
 if (!characters.some(e => e.id === route.params.characterId)) {
-  throw createError({statusCode: 404, message: "Page not found"})
+  throw createError({statusCode: 404, message: "Page not found", fatal: true})
 }
 
 const character = characters.find(e => e.id === route.params.characterId)!

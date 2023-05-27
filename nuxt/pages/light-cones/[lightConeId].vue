@@ -10,7 +10,7 @@ definePageMeta({
 const route = useRoute()
 
 if (!lightCones.some(e => e.id === route.params.lightConeId)) {
-  throw createError({statusCode: 404, message: "Page not found"})
+  throw createError({statusCode: 404, message: "Page not found", fatal: true})
 }
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
