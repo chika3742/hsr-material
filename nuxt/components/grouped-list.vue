@@ -7,7 +7,7 @@ const props = withDefaults(defineProps<{
   categoryI18nKey: string
   itemI18nKey: string
   linkBasePath: string
-  hasSubtitle: boolean
+  hasSubtitle?: boolean
 }>(), {
   hasSubtitle: false,
 })

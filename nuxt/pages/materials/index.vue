@@ -7,10 +7,10 @@ definePageMeta({
 })
 
 const filteringRarity = ref<number[]>([])
+const expandedGroups = ref<number[]>([])
 
-const groups = computed(() => {
-  const source = filteringRarity.value.length >= 1 ? materials.filter(e => e.rarity === filteringRarity.value[0]) : materials
-  return splitByField(source, "category")
+const materialList = computed(() => {
+  return filteringRarity.value.length >= 1 ? materials.filter(e => e.rarity === filteringRarity.value[0]) : materials
 })
 </script>
 
@@ -36,37 +36,16 @@ const groups = computed(() => {
       </v-menu>
     </v-btn>
 
-    <v-list class="mt-4" style="user-select: none">
-      <v-list-group v-for="group in groups" :key="group[0].id">
-        <template #activator="{props}">
-          <v-list-item
-            :title="tx(`materialCategories.${group[0].category}`)"
-            v-bind="props"
-          >
-            <template #prepend>
-              <v-img :src="getMaterialImage(group[0].id)" aspect-ratio="1" class="mr-2" width="35px" />
-            </template>
-          </v-list-item>
-        </template>
-
-        <v-list-item
-          v-for="material in group"
-          :key="material.id"
-          :to="localePath(`/materials/${material.id}`)"
-        >
-          <template #prepend>
-            <v-img :src="getMaterialImage(material.id)" aspect-ratio="1" class="mr-2" width="35px" />
-          </template>
-          <v-row align="center" no-gutters style="gap: 8px">
-            <v-list-item-title>{{ tx(`materialNames.${material.id}`) }}</v-list-item-title>
-            <v-chip :color="`rank${material.rarity}`" size="small">
-              <v-icon>mdi-star</v-icon>
-              {{ material.rarity }}
-            </v-chip>
-          </v-row>
-        </v-list-item>
-      </v-list-group>
-    </v-list>
+    <GroupedList
+      v-model="expandedGroups"
+      :image-func="getMaterialImage"
+      :items="materialList"
+      category-field="category"
+      category-i18n-key="materialCategories"
+      class="mt-4"
+      item-i18n-key="materialNames"
+      link-base-path="/materials"
+    />
   </div>
 </template>
 
