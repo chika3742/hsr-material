@@ -18,6 +18,10 @@ common:
     ultimate: Ultimate
     talent: Talent
 
+errors:
+  404: Page not found.
+  500: An error occurred during rendering.
+
 pageTitles:
   home: Home
   characters: Characters

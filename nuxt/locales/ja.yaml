@@ -2,6 +2,7 @@ common:
   appName: 崩壊：スターレイル素材ノート
   gameName: 崩壊：スターレイル
   alphaWarning: このアプリはアルファ版であり、不具合や今後変更される機能が含まれる可能性が比較的高いです。
+  backToHome: ホームに戻る
   ok: OK
   cancel: キャンセル
   rarity: レアリティ
@@ -17,6 +18,10 @@ common:
     skill: 戦闘スキル
     ultimate: 必殺技
     talent: 天賦
+
+errors:
+  404: お探しのページは見つかりませんでした。
+  500: ページの処理中にエラーが発生しました。
 
 pageTitles:
   home: ホーム

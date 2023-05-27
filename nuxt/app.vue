@@ -92,7 +92,7 @@ const loadingPage = ref(false)
 const title = computed(() => {
   const titleKey = route.meta.title
   if (!titleKey) {
-    throw new Error("No title found in route meta")
+    return ""
   }
 
   const named: Record<string, string> = {}
