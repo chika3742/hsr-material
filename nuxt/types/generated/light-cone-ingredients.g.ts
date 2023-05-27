@@ -5,14 +5,18 @@ export interface LightConeIngredients {
     itemId: string;
     expPerItem: number;
   }[];
-  ascension: LevelIngredients[];
+  ascension: RarityIngredients[];
+}
+
+export interface RarityIngredients {
+  rarity: number;
+  ingredients: LevelIngredients[];
 }
 
 export interface LevelIngredients {
   level: number;
   ingredients: Ingredient[];
 }
-
 export interface Ingredient {
   fixedId?: string;
   type?: "common" | "primary" | "ascension" | "skills" | "skillsAdvanced";

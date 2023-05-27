@@ -24,4 +24,19 @@ properties:
   ascension:
     type: array
     items:
-      $ref: "./character-ingredients.yaml#/definitions/levelIngredients"
+      $ref: "#/definitions/rarityIngredients"
+
+definitions:
+  rarityIngredients:
+    type: object
+    additionalProperties: false
+    required:
+      - rarity
+      - ingredients
+    properties:
+      rarity:
+        type: integer
+      ingredients:
+        type: array
+        items:
+          $ref: "./character-ingredients.yaml#/definitions/levelIngredients"
