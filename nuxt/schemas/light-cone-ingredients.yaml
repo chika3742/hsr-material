@@ -1,0 +1,42 @@
+$schema: https://json-schema.org/draft-07/schema
+
+type: object
+additionalProperties: false
+required:
+  - exp
+  - ascension
+
+properties:
+  exp:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - itemId
+        - expPerItem
+      properties:
+        itemId:
+          type: string
+        expPerItem:
+          type: integer
+
+  ascension:
+    type: array
+    items:
+      $ref: "#/definitions/rarityIngredients"
+
+definitions:
+  rarityIngredients:
+    type: object
+    additionalProperties: false
+    required:
+      - rarity
+      - ingredients
+    properties:
+      rarity:
+        type: integer
+      ingredients:
+        type: array
+        items:
+          $ref: "./character-ingredients.yaml#/definitions/levelIngredients"

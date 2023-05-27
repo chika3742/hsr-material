@@ -1,0 +1,216 @@
+exp:
+  - itemId: refined-aether
+    expPerItem: 6000
+  - itemId: condensed-aether
+    expPerItem: 2000
+  - itemId: sparse-aether
+    expPerItem: 500
+
+ascension:
+  - rarity: 3
+    # TODO: Add light cone exp for rarity 3
+    ingredients:
+      - level: 20
+        ingredients:
+          - exp: 0
+      - level: 30
+        ingredients:
+          - exp: 0
+          - type: common
+            craftLevel: 1
+            quantity: 4
+          - fixedId: credit
+            quantity: 3000
+      - level: 40
+        ingredients:
+          - exp: 0
+          - type: primary
+            craftLevel: 1
+            quantity: 2
+          - type: common
+            craftLevel: 1
+            quantity: 8
+          - fixedId: credit
+            quantity: 6000
+      - level: 50
+        ingredients:
+          - exp: 0
+          - type: primary
+            craftLevel: 2
+            quantity: 2
+          - type: common
+            craftLevel: 2
+            quantity: 4
+          - fixedId: credit
+            quantity: 12000
+      - level: 60
+        ingredients:
+          - exp: 0
+          - type: primary
+            craftLevel: 2
+            quantity: 4
+          - type: common
+            craftLevel: 2
+            quantity: 6
+          - fixedId: credit
+            quantity: 30000
+      - level: 70
+        ingredients:
+          - exp: 0
+          - type: primary
+            craftLevel: 3
+            quantity: 3
+          - type: common
+            craftLevel: 3
+            quantity: 3
+          - fixedId: credit
+            quantity: 60000
+      - level: 80
+        ingredients:
+          - exp: 0
+          - type: primary
+            craftLevel: 3
+            quantity: 6
+          - type: common
+            craftLevel: 3
+            quantity: 5
+          - fixedId: credit
+            quantity: 120000
+
+  - rarity: 4
+    ingredients:
+      - level: 20
+        ingredients:
+          - exp: 21500
+      - level: 30
+        ingredients:
+          - exp: 34500
+          - type: common
+            craftLevel: 1
+            quantity: 5
+          - fixedId: credit
+            quantity: 4000
+      - level: 40
+        ingredients:
+          - exp: 48000
+          - type: primary
+            craftLevel: 1
+            quantity: 3
+          - type: common
+            craftLevel: 1
+            quantity: 10
+          - fixedId: credit
+            quantity: 8000
+      - level: 50
+        ingredients:
+          - exp: 74000
+          - type: primary
+            craftLevel: 2
+            quantity: 3
+          - type: common
+            craftLevel: 2
+            quantity: 6
+          - fixedId: credit
+            quantity: 16000
+      - level: 60
+        ingredients:
+          - exp: 115000
+          - type: primary
+            craftLevel: 2
+            quantity: 6
+          - type: common
+            craftLevel: 2
+            quantity: 9
+          - fixedId: credit
+            quantity: 40000
+      - level: 70
+        ingredients:
+          - exp: 175000
+          - type: primary
+            craftLevel: 3
+            quantity: 4
+          - type: common
+            craftLevel: 3
+            quantity: 5
+          - fixedId: credit
+            quantity: 80000
+      - level: 80
+        ingredients:
+          - exp: 330500
+          - type: primary
+            craftLevel: 3
+            quantity: 8
+          - type: common
+            craftLevel: 3
+            quantity: 7
+          - fixedId: credit
+            quantity: 160000
+
+  - rarity: 5
+    ingredients:
+      - level: 20
+        ingredients:
+          - exp: 26500
+      - level: 30
+        ingredients:
+          - exp: 43000
+          - type: common
+            craftLevel: 1
+            quantity: 8
+          - fixedId: credit
+            quantity: 5000
+      - level: 40
+        ingredients:
+          - exp: 59500
+          - type: primary
+            craftLevel: 1
+            quantity: 4
+          - type: common
+            craftLevel: 1
+            quantity: 12
+          - fixedId: credit
+            quantity: 10000
+      - level: 50
+        ingredients:
+          - exp: 92500
+          - type: primary
+            craftLevel: 2
+            quantity: 4
+          - type: common
+            craftLevel: 2
+            quantity: 8
+          - fixedId: credit
+            quantity: 20000
+      - level: 60
+        ingredients:
+          - exp: 143500
+          - type: primary
+            craftLevel: 2
+            quantity: 8
+          - type: common
+            craftLevel: 2
+            quantity: 12
+          - fixedId: credit
+            quantity: 50000
+      - level: 70
+        ingredients:
+          - exp: 218500
+          - type: primary
+            craftLevel: 3
+            quantity: 5
+          - type: common
+            craftLevel: 3
+            quantity: 6
+          - fixedId: credit
+            quantity: 100000
+      - level: 80
+        ingredients:
+          - exp: 413500
+          - type: primary
+            craftLevel: 3
+            quantity: 10
+          - type: common
+            craftLevel: 3
+            quantity: 8
+          - fixedId: credit
+            quantity: 200000

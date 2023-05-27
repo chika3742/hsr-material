@@ -62,6 +62,7 @@ definitions:
         type: string
         enum:
           - common
+          - primary
           - ascension
           - skills
           - skillsAdvanced

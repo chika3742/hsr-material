@@ -47,6 +47,10 @@ characterDetailsPage:
   ascension: Ascension / Character Level Up Materials
   skills: Skill Leveling Materials
 
+lightConeDetailsPage:
+  ascension: Light Cone Leveling/Ascension Materials
+  skillDescriptions: Skill Descriptions
+
 materialDetailsPage:
   characterUsage: Characters for Which This Material Is Used
   lightConeUsage: Light Cones for Which This Material Is Used
@@ -272,6 +276,9 @@ materialNames:
   tracks-of-destiny: Tracks of Destiny
   credit: Credit
   gelid-chitin: Gelid Chitin
+  sparse-aether: Sparse Aether
+  condensed-aether: Condensed Aether
+  refined-aether: Refined Aether
 
 skillTitles:
   trailblazer:

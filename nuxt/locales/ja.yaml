@@ -47,6 +47,10 @@ characterDetailsPage:
   ascension: キャラLvアップ/昇格素材
   skills: スキルLvアップ素材
 
+lightConeDetailsPage:
+  ascension: 光円錐Lvアップ/昇格素材
+  skillDescriptions: スキル説明
+
 materialDetailsPage:
   characterUsage: この素材を使用するキャラクター
   lightConeUsage: この素材を使用する光円錐
@@ -278,6 +282,9 @@ materialNames:
   tracks-of-destiny: 運命の足跡
   credit: 信用ポイント
   gelid-chitin: 苦寒晶殻
+  sparse-aether: 希薄なエーテル
+  condensed-aether: 濃縮エーテル
+  refined-aether: 精製エーテル
 
 skillTitles:
   trailblazer:

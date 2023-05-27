@@ -27,6 +27,9 @@
                   <Item>
                     <option name="path" value="nuxt/schemas/light-cones.yaml" />
                   </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/light-cone-ingredients.yaml" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>
@@ -60,6 +63,23 @@
                 <list>
                   <Item>
                     <option name="path" value="nuxt/assets/data/characters.yaml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="light-cone-ingredients">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="light-cone-ingredients" />
+              <option name="relativePathToSchema" value="nuxt/schemas/light-cone-ingredients.yaml" />
+              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="nuxt/assets/data/light-cone-ingredients.yaml" />
                   </Item>
                 </list>
               </option>

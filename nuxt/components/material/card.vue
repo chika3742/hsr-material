@@ -31,6 +31,7 @@ import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types
 import {computed} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import materials from "~/assets/data/materials.csv"
+import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 
 const props = defineProps<{
   items: BookmarkableItem[]
@@ -42,6 +43,8 @@ const expDefs = computed(() => {
   switch (props.items[0].targetType) {
     case "character":
       return characterIngredients.exp
+    case "light_cone":
+      return lightConeIngredients.exp
   }
 })
 
