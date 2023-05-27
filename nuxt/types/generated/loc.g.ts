@@ -40,6 +40,8 @@ export type Loc =
   | "characterDetailsPage.skills"
   | "lightConeDetailsPage.ascension"
   | "lightConeDetailsPage.skillDescriptions"
+  | "materialDetailsPage.characterUsage"
+  | "materialDetailsPage.lightConeUsage"
   | "warpsPage.warpTypes.1"
   | "warpsPage.warpTypes.11"
   | "warpsPage.warpTypes.12"

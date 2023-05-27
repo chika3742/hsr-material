@@ -51,6 +51,10 @@ lightConeDetailsPage:
   ascension: 光円錐Lvアップ/昇格素材
   skillDescriptions: スキル説明
 
+materialDetailsPage:
+  characterUsage: この素材を使用するキャラクター
+  lightConeUsage: この素材を使用する光円錐
+
 warpsPage:
   warpTypes:
     11: イベント跳躍・キャラクター

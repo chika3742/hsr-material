@@ -51,6 +51,10 @@ lightConeDetailsPage:
   ascension: Light Cone Leveling/Ascension Materials
   skillDescriptions: Skill Descriptions
 
+materialDetailsPage:
+  characterUsage: Characters for Which This Material Is Used
+  lightConeUsage: Light Cones for Which This Material Is Used
+
 warpsPage:
   warp: Warp | Warps
   warpTypes:

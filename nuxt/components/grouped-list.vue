@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const props = defineProps<{
   modelValue: number[]
-  items: (Record<string, unknown> & { id: string })[]
+  items: (Record<string, unknown> & { id: string, rarity: number })[]
   categoryField: string
   imageFunc: (id: string) => string
   categoryI18nKey: string
@@ -37,23 +37,14 @@ const opened = computed({
         </v-list-item>
       </template>
 
-      <v-list-item
+      <ItemListItem
         v-for="item in group"
         :key="item.id"
-        :to="localePath(`${linkBasePath}/${item.id}/`)"
-      >
-        <template #prepend>
-          <v-img :src="imageFunc(item.id)" aspect-ratio="1" class="mr-2" width="35px" />
-        </template>
-
-        <v-row align="center" no-gutters style="gap: 8px">
-          <v-list-item-title>{{ tx(`${itemI18nKey}.${item.id}`) }}</v-list-item-title>
-          <v-chip :color="`rank${item.rarity}`" size="small">
-            <v-icon>mdi-star</v-icon>
-            {{ item.rarity }}
-          </v-chip>
-        </v-row>
-      </v-list-item>
+        :image-func="imageFunc"
+        :item="item"
+        :item-i18n-key="itemI18nKey"
+        :link-base-path="linkBasePath"
+      />
     </v-list-group>
   </v-list>
 </template>

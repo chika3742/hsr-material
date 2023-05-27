@@ -45,7 +45,7 @@ yarn preview # to preview the generated site
 ### Setup
 
 ```bash
-cd firebase
+cd firebase/functions
 yarn install
 ```
 
