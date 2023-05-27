@@ -8,6 +8,7 @@ definePageMeta({
 
 const filteringRarity = ref<number[]>([])
 const expanded = ref<number[]>([])
+const showSkillDescriptions = ref(false)
 
 const items = computed(() => {
   return lightCones.filter(e => filteringRarity.value.length === 0 || e.rarity === filteringRarity.value[0]).sort((a, b) => b.rarity - a.rarity)
@@ -55,6 +56,13 @@ const spiltByPath = splitByField(lightCones, "path")
       </v-btn>
     </v-row>
 
+    <v-checkbox
+      v-model="showSkillDescriptions"
+      :label="tx('lightConesPage.showSkillDescriptions')"
+      density="comfortable"
+      hide-details
+    />
+
     <GroupedList
       v-model="expanded"
       :image-func="getLightConeImage"
@@ -64,9 +72,10 @@ const spiltByPath = splitByField(lightCones, "path")
       class="mt-4"
       item-i18n-key="lightConeNames"
       link-base-path="/light-cones"
+      :has-subtitle="showSkillDescriptions"
     >
       <template #subtitle="{itemId}">
-        <v-list-item-subtitle class="mt-1">
+        <v-list-item-subtitle v-if="showSkillDescriptions" class="mt-1">
           <LightConeSkillDescriptions :light-cone-id="itemId" />
         </v-list-item-subtitle>
       </template>

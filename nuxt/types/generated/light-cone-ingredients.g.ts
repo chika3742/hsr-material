@@ -7,12 +7,10 @@ export interface LightConeIngredients {
   }[];
   ascension: RarityIngredients[];
 }
-
 export interface RarityIngredients {
   rarity: number;
   ingredients: LevelIngredients[];
 }
-
 export interface LevelIngredients {
   level: number;
   ingredients: Ingredient[];

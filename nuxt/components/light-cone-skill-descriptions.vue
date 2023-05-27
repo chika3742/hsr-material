@@ -12,6 +12,8 @@ const parseSkillDescriptions = (input: string) => {
   <div v-html="parseSkillDescriptions(tx(`lightConeSkillDescriptions.${lightConeId}`))" />
 </template>
 
-<style lang="sass" scoped>
-
+<style lang="sass">
+.hmn-desc-emphasis
+  color: rgb(var(--v-theme-secondary))
+  font-weight: bold
 </style>

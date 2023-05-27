@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   modelValue: number[]
   items: (Record<string, unknown> & { id: string, rarity: number })[]
   categoryField: string
@@ -7,7 +7,10 @@ const props = defineProps<{
   categoryI18nKey: string
   itemI18nKey: string
   linkBasePath: string
-}>()
+  hasSubtitle: boolean
+}>(), {
+  hasSubtitle: false,
+})
 
 const emit = defineEmits<{
   (event: "update:modelValue", value: number[]): void
@@ -44,7 +47,12 @@ const opened = computed({
         :item="item"
         :item-i18n-key="itemI18nKey"
         :link-base-path="linkBasePath"
-      />
+        :lines="hasSubtitle ? 'two' : 'one'"
+      >
+        <template #subtitle>
+          <slot :item-id="item.id" name="subtitle" />
+        </template>
+      </ItemListItem>
     </v-list-group>
   </v-list>
 </template>

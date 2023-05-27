@@ -38,6 +38,7 @@ export type Loc =
   | "footer.themeOptions.auto"
   | "characterDetailsPage.ascension"
   | "characterDetailsPage.skills"
+  | "lightConesPage.showSkillDescriptions"
   | "lightConeDetailsPage.ascension"
   | "lightConeDetailsPage.skillDescriptions"
   | "materialDetailsPage.characterUsage"

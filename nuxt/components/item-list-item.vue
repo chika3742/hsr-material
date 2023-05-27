@@ -1,14 +1,17 @@
 <script lang="ts" setup>
-defineProps<{
+withDefaults(defineProps<{
   item: Record<string, unknown> & { id: string, rarity: number }
   linkBasePath: string
   itemI18nKey: string
   imageFunc: (id: string) => string
-}>()
+  lines?: "one" | "two"
+}>(), {
+  lines: "one",
+})
 </script>
 
 <template>
-  <v-list-item :to="localePath(`${linkBasePath}/${item.id}`)">
+  <v-list-item :lines="lines" :to="localePath(`${linkBasePath}/${item.id}`)">
     <template #prepend>
       <v-img :src="imageFunc(item.id)" aspect-ratio="1" class="mr-2" width="45px" />
     </template>
@@ -20,6 +23,8 @@ defineProps<{
         {{ item.rarity }}
       </v-chip>
     </v-row>
+
+    <slot name="subtitle" />
   </v-list-item>
 </template>
 
