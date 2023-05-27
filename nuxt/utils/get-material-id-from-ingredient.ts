@@ -1,13 +1,21 @@
+import materials from "~/assets/data/materials.csv"
 import {Ingredient} from "~/types/generated/character-ingredients.g"
 import {CharacterMaterialDefinitions} from "~/types/generated/characters.g"
-import materials from "~/assets/data/materials.csv"
+import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
 
-export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs: CharacterMaterialDefinitions /* | Weapon */): string {
+type MaterialDefinitions = Partial<Record<keyof CharacterMaterialDefinitions | keyof LightConeMaterialDefinitions, string>>
+
+export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs: MaterialDefinitions): string {
   if (ingredient.fixedId) {
     return ingredient.fixedId
   }
 
-  const [defType, id] = materialDefs[ingredient.type!].split(":")
+  const defString = materialDefs[ingredient.type!]
+  if (!defString) {
+    throw new Error(`Material definition not found for ${ingredient.type}`)
+  }
+
+  const [defType, id] = defString.split(":")
   if (defType === "id") {
     return id
   } else if (defType === "group") {

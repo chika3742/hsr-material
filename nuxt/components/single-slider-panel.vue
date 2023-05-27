@@ -12,7 +12,6 @@
 </template>
 
 <script lang="ts" setup>
-import {LevelIngredients} from "~/types/generated/character-ingredients.g"
 import {
   BookmarkableExp,
   BookmarkableIngredient,
@@ -22,12 +21,15 @@ import {
 import {TargetType} from "~/types/strings"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import {CharacterMaterialDefinitions} from "~/types/generated/characters.g"
+import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
+import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
+import {LevelIngredients} from "~/types/generated/character-ingredients.g"
 
 const props = defineProps<{
   title: string
   targetType: TargetType
   targetId: string
-  materialDefs: CharacterMaterialDefinitions
+  materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
   rarity?: number
 }>()
 
@@ -35,8 +37,18 @@ const levelIngredientsList = computed<LevelIngredients[]>(() => {
   switch (props.targetType) {
     case "character":
       return characterIngredients.ascension
-      // case "weapon":
-      //   return weaponIngredients.find(e => e.rarity === props.rarity)!.levels
+    case "light_cone": {
+      if (!props.rarity) {
+        throw new Error("rarity is required")
+      }
+
+      const rarityIngredients = lightConeIngredients.ascension.find(e => e.rarity === props.rarity)
+      if (!rarityIngredients) {
+        throw new Error(`rarity ${props.rarity} is not found`)
+      }
+
+      return rarityIngredients!.ingredients
+    }
   }
 })
 
