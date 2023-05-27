@@ -6,6 +6,11 @@ import {BookmarkableIngredient} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 
+interface Slider {
+  type: Exclude<PurposeType, "exp">
+  levelIngredientsList: LevelIngredients[]
+}
+
 const props = defineProps<{
   title: string
   characterId: string
@@ -15,7 +20,7 @@ const props = defineProps<{
 
 const skillI18nKeyBase = computed(() => `skillTitles.${props.characterId + (props.variantPath ? `.${props.variantPath}` : "")}`)
 
-const sliders: { type: Exclude<PurposeType, "exp">, levelIngredientsList: LevelIngredients[] }[] = [
+const sliders: Slider[] = [
   {
     type: "basicAttack",
     levelIngredientsList: characterIngredients.basicAttack,
