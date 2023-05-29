@@ -2,7 +2,7 @@ import {execSync} from "child_process"
 import yaml from "@rollup/plugin-yaml"
 import {DateTime} from "luxon"
 import dsv from "@rollup/plugin-dsv"
-import algoliaConfig from "../algolia.json"
+import algoliaConfig from "./algolia.json"
 import {generateSchemas} from "./scripts/generate-schemas"
 import {generateLocType} from "./scripts/generate-loc-type"
 

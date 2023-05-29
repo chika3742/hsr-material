@@ -6,7 +6,7 @@ import {loadCsvSync, loadYamlSync} from "./utils.js"
 import {Materials} from "../../nuxt/types/data/materials"
 import {LightCones} from "../../nuxt/types/generated/light-cones.g"
 import {AlgoliaRecord} from "../../nuxt/types/algolia-record"
-import algoliaConfig from "../../algolia.json" assert {type: "json"}
+import algoliaConfig from "../../nuxt/algolia.json" assert {type: "json"}
 
 type LocaleObject = {
   characterNames: Record<string, string>
