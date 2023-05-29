@@ -21,7 +21,7 @@ const statusMessage = computed(() => {
             <p>{{ tx(`errors.${error.statusCode}`) }}</p>
           </v-col>
           <v-col>
-            <v-btn @click="clearError({redirect: '/'})">
+            <v-btn @click="clearError({redirect: localePath('/')})">
               {{ tx("common.backToHome") }}
             </v-btn>
           </v-col>
