@@ -5,10 +5,14 @@ import {Characters} from "../../nuxt/types/generated/characters.g"
 import {loadCsvSync, loadYamlSync} from "./utils.js"
 import {Materials} from "../../nuxt/types/data/materials"
 import {LightCones} from "../../nuxt/types/generated/light-cones.g"
+import {AlgoliaRecord} from "../../nuxt/types/algolia-record"
 import algoliaConfig from "../../algolia.json" assert {type: "json"}
 
-type LocaleObject = { [key: string]: LocaleValue }
-type LocaleValue = string | LocaleObject
+type LocaleObject = {
+  characterNames: Record<string, string>
+  lightConeNames: Record<string, string>
+  materialNames: Record<string, string>
+}
 
 if (process.env.NODE_ENV === "development") {
   dotenv.config()
@@ -39,29 +43,35 @@ const syncObjects = async() => {
   const lightCones = loadYamlSync<LightCones>(path.resolve(dataDir, "light-cones.yaml"))
   const materials = loadCsvSync<Materials>(path.resolve(dataDir, "materials.csv"))
 
-  const objects = [
+  const objects: AlgoliaRecord[] = [
     ...characters.map(e => ({
       objectID: e.id + "_character",
-      name_ja: (localeJa.characterNames as LocaleObject)[e.id],
-      name_en: (localeEn.characterNames as LocaleObject)[e.id],
+      itemId: e.id,
+      name_ja: localeJa.characterNames[e.id],
+      name_en: localeEn.characterNames[e.id],
+      i18nKey: `characterNames.${e.id}`,
       yomi: kataToHira(e.yomi),
-      recordType: "character",
+      recordType: "character" as const,
       url: `/characters/${e.id}`,
     })),
     ...lightCones.map(e => ({
       objectID: e.id + "_light-cone",
-      name_ja: (localeJa.lightConeNames as LocaleObject)[e.id],
-      name_en: (localeEn.lightConeNames as LocaleObject)[e.id],
+      itemId: e.id,
+      name_ja: localeJa.lightConeNames[e.id],
+      name_en: localeEn.lightConeNames[e.id],
+      i18nKey: `lightConeNames.${e.id}`,
       yomi: kataToHira(e.yomi),
-      recordType: "light-cone",
+      recordType: "light-cone" as const,
       url: `/light-cones/${e.id}`,
     })),
     ...materials.map(e => ({
       objectID: e.id + "_material",
-      name_ja: (localeJa.materialNames as LocaleObject)[e.id],
-      name_en: (localeEn.materialNames as LocaleObject)[e.id],
+      itemId: e.id,
+      name_ja: localeJa.materialNames[e.id],
+      name_en: localeEn.materialNames[e.id],
+      i18nKey: `materialNames.${e.id}`,
       yomi: kataToHira(e.yomi),
-      recordType: "material",
+      recordType: "material" as const,
       url: `/materials/${e.id}`,
     })),
   ]
