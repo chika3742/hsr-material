@@ -35,7 +35,7 @@ const opened = computed({
           v-bind="_props"
         >
           <template #prepend>
-            <v-img :src="imageFunc(group[0].id)" aspect-ratio="1" class="mr-2" width="35px" />
+            <v-img :src="imageFunc(group[0].id)" class="mr-2" height="40px" width="40px" />
           </template>
         </v-list-item>
       </template>
