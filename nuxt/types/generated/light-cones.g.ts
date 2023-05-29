@@ -5,6 +5,7 @@ export type LightCones = LightCone[];
 export interface LightCone {
   id: string;
   $nameJA: string;
+  yomi: string;
   rarity: number;
   path: "destruction" | "the_hunt" | "erudition" | "harmony" | "nihility" | "preservation" | "abundance";
   materials: LightConeMaterialDefinitions;
