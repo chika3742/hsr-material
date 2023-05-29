@@ -12,6 +12,7 @@ definitions:
     required:
       - id
       - $nameJA
+      - yomi
       - rarity
     oneOf:
       - additionalProperties: false
@@ -26,6 +27,8 @@ definitions:
       id:
         type: string
       $nameJA:
+        type: string
+      yomi:
         type: string
       rarity:
         type: integer
