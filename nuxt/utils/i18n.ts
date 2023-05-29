@@ -4,7 +4,7 @@ import {Loc} from "~/types/generated/loc.g"
 type Tx = {
   (key: Loc, named?: Record<string, unknown>): string
   /**
-   * If you want to use this function in non-top-level of the `script setup`,
+   * If you want to use this function outside of the `template`,
    * you need to pass the i18n {@link Composer} instance as the first argument
    * using {@link useI18n}.
    */
