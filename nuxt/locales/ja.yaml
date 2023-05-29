@@ -11,6 +11,7 @@ common:
   filter: 絞り込み
   expandAll: 全て展開
   collapseAll: 全て折りたたむ
+  search: キャラクター・アイテムを検索
   currentLevel: 現在のLv
   targetLevel: 目標のLv
   skillTypes:
@@ -22,6 +23,13 @@ common:
 errors:
   404: お探しのページは見つかりませんでした。
   500: ページの処理中にエラーが発生しました。
+  failedToSearch: 検索に失敗しました。
+  noSearchResults: 検索結果がありません。
+
+searchRecordTypes:
+  character: キャラクター
+  light-cone: 光円錐
+  material: 素材
 
 pageTitles:
   home: ホーム

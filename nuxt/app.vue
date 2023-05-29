@@ -14,7 +14,13 @@
         </template>
 
         <v-app-bar-title>{{ title }}</v-app-bar-title>
+
+        <template #append>
+          <v-app-bar-nav-icon icon="mdi-magnify" @click="showSearchDialog = true" />
+        </template>
       </v-app-bar>
+
+      <SearchDialog v-model="showSearchDialog" />
 
       <v-main class="h-100">
         <div class="position-fixed" style="top: 64px; width: 100%; z-index: 9999">
@@ -88,6 +94,7 @@ const isProd = rConfig.public.isProdBranch
 const isDrawerOpenOnMobile = ref(false)
 const mounted = ref(false)
 const loadingPage = ref(false)
+const showSearchDialog = ref(false)
 
 const title = computed(() => {
   const titleKey = route.meta.title

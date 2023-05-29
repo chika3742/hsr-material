@@ -8,6 +8,7 @@ common:
   filter: Filter
   expandAll: Expand All
   collapseAll: Collapse All
+  search: Search characters/items
   path: Path
   combatType: Combat Type
   currentLevel: Current Level
@@ -21,6 +22,13 @@ common:
 errors:
   404: Page not found.
   500: An error occurred during rendering.
+  noSearchResults: No search results.
+  failedToSearch: Failed to search.
+
+searchRecordTypes:
+  character: Character
+  light-cone: Light Cone
+  material: Material
 
 pageTitles:
   home: Home
