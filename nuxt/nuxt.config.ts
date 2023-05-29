@@ -2,6 +2,7 @@ import {execSync} from "child_process"
 import yaml from "@rollup/plugin-yaml"
 import {DateTime} from "luxon"
 import dsv from "@rollup/plugin-dsv"
+import algoliaConfig from "./algolia.json"
 import {generateSchemas} from "./scripts/generate-schemas"
 import {generateLocType} from "./scripts/generate-loc-type"
 
@@ -104,6 +105,11 @@ export default defineNuxtConfig({
         appId: "1:14422071885:web:1120af7eab909844861a04",
       },
       recaptchaSiteKey: "6Le1pOIlAAAAAJk7pXcslkL7zaEUsPPxnMGmXyOx",
+      algolia: {
+        appId: algoliaConfig.appId,
+        apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+        indexName: algoliaConfig.indexName,
+      },
       pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
       builtAt: DateTime.now().toISO()!,
     },

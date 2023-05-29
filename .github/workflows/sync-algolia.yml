@@ -1,0 +1,30 @@
+name: Sync Algolia Search Index
+
+on:
+  push:
+    paths:
+      - "nuxt/assets/data/characters.yaml"
+      - "nuxt/assets/data/light-cones.yaml"
+      - "nuxt/assets/data/materials.csv"
+
+jobs:
+  sync-algolia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+          cache-dependency-path: "algolia-sync/yarn.lock"
+
+      - name: yarn install
+        working-directory: algolia-sync
+        run: yarn install --frozen-lockfile
+
+      - name: Sync Algolia Search Index
+        working-directory: algolia-sync
+        run: yarn start
+        env:
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}

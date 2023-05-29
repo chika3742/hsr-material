@@ -9,7 +9,7 @@ export type MaterialCategory =
 export interface Material extends Record<string, unknown> {
   id: string
   $nameJA: string
-  yomi?: string
+  yomi: string
   rarity: number
   category: MaterialCategory
   groupId?: string

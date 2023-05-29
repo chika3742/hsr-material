@@ -10,8 +10,7 @@ body:
     attributes:
       value: |
         ### 作成する前の注意事項
-        - 報告しようとしているそれは本当に不具合なのか確認してから送信してください。不確かな場合は、[こちら](https://www.chikach.net/hsrm-v4-alpha-feedback/)で質問してから送信してください。
-        - [Issues](https://github.com/chika3742/hsr-material/issues) で検索し、同様の不具合の報告がないか確認してから作成してください。
+        [Issues](https://github.com/chika3742/hsr-material/issues) で検索し、同様の不具合の報告がないか確認してから作成してください。
 
   - type: textarea
     id: reproduction

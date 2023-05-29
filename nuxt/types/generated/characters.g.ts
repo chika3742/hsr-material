@@ -3,6 +3,7 @@
 export type Character = {
   id: string;
   $nameJA: string;
+  yomi: string;
   rarity: number;
   path?: Path;
   combatType?: CombatType;

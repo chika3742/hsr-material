@@ -1,5 +1,6 @@
 - id: trailblazer
   $nameJA: 開拓者
+  yomi: カイタクシャ
   rarity: 5
   variants:
     - path: destruction
@@ -19,6 +20,7 @@
 
 - id: march-7th
   $nameJA: 三月なのか
+  yomi: ミツキナノカ
   rarity: 4
   path: preservation
   combatType: ice
@@ -30,6 +32,7 @@
 
 - id: dan-heng
   $nameJA: 丹恒
+  yomi: タンコウ
   rarity: 4
   path: the_hunt
   combatType: wind
@@ -41,6 +44,7 @@
 
 - id: himeko
   $nameJA: 姫子
+  yomi: ヒメコ
   rarity: 5
   path: erudition
   combatType: fire
@@ -52,6 +56,7 @@
 
 - id: welt
   $nameJA: ヴェルト
+  yomi: ヴェルト
   rarity: 5
   path: nihility
   combatType: imaginary
@@ -63,6 +68,7 @@
 
 - id: silver-wolf
   $nameJA: 銀狼
+  yomi: ギンロウ
   rarity: 5
   path: nihility
   combatType: quantum
@@ -74,6 +80,7 @@
 
 - id: arlan
   $nameJA: アーラン
+  yomi: アーラン
   rarity: 4
   path: destruction
   combatType: lightning
@@ -85,6 +92,7 @@
 
 - id: asta
   $nameJA: アスター
+  yomi: アスター
   rarity: 4
   path: harmony
   combatType: fire
@@ -96,6 +104,7 @@
 
 - id: herta
   $nameJA: ヘルタ
+  yomi: ヘルタ
   rarity: 4
   path: erudition
   combatType: ice
@@ -107,6 +116,7 @@
 
 - id: bronya
   $nameJA: ブローニャ
+  yomi: ブローニャ
   rarity: 5
   path: harmony
   combatType: wind
@@ -118,6 +128,7 @@
 
 - id: seele
   $nameJA: ゼーレ
+  yomi: ゼーレ
   rarity: 5
   path: the_hunt
   combatType: quantum
@@ -129,6 +140,7 @@
 
 - id: serval
   $nameJA: セーバル
+  yomi: セーバル
   rarity: 4
   path: erudition
   combatType: lightning
@@ -140,6 +152,7 @@
 
 - id: gepard
   $nameJA: ジェパード
+  yomi: ジェパード
   rarity: 5
   path: preservation
   combatType: ice
@@ -151,6 +164,7 @@
 
 - id: natasha
   $nameJA: ナターシャ
+  yomi: ナターシャ
   rarity: 4
   path: abundance
   combatType: physical
@@ -162,6 +176,7 @@
 
 - id: pela
   $nameJA: ペラ
+  yomi: ペラ
   rarity: 4
   path: nihility
   combatType: ice
@@ -173,6 +188,7 @@
 
 - id: clara
   $nameJA: クラーラ
+  yomi: クラーラ
   rarity: 5
   path: destruction
   combatType: physical
@@ -184,6 +200,7 @@
 
 - id: sampo
   $nameJA: サンポ
+  yomi: サンポ
   rarity: 4
   path: nihility
   combatType: wind
@@ -195,6 +212,7 @@
 
 - id: hook
   $nameJA: フック
+  yomi: フック
   rarity: 4
   path: destruction
   combatType: fire
@@ -206,6 +224,7 @@
 
 - id: qingque
   $nameJA: 青雀
+  yomi: セイジャク
   rarity: 4
   path: erudition
   combatType: quantum
@@ -217,6 +236,7 @@
 
 - id: tingyun
   $nameJA: 停雲
+  yomi: テイウン
   rarity: 4
   path: harmony
   combatType: lightning
@@ -228,6 +248,7 @@
 
 - id: jing-yuan
   $nameJA: 景元
+  yomi: ケイゲン
   rarity: 5
   path: erudition
   combatType: lightning
@@ -239,6 +260,7 @@
 
 - id: sushang
   $nameJA: 素裳
+  yomi: スショウ
   rarity: 4
   path: the_hunt
   combatType: physical
@@ -250,6 +272,7 @@
 
 - id: yanqing
   $nameJA: 彦卿
+  yomi: ゲンキョウ
   rarity: 5
   path: the_hunt
   combatType: ice
@@ -261,6 +284,7 @@
 
 - id: bailu
   $nameJA: 白露
+  yomi: ビャクロ
   rarity: 5
   path: abundance
   combatType: lightning
