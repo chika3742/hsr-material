@@ -137,6 +137,7 @@ export default defineNuxtConfig({
   },
 
   googleFonts: {
+    download: false,
     families: {
       "M PLUS 2": [500, 700],
       "Kaisei Opti": [700],
