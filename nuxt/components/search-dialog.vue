@@ -85,64 +85,62 @@ const getItemImage = (item: AlgoliaRecord): string => {
 </script>
 
 <template>
-  <client-only>
-    <v-dialog
-      v-model="isOpen"
-      :fullscreen="$vuetify.display.xs"
-      :max-width="$vuetify.display.xs ? '' : '550px'"
-      height="100%"
-    >
-      <v-card height="100%">
-        <div class="h-100 d-flex flex-column">
-          <v-row class="flex-grow-0 mx-4 mt-4" no-gutters style="gap: 8px">
-            <v-text-field
-              v-model="query"
-              :error-messages="error"
-              :label="tx('common.search')"
-              autofocus
-              clearable
-              hint="Powered by Algolia"
-              persistent-hint
-              prepend-inner-icon="mdi-magnify"
-            />
+  <v-dialog
+    v-model="isOpen"
+    :fullscreen="$vuetify.display.xs"
+    :max-width="$vuetify.display.xs ? '' : '550px'"
+    height="100%"
+  >
+    <v-card height="100%">
+      <div class="h-100 d-flex flex-column">
+        <v-row class="flex-grow-0 mx-4 mt-4" no-gutters style="gap: 8px">
+          <v-text-field
+            v-model="query"
+            :error-messages="error"
+            :label="tx('common.search')"
+            autofocus
+            clearable
+            hint="Powered by Algolia"
+            persistent-hint
+            prepend-inner-icon="mdi-magnify"
+          />
 
-            <v-btn
-              v-if="$vuetify.display.xs"
-              density="comfortable"
-              icon="mdi-close"
-              variant="text"
-              @click="closeDialog"
-            />
-          </v-row>
+          <v-btn
+            v-if="$vuetify.display.xs"
+            density="comfortable"
+            icon="mdi-close"
+            variant="text"
+            @click="closeDialog"
+          />
+        </v-row>
 
-          <v-progress-linear :active="loading" color="primary" indeterminate />
+        <v-progress-linear :active="loading" color="primary" indeterminate />
 
-          <div v-if="results && results.length === 0">
-            <v-card-text class="text-center">
-              <v-icon size="64">
-                mdi-alert-circle-outline
-              </v-icon>
-              <p class="mt-2">
-                {{ tx("errors.noSearchResults") }}
-              </p>
-            </v-card-text>
-          </div>
-
-          <v-list v-if="results" style="overflow: auto !important">
-            <v-list-item
-              v-for="item in results"
-              :key="item.objectID"
-              :prepend-avatar="getItemImage(item)"
-              :subtitle="tx(`searchRecordTypes.${item.recordType}`)"
-              :title="tx(item.i18nKey)"
-              :to="localePath(item.url)"
-              @click="clearQuery(); closeDialog()"
-            />
-          </v-list>
+        <div v-if="results && results.length === 0">
+          <v-card-text class="text-center">
+            <v-icon size="64">
+              mdi-alert-circle-outline
+            </v-icon>
+            <p class="mt-2">
+              {{ tx("errors.noSearchResults") }}
+            </p>
+          </v-card-text>
         </div>
-      </v-card>
-    </v-dialog>
-  </client-only>
+
+        <v-list v-if="results" style="overflow: auto !important">
+          <v-list-item
+            v-for="item in results"
+            :key="item.objectID"
+            :prepend-avatar="getItemImage(item)"
+            :subtitle="tx(`searchRecordTypes.${item.recordType}`)"
+            :title="tx(item.i18nKey)"
+            :to="localePath(item.url)"
+            @click="clearQuery(); closeDialog()"
+          />
+        </v-list>
+      </div>
+    </v-card>
+  </v-dialog>
 </template>
 
 <style lang="sass" scoped>

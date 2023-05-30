@@ -20,7 +20,9 @@
         </template>
       </v-app-bar>
 
-      <SearchDialog v-model="showSearchDialog" />
+      <client-only>
+        <SearchDialog v-model="showSearchDialog" />
+      </client-only>
 
       <v-main class="h-100">
         <div class="position-fixed" style="top: 64px; width: 100%; z-index: 9999">
