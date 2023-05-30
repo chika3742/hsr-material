@@ -36,7 +36,12 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
     <v-card v-if="characterUsage.length >= 1" :title="tx('materialDetailsPage.characterUsage')">
       <v-card-text>
         <v-row no-gutters style="gap: 8px">
-          <CharacterIconCard v-for="characterId in characterUsage" :key="characterId" :character-id="characterId" />
+          <CharacterIconCard
+            v-for="character in characterUsage"
+            :key="character.id"
+            :character-id="character.id"
+            :variant="character.variant"
+          />
         </v-row>
       </v-card-text>
     </v-card>
