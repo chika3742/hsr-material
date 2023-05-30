@@ -10,7 +10,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     components,
     directives,
     theme: {
-      // TODO: Use the store to get the current theme
       themes: {
         dark: {
           dark: true,

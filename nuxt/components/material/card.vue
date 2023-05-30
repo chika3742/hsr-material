@@ -5,12 +5,17 @@
         v-if="items[0].purposeType === 'exp'"
         color="transparent"
         class="my-n2 ml-n3"
-        flat
+        variant="flat"
         icon="mdi-swap-horizontal"
         size="small"
         @click.prevent="forwardSelectedExpItem"
       />
       <v-img :src="getMaterialImage(materialId)" height="30" width="30" />
+      <span
+        v-show="$isTouchDevice"
+        class="ml-1 font-kiwi-maru"
+        style="font-size: 0.9em"
+      >{{ tx(`materialNames.${materialId}`) }}</span>
       <span class="ml-2 font-cairo" style="font-size: 1.2em">×{{ quantity }}</span>
     </div>
 
@@ -18,7 +23,7 @@
 
     <!-- avoid node mismatch error -->
     <client-only>
-      <v-tooltip :open-delay="100" activator="parent" location="bottom">
+      <v-tooltip :disabled="$isTouchDevice" :open-delay="100" activator="parent" location="bottom">
         <span class="font-kiwi-maru">{{ $t(`materialNames.${materialId}`) }}</span>
       </v-tooltip>
     </client-only>
