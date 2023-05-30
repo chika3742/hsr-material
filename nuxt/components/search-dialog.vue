@@ -106,7 +106,13 @@ const getItemImage = (item: AlgoliaRecord): string => {
               prepend-inner-icon="mdi-magnify"
             />
 
-            <v-btn v-if="$vuetify.display.xs" density="comfortable" icon="mdi-close" @click="closeDialog" />
+            <v-btn
+              v-if="$vuetify.display.xs"
+              density="comfortable"
+              icon="mdi-close"
+              variant="text"
+              @click="closeDialog"
+            />
           </v-row>
 
           <v-progress-linear :active="loading" color="primary" indeterminate />
