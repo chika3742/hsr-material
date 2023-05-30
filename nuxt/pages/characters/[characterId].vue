@@ -22,12 +22,14 @@ const selectedVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
   materials: character.materials!,
 })
 
-if (character.variants && route.query.variant) {
-  selectedVariant.value = character.variants.find(e => e.path === route.query.variant) ?? selectedVariant.value
-}
-
 watch(selectedVariant, (value) => {
   history.replaceState(null, "", router.resolve({query: {variant: value.path}}).href)
+})
+
+onActivated(() => {
+  if (character.variants && route.query.variant) {
+    selectedVariant.value = character.variants.find(e => e.path === route.query.variant) ?? selectedVariant.value
+  }
 })
 
 </script>
