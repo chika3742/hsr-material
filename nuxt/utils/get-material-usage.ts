@@ -10,17 +10,18 @@ interface UsageCharacter {
 }
 
 /**
- * 素材が{@link CharacterMaterialDefinitions}に含まれるかどうか。
- * 各プロパティの値が
+ * Whether the material is included in the definitions.
  *
- * - `group:`で始まる場合は、{@link Material}の`groupId`と定義が一致するかどうかをテストする。
- * - `id:`で始まる場合は、{@link Material}の`id`と定義が一致するかどうかをテストする。
+ * When the value of each definition
  *
- * プロパティのいずれかが一致した場合は`true`を返す。
+ * - starts with `group:`, tests if definition matches `groupId` of the material.
+ * - starts with `id:`, tests if definition matches `id` of the material。
  *
- * @param materialId 素材ID
+ * Returns `true` if any of the properties match.
+ *
+ * @param materialId Material ID
  * @param defs {@link CharacterMaterialDefinitions}
- * @returns テストの結果
+ * @returns `true` if the material is used.
  */
 const getIsMaterialUsedByCharacter = (materialId: string, defs: CharacterMaterialDefinitions): boolean => {
   for (const defExpr of Object.values(defs)) {
@@ -40,10 +41,10 @@ const getIsMaterialUsedByCharacter = (materialId: string, defs: CharacterMateria
 }
 
 /**
- * 与えられた素材を利用するキャラクターのリストを取得する。
+ * Gets a list of character IDs that use the material.
  *
- * @param materialId 素材のID
- * @returns {@link UsageCharacter}のリスト
+ * @param materialId Material ID
+ * @returns {@link UsageCharacter} list
  */
 export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] => {
   const result: UsageCharacter[] = []
@@ -64,10 +65,10 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
 }
 
 /**
- * 与えられた素材を利用する光円錐のIDのリストを取得する。
+ * Gets a list of light cone IDs that use the material.
  *
- * @param materialId 素材のID
- * @returns 光円錐IDのリスト
+ * @param materialId Material ID
+ * @returns Light cone ID list
  */
 export const getMaterialUsageLightCone = (materialId: string): LightCone[] => {
   return lightCones.filter((lightCone) => {

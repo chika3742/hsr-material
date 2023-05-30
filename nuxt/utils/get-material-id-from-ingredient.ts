@@ -5,6 +5,15 @@ import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
 
 type MaterialDefinitions = Partial<Record<keyof CharacterMaterialDefinitions | keyof LightConeMaterialDefinitions, string>>
 
+/**
+ * Gets material corresponds to {@link Ingredient} and {@link MaterialDefinitions}.
+ *
+ * {@link Ingredient} includes material type and craft level, and {@link MaterialDefinitions} includes material ID.
+ *
+ * @param ingredient {@link Ingredient}
+ * @param materialDefs {@link CharacterMaterialDefinitions} or {@link LightConeMaterialDefinitions}
+ * @returns material ID
+ */
 export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs: MaterialDefinitions): string {
   if (ingredient.fixedId) {
     return ingredient.fixedId
