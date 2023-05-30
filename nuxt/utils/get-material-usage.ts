@@ -12,10 +12,10 @@ interface UsageCharacter {
 /**
  * Whether the material is included in the definitions.
  *
- * When the value of each definition
+ * When the value of each type
  *
- * - starts with `group:`, tests if definition matches `groupId` of the material.
- * - starts with `id:`, tests if definition matches `id` of the material。
+ * - starts with `group:`, tests if the value matches `groupId` of the material.
+ * - starts with `id:`, tests if the value matches `id` of the material。
  *
  * Returns `true` if any of the properties match.
  *
