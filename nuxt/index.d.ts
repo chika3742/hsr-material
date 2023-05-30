@@ -5,4 +5,10 @@ declare module "nuxt/dist/pages/runtime/composables" {
   }
 }
 
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    readonly $isTouchDevice: boolean
+  }
+}
+
 export {}
