@@ -8,6 +8,7 @@ definePageMeta({
 })
 
 const route = useRoute()
+const router = useRouter()
 
 if (!characters.some(e => e.id === route.params.characterId)) {
   throw createError({statusCode: 404, message: "Page not found", fatal: true})
@@ -24,6 +25,10 @@ const selectedVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
 if (character.variants && route.query.variant) {
   selectedVariant.value = character.variants.find(e => e.path === route.query.variant) ?? selectedVariant.value
 }
+
+watch(selectedVariant, (value) => {
+  history.replaceState(null, "", router.resolve({query: {variant: value.path}}).href)
+})
 
 </script>
 
