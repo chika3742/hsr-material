@@ -13,6 +13,7 @@ withDefaults(defineProps<{
 <template>
   <v-list-item :lines="lines" :to="localePath(`${linkBasePath}/${item.id}`)">
     <template #prepend>
+      <!-- TODO: https://github.com/vuetifyjs/vuetify/issues/17413 -->
       <v-img :src="imageFunc(item.id)" class="mr-2" height="45px" width="45px" />
     </template>
 
