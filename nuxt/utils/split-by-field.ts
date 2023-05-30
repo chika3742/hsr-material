@@ -1,3 +1,11 @@
+/**
+ * Splits an array of objects into an array of arrays of objects, grouped by a field.
+ *
+ * @param source Array to split
+ * @param field Field to group by
+ * @returns Array of arrays of objects
+ */
+
 export const splitByField = <T extends Record<string, unknown>, U extends keyof T>(source: T[], field: U): T[][] => {
   const result: T[][] = []
 

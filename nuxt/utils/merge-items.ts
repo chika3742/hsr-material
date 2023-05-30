@@ -2,16 +2,22 @@ import {BookmarkableItem} from "~/types/bookmarkable-ingredient"
 import materials from "~/assets/data/materials.csv"
 
 /**
- * Merges items with the same id and returns a new array
- * @param items The ingredients to merge
+ * Merges items in the list with the same material IDs and returns an array of arrays.
+ *
+ * If the item is an exp item, it will be merged into another exp item.
+ *
+ * @param items The {@link BookmarkableItem} list to merge
+ * @returns The merged {@link BookmarkableItem} list
  */
 export const mergeItems = (items: BookmarkableItem[]): BookmarkableItem[][] => {
   const result: BookmarkableItem[][] = []
   for (const item of items) {
     const existing = (() => {
       if (item.purposeType === "exp") {
+        // If the item is an exp item, add into existing exp item (exp item does not have id)
         return result.find(e => e[0].purposeType === "exp")
       } else {
+        // If the item has an id, add into existing item has the same id
         return result.find(e => e[0].purposeType !== "exp" && e[0]?.id === item.id)
       }
     })()

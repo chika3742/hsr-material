@@ -4,10 +4,10 @@ import lightCones from "~/assets/data/light-cones.yaml"
 import {LightCone} from "~/types/generated/light-cones.g"
 
 /**
- * 与えられた`materialId`を持つ素材を利用するキャラクターのIDのリストを取得する。
+ * Gets a list of character IDs that use the material with the given `materialId`.
  *
- * @param materialId 素材のID
- * @returns キャラクターIDのリスト
+ * @param materialId Material ID
+ * @returns Character ID list
  */
 export const getMaterialUsageCharacter = (materialId: string): string[] => {
   return characters.filter((character) => {
@@ -33,9 +33,10 @@ export const getMaterialUsageCharacter = (materialId: string): string[] => {
 }
 
 /**
- * 与えられた`materialId`を持つ素材を利用する光円錐のIDのリストを取得する。
- * @param materialId 素材のID
- * @returns 光円錐IDのリスト
+ * Gets a list of light cone IDs that use the material with the given `materialId`.
+ *
+ * @param materialId Material ID
+ * @returns Light cone ID list
  */
 export const getMaterialUsageLightCone = (materialId: string): LightCone[] => {
   return lightCones.filter((lightCone) => {
