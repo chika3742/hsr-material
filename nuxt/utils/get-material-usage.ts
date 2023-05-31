@@ -41,7 +41,7 @@ const getIsMaterialUsedByCharacter = (materialId: string, defs: CharacterMateria
 }
 
 /**
- * Gets a list of character IDs that use the material.
+ * Gets characters use the material.
  *
  * @param materialId Material ID
  * @returns {@link UsageCharacter} list
@@ -65,7 +65,7 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
 }
 
 /**
- * Gets a list of light cone IDs that use the material.
+ * Gets light cones use the material.
  *
  * @param materialId Material ID
  * @returns Light cone ID list
