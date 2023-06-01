@@ -47,6 +47,7 @@ const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
         :rarity="lightCone.rarity"
         :title="tx('lightConeDetailsPage.ascension')"
         target-type="light_cone"
+        :target-id="lightCone.id"
       />
 
       <v-expansion-panel :title="tx('lightConeDetailsPage.skillDescriptions')">
