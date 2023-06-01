@@ -48,6 +48,13 @@ const copyWindowsCommand = () => {
         <div v-html="marked.parse(i18n.t('warpsPage.howToGetUrl.ios.contents', {streamUrl}))" />
       </v-expansion-panel-text>
     </v-expansion-panel>
+
+    <v-expansion-panel>
+      <v-expansion-panel-title>{{ $t("warpsPage.howToGetUrl.macos.title") }}</v-expansion-panel-title>
+      <v-expansion-panel-text>
+        <div v-html="marked.parse(i18n.t('warpsPage.howToGetUrl.macos.contents'))" />
+      </v-expansion-panel-text>
+    </v-expansion-panel>
   </v-expansion-panels>
 </template>
 

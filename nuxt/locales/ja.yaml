@@ -115,10 +115,8 @@ warpsPage:
 
     ## 注意事項
 
-    - <span class="text-red">このURLは24時間で有効期限が切れます。切れた後は再度同じ方法で新しく取得する必要があります。</span>
-    - <span class="text-red">現在、Android端末単体でURLを取得する方法が存在しません。</span>
-    - URLは端末内にのみ保存され、リロードしても保持されます。
-    - macOS(PlayCover)の場合はmitmproxyなどのツールを使用してURLを取得できます。詳しくはご自身で調べてください。
+    - <span class="font-weight-bold">このURLは24時間で有効期限が切れます。その場合は再度同じ方法で新しく取得する必要があります。</span>
+    - <span class="font-weight-bold">現在、Android端末単体でURLを取得する方法が存在しません。</span>
   howToGetUrl:
     windows:
       title: URL取得方法 (Windows)
@@ -132,18 +130,47 @@ warpsPage:
     ios:
       title: URL取得方法 (iOS)
       contents: |
-        1. <span class="text-red">ここからの手順は初回のみ必要です。</span>App Storeより[Stream]({streamUrl})アプリをインストールします。 
+        ### 準備 (初回のみ必要)
+        
+        1. App Storeより[Stream]({streamUrl})アプリをインストールします。 
         1. Streamアプリを起動し、「Sniff Now」をタップして「"Stream"がVPN構成の追加を求めています」というダイアログが表示されたら「許可」をタップします。(パスコードの入力が要求されるので、入力します。) 
         1. Streamアプリに戻ると「You must install CA」という内容のダイアログが表示されるので、「Install CA」をタップし、「Install CA Certificate」をタップします。 
         1. 「このWebサイトは構成プロファイルを・・・」と表示されるので、「許可」をタップします。
         1. 本体設定を開き、一般 ＞ VPNとデバイス管理 ＞ Stream Generated CA 〜 ＞ 右上の「インストール」＞ パスコード入力 ＞ 右上の「インストール」 ＞ インストール の順にタップします。 
         1. アプリに戻ると「For iOS 10.3+ and iOS 11・・・」と表示されることがありますが、青の「I've trusted」をタップします。
-        1. <span class="text-red">2回目以降はここからの手順のみで構いません。</span>@:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」を開きます。
+        
+        ### URL取得
+        
+        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」を開きます。
         1. Streamアプリを開き、「Sniff Now」をタップします。
         1. @:{'common.gameName'}に戻り、「跳躍履歴」をタップします。
         1. Streamアプリに戻り、「Stop Sniffing」をタップし、右の「Sniff History」をタップします。
         1. 一番上の時刻のものをタップし、「GET https://api-os-takumi.mihoyo.com」で始まるものを探し、タップします。
         1. 上部の「Request」をタップし、「REQUEST LINE」の下の部分をタップし、「Copy Url」をタップするとURLをコピーできます。
+    macos:
+      title: URL取得方法 (macOS / PlayCover)
+      contents: |
+        ### 準備 (初回のみ必要)
+        
+        1. [Homebrew](https://brew.sh) と [mitmproxy](https://mitmproxy.org) をインストールしておきます。
+        1. ターミナルで以下のコマンドを実行します。パスワードの入力が要求されるので、入力します。
+        
+            ```sh
+            {'curl "https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f/raw/install-ca.sh" | bash'}
+            ```
+        
+            ※このコマンドは、証明書を信頼することでHTTPS通信を監視できるようにするためのものです。
+        
+        ### URL取得
+        
+        1. ターミナルで以下のコマンドを実行します。
+        
+            ```sh
+            {'curl "https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f/raw/run.sh" | bash'}
+            ```
+        
+        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を開きます。
+        1. 自動的にURLがコピーされ、自動的にスクリプトが終了します。
 
 tpCalcPage:
   baseTime: 基準時間

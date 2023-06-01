@@ -118,13 +118,11 @@ warpsPage:
 
     ## Notes
 
-    - <span class="text-red">This URL expires in 24 hours. After it expires, you need to get a new one in the same way.</span>
-    - <span class="text-red">Currently, there is no way to get the URL on Android devices alone.</span>
-    - The URL is saved only in the device and will be retained even if you reload the page.
-    - On macOS (PlayCover), you can get the URL using tools such as mitmproxy. Please check it yourself for details.
+    - <span class="font-weight-bold">This URL expires in 24 hours. After it expires, you need to get a new one in the same way.</span>
+    - <span class="font-weight-bold">Currently, there is no way to get the URL on Android devices alone.</span>
   howToGetUrl:
     windows:
-      title: How to get URL (Windows)
+      title: How to Get URL (Windows)
       contents: |
         *Confirmed to work only on Windows 11.
 
@@ -133,19 +131,28 @@ warpsPage:
         1. Copy and paste the following command then press Enter key. <div id="windows-script"></div>
         1. The URL will be copied, so paste it into this page.
     ios:
-      title: How to get URL (iOS)
+      title: How to Get URL (iOS)
       contents: |
-        1. <span class="text-red">The following steps are only required for the first time.</span> Install the [Stream]({streamUrl}) app from the App Store.
+        ### Preparation (required for the first time only)
+        
+        1. Install the [Stream]({streamUrl}) app from the App Store.
         1. Launch the Stream app, tap "Sniff Now", and when the dialog "Stream is requesting to add VPN configurations" is displayed, tap "Allow". (Enter the passcode when prompted.)
         1. Return to the Stream app and a dialog with the content "You must install CA" will be displayed, so tap "Install CA" and then tap "Install CA Certificate".
         1. "This website is trying to download a configuration profile" will be displayed, so tap "Allow".
         1. Open the device settings, tap General > VPN & Device Management > Stream Generated CA XXXXXXXX > "Install" in the upper right corner > Enter the passcode > "Install" in the upper right corner > Install.
         1. When you return to the app, "For iOS 10.3+ and iOS 11..." may be displayed, but tap the blue "I've trusted".
-        1. <span class="text-red">From the second time onwards, you only need to follow the steps from here.</span> Launch @:{'common.gameName'}, and open "Warp" > "View Details".
+        
+        ### Get URL
+        
+        1. Launch @:{'common.gameName'}, and open "Warp" > "View Details".
         1. Open the Stream app and tap "Sniff Now".
         1. Return to @:{'common.gameName'} and tap "Records".
         1. Return to the Stream app and tap "Stop Sniffing", then tap "Sniff History" on the right.
         1. Tap the one at the top, tap the one that starts with "GET https://api-os-takumi.mihoyo.com", and tap "Request" at the top, then tap the bottom of "REQUEST LINE" and tap "Copy Url" to copy the URL.
+    macos:
+      title: How to Get URL (macOS)
+      contents: |
+        See [https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f](https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f)
 
 tpCalcPage:
   baseTime: Base time
