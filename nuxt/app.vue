@@ -98,19 +98,7 @@ const mounted = ref(false)
 const loadingPage = ref(false)
 const showSearchDialog = ref(false)
 
-const title = computed(() => {
-  const titleKey = route.meta.title
-  if (!titleKey) {
-    return ""
-  }
-
-  const named: Record<string, string> = {}
-  for (const key in route.params) {
-    named[key] = i18n.t(`${route.meta.itemI18nKey}.${route.params[key]}`)
-  }
-
-  return i18n.t(`pageTitles.${titleKey}`, named)
-})
+const title = computed(() => getPageTitle(route.fullPath, router, i18n))
 
 useHead({
   title,

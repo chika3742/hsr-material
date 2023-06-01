@@ -76,7 +76,7 @@ const drawerItems: (DrawerItem | Divider)[] = [
           :href="item.href"
           :prepend-icon="item.icon"
           :target="item.target"
-          :title="item.title ? $t(`navDrawer.${item.title}`) : $t(`pageTitles.${$router.resolve(item.to).meta.title}`)"
+          :title="item.title ? $t(`navDrawer.${item.title}`) : getPageTitle(item.to!)"
           :to="item.to ? localePath(item.to) : undefined"
           density="comfortable"
           @click="item.onClick?.(); isOpen = false"
