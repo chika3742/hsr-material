@@ -1,10 +1,16 @@
 import {execSync} from "child_process"
+import {Readable} from "stream"
+import fs from "fs"
 import yaml from "@rollup/plugin-yaml"
 import {DateTime} from "luxon"
 import dsv from "@rollup/plugin-dsv"
+import {EnumChangefreq, SitemapItemLoose, SitemapStream, streamToPromise} from "sitemap"
 import algoliaConfig from "./algolia.json"
 import {generateSchemas} from "./scripts/generate-schemas"
 import {generateLocType} from "./scripts/generate-loc-type"
+
+const hostname = "https://hsr.matnote.app"
+const routes: string[] = []
 
 export default defineNuxtConfig({
   app: {
@@ -58,6 +64,28 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: "node-server",
+    hooks: {
+      "prerender:route"(route) {
+        routes.push(route.route)
+      },
+      close() {
+        if (routes.length > 0) {
+          const links: SitemapItemLoose[] = routes.map(route => ({
+            url: route,
+            changefreq: EnumChangefreq.MONTHLY,
+          }))
+
+          const stream = new SitemapStream({
+            hostname,
+          })
+
+          return streamToPromise(Readable.from(links).pipe(stream))
+            .then((sm) => {
+              return fs.writeFileSync("dist/sitemap.xml", sm.toString())
+            })
+        }
+      },
+    },
   },
   alias: {
     "#shared": "../firebase/functions/src/types/shared",
