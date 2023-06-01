@@ -23,6 +23,8 @@ export default defineNuxtPlugin(() => {
         marked.options({
           gfm,
           renderer,
+          headerIds: false,
+          mangle: false,
         })
         return marked
       },
