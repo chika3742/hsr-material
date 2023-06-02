@@ -14,6 +14,8 @@ common:
   combatType: Combat Type
   currentLevel: Current Level
   targetLevel: Target Level
+  2pcEffect: 2-Piece Effect
+  4pcEffect: 4-Piece Effect
   skillTypes:
     basicAttack: Basic Attack
     skill: Skill
@@ -649,3 +651,121 @@ lightConeSkillDescriptions:
   past-and-future: >-
     When the wearer uses their Skill, the next ally taking action (except the
     wearer) deals <16%> increased DMG for 1 turn(s).
+
+relicSetTitles:
+  passerby-of-wandering-cloud: Passerby of Wandering Cloud
+  musketeer-of-wild-wheat: Musketeer of Wild Wheat
+  knight-of-purity-palace: Knight of Purity Palace
+  hunter-of-glacial-forest: Hunter of Glacial Forest
+  champion-of-streetwise-boxing: Champion of Streetwise Boxing
+  guard-of-wuthering-snow: Guard of Wuthering Snow
+  firesmith-of-lava-forging: Firesmith of Lava-Forging
+  genius-of-brilliant-stars: Genius of Brilliant Stars
+  band-of-sizzling-thunder: Band of Sizzling Thunder
+  eagle-of-twilight-line: Eagle of Twilight Line
+  thief-of-shooting-meteor: Thief of Shooting Meteor
+  wastelander-of-banditry-desert: Wastelander of Banditry Desert
+  space-sealing-station: Space Sealing Station
+  fleet-of-the-ageless: Fleet of the Ageless
+  pan-galactic-commercial-enterprise: Pan-Galactic Commercial Enterprise
+  belobog-of-the-architects: Belobog of the Architects
+  celestial-differentiator: Celestial Differentiator
+  inert-salsotto: Inert Salsotto
+  talia-kingdom-of-banditry: 'Talia: Kingdom of Banditry'
+  sprightly-vonwacq: Sprightly Vonwacq
+
+relicSetEffects:
+  passerby-of-wandering-cloud:
+    2pc: Increases Outgoing Healing by <10%>.
+    4pc: At the start of the battle, immediately regenerates 1 Skill Point.
+  musketeer-of-wild-wheat:
+    2pc: ATK increases by <12%>.
+    4pc: The wearer's SPD increases by <6%> and Basic ATK DMG increases by <10%>.
+  knight-of-purity-palace:
+    2pc: Increases DEF by <15%>.
+    4pc: >-
+      Increases the max DMG that can be absorbed by the Shield created by the
+      wearer by <20%>.
+  hunter-of-glacial-forest:
+    2pc: Increases Ice DMG by <10%>.
+    4pc: >-
+      After the wearer uses their Ultimate, their CRIT DMG increases by <25%> for
+      <2> turn(s).
+  champion-of-streetwise-boxing:
+    2pc: Increases Physical DMG by <10%>.
+    4pc: >-
+      After the wearer attacks or is hit, their ATK increases by <5%> for the rest
+      of the battle. This effect can stack up to <5> time(s).
+  guard-of-wuthering-snow:
+    2pc: Reduces DMG taken by <8%>.
+    4pc: >-
+      At the beginning of the turn, if the wearer's HP is equal to or less than
+      <50%>, restores HP equal to <8%> of their Max HP and regenerates <5> Energy.
+  firesmith-of-lava-forging:
+    2pc: Increases Fire DMG by <10%>.
+    4pc: >-
+      Increases the wearer's Skill DMG by <12%>. After unleashing Ultimate,
+      increases the wearer's Fire DMG by <12%> for the next attack.
+  genius-of-brilliant-stars:
+    2pc: Increases Quantum DMG by <10%>.
+    4pc: >-
+      When the wearer deals DMG to the target enemy, ignores <10%> DEF. If the
+      target enemy has Quantum Weakness, the wearer additionally ignores <10%>
+      DEF.
+  band-of-sizzling-thunder:
+    2pc: Increases Lightning DMG by <10%>.
+    4pc: >-
+      When the wearer uses their Skill, increases the wearer's ATK by <20%> for
+      <1> turn(s).
+  eagle-of-twilight-line:
+    2pc: Increases Wind DMG by <10%>.
+    4pc: >-
+      After the wearer uses their Ultimate, their action is Advanced Forward by
+      <25%>.
+  thief-of-shooting-meteor:
+    2pc: Increases Break Effect by <16%>.
+    4pc: >-
+      Increases the wearer's Break Effect by <16%>. When the wearer inflicts
+      Weakness Break on an enemy, regenerates <3> Energy.
+  wastelander-of-banditry-desert:
+    2pc: Increases Imaginary DMG by <10%>.
+    4pc: >-
+      When attacking debuffed enemies, the wearer's CRIT Rate increases by <10%>,
+      and their CRIT DMG increases by <20%> against Imprisoned enemies.
+  space-sealing-station:
+    2pc: >-
+      Increases the wearer's ATK by <12%>. When the wearer's SPD reaches <120> or
+      higher, the wearer's ATK increases by an extra <12%>.
+  fleet-of-the-ageless:
+    2pc: >-
+      Increases the wearer's Max HP by <12%>. When the wearer's SPD reaches <120>
+      or higher, all allies' ATK increases by <8%>.
+  pan-galactic-commercial-enterprise:
+    2pc: >-
+      Increases the wearer's Effect Hit Rate by <10%>. Meanwhile, the wearer's ATK
+      increases by an amount that is equal to <25%> of the current Effect Hit
+      Rate, up to a maximum of <25%>.
+  belobog-of-the-architects:
+    2pc: >-
+      Increases the wearer's DEF by <15%>. When the wearer's Effect Hit Rate is
+      <50%> or higher, the wearer gains an extra <15%> DEF.
+  celestial-differentiator:
+    2pc: >-
+      Increases the wearer's CRIT DMG by <16%>. When the wearer's current CRIT DMG
+      reaches <120%> or higher, after entering battle, the wearer's CRIT Rate
+      increases by <60%> until the end of their first attack.
+  inert-salsotto:
+    2pc: >-
+      Increases the wearer's CRIT Rate by <8%>. When the wearer's current CRIT
+      Rate reaches <50%> or higher, the wearer's Ultimate and follow-up attack DMG
+      increases by <15%>.
+  talia-kingdom-of-banditry:
+    2pc: >-
+      Increases the wearer's Break Effect by <16%>. When the wearer's SPD reaches
+      <145> or higher, the wearer's Break effect increases by an extra <20%>.
+  sprightly-vonwacq:
+    2pc: >-
+      Increases the wearer's Energy Regeneration Rate by <5%>. When the wearer's
+      SPD reaches <120> or higher, the wearer's action is Advanced Forward by
+      <40%> immediately upon entering battle.
+

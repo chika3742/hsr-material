@@ -54,3 +54,13 @@ export const getPathImage = (path: Path) => {
 export const getMaterialImage = (materialId: string) => {
   return new URL(`../assets/img/materials/${materialId}.webp`, import.meta.url).toString()
 }
+
+/**
+ * Gets relic set image URL.
+ *
+ * @param relicSetId Relic set ID
+ * @returns Image URL
+ */
+export const getRelicSetImage = (relicSetId: string) => {
+  return new URL(`../assets/img/relic-sets/${relicSetId}.webp`, import.meta.url).toString()
+}
