@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import lightCones from "~/assets/data/light-cones.yaml"
-import LightConeSkillDescriptions from "~/components/light-cone-skill-descriptions.vue"
+import EmphasizedText from "~/components/emphasized-text.vue"
 
 definePageMeta({
   title: "lightConeDetails",
@@ -52,7 +52,7 @@ const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
 
       <v-expansion-panel :title="tx('lightConeDetailsPage.skillDescriptions')">
         <v-expansion-panel-text>
-          <LightConeSkillDescriptions :light-cone-id="lightCone.id" />
+          <EmphasizedText :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)" />
         </v-expansion-panel-text>
       </v-expansion-panel>
     </v-expansion-panels>
