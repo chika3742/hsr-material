@@ -37,6 +37,8 @@ pageTitles:
   characterDetails: キャラクター / {characterId}
   lightCones: 光円錐
   lightConeDetails: 光円錐 / {lightConeId}
+  relics: 遺物
+  relicDetails: 遺物 / {relicId}
   materials: 素材一覧(逆引き)
   materialDetails: 素材 / {materialId}
   warps: 跳躍天井カウンター(β)

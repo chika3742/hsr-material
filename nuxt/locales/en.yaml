@@ -37,6 +37,8 @@ pageTitles:
   characterDetails: Characters / {characterId}
   lightCones: Light Cones
   lightConeDetails: Light Cones / {lightConeId}
+  relics: Relics
+  relicDetails: Relics / {relicId}
   materials: Materials
   materialDetails: Materials / {materialId}
   warps: Warp Pity Counter
