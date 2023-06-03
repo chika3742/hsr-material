@@ -70,7 +70,9 @@
           <span>{{ $t("footer.disclaimer") }}</span>
         </div>
         <v-spacer />
-        <span>{{ getCurrentVersionText() }}</span>
+        <client-only>
+          <span>{{ getCurrentVersionText() }}</span>
+        </client-only>
       </div>
     </div>
   </v-footer>
