@@ -70,7 +70,6 @@ const spiltByPath = splitByField(lightCones, "path")
       :items="items"
       category-field="path"
       category-i18n-key="paths"
-      class="mt-4"
       item-i18n-key="lightConeNames"
       link-base-path="/light-cones"
       :has-subtitle="showSkillDescriptions"

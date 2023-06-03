@@ -10,7 +10,7 @@ export class WarpsApi {
 
   currentTicket?: string
 
-  async validateUrl(): Promise<{ valid: boolean, errorCode?: GetWarpHistoryErrorCode | "invalidUrl" }> {
+  async validateUrl(): Promise<{ valid: boolean, errorCode?: GetWarpHistoryErrorCode | "invalidUrl" | "unknown" }> {
     let url: URL
     try {
       url = new URL(this.url)
@@ -33,6 +33,14 @@ export class WarpsApi {
       region: url.searchParams.get("region")!,
     })
     const result = await fetch(`/api/v1/validateUrl?${params.toString()}`)
+
+    if (!result.ok) {
+      return {
+        valid: false,
+        errorCode: "unknown",
+      }
+    }
+
     const json = await result.json() as { success: boolean, errorCode?: GetWarpHistoryErrorCode }
     return {
       valid: json.success,

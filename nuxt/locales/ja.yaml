@@ -107,6 +107,7 @@ warpsPage:
     authKeyInvalid: URLが無効です。再度ゲームより取得してください。
     tooManyRequests: リクエストが多すぎます。しばらく待ってから再度お試しください。
     internal: サーバーでエラーが発生しました。しばらく待ってから再度お試しください。
+    unknown: 不明なエラーが発生しました。
   aboutTitle: 初めての方はこちら
   about: |
     ## 本機能について
@@ -154,7 +155,7 @@ warpsPage:
         1. 一番上の時刻のものをタップし、「GET https://api-os-takumi.mihoyo.com」で始まるものを探し、タップします。
         1. 上部の「Request」をタップし、「REQUEST LINE」の下の部分をタップし、「Copy Url」をタップするとURLをコピーできます。
     macos:
-      title: URL取得方法 (macOS / PlayCover)
+      title: URL取得方法 (macOS with PlayCover)
       contents: |
         ### 準備 (初回のみ必要)
         

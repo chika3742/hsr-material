@@ -107,7 +107,7 @@ warpsPage:
     authKeyInvalid: The URL is invalid. Please get a new one from the game.
     tooManyRequests: Too many requests. Please try again later.
     internal: An error occurred on the server. Please try again later.
-    unknown: An unknown error occurred. Please try again later.
+    unknown: An unknown error occurred.
   aboutTitle: About
   about: |
     ## About This Feature
@@ -154,7 +154,7 @@ warpsPage:
         1. Return to the Stream app and tap "Stop Sniffing", then tap "Sniff History" on the right.
         1. Tap the one at the top, tap the one that starts with "GET https://api-os-takumi.mihoyo.com", and tap "Request" at the top, then tap the bottom of "REQUEST LINE" and tap "Copy Url" to copy the URL.
     macos:
-      title: How to Get URL (macOS)
+      title: How to Get URL (macOS with PlayCover)
       contents: |
         See [https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f](https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f)
 

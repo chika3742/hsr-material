@@ -144,8 +144,8 @@ const getWarps = async() => {
     return null
   }).catch((e) => {
     console.error(e)
-    error.value = i18n.t("warpsPage.errors.internal")
     fetching.value = false
+    error.value = i18n.t("warpsPage.errors.internal")
   })
 }
 

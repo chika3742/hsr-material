@@ -11,7 +11,7 @@ export const getCurrentVersion = () => releaseNotes[0]
 
 /**
  * @returns {string} e.g. `v1.0.0_D1.0.0` when prod,
- *   `v1.0.0-dev.abcdefg_D1.0.0 (built at 2023-01-01 00:00:00)` when dev
+ *   `v1.0.0-dev.abcdefg_D1.0.0 (built at 2023/01/23 12:34:56)` when dev
  */
 export const getCurrentVersionText = () => {
   const config = useRuntimeConfig()
@@ -24,7 +24,7 @@ export const getCurrentVersionText = () => {
   }
   str += `_D${cv.dataVersion}`
   if (!config.public.isProdBranch) {
-    str += ` (built at ${DateTime.fromISO(config.public.builtAt).toFormat("yyyy-MM-dd HH:mm:ss")})`
+    str += ` (built at ${DateTime.fromISO(config.public.builtAt).toFormat("yyyy/MM/dd HH:mm:ss")})`
   }
 
   return str
