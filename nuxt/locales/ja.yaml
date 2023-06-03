@@ -101,6 +101,7 @@ warpsPage:
     authKeyInvalid: URLが無効です。再度ゲームより取得してください。
     tooManyRequests: リクエストが多すぎます。しばらく待ってから再度お試しください。
     internal: サーバーでエラーが発生しました。しばらく待ってから再度お試しください。
+    unknown: 不明なエラーが発生しました。
   aboutTitle: 初めての方はこちら
   about: |
     ## 本機能について

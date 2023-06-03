@@ -103,7 +103,7 @@ warpsPage:
     authKeyInvalid: The URL is invalid. Please get a new one from the game.
     tooManyRequests: Too many requests. Please try again later.
     internal: An error occurred on the server. Please try again later.
-    unknown: An unknown error occurred. Please try again later.
+    unknown: An unknown error occurred.
   aboutTitle: About
   about: |
     ## About This Feature
