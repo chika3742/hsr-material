@@ -150,7 +150,7 @@ warpsPage:
         1. Return to the Stream app and tap "Stop Sniffing", then tap "Sniff History" on the right.
         1. Tap the one at the top, tap the one that starts with "GET https://api-os-takumi.mihoyo.com", and tap "Request" at the top, then tap the bottom of "REQUEST LINE" and tap "Copy Url" to copy the URL.
     macos:
-      title: How to Get URL (macOS)
+      title: How to Get URL (macOS with PlayCover)
       contents: |
         See [https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f](https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f)
 
