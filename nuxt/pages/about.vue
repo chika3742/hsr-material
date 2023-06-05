@@ -19,7 +19,12 @@ const hoyolabUrl = "https://www.hoyolab.com/article/18406761"
     <section>
       <div v-html="marked.parse(tx('aboutPage.support'))" />
 
-      <a href="https://ko-fi.com/F2F26RSKD" target="_blank"><img height="36" style="border:0px;height:36px;" src="https://storage.ko-fi.com/cdn/kofi5.png?v=3" border="0" alt="Buy Me a Coffee at ko-fi.com"></a>
+      <a href="https://ko-fi.com/F2F26RSKD" target="_blank"><img
+        alt="Buy Me a Coffee at ko-fi.com"
+        height="36"
+        src="https://storage.ko-fi.com/cdn/kofi5.png?v=3"
+        style="border:0;height:36px;"
+      ></a>
     </section>
 
     <section>
