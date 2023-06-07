@@ -16,8 +16,7 @@ common:
   targetLevel: 目標のLv
   2pcEffect: 2セット効果
   4pcEffect: 4セット効果
-  cavernRelics: トンネル遺物
-  planarOrnaments: 次元界オーナメント
+  kind: 種類
   skillTypes:
     basicAttack: 通常攻撃
     skill: 戦闘スキル
@@ -237,6 +236,10 @@ combatTypes:
   physical: 物理
   wind: 風
   quantum: 量子
+
+relicTypes:
+  cavern: トンネル遺物
+  planar: 次元界オーナメント
 
 characterNames:
   trailblazer: 開拓者

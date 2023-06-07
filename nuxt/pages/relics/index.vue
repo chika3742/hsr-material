@@ -28,14 +28,14 @@ const _relics = computed(() => {
       <v-btn :text="tx('common.collapseAll')" prepend-icon="mdi-collapse-all" @click="openedPanels = []" />
       <v-checkbox
         v-model="showCavernRelics"
-        :label="tx('common.cavernRelics')"
+        :label="tx('relicTypes.cavern')"
         class="flex-grow-0"
         density="compact"
         hide-details
       />
       <v-checkbox
         v-model="showPlanarOrnaments"
-        :label="tx('common.planarOrnaments')"
+        :label="tx('relicTypes.planar')"
         class="flex-grow-0"
         density="compact"
         hide-details
@@ -48,19 +48,29 @@ const _relics = computed(() => {
           <v-row align="center" class="my-n2" no-gutters style="gap: 8px">
             <v-img :src="getRelicSetImage(relic.id)" aspect-ratio="1" max-width="35px" />
             <span>{{ tx(`relicSetTitles.${relic.id}`) }}</span>
+            <v-fade-transition>
+              <v-btn
+                v-show="!openedPanels.includes(relic.id)"
+                :to="localePath(`/relics/${relic.id}`)"
+                icon="mdi-loupe"
+                size="small"
+                variant="text"
+                @click.stop
+              />
+            </v-fade-transition>
           </v-row>
         </v-expansion-panel-title>
         <v-expansion-panel-text>
           <div>
-            <section>
-              <h4>{{ tx("common.2pcEffect") }}</h4>
-              <EmphasizedText :text="tx(`relicSetEffects.${relic.id}.2pc`)" class="pl-4 my-1" />
-            </section>
-            <section v-if="$te(`relicSetEffects.${relic.id}.4pc`)">
-              <h4>{{ tx("common.4pcEffect") }}</h4>
-              <EmphasizedText :text="tx(`relicSetEffects.${relic.id}.4pc`)" class="pl-4 my-1" />
-            </section>
-            <v-btn class="mt-2" color="primary" text="詳細ページへ" variant="tonal" />
+            <RelicEffects :relic-id="relic.id" />
+            <v-btn
+              :to="localePath(`/relics/${relic.id}`)"
+              class="mt-2"
+              color="primary"
+              prepend-icon="mdi-loupe"
+              text="詳細ページへ"
+              variant="text"
+            />
           </div>
         </v-expansion-panel-text>
       </v-expansion-panel>
@@ -69,8 +79,5 @@ const _relics = computed(() => {
 </template>
 
 <style lang="sass" scoped>
-h4
-  color: rgb(var(--v-theme-surface-variant))
-  font-weight: normal
-  font-size: 0.9em
+
 </style>
