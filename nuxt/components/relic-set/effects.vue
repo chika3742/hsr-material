@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 withDefaults(defineProps<{
   relicId: string
-  show4pc?: boolean
+  show2pcOnly?: boolean
 }>(), {
-  show4pc: true,
+  show2pcOnly: false,
 })
 </script>
 
@@ -13,7 +13,7 @@ withDefaults(defineProps<{
       <h4>{{ tx("common.2pcEffect") }}</h4>
       <EmphasizedText :text="tx(`relicSetEffects.${relicId}.2pc`)" class="pl-4 my-1" />
     </section>
-    <section v-if="$te(`relicSetEffects.${relicId}.4pc`)" v-show="show4pc">
+    <section v-if="$te(`relicSetEffects.${relicId}.4pc`)" v-show="!show2pcOnly">
       <h4>{{ tx("common.4pcEffect") }}</h4>
       <EmphasizedText :text="tx(`relicSetEffects.${relicId}.4pc`)" class="pl-4 my-1" />
     </section>
