@@ -1,4 +1,4 @@
-export interface Relic {
+export interface RelicSet {
   id: string
   $nameJA: string
   yomi: string
