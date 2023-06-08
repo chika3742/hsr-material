@@ -62,7 +62,7 @@ const _relics = computed(() => {
         </v-expansion-panel-title>
         <v-expansion-panel-text>
           <div>
-            <RelicEffects :relic-id="relic.id" />
+            <RelicSetEffects :relic-id="relic.id" />
             <v-btn
               :to="localePath(`/relics/${relic.id}`)"
               class="mt-2"
