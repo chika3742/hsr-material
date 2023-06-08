@@ -39,3 +39,9 @@ declare module "assets/data/relic-sets.csv" {
   const relics: RelicSet[]
   export default relics
 }
+
+declare module "assets/data/relic-stats.yaml" {
+  import {RelicStats} from "~/types/generated/relic-stats.g"
+  const relicStats: RelicStats
+  export default relicStats
+}

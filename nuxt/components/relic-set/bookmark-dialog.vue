@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import {RelicSet} from "~/types/data/relics"
-import {Stat} from "~/types/strings"
+import relicStats from "assets/data/relic-stats.yaml"
+import {Stat} from "~/types/generated/relic-stats.g"
 
 interface Props {
   modelValue: boolean
@@ -8,7 +9,7 @@ interface Props {
 }
 
 interface RadioGroup {
-  id: string
+  type: string
   title: string
   items: Stat[]
 }
@@ -42,86 +43,45 @@ const radioGroups = computed<RadioGroup[]>(() => {
   if (props.relicSets[0].type === "cavern") {
     return [
       {
-        id: "mainBody",
+        type: "body",
         title: "relicDetailsPage.mainStatBody",
-        items: [
-          "hp_percent",
-          "atk_percent",
-          "def_percent",
-          "crit_rate",
-          "crit_dmg",
-          "outgoing_healing",
-          "effect_hit_rate",
-        ],
+        items: relicStats.main.body,
       },
       {
-        id: "mainFeet",
+        type: "feet",
         title: "relicDetailsPage.mainStatFeet",
-        items: [
-          "hp_percent",
-          "atk_percent",
-          "def_percent",
-          "speed",
-        ],
+        items: relicStats.main.feet,
       },
     ]
   } else {
     return [
       {
-        id: "mainPlanarSphere",
+        type: "planarSphere",
         title: "relicDetailsPage.mainStatPlanarSphere",
-        items: [
-          "hp_percent",
-          "atk_percent",
-          "def_percent",
-          "crit_rate",
-          "crit_dmg",
-          "outgoing_healing",
-          "effect_hit_rate",
-        ],
+        items: relicStats.main.planarSphere,
       },
       {
-        id: "mainLinkRope",
+        type: "linkRope",
         title: "relicDetailsPage.mainStatLinkRope",
-        items: [
-          "hp_percent",
-          "atk_percent",
-          "def_percent",
-          "break_effect",
-          "energy_regen_rate",
-        ],
+        items: relicStats.main.linkRope,
       },
     ]
   }
 })
 
-const selectedStats = ref<{ sub: Stat[] } | Record<string, Stat>>({
+const selectedStats = ref({
+  main: {} as Record<string, Stat | null>,
   sub: [] as Stat[],
 })
 
 watch(toRefs(props).modelValue, (value) => {
   if (value) {
     selectedStats.value = {
-      ...Object.fromEntries(radioGroups.value.map(e => [e.id, null])),
+      main: Object.fromEntries(radioGroups.value.map(e => [e.type, null])),
       sub: [] as Stat[],
     }
   }
 })
-
-const subStats: Stat[] = [
-  "hp",
-  "atk",
-  "def",
-  "hp_percent",
-  "atk_percent",
-  "def_percent",
-  "crit_rate",
-  "crit_dmg",
-  "effect_hit_rate",
-  "effect_res",
-  "break_effect",
-  "speed",
-]
 </script>
 
 <template>
@@ -145,7 +105,7 @@ const subStats: Stat[] = [
 
           <section v-for="group in radioGroups" :key="group.title">
             <h4>{{ tx(group.title) }}</h4>
-            <v-radio-group v-model="selectedStats[group.id]" inline>
+            <v-radio-group v-model="selectedStats.main[group.type]" inline>
               <v-radio :label="tx('relicDetailsPage.unspecified')" :value="null" />
               <v-radio v-for="stat in group.items" :key="stat" :label="tx(`stats.${stat}`)" :value="stat" />
             </v-radio-group>
@@ -155,7 +115,7 @@ const subStats: Stat[] = [
             <h4>{{ tx("common.subStat") }}</h4>
             <v-row no-gutters>
               <v-checkbox-btn
-                v-for="stat in subStats"
+                v-for="stat in relicStats.sub"
                 :key="stat"
                 v-model="selectedStats.sub"
                 :label="tx(`stats.${stat}`)"

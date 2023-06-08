@@ -1,0 +1,65 @@
+$schema: https://json-schema.org/draft-07/schema
+
+type: object
+additionalProperties: false
+required:
+  - main
+  - sub
+
+properties:
+  main:
+    type: object
+    additionalProperties: false
+    required:
+      - body
+      - feet
+      - planarSphere
+      - linkRope
+
+    properties:
+      body:
+        type: array
+        items:
+          $ref: "#/definitions/stat"
+      feet:
+        type: array
+        items:
+          $ref: "#/definitions/stat"
+      planarSphere:
+        type: array
+        items:
+          $ref: "#/definitions/stat"
+      linkRope:
+        type: array
+        items:
+          $ref: "#/definitions/stat"
+  sub:
+    type: array
+    items:
+      $ref: "#/definitions/stat"
+
+definitions:
+  stat:
+    type: string
+    enum:
+      - "hp"
+      - "atk"
+      - "def"
+      - "hp_percent"
+      - "atk_percent"
+      - "def_percent"
+      - "crit_rate"
+      - "crit_dmg"
+      - "outgoing_healing"
+      - "effect_hit_rate"
+      - "speed"
+      - "physical_dmg"
+      - "fire_dmg"
+      - "ice_dmg"
+      - "lightning_dmg"
+      - "wind_dmg"
+      - "quantum_dmg"
+      - "imaginary_dmg"
+      - "break_effect"
+      - "energy_regen_rate"
+      - "effect_res"

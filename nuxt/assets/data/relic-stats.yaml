@@ -1,0 +1,45 @@
+main:
+  body:
+    - hp_percent
+    - atk_percent
+    - def_percent
+    - crit_rate
+    - crit_dmg
+    - outgoing_healing
+    - effect_hit_rate
+
+  feet:
+    - hp_percent
+    - atk_percent
+    - def_percent
+    - speed
+
+  planarSphere:
+    - hp_percent
+    - atk_percent
+    - def_percent
+    - crit_rate
+    - crit_dmg
+    - outgoing_healing
+    - effect_hit_rate
+
+  linkRope:
+    - hp_percent
+    - atk_percent
+    - def_percent
+    - break_effect
+    - energy_regen_rate
+
+sub:
+  - hp
+  - atk
+  - def
+  - hp_percent
+  - atk_percent
+  - def_percent
+  - crit_rate
+  - crit_dmg
+  - effect_hit_rate
+  - effect_res
+  - break_effect
+  - speed

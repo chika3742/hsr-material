@@ -30,6 +30,9 @@
                   <Item>
                     <option name="path" value="nuxt/schemas/light-cone-ingredients.yaml" />
                   </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/relic-stats.yaml" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>
@@ -134,6 +137,23 @@
                 <list>
                   <Item>
                     <option name="path" value="nuxt/assets/data/release-notes.yaml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="relic-stats">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="relic-stats" />
+              <option name="relativePathToSchema" value="nuxt/schemas/relic-stats.yaml" />
+              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="nuxt/assets/data/relic-stats.yaml" />
                   </Item>
                 </list>
               </option>
