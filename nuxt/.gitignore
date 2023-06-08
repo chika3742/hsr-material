@@ -7,6 +7,7 @@ node_modules
 .env
 dist
 /py/
+types/generated
 
 # yarn not using zero-installs
 .pnp.*
