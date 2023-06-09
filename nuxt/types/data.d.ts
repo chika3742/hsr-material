@@ -36,8 +36,14 @@ declare module "~/assets/data/materials.csv" {
 
 declare module "assets/data/relic-sets.csv" {
   import {RelicSet} from "~/types/data/relics"
-  const relics: RelicSet[]
-  export default relics
+  const relicSets: RelicSet[]
+  export default relicSets
+}
+
+declare module "assets/data/relic-pieces.csv" {
+  import {RelicPiece} from "~/types/data/relics"
+  const relicPieces: RelicPiece[]
+  export default relicPieces
 }
 
 declare module "assets/data/relic-stats.yaml" {
