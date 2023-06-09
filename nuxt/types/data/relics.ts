@@ -10,4 +10,5 @@ export interface RelicPiece {
   $nameJA: string
   yomi: string
   setId: string
+  type: "head" | "hands" | "body" | "feet" | "planar_sphere" | "link_rope"
 }
