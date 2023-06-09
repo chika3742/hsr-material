@@ -11,12 +11,22 @@ properties:
     type: object
     additionalProperties: false
     required:
+      - head
+      - hands
       - body
       - feet
       - planarSphere
       - linkRope
 
     properties:
+      head:
+        type: array
+        items:
+          $ref: "#/definitions/stat"
+      hands:
+        type: array
+        items:
+          $ref: "#/definitions/stat"
       body:
         type: array
         items:

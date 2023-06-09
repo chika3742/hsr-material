@@ -1,4 +1,10 @@
 main:
+  head:
+    - hp
+
+  hands:
+    - atk
+
   body:
     - hp_percent
     - atk_percent
