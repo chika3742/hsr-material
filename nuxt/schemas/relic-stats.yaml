@@ -15,8 +15,8 @@ properties:
       - hands
       - body
       - feet
-      - planarSphere
-      - linkRope
+      - planar_sphere
+      - link_rope
 
     properties:
       head:
@@ -35,11 +35,11 @@ properties:
         type: array
         items:
           $ref: "#/definitions/stat"
-      planarSphere:
+      planar_sphere:
         type: array
         items:
           $ref: "#/definitions/stat"
-      linkRope:
+      link_rope:
         type: array
         items:
           $ref: "#/definitions/stat"

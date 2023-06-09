@@ -20,7 +20,7 @@ main:
     - def_percent
     - speed
 
-  planarSphere:
+  planar_sphere:
     - hp_percent
     - atk_percent
     - def_percent
@@ -29,7 +29,7 @@ main:
     - outgoing_healing
     - effect_hit_rate
 
-  linkRope:
+  link_rope:
     - hp_percent
     - atk_percent
     - def_percent
