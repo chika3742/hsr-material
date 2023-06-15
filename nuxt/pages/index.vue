@@ -35,6 +35,10 @@ const entries: Entry[] = [
     path: "/light-cones",
   },
   {
+    icon: "mdi-star-david",
+    path: "/relics",
+  },
+  {
     icon: "mdi-grass",
     path: "/materials",
   },
