@@ -20,6 +20,7 @@ const i18n = useI18n()
 
 interface HeaderRelic {
   title: string
+  subtitle?: string
   image: string
 }
 
@@ -50,6 +51,7 @@ const headerRelics = computed<HeaderRelic[]>(() => {
     return [
       {
         title: tx(`relicPieceNames.${props.relicPiece!.id}`),
+        subtitle: tx(`relicLocations.${props.relicPiece!.type}`),
         image: getRelicPieceImage(props.relicPiece!.id),
       },
     ]
@@ -170,6 +172,7 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
             :key="i"
             :prepend-avatar="item.image"
             :title="item.title"
+            :subtitle="item.subtitle"
           />
 
           <!-- Character select -->
