@@ -30,10 +30,18 @@ const props = defineProps<{
   targetType: TargetType
   targetId: string
   materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
-  rarity?: number
 }>()
 
-const levelIngredientsList = computed<LevelIngredients[]>(() => {
+const rarity = (() => {
+  switch (props.targetType) {
+    case "character":
+      return characters.find(e => e.id === props.targetId)!.rarity
+    case "light_cone":
+      return lightCones.find(e => e.id === props.targetId)!.rarity
+  }
+})()
+
+const levelIngredients = (() => {
   switch (props.targetType) {
     case "character":
       return characterIngredients.ascension
