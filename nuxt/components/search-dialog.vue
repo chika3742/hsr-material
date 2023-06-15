@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import {RawLocation} from "@intlify/vue-router-bridge"
 import {AlgoliaRecord} from "~/types/algolia-record"
 
 const props = defineProps<{
@@ -86,6 +87,18 @@ const getItemImage = (item: AlgoliaRecord): string => {
       return getRelicPieceImage(item.itemId)
   }
 }
+
+const urlToRouteLocation = (url: string): RawLocation => {
+  let query = {}
+  if (url.split("?").length > 1) {
+    query = Object.fromEntries(new URLSearchParams(url.split("?")[1]))
+  }
+
+  return {
+    path: url.split("?")[0],
+    query,
+  }
+}
 </script>
 
 <template>
@@ -132,13 +145,14 @@ const getItemImage = (item: AlgoliaRecord): string => {
         </div>
 
         <v-list v-if="results" style="overflow: auto !important">
+          <!-- :to="localePath(item.url)" https://github.com/nuxt-modules/i18n/issues/2020 -->
           <v-list-item
             v-for="item in results"
             :key="item.objectID"
             :prepend-avatar="getItemImage(item)"
             :subtitle="tx(`searchRecordTypes.${item.recordType}`)"
             :title="tx(item.i18nKey)"
-            :to="localePath(item.url)"
+            :to="localePath(urlToRouteLocation(item.url))"
             @click="clearQuery(); closeDialog()"
           />
         </v-list>

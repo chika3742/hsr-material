@@ -10,6 +10,13 @@ definePageMeta({
 
 const route = useRoute()
 
+const expandedPanels = ref(0)
+onMounted(() => {
+  if (!isNaN(Number(route.query.expansion_index))) {
+    expandedPanels.value = Number(route.query.expansion_index)
+  }
+})
+
 const chooseRelicSetDialog = ref(false)
 
 const relicSetBookmarkDialog = reactive({
@@ -63,7 +70,7 @@ const bookmarkPiece = (piece: RelicPiece) => {
 
     <RelicSetEffects :relic-id="relicSet.id" />
 
-    <v-expansion-panels mandatory="force">
+    <v-expansion-panels v-model="expandedPanels">
       <v-expansion-panel :title="tx('relicDetailsPage.bookmarkInSets')">
         <template #text>
           <div class="d-flex flex-column" style="gap: 16px">

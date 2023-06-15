@@ -97,7 +97,7 @@ const syncObjects = async() => {
       i18nKey: `relicPieceNames.${e.id}`,
       yomi: kataToHira(e.yomi),
       recordType: "relic-piece" as const,
-      url: `/relics/${e.setId}`,
+      url: `/relics/${e.setId}?expansion_index=1`,
     })),
   ]
 
