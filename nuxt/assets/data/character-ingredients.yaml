@@ -9,6 +9,7 @@ expItems:
 purposeTypes:
   ascension:
     levels:
+      # TODO: Add character exp for rarity 5
       '20':
         - exp:
             rarities:
