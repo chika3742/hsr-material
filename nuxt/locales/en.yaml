@@ -35,6 +35,8 @@ searchRecordTypes:
   character: Character
   light-cone: Light Cone
   material: Material
+  relic-set: Relic Set
+  relic-piece: Relic Piece
 
 pageTitles:
   home: Home

@@ -35,6 +35,8 @@ searchRecordTypes:
   character: キャラクター
   light-cone: 光円錐
   material: 素材
+  relic-set: 遺物セット
+  relic-piece: 遺物
 
 pageTitles:
   home: ホーム
