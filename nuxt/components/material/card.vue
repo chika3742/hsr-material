@@ -1,5 +1,5 @@
 <template>
-  <v-card :to="localePath(`/materials/${materialId}`)" :v-slot:loader="false" color="card">
+  <v-card v-show="quantity !== 0" :to="localePath(`/materials/${materialId}`)" :v-slot:loader="false" color="card">
     <div class="py-2 px-3 d-flex align-center">
       <v-btn
         v-if="items[0].purposeType === 'exp'"
