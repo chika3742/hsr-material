@@ -1,6 +1,6 @@
 import {Ingredient} from "~/types/generated/character-ingredients.g"
 
-export interface LevelIngredient {
+export interface LevelIngredients {
   level: number
   ingredients: Ingredient[]
 }
