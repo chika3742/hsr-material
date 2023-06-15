@@ -46,9 +46,9 @@ const theme = useTheme()
 const expDefs = computed(() => {
   switch (props.items[0].targetType) {
     case "character":
-      return characterIngredients.exp
+      return characterIngredients.expItems
     case "light_cone":
-      return lightConeIngredients.exp
+      return lightConeIngredients.expItems
   }
 })
 
@@ -90,8 +90,8 @@ const markerColor = computed(() => {
   }
 })
 
-const isExpList = (e: BookmarkableItem[]): e is BookmarkableExp[] => {
-  return e.every(e => e.purposeType === "exp")
+const isExpList = (src: BookmarkableItem[]): src is BookmarkableExp[] => {
+  return src.every(e => e.purposeType === "exp")
 }
 </script>
 

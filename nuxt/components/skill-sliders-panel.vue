@@ -1,14 +1,15 @@
 <script lang="ts" setup>
-import {computed, getMaterialIdFromIngredient, levelIngredientsListToSliderTicks, ref} from "#imports"
+import {computed, getMaterialIdFromIngredient, levelIngredientsToSliderTicks, ref} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import {LevelIngredients} from "~/types/generated/character-ingredients.g"
 import {BookmarkableIngredient} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
+import {LevelIngredients} from "~/types/level-ingredients"
+import characters from "~/assets/data/characters.yaml"
 
 interface Slider {
   type: Exclude<PurposeType, "exp">
-  levelIngredientsList: LevelIngredients[]
+  levelIngredients: LevelIngredients[]
 }
 
 const props = defineProps<{
@@ -23,24 +24,26 @@ const skillI18nKeyBase = computed(() => `skillTitles.${props.characterId + (prop
 const sliders: Slider[] = [
   {
     type: "basicAttack",
-    levelIngredientsList: characterIngredients.basicAttack,
+    levelIngredients: levelsToLevelIngredients(characterIngredients.purposeTypes.basicAttack.levels),
   },
   {
     type: "skill",
-    levelIngredientsList: characterIngredients.skill,
+    levelIngredients: levelsToLevelIngredients(characterIngredients.purposeTypes.skill.levels),
   },
   {
     type: "ultimate",
-    levelIngredientsList: characterIngredients.ultimate,
+    levelIngredients: levelsToLevelIngredients(characterIngredients.purposeTypes.ultimate.levels),
   },
   {
     type: "talent",
-    levelIngredientsList: characterIngredients.talent,
+    levelIngredients: levelsToLevelIngredients(characterIngredients.purposeTypes.talent.levels),
   },
 ]
 
+const characterRarity = characters.find(e => e.id === props.characterId)!.rarity
+
 const ranges = ref(sliders.map((e) => {
-  const sliderTicks = levelIngredientsListToSliderTicks(e.levelIngredientsList)
+  const sliderTicks = levelIngredientsToSliderTicks(e.levelIngredients)
   return [sliderTicks[0], sliderTicks.slice(-1)[0]]
 }))
 
@@ -51,10 +54,10 @@ const ingredients = computed<BookmarkableIngredient[]>(() => {
     if (!checkedList.value[i]) {
       return []
     }
-    return e.levelIngredientsList.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
+    return e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
       .map(f => f.ingredients.map<BookmarkableIngredient>(g => ({
         id: getMaterialIdFromIngredient(g, props.materialDefs)!,
-        quantity: g.quantity!,
+        quantity: g.quantity!.rarities[characterRarity.toString()],
         level: f.level,
         targetType: "character",
         targetId: props.characterId,
@@ -80,7 +83,7 @@ const ingredients = computed<BookmarkableIngredient[]>(() => {
           <LevelSlider
             v-model="ranges[i]"
             :class="{thin: !checkedList[i]}"
-            :slider-ticks="levelIngredientsListToSliderTicks(item.levelIngredientsList)"
+            :slider-ticks="levelIngredientsToSliderTicks(item.levelIngredients)"
             style="transition: opacity 100ms ease"
           />
           <v-divider />

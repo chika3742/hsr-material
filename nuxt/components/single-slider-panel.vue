@@ -23,7 +23,9 @@ import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import {CharacterMaterialDefinitions} from "~/types/generated/characters.g"
 import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
-import {LevelIngredients} from "~/types/generated/character-ingredients.g"
+import characters from "~/assets/data/characters.yaml"
+import lightCones from "~/assets/data/light-cones.yaml"
+import {LevelIngredients} from "~/types/level-ingredients"
 
 const props = defineProps<{
   title: string
@@ -44,32 +46,23 @@ const rarity = (() => {
 const levelIngredients = (() => {
   switch (props.targetType) {
     case "character":
-      return characterIngredients.ascension
+      return levelsToLevelIngredients(characterIngredients.purposeTypes.ascension.levels)
     case "light_cone": {
-      if (!props.rarity) {
-        throw new Error("rarity is required")
-      }
-
-      const rarityIngredients = lightConeIngredients.ascension.find(e => e.rarity === props.rarity)
-      if (!rarityIngredients) {
-        throw new Error(`rarity ${props.rarity} is not found`)
-      }
-
-      return rarityIngredients!.ingredients
+      return levelsToLevelIngredients(lightConeIngredients.levels)
     }
   }
-})
+})()
 
-const sliderTicks = computed(() => levelIngredientsListToSliderTicks(levelIngredientsList.value))
+const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredients))
 
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
 
-const selectedLevelIngredientsList = computed<LevelIngredients[]>(() => {
-  return levelIngredientsList.value.filter(e => range.value[0] < e.level && e.level <= range.value[1])
+const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
+  return levelIngredients.filter(e => range.value[0] < e.level && e.level <= range.value[1])
 })
 
 const items = computed<BookmarkableItem[]>(() => {
-  return selectedLevelIngredientsList.value.map(e => e.ingredients.map<BookmarkableItem>((f) => {
+  return ingredientsWithinSelectedLevelRange.value.map(e => e.ingredients.map<BookmarkableItem>((f) => {
     const meta: BookmarkableIngredientMeta = {
       level: e.level,
       targetType: props.targetType,
@@ -79,14 +72,14 @@ const items = computed<BookmarkableItem[]>(() => {
     if (typeof f.quantity !== "undefined") {
       const result: BookmarkableIngredient = {
         id: getMaterialIdFromIngredient(f, props.materialDefs),
-        quantity: f.quantity,
+        quantity: f.quantity.rarities[rarity.toString()],
         ...meta,
         purposeType: "ascension",
       }
       return result
     } else {
       const result: BookmarkableExp = {
-        exp: f.exp!,
+        exp: f.exp!.rarities[rarity.toString()],
         ...meta,
         purposeType: "exp",
       }
