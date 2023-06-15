@@ -130,6 +130,7 @@ const initSelections = () => {
 const saveBookmark = () => {
   if (selectedCharacters.value.length === 0) {
     characterSelectError.value = tx(i18n, "relicDetailsPage.characterSelectError")
+    return
   }
 
   emit("update:modelValue", false)
