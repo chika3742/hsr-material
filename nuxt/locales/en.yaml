@@ -97,8 +97,8 @@ relicDetailsPage:
   mainStat: Main Stat
   mainStatBody: "@:common.mainStat (@:{'relicLocations.body'})"
   mainStatFeet: "@:common.mainStat (@:{'relicLocations.feet'})"
-  mainStatPlanarSphere: "@:common.mainStat (@:{'relicLocations.planarSphere'})"
-  mainStatLinkRope: "@:common.mainStat (@:{'relicLocations.linkRope'})"
+  mainStatPlanarSphere: "@:common.mainStat (@:{'relicLocations.planar_sphere'})"
+  mainStatLinkRope: "@:common.mainStat (@:{'relicLocations.link_rope'})"
   unspecified: Unspecified
   characterToEquip: Character(s) to Equip
   characterSelectError: Please select a character to equip.
@@ -250,8 +250,8 @@ relicLocations:
   hands: Hands
   body: Body
   feet: Feet
-  planarSphere: Planar Sphere
-  linkRope: Link Rope
+  planar_sphere: Planar Sphere
+  link_rope: Link Rope
 
 stats:
   hp: HP

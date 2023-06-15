@@ -95,8 +95,8 @@ relicDetailsPage:
   mainStat: メインステータス
   mainStatBody: "@:common.mainStat (@:{'relicLocations.body'})"
   mainStatFeet: "@:common.mainStat (@:{'relicLocations.feet'})"
-  mainStatPlanarSphere: "@:common.mainStat (@:{'relicLocations.planarSphere'})"
-  mainStatLinkRope: "@:common.mainStat (@:{'relicLocations.linkRope'})"
+  mainStatPlanarSphere: "@:common.mainStat (@:{'relicLocations.planar_sphere'})"
+  mainStatLinkRope: "@:common.mainStat (@:{'relicLocations.link_rope'})"
   unspecified: 指定しない
   characterToEquip: 装備するキャラクター
   characterSelectError: キャラクターを選択してください
@@ -275,8 +275,8 @@ relicLocations:
   hands: 手部
   body: 胴体
   feet: 脚部
-  planarSphere: 次元界オーブ
-  linkRope: 連結縄
+  planar_sphere: 次元界オーブ
+  link_rope: 連結縄
 
 stats:
   hp: HP
