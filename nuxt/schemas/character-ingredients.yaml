@@ -3,15 +3,11 @@ $schema: https://json-schema.org/draft-07/schema
 type: object
 additionalProperties: false
 required:
-  - exp
-  - ascension
-  - basicAttack
-  - skill
-  - ultimate
-  - talent
+  - expItems
+  - purposeTypes
 
 properties:
-  exp:
+  expItems:
     type: array
     items:
       type: object
@@ -25,36 +21,47 @@ properties:
         expPerItem:
           type: integer
 
-  ascension:
-    type: array
-    items:
-      $ref: "#/definitions/levelIngredients"
-
-  basicAttack:
-    type: array
-    items:
-      $ref: "#/definitions/levelIngredients"
-
-  skill:
-    type: array
-    items:
-      $ref: "#/definitions/levelIngredients"
-
-  ultimate:
-    type: array
-    items:
-      $ref: "#/definitions/levelIngredients"
-
-  talent:
-    type: array
-    items:
-      $ref: "#/definitions/levelIngredients"
+  purposeTypes:
+    type: object
+    additionalProperties: false
+    required:
+      - ascension
+      - basicAttack
+      - skill
+      - ultimate
+      - talent
+    properties:
+      ascension:
+        $ref: "#/definitions/levelsObject"
+      basicAttack:
+        $ref: "#/definitions/levelsObject"
+      skill:
+        $ref: "#/definitions/levelsObject"
+      ultimate:
+        $ref: "#/definitions/levelsObject"
+      talent:
+        $ref: "#/definitions/levelsObject"
 
 definitions:
+  levelsObject:
+    type: object
+    additionalProperties: false
+    required:
+      - levels
+    properties:
+      levels:
+        $ref: "#/definitions/levels"
+
+  levels:
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        $ref: "#/definitions/ingredient"
+
   ingredient:
     type: object
     additionalProperties: false
-
     properties:
       fixedId:
         type: string
@@ -67,22 +74,19 @@ definitions:
           - skills
           - skillsAdvanced
       quantity:
-        type: integer
+        $ref: "#/definitions/quantityWithRarity"
       exp:
-        type: integer
+        $ref: "#/definitions/quantityWithRarity"
       craftLevel:
         type: integer
 
-  levelIngredients:
+  quantityWithRarity:
     type: object
     additionalProperties: false
     required:
-      - level
-      - ingredients
+      - rarities
     properties:
-      level:
-        type: integer
-      ingredients:
-        type: array
-        items:
-          $ref: "#/definitions/ingredient"
+      rarities:
+        type: object
+        additionalProperties:
+          type: integer
