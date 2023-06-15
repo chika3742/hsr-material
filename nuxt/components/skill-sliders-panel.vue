@@ -72,17 +72,18 @@ const ingredients = computed<BookmarkableIngredient[]>(() => {
         <section v-for="(item, i) in sliders" :key="i">
           <v-row align="center" no-gutters>
             <v-checkbox-btn v-model="checkedList[i]" class="flex-grow-0" />
-            <h4 :class="{thin: !checkedList[i]}" style="transition: opacity 100ms ease">
+            <h4>
               <span class="label-subtitle">{{ tx(`common.skillTypes.${item.type}`) }}</span>
               <span class="ml-2 text-primary">{{ tx(`${skillI18nKeyBase}.${item.type}`) }}</span>
             </h4>
           </v-row>
-          <LevelSlider
-            v-model="ranges[i]"
-            :class="{thin: !checkedList[i]}"
-            :slider-ticks="levelIngredientsListToSliderTicks(item.levelIngredientsList)"
-            style="transition: opacity 100ms ease"
-          />
+          <v-expand-transition>
+            <LevelSlider
+              v-show="checkedList[i]"
+              v-model="ranges[i]"
+              :slider-ticks="levelIngredientsListToSliderTicks(item.levelIngredientsList)"
+            />
+          </v-expand-transition>
           <v-divider />
         </section>
 
@@ -96,7 +97,4 @@ const ingredients = computed<BookmarkableIngredient[]>(() => {
 .sliders-container
   h4 .label-subtitle
     color: rgb(var(--v-theme-surface-variant))
-
-.thin
-  opacity: 0.7
 </style>
