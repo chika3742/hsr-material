@@ -14,6 +14,9 @@ common:
   combatType: Combat Type
   currentLevel: Current Level
   targetLevel: Target Level
+  kind: Kind
+  mainStat: Main Stat
+  subStat: Sub Stat | Sub Stats
   2pcEffect: 2-Piece Effect
   4pcEffect: 4-Piece Effect
   skillTypes:
@@ -54,7 +57,9 @@ pageTitles:
 footer:
   feedback: Submit Issue
   theme: Theme
-  disclaimer: This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE. If you find any mistranslations, please report them via @:pageTitles.about > Feedback.
+  disclaimer: |
+    This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE.
+    If you find any mistranslations, please report them via @:pageTitles.about > Feedback.
   themeOptions:
     light: Light
     dark: Dark
@@ -70,6 +75,31 @@ lightConesPage:
 lightConeDetailsPage:
   ascension: Light Cone Leveling/Ascension Materials
   skillDescriptions: Skill Descriptions
+
+relicsPage:
+  toDetailPage: Go to Detail Page
+
+relicDetailsPage:
+  4pcs: 4 Pcs
+  2pcs: 2 Pcs
+  bookmarkInSets: Bookmark in Set(s)
+  bookmarkPerLocation: Bookmark per Locations
+  recommendedCharacters: Recommended Characters
+  bookmark: Bookmark
+  bookmark2PcsEach: Bookmark 2+2 Pcs
+  bookmark4Pcs: Bookmark 4 Pcs
+  bookmark2Pcs: Bookmark 2 Pcs
+  chooseRelicSet: Choose the Second Relic Set
+  bookmarkRelicSet: Bookmark Relic Set(s)
+  bookmarkRelicPiece: Bookmark Relic Piece
+  mainStat: Main Stat
+  mainStatBody: "@:common.mainStat (@:{'relicLocations.body'})"
+  mainStatFeet: "@:common.mainStat (@:{'relicLocations.feet'})"
+  mainStatPlanarSphere: "@:common.mainStat (@:{'relicLocations.planarSphere'})"
+  mainStatLinkRope: "@:common.mainStat (@:{'relicLocations.linkRope'})"
+  unspecified: Unspecified
+  characterToEquip: Character(s) to Equip
+  characterSelectError: Please select a character to equip.
 
 materialDetailsPage:
   characterUsage: Characters for Which This Material Is Used
@@ -209,6 +239,41 @@ combatTypes:
   wind: Wind
   quantum: Quantum
 
+relicTypes:
+  cavern: Cavern Relics
+  planar: Planar Ornaments
+
+relicLocations:
+  head: Head
+  hands: Hands
+  body: Body
+  feet: Feet
+  planarSphere: Planar Sphere
+  linkRope: Link Rope
+
+stats:
+  hp: HP
+  atk: ATK
+  def: DEF
+  hp_percent: HP%
+  atk_percent: ATK%
+  def_percent: DEF%
+  crit_rate: CRIT Rate
+  crit_dmg: CRIT DMG
+  outgoing_healing: Outgoing Healing
+  effect_hit_rate: Effect Hit Rate
+  speed: Speed
+  physical_dmg: Physical DMG Boost
+  fire_dmg: Fire DMG Boost
+  ice_dmg: Ice DMG Boost
+  lightning_dmg: Lightning DMG Boost
+  wind_dmg: Wind DMG Boost
+  quantum_dmg: Quantum DMG Boost
+  imaginary_dmg: Imaginary DMG Boost
+  break_effect: Break Effect
+  energy_regen_rate: Energy Regen Rate
+  effect_res: Effect RES
+
 characterNames:
   march-7th: March 7th
   dan-heng: Dan Heng
@@ -237,6 +302,8 @@ characterNames:
   yanqing: Yanqing
   bailu: Bailu
   trailblazer: Trailblazer
+  trailblazer_destruction: Trailblazer (Destruction)
+  trailblazer_preservation: Trailblazer (Preservation)
 
 materialCategories:
   exp: EXP Materials
@@ -769,3 +836,68 @@ relicSetEffects:
       SPD reaches <120> or higher, the wearer's action is Advanced Forward by
       <40%> immediately upon entering battle.
 
+relicPieceNames:
+  bands-polarized-sunglasses: Band's Polarized Sunglasses
+  bands-touring-bracelet: Band's Touring Bracelet
+  bands-leather-jacket-with-studs: Band's Leather Jacket With Studs
+  bands-ankle-boots-with-rivets: Band's Ankle Boots With Rivets
+  hunters-artaius-hood: Hunter's Artaius Hood
+  hunters-lizard-gloves: Hunter's Lizard Gloves
+  hunters-ice-dragon-cloak: Hunter's Ice Dragon Cloak
+  hunters-soft-elkskin-boots: Hunter's Soft Elkskin Boots
+  wastelanders-breathing-mask: Wastelander's Breathing Mask
+  wastelanders-desert-terminal: Wastelander's Desert Terminal
+  wastelanders-friar-robe: Wastelander's Friar Robe
+  wastelanders-powered-greaves: Wastelander's Powered Greaves
+  musketeers-wild-wheat-felt-hat: Musketeer's Wild Wheat Felt Hat
+  musketeers-coarse-leather-gloves: Musketeer's Coarse Leather Gloves
+  musketeers-wind-hunting-shawl: Musketeer's Wind-Hunting Shawl
+  musketeers-rivets-riding-boots: Musketeer's Rivets Riding Boots
+  salsottos-moving-city: Salsotto's Moving City
+  salsottos-terminator-line: Salsotto's Terminator Line
+  the-xianzhou-luofus-celestial-ark: The Xianzhou Luofu's Celestial Ark
+  the-xianzhou-luofus-ambrosial-arbor-vines: The Xianzhou Luofu's Ambrosial Arbor Vines
+  knights-forgiving-casque: Knight's Forgiving Casque
+  knights-silent-oath-ring: Knight's Silent Oath Ring
+  knights-solemn-breastplate: Knight's Solemn Breastplate
+  knights-iron-boots-of-order: Knight's Iron Boots of Order
+  talias-nailscrap-town: Talia's Nailscrap Town
+  talias-exposed-electric-wire: Talia's Exposed Electric Wire
+  vonwacqs-island-of-birth: Vonwacq's Island of Birth
+  vonwacqs-islandic-coast: Vonwacq's Islandic Coast
+  firesmiths-obsidian-goggles: Firesmith's Obsidian Goggles
+  firesmiths-ring-of-flame-mastery: Firesmith's Ring of Flame-Mastery
+  firesmiths-fireproof-apron: Firesmith's Fireproof Apron
+  firesmiths-alloy-leg: Firesmith's Alloy Leg
+  passerbys-rejuvenated-wooden-hairstick: Passerby's Rejuvenated Wooden Hairstick
+  passerbys-roaming-dragon-bracer: Passerby's Roaming Dragon Bracer
+  passerbys-ragged-embroided-coat: Passerby's Ragged Embroided Coat
+  passerbys-stygian-hiking-boots: Passerby's Stygian Hiking Boots
+  thiefs-myriad-faced-mask: Thief's Myriad-Faced Mask
+  thiefs-gloves-with-prints: Thief's Gloves With Prints
+  thiefs-steel-grappling-hook: Thief's Steel Grappling Hook
+  thiefs-meteor-boots: Thief's Meteor Boots
+  the-ipcs-mega-hq: The IPC's Mega HQ
+  the-ipcs-trade-route: The IPC's Trade Route
+  eagles-beaked-helmet: Eagle's Beaked Helmet
+  eagles-soaring-ring: Eagle's Soaring Ring
+  eagles-winged-suit-harness: Eagle's Winged Suit Harness
+  eagles-quilted-puttees: Eagle's Quilted Puttees
+  geniuss-ultraremote-sensing-visor: Genius's Ultraremote Sensing Visor
+  geniuss-frequency-catcher: Genius's Frequency Catcher
+  geniuss-metafield-suit: Genius's Metafield Suit
+  geniuss-gravity-walker: Genius's Gravity Walker
+  champions-headgear: Champion's Headgear
+  champions-heavy-gloves: Champion's Heavy Gloves
+  champions-chest-guard: Champion's Chest Guard
+  champions-fleetfoot-boots: Champion's Fleetfoot Boots
+  belobogs-fortress-of-preservation: Belobog's Fortress of Preservation
+  belobogs-iron-defense: Belobog's Iron Defense
+  hertas-space-station: Herta's Space Station
+  hertas-wandering-trek: Herta's Wandering Trek
+  planet-screwllums-mechanical-sun: Planet Screwllum's Mechanical Sun
+  planet-screwllums-ring-system: Planet Screwllum's Ring System
+  guards-cast-iron-helmet: Guard's Cast Iron Helmet
+  guards-shining-gauntlets: Guard's Shining Gauntlets
+  guards-uniform-of-old: Guard's Uniform of Old
+  guards-silver-greaves: Guard's Silver Greaves

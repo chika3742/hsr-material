@@ -68,7 +68,7 @@ const _relics = computed(() => {
               class="mt-2"
               color="primary"
               prepend-icon="mdi-loupe"
-              text="詳細ページへ"
+              :text="tx('relicsPage.toDetailPage')"
               variant="text"
             />
           </div>

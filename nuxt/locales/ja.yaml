@@ -17,6 +17,8 @@ common:
   2pcEffect: 2セット効果
   4pcEffect: 4セット効果
   kind: 種類
+  mainStat: メインステータス
+  subStat: サブステータス
   skillTypes:
     basicAttack: 通常攻撃
     skill: 戦闘スキル
@@ -71,6 +73,31 @@ lightConesPage:
 lightConeDetailsPage:
   ascension: 光円錐Lvアップ/昇格素材
   skillDescriptions: スキル説明
+
+relicsPage:
+  toDetailPage: 詳細ページへ
+
+relicDetailsPage:
+  4pcs: 4セット
+  2pcs: 2セット
+  bookmarkInSets: セットでブックマーク
+  bookmarkPerLocation: 部位ごとにブックマーク
+  recommendedCharacters: 装備おすすめキャラクター
+  bookmark: ブックマーク
+  bookmark2PcsEach: 2+2セットをブックマーク
+  bookmark4Pcs: 4セットをブックマーク
+  bookmark2Pcs: 2セットをブックマーク
+  chooseRelicSet: 2個目の遺物セットを選択
+  bookmarkRelicSet: 遺物セットをブックマーク
+  bookmarkRelicPiece: 遺物単体をブックマーク
+  mainStat: メインステータス
+  mainStatBody: "@:common.mainStat (@:{'relicLocations.body'})"
+  mainStatFeet: "@:common.mainStat (@:{'relicLocations.feet'})"
+  mainStatPlanarSphere: "@:common.mainStat (@:{'relicLocations.planarSphere'})"
+  mainStatLinkRope: "@:common.mainStat (@:{'relicLocations.linkRope'})"
+  unspecified: 指定しない
+  characterToEquip: 装備するキャラクター
+  characterSelectError: キャラクターを選択してください
 
 materialDetailsPage:
   characterUsage: この素材を使用するキャラクター
@@ -241,8 +268,41 @@ relicTypes:
   cavern: トンネル遺物
   planar: 次元界オーナメント
 
+relicLocations:
+  head: 頭部
+  hands: 手部
+  body: 胴体
+  feet: 脚部
+  planarSphere: 次元界オーブ
+  linkRope: 連結縄
+
+stats:
+  hp: HP
+  atk: 攻撃力
+  def: 防御力
+  hp_percent: HP%
+  atk_percent: 攻撃力%
+  def_percent: 防御力%
+  crit_rate: 会心率
+  crit_dmg: 会心ダメージ
+  outgoing_healing: 治癒量
+  effect_hit_rate: 効果命中
+  speed: 速度
+  physical_dmg: 物理与ダメージ
+  fire_dmg: 炎属性与ダメージ
+  ice_dmg: 氷属性与ダメージ
+  lightning_dmg: 雷属性与ダメージ
+  wind_dmg: 風属性与ダメージ
+  quantum_dmg: 量子属性与ダメージ
+  imaginary_dmg: 虚数属性与ダメージ
+  break_effect: 撃破特攻
+  energy_regen_rate: EP回復効率
+  effect_res: 効果抵抗
+
 characterNames:
   trailblazer: 開拓者
+  trailblazer_destruction: 開拓者 (壊滅)
+  trailblazer_preservation: 開拓者 (存護)
   march-7th: 三月なのか
   dan-heng: 丹恒
   himeko: 姫子
@@ -684,4 +744,70 @@ relicSetEffects:
     2pc: 装備キャラの撃破特効+<16%>。装備キャラの速度が<145>以上の場合、さらに撃破特効+<20%>。
   sprightly-vonwacq:
     2pc: 装備キャラのEP回復効率+<5%>。装備キャラの速度が<120>以上の場合、戦闘に入る時、行動順が<40%>早まる。
+
+relicPieceNames:
+  bands-polarized-sunglasses: バンドの偏光サングラス
+  bands-touring-bracelet: バンドのツアーブレスレット
+  bands-leather-jacket-with-studs: バンドのスパイク付き革ジャン
+  bands-ankle-boots-with-rivets: バンドのリベットブーツ
+  hunters-artaius-hood: 狩人の荒ぶる神のフード
+  hunters-lizard-gloves: 狩人のオオトカゲグローブ
+  hunters-ice-dragon-cloak: 狩人の氷竜マント
+  hunters-soft-elkskin-boots: 狩人の鹿革のブーツ
+  wastelanders-breathing-mask: 廃土客の呼吸マスク
+  wastelanders-desert-terminal: 廃土客の荒涼端末
+  wastelanders-friar-robe: 廃土客の修道服
+  wastelanders-powered-greaves: 廃土客の動力腿甲
+  musketeers-wild-wheat-felt-hat: ガンマンの草の穂フェルト帽
+  musketeers-coarse-leather-gloves: ガンマンの荒い革手袋
+  musketeers-wind-hunting-shawl: ガンマンの風狩りポンチョ
+  musketeers-rivets-riding-boots: ガンマンのリベットブーツ
+  salsottos-moving-city: サルソットの移動都市
+  salsottos-terminator-line: サルソットの明暗境界線
+  the-xianzhou-luofus-celestial-ark: 羅浮仙舟の天外楼船
+  the-xianzhou-luofus-ambrosial-arbor-vines: 羅浮仙舟の建木の枝と蔓
+  knights-forgiving-casque: 聖騎士の赦しのヘルム
+  knights-silent-oath-ring: 聖騎士の沈黙の誓いの指輪
+  knights-solemn-breastplate: 聖騎士の厳かな鎧
+  knights-iron-boots-of-order: 聖騎士の秩序の鉄靴
+  talias-nailscrap-town: タリアのネイルシェル
+  talias-exposed-electric-wire: タリアの裸電線
+  vonwacqs-island-of-birth: ウェンワーク誕生の島
+  vonwacqs-islandic-coast: ウェンワークの島巡り海岸
+  firesmiths-obsidian-goggles: 火匠の黒曜レンズ
+  firesmiths-ring-of-flame-mastery: 火匠の操炎の指輪
+  firesmiths-fireproof-apron: 火匠の防炎エプロン
+  firesmiths-alloy-leg: 火匠の合金義肢
+  passerbys-rejuvenated-wooden-hairstick: 過客の迎春かんざし
+  passerbys-roaming-dragon-bracer: 過客の游龍腕甲
+  passerbys-ragged-embroided-coat: 過客の刺繍の解れた外套
+  passerbys-stygian-hiking-boots: 過客の冥途遊歴
+  thiefs-myriad-faced-mask: 怪盗の千人仮面
+  thiefs-gloves-with-prints: 怪盗の紋様手袋
+  thiefs-steel-grappling-hook: 怪盗のワイヤーかぎ爪
+  thiefs-meteor-boots: 怪盗の流星ブーツ
+  the-ipcs-mega-hq: カンパニーの巨構本部
+  the-ipcs-trade-route: カンパニーの貿易航路
+  eagles-beaked-helmet: 空飛ぶ鷹の長嘴ヘルメット
+  eagles-soaring-ring: 空飛ぶ鷹の双翼指輪
+  eagles-winged-suit-harness: 空飛ぶ鷹の翼装ベルト
+  eagles-quilted-puttees: 空飛ぶ鷹の羽毛バンド
+  geniuss-ultraremote-sensing-visor: 天才の超距離センシング
+  geniuss-frequency-catcher: 天才の周波数変動キャッチャー
+  geniuss-metafield-suit: 天才のメタバース深潜
+  geniuss-gravity-walker: 天才の引力漫歩
+  champions-headgear: チャンピオンの王冠ヘッドギア
+  champions-heavy-gloves: チャンピオンの重砲グローブ
+  champions-chest-guard: チャンピオンのチェストガード
+  champions-fleetfoot-boots: チャンピオンの弧歩シューズ
+  belobogs-fortress-of-preservation: ベロブルグの存護の砦
+  belobogs-iron-defense: ベロブルグのシルバーメイン防衛線
+  hertas-space-station: 「ヘルタ」の宇宙ステーション
+  hertas-wandering-trek: 「ヘルタ」の軌跡
+  planet-screwllums-mechanical-sun: スクリュー星の機械太陽
+  planet-screwllums-ring-system: スクリュー星の穿孔惑星リング
+  guards-cast-iron-helmet: 兵士の鉄製ヘルム
+  guards-shining-gauntlets: 兵士の銀鱗ガントレット
+  guards-uniform-of-old: 兵士の旧制軍服
+  guards-silver-greaves: 兵士の白銀グリーブ
 

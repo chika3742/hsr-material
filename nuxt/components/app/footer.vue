@@ -67,7 +67,7 @@
       <div class="d-flex align-end flex-wrap" style="font-size: 0.7em; gap: 16px">
         <div class="d-flex flex-column">
           <span>©chika {{ new Date().getFullYear() }}</span>
-          <span>{{ $t("footer.disclaimer") }}</span>
+          <span style="white-space: pre-wrap">{{ $t("footer.disclaimer") }}</span>
         </div>
         <v-spacer />
         <client-only>
