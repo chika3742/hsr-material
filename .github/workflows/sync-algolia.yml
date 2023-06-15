@@ -6,6 +6,9 @@ on:
       - "nuxt/assets/data/characters.yaml"
       - "nuxt/assets/data/light-cones.yaml"
       - "nuxt/assets/data/materials.csv"
+      - "nuxt/assets/data/relic-sets.csv"
+      - "nuxt/assets/data/relic-pieces.csv"
+      - "algolia-sync/**"
 
 jobs:
   sync-algolia:

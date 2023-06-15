@@ -22,13 +22,14 @@ export default defineNuxtPlugin((nuxtApp) => {
             rank3: "#3193e3",
             rank2: "#38ab31",
             card: "#3a3a3a",
+            "slight-heading": "#bebebe",
           },
         },
         light: {
           dark: false,
           colors: {
             primary: "#008cff",
-            secondary: "#00d080",
+            secondary: "#4CAF50",
             star: "#ff8c00",
             "button-activated": "#ff5900",
             rank5: "#f1931d",
@@ -36,6 +37,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             rank3: "#1593f6",
             rank2: "#3db236",
             card: "#ececec",
+            "slight-heading": "#757575",
           },
         },
       },

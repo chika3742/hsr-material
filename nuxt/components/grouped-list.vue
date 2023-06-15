@@ -27,7 +27,7 @@ const opened = computed({
 </script>
 
 <template>
-  <v-list v-model:opened="opened" style="user-select: none">
+  <v-list v-model:opened="opened" class="v-list--sticky-header" style="user-select: none">
     <v-list-group v-for="(group, i) in splitByField(items, categoryField)" :key="group[0].id" :value="i">
       <template #activator="{props: _props}">
         <v-list-item

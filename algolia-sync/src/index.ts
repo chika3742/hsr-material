@@ -7,11 +7,14 @@ import {Materials} from "../../nuxt/types/data/materials"
 import {LightCones} from "../../nuxt/types/generated/light-cones.g"
 import {AlgoliaRecord} from "../../nuxt/types/algolia-record"
 import algoliaConfig from "../../nuxt/algolia.json" assert {type: "json"}
+import {RelicPiece, RelicSet} from "../../nuxt/types/data/relics"
 
 type LocaleObject = {
   characterNames: Record<string, string>
   lightConeNames: Record<string, string>
   materialNames: Record<string, string>
+  relicSetTitles: Record<string, string>
+  relicPieceNames: Record<string, string>
 }
 
 if (process.env.NODE_ENV === "development") {
@@ -42,6 +45,8 @@ const syncObjects = async() => {
   const characters = loadYamlSync<Characters>(path.resolve(dataDir, "characters.yaml"))
   const lightCones = loadYamlSync<LightCones>(path.resolve(dataDir, "light-cones.yaml"))
   const materials = loadCsvSync<Materials>(path.resolve(dataDir, "materials.csv"))
+  const relicSets = loadCsvSync<RelicSet[]>(path.resolve(dataDir, "relic-sets.csv"))
+  const relicPieces = loadCsvSync<RelicPiece[]>(path.resolve(dataDir, "relic-pieces.csv"))
 
   const objects: AlgoliaRecord[] = [
     ...characters.map(e => ({
@@ -73,6 +78,26 @@ const syncObjects = async() => {
       yomi: kataToHira(e.yomi),
       recordType: "material" as const,
       url: `/materials/${e.id}`,
+    })),
+    ...relicSets.map(e => ({
+      objectID: e.id + "_relic-set",
+      itemId: e.id,
+      name_ja: localeJa.relicSetTitles[e.id],
+      name_en: localeEn.relicSetTitles[e.id],
+      i18nKey: `relicSetTitles.${e.id}`,
+      yomi: kataToHira(e.yomi),
+      recordType: "relic-set" as const,
+      url: `/relics/${e.id}`,
+    })),
+    ...relicPieces.map(e => ({
+      objectID: e.id + "_relic-piece",
+      itemId: e.id,
+      name_ja: localeJa.relicPieceNames[e.id],
+      name_en: localeEn.relicPieceNames[e.id],
+      i18nKey: `relicPieceNames.${e.id}`,
+      yomi: kataToHira(e.yomi),
+      recordType: "relic-piece" as const,
+      url: `/relics/${e.setId}`,
     })),
   ]
 

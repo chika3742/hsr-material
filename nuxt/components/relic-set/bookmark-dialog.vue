@@ -1,0 +1,248 @@
+<script lang="ts" setup>
+import {RelicPiece, RelicSet} from "~/types/data/relics"
+import relicStats from "assets/data/relic-stats.yaml"
+import {Stat} from "~/types/generated/relic-stats.g"
+import characters from "~/assets/data/characters.yaml"
+
+interface Props {
+  modelValue: boolean
+  relicSets?: RelicSet[]
+  relicPiece?: RelicPiece
+}
+
+const props = defineProps<Props>()
+
+const emit = defineEmits<{
+  (e: "update:modelValue", value: boolean): void
+}>()
+
+const i18n = useI18n()
+
+interface HeaderRelic {
+  title: string
+  image: string
+}
+
+const headerRelics = computed<HeaderRelic[]>(() => {
+  if (props.relicSets) {
+    let type: string
+    switch (props.relicSets.length) {
+      case 1:
+        if (props.relicSets[0].type === "cavern") {
+          type = "4pcs"
+        } else {
+          type = "2pcs"
+        }
+        break
+      case 2:
+        type = "2pcs"
+        break
+      default:
+        throw new Error("Invalid relic set count")
+    }
+
+    return props.relicSets.map(e => ({
+      title: tx(`relicSetTitles.${e.id}`) + " (" + tx(`relicDetailsPage.${type}`) + ")",
+      image: getRelicSetImage(e.id),
+    }))
+  } else {
+    // single relic piece
+    return [
+      {
+        title: tx(`relicPieceNames.${props.relicPiece!.id}`),
+        image: getRelicPieceImage(props.relicPiece!.id),
+      },
+    ]
+  }
+})
+
+interface RadioGroup {
+  type: string
+  title: string
+  items: Stat[]
+}
+
+const radioGroups = computed<RadioGroup[]>(() => {
+  if (props.relicSets) {
+    if (props.relicSets.length === 0 || props.relicSets.length >= 3) {
+      throw new Error("Invalid relic set count")
+    }
+
+    if (props.relicSets[0].type === "cavern") {
+      return [
+        {
+          type: "body",
+          title: "relicDetailsPage.mainStatBody",
+          items: relicStats.main.body,
+        },
+        {
+          type: "feet",
+          title: "relicDetailsPage.mainStatFeet",
+          items: relicStats.main.feet,
+        },
+      ]
+    } else {
+      return [
+        {
+          type: "planarSphere",
+          title: "relicDetailsPage.mainStatPlanarSphere",
+          items: relicStats.main.planar_sphere,
+        },
+        {
+          type: "linkRope",
+          title: "relicDetailsPage.mainStatLinkRope",
+          items: relicStats.main.link_rope,
+        },
+      ]
+    }
+  } else if (props.relicPiece) {
+    return [
+      {
+        type: "piece",
+        title: "relicDetailsPage.mainStat",
+        items: relicStats.main[props.relicPiece.type],
+      },
+    ]
+  }
+
+  throw new Error("Relic set or relic piece must be provided")
+})
+
+const selectedCharacters = ref<string[]>([])
+const selectedStats = reactive({
+  main: {} as Record<string, Stat | null>,
+  sub: [] as Stat[],
+})
+watch(toRefs(props).modelValue, (value) => {
+  if (value) {
+    initSelections()
+  }
+})
+
+const characterSelectError = ref("")
+
+const initSelections = () => {
+  selectedStats.main = Object.fromEntries(radioGroups.value.map(e => [e.type, null]))
+  selectedStats.sub = []
+  selectedCharacters.value = []
+}
+
+const saveBookmark = () => {
+  if (selectedCharacters.value.length === 0) {
+    characterSelectError.value = tx(i18n, "relicDetailsPage.characterSelectError")
+    return
+  }
+
+  emit("update:modelValue", false)
+}
+
+const getRadioButtonDisabled = (stat: Stat): boolean => {
+  if (props.relicSets) {
+    return false
+  }
+
+  return selectedStats.sub.includes(stat)
+}
+
+const getCheckBoxDisabled = (stat: Stat): boolean => {
+  if (props.relicSets) {
+    return false
+  }
+
+  return selectedStats.main.piece === stat || (selectedStats.sub.length >= 4 && !selectedStats.sub.includes(stat))
+}
+</script>
+
+<template>
+  <v-dialog
+    :model-value="modelValue"
+    max-width="600px"
+    :fullscreen="$vuetify.display.xs"
+    scrollable
+    @update:model-value="$emit('update:modelValue', $event)"
+  >
+    <v-card :title="relicSets ? tx('relicDetailsPage.bookmarkRelicSet') : tx('relicDetailsPage.bookmarkRelicPiece')">
+      <template #text>
+        <div>
+          <!-- Relic set view -->
+          <v-list-item
+            v-for="(item, i) in headerRelics"
+            :key="i"
+            :prepend-avatar="item.image"
+            :title="item.title"
+          />
+
+          <!-- Character select -->
+          <section class="mt-2">
+            <v-select
+              v-model="selectedCharacters"
+              :error-messages="characterSelectError"
+              :items="extractI18n(toVariantSeparatedCharacters(characters), 'idWithVariant', 'title', 'characterNames')"
+              :label="tx('relicDetailsPage.characterToEquip')"
+              chips
+              item-value="idWithVariant"
+              multiple
+              @blur="characterSelectError = ''"
+            >
+              <template #item="{props, item}">
+                <v-list-item :title="item.title" v-bind="props">
+                  <template #prepend="{isSelected}">
+                    <div class="d-flex align-center mr-2">
+                      <v-checkbox-btn :model-value="isSelected" :ripple="false" />
+                      <v-img :src="getCharacterImage(item.raw.id, 'small')" width="40" />
+                    </div>
+                  </template>
+                </v-list-item>
+              </template>
+            </v-select>
+          </section>
+
+          <!-- Main stat radio buttons -->
+          <section v-for="group in radioGroups.filter(e => e.items.length >= 2)" :key="group.title">
+            <h4>{{ tx(group.title) }}</h4>
+            <v-radio-group v-model="selectedStats.main[group.type]" inline>
+              <v-radio :label="tx('relicDetailsPage.unspecified')" :value="null" />
+              <v-radio
+                v-for="stat in group.items"
+                :key="stat"
+                :disabled="getRadioButtonDisabled(stat)"
+                :label="tx(`stats.${stat}`)"
+                :value="stat"
+              />
+            </v-radio-group>
+          </section>
+
+          <!-- Sub stat checkboxes -->
+          <section>
+            <h4>{{ tx("common.subStat", {n: 0}) }}</h4>
+            <v-row no-gutters>
+              <v-checkbox-btn
+                v-for="stat in relicStats.sub"
+                :key="stat"
+                v-model="selectedStats.sub"
+                :label="tx(`stats.${stat}`)"
+                :value="stat"
+                :disabled="getCheckBoxDisabled(stat)"
+                inline
+              />
+            </v-row>
+          </section>
+        </div>
+      </template>
+
+      <template #actions>
+        <v-spacer />
+        <v-btn variant="text" @click="$emit('update:modelValue', false)">
+          {{ tx("common.cancel") }}
+        </v-btn>
+        <v-btn variant="text" @click="saveBookmark">
+          {{ tx("common.ok") }}
+        </v-btn>
+      </template>
+    </v-card>
+  </v-dialog>
+</template>
+
+<style lang="sass" scoped>
+
+</style>

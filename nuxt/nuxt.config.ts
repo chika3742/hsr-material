@@ -1,6 +1,7 @@
 import {execSync} from "child_process"
 import {Readable} from "stream"
 import fs from "fs"
+import * as path from "path"
 import yaml from "@rollup/plugin-yaml"
 import {DateTime} from "luxon"
 import dsv from "@rollup/plugin-dsv"
@@ -100,11 +101,11 @@ export default defineNuxtConfig({
       await generateSchemas()
       await generateLocType()
     },
-    async "builder:watch"(_, path) {
-      if (path.startsWith("schemas/")) {
+    async "builder:watch"(_, _path) {
+      if (_path.startsWith(path.resolve("schemas/"))) {
         await generateSchemas()
       }
-      if (path.startsWith("locales/")) {
+      if (_path.startsWith(path.resolve("locales/"))) {
         await generateLocType()
       }
     },

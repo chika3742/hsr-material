@@ -33,3 +33,21 @@ declare module "~/assets/data/materials.csv" {
   const materials: Material[]
   export default materials
 }
+
+declare module "assets/data/relic-sets.csv" {
+  import {RelicSet} from "~/types/data/relics"
+  const relicSets: RelicSet[]
+  export default relicSets
+}
+
+declare module "assets/data/relic-pieces.csv" {
+  import {RelicPiece} from "~/types/data/relics"
+  const relicPieces: RelicPiece[]
+  export default relicPieces
+}
+
+declare module "assets/data/relic-stats.yaml" {
+  import {RelicStats} from "~/types/generated/relic-stats.g"
+  const relicStats: RelicStats
+  export default relicStats
+}

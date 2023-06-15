@@ -4,6 +4,6 @@ export interface AlgoliaRecord {
   name_ja: string
   name_en: string
   i18nKey: string
-  recordType: "character" | "light-cone" | "material"
+  recordType: "character" | "light-cone" | "material" | "relic-set" | "relic-piece"
   url: string
 }

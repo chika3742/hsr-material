@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import GroupedList from "~/components/grouped-list.vue"
 import lightCones from "~/assets/data/light-cones.yaml"
+import EmphasizedText from "~/components/emphasized-text.vue"
 
 definePageMeta({
   title: "lightCones",
@@ -75,7 +76,7 @@ const spiltByPath = splitByField(lightCones, "path")
     >
       <template #subtitle="{itemId}">
         <v-list-item-subtitle v-if="showSkillDescriptions" class="mt-1">
-          <LightConeSkillDescriptions :light-cone-id="itemId" />
+          <EmphasizedText :text="tx(`lightConeSkillDescriptions.${itemId}`)" />
         </v-list-item-subtitle>
       </template>
     </GroupedList>

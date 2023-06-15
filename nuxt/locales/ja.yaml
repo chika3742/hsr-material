@@ -14,6 +14,11 @@ common:
   search: キャラクター・アイテムを検索
   currentLevel: 現在のLv
   targetLevel: 目標のLv
+  2pcEffect: 2セット効果
+  4pcEffect: 4セット効果
+  kind: 種類
+  mainStat: メインステータス
+  subStat: サブステータス
   skillTypes:
     basicAttack: 通常攻撃
     skill: 戦闘スキル
@@ -30,6 +35,8 @@ searchRecordTypes:
   character: キャラクター
   light-cone: 光円錐
   material: 素材
+  relic-set: 遺物セット
+  relic-piece: 遺物
 
 pageTitles:
   home: ホーム
@@ -37,6 +44,8 @@ pageTitles:
   characterDetails: キャラクター / {characterId}
   lightCones: 光円錐
   lightConeDetails: 光円錐 / {lightConeId}
+  relics: 遺物
+  relicDetails: 遺物 / {relicId}
   materials: 素材一覧(逆引き)
   materialDetails: 素材 / {materialId}
   warps: 跳躍天井カウンター(β)
@@ -66,6 +75,31 @@ lightConesPage:
 lightConeDetailsPage:
   ascension: 光円錐Lvアップ/昇格素材
   skillDescriptions: スキル説明
+
+relicsPage:
+  toDetailPage: 詳細ページへ
+
+relicDetailsPage:
+  4pcs: 4セット
+  2pcs: 2セット
+  bookmarkInSets: セットでブックマーク
+  bookmarkPerLocation: 部位ごとにブックマーク
+  recommendedCharacters: 装備おすすめキャラクター
+  bookmark: ブックマーク
+  bookmark2PcsEach: 2+2セットをブックマーク
+  bookmark4Pcs: 4セットをブックマーク
+  bookmark2Pcs: 2セットをブックマーク
+  chooseRelicSet: 2個目の遺物セットを選択
+  bookmarkRelicSet: 遺物セットをブックマーク
+  bookmarkRelicPiece: 遺物単体をブックマーク
+  mainStat: メインステータス
+  mainStatBody: "@:common.mainStat (@:{'relicLocations.body'})"
+  mainStatFeet: "@:common.mainStat (@:{'relicLocations.feet'})"
+  mainStatPlanarSphere: "@:common.mainStat (@:{'relicLocations.planarSphere'})"
+  mainStatLinkRope: "@:common.mainStat (@:{'relicLocations.linkRope'})"
+  unspecified: 指定しない
+  characterToEquip: 装備するキャラクター
+  characterSelectError: キャラクターを選択してください
 
 materialDetailsPage:
   characterUsage: この素材を使用するキャラクター
@@ -232,8 +266,45 @@ combatTypes:
   wind: 風
   quantum: 量子
 
+relicTypes:
+  cavern: トンネル遺物
+  planar: 次元界オーナメント
+
+relicLocations:
+  head: 頭部
+  hands: 手部
+  body: 胴体
+  feet: 脚部
+  planarSphere: 次元界オーブ
+  linkRope: 連結縄
+
+stats:
+  hp: HP
+  atk: 攻撃力
+  def: 防御力
+  hp_percent: HP%
+  atk_percent: 攻撃力%
+  def_percent: 防御力%
+  crit_rate: 会心率
+  crit_dmg: 会心ダメージ
+  outgoing_healing: 治癒量
+  effect_hit_rate: 効果命中
+  speed: 速度
+  physical_dmg: 物理与ダメージ
+  fire_dmg: 炎属性与ダメージ
+  ice_dmg: 氷属性与ダメージ
+  lightning_dmg: 雷属性与ダメージ
+  wind_dmg: 風属性与ダメージ
+  quantum_dmg: 量子属性与ダメージ
+  imaginary_dmg: 虚数属性与ダメージ
+  break_effect: 撃破特攻
+  energy_regen_rate: EP回復効率
+  effect_res: 効果抵抗
+
 characterNames:
   trailblazer: 開拓者
+  trailblazer_destruction: 開拓者 (壊滅)
+  trailblazer_preservation: 開拓者 (存護)
   march-7th: 三月なのか
   dan-heng: 丹恒
   himeko: 姫子
@@ -598,4 +669,147 @@ lightConeSkillDescriptions:
   something-irreplaceable: 装備キャラの攻撃力+<24%>、効果は自身の次のターンが終了するまで継続。この効果は累積できず、ターンが回ってくるたびに1回まで発動できる。
   dance-dance-dance: 装備キャラが必殺技を発動した後、味方全体の行動順が<16%>早まる。
   past-and-future: 装備キャラが戦闘スキルを発動した後、次に行動する他の味方の与ダメージ+<16%>、1ターン継続。
+
+relicSetTitles:
+  band-of-sizzling-thunder: 雷鳴轟くバンド
+  hunter-of-glacial-forest: 雪の密林の狩人
+  wastelander-of-banditry-desert: 荒地で盗みを働く廃土客
+  musketeer-of-wild-wheat: 草の穂ガンマン
+  inert-salsotto: 自転が止まったサルソット
+  fleet-of-the-ageless: 老いぬ者の仙舟
+  knight-of-purity-palace: 純庭教会の聖騎士
+  talia-kingdom-of-banditry: 盗賊公国タリア
+  sprightly-vonwacq: 生命のウェンワーク
+  firesmith-of-lava-forging: 溶岩で鍛造する火匠
+  passerby-of-wandering-cloud: 流雲無痕の過客
+  thief-of-shooting-meteor: 流星の跡を追う怪盗
+  pan-galactic-commercial-enterprise: 汎銀河商事会社
+  eagle-of-twilight-line: 昼夜の狭間を翔ける鷹
+  genius-of-brilliant-stars: 星の如く輝く天才
+  champion-of-streetwise-boxing: 成り上がりチャンピオン
+  belobog-of-the-architects: 建創者のベロブルグ
+  space-sealing-station: 宇宙封印ステーション
+  celestial-differentiator: 天体階差機関
+  guard-of-wuthering-snow: 吹雪と対峙する兵士
+
+relicSetEffects:
+  passerby-of-wandering-cloud:
+    2pc: 治癒量+<10%>。
+    4pc: 戦闘開始時、SPを1回復する。
+  musketeer-of-wild-wheat:
+    2pc: 攻撃力+<12%>。
+    4pc: 装備キャラの速度+<6%>、通常攻撃の与ダメージ+<10%>。
+  knight-of-purity-palace:
+    2pc: 防御力+<15%>。
+    4pc: 装備キャラが付与するバリアの耐久値+<20%>。
+  hunter-of-glacial-forest:
+    2pc: 氷属性ダメージ+<10%>。
+    4pc: 装備キャラが必殺技を発動した時、会心ダメージ+<25%>、<2>ターン継続。
+  champion-of-streetwise-boxing:
+    2pc: 物理ダメージ+<10%>。
+    4pc: 装備キャラが攻撃を行う、または攻撃を受けた後、今回の戦闘中の攻撃力+<5%>、最大で<5>層累積できる。
+  guard-of-wuthering-snow:
+    2pc: 被ダメージ-<8%>。
+    4pc: ターンが回ってきた時、装備キャラの残りHPが<50%>以下の場合、HPを最大HP<8%>分回復し、EPを<5>回復する。
+  firesmith-of-lava-forging:
+    2pc: 炎属性ダメージ+<10%>。
+    4pc: 装備キャラの戦闘スキルの与ダメージ+<12%>。必殺技を発動した後、次の攻撃の炎属性与ダメージ+<12%>。
+  genius-of-brilliant-stars:
+    2pc: 量子属性ダメージ+<10%>。
+    4pc: 装備キャラが敵にダメージを与えた時、敵の防御力を<10%>無視する。敵に量子属性の弱点がある場合、さらに防御力を<10%>無視する。
+  band-of-sizzling-thunder:
+    2pc: 雷属性ダメージ+<10%>。
+    4pc: 装備キャラが戦闘スキルを発動した時、装備キャラの攻撃力+<20%>、<1>ターン継続。
+  eagle-of-twilight-line:
+    2pc: 風属性ダメージ+<10%>。
+    4pc: 装備キャラが必殺技を発動した後、行動順が<25%>早まる。
+  thief-of-shooting-meteor:
+    2pc: 撃破特効+<16%>。
+    4pc: 装備キャラの撃破特効+<16%>。装備キャラが敵を弱点撃破した後、EPを<3>回復する。
+  wastelander-of-banditry-desert:
+    2pc: 虚数属性ダメージ+<10%>。
+    4pc: デバフ状態の敵にダメージを与えた時、装備キャラの会心率+<10%>。禁錮状態の敵にダメージを与えた時、会心ダメージ+<20%>。
+  space-sealing-station:
+    2pc: 装備キャラの攻撃力+<12%>。装備キャラの速度が<120>以上の場合、さらに攻撃力+<12%>。
+  fleet-of-the-ageless:
+    2pc: 装備キャラの最大HP+<12%>。装備キャラの速度が<120>以上の場合、味方全体の攻撃力+<8%>。
+  pan-galactic-commercial-enterprise:
+    2pc: 装備キャラの効果命中+<10%>。装備キャラの攻撃力が、現在の効果命中<25%>分アップ、最大で+<25%>。
+  belobog-of-the-architects:
+    2pc: 装備キャラの防御力+<15%>。装備キャラの効果命中が<50%>以上の場合、さらに防御力+<15%>。
+  celestial-differentiator:
+    2pc: >-
+      装備キャラの会心ダメージ+<16%>。装備キャラの会心ダメージが<120%>以上の場合、戦闘に入った後、装備キャラの会心率+<60%>、初回の攻撃が終了するまで継続。
+  inert-salsotto:
+    2pc: 装備キャラの会心率+<8%>。装備キャラの会心率が<50%>以上の場合、必殺技と追加攻撃の与ダメージ+<15%>。
+  talia-kingdom-of-banditry:
+    2pc: 装備キャラの撃破特効+<16%>。装備キャラの速度が<145>以上の場合、さらに撃破特効+<20%>。
+  sprightly-vonwacq:
+    2pc: 装備キャラのEP回復効率+<5%>。装備キャラの速度が<120>以上の場合、戦闘に入る時、行動順が<40%>早まる。
+
+relicPieceNames:
+  bands-polarized-sunglasses: バンドの偏光サングラス
+  bands-touring-bracelet: バンドのツアーブレスレット
+  bands-leather-jacket-with-studs: バンドのスパイク付き革ジャン
+  bands-ankle-boots-with-rivets: バンドのリベットブーツ
+  hunters-artaius-hood: 狩人の荒ぶる神のフード
+  hunters-lizard-gloves: 狩人のオオトカゲグローブ
+  hunters-ice-dragon-cloak: 狩人の氷竜マント
+  hunters-soft-elkskin-boots: 狩人の鹿革のブーツ
+  wastelanders-breathing-mask: 廃土客の呼吸マスク
+  wastelanders-desert-terminal: 廃土客の荒涼端末
+  wastelanders-friar-robe: 廃土客の修道服
+  wastelanders-powered-greaves: 廃土客の動力腿甲
+  musketeers-wild-wheat-felt-hat: ガンマンの草の穂フェルト帽
+  musketeers-coarse-leather-gloves: ガンマンの荒い革手袋
+  musketeers-wind-hunting-shawl: ガンマンの風狩りポンチョ
+  musketeers-rivets-riding-boots: ガンマンのリベットブーツ
+  salsottos-moving-city: サルソットの移動都市
+  salsottos-terminator-line: サルソットの明暗境界線
+  the-xianzhou-luofus-celestial-ark: 羅浮仙舟の天外楼船
+  the-xianzhou-luofus-ambrosial-arbor-vines: 羅浮仙舟の建木の枝と蔓
+  knights-forgiving-casque: 聖騎士の赦しのヘルム
+  knights-silent-oath-ring: 聖騎士の沈黙の誓いの指輪
+  knights-solemn-breastplate: 聖騎士の厳かな鎧
+  knights-iron-boots-of-order: 聖騎士の秩序の鉄靴
+  talias-nailscrap-town: タリアのネイルシェル
+  talias-exposed-electric-wire: タリアの裸電線
+  vonwacqs-island-of-birth: ウェンワーク誕生の島
+  vonwacqs-islandic-coast: ウェンワークの島巡り海岸
+  firesmiths-obsidian-goggles: 火匠の黒曜レンズ
+  firesmiths-ring-of-flame-mastery: 火匠の操炎の指輪
+  firesmiths-fireproof-apron: 火匠の防炎エプロン
+  firesmiths-alloy-leg: 火匠の合金義肢
+  passerbys-rejuvenated-wooden-hairstick: 過客の迎春かんざし
+  passerbys-roaming-dragon-bracer: 過客の游龍腕甲
+  passerbys-ragged-embroided-coat: 過客の刺繍の解れた外套
+  passerbys-stygian-hiking-boots: 過客の冥途遊歴
+  thiefs-myriad-faced-mask: 怪盗の千人仮面
+  thiefs-gloves-with-prints: 怪盗の紋様手袋
+  thiefs-steel-grappling-hook: 怪盗のワイヤーかぎ爪
+  thiefs-meteor-boots: 怪盗の流星ブーツ
+  the-ipcs-mega-hq: カンパニーの巨構本部
+  the-ipcs-trade-route: カンパニーの貿易航路
+  eagles-beaked-helmet: 空飛ぶ鷹の長嘴ヘルメット
+  eagles-soaring-ring: 空飛ぶ鷹の双翼指輪
+  eagles-winged-suit-harness: 空飛ぶ鷹の翼装ベルト
+  eagles-quilted-puttees: 空飛ぶ鷹の羽毛バンド
+  geniuss-ultraremote-sensing-visor: 天才の超距離センシング
+  geniuss-frequency-catcher: 天才の周波数変動キャッチャー
+  geniuss-metafield-suit: 天才のメタバース深潜
+  geniuss-gravity-walker: 天才の引力漫歩
+  champions-headgear: チャンピオンの王冠ヘッドギア
+  champions-heavy-gloves: チャンピオンの重砲グローブ
+  champions-chest-guard: チャンピオンのチェストガード
+  champions-fleetfoot-boots: チャンピオンの弧歩シューズ
+  belobogs-fortress-of-preservation: ベロブルグの存護の砦
+  belobogs-iron-defense: ベロブルグのシルバーメイン防衛線
+  hertas-space-station: 「ヘルタ」の宇宙ステーション
+  hertas-wandering-trek: 「ヘルタ」の軌跡
+  planet-screwllums-mechanical-sun: スクリュー星の機械太陽
+  planet-screwllums-ring-system: スクリュー星の穿孔惑星リング
+  guards-cast-iron-helmet: 兵士の鉄製ヘルム
+  guards-shining-gauntlets: 兵士の銀鱗ガントレット
+  guards-uniform-of-old: 兵士の旧制軍服
+  guards-silver-greaves: 兵士の白銀グリーブ
 

@@ -80,6 +80,10 @@ const getItemImage = (item: AlgoliaRecord): string => {
       return getLightConeImage(item.itemId)
     case "material":
       return getMaterialImage(item.itemId)
+    case "relic-set":
+      return getRelicSetImage(item.itemId)
+    case "relic-piece":
+      return getRelicPieceImage(item.itemId)
   }
 }
 </script>

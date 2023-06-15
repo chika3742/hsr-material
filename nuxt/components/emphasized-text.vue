@@ -1,15 +1,18 @@
 <script lang="ts" setup>
 defineProps<{
-  lightConeId: string
+  /**
+   * The text surrounded by `<` and `>` will be emphasized.
+   */
+  text: string
 }>()
 
 const parseSkillDescriptions = (input: string) => {
-  return input.replace(/<(.+?)>/, "<span class='hmn-desc-emphasis'>$1</span>")
+  return input.replaceAll(/<(.+?)>/g, "<span class='hmn-desc-emphasis'>$1</span>")
 }
 </script>
 
 <template>
-  <div v-html="parseSkillDescriptions(tx(`lightConeSkillDescriptions.${lightConeId}`))" />
+  <div v-html="parseSkillDescriptions(text)" />
 </template>
 
 <style lang="sass">
