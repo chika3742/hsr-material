@@ -16,19 +16,19 @@ if (!characters.some(e => e.id === route.params.characterId)) {
 
 const character = characters.find(e => e.id === route.params.characterId)!
 
-const selectedVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
+const currentVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
   path: character.path!,
   combatType: character.combatType!,
   materials: character.materials!,
 })
 
-watch(selectedVariant, (value) => {
+watch(currentVariant, (value) => {
   history.replaceState(null, "", router.resolve({query: {variant: value.path}}).href)
 })
 
 onActivated(() => {
   if (character.variants && route.query.variant) {
-    selectedVariant.value = character.variants.find(e => e.path === route.query.variant) ?? selectedVariant.value
+    currentVariant.value = character.variants.find(e => e.path === route.query.variant) ?? currentVariant.value
   }
 })
 
@@ -47,19 +47,19 @@ onActivated(() => {
         <div class="d-flex align-center">
           <span class="font-weight-bold">{{ tx("common.path") }}</span>
           <v-img
-            :src="getPathImage(selectedVariant.path)"
+            :src="getPathImage(currentVariant.path)"
             :style="!$vuetify.theme.global.current.dark ? 'filter: invert(1)' : ''"
             aspect-ratio="1"
             class="ml-3"
             max-width="22px"
             width="22px"
           />
-          <span class="ml-1">{{ tx(`paths.${selectedVariant.path}` as const) }}</span>
+          <span class="ml-1">{{ tx(`paths.${currentVariant.path}` as const) }}</span>
         </div>
         <div class="d-flex align-center">
           <span class="font-weight-bold">{{ tx("common.combatType") }}</span>
-          <v-img :src="getCombatTypeImage(selectedVariant.combatType)" class="ml-3" max-width="22px" width="22px" />
-          <span class="ml-1">{{ tx(`combatTypes.${selectedVariant.combatType}` as const) }}</span>
+          <v-img :src="getCombatTypeImage(currentVariant.combatType)" class="ml-3" max-width="22px" width="22px" />
+          <span class="ml-1">{{ tx(`combatTypes.${currentVariant.combatType}` as const) }}</span>
         </div>
       </div>
     </v-row>
@@ -67,7 +67,7 @@ onActivated(() => {
     <client-only>
       <v-select
         v-if="character.variants"
-        v-model="selectedVariant"
+        v-model="currentVariant"
         :items="character.variants.map(e => ({title: tx(`paths.${e.path}` as const), value: e}))"
         :label="tx('common.path')"
         class="mt-4"
@@ -78,15 +78,15 @@ onActivated(() => {
 
     <v-expansion-panels class="mt-4" mandatory="force">
       <SingleSliderPanel
-        :material-defs="selectedVariant.materials"
+        :material-defs="currentVariant.materials"
         :character-id="character.id"
         :title="tx( 'characterDetailsPage.ascension')"
       />
       <SkillSlidersPanel
         :character-id="character.id"
-        :material-defs="selectedVariant.materials"
+        :material-defs="currentVariant.materials"
         :title="tx('characterDetailsPage.skills')"
-        :variant-path="character.variants ? selectedVariant.path : undefined"
+        :variant-path="character.variants ? currentVariant.path : undefined"
       />
     </v-expansion-panels>
   </div>
