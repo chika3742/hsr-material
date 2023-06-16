@@ -86,7 +86,7 @@ onActivated(() => {
         :character-id="character.id"
         :material-defs="currentVariant.materials"
         :title="tx('characterDetailsPage.skills')"
-        :variant-path="character.variants ? currentVariant.path : undefined"
+        :variant="character.variants ? currentVariant.path : undefined"
       />
     </v-expansion-panels>
   </div>
