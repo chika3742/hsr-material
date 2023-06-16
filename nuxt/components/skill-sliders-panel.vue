@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import {computed, getMaterialIdFromIngredient, levelIngredientsToSliderTicks, ref} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import {BookmarkableIngredient} from "~/types/bookmarkable-ingredient"
+import {BookmarkableItem} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LevelIngredients} from "~/types/level-ingredients"
 import characters from "~/assets/data/characters.yaml"
 
 interface Slider {
-  type: Exclude<PurposeType, "exp">
+  type: PurposeType
   levelIngredients: LevelIngredients[]
 }
 
@@ -49,19 +49,22 @@ const ranges = ref(sliders.map((e) => {
 
 const checkedList = ref(sliders.map(() => true))
 
-const ingredients = computed<BookmarkableIngredient[]>(() => {
+const ingredients = computed<BookmarkableItem[]>(() => {
   return sliders.map((e, i) => {
     if (!checkedList.value[i]) {
       return []
     }
     return e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
-      .map(f => f.ingredients.map<BookmarkableIngredient>(g => ({
-        id: getMaterialIdFromIngredient(g, props.materialDefs)!,
+      .map(f => f.ingredients.map<BookmarkableItem>(g => ({
+        type: "character_material",
+        materialId: getMaterialIdFromIngredient(g, props.materialDefs)!,
         quantity: g.quantity!.rarities[characterRarity.toString()],
-        level: f.level,
-        targetType: "character",
-        targetId: props.characterId,
-        purposeType: e.type,
+        usage: {
+          type: "character",
+          upperLevel: f.level,
+          characterId: props.characterId,
+          purposeType: e.type,
+        },
       }))).flat()
   }).flat()
 })

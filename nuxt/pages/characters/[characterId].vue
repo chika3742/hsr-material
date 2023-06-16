@@ -79,9 +79,8 @@ onActivated(() => {
     <v-expansion-panels class="mt-4" mandatory="force">
       <SingleSliderPanel
         :material-defs="selectedVariant.materials"
-        :target-id="character.id"
+        :character-id="character.id"
         :title="tx( 'characterDetailsPage.ascension')"
-        target-type="character"
       />
       <SkillSlidersPanel
         :character-id="character.id"

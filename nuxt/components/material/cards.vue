@@ -5,10 +5,10 @@
 </template>
 
 <script lang="ts" setup>
-import {BookmarkableItem} from "~/types/bookmarkable-ingredient"
+import {BookmarkableIngredient} from "~/types/bookmarkable-ingredient"
 
 defineProps<{
-  items: BookmarkableItem[]
+  items: BookmarkableIngredient[]
 }>()
 
 </script>
