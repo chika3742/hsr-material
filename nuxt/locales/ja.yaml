@@ -75,6 +75,7 @@ lightConesPage:
 lightConeDetailsPage:
   ascension: 光円錐Lvアップ/昇格素材
   skillDescriptions: スキル説明
+  recommendedCharacters: 装備おすすめキャラクター
 
 relicsPage:
   toDetailPage: 詳細ページへ
@@ -84,7 +85,7 @@ relicDetailsPage:
   2pcs: 2セット
   bookmarkInSets: セットでブックマーク
   bookmarkPerLocation: 部位ごとにブックマーク
-  recommendedCharacters: 装備おすすめキャラクター
+  recommendedCharacters: "@:lightConeDetailsPage.recommendedCharacters"
   bookmark: ブックマーク
   bookmark2PcsEach: 2+2セットをブックマーク
   bookmark4Pcs: 4セットをブックマーク

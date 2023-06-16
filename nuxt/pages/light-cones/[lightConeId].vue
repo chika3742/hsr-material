@@ -41,6 +41,13 @@ const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
       </div>
     </v-row>
 
+    <section class="mt-2">
+      <h4 class="c-subheader">
+        {{ tx('lightConeDetailsPage.skillDescriptions') }}
+      </h4>
+      <EmphasizedText :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)" class="pl-4 mt-1" />
+    </section>
+
     <v-expansion-panels class="mt-4" mandatory="force">
       <SingleSliderPanel
         :material-defs="lightCone.materials"
@@ -50,11 +57,7 @@ const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
         :target-id="lightCone.id"
       />
 
-      <v-expansion-panel :title="tx('lightConeDetailsPage.skillDescriptions')">
-        <v-expansion-panel-text>
-          <EmphasizedText :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)" />
-        </v-expansion-panel-text>
-      </v-expansion-panel>
+      <v-expansion-panel :title="tx('lightConeDetailsPage.recommendedCharacters')" text="Coming soon..." />
     </v-expansion-panels>
   </div>
 </template>
