@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types/bookmarkable-ingredient"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import {CharacterMaterialDefinitions} from "~/types/generated/characters.g"
+import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import characters from "~/assets/data/characters.yaml"
@@ -26,6 +26,7 @@ const props = defineProps<{
   title: string
   characterId: string
   lightConeId?: string
+  variant?: Path
   materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
 }>()
 
@@ -75,6 +76,7 @@ const items = computed<BookmarkableIngredient[]>(() => {
       usage = {
         type: "character",
         characterId: props.characterId,
+        variant: props.variant ?? null,
         purposeType: "ascension",
         upperLevel: e.level,
       }

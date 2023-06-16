@@ -80,6 +80,7 @@ onActivated(() => {
       <SingleSliderPanel
         :material-defs="currentVariant.materials"
         :character-id="character.id"
+        :variant="character.variants ? currentVariant.path : undefined"
         :title="tx( 'characterDetailsPage.ascension')"
       />
       <SkillSlidersPanel
