@@ -15,11 +15,11 @@ interface Slider {
 const props = defineProps<{
   title: string
   characterId: string
-  variantPath?: Path
+  variant?: Path
   materialDefs: CharacterMaterialDefinitions
 }>()
 
-const skillI18nKeyBase = computed(() => `skillTitles.${props.characterId + (props.variantPath ? `.${props.variantPath}` : "")}`)
+const skillI18nKeyBase = computed(() => `skillTitles.${props.characterId + (props.variant ? `.${props.variant}` : "")}`)
 
 const sliders: Slider[] = [
   {
