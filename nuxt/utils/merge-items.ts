@@ -1,24 +1,24 @@
-import {BookmarkableItem} from "~/types/bookmarkable-ingredient"
 import materials from "~/assets/data/materials.csv"
+import {BookmarkableIngredient} from "~/types/bookmarkable-ingredient"
 
 /**
  * Merges items in the list with the same material IDs and returns an array of arrays.
  *
  * If the item is an exp item, it will be merged into another exp item.
  *
- * @param items The {@link BookmarkableItem} list to merge
- * @returns The merged {@link BookmarkableItem} list
+ * @param items The {@link BookmarkableIngredient} list to merge
+ * @returns The merged {@link BookmarkableIngredient} list
  */
-export const mergeItems = (items: BookmarkableItem[]): BookmarkableItem[][] => {
-  const result: BookmarkableItem[][] = []
+export const mergeItems = (items: BookmarkableIngredient[]): BookmarkableIngredient[][] => {
+  const result: BookmarkableIngredient[][] = []
   for (const item of items) {
     const existing = (() => {
-      if (item.purposeType === "exp") {
+      if (item.type === "exp") {
         // If the item is an exp item, add into existing exp item (exp item does not have id)
-        return result.find(e => e[0].purposeType === "exp")
+        return result.find(e => e[0].type === "exp")
       } else {
         // If the item has an id, add into existing item has the same id
-        return result.find(e => e[0].purposeType !== "exp" && e[0]?.id === item.id)
+        return result.find(e => e[0].type !== "exp" && e[0].materialId === item.materialId)
       }
     })()
     if (existing) {
@@ -41,13 +41,13 @@ export const mergeItems = (items: BookmarkableItem[]): BookmarkableItem[][] => {
     const aElement = a[0]
     const bElement = b[0]
 
-    if (aElement.purposeType === "exp" || bElement.purposeType === "exp") {
-      return aElement.purposeType === "exp" ? -1 : 1
-    } else if (aElement.id === "credit" || bElement.id === "credit") {
-      return aElement.id === "credit" ? 1 : -1
+    if (aElement.type === "exp" || bElement.type === "exp") {
+      return aElement.type === "exp" ? -1 : 1
+    } else if (aElement.materialId === "credit" || bElement.materialId === "credit") {
+      return aElement.materialId === "credit" ? 1 : -1
     } else {
-      const aMaterial = materials.find(e => e.id === aElement.id)!
-      const bMaterial = materials.find(e => e.id === bElement.id)!
+      const aMaterial = materials.find(e => e.id === aElement.materialId)!
+      const bMaterial = materials.find(e => e.id === bElement.materialId)!
       if (aMaterial.groupId && bMaterial.groupId) {
         if (aMaterial.groupId !== bMaterial.groupId) {
           return aMaterial.groupId.localeCompare(bMaterial.groupId)
@@ -57,7 +57,7 @@ export const mergeItems = (items: BookmarkableItem[]): BookmarkableItem[][] => {
       } else if (aMaterial.groupId || bMaterial.groupId) {
         return aMaterial.groupId ? -1 : 1
       } else {
-        return aElement.id.localeCompare(bElement.id)
+        return aElement.materialId.localeCompare(bElement.materialId)
       }
     }
   })
