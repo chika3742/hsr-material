@@ -77,6 +77,7 @@ lightConesPage:
 lightConeDetailsPage:
   ascension: Light Cone Leveling/Ascension Materials
   skillDescriptions: Skill Descriptions
+  recommendedCharacters: Recommended Characters
 
 relicsPage:
   toDetailPage: Go to Detail Page
@@ -86,7 +87,7 @@ relicDetailsPage:
   2pcs: 2 Pcs
   bookmarkInSets: Bookmark in Set(s)
   bookmarkPerLocation: Bookmark per Locations
-  recommendedCharacters: Recommended Characters
+  recommendedCharacters: "@:lightConeDetailsPage.recommendedCharacters"
   bookmark: Bookmark
   bookmark2PcsEach: Bookmark 2+2 Pcs
   bookmark4Pcs: Bookmark 4 Pcs
