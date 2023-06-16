@@ -61,6 +61,7 @@ const ingredients = computed<BookmarkableItem[]>(() => {
         quantity: g.quantity!.rarities[characterRarity.toString()],
         usage: {
           type: "character",
+          variant: props.variant ?? null,
           upperLevel: f.level,
           characterId: props.characterId,
           purposeType: e.type,
