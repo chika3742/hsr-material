@@ -73,6 +73,8 @@ bookmark:
   reBookmarkDesc: Bookmarks again with the current slider range.
   unBookmark: Un-bookmark
   unBookmarkDesc: Removes bookmarks for this item.
+  bookmarked: Bookmarked.
+  removed: Removed bookmarks.
 
 characterDetailsPage:
   ascension: Ascension / Character Level Up Materials

@@ -50,6 +50,8 @@ const bookmarkState = computed<"full" | "partial" | "none" | "loading">(() => {
 
 const loading = ref(false)
 const showBookmarkMenu = ref(false)
+const snackbar = useSnackbar()
+const i18n = useI18n()
 
 const toggleBookmark = async() => {
   loading.value = true
@@ -57,11 +59,14 @@ const toggleBookmark = async() => {
   try {
     if (bookmarkState.value === "none") {
       await db.addLevelingBookmarks(props.items, props.selectedItem)
+      snackbar.show(tx(i18n, "bookmark.bookmarked"))
     } else {
       await db.removeLevelingBookmarks((await db.getLevelingBookmarks(props.items, props.purposeTypes)).map(e => e.id!))
+      snackbar.show(tx(i18n, "bookmark.removed"))
     }
   } catch (e) {
     console.error(e)
+    snackbar.show(tx(i18n, "errors.bookmark"))
   } finally {
     loading.value = false
   }

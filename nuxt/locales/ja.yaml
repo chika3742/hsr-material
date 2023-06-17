@@ -71,6 +71,8 @@ bookmark:
   reBookmarkDesc: 現在のスライダー範囲でブックマークし直します。
   unBookmark: ブックマークを解除
   unBookmarkDesc: このアイテムのブックマークを解除します。
+  bookmarked: ブックマークしました。
+  removed: ブックマークを解除しました。
 
 characterDetailsPage:
   ascension: キャラLvアップ/昇格素材
