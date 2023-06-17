@@ -23,6 +23,8 @@ export default defineNuxtPlugin((nuxtApp) => {
             rank2: "#38ab31",
             card: "#3a3a3a",
             "slight-heading": "#bebebe",
+            bookmarked: "#ff8c00",
+            "partially-bookmarked": "#90d31f",
           },
         },
         light: {
@@ -38,6 +40,8 @@ export default defineNuxtPlugin((nuxtApp) => {
             rank2: "#3db236",
             card: "#ececec",
             "slight-heading": "#757575",
+            bookmarked: "#ff2600",
+            "partially-bookmarked": "#66a200",
           },
         },
       },
