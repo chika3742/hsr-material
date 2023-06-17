@@ -2219,7 +2219,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.182":
+"@types/lodash@npm:^4.14.182, @types/lodash@npm:^4.14.195":
   version: 4.14.195
   resolution: "@types/lodash@npm:4.14.195"
   checksum: 39b75ca635b3fa943d17d3d3aabc750babe4c8212485a4df166fe0516e39288e14b0c60afc6e21913cc0e5a84734633c71e617e2bd14eaa1cf51b8d7799c432e
@@ -8737,6 +8737,7 @@ __metadata:
     "@pinia/nuxt": ^0.4.11
     "@rollup/plugin-dsv": ^3.0.2
     "@rollup/plugin-yaml": ^4.1.0
+    "@types/lodash": ^4.14.195
     "@types/luxon": ^3.3.0
     "@types/marked": ^5.0.0
     "@types/node": ^18.16.16
