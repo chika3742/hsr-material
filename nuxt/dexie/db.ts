@@ -1,7 +1,12 @@
 import Dexie, {Table} from "dexie"
 import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
 import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
-import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types/bookmarkable-ingredient"
+import {
+  BookmarkableCharacterMaterial,
+  BookmarkableExp,
+  BookmarkableIngredient,
+  BookmarkableLightConeMaterial,
+} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 
 export class MySubClassedDexie extends Dexie {
@@ -24,12 +29,19 @@ export class MySubClassedDexie extends Dexie {
           return false
         }
 
-        if (e.type === "exp") {
-          const item = firstItem as BookmarkableExp // e.type and firstItem.type are the same
-          return e.usage.lightConeId === item.usage.lightConeId
-        } else {
-          const item = firstItem as BookmarkableItem // e.type and firstItem.type are the same
-          return e.materialId === item.materialId && purposeTypes.includes(e.usage.purposeType)
+        switch (e.type) {
+          case "exp": {
+            const item = firstItem as BookmarkableExp // e.type and firstItem.type are the same
+            return e.usage.lightConeId === item.usage.lightConeId
+          }
+          case "character_material": {
+            const item = firstItem as BookmarkableCharacterMaterial // e.type and firstItem.type are the same
+            return e.materialId === item.materialId && purposeTypes.includes(e.usage.purposeType)
+          }
+          case "light_cone_material": {
+            const item = firstItem as BookmarkableLightConeMaterial // e.type and firstItem.type are the same
+            return e.materialId === item.materialId && e.usage.lightConeId === item.usage.lightConeId
+          }
         }
       }).toArray() as Promise<LevelingBookmark[]>
   }
