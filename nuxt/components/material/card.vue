@@ -100,10 +100,6 @@ const markerColor = computed(() => {
       return theme.current.value.colors.card
   }
 })
-
-const isExpList = (src: BookmarkableItem[]): src is BookmarkableExp[] => {
-  return src.every(e => e.purposeType === "exp")
-}
 </script>
 
 <style lang="sass" scoped>
