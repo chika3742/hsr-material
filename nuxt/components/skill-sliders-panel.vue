@@ -94,7 +94,7 @@ const ingredients = computed<BookmarkableItem[]>(() => {
           <v-divider />
         </section>
 
-        <MaterialCards :items="ingredients" />
+        <MaterialCards :items="ingredients" :purpose-types="sliders.map(e => e.type)" />
       </div>
     </v-expansion-panel-text>
   </v-expansion-panel>

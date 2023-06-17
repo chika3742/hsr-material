@@ -16,6 +16,12 @@
         class="ml-1 font-kiwi-maru"
       >{{ tx(`materialNames.${materialId}`) }}</span>
       <span class="ml-2 font-cairo" style="font-size: 1.2em">×{{ quantity }}</span>
+      <MaterialBookmarkButton
+        :key="JSON.stringify(items)"
+        :items="items"
+        :purpose-types="purposeTypes"
+        :selected-item="selectedExpItem?.itemId"
+      />
     </div>
 
     <div class="corner-marker" />
@@ -35,12 +41,12 @@ import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types
 import {computed} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import materials from "~/assets/data/materials.csv"
-import {db} from "~/dexie/db"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
-import {LevelingBookmark} from "~/types/bookmark/bookmark"
+import {PurposeType} from "~/types/strings"
 
 const props = defineProps<{
   items: BookmarkableIngredient[]
+  purposeTypes: PurposeType[]
 }>()
 
 const theme = useTheme()
