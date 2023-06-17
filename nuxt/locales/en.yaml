@@ -30,6 +30,7 @@ errors:
   500: An error occurred during rendering.
   noSearchResults: No search results.
   failedToSearch: Failed to search.
+  bookmark: Failed to bookmark.
 
 searchRecordTypes:
   character: Character
@@ -66,6 +67,12 @@ footer:
     light: Light
     dark: Dark
     auto: Follow system settings
+
+bookmark:
+  reBookmark: Re-register Bookmarks
+  reBookmarkDesc: Bookmarks again with the current slider range.
+  unBookmark: Un-bookmark
+  unBookmarkDesc: Removes bookmarks for this item.
 
 characterDetailsPage:
   ascension: Ascension / Character Level Up Materials

@@ -30,6 +30,7 @@ errors:
   500: ページの処理中にエラーが発生しました。
   failedToSearch: 検索に失敗しました。
   noSearchResults: 検索結果がありません。
+  bookmark: ブックマークの保存に失敗しました。
 
 searchRecordTypes:
   character: キャラクター
@@ -64,6 +65,12 @@ footer:
     light: ライト
     dark: ダーク
     auto: システム設定に従う
+
+bookmark:
+  reBookmark: ブックマークを再登録
+  reBookmarkDesc: 現在のスライダー範囲でブックマークし直します。
+  unBookmark: ブックマークを解除
+  unBookmarkDesc: このアイテムのブックマークを解除します。
 
 characterDetailsPage:
   ascension: キャラLvアップ/昇格素材

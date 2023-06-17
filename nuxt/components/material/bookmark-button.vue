@@ -124,15 +124,15 @@ const buttonIconColor = computed(() => {
           <v-list-item
             lines="two"
             prepend-icon="mdi-bookmark-check"
-            subtitle="現在のスライダー範囲でブックマークし直します。"
-            title="再ブックマーク"
+            :subtitle="tx('bookmark.reBookmarkDesc')"
+            :title="tx('bookmark.reBookmark')"
             @click="reBookmark"
           />
           <v-list-item
             lines="two"
             prepend-icon="mdi-delete"
-            subtitle="このアイテムのブックマークを解除します。"
-            title="ブックマークを解除"
+            :subtitle="tx('bookmark.unBookmarkDesc')"
+            :title="tx('bookmark.unBookmark')"
             @click="toggleBookmark"
           />
         </v-list>
