@@ -2803,6 +2803,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vueuse/rxjs@npm:^10.2.0":
+  version: 10.2.0
+  resolution: "@vueuse/rxjs@npm:10.2.0"
+  dependencies:
+    "@vueuse/shared": 10.2.0
+    vue-demi: ">=0.14.5"
+  peerDependencies:
+    rxjs: ">=6.0.0"
+  checksum: 4dd1c726c2b9ecd17b56aa28ff0918116e1ec43c2c51ee4802a9c5a963c60e4cae2e76625994443247f9f75f981393d7ae88507be420774d2734d056cc1646c6
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:10.2.0":
+  version: 10.2.0
+  resolution: "@vueuse/shared@npm:10.2.0"
+  dependencies:
+    vue-demi: ">=0.14.5"
+  checksum: b96884b82f315622639cbb186f6989d08527e2aa43236e91d6d454afb9a599b23e32af326351c8c9db9c7d7cc4a0797d44e4644d31de9615bba4f8371838e0e1
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:1, abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -4102,6 +4123,13 @@ __metadata:
   version: 4.3.2
   resolution: "devalue@npm:4.3.2"
   checksum: 034530e3910a096e528ca6481cd80ab2a21f4a5b813fb896d421eadf52dc969dfbbd5677aa06d28a6448a0f2f7e7d91d9ed88cd9aaa497f4b34e427d80c2a8a5
+  languageName: node
+  linkType: hard
+
+"dexie@npm:^3.2.4":
+  version: 3.2.4
+  resolution: "dexie@npm:3.2.4"
+  checksum: 4e5294a954118b6862c864b8c3970904a1733daebcd919488624520696411e2e81ed1bceeac3634c5c15a21e37ce4b8502ed41c4edfbc5ba3f5925c34d56497b
   languageName: node
   linkType: hard
 
@@ -8714,7 +8742,9 @@ __metadata:
     "@types/node": ^18.16.16
     "@types/ua-parser-js": ^0.7.36
     "@typescript-eslint/eslint-plugin": ^5.59.8
+    "@vueuse/rxjs": ^10.2.0
     algoliasearch: ^4.17.1
+    dexie: ^3.2.4
     eslint: ^8.42.0
     eslint-plugin-vue: ^9.14.1
     firebase: ^9.22.1
