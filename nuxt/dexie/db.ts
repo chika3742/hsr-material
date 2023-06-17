@@ -29,20 +29,22 @@ export class MySubClassedDexie extends Dexie {
           return false
         }
 
-        switch (e.type) {
-          case "exp": {
-            const item = firstItem as BookmarkableExp // e.type and firstItem.type are the same
-            return e.usage.lightConeId === item.usage.lightConeId
+        return (() => {
+          switch (e.type) {
+            case "exp": {
+              const item = firstItem as BookmarkableExp // e.type and firstItem.type are the same
+              return e.usage.lightConeId === item.usage.lightConeId
+            }
+            case "character_material": {
+              const item = firstItem as BookmarkableCharacterMaterial // e.type and firstItem.type are the same
+              return e.materialId === item.materialId && purposeTypes.includes(e.usage.purposeType)
+            }
+            case "light_cone_material": {
+              const item = firstItem as BookmarkableLightConeMaterial // e.type and firstItem.type are the same
+              return e.materialId === item.materialId && e.usage.lightConeId === item.usage.lightConeId
+            }
           }
-          case "character_material": {
-            const item = firstItem as BookmarkableCharacterMaterial // e.type and firstItem.type are the same
-            return e.materialId === item.materialId && purposeTypes.includes(e.usage.purposeType)
-          }
-          case "light_cone_material": {
-            const item = firstItem as BookmarkableLightConeMaterial // e.type and firstItem.type are the same
-            return e.materialId === item.materialId && e.usage.lightConeId === item.usage.lightConeId
-          }
-        }
+        })() && e.usage.variant === firstItem.usage.variant
       }).toArray() as Promise<LevelingBookmark[]>
   }
 

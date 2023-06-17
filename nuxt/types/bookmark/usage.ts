@@ -15,6 +15,7 @@ export namespace Usage {
   export interface LightCone {
     type: "light_cone"
     characterId: string
+    variant: Path | null
     lightConeId: string
     purposeType: PurposeType & "ascension"
     upperLevel: number
@@ -23,6 +24,7 @@ export namespace Usage {
   export interface Exp {
     type: "exp"
     characterId: string
+    variant: Path | null
     lightConeId?: string
     upperLevel: number
   }

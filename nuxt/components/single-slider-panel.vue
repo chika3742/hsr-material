@@ -62,6 +62,7 @@ const items = computed<BookmarkableIngredient[]>(() => {
       usage = {
         type: "exp",
         characterId: props.characterId,
+        variant: props.variant ?? null,
         lightConeId: props.lightConeId,
         upperLevel: e.level,
       }
@@ -69,6 +70,7 @@ const items = computed<BookmarkableIngredient[]>(() => {
       usage = {
         type: "light_cone",
         characterId: props.characterId,
+        variant: props.variant ?? null,
         lightConeId: props.lightConeId,
         purposeType: "ascension",
         upperLevel: e.level,
