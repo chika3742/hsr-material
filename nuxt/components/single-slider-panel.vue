@@ -5,7 +5,7 @@
       <MaterialCards
         :items="items"
         :range="range"
-        purpose-types="ascension"
+        :purpose-types="['ascension']"
         class="mt-2"
       />
     </v-expansion-panel-text>
