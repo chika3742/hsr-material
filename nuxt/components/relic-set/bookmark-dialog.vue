@@ -6,8 +6,8 @@ import {CharacterIdWithVariant} from "~/types/strings"
 
 interface Props {
   modelValue: boolean
-  relicSets?: RelicSet[]
-  relicPiece?: RelicPiece
+  relicSets: RelicSet[] | null
+  relicPiece: RelicPiece | null
 }
 
 const props = defineProps<Props>()
