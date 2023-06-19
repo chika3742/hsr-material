@@ -10,6 +10,8 @@ export type Bookmark =
 
 export type LevelingBookmark = Bookmark.CharacterMaterial | Bookmark.LightConeMaterial | Bookmark.Exp
 
+export type RelicBookmark = Bookmark.RelicSet | Bookmark.RelicPiece
+
 export namespace Bookmark {
   export interface CharacterMaterial {
     id?: number
