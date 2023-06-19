@@ -138,7 +138,7 @@ const saveBookmark = () => {
   emit("update:modelValue", false)
 }
 
-const getRadioButtonDisabled = (stat: Stat): boolean => {
+const getIsRadioButtonDisabled = (stat: Stat): boolean => {
   if (props.relicSets) {
     return false
   }
@@ -186,7 +186,7 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
               <v-radio
                 v-for="stat in group.items"
                 :key="stat"
-                :disabled="getRadioButtonDisabled(stat)"
+                :disabled="getIsRadioButtonDisabled(stat)"
                 :label="tx(`stats.${stat}`)"
                 :value="stat"
               />
