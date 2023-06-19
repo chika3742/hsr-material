@@ -47,10 +47,7 @@ export namespace Bookmark {
     characterId: string
     variant: string | null
     relicSetIds: string[]
-    mainStats: {
-      body: Stat[]
-      feet: Stat[]
-    }
+    mainStats: Record<string, Stat | null>
     subStats: Stat[]
   }
 
