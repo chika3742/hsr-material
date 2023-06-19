@@ -25,26 +25,24 @@ export class MySubClassedDexie extends Dexie {
     const firstItem = items[0]
     return db.bookmarks.where("usage.characterId").equals(firstItem.usage.characterId)
       .and((e) => {
-        if (e.type !== firstItem.type) {
+        if (e.type !== firstItem.type || e.usage.variant !== firstItem.usage.variant) {
           return false
         }
 
-        return (() => {
-          switch (e.type) {
-            case "exp": {
-              const item = firstItem as BookmarkableExp // e.type and firstItem.type are the same
-              return e.usage.lightConeId === item.usage.lightConeId
-            }
-            case "character_material": {
-              const item = firstItem as BookmarkableCharacterMaterial // e.type and firstItem.type are the same
-              return e.materialId === item.materialId && purposeTypes.includes(e.usage.purposeType)
-            }
-            case "light_cone_material": {
-              const item = firstItem as BookmarkableLightConeMaterial // e.type and firstItem.type are the same
-              return e.materialId === item.materialId && e.usage.lightConeId === item.usage.lightConeId
-            }
+        switch (e.type) {
+          case "exp": {
+            const item = firstItem as BookmarkableExp // e.type and firstItem.type are the same
+            return e.usage.lightConeId === item.usage.lightConeId
           }
-        })() && e.usage.variant === firstItem.usage.variant
+          case "character_material": {
+            const item = firstItem as BookmarkableCharacterMaterial // e.type and firstItem.type are the same
+            return e.materialId === item.materialId && purposeTypes.includes(e.usage.purposeType)
+          }
+          case "light_cone_material": {
+            const item = firstItem as BookmarkableLightConeMaterial // e.type and firstItem.type are the same
+            return e.materialId === item.materialId && e.usage.lightConeId === item.usage.lightConeId
+          }
+        }
       }).toArray() as Promise<LevelingBookmark[]>
   }
 
