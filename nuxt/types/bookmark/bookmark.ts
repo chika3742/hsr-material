@@ -10,6 +10,8 @@ export type Bookmark =
 
 export type LevelingBookmark = Bookmark.CharacterMaterial | Bookmark.LightConeMaterial | Bookmark.Exp
 
+export type RelicBookmark = Bookmark.RelicSet | Bookmark.RelicPiece
+
 export namespace Bookmark {
   export interface CharacterMaterial {
     id?: number
@@ -43,11 +45,9 @@ export namespace Bookmark {
     type: "relic_set"
     bookmarkedAt: Date
     characterId: string
+    variant: string | null
     relicSetIds: string[]
-    mainStats: {
-      body: Stat[]
-      feet: Stat[]
-    }
+    mainStats: Record<string, Stat | null>
     subStats: Stat[]
   }
 
@@ -55,8 +55,9 @@ export namespace Bookmark {
     id?: number
     type: "relic_piece"
     bookmarkedAt: Date
-    relicPieceId: string
     characterId: string
+    variant: string | null
+    relicPieceId: string
     mainStat: Stat | null
     subStats: Stat[]
   }

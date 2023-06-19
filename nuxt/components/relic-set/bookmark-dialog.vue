@@ -3,11 +3,13 @@ import {RelicPiece, RelicSet} from "~/types/data/relics"
 import relicStats from "assets/data/relic-stats.yaml"
 import {Stat} from "~/types/generated/relic-stats.g"
 import {CharacterIdWithVariant} from "~/types/strings"
+import {db} from "~/dexie/db"
+import {BookmarkableRelic, BookmarkableRelicPiece, BookmarkableRelicSet} from "~/types/bookmarkable-relic"
 
 interface Props {
   modelValue: boolean
-  relicSets?: RelicSet[]
-  relicPiece?: RelicPiece
+  relicSets: RelicSet[] | null
+  relicPiece: RelicPiece | null
 }
 
 const props = defineProps<Props>()
@@ -17,6 +19,7 @@ const emit = defineEmits<{
 }>()
 
 const i18n = useI18n()
+const snackbar = useSnackbar()
 
 interface HeaderRelic {
   title: string
@@ -122,6 +125,7 @@ watch(toRefs(props).modelValue, (value) => {
 })
 
 const characterSelectError = ref("")
+const loading = ref(false)
 
 const initSelections = () => {
   selectedStats.main = Object.fromEntries(radioGroups.value.map(e => [e.type, null]))
@@ -129,16 +133,51 @@ const initSelections = () => {
   selectedCharacters.value = []
 }
 
-const saveBookmark = () => {
+const saveBookmark = async() => {
   if (selectedCharacters.value.length === 0) {
     characterSelectError.value = tx(i18n, "relicDetailsPage.characterSelectError")
     return
   }
 
-  emit("update:modelValue", false)
+  const data: BookmarkableRelic[] = (() => {
+    if (props.relicSets) {
+      return selectedCharacters.value.map((character) => {
+        return new BookmarkableRelicSet({
+          relicSetIds: props.relicSets!.map(e => e.id),
+          characterId: character.split("_")[0],
+          variant: character.split("_")[1] ?? null,
+          mainStats: toRaw(selectedStats.main),
+          subStats: toRaw(selectedStats.sub),
+        })
+      })
+    } else {
+      return selectedCharacters.value.map((character) => {
+        return new BookmarkableRelicPiece({
+          relicPieceId: props.relicPiece!.id,
+          characterId: character.split("_")[0],
+          variant: character.split("_")[1] ?? null,
+          mainStat: selectedStats.main.piece!,
+          subStats: toRaw(selectedStats.sub),
+        })
+      })
+    }
+  })()
+
+  loading.value = true
+  try {
+    await db.addRelicBookmarks(data)
+
+    emit("update:modelValue", false)
+    snackbar.show(tx(i18n, "bookmark.bookmarked"))
+  } catch (e) {
+    console.error(e)
+    snackbar.show(tx(i18n, "errors.bookmark"), "error")
+  } finally {
+    loading.value = false
+  }
 }
 
-const getRadioButtonDisabled = (stat: Stat): boolean => {
+const getIsRadioButtonDisabled = (stat: Stat): boolean => {
   if (props.relicSets) {
     return false
   }
@@ -186,7 +225,7 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
               <v-radio
                 v-for="stat in group.items"
                 :key="stat"
-                :disabled="getRadioButtonDisabled(stat)"
+                :disabled="getIsRadioButtonDisabled(stat)"
                 :label="tx(`stats.${stat}`)"
                 :value="stat"
               />
@@ -216,7 +255,7 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
         <v-btn variant="text" @click="$emit('update:modelValue', false)">
           {{ tx("common.cancel") }}
         </v-btn>
-        <v-btn variant="text" @click="saveBookmark">
+        <v-btn :loading="loading" variant="text" @click="saveBookmark">
           {{ tx("common.ok") }}
         </v-btn>
       </template>

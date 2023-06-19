@@ -1,6 +1,6 @@
 import Dexie, {Table} from "dexie"
 import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
-import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
+import {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
 import {
   BookmarkableCharacterMaterial,
   BookmarkableExp,
@@ -9,6 +9,7 @@ import {
 } from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {toCharacterIdWithVariant} from "~/utils/to-character-id-with-variant"
+import {BookmarkableRelic} from "~/types/bookmarkable-relic"
 
 export class MySubClassedDexie extends Dexie {
   /**
@@ -118,6 +119,32 @@ export class MySubClassedDexie extends Dexie {
     await this.bookmarkCharacters.where("bookmarks").anyOf(ids).modify((bookmarkCharacter) => {
       bookmarkCharacter.bookmarks = bookmarkCharacter.bookmarks.filter(id => !ids.includes(id))
     })
+  }
+
+  async addRelicBookmarks(data: BookmarkableRelic[]) {
+    for (const item of data) {
+      const dataToSave: RelicBookmark = {
+        ...item,
+        bookmarkedAt: new Date(),
+      }
+
+      // add bookmark
+      const id = (await this.bookmarks.add(dataToSave)) as number
+
+      // add bookmark id to bookmarkCharacters
+      const characterId = toCharacterIdWithVariant(item.characterId, item.variant)
+      const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
+      if (bookmarkCharacter) {
+        await this.bookmarkCharacters.update(characterId, {
+          bookmarks: bookmarkCharacter.bookmarks.concat(id),
+        })
+      } else {
+        await this.bookmarkCharacters.add({
+          characterId,
+          bookmarks: [id],
+        })
+      }
+    }
   }
 }
 
