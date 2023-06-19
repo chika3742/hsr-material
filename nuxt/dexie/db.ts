@@ -73,7 +73,7 @@ export class MySubClassedDexie extends Dexie {
    * @param selectedItem Selected item (only for exp)
    */
   async addLevelingBookmarks<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined) {
-    const saveData: LevelingBookmark[] = data.map((e) => {
+    const dataToSave: LevelingBookmark[] = data.map((e) => {
       if (e.type === "exp") {
         return {
           ...e,
@@ -89,7 +89,7 @@ export class MySubClassedDexie extends Dexie {
     })
 
     // add bookmarks
-    const ids = (await this.bookmarks.bulkAdd(saveData, {allKeys: true})) as number[]
+    const ids = (await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})) as number[]
 
     // add bookmark ids to bookmarkCharacters
     const characterId = toCharacterIdWithVariant(data[0].usage.characterId, data[0].usage.variant)
