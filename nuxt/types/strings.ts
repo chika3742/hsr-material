@@ -1,7 +1,8 @@
 import {CharacterIngredients} from "~/types/generated/character-ingredients.g"
+import {Path} from "~/types/generated/characters.g"
 
 export type ThemeSetting = "dark" | "light" | "auto"
 
-export type TargetType = "character" | "light_cone"
+export type PurposeType = keyof CharacterIngredients["purposeTypes"]
 
-export type PurposeType = keyof CharacterIngredients["purposeTypes"] | "exp"
+export type CharacterIdWithVariant = string | `${string}_${Path}`

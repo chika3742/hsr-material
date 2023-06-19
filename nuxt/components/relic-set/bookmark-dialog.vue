@@ -2,7 +2,7 @@
 import {RelicPiece, RelicSet} from "~/types/data/relics"
 import relicStats from "assets/data/relic-stats.yaml"
 import {Stat} from "~/types/generated/relic-stats.g"
-import characters from "~/assets/data/characters.yaml"
+import {CharacterIdWithVariant} from "~/types/strings"
 
 interface Props {
   modelValue: boolean
@@ -110,7 +110,7 @@ const radioGroups = computed<RadioGroup[]>(() => {
   throw new Error("Relic set or relic piece must be provided")
 })
 
-const selectedCharacters = ref<string[]>([])
+const selectedCharacters = ref<CharacterIdWithVariant[]>([])
 const selectedStats = reactive({
   main: {} as Record<string, Stat | null>,
   sub: [] as Stat[],
@@ -176,29 +176,7 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
           />
 
           <!-- Character select -->
-          <section class="mt-2">
-            <v-select
-              v-model="selectedCharacters"
-              :error-messages="characterSelectError"
-              :items="extractI18n(toVariantSeparatedCharacters(characters), 'idWithVariant', 'title', 'characterNames')"
-              :label="tx('relicDetailsPage.characterToEquip')"
-              chips
-              item-value="idWithVariant"
-              multiple
-              @blur="characterSelectError = ''"
-            >
-              <template #item="{props, item}">
-                <v-list-item :title="item.title" v-bind="props">
-                  <template #prepend="{isSelected}">
-                    <div class="d-flex align-center mr-2">
-                      <v-checkbox-btn :model-value="isSelected" :ripple="false" />
-                      <v-img :src="getCharacterImage(item.raw.id, 'small')" width="40" />
-                    </div>
-                  </template>
-                </v-list-item>
-              </template>
-            </v-select>
-          </section>
+          <CharacterSelect v-model="selectedCharacters" v-model:error="characterSelectError" multiple />
 
           <!-- Main stat radio buttons -->
           <section v-for="group in radioGroups.filter(e => e.items.length >= 2)" :key="group.title">

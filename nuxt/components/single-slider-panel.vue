@@ -5,6 +5,7 @@
       <MaterialCards
         :items="items"
         :range="range"
+        :purpose-types="['ascension']"
         class="mt-2"
       />
     </v-expansion-panel-text>
@@ -12,44 +13,37 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  BookmarkableExp,
-  BookmarkableIngredient,
-  BookmarkableIngredientMeta,
-  BookmarkableItem,
-} from "~/types/bookmarkable-ingredient"
-import {TargetType} from "~/types/strings"
+import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types/bookmarkable-ingredient"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import {CharacterMaterialDefinitions} from "~/types/generated/characters.g"
+import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 import {LevelIngredients} from "~/types/level-ingredients"
+import {Usage} from "~/types/bookmark/usage"
 
 const props = defineProps<{
   title: string
-  targetType: TargetType
-  targetId: string
+  characterId: string
+  lightConeId?: string
+  variant: Path | undefined
   materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
 }>()
 
 const rarity = (() => {
-  switch (props.targetType) {
-    case "character":
-      return characters.find(e => e.id === props.targetId)!.rarity
-    case "light_cone":
-      return lightCones.find(e => e.id === props.targetId)!.rarity
+  if (props.lightConeId) {
+    return lightCones.find(e => e.id === props.lightConeId)!.rarity
+  } else {
+    return characters.find(e => e.id === props.characterId)!.rarity
   }
 })()
 
 const levelIngredients = (() => {
-  switch (props.targetType) {
-    case "character":
-      return levelsToLevelIngredients(characterIngredients.purposeTypes.ascension.levels)
-    case "light_cone": {
-      return levelsToLevelIngredients(lightConeIngredients.levels)
-    }
+  if (props.lightConeId) {
+    return levelsToLevelIngredients(lightConeIngredients.levels)
+  } else {
+    return levelsToLevelIngredients(characterIngredients.purposeTypes.ascension.levels)
   }
 })()
 
@@ -61,28 +55,65 @@ const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
   return levelIngredients.filter(e => range.value[0] < e.level && e.level <= range.value[1])
 })
 
-const items = computed<BookmarkableItem[]>(() => {
-  return ingredientsWithinSelectedLevelRange.value.map(e => e.ingredients.map<BookmarkableItem>((f) => {
-    const meta: BookmarkableIngredientMeta = {
-      level: e.level,
-      targetType: props.targetType,
-      targetId: props.targetId,
+const items = computed<BookmarkableIngredient[]>(() => {
+  return ingredientsWithinSelectedLevelRange.value.map(e => e.ingredients.map<BookmarkableIngredient>((f) => {
+    let usage: Usage
+    if (f.exp) {
+      usage = {
+        type: "exp",
+        characterId: props.characterId,
+        variant: props.variant ?? null,
+        lightConeId: props.lightConeId,
+        upperLevel: e.level,
+      }
+    } else if (props.lightConeId) {
+      usage = {
+        type: "light_cone",
+        characterId: props.characterId,
+        variant: props.variant ?? null,
+        lightConeId: props.lightConeId,
+        purposeType: "ascension",
+        upperLevel: e.level,
+      }
+    } else {
+      usage = {
+        type: "character",
+        characterId: props.characterId,
+        variant: props.variant ?? null,
+        purposeType: "ascension",
+        upperLevel: e.level,
+      }
     }
 
-    if (typeof f.quantity !== "undefined") {
-      const result: BookmarkableIngredient = {
-        id: getMaterialIdFromIngredient(f, props.materialDefs),
-        quantity: f.quantity.rarities[rarity.toString()],
-        ...meta,
-        purposeType: "ascension",
+    if (usage.type === "exp") {
+      const result: BookmarkableExp = {
+        type: "exp",
+        exp: f.exp!.rarities[rarity.toString()],
+        usage,
       }
       return result
     } else {
-      const result: BookmarkableExp = {
-        exp: f.exp!.rarities[rarity.toString()],
-        ...meta,
-        purposeType: "exp",
+      if (!f.quantity) {
+        throw new Error("Invalid ingredient markup")
       }
+
+      let result: BookmarkableItem
+      if (usage.type === "character") {
+        result = {
+          type: "character_material",
+          materialId: getMaterialIdFromIngredient(f, props.materialDefs),
+          quantity: f.quantity.rarities[rarity.toString()],
+          usage,
+        }
+      } else {
+        result = {
+          type: "light_cone_material",
+          materialId: getMaterialIdFromIngredient(f, props.materialDefs),
+          quantity: f.quantity.rarities[rarity.toString()],
+          usage,
+        }
+      }
+
       return result
     }
   })).flat()

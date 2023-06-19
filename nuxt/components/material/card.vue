@@ -2,7 +2,7 @@
   <v-card v-show="quantity !== 0" :to="localePath(`/materials/${materialId}`)" :v-slot:loader="false" color="card">
     <div class="py-2 px-3 d-flex align-center">
       <v-btn
-        v-if="items[0].purposeType === 'exp'"
+        v-if="items[0].type === 'exp'"
         color="transparent"
         class="my-n2 ml-n3"
         variant="flat"
@@ -16,6 +16,12 @@
         class="ml-1 font-kiwi-maru"
       >{{ tx(`materialNames.${materialId}`) }}</span>
       <span class="ml-2 font-cairo" style="font-size: 1.2em">×{{ quantity }}</span>
+      <MaterialBookmarkButton
+        :key="JSON.stringify(items)"
+        :items="items"
+        :purpose-types="purposeTypes"
+        :selected-item="selectedExpItem?.itemId"
+      />
     </div>
 
     <div class="corner-marker" />
@@ -36,42 +42,53 @@ import {computed} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import materials from "~/assets/data/materials.csv"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
+import {PurposeType} from "~/types/strings"
 
 const props = defineProps<{
-  items: BookmarkableItem[]
+  items: BookmarkableIngredient[]
+  purposeTypes: PurposeType[]
 }>()
 
 const theme = useTheme()
 
 const expDefs = computed(() => {
-  switch (props.items[0].targetType) {
-    case "character":
-      return characterIngredients.expItems
-    case "light_cone":
-      return lightConeIngredients.expItems
+  if (props.items[0].type !== "exp") {
+    return null
+  }
+
+  if (props.items[0].usage.lightConeId) {
+    return lightConeIngredients.expItems
+  } else {
+    return characterIngredients.expItems
   }
 })
 
-const selectedExpItem = ref(expDefs.value[0])
+const selectedExpItem = ref(expDefs.value?.[0] ?? null)
 
 const forwardSelectedExpItem = () => {
-  const index = expDefs.value.findIndex(e => e.itemId === selectedExpItem.value.itemId)
+  if (!expDefs.value) {
+    return
+  }
+
+  const index = expDefs.value.findIndex(e => e.itemId === selectedExpItem.value!.itemId)
   selectedExpItem.value = expDefs.value[index + 1] ?? expDefs.value[0]
 }
 
 const materialId = computed(() => {
-  if (isExpList(props.items)) {
+  if (selectedExpItem.value) {
     return selectedExpItem.value.itemId
   } else {
-    return (props.items[0] as BookmarkableIngredient).id
+    return (props.items[0] as BookmarkableItem).materialId
   }
 })
 
 const quantity = computed(() => {
-  if (isExpList(props.items)) {
-    return props.items.reduce((acc, e) => acc + Math.ceil(e.exp! / selectedExpItem.value.expPerItem), 0)
+  if (selectedExpItem.value) {
+    const items = props.items as BookmarkableExp[]
+    return items.reduce((acc, e) => acc + Math.ceil(e.exp! / selectedExpItem.value!.expPerItem), 0)
   } else {
-    return (props.items as BookmarkableIngredient[]).reduce((acc, e) => acc + e.quantity!, 0)
+    const items = props.items as BookmarkableItem[]
+    return items.reduce((acc, e) => acc + e.quantity, 0)
   }
 })
 
@@ -89,10 +106,6 @@ const markerColor = computed(() => {
       return theme.current.value.colors.card
   }
 })
-
-const isExpList = (src: BookmarkableItem[]): src is BookmarkableExp[] => {
-  return src.every(e => e.purposeType === "exp")
-}
 </script>
 
 <style lang="sass" scoped>

@@ -1,20 +1,14 @@
-import {PurposeType, TargetType} from "~/types/strings"
+import {Bookmark} from "~/types/bookmark/bookmark"
 
-export interface BookmarkableIngredientMeta {
-  level: number
-  targetId: string
-  targetType: TargetType
-}
+export type BookmarkableCharacterMaterial = Omit<Bookmark.CharacterMaterial, "id" | "bookmarkedAt">
 
-export interface BookmarkableIngredient extends BookmarkableIngredientMeta {
-  id: string
-  quantity: number
-  purposeType: Exclude<PurposeType, "exp">
-}
+export type BookmarkableLightConeMaterial = Omit<Bookmark.LightConeMaterial, "id" | "bookmarkedAt">
 
-export interface BookmarkableExp extends BookmarkableIngredientMeta {
-  exp: number
-  purposeType: PurposeType & "exp"
-}
+export type BookmarkableExp = Omit<Bookmark.Exp, "id" | "bookmarkedAt" | "selectedItem">
 
-export type BookmarkableItem = BookmarkableIngredient | BookmarkableExp
+export type BookmarkableItem = BookmarkableCharacterMaterial | BookmarkableLightConeMaterial
+
+export type BookmarkableIngredient =
+  | BookmarkableCharacterMaterial
+  | BookmarkableLightConeMaterial
+  | BookmarkableExp
