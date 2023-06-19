@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
+import {CharacterIdWithVariant} from "~/types/strings"
 
 definePageMeta({
   title: "lightConeDetails",
@@ -8,12 +9,15 @@ definePageMeta({
 })
 
 const route = useRoute()
+const {$vSelectCharacters} = useNuxtApp()
 
 if (!lightCones.some(e => e.id === route.params.lightConeId)) {
   throw createError({statusCode: 404, message: "Page not found", fatal: true})
 }
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
+
+const selectedCharacter = ref<CharacterIdWithVariant>($vSelectCharacters[0].idWithVariant)
 </script>
 
 <template>
@@ -48,12 +52,15 @@ const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
       <EmphasizedText :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)" class="pl-4 mt-1" />
     </section>
 
-    <v-expansion-panels class="mt-4" mandatory="force">
+    <CharacterSelect v-model="selectedCharacter" class="mt-4" max-width="300px" />
+
+    <v-expansion-panels mandatory="force">
       <SingleSliderPanel
         :material-defs="lightCone.materials"
         :title="tx('lightConeDetailsPage.ascension')"
         :light-cone-id="lightCone.id"
-        character-id="march-7th"
+        :character-id="selectedCharacter.split('_')[0]"
+        :variant="selectedCharacter.split('_')[1] as any"
       />
 
       <v-expansion-panel :title="tx('lightConeDetailsPage.recommendedCharacters')" text="Coming soon..." />

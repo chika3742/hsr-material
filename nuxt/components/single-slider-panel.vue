@@ -27,7 +27,7 @@ const props = defineProps<{
   title: string
   characterId: string
   lightConeId?: string
-  variant?: Path
+  variant: Path | undefined
   materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
 }>()
 
