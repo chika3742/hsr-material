@@ -5,7 +5,7 @@
       <MaterialCards
         :items="items"
         :range="range"
-        purpose-types="ascension"
+        :purpose-types="['ascension']"
         class="mt-2"
       />
     </v-expansion-panel-text>
@@ -27,7 +27,7 @@ const props = defineProps<{
   title: string
   characterId: string
   lightConeId?: string
-  variant?: Path
+  variant: Path | undefined
   materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
 }>()
 

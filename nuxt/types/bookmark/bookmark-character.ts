@@ -1,5 +1,7 @@
+import {CharacterIdWithVariant} from "~/types/strings"
+
 export interface BookmarkCharacter {
-  characterId: string
+  characterId: CharacterIdWithVariant
   bookmarks: BookmarkId[]
 }
 
