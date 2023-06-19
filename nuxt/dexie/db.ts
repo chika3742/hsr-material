@@ -8,6 +8,7 @@ import {
   BookmarkableLightConeMaterial,
 } from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
+import {toCharacterIdWithVariant} from "~/utils/to-character-id-with-variant"
 
 export class MySubClassedDexie extends Dexie {
   bookmarkCharacters!: Table<BookmarkCharacter>
@@ -64,7 +65,7 @@ export class MySubClassedDexie extends Dexie {
 
     const ids = (await this.bookmarks.bulkAdd(saveData, {allKeys: true})) as number[]
 
-    const characterId = data[0].usage.characterId
+    const characterId = toCharacterIdWithVariant(data[0].usage.characterId, data[0].usage.variant)
     const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
     if (bookmarkCharacter) {
       await this.bookmarkCharacters.update(characterId, {
