@@ -43,6 +43,7 @@ export namespace Bookmark {
     type: "relic_set"
     bookmarkedAt: Date
     characterId: string
+    variant: string | null
     relicSetIds: string[]
     mainStats: {
       body: Stat[]
@@ -55,8 +56,9 @@ export namespace Bookmark {
     id?: number
     type: "relic_piece"
     bookmarkedAt: Date
-    relicPieceId: string
     characterId: string
+    variant: string | null
+    relicPieceId: string
     mainStat: Stat | null
     subStats: Stat[]
   }
