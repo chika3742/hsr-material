@@ -41,6 +41,7 @@ searchRecordTypes:
 
 pageTitles:
   home: ホーム
+  bookmarks: ブックマーク一覧
   characters: キャラクター
   characterDetails: キャラクター / {characterId}
   lightCones: 光円錐

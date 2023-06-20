@@ -41,6 +41,7 @@ searchRecordTypes:
 
 pageTitles:
   home: Home
+  bookmarks: Bookmarks
   characters: Characters
   characterDetails: Characters / {characterId}
   lightCones: Light Cones
