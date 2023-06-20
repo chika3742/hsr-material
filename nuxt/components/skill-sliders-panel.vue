@@ -15,7 +15,7 @@ interface Slider {
 const props = defineProps<{
   title: string
   characterId: string
-  variant?: Path
+  variant: Path | null
   materialDefs: CharacterMaterialDefinitions
 }>()
 
@@ -61,7 +61,7 @@ const ingredients = computed<BookmarkableItem[]>(() => {
         quantity: g.quantity!.rarities[characterRarity.toString()],
         usage: {
           type: "character",
-          variant: props.variant ?? null,
+          variant: props.variant,
           upperLevel: f.level,
           characterId: props.characterId,
           purposeType: e.type,

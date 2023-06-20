@@ -27,7 +27,7 @@ const props = defineProps<{
   title: string
   characterId: string
   lightConeId?: string
-  variant: Path | undefined
+  variant: Path | null
   materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
 }>()
 
@@ -62,7 +62,7 @@ const items = computed<BookmarkableIngredient[]>(() => {
       usage = {
         type: "exp",
         characterId: props.characterId,
-        variant: props.variant ?? null,
+        variant: props.variant,
         lightConeId: props.lightConeId,
         upperLevel: e.level,
       }
@@ -70,7 +70,7 @@ const items = computed<BookmarkableIngredient[]>(() => {
       usage = {
         type: "light_cone",
         characterId: props.characterId,
-        variant: props.variant ?? null,
+        variant: props.variant,
         lightConeId: props.lightConeId,
         purposeType: "ascension",
         upperLevel: e.level,
@@ -79,7 +79,7 @@ const items = computed<BookmarkableIngredient[]>(() => {
       usage = {
         type: "character",
         characterId: props.characterId,
-        variant: props.variant ?? null,
+        variant: props.variant,
         purposeType: "ascension",
         upperLevel: e.level,
       }

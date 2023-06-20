@@ -80,14 +80,14 @@ onActivated(() => {
       <SingleSliderPanel
         :material-defs="currentVariant.materials"
         :character-id="character.id"
-        :variant="character.variants ? currentVariant.path : undefined"
+        :variant="character.variants ? currentVariant.path : null"
         :title="tx( 'characterDetailsPage.ascension')"
       />
       <SkillSlidersPanel
         :character-id="character.id"
         :material-defs="currentVariant.materials"
         :title="tx('characterDetailsPage.skills')"
-        :variant="character.variants ? currentVariant.path : undefined"
+        :variant="character.variants ? currentVariant.path : null"
       />
     </v-expansion-panels>
   </div>
