@@ -2,7 +2,7 @@
   <v-card v-show="quantity !== 0" :to="localePath(`/materials/${materialId}`)" :v-slot:loader="false" color="card">
     <div class="py-2 px-3 d-flex align-center">
       <v-btn
-        v-if="items[0].type === 'exp'"
+        v-if="isBookmarkableExp(items[0])"
         color="transparent"
         class="my-n2 ml-n3"
         variant="flat"
