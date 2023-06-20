@@ -6,6 +6,7 @@ import {
   BookmarkableExp,
   BookmarkableIngredient,
   BookmarkableLightConeMaterial,
+  isBookmarkableExp,
 } from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {toCharacterIdWithVariant} from "~/utils/to-character-id-with-variant"
@@ -48,7 +49,8 @@ export class MySubClassedDexie extends Dexie {
 
         // change filter by type
         switch (e.type) {
-          case "exp": {
+          case "character_exp":
+          case "light_cone_exp": {
             const item = firstItem as BookmarkableExp // e.type and firstItem.type are the same
             // lightConeId is same (materialId is unrelated, characterId and variant is already filtered)
             return e.usage.lightConeId === item.usage.lightConeId
@@ -75,7 +77,7 @@ export class MySubClassedDexie extends Dexie {
    */
   async addLevelingBookmarks<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined) {
     const dataToSave: LevelingBookmark[] = data.map((e) => {
-      if (e.type === "exp") {
+      if (isBookmarkableExp(e)) {
         return {
           ...e,
           bookmarkedAt: new Date(),

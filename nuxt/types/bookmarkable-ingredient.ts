@@ -12,3 +12,7 @@ export type BookmarkableIngredient =
   | BookmarkableCharacterMaterial
   | BookmarkableLightConeMaterial
   | BookmarkableExp
+
+export function isBookmarkableExp(item: BookmarkableIngredient): item is BookmarkableExp {
+  return item.type === "character_exp" || item.type === "light_cone_exp"
+}

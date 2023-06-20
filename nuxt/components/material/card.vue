@@ -37,7 +37,12 @@
 
 <script lang="ts" setup>
 import {useTheme} from "vuetify"
-import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types/bookmarkable-ingredient"
+import {
+  BookmarkableExp,
+  BookmarkableIngredient,
+  BookmarkableItem,
+  isBookmarkableExp,
+} from "~/types/bookmarkable-ingredient"
 import {computed} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import materials from "~/assets/data/materials.csv"
@@ -52,7 +57,7 @@ const props = defineProps<{
 const theme = useTheme()
 
 const expDefs = computed(() => {
-  if (props.items[0].type !== "exp") {
+  if (!isBookmarkableExp(props.items[0])) {
     return null
   }
 

@@ -33,7 +33,7 @@ export namespace Bookmark {
 
   export interface Exp {
     id?: number
-    type: "exp"
+    type: "character_exp" | "light_cone_exp"
     bookmarkedAt: Date
     usage: Usage.Exp
     exp: number

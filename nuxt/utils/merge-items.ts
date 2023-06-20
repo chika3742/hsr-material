@@ -1,5 +1,5 @@
 import materials from "~/assets/data/materials.csv"
-import {BookmarkableIngredient} from "~/types/bookmarkable-ingredient"
+import {BookmarkableIngredient, isBookmarkableExp} from "~/types/bookmarkable-ingredient"
 
 /**
  * Merges items in the list with the same material IDs and returns an array of arrays.
@@ -13,12 +13,12 @@ export const mergeItems = (items: BookmarkableIngredient[]): BookmarkableIngredi
   const result: BookmarkableIngredient[][] = []
   for (const item of items) {
     const existing = (() => {
-      if (item.type === "exp") {
+      if (isBookmarkableExp(item)) {
         // If the item is an exp item, add into existing exp item (exp item does not have id)
-        return result.find(e => e[0].type === "exp")
+        return result.find(e => isBookmarkableExp(e[0]))
       } else {
         // If the item has an id, add into existing item has the same id
-        return result.find(e => e[0].type !== "exp" && e[0].materialId === item.materialId)
+        return result.find(e => !isBookmarkableExp(e[0]) && e[0].materialId === item.materialId)
       }
     })()
     if (existing) {
@@ -41,8 +41,8 @@ export const mergeItems = (items: BookmarkableIngredient[]): BookmarkableIngredi
     const aElement = a[0]
     const bElement = b[0]
 
-    if (aElement.type === "exp" || bElement.type === "exp") {
-      return aElement.type === "exp" ? -1 : 1
+    if (isBookmarkableExp(aElement) || isBookmarkableExp(bElement)) {
+      return isBookmarkableExp(aElement) ? -1 : 1
     } else if (aElement.materialId === "credit" || bElement.materialId === "credit") {
       return aElement.materialId === "credit" ? 1 : -1
     } else {
