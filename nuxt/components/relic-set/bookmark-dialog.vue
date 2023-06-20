@@ -144,8 +144,8 @@ const saveBookmark = async() => {
       return selectedCharacters.value.map((character) => {
         return new BookmarkableRelicSet({
           relicSetIds: props.relicSets!.map(e => e.id),
-          characterId: character.split("_")[0],
-          variant: character.split("_")[1] ?? null,
+          characterId: toCharacterId(character),
+          variant: toVariant(character),
           mainStats: toRaw(selectedStats.main),
           subStats: toRaw(selectedStats.sub),
         })
@@ -154,8 +154,8 @@ const saveBookmark = async() => {
       return selectedCharacters.value.map((character) => {
         return new BookmarkableRelicPiece({
           relicPieceId: props.relicPiece!.id,
-          characterId: character.split("_")[0],
-          variant: character.split("_")[1] ?? null,
+          characterId: toCharacterId(character),
+          variant: toVariant(character),
           mainStat: selectedStats.main.piece!,
           subStats: toRaw(selectedStats.sub),
         })

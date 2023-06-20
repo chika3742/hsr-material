@@ -59,8 +59,8 @@ const selectedCharacter = ref<CharacterIdWithVariant>($vSelectCharacters[0].idWi
         :material-defs="lightCone.materials"
         :title="tx('lightConeDetailsPage.ascension')"
         :light-cone-id="lightCone.id"
-        :character-id="selectedCharacter.split('_')[0]"
-        :variant="selectedCharacter.split('_')[1] as any"
+        :character-id="toCharacterId(selectedCharacter)"
+        :variant="toVariant(selectedCharacter)"
       />
 
       <v-expansion-panel :title="tx('lightConeDetailsPage.recommendedCharacters')" text="Coming soon..." />
