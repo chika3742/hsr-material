@@ -114,7 +114,7 @@ export class MySubClassedDexie extends Dexie {
    *
    * @param ids List of ids to remove
    */
-  async removeLevelingBookmarks(ids: number[]) {
+  async removeBookmarks(...ids: number[]) {
     await this.bookmarks.bulkDelete(ids)
 
     // remove bookmark ids from bookmarkCharacters

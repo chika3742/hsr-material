@@ -61,7 +61,7 @@ const toggleBookmark = async() => {
       await db.addLevelingBookmarks(props.items, props.selectedItem)
       snackbar.show(tx(i18n, "bookmark.bookmarked"))
     } else {
-      await db.removeLevelingBookmarks((await db.getLevelingBookmarks(props.items, props.purposeTypes)).map(e => e.id!))
+      await db.removeBookmarks(...(await db.getLevelingBookmarks(props.items, props.purposeTypes)).map(e => e.id!))
       snackbar.show(tx(i18n, "bookmark.removed"))
     }
   } catch (e) {
@@ -76,7 +76,7 @@ const reBookmark = () => {
   loading.value = true
 
   try {
-    db.removeLevelingBookmarks((savedBookmarks.value as LevelingBookmark[]).map(e => e.id!))
+    db.removeBookmarks(...(savedBookmarks.value as LevelingBookmark[]).map(e => e.id!))
     db.addLevelingBookmarks(props.items, props.selectedItem)
   } catch (e) {
     console.error(e)
