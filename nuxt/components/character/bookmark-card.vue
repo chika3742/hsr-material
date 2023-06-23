@@ -71,7 +71,7 @@ const removeBookmark = (id: number) => {
       <!-- Character image/name row -->
       <v-list-item
         :title="tx(`characterNames.${character}`)"
-        :to="`/characters/${character}`"
+        :to="localePath(`/characters/${character}`)"
       >
         <template #prepend>
           <v-img
