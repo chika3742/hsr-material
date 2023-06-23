@@ -13,12 +13,13 @@ interface Props {
 
 const props = defineProps<Props>()
 
-defineEmits<{
+const emit = defineEmits<{
   (e: "update:modelValue", value: boolean): void
 }>()
 
 const snackbar = useSnackbar()
 const i18n = useI18n()
+const router = useRouter()
 
 const purposes = computed(() => {
   const result: Partial<Record<PurposeType, LevelingBookmark[]>> = {}
@@ -41,6 +42,10 @@ const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
     snackbar.show(tx(i18n, "bookmark.removed"))
   }
 }
+
+router.beforeEach(() => {
+  emit("update:modelValue", false)
+})
 </script>
 
 <template>
