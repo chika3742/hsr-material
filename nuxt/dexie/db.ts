@@ -33,15 +33,21 @@ export class MySubClassedDexie extends Dexie {
    *
    * @param items Items to get bookmarks for
    * @param purposeTypes Purpose types to filter by (only for character materials)
+   * @param upperLevel Upper level to filter by
    * @returns List of {@link LevelingBookmark}
    */
-  getLevelingBookmarks(items: BookmarkableIngredient[], purposeTypes: PurposeType[]) {
+  getLevelingBookmarks(items: BookmarkableIngredient[], purposeTypes: PurposeType[], upperLevel?: number) {
     const firstItem = items[0]
     // query all bookmarks with the same characterId
     return db.bookmarks.where("usage.characterId").equals(firstItem.usage.characterId)
       .and((e) => {
         // filter by type and variant
         if (e.type !== firstItem.type || e.usage.variant !== firstItem.usage.variant) {
+          return false
+        }
+
+        // For individual bookmarks, filter by upperLevel
+        if (typeof upperLevel !== "undefined" && e.usage.upperLevel !== upperLevel) {
           return false
         }
 
