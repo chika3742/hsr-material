@@ -124,7 +124,7 @@ export class MySubClassedDexie extends Dexie {
     await this.bookmarks.bulkDelete(ids)
 
     // remove bookmark ids from bookmarkCharacters
-    await this.bookmarkCharacters.where("bookmarks").anyOf(ids).modify(async(bookmarkCharacter) => {
+    await this.bookmarkCharacters.where("bookmarks").anyOf(ids).modify((bookmarkCharacter) => {
       bookmarkCharacter.bookmarks = bookmarkCharacter.bookmarks.filter(id => !ids.includes(id))
     })
 
