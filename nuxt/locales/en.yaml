@@ -17,6 +17,9 @@ common:
   kind: Kind
   mainStat: Main Stat
   subStat: Sub Stat | Sub Stats
+  mainStatShort: Main
+  subStatShort: Sub
+  details: Details
   2pcEffect: 2-Piece Effect
   4pcEffect: 4-Piece Effect
   skillTypes:
@@ -286,6 +289,13 @@ stats:
   break_effect: Break Effect
   energy_regen_rate: Energy Regen Rate
   effect_res: Effect RES
+
+purposeTypes:
+  ascension: Lv/Ascension Materials
+  basicAttack: "@:{'common.skillTypes.basicAttack'}: {title}"
+  skill: "@:{'common.skillTypes.skill'}: {title}"
+  talent: "@:{'common.skillTypes.talent'}: {title}"
+  ultimate: "@:{'common.skillTypes.ultimate'}: {title}"
 
 characterNames:
   march-7th: March 7th

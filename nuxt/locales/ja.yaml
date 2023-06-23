@@ -19,6 +19,9 @@ common:
   kind: 種類
   mainStat: メインステータス
   subStat: サブステータス
+  mainStatShort: メイン
+  subStatShort: サブ
+  details: 詳細
   skillTypes:
     basicAttack: 通常攻撃
     skill: 戦闘スキル
@@ -311,6 +314,13 @@ stats:
   break_effect: 撃破特攻
   energy_regen_rate: EP回復効率
   effect_res: 効果抵抗
+
+purposeTypes:
+  ascension: Lv/昇格素材
+  basicAttack: "@:{'common.skillTypes.basicAttack'}: {title}"
+  skill: "@:{'common.skillTypes.skill'}: {title}"
+  talent: "@:{'common.skillTypes.talent'}: {title}"
+  ultimate: "@:{'common.skillTypes.ultimate'}: {title}"
 
 characterNames:
   trailblazer: 開拓者
