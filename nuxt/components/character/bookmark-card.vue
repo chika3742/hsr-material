@@ -2,9 +2,7 @@
 import * as _ from "lodash"
 import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {CharacterIdWithVariant} from "~/types/strings"
-import {db} from "~/dexie/db"
 import {reactive} from "#imports"
-import relicPieces from "assets/data/relic-pieces.csv"
 
 interface Props {
   character: CharacterIdWithVariant
@@ -12,9 +10,6 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-
-const snackbar = useSnackbar()
-const i18n = useI18n()
 
 interface BookmarkGroups {
   characterMaterials: (Bookmark.CharacterMaterial | Bookmark.Exp)[]
@@ -57,11 +52,6 @@ const detailsDialog = reactive({
   show: false,
   items: [] as LevelingBookmark[],
 })
-
-const removeBookmark = (id: number) => {
-  db.removeBookmarks(id)
-  snackbar.show(tx(i18n, "bookmark.removed"))
-}
 
 </script>
 
@@ -127,68 +117,13 @@ const removeBookmark = (id: number) => {
 
         <section v-if="groupedBookmarks.relicSets.length >= 1">
           <div class="d-flex flex-column" style="gap: 8px">
-            <div v-for="set in groupedBookmarks.relicSets" :key="set.id">
-              <v-list-item
-                :prepend-avatar="getRelicSetImage(set.relicSetIds[0])"
-                :subtitle="tx('searchRecordTypes.relic-set')"
-                :title="tx(`relicSetTitles.${set.relicSetIds[0]}`)"
-                :to="localePath({path: `/relics/${set.relicSetIds[0]}`})"
-                density="compact"
-                lines="two"
-                rounded
-              >
-                <template #append>
-                  <v-btn icon="mdi-bookmark-remove" variant="text" @click.prevent="removeBookmark(set.id!)" />
-                </template>
-              </v-list-item>
-
-              <div class="ml-2">
-                <p
-                  v-for="[location, stat] in Object.entries(set.mainStats).filter(([_, _stat]) => _stat)"
-                  :key="location"
-                >
-                  <span class="text-slight-heading" style="font-size: 0.9em">{{
-                    tx("common.mainStatShort")
-                  }}({{ tx(`relicLocations.${location}`) }}): </span>
-                  <span>{{ tx(`stats.${stat}`) }}</span>
-                </p>
-                <p>
-                  <span class="text-slight-heading" style="font-size: 0.9em">{{ tx("common.subStatShort") }}: </span>
-                  <span>{{ set.subStats.map(e => tx(`stats.${e}`)).join(", ") }}</span>
-                </p>
-              </div>
-            </div>
+            <BookmarkRelic v-for="set in groupedBookmarks.relicSets" :key="set.id" :item="set" />
           </div>
         </section>
 
-        <section>
+        <section v-if="groupedBookmarks.relicPieces.length >= 1">
           <div class="d-flex flex-column" style="gap: 8px">
-            <div v-for="piece in groupedBookmarks.relicPieces" :key="piece.id">
-              <v-list-item
-                :prepend-avatar="getRelicPieceImage(piece.relicPieceId)"
-                :subtitle="tx(`relicSetTitles.${relicPieces.find(e => e.id === piece.relicPieceId)?.setId}`)"
-                :title="tx(`relicPieceNames.${piece.relicPieceId}`)"
-                :to="localePath({path: `/relics/${relicPieces.find(e => e.id === piece.relicPieceId)?.setId}`})"
-                density="compact"
-                lines="two"
-                rounded
-              >
-                <template #append>
-                  <v-btn icon="mdi-bookmark-remove" variant="text" @click.prevent="removeBookmark(piece.id!)" />
-                </template>
-              </v-list-item>
-
-              <div class="ml-2">
-                <p>
-                  <span class="text-slight-heading" style="font-size: 0.9em">{{ tx("common.mainStatShort") }}: </span>
-                  <span>{{ tx(`stats.${piece.mainStat}`) }}</span>
-                </p>
-                <p>
-                  <span class="text-slight-heading" style="font-size: 0.9em">{{ tx("common.subStatShort") }}: </span>
-                  <span>{{ piece.subStats.map(e => tx(`stats.${e}`)).join(", ") }}</span>
-                </p>
-              </div>
-            </div>
+            <BookmarkRelic v-for="piece in groupedBookmarks.relicPieces" :key="piece.id" :item="piece" />
           </div>
         </section>
       </div>
