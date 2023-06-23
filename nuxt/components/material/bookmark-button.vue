@@ -7,15 +7,25 @@ import {BookmarkableIngredient} from "~/types/bookmarkable-ingredient"
 import {LevelingBookmark} from "~/types/bookmark/bookmark"
 import {PurposeType} from "~/types/strings"
 
-const props = defineProps<{
+interface Props {
   items: BookmarkableIngredient[]
   purposeTypes: PurposeType[]
   selectedItem: string | undefined
-}>()
+  individual?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  individual: false,
+})
 
 // Bookmarks
 const savedBookmarks = process.client
-  ? useObservable<LevelingBookmark[], null>(liveQuery(() => db.getLevelingBookmarks(props.items, props.purposeTypes)) as any, {
+  ? useObservable<LevelingBookmark[], null>(liveQuery(() =>
+    db.getLevelingBookmarks(
+      props.items,
+      props.purposeTypes,
+      props.individual ? props.items[0].usage.upperLevel : undefined,
+    )) as any, {
     initialValue: null,
   })
   : ref([])
@@ -54,14 +64,18 @@ const snackbar = useSnackbar()
 const i18n = useI18n()
 
 const toggleBookmark = async() => {
+  if (savedBookmarks.value === null) {
+    return
+  }
+
   loading.value = true
 
   try {
     if (bookmarkState.value === "none") {
-      await db.addLevelingBookmarks(props.items, props.selectedItem)
+      await db.addLevelingBookmarks(props.items.map(e => toRaw(e)), props.selectedItem)
       snackbar.show(tx(i18n, "bookmark.bookmarked"))
     } else {
-      await db.removeBookmarks(...(await db.getLevelingBookmarks(props.items, props.purposeTypes)).map(e => e.id!))
+      await db.removeBookmarks(...savedBookmarks.value.map(e => e.id!))
       snackbar.show(tx(i18n, "bookmark.removed"))
     }
   } catch (e) {

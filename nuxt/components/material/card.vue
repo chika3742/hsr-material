@@ -21,6 +21,15 @@
         :items="items"
         :purpose-types="purposeTypes"
         :selected-item="selectedExpItem?.itemId"
+        :individual="individual"
+      />
+      <v-btn
+        v-if="showDetailsButton"
+        :text="tx('common.details')"
+        class="ml-2"
+        prepend-icon="mdi-loupe"
+        variant="text"
+        @click.prevent="$emit('click:detailsButton')"
       />
     </div>
 
@@ -49,9 +58,22 @@ import materials from "~/assets/data/materials.csv"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import {PurposeType} from "~/types/strings"
 
-const props = defineProps<{
+interface Props {
   items: BookmarkableIngredient[]
   purposeTypes: PurposeType[]
+  initialSelectedExpItem?: string
+  showDetailsButton?: boolean
+  individual?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  initialSelectedExpItem: undefined,
+  showDetailsButton: false,
+  individual: false,
+})
+
+defineEmits<{
+  (e: "click:detailsButton"): void
 }>()
 
 const theme = useTheme()
@@ -68,7 +90,15 @@ const expDefs = computed(() => {
   }
 })
 
-const selectedExpItem = ref(expDefs.value?.[0] ?? null)
+const selectedExpItem = ref((() => {
+  if (!expDefs.value) {
+    return null
+  } else if (props.initialSelectedExpItem) {
+    return expDefs.value.find(e => e.itemId === props.initialSelectedExpItem)
+  } else {
+    return expDefs.value[0]
+  }
+})())
 
 const forwardSelectedExpItem = () => {
   if (!expDefs.value) {
