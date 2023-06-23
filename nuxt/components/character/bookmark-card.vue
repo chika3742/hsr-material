@@ -64,10 +64,19 @@ const removeBookmark = (id: number) => {
   <v-card>
     <div class="d-flex flex-column pa-1">
       <!-- Character image/name row -->
-      <div class="d-flex align-center" style="gap: 8px">
-        <v-img :src="getCharacterImage(toCharacterId(character), 'small')" aspect-ratio="1" max-width="50px" />
-        <span>{{ tx(`characterNames.${character}`) }}</span>
-      </div>
+      <v-list-item
+        :title="tx(`characterNames.${character}`)"
+        :to="`/characters/${character}`"
+      >
+        <template #prepend>
+          <v-img
+            :src="getCharacterImage(toCharacterId(character), 'small')"
+            aspect-ratio="1"
+            class="mr-2"
+            max-width="50px"
+          />
+        </template>
+      </v-list-item>
 
       <div class="pa-2 d-flex flex-column" style="gap: 8px">
         <section v-if="groupedBookmarks.characterMaterials.length >= 1">
