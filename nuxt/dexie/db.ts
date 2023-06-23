@@ -118,9 +118,12 @@ export class MySubClassedDexie extends Dexie {
     await this.bookmarks.bulkDelete(ids)
 
     // remove bookmark ids from bookmarkCharacters
-    await this.bookmarkCharacters.where("bookmarks").anyOf(ids).modify((bookmarkCharacter) => {
+    await this.bookmarkCharacters.where("bookmarks").anyOf(ids).modify(async(bookmarkCharacter) => {
       bookmarkCharacter.bookmarks = bookmarkCharacter.bookmarks.filter(id => !ids.includes(id))
     })
+
+    // remove bookmarkCharacters with no bookmarks
+    await this.bookmarkCharacters.filter(e => e.bookmarks.length === 0).delete()
   }
 
   async addRelicBookmarks(data: BookmarkableRelic[]) {
