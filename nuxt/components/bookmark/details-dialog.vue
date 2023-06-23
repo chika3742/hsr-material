@@ -40,7 +40,7 @@ const getSkillTitle = (item: LevelingBookmark) => {
 }
 
 const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
-  const ids = purposes.value[purposeType]?.filter(e => e.usage.upperLevel === level)?.map(e => e.id!)
+  const ids = purposes.value[purposeType]?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
   if (ids) {
     db.removeBookmarks(...ids)
     snackbar.show(tx(i18n, "bookmark.removed"))
@@ -78,7 +78,8 @@ router.beforeEach(() => {
                     </h3>
                     <v-btn
                       class="ml-1"
-                      icon="mdi-bookmark-remove"
+                      prepend-icon="mdi-marker-check"
+                      text="ここまで育成済みにする"
                       variant="text"
                       @click="removeBookmarksInLevel(purpose, parseInt(lv))"
                     />
