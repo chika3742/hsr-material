@@ -62,7 +62,7 @@ const detailsDialog = reactive({
       <v-list-item
         class="d-flex"
         :title="tx(`characterNames.${character}`)"
-        :to="localePath(`/characters/${character}`)"
+        :to="localePath({path: `/characters/${toCharacterId(character)}`, query: {variant: toVariant(character) ?? undefined}})"
       >
         <template #prepend>
           <v-img
