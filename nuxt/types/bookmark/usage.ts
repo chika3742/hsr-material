@@ -26,6 +26,7 @@ export namespace Usage {
     characterId: string
     variant: Path | null
     lightConeId?: string
+    purposeType?: undefined
     upperLevel: number
   }
 }
