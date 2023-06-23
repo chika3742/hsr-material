@@ -4,6 +4,7 @@ import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {CharacterIdWithVariant} from "~/types/strings"
 import {db} from "~/dexie/db"
 import {reactive} from "#imports"
+import relicPieces from "assets/data/relic-pieces.csv"
 
 interface Props {
   character: CharacterIdWithVariant
@@ -11,6 +12,9 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+const snackbar = useSnackbar()
+const i18n = useI18n()
 
 interface BookmarkGroups {
   characterMaterials: (Bookmark.CharacterMaterial | Bookmark.Exp)[]
@@ -56,6 +60,7 @@ const detailsDialog = reactive({
 
 const removeBookmark = (id: number) => {
   db.removeBookmarks(id)
+  snackbar.show(tx(i18n, "bookmark.removed"))
 }
 
 </script>
@@ -150,6 +155,37 @@ const removeBookmark = (id: number) => {
                 <p>
                   <span class="text-slight-heading" style="font-size: 0.9em">{{ tx("common.subStatShort") }}: </span>
                   <span>{{ set.subStats.map(e => tx(`stats.${e}`)).join(", ") }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="d-flex flex-column" style="gap: 8px">
+            <div v-for="piece in groupedBookmarks.relicPieces" :key="piece.id">
+              <v-list-item
+                :prepend-avatar="getRelicPieceImage(piece.relicPieceId)"
+                :subtitle="tx(`relicSetTitles.${relicPieces.find(e => e.id === piece.relicPieceId)?.setId}`)"
+                :title="tx(`relicPieceNames.${piece.relicPieceId}`)"
+                :to="localePath({path: `/relics/${relicPieces.find(e => e.id === piece.relicPieceId)?.setId}`})"
+                density="compact"
+                lines="two"
+                rounded
+              >
+                <template #append>
+                  <v-btn icon="mdi-bookmark-remove" variant="text" @click.prevent="removeBookmark(piece.id!)" />
+                </template>
+              </v-list-item>
+
+              <div class="ml-2">
+                <p>
+                  <span class="text-slight-heading" style="font-size: 0.9em">{{ tx("common.mainStatShort") }}: </span>
+                  <span>{{ tx(`stats.${piece.mainStat}`) }}</span>
+                </p>
+                <p>
+                  <span class="text-slight-heading" style="font-size: 0.9em">{{ tx("common.subStatShort") }}: </span>
+                  <span>{{ piece.subStats.map(e => tx(`stats.${e}`)).join(", ") }}</span>
                 </p>
               </div>
             </div>
