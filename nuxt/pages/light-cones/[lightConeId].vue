@@ -17,7 +17,10 @@ if (!lightCones.some(e => e.id === route.params.lightConeId)) {
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
 
-const selectedCharacter = ref<CharacterIdWithVariant>($vSelectCharacters[0].idWithVariant)
+const selectedCharacter = ref<CharacterIdWithVariant>(
+  $vSelectCharacters.some(e => e.idWithVariant === route.query.character)
+    ? route.query.character as string
+    : $vSelectCharacters[0].idWithVariant)
 </script>
 
 <template>
