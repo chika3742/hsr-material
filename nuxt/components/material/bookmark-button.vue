@@ -58,6 +58,10 @@ const bookmarkState = computed<"full" | "partial" | "none" | "loading">(() => {
   }
 })
 
+defineExpose({
+  bookmarkState,
+})
+
 const loading = ref(false)
 const showBookmarkMenu = ref(false)
 const snackbar = useSnackbar()

@@ -1,5 +1,11 @@
 <template>
-  <v-card v-show="quantity !== 0" :to="localePath(`/materials/${materialId}`)" :v-slot:loader="false" color="card">
+  <v-card
+    v-show="quantity !== 0"
+    :class="individual && bookmarkButton?.bookmarkState === 'none' ? 'dimmed' : ''"
+    :to="localePath(`/materials/${materialId}`)"
+    :v-slot:loader="false"
+    color="card"
+  >
     <div class="py-2 px-3 d-flex align-center">
       <v-btn
         v-if="isBookmarkableExp(items[0])"
@@ -18,6 +24,7 @@
       <span class="ml-2 font-cairo" style="font-size: 1.2em">×{{ quantity }}</span>
       <MaterialBookmarkButton
         :key="JSON.stringify(items)"
+        ref="bookmarkButton"
         :items="items"
         :purpose-types="purposeTypes"
         :selected-item="selectedExpItem?.itemId"
@@ -52,11 +59,12 @@ import {
   BookmarkableItem,
   isBookmarkableExp,
 } from "~/types/bookmarkable-ingredient"
-import {computed} from "#imports"
+import {computed, ref} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import materials from "~/assets/data/materials.csv"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import {PurposeType} from "~/types/strings"
+import {MaterialBookmarkButton} from "#components"
 
 interface Props {
   items: BookmarkableIngredient[]
@@ -99,6 +107,8 @@ const selectedExpItem = ref((() => {
     return expDefs.value[0]
   }
 })())
+
+const bookmarkButton = ref<InstanceType<typeof MaterialBookmarkButton> | null>(null)
 
 const forwardSelectedExpItem = () => {
   if (!expDefs.value) {
@@ -154,4 +164,7 @@ const markerColor = computed(() => {
   border-width: 0 0 16px 16px
   border-color: transparent transparent transparent v-bind(markerColor)
   z-index: 1
+
+.dimmed
+  opacity: 0.5
 </style>
