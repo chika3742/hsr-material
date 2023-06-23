@@ -35,6 +35,10 @@ const purposes = computed(() => {
   return result
 })
 
+const getSkillTitle = (item: LevelingBookmark) => {
+  return tx(i18n, `skillTitles.${toCharacterIdWithVariant(item.usage.characterId, item.usage.variant).replace("_", ".")}.${item.usage.purposeType}`)
+}
+
 const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
   const ids = purposes.value[purposeType]?.filter(e => e.usage.upperLevel === level)?.map(e => e.id!)
   if (ids) {
@@ -61,7 +65,7 @@ router.beforeEach(() => {
           <v-expansion-panel
             v-for="(_items, purpose) in purposes"
             :key="purpose"
-            :title="tx(`purposeTypes.${purpose}`, {title: tx(`skillTitles.${items[0].usage.characterId}.${purpose}`)})"
+            :title="tx(`purposeTypes.${purpose}`, {title: getSkillTitle(_items![0])})"
             :value="purpose"
           >
             <template #text>
