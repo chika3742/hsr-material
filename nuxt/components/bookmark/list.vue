@@ -17,7 +17,7 @@ const bookmarks = useObservable<Bookmark[], Bookmark[]>(liveQuery(() => db.bookm
 
 <template>
   <div class="bookmark-cards-wrapper">
-    <CharacterBookmarkCard
+    <BookmarkCharacterCard
       v-for="character in bookmarkCharacters"
       :key="character.characterId"
       :bookmarks="bookmarks.filter(e => character.bookmarks.includes(e.id!))"
