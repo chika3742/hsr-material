@@ -23,6 +23,10 @@ const bookmarks = useObservable<Bookmark[], Bookmark[]>(liveQuery(() => db.bookm
       :bookmarks="bookmarks.filter(e => character.bookmarks.includes(e.id!))"
       :character="character.characterId"
     />
+
+    <div v-if="bookmarkCharacters.length === 0" class="no-bookmarks">
+      {{ tx("bookmark.noBookmarks") }}
+    </div>
   </div>
 </template>
 
@@ -31,4 +35,12 @@ const bookmarks = useObservable<Bookmark[], Bookmark[]>(liveQuery(() => db.bookm
   display: grid
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
   grid-gap: 16px
+  position: relative
+
+.no-bookmarks
+  position: absolute
+  top: 64px
+  left: 16px
+  right: 16px
+  text-align: center
 </style>

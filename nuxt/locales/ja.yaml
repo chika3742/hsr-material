@@ -77,6 +77,7 @@ bookmark:
   unBookmarkDesc: このアイテムのブックマークを解除します。
   bookmarked: ブックマークしました。
   removed: ブックマークを解除しました。
+  noBookmarks: ブックマークがありません。左上のメニューから探してみましょう！
 
 characterDetailsPage:
   ascension: キャラLvアップ/昇格素材

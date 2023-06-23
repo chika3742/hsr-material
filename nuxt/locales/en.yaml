@@ -79,6 +79,7 @@ bookmark:
   unBookmarkDesc: Removes bookmarks for this item.
   bookmarked: Bookmarked.
   removed: Removed bookmarks.
+  noBookmarks: No bookmarks. Let's find it in the menu in the upper left corner!
 
 characterDetailsPage:
   ascension: Ascension / Character Level Up Materials
