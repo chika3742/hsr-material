@@ -129,7 +129,7 @@ const detailsDialog = reactive({
         </section>
       </div>
 
-      <BookmarkDetailsDialog v-model="detailsDialog.show" :items="detailsDialog.items" />
+      <BookmarkDetailsDialog v-model="detailsDialog.show" :bookmarks="bookmarks" :items="detailsDialog.items" />
     </div>
   </v-card>
 </template>

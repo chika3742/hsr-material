@@ -2,13 +2,14 @@
 import {groupBy} from "lodash"
 import {isBookmarkableExp} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
-import {LevelingBookmark} from "~/types/bookmark/bookmark"
+import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {materialSortFunc} from "~/utils/merge-items"
 import {db} from "~/dexie/db"
 
 interface Props {
   modelValue: boolean
   items: LevelingBookmark[]
+  bookmarks: Bookmark[]
 }
 
 const props = defineProps<Props>()
@@ -77,9 +78,10 @@ router.beforeEach(() => {
                       Lv. {{ lv }}
                     </h3>
                     <v-btn
+                      :disabled="!bookmarks.some(e => __items.some(e2 => e2.id === e.id))"
                       class="ml-1"
                       prepend-icon="mdi-marker-check"
-                      text="ここまで育成済みにする"
+                      text="ここまで育成した"
                       variant="text"
                       @click="removeBookmarksInLevel(purpose, parseInt(lv))"
                     />
