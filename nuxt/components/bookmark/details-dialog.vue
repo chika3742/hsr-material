@@ -62,7 +62,7 @@ router.beforeEach(() => {
     @update:model-value="$emit('update:modelValue', $event)"
   >
     <v-card :title="tx('common.details')">
-      <div class="overflow-y-auto pa-2">
+      <div class="overflow-y-auto pa-2 h-100">
         <v-expansion-panels model-value="ascension" multiple>
           <v-expansion-panel
             v-for="(_items, purpose) in purposes"
