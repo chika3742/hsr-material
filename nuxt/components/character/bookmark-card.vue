@@ -60,6 +60,7 @@ const detailsDialog = reactive({
     <div class="d-flex flex-column pa-1">
       <!-- Character image/name row -->
       <v-list-item
+        class="d-flex"
         :title="tx(`characterNames.${character}`)"
         :to="localePath(`/characters/${character}`)"
       >
