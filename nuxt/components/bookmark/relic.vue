@@ -2,6 +2,7 @@
 import relicPieces from "assets/data/relic-pieces.csv"
 import {db} from "~/dexie/db"
 import {Bookmark} from "~/types/bookmark/bookmark"
+import relicSets from "assets/data/relic-sets.csv"
 
 interface Props {
   item: Bookmark.RelicSet | Bookmark.RelicPiece
@@ -33,7 +34,8 @@ const images = (() => {
 const titleLines = (() => {
   switch (props.item.type) {
     case "relic_set": {
-      const pcs = props.item.relicSetIds.length === 1 ? "4pcs" : "2pcs"
+      const relicSet = relicSets.find(e => e.id === (props.item as Bookmark.RelicSet).relicSetIds[0])!
+      const pcs = props.item.relicSetIds.length === 1 && relicSet.type === "cavern" ? "4pcs" : "2pcs"
       return props.item.relicSetIds.map(e => `${tx(i18n, `relicSetTitles.${e}`)} (${tx(i18n, `relicDetailsPage.${pcs}`)})`)
     }
     case "relic_piece":
