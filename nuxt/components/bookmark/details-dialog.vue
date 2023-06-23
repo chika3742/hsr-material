@@ -57,10 +57,11 @@ router.beforeEach(() => {
     :model-value="modelValue"
     max-width="600px"
     scrollable
+    :fullscreen="$vuetify.display.xs"
     @update:model-value="$emit('update:modelValue', $event)"
   >
     <v-card :title="tx('common.details')">
-      <template #text>
+      <div class="overflow-y-auto pa-2">
         <v-expansion-panels model-value="ascension" multiple>
           <v-expansion-panel
             v-for="(_items, purpose) in purposes"
@@ -97,7 +98,7 @@ router.beforeEach(() => {
             </template>
           </v-expansion-panel>
         </v-expansion-panels>
-      </template>
+      </div>
 
       <template #actions>
         <v-spacer />
