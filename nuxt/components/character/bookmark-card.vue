@@ -103,7 +103,7 @@ const removeBookmark = (id: number) => {
             <div v-for="[lcId, lcMaterials] in Object.entries(groupedBookmarks.lightCones)" :key="lcId">
               <v-list-item
                 :prepend-avatar="getLightConeImage(lcId)"
-                :subtitle="tx('bookmarkTypes.light_cone')"
+                :subtitle="tx('searchRecordTypes.light-cone')"
                 :title="tx(`lightConeNames.${lcId}`)"
                 :to="localePath({path: `/light-cones/${lcId}`, query: {character}})"
                 density="compact"
@@ -130,7 +130,7 @@ const removeBookmark = (id: number) => {
             <div v-for="set in groupedBookmarks.relicSets" :key="set.id">
               <v-list-item
                 :prepend-avatar="getRelicSetImage(set.relicSetIds[0])"
-                :subtitle="tx('bookmarkTypes.relic_set')"
+                :subtitle="tx('searchRecordTypes.relic-set')"
                 :title="tx(`relicSetTitles.${set.relicSetIds[0]}`)"
                 :to="localePath({path: `/relics/${set.relicSetIds[0]}`})"
                 density="compact"
