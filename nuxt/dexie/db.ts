@@ -69,7 +69,9 @@ export class MySubClassedDexie extends Dexie {
           case "light_cone_material": {
             const item = firstItem as BookmarkableLightConeMaterial // e.type and firstItem.type are the same
             // materialId and lightConeId is same (characterId and variant is already filtered)
-            return e.materialId === item.materialId && e.usage.lightConeId === item.usage.lightConeId
+            return e.materialId === item.materialId &&
+              e.usage.lightConeId === item.usage.lightConeId &&
+              e.usage.purposeType === item.usage.purposeType // for convenience (currently it can only be one type)
           }
         }
       }).toArray() as Promise<LevelingBookmark[]>
