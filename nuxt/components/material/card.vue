@@ -1,8 +1,14 @@
 <template>
-  <v-card v-show="quantity !== 0" :to="localePath(`/materials/${materialId}`)" :v-slot:loader="false" color="card">
+  <v-card
+    v-show="quantity !== 0"
+    :class="individual && bookmarkButton?.bookmarkState === 'none' ? 'dimmed' : ''"
+    :to="localePath(`/materials/${materialId}`)"
+    :v-slot:loader="false"
+    color="card"
+  >
     <div class="py-2 px-3 d-flex align-center">
       <v-btn
-        v-if="items[0].type === 'exp'"
+        v-if="isBookmarkableExp(items[0])"
         color="transparent"
         class="my-n2 ml-n3"
         variant="flat"
@@ -18,9 +24,19 @@
       <span class="ml-2 font-cairo" style="font-size: 1.2em">×{{ quantity }}</span>
       <MaterialBookmarkButton
         :key="JSON.stringify(items)"
+        ref="bookmarkButton"
         :items="items"
         :purpose-types="purposeTypes"
         :selected-item="selectedExpItem?.itemId"
+        :individual="individual"
+      />
+      <v-btn
+        v-if="showDetailsButton"
+        :text="tx('common.details')"
+        class="ml-2"
+        prepend-icon="mdi-loupe"
+        variant="text"
+        @click.prevent="$emit('click:detailsButton')"
       />
     </div>
 
@@ -37,22 +53,41 @@
 
 <script lang="ts" setup>
 import {useTheme} from "vuetify"
-import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types/bookmarkable-ingredient"
-import {computed} from "#imports"
+import {
+  BookmarkableExp,
+  BookmarkableIngredient,
+  BookmarkableItem,
+  isBookmarkableExp,
+} from "~/types/bookmarkable-ingredient"
+import {computed, ref} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import materials from "~/assets/data/materials.csv"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import {PurposeType} from "~/types/strings"
+import {MaterialBookmarkButton} from "#components"
 
-const props = defineProps<{
+interface Props {
   items: BookmarkableIngredient[]
   purposeTypes: PurposeType[]
+  initialSelectedExpItem?: string
+  showDetailsButton?: boolean
+  individual?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  initialSelectedExpItem: undefined,
+  showDetailsButton: false,
+  individual: false,
+})
+
+defineEmits<{
+  (e: "click:detailsButton"): void
 }>()
 
 const theme = useTheme()
 
 const expDefs = computed(() => {
-  if (props.items[0].type !== "exp") {
+  if (!isBookmarkableExp(props.items[0])) {
     return null
   }
 
@@ -63,7 +98,17 @@ const expDefs = computed(() => {
   }
 })
 
-const selectedExpItem = ref(expDefs.value?.[0] ?? null)
+const selectedExpItem = ref((() => {
+  if (!expDefs.value) {
+    return null
+  } else if (props.initialSelectedExpItem) {
+    return expDefs.value.find(e => e.itemId === props.initialSelectedExpItem)
+  } else {
+    return expDefs.value[0]
+  }
+})())
+
+const bookmarkButton = ref<InstanceType<typeof MaterialBookmarkButton> | null>(null)
 
 const forwardSelectedExpItem = () => {
   if (!expDefs.value) {
@@ -119,4 +164,7 @@ const markerColor = computed(() => {
   border-width: 0 0 16px 16px
   border-color: transparent transparent transparent v-bind(markerColor)
   z-index: 1
+
+.dimmed
+  opacity: 0.5
 </style>

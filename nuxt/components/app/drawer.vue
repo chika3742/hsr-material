@@ -36,6 +36,10 @@ const drawerItems: (DrawerItem | Divider)[] = [
     icon: "mdi-home",
     to: "/",
   },
+  {
+    icon: "mdi-bookmark-multiple",
+    to: "/bookmarks",
+  },
   "---" as const,
   {
     icon: "mdi-account",

@@ -89,12 +89,12 @@ const radioGroups = computed<RadioGroup[]>(() => {
     } else {
       return [
         {
-          type: "planarSphere",
+          type: "planar_sphere",
           title: "relicDetailsPage.mainStatPlanarSphere",
           items: relicStats.main.planar_sphere,
         },
         {
-          type: "linkRope",
+          type: "link_rope",
           title: "relicDetailsPage.mainStatLinkRope",
           items: relicStats.main.link_rope,
         },

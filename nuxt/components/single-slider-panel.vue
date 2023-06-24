@@ -87,7 +87,7 @@ const items = computed<BookmarkableIngredient[]>(() => {
 
     if (usage.type === "exp") {
       const result: BookmarkableExp = {
-        type: "exp",
+        type: props.lightConeId ? "light_cone_exp" : "character_exp",
         exp: f.exp!.rarities[rarity.toString()],
         usage,
       }

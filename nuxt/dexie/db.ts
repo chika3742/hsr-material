@@ -6,6 +6,7 @@ import {
   BookmarkableExp,
   BookmarkableIngredient,
   BookmarkableLightConeMaterial,
+  isBookmarkableExp,
 } from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {toCharacterIdWithVariant} from "~/utils/to-character-id-with-variant"
@@ -32,9 +33,10 @@ export class MySubClassedDexie extends Dexie {
    *
    * @param items Items to get bookmarks for
    * @param purposeTypes Purpose types to filter by (only for character materials)
+   * @param upperLevel Upper level to filter by
    * @returns List of {@link LevelingBookmark}
    */
-  getLevelingBookmarks(items: BookmarkableIngredient[], purposeTypes: PurposeType[]) {
+  getLevelingBookmarks(items: BookmarkableIngredient[], purposeTypes: PurposeType[], upperLevel?: number) {
     const firstItem = items[0]
     // query all bookmarks with the same characterId
     return db.bookmarks.where("usage.characterId").equals(firstItem.usage.characterId)
@@ -44,11 +46,17 @@ export class MySubClassedDexie extends Dexie {
           return false
         }
 
+        // For individual bookmarks, filter by upperLevel
+        if (typeof upperLevel !== "undefined" && e.usage.upperLevel !== upperLevel) {
+          return false
+        }
+
         /* `characterId`, `variant`, and `type` already filtered */
 
         // change filter by type
         switch (e.type) {
-          case "exp": {
+          case "character_exp":
+          case "light_cone_exp": {
             const item = firstItem as BookmarkableExp // e.type and firstItem.type are the same
             // lightConeId is same (materialId is unrelated, characterId and variant is already filtered)
             return e.usage.lightConeId === item.usage.lightConeId
@@ -75,7 +83,7 @@ export class MySubClassedDexie extends Dexie {
    */
   async addLevelingBookmarks<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined) {
     const dataToSave: LevelingBookmark[] = data.map((e) => {
-      if (e.type === "exp") {
+      if (isBookmarkableExp(e)) {
         return {
           ...e,
           bookmarkedAt: new Date(),
@@ -112,13 +120,16 @@ export class MySubClassedDexie extends Dexie {
    *
    * @param ids List of ids to remove
    */
-  async removeLevelingBookmarks(ids: number[]) {
+  async removeBookmarks(...ids: number[]) {
     await this.bookmarks.bulkDelete(ids)
 
     // remove bookmark ids from bookmarkCharacters
     await this.bookmarkCharacters.where("bookmarks").anyOf(ids).modify((bookmarkCharacter) => {
       bookmarkCharacter.bookmarks = bookmarkCharacter.bookmarks.filter(id => !ids.includes(id))
     })
+
+    // remove bookmarkCharacters with no bookmarks
+    await this.bookmarkCharacters.filter(e => e.bookmarks.length === 0).delete()
   }
 
   async addRelicBookmarks(data: BookmarkableRelic[]) {

@@ -1,5 +1,6 @@
+import {isArray} from "lodash"
 import materials from "~/assets/data/materials.csv"
-import {BookmarkableIngredient} from "~/types/bookmarkable-ingredient"
+import {BookmarkableIngredient, isBookmarkableExp} from "~/types/bookmarkable-ingredient"
 
 /**
  * Merges items in the list with the same material IDs and returns an array of arrays.
@@ -13,12 +14,12 @@ export const mergeItems = (items: BookmarkableIngredient[]): BookmarkableIngredi
   const result: BookmarkableIngredient[][] = []
   for (const item of items) {
     const existing = (() => {
-      if (item.type === "exp") {
+      if (isBookmarkableExp(item)) {
         // If the item is an exp item, add into existing exp item (exp item does not have id)
-        return result.find(e => e[0].type === "exp")
+        return result.find(e => isBookmarkableExp(e[0]))
       } else {
         // If the item has an id, add into existing item has the same id
-        return result.find(e => e[0].type !== "exp" && e[0].materialId === item.materialId)
+        return result.find(e => !isBookmarkableExp(e[0]) && e[0].materialId === item.materialId)
       }
     })()
     if (existing) {
@@ -37,28 +38,30 @@ export const mergeItems = (items: BookmarkableIngredient[]): BookmarkableIngredi
    * 5. クラフトレベルの降順でソート
    * 6. id の文字列でソート
    */
-  return result.sort((a, b) => {
-    const aElement = a[0]
-    const bElement = b[0]
+  return result.sort(materialSortFunc)
+}
 
-    if (aElement.type === "exp" || bElement.type === "exp") {
-      return aElement.type === "exp" ? -1 : 1
-    } else if (aElement.materialId === "credit" || bElement.materialId === "credit") {
-      return aElement.materialId === "credit" ? 1 : -1
-    } else {
-      const aMaterial = materials.find(e => e.id === aElement.materialId)!
-      const bMaterial = materials.find(e => e.id === bElement.materialId)!
-      if (aMaterial.groupId && bMaterial.groupId) {
-        if (aMaterial.groupId !== bMaterial.groupId) {
-          return aMaterial.groupId.localeCompare(bMaterial.groupId)
-        } else {
-          return bMaterial.craftLevel! - aMaterial.craftLevel!
-        }
-      } else if (aMaterial.groupId || bMaterial.groupId) {
-        return aMaterial.groupId ? -1 : 1
+export const materialSortFunc = (a: BookmarkableIngredient | BookmarkableIngredient[], b: BookmarkableIngredient | BookmarkableIngredient[]): number => {
+  const aElement = isArray(a) ? a[0] : a
+  const bElement = isArray(b) ? b[0] : b
+
+  if (isBookmarkableExp(aElement) || isBookmarkableExp(bElement)) {
+    return isBookmarkableExp(aElement) ? -1 : 1
+  } else if (aElement.materialId === "credit" || bElement.materialId === "credit") {
+    return aElement.materialId === "credit" ? 1 : -1
+  } else {
+    const aMaterial = materials.find(e => e.id === aElement.materialId)!
+    const bMaterial = materials.find(e => e.id === bElement.materialId)!
+    if (aMaterial.groupId && bMaterial.groupId) {
+      if (aMaterial.groupId !== bMaterial.groupId) {
+        return aMaterial.groupId.localeCompare(bMaterial.groupId)
       } else {
-        return aElement.materialId.localeCompare(bElement.materialId)
+        return bMaterial.craftLevel! - aMaterial.craftLevel!
       }
+    } else if (aMaterial.groupId || bMaterial.groupId) {
+      return aMaterial.groupId ? -1 : 1
+    } else {
+      return aElement.materialId.localeCompare(bElement.materialId)
     }
-  })
+  }
 }
