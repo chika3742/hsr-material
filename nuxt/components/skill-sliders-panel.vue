@@ -6,6 +6,7 @@ import {PurposeType} from "~/types/strings"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LevelIngredients} from "~/types/level-ingredients"
 import characters from "~/assets/data/characters.yaml"
+import {db} from "~/dexie/db"
 
 interface Slider {
   type: PurposeType
@@ -46,6 +47,32 @@ const ranges = ref(sliders.map((e) => {
   const sliderTicks = levelIngredientsToSliderTicks(e.levelIngredients)
   return [sliderTicks[0], sliderTicks.slice(-1)[0]]
 }))
+const setInitialRangeBasedOnBookmarks = async() => {
+  for (const i in sliders) {
+    const slider = sliders[i]
+
+    const bookmarks = await db.getBookmarksByPurpose(
+      props.characterId,
+      props.variant,
+      undefined,
+      slider.type,
+    )
+
+    if (bookmarks.length === 0) {
+      continue
+    }
+
+    const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+    const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+
+    const sliderTicks = levelIngredientsToSliderTicks(slider.levelIngredients)
+
+    ranges.value[i] = [sliderTicks[sliderTicks.indexOf(min) - 1], max]
+  }
+}
+onMounted(() => {
+  setInitialRangeBasedOnBookmarks()
+})
 
 const checkedList = ref(sliders.map(() => true))
 
