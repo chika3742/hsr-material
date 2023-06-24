@@ -81,38 +81,40 @@ export class MySubClassedDexie extends Dexie {
    * @param data List of {@link LevelingBookmark}s to add
    * @param selectedItem Selected item (only for exp)
    */
-  async addLevelingBookmarks<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined) {
-    const dataToSave: LevelingBookmark[] = data.map((e) => {
-      if (isBookmarkableExp(e)) {
+  addLevelingBookmarks<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined) {
+    return this.transaction("rw", this.bookmarks, this.bookmarkCharacters, async() => {
+      const dataToSave: LevelingBookmark[] = data.map((e) => {
+        if (isBookmarkableExp(e)) {
+          return {
+            ...e,
+            bookmarkedAt: new Date(),
+            selectedItem,
+          } as Bookmark.Exp
+        }
+
         return {
           ...e,
           bookmarkedAt: new Date(),
-          selectedItem,
-        } as Bookmark.Exp
+        } as Bookmark.CharacterMaterial | Bookmark.LightConeMaterial
+      })
+
+      // add bookmarks
+      const ids = (await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})) as number[]
+
+      // add bookmark ids to bookmarkCharacters
+      const characterId = toCharacterIdWithVariant(data[0].usage.characterId, data[0].usage.variant)
+      const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
+      if (bookmarkCharacter) {
+        await this.bookmarkCharacters.update(characterId, {
+          bookmarks: bookmarkCharacter.bookmarks.concat(ids),
+        })
+      } else {
+        await this.bookmarkCharacters.add({
+          characterId,
+          bookmarks: ids,
+        })
       }
-
-      return {
-        ...e,
-        bookmarkedAt: new Date(),
-      } as Bookmark.CharacterMaterial | Bookmark.LightConeMaterial
     })
-
-    // add bookmarks
-    const ids = (await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})) as number[]
-
-    // add bookmark ids to bookmarkCharacters
-    const characterId = toCharacterIdWithVariant(data[0].usage.characterId, data[0].usage.variant)
-    const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
-    if (bookmarkCharacter) {
-      await this.bookmarkCharacters.update(characterId, {
-        bookmarks: bookmarkCharacter.bookmarks.concat(ids),
-      })
-    } else {
-      await this.bookmarkCharacters.add({
-        characterId,
-        bookmarks: ids,
-      })
-    }
   }
 
   /**
@@ -120,42 +122,46 @@ export class MySubClassedDexie extends Dexie {
    *
    * @param ids List of ids to remove
    */
-  async removeBookmarks(...ids: number[]) {
-    await this.bookmarks.bulkDelete(ids)
+  removeBookmarks(...ids: number[]) {
+    return this.transaction("rw", this.bookmarks, this.bookmarkCharacters, async() => {
+      await this.bookmarks.bulkDelete(ids)
 
-    // remove bookmark ids from bookmarkCharacters
-    await this.bookmarkCharacters.where("bookmarks").anyOf(ids).modify((bookmarkCharacter) => {
-      bookmarkCharacter.bookmarks = bookmarkCharacter.bookmarks.filter(id => !ids.includes(id))
+      // remove bookmark ids from bookmarkCharacters
+      await this.bookmarkCharacters.where("bookmarks").anyOf(ids).modify((bookmarkCharacter) => {
+        bookmarkCharacter.bookmarks = bookmarkCharacter.bookmarks.filter(id => !ids.includes(id))
+      })
+
+      // remove bookmarkCharacters with no bookmarks
+      await this.bookmarkCharacters.filter(e => e.bookmarks.length === 0).delete()
     })
-
-    // remove bookmarkCharacters with no bookmarks
-    await this.bookmarkCharacters.filter(e => e.bookmarks.length === 0).delete()
   }
 
-  async addRelicBookmarks(data: BookmarkableRelic[]) {
-    for (const item of data) {
-      const dataToSave: RelicBookmark = {
-        ...item,
-        bookmarkedAt: new Date(),
-      }
+  addRelicBookmarks(data: BookmarkableRelic[]) {
+    return this.transaction("rw", this.bookmarks, this.bookmarkCharacters, async() => {
+      for (const item of data) {
+        const dataToSave: RelicBookmark = {
+          ...item,
+          bookmarkedAt: new Date(),
+        }
 
-      // add bookmark
-      const id = (await this.bookmarks.add(dataToSave)) as number
+        // add bookmark
+        const id = (await this.bookmarks.add(dataToSave)) as number
 
-      // add bookmark id to bookmarkCharacters
-      const characterId = toCharacterIdWithVariant(item.characterId, item.variant)
-      const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
-      if (bookmarkCharacter) {
-        await this.bookmarkCharacters.update(characterId, {
-          bookmarks: bookmarkCharacter.bookmarks.concat(id),
-        })
-      } else {
-        await this.bookmarkCharacters.add({
-          characterId,
-          bookmarks: [id],
-        })
+        // add bookmark id to bookmarkCharacters
+        const characterId = toCharacterIdWithVariant(item.characterId, item.variant)
+        const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
+        if (bookmarkCharacter) {
+          await this.bookmarkCharacters.update(characterId, {
+            bookmarks: bookmarkCharacter.bookmarks.concat(id),
+          })
+        } else {
+          await this.bookmarkCharacters.add({
+            characterId,
+            bookmarks: [id],
+          })
+        }
       }
-    }
+    })
   }
 }
 
