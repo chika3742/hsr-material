@@ -46,7 +46,7 @@ const titleLines = (() => {
 const subtitle = (() => {
   switch (props.item.type) {
     case "relic_set":
-      return tx(i18n, "searchRecordTypes.relic-set")
+      return ""
     case "relic_piece":
       return tx(i18n, `relicSetTitles.${setIds[0]}`)
   }
@@ -97,7 +97,7 @@ const removeBookmark = (id: number) => {
         </div>
       </template>
       <template #title>
-        <p v-for="line in titleLines" :key="line">
+        <p v-for="line in titleLines" :key="line" style="white-space: pre-wrap">
           {{ line }}
         </p>
       </template>
