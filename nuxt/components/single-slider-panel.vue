@@ -22,6 +22,7 @@ import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 import {LevelIngredients} from "~/types/level-ingredients"
 import {Usage} from "~/types/bookmark/usage"
+import {db} from "~/dexie/db"
 
 const props = defineProps<{
   title: string
@@ -50,13 +51,29 @@ const levelIngredients = (() => {
 const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredients))
 
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
+const setInitialRangeBasedOnBookmarks = async() => {
+  const bookmarks = await db.getBookmarksByPurpose(
+    props.characterId,
+    props.variant,
+    props.lightConeId,
+    "ascension",
+  )
+
+  const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+  const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+
+  range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1], max]
+}
+onMounted(() => {
+  setInitialRangeBasedOnBookmarks()
+})
 
 const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
   return levelIngredients.filter(e => range.value[0] < e.level && e.level <= range.value[1])
 })
 
-const items = computed<BookmarkableIngredient[]>(() => {
-  return ingredientsWithinSelectedLevelRange.value.map(e => e.ingredients.map<BookmarkableIngredient>((f) => {
+const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): BookmarkableIngredient[] => {
+  return ingredients.map(e => e.ingredients.map<BookmarkableIngredient>((f) => {
     let usage: Usage
     if (f.exp) {
       usage = {
@@ -117,5 +134,9 @@ const items = computed<BookmarkableIngredient[]>(() => {
       return result
     }
   })).flat()
+}
+
+const items = computed<BookmarkableIngredient[]>(() => {
+  return ingredientsToBookmarkableIngredients(ingredientsWithinSelectedLevelRange.value)
 })
 </script>
