@@ -36,8 +36,8 @@
 
           <v-spacer />
 
-          <div v-if="!isProd" class="alpha-warning-overlay">
-            <span>{{ tx("common.alphaWarning") }}</span>
+          <div class="warning-overlay-banner">
+            <span>{{ isProd ? tx("common.betaWarning") : tx("common.nonProdWarning") }}</span>
           </div>
           <AppFooter />
         </div>
@@ -157,7 +157,7 @@ router.afterEach(() => {
       to
         transform: rotate(360deg)
 
-.alpha-warning-overlay
+.warning-overlay-banner
   width: 100%
   position: sticky
   padding: 8px 16px
