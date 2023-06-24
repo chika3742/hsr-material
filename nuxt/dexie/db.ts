@@ -7,6 +7,7 @@ import {
   BookmarkableIngredient,
   BookmarkableLightConeMaterial,
   isBookmarkableExp,
+  isBookmarkableLightCone,
 } from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {toCharacterIdWithVariant} from "~/utils/to-character-id-with-variant"
@@ -73,6 +74,25 @@ export class MySubClassedDexie extends Dexie {
               e.usage.lightConeId === item.usage.lightConeId &&
               e.usage.purposeType === item.usage.purposeType // for convenience (currently it can only be one type)
           }
+        }
+      }).toArray() as Promise<LevelingBookmark[]>
+  }
+
+  getBookmarksByPurpose(characterId: string, variant: string | null, lightConeId: string | undefined, purposeType: PurposeType) {
+    return db.bookmarks.where("usage.characterId").equals(characterId)
+      .and((e) => {
+        const item = e as BookmarkableIngredient
+
+        if (item.usage.variant !== variant || item.usage.purposeType !== purposeType) {
+          return false
+        }
+
+        if (isBookmarkableLightCone(item)) {
+          // filtered by characterId, variant, lightConeId, and purposeType
+          return item.usage.lightConeId === lightConeId
+        } else {
+          // filtered by characterId, variant, and purposeType
+          return true
         }
       }).toArray() as Promise<LevelingBookmark[]>
   }
