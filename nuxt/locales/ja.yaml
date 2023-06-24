@@ -78,6 +78,8 @@ bookmark:
   bookmarked: ブックマークしました。
   removed: ブックマークを解除しました。
   noBookmarks: ブックマークがありません。左上のメニューから探してみましょう！
+  completeLeveling: 育成完了
+  completeLevelingDesc: これより上のブックマークをすべて解除します。
 
 characterDetailsPage:
   ascension: キャラLvアップ/昇格素材

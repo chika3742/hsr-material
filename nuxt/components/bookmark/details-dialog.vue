@@ -81,10 +81,16 @@ router.beforeEach(() => {
                       :disabled="!bookmarks.some(e => __items.some(e2 => e2.id === e.id))"
                       class="ml-1"
                       prepend-icon="mdi-marker-check"
-                      text="ここまで育成した"
                       variant="text"
                       @click="removeBookmarksInLevel(purpose, parseInt(lv))"
-                    />
+                    >
+                      <span>{{ tx('bookmark.completeLeveling') }}</span>
+
+                      <!-- complete leveling button hint -->
+                      <v-tooltip activator="parent" location="bottom" open-delay="200">
+                        <span>{{ tx("bookmark.completeLevelingDesc") }}</span>
+                      </v-tooltip>
+                    </v-btn>
                   </v-row>
                   <div class="material-cards-container">
                     <MaterialCard

@@ -80,6 +80,8 @@ bookmark:
   bookmarked: Bookmarked.
   removed: Removed bookmarks.
   noBookmarks: No bookmarks. Let's find it in the menu in the upper left corner!
+  completeLeveling: Complete Leveling
+  completeLevelingDesc: Removes all bookmarks above this.
 
 characterDetailsPage:
   ascension: Ascension / Character Level Up Materials
