@@ -1,4 +1,4 @@
-import {isArray} from "lodash"
+import _ from "lodash"
 import materials from "~/assets/data/materials.csv"
 import {BookmarkableIngredient, isBookmarkableExp} from "~/types/bookmarkable-ingredient"
 
@@ -42,8 +42,8 @@ export const mergeItems = (items: BookmarkableIngredient[]): BookmarkableIngredi
 }
 
 export const materialSortFunc = (a: BookmarkableIngredient | BookmarkableIngredient[], b: BookmarkableIngredient | BookmarkableIngredient[]): number => {
-  const aElement = isArray(a) ? a[0] : a
-  const bElement = isArray(b) ? b[0] : b
+  const aElement = _.isArray(a) ? a[0] : a
+  const bElement = _.isArray(b) ? b[0] : b
 
   if (isBookmarkableExp(aElement) || isBookmarkableExp(bElement)) {
     return isBookmarkableExp(aElement) ? -1 : 1
