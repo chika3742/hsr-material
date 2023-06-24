@@ -59,6 +59,10 @@ const setInitialRangeBasedOnBookmarks = async() => {
     "ascension",
   )
 
+  if (bookmarks.length === 0) {
+    return
+  }
+
   const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
   const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
 
