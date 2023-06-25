@@ -47,6 +47,7 @@ const ranges = ref(sliders.map((e) => {
   const sliderTicks = levelIngredientsToSliderTicks(e.levelIngredients)
   return [sliderTicks[0], sliderTicks.slice(-1)[0]]
 }))
+const checkedList = ref(sliders.map(() => true))
 const setInitialRangeBasedOnBookmarks = async() => {
   for (const i in sliders) {
     const slider = sliders[i]
@@ -59,6 +60,7 @@ const setInitialRangeBasedOnBookmarks = async() => {
     )
 
     if (bookmarks.length === 0) {
+      checkedList.value[i] = false
       continue
     }
 
@@ -69,12 +71,14 @@ const setInitialRangeBasedOnBookmarks = async() => {
 
     ranges.value[i] = [sliderTicks[sliderTicks.indexOf(min) - 1], max]
   }
+
+  if (checkedList.value.every(e => !e)) {
+    checkedList.value = sliders.map(() => true)
+  }
 }
 onMounted(() => {
   setInitialRangeBasedOnBookmarks()
 })
-
-const checkedList = ref(sliders.map(() => true))
 
 const ingredients = computed<BookmarkableItem[]>(() => {
   return sliders.map((e, i) => {
