@@ -88,14 +88,10 @@ export class MySubClassedDexie extends Dexie {
 
         switch (item.type) {
           case "character_exp":
-            // filtered by characterId and variant
-            return true
           case "character_material":
             // filtered by characterId, variant, and purposeType
             return item.usage.purposeType === purposeType
           case "light_cone_exp":
-            // filtered by characterId, variant, and lightConeId
-            return item.usage.lightConeId === lightConeId
           case "light_cone_material":
             // filtered by characterId, variant, lightConeId, and purposeType
             return item.usage.lightConeId === lightConeId && item.usage.purposeType === purposeType
