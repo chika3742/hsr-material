@@ -115,7 +115,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      isProdBranch: process.env.CF_PAGES_BRANCH === "main",
+      isProdBranch: process.env.CF_PAGES_BRANCH === "live",
       useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
       firebaseConfigDev: {
         apiKey: "AIzaSyDNEmiGxBoKLpT0Tf9SNR16sjPBacIoTic",
