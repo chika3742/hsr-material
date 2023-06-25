@@ -85,6 +85,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
         characterId: props.characterId,
         variant: props.variant,
         lightConeId: props.lightConeId,
+        purposeType: "ascension",
         upperLevel: e.level,
       }
     } else if (props.lightConeId) {
