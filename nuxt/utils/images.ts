@@ -74,3 +74,12 @@ export const getRelicSetImage = (relicSetId: string) => {
 export const getRelicPieceImage = (relicPieceId: string) => {
   return new URL(`../assets/img/relic-pieces/${relicPieceId}.webp`, import.meta.url).toString()
 }
+
+/**
+ * Gets svg vector URL.
+ *
+ * @param fileName File name without extension
+ */
+export const getVector = (fileName: string) => {
+  return new URL(`../assets/img/vectors/${fileName}.svg`, import.meta.url).toString()
+}
