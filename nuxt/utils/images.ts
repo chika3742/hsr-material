@@ -81,5 +81,5 @@ export const getRelicPieceImage = (relicPieceId: string) => {
  * @param fileName File name without extension
  */
 export const getVector = (fileName: string) => {
-  return new URL(`../assets/img/vectors/${fileName}.svg`, import.meta.url).toString()
+  return new URL(`../assets/vectors/${fileName}.svg`, import.meta.url).toString()
 }
