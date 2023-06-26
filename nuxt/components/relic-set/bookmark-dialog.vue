@@ -3,8 +3,8 @@ import {RelicPiece, RelicSet} from "~/types/data/relics"
 import relicStats from "assets/data/relic-stats.yaml"
 import {Stat} from "~/types/generated/relic-stats.g"
 import {CharacterIdWithVariant} from "~/types/strings"
-import {db} from "~/dexie/db"
 import {BookmarkableRelic, BookmarkableRelicPiece, BookmarkableRelicSet} from "~/types/bookmarkable-relic"
+import {db} from "~/libs/db/providers"
 
 interface Props {
   modelValue: boolean
@@ -165,7 +165,7 @@ const saveBookmark = async() => {
 
   loading.value = true
   try {
-    await db.addRelicBookmarks(data)
+    await db.bookmarks.addRelics(data)
 
     emit("update:modelValue", false)
     snackbar.show(tx(i18n, "bookmark.bookmarked"))

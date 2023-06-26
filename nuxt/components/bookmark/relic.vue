@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import relicPieces from "assets/data/relic-pieces.csv"
-import {db} from "~/dexie/db"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import relicSets from "assets/data/relic-sets.csv"
+import {db} from "~/libs/db/providers"
 
 interface Props {
   item: Bookmark.RelicSet | Bookmark.RelicPiece
@@ -65,7 +65,7 @@ const mainStats = (() => {
 const showRelicSetMenu = ref(false)
 
 const removeBookmark = (id: number) => {
-  db.removeBookmarks(id)
+  db.bookmarks.remove(id)
   snackbar.show(tx(i18n, "bookmark.removed"))
 }
 </script>

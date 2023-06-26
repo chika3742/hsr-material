@@ -22,7 +22,7 @@ import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 import {LevelIngredients} from "~/types/level-ingredients"
 import {Usage} from "~/types/bookmark/usage"
-import {db} from "~/dexie/db"
+import {db} from "~/libs/db/providers"
 
 const props = defineProps<{
   title: string
@@ -52,7 +52,7 @@ const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredient
 
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
 const setInitialRangeBasedOnBookmarks = async() => {
-  const bookmarks = await db.getBookmarksByPurpose(
+  const bookmarks = await db.bookmarks.getByPurpose(
     props.characterId,
     props.variant,
     props.lightConeId,

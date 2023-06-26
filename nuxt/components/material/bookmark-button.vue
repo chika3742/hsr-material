@@ -2,10 +2,10 @@
 import {useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
 import _ from "lodash"
-import {db} from "~/dexie/db"
 import {BookmarkableIngredient} from "~/types/bookmarkable-ingredient"
 import {LevelingBookmark} from "~/types/bookmark/bookmark"
 import {PurposeType} from "~/types/strings"
+import {db} from "~/libs/db/providers"
 
 interface Props {
   items: BookmarkableIngredient[]
@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
 // Bookmarks
 const savedBookmarks = process.client
   ? useObservable<LevelingBookmark[], null>(liveQuery(() =>
-    db.getLevelingBookmarks(
+    db.bookmarks.getLevelingItems(
       props.items,
       props.purposeTypes,
       props.individual ? props.items[0].usage.upperLevel : undefined,
@@ -76,10 +76,10 @@ const toggleBookmark = async() => {
 
   try {
     if (bookmarkState.value === "none") {
-      await db.addLevelingBookmarks(props.items.map(e => toRaw(e)), props.selectedItem)
+      await db.bookmarks.addLevelingItems(props.items.map(e => toRaw(e)), props.selectedItem)
       snackbar.show(tx(i18n, "bookmark.bookmarked"))
     } else {
-      await db.removeBookmarks(...savedBookmarks.value.map(e => e.id!))
+      await db.bookmarks.remove(...savedBookmarks.value.map(e => e.id!))
       snackbar.show(tx(i18n, "bookmark.removed"))
     }
   } catch (e) {
@@ -94,8 +94,8 @@ const reBookmark = () => {
   loading.value = true
 
   try {
-    db.removeBookmarks(...(savedBookmarks.value as LevelingBookmark[]).map(e => e.id!))
-    db.addLevelingBookmarks(props.items, props.selectedItem)
+    db.bookmarks.remove(...(savedBookmarks.value as LevelingBookmark[]).map(e => e.id!))
+    db.bookmarks.addLevelingItems(props.items, props.selectedItem)
   } catch (e) {
     console.error(e)
   } finally {
