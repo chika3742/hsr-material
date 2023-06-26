@@ -1,4 +1,5 @@
 import Dexie, {Table} from "dexie"
+import {Warp} from "#shared/warp"
 import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
 import {Bookmark} from "~/types/bookmark/bookmark"
 
@@ -8,12 +9,14 @@ export class MySubClassedDexie extends Dexie {
    */
   bookmarkCharacters!: Table<BookmarkCharacter>
   bookmarks!: Table<Bookmark>
+  warps!: Table<Warp>
 
   constructor() {
     super("hsr_material")
     this.version(1).stores({
       bookmarkCharacters: "characterId, *bookmarks",
       bookmarks: "++id, usage.characterId",
+      warps: "id",
     })
   }
 }
