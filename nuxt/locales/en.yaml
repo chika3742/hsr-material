@@ -182,9 +182,12 @@ warpsPage:
       contents: |
         *Confirmed to work only on Windows 11.
 
-        1. Launch @:{'common.gameName'}, select "Warp" > "View Details" > "Records".
-        1. Return to the desktop, right-click the Start button, and select "Terminal" or "Windows PowerShell".
-        1. Copy and paste the following command then press Enter key. <div id="windows-script"></div>
+        1. Launch @:{'common.gameName'}, select Warp > View Details > Records.
+        1. Press Windows key + R key to open the Run dialog.
+        1. Copy and paste the following command then press Enter key.
+            ```
+            {'powershell -Command "iex ""&{$(irm https://gist.githubusercontent.com/chika3742/0542db8a5e329fb15af9e37714e92893/raw/getlink.ps1)} global -lang en-US"""'}
+            ```
         1. The URL will be copied, so paste it into this page.
     ios:
       title: How to Get URL (iOS)
