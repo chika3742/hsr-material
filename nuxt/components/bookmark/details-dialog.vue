@@ -4,7 +4,7 @@ import {isBookmarkableExp} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {materialSortFunc} from "~/utils/merge-items"
-import {db} from "~/dexie/db"
+import {db} from "~/libs/db/providers"
 
 interface Props {
   modelValue: boolean
@@ -43,7 +43,7 @@ const getSkillTitle = (item: LevelingBookmark) => {
 const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
   const ids = purposes.value[purposeType]?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
   if (ids) {
-    db.removeBookmarks(...ids)
+    db.bookmarks.remove(...ids)
     snackbar.show(tx(i18n, "bookmark.removed"))
   }
 }

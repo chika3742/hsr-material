@@ -143,6 +143,7 @@ warpsPage:
   fetched: "Fetched {n} @:{'warpsPage.warp'}"
   clearDialog: Do you want to clear all warp history?
   cleared: Cleared warps
+  clearError: Failed to clear warps.
   pityCountWithStar: "☆{star} Pity Count"
   pityCount: Pity Count
   dateTime: Date & Time
@@ -157,6 +158,7 @@ warpsPage:
     authKeyInvalid: The URL is invalid. Please get a new one from the game.
     tooManyRequests: Too many requests. Please try again later.
     internal: An error occurred on the server. Please try again later.
+    failedToSave: Failed to save the warp history.
     unknown: An unknown error occurred.
   aboutTitle: About
   about: |

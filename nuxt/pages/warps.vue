@@ -15,8 +15,8 @@
         />
         <div class="mb-4">
           <v-checkbox
-            v-model="isGetPityHistory"
-            :disabled="warps.warps.length > 0 || fetching"
+            v-model="config.warpsShowPityList"
+            :disabled="warps.length > 0 || fetching"
             :label="$t('warpsPage.getPityHistory')"
             color="primary"
             density="compact"
@@ -50,8 +50,8 @@
           :pseudo-pity-border="warpType.pseudoPityBorder"
           :single-prob="warpType.singleProb"
           :star5-pity="warpType.star5Pity"
-          :warps="warps.warps.filter(e => warpType.type === e.gachaType)"
-          :show-pity-history="isGetPityHistory"
+          :show-pity-history="config.warpsShowPityList"
+          :warps="groupedWarps[warpType.type] ?? []"
           class="my-2"
         />
       </section>
@@ -61,11 +61,16 @@
 
 <script lang="ts" setup>
 import {doc, onSnapshot} from "@firebase/firestore"
+import {useObservable} from "@vueuse/rxjs"
+import {liveQuery} from "dexie"
+import {Warp} from "#shared/warp"
+import _ from "lodash"
 import {ref} from "#imports"
 import {useConfigStore} from "~/store/config"
-import {useWarpsStore} from "~/store/warps"
 import {WarpsApi} from "~/libs/warps-api"
 import {warpHistoryTicketConverter} from "~/utils/warp-history-ticket-converter"
+import {_db} from "~/dexie/db"
+import {db} from "~/libs/db/providers"
 
 definePageMeta({
   title: "warps",
@@ -73,7 +78,6 @@ definePageMeta({
 
 const config = useConfigStore()
 const i18n = useI18n()
-const warps = useWarpsStore()
 const snackbar = useSnackbar()
 const dialog = useDialog()
 const {$functions, $firestore} = useNuxtApp()
@@ -113,13 +117,14 @@ const warpTypes: {
   },
 ]
 
-const isGetPityHistory = computed({
-  get() {
-    return !warps.untilLatestRare
-  },
-  set(value: boolean) {
-    warps.untilLatestRare = !value
-  },
+const warps = process.client
+  ? useObservable<Warp[], Warp[]>(liveQuery(() => _db.warps.toArray()) as any, {
+    initialValue: [],
+  })
+  : ref([])
+
+const groupedWarps = computed(() => {
+  return _.groupBy(warps.value, "gachaType") as Record<string, Warp[]>
 })
 
 const getWarps = async() => {
@@ -137,7 +142,7 @@ const getWarps = async() => {
     return
   }
 
-  api.createTicket(warps.lastIds, warps.untilLatestRare).then(() => {
+  api.createTicket(await db.warps.getLastIds(warpTypes.map(e => e.type)), !config.warpsShowPityList).then(() => {
     config.warpsUrl = url.value
 
     registerStatusListener(api)
@@ -150,9 +155,14 @@ const getWarps = async() => {
 }
 
 const clearWarps = () => {
-  dialog.show(i18n.t("warpsPage.clear"), i18n.t("warpsPage.clearDialog"), () => {
-    warps.warps.splice(0)
-    snackbar.show(i18n.t("warpsPage.cleared"))
+  dialog.show(tx(i18n, "warpsPage.clear"), tx(i18n, "warpsPage.clearDialog"), () => {
+    db.warps.clear().then(() => {
+      snackbar.show(tx(i18n, "warpsPage.cleared"))
+      return null
+    }).catch((e) => {
+      console.error(e)
+      snackbar.show(tx(i18n, "warpsPage.clearError"), "error")
+    })
   })
 }
 
@@ -172,15 +182,20 @@ const registerStatusListener = (api: WarpsApi) => {
         break
 
       case "done":
-        warps.warps.push(...data.result!)
-        fetching.value = false
         unsubscribe()
-
-        if (data.result!.length === 0) {
-          snackbar.show(i18n.t("warpsPage.noNewWarps"))
-        } else {
-          snackbar.show(i18n.t("warpsPage.fetched", data.result!.length))
-        }
+        db.warps.add(...data.result!).then(() => {
+          if (data.result!.length === 0) {
+            snackbar.show(i18n.t("warpsPage.noNewWarps"))
+          } else {
+            snackbar.show(i18n.t("warpsPage.fetched", data.result!.length))
+          }
+          return null
+        }).finally(() => {
+          fetching.value = false
+        }).catch((e) => {
+          console.error(e)
+          snackbar.show(i18n.t("warpsPage.errors.failedToSave"), "error")
+        })
         break
 
       case "error":

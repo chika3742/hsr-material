@@ -8,6 +8,7 @@ export const useConfigStore = defineStore("config", {
     warpsUrl: "",
     tpCount: 0,
     tpBaseTime: DateTime.now().toISO()!,
+    warpsShowPityList: false,
   }),
   actions: {
     getCurrentTheme() {

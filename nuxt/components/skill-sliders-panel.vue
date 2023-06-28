@@ -6,7 +6,7 @@ import {PurposeType} from "~/types/strings"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LevelIngredients} from "~/types/level-ingredients"
 import characters from "~/assets/data/characters.yaml"
-import {db} from "~/dexie/db"
+import {db} from "~/libs/db/providers"
 
 interface Slider {
   type: PurposeType
@@ -52,7 +52,7 @@ const setInitialRangeBasedOnBookmarks = async() => {
   for (const i in sliders) {
     const slider = sliders[i]
 
-    const bookmarks = await db.getBookmarksByPurpose(
+    const bookmarks = await db.bookmarks.getByPurpose(
       props.characterId,
       props.variant,
       undefined,

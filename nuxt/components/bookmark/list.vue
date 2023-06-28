@@ -4,13 +4,13 @@
 import {useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
 import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
-import {db} from "~/dexie/db"
 import {Bookmark} from "~/types/bookmark/bookmark"
+import {_db} from "~/dexie/db"
 
-const bookmarkCharacters = useObservable<BookmarkCharacter[], BookmarkCharacter[]>(liveQuery(() => db.bookmarkCharacters.toArray()) as any, {
+const bookmarkCharacters = useObservable<BookmarkCharacter[], BookmarkCharacter[]>(liveQuery(() => _db.bookmarkCharacters.toArray()) as any, {
   initialValue: [],
 })
-const bookmarks = useObservable<Bookmark[], Bookmark[]>(liveQuery(() => db.bookmarks.toArray()) as any, {
+const bookmarks = useObservable<Bookmark[], Bookmark[]>(liveQuery(() => _db.bookmarks.toArray()) as any, {
   initialValue: [],
 })
 </script>

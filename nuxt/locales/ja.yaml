@@ -139,6 +139,7 @@ warpsPage:
   fetched: "{n} 件の跳躍を取得しました。"
   clearDialog: "跳躍履歴をすべて削除しますか？"
   cleared: "跳躍履歴をクリアしました"
+  clearError: "跳躍履歴のクリアに失敗しました"
   pityCountWithStar: "☆{star} 天井カウント"
   pityCount: 天井カウント
   dateTime: 日時
@@ -153,6 +154,7 @@ warpsPage:
     authKeyInvalid: URLが無効です。再度ゲームより取得してください。
     tooManyRequests: リクエストが多すぎます。しばらく待ってから再度お試しください。
     internal: サーバーでエラーが発生しました。しばらく待ってから再度お試しください。
+    failedToSave: 跳躍履歴の保存に失敗しました。
     unknown: 不明なエラーが発生しました。
   aboutTitle: 初めての方はこちら
   about: |
