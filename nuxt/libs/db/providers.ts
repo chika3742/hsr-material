@@ -1,4 +1,5 @@
 import {BookmarksProvider} from "~/libs/db/bookmarks-provider"
+import {WarpsProvider} from "~/libs/db/warps-provider"
 
 /**
  * Provides access to all database providers.
@@ -6,6 +7,10 @@ import {BookmarksProvider} from "~/libs/db/bookmarks-provider"
 export class Providers {
   get bookmarks() {
     return new BookmarksProvider()
+  }
+
+  get warps() {
+    return new WarpsProvider()
   }
 }
 

@@ -16,7 +16,7 @@ export class MySubClassedDexie extends Dexie {
     this.version(1).stores({
       bookmarkCharacters: "characterId, *bookmarks",
       bookmarks: "++id, usage.characterId",
-      warps: "id",
+      warps: "id, gachaType",
     })
   }
 }
