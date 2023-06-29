@@ -9,6 +9,8 @@ export const dispatchGetWarpHistory = functions
   .region("asia-northeast1")
   .runWith({
     memory: "1GB",
+    minInstances: 1,
+    maxInstances: 5,
   })
   .https.onCall((data: DispatchGetWarpHistoryParams, context): Promise<DispatchGetWarpHistoryResult> => {
     if (!context.app) {
