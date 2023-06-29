@@ -5,8 +5,12 @@ import {DispatchGetWarpHistoryParams, DispatchGetWarpHistoryResult} from "../typ
 import {GetWarpHistoryParams} from "../types/get-warp-history-params"
 import {warpHistoryTicketConverter} from "../utils/warp-history-ticket-converter.js"
 
-export const dispatchGetWarpHistory = functions.region("asia-northeast1").https
-  .onCall((data: DispatchGetWarpHistoryParams, context): Promise<DispatchGetWarpHistoryResult> => {
+export const dispatchGetWarpHistory = functions
+  .region("asia-northeast1")
+  .runWith({
+    memory: "1GB",
+  })
+  .https.onCall((data: DispatchGetWarpHistoryParams, context): Promise<DispatchGetWarpHistoryResult> => {
     if (!context.app) {
       throw new functions.https.HttpsError("failed-precondition", "Invalid App Check token.")
     }
