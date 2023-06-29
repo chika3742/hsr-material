@@ -106,6 +106,8 @@
 <script lang="ts" setup>
 import {DateTime} from "luxon"
 import {Warp} from "#shared/warp"
+import characters from "~/assets/data/characters.yaml"
+import lightCones from "~/assets/data/light-cones.yaml"
 
 const props = defineProps<{
   warps: Warp[]
@@ -190,13 +192,12 @@ const pityCountList = computed(() => {
 })
 
 const getItemNameI18nKey = (warp: Warp) => {
-  return warp.name
-  // switch (warp.itemType) {
-  //   case "キャラクター":
-  //     return `characters.${characters.find(e => e.nameJP === warp.name)?.id}`
-  //   case "光円錐":
-  //     return `weapons.${weapons.find(e => e.nameJP === warp.name)?.id}`
-  // }
+  switch (warp.itemType) {
+    case "キャラクター":
+      return `characterNames.${characters.find(e => e.$nameJA === warp.name)?.id}`
+    case "光円錐":
+      return `lightConeNames.${lightCones.find(e => e.$nameJA === warp.name)?.id}`
+  }
 }
 
 const getTableNumberColorClass = (item: PityCountListItem) => {
