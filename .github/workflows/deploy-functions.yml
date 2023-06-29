@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - main
-      - dev
+      - live
     paths:
       - firebase/**
       - .github/workflows/deploy-functions.yml
   workflow_dispatch:
 
 env:
+  prod_branch_name: live
   wi_provider_prod: projects/14422071885/locations/global/workloadIdentityPools/github-actions/providers/github
   wi_provider_dev: projects/599812122174/locations/global/workloadIdentityPools/github-actions/providers/github
   service_account_prod: github-actions@hsr-material.iam.gserviceaccount.com
@@ -44,8 +45,8 @@ jobs:
         id: auth
         uses: 'google-github-actions/auth@v0'
         with:
-          workload_identity_provider: ${{ github.ref_name == 'main' && env.wi_provider_prod || env.wi_provider_dev }}
-          service_account: ${{ github.ref_name == 'main' && env.service_account_prod || env.service_account_dev }}
+          workload_identity_provider: ${{ github.ref_name == env.prod_branch_name && env.wi_provider_prod || env.wi_provider_dev }}
+          service_account: ${{ github.ref_name == env.prod_branch_name && env.service_account_prod || env.service_account_dev }}
           audience: https://github.com/chika3742
 
       - name: Deploy to Cloud Functions (dev)
@@ -54,4 +55,4 @@ jobs:
 
       - name: Deploy to Cloud Functions (prod)
         if: github.ref_name == 'main'
-        run: yarn firebase-deploy:production
+        run: yarn firebase-deploy:prod --debug
