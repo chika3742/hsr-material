@@ -50,9 +50,9 @@ jobs:
           audience: https://github.com/chika3742
 
       - name: Deploy to Cloud Functions (dev)
-        if: github.ref_name == 'dev'
+        if: github.ref_name != prod_branch_name
         run: yarn firebase-deploy:dev --debug
 
       - name: Deploy to Cloud Functions (prod)
-        if: github.ref_name == 'main'
+        if: github.ref_name == prod_branch_name
         run: yarn firebase-deploy:prod --debug
