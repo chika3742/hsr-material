@@ -54,6 +54,7 @@ pageTitles:
   relicDetails: Relics / {relicId}
   materials: Materials
   materialDetails: Materials / {materialId}
+  sync: Sync
   warps: Warp Pity Counter
   tpCalc: TP Replenish Calc
   releaseNotes: Release Notes
@@ -124,6 +125,27 @@ relicDetailsPage:
 materialDetailsPage:
   characterUsage: Characters for Which This Material Is Used
   lightConeUsage: Light Cones for Which This Material Is Used
+
+syncPage:
+  desc: Sync allows you to share bookmarks and warp pity counter history with other devices.
+  loading: Checking sign-in status...
+  fetchingUserInfo: Fetching user info...
+  signIn: Sign Up / Sign In
+  signInError: Failed to sign in.
+  signInWith:
+    google: Sign in with Google
+    apple: Sign in with Apple
+  accountInfo: Account Info
+  signedInWith: Signed in with
+  email: Email
+  signOut: Sign Out
+  signOutConfirm: Do you want to sign out?
+  signOutSuccess: Signed out.
+  signOutError: Failed to sign out.
+  deleteUser: Delete Account
+  deleteUserConfirm: Do you want to delete your account? This operation cannot be undone. (Data in the device won't be deleted)
+  deleteUserSuccess: Account deleted.
+  deleteUserError: Failed to delete account.
 
 warpsPage:
   warp: Warp | Warps
