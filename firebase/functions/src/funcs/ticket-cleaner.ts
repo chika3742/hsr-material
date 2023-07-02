@@ -1,4 +1,4 @@
-import functions from "firebase-functions"
+import functions, {logger} from "firebase-functions"
 import {firestoreCollections} from "../lib/firestore-collections.js"
 
 const expiresIn = 1000 * 60 * 30 // 30 minutes
@@ -17,5 +17,5 @@ export const ticketCleaner = functions.region("asia-northeast1").pubsub
       }
     }
 
-    console.log(`Deleted ${count} ticket(s)`)
+    logger.log(`Deleted ${count} ticket(s)`)
   })
