@@ -129,7 +129,7 @@ syncPage:
   loading: サインイン状態を確認しています...
   fetchingUserInfo: ユーザー情報を取得しています...
   signIn: 新規登録/サインイン
-  signInError: サインインに失敗しました。
+  signInError: サインインに失敗しました。({code})
   signInErrorPopupBlocked: ポップアップを許可してから再度お試しください。
   signInWith:
     google: Googleでサインイン
@@ -140,11 +140,11 @@ syncPage:
   signOut: サインアウト
   signOutConfirm: サインアウトしますか？
   signOutSuccess: サインアウトしました。
-  signOutError: サインアウトに失敗しました。
+  signOutError: サインアウトに失敗しました。({code})
   deleteUser: アカウント削除
   deleteUserConfirm: アカウントを削除しますか？この操作は取り消せません。(端末内のデータは削除されません)
   deleteUserSuccess: アカウントを削除しました。
-  deleteUserError: アカウントの削除に失敗しました。
+  deleteUserError: アカウントの削除に失敗しました。({code})
 
 warpsPage:
   warpTypes:

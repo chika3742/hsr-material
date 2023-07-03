@@ -131,7 +131,7 @@ syncPage:
   loading: Checking sign-in status...
   fetchingUserInfo: Fetching user info...
   signIn: Sign Up / Sign In
-  signInError: Failed to sign in.
+  signInError: Failed to sign in. ({code})
   signInErrorPopupBlocked: Please allow pop-ups to sign in.
   signInWith:
     google: Sign in with Google
@@ -142,11 +142,11 @@ syncPage:
   signOut: Sign Out
   signOutConfirm: Do you want to sign out?
   signOutSuccess: Signed out.
-  signOutError: Failed to sign out.
+  signOutError: Failed to sign out. ({code})
   deleteUser: Delete Account
   deleteUserConfirm: Do you want to delete your account? This operation cannot be undone. (Data in the device won't be deleted)
   deleteUserSuccess: Account deleted.
-  deleteUserError: Failed to delete account.
+  deleteUserError: Failed to delete account. ({code})
 
 warpsPage:
   warp: Warp | Warps
