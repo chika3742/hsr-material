@@ -85,7 +85,7 @@ const signIn = (provider: AuthProvider) => {
           break
         default:
           console.error(error)
-          snackbar.show(tx(i18n, "syncPage.signInError"))
+          snackbar.show(tx(i18n, "syncPage.signInError"), "error")
       }
     })
 }
@@ -97,7 +97,7 @@ const signOut = () => {
       return null
     }).catch((error) => {
       console.error(error)
-      snackbar.show(tx(i18n, "syncPage.signOutError"))
+      snackbar.show(tx(i18n, "syncPage.signOutError"), "error")
     })
   })
 }
@@ -117,7 +117,7 @@ const deleteUser = () => {
       deletingUser.value = false
     }).catch((error) => {
       console.error(error)
-      snackbar.show(tx(i18n, "syncPage.deleteUserError"))
+      snackbar.show(tx(i18n, "syncPage.deleteUserError"), "error")
     })
   })
 }
