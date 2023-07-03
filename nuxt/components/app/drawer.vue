@@ -59,6 +59,10 @@ const drawerItems: (DrawerItem | Divider)[] = [
   },
   "---" as const,
   {
+    icon: "mdi-book-sync",
+    to: "/sync",
+  },
+  {
     icon: "mdi-sphere",
     to: "/tp-calc",
   },

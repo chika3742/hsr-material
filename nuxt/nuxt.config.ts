@@ -119,7 +119,7 @@ export default defineNuxtConfig({
       useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
       firebaseConfigDev: {
         apiKey: "AIzaSyDNEmiGxBoKLpT0Tf9SNR16sjPBacIoTic",
-        authDomain: "chikach.net",
+        authDomain: "www.chikach.net",
         projectId: "hsr-material-dev",
         storageBucket: "hsr-material-dev.appspot.com",
         messagingSenderId: "599812122174",
@@ -127,7 +127,7 @@ export default defineNuxtConfig({
       },
       firebaseConfigProd: {
         apiKey: "AIzaSyA1OsOCOJLXJRTweW380HjVPij87mY8weI",
-        authDomain: "chikach.net",
+        authDomain: "www.chikach.net",
         projectId: "hsr-material",
         storageBucket: "hsr-material.appspot.com",
         messagingSenderId: "14422071885",

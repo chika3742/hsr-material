@@ -54,6 +54,7 @@ pageTitles:
   relicDetails: 遺物 / {relicId}
   materials: 素材一覧(逆引き)
   materialDetails: 素材 / {materialId}
+  sync: データ同期
   warps: 跳躍天井カウンター(β)
   tpCalc: 開拓力回復時刻計算機
   releaseNotes: 更新履歴
@@ -122,6 +123,30 @@ relicDetailsPage:
 materialDetailsPage:
   characterUsage: この素材を使用するキャラクター
   lightConeUsage: この素材を使用する光円錐
+
+syncPage:
+  desc: データを同期すると、他の端末とブックマークや跳躍天井カウンターの履歴を共有できます。
+  loading: サインイン状態を確認しています...
+  fetchingUserInfo: ユーザー情報を取得しています...
+  signIn: 新規登録/サインイン
+  signInError: サインインに失敗しました。({code})
+  signInErrorPopupBlocked: ポップアップを許可してから再度お試しください。
+  signInWith:
+    google: Googleでサインイン
+    apple: Appleでサインイン
+  accountInfo: アカウント情報
+  signedInWith: 連携中のアカウント
+  email: メールアドレス
+  signOut: サインアウト
+  signOutConfirm: サインアウトしますか？
+  signOutSuccess: サインアウトしました。
+  signOutError: サインアウトに失敗しました。({code})
+  deleteUser: アカウント削除
+  deleteUserConfirm: |
+    アカウントを削除します。この操作は取り消せません。(端末内のデータは残ります)
+    OKを選択すると再認証画面に進みますので、ログインしてください。
+  deleteUserSuccess: アカウントを削除しました。
+  deleteUserError: アカウントの削除に失敗しました。({code})
 
 warpsPage:
   warpTypes:
