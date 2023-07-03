@@ -50,7 +50,7 @@
           <v-dialog
             v-model="dialog.ref.value.displayed"
             :persistent="!dialog.ref.value.cancelable"
-            max-width="400px"
+            max-width="500px"
             @close="dialog.ref.value.onCancel"
           >
             <v-card :title="dialog.ref.value.title">
