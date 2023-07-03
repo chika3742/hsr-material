@@ -1,5 +1,12 @@
 <script lang="ts" setup>
-import {AuthProvider, GoogleAuthProvider, OAuthProvider, signInWithPopup, User} from "@firebase/auth"
+import {
+  AuthProvider,
+  GoogleAuthProvider,
+  OAuthProvider,
+  reauthenticateWithPopup,
+  signInWithPopup,
+  User,
+} from "@firebase/auth"
 import {FirebaseError} from "@firebase/util"
 
 definePageMeta({
@@ -108,9 +115,27 @@ const deleteUser = () => {
       return
     }
 
+    // find provider
+    const provider = signInMethods.find((method) => {
+      return method.provider.providerId === currentUser.value?.providerData[0].providerId
+    })?.provider
+    if (!provider) {
+      throw new Error("unknown provider")
+    }
+
     deletingUser.value = true
 
-    currentUser.value.delete().then(() => {
+    // reauthenticate
+    reauthenticateWithPopup(currentUser.value, provider).then((result) => {
+      if (!currentUser.value) {
+        throw new Error("not signed in")
+      }
+      if (result.operationType !== "reauthenticate") {
+        throw new Error("unexpected operation type")
+      }
+      // execute user deletion
+      return currentUser.value.delete()
+    }).then(() => {
       snackbar.show(tx(i18n, "syncPage.deleteUserSuccess"))
       return null
     }).finally(() => {

@@ -142,7 +142,9 @@ syncPage:
   signOutSuccess: サインアウトしました。
   signOutError: サインアウトに失敗しました。({code})
   deleteUser: アカウント削除
-  deleteUserConfirm: アカウントを削除しますか？この操作は取り消せません。(端末内のデータは削除されません)
+  deleteUserConfirm: |
+    アカウントを削除します。この操作は取り消せません。(端末内のデータは残ります)
+    OKを選択すると再認証画面に進みますので、ログインしてください。
   deleteUserSuccess: アカウントを削除しました。
   deleteUserError: アカウントの削除に失敗しました。({code})
 

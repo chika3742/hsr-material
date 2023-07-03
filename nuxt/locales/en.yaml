@@ -144,7 +144,9 @@ syncPage:
   signOutSuccess: Signed out.
   signOutError: Failed to sign out. ({code})
   deleteUser: Delete Account
-  deleteUserConfirm: Do you want to delete your account? This operation cannot be undone. (Data in the device won't be deleted)
+  deleteUserConfirm: |
+    Are you sure you want to delete your account? This operation cannot be undone. (The data in the device will remain.)
+    Select OK to proceed to the re-authentication screen and sign in.
   deleteUserSuccess: Account deleted.
   deleteUserError: Failed to delete account. ({code})
 
