@@ -10,7 +10,7 @@ body:
     attributes:
       value: |
         ### 作成する前の注意事項
-        - [Issues](https://github.com/chika3742/genshin-material/issues)で検索し、同様の報告がないか確認してから作成してください。
+        - [Issues](https://github.com/chika3742/hsr-material/issues)で検索し、同様の報告がないか確認してから作成してください。
 
   - type: textarea
     id: place
