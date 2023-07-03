@@ -80,6 +80,9 @@ const signIn = (provider: AuthProvider) => {
         case "auth/cancelled-popup-request":
           // do nothing (user canceled)
           break
+        case "auth/popup-blocked":
+          snackbar.show(tx(i18n, "syncPage.signInErrorPopupBlocked"), "error")
+          break
         default:
           console.error(error)
           snackbar.show(tx(i18n, "syncPage.signInError"))

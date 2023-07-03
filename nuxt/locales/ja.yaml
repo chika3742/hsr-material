@@ -130,6 +130,7 @@ syncPage:
   fetchingUserInfo: ユーザー情報を取得しています...
   signIn: 新規登録/サインイン
   signInError: サインインに失敗しました。
+  signInErrorPopupBlocked: ポップアップを許可してから再度お試しください。
   signInWith:
     google: Googleでサインイン
     apple: Appleでサインイン

@@ -132,6 +132,7 @@ syncPage:
   fetchingUserInfo: Fetching user info...
   signIn: Sign Up / Sign In
   signInError: Failed to sign in.
+  signInErrorPopupBlocked: Please allow pop-ups to sign in.
   signInWith:
     google: Sign in with Google
     apple: Sign in with Apple
