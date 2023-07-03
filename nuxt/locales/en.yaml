@@ -35,6 +35,7 @@ errors:
   noSearchResults: No search results.
   failedToSearch: Failed to search.
   bookmark: Failed to bookmark.
+  failedToSync: Failed to sync.
 
 searchRecordTypes:
   character: Character
@@ -131,11 +132,19 @@ syncPage:
   loading: Checking sign-in status...
   fetchingUserInfo: Fetching user info...
   signIn: Sign Up / Sign In
+  signInSuccess: Signed in.
   signInError: Failed to sign in. ({code})
   signInErrorPopupBlocked: Please allow pop-ups to sign in.
   signInWith:
     google: Sign in with Google
     apple: Sign in with Apple
+  schemaMismatchError: Data in the cloud is newer and cannot be synced. Please reload the page.
+  conflictDialogTitle: Conflict Detected
+  conflictDialogMessage: |
+    There is a conflict between data in the cloud and data on the device. Do you want to overwrite the data in the cloud with the data on the device?
+    - If you choose OK, the data in the cloud will be lost.
+    - If you select Cancel, the data in the device will be overwritten.
+  sendingLocalData: Sending data...
   accountInfo: Account Info
   signedInWith: Signed in with
   email: Email
