@@ -53,7 +53,12 @@
             max-width="400px"
             @close="dialog.ref.value.onCancel"
           >
-            <v-card :text="dialog.ref.value.content" :title="dialog.ref.value.title">
+            <v-card :title="dialog.ref.value.title">
+              <template #text>
+                <p class="text-pre-wrap">
+                  {{ dialog.ref.value.content }}
+                </p>
+              </template>
               <template #actions>
                 <v-spacer />
                 <v-btn @click="dialog.ref.value.onCancel">
