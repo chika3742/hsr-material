@@ -82,10 +82,13 @@
 
 <script lang="ts" setup>
 import {useTheme} from "vuetify"
+import {Unsubscribe} from "firebase/auth"
 import {ref} from "#imports"
 import {useSnackbar} from "~/composables/snackbar"
 import {useDialog} from "~/composables/dialog"
 import {useConfigStore} from "~/store/config"
+import {_db} from "~/dexie/db"
+import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 
 const route = useRoute()
 const router = useRouter()
@@ -95,6 +98,7 @@ const snackbar = useSnackbar()
 const theme = useTheme()
 const config = useConfigStore()
 const rConfig = useRuntimeConfig()
+const {$auth, $firestore} = useNuxtApp()
 
 const isProd = rConfig.public.isProdBranch
 
@@ -110,14 +114,31 @@ useHead({
   titleTemplate: `%s - ${i18n.t("common.appName")}`,
 })
 
+let unsubscribeAuthListener: Unsubscribe | null = null
+
 onMounted(() => {
   mounted.value = true
 
+  // set theme & listen to theme change
   theme.global.name.value = config.getCurrentTheme()
-
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
     theme.global.name.value = config.getCurrentTheme()
   })
+
+  // init firestore snapshot listener
+  unsubscribeAuthListener = $auth.onAuthStateChanged((user) => {
+    if (user) {
+      FirestoreProvider.instance = new FirestoreProvider($auth.currentUser!, $firestore, _db)
+      FirestoreProvider.instance.listen()
+    } else {
+      FirestoreProvider.instance?.unListen()
+      FirestoreProvider.instance = null
+    }
+  })
+})
+
+onBeforeUnmount(() => {
+  unsubscribeAuthListener?.()
 })
 
 router.beforeEach(() => {

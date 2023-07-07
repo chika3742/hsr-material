@@ -50,6 +50,7 @@ const deletingUser = ref(false)
 let unsubscribe: (() => void) | undefined
 
 onMounted(() => {
+  // init current user
   unsubscribe = $auth.onAuthStateChanged((user) => {
     currentUser.value = user
     loadingCurrentUser.value = false
@@ -80,11 +81,15 @@ const signedInWith = computed(() => {
 })
 
 const signIn = (provider: AuthProvider) => {
+  FirestoreProvider.blockListening = true
+
   signInWithPopup($auth, provider).then((result) => {
     overlayLoading.message = tx(i18n, "syncPage.fetchingUserInfo")
     overlayLoading.show = true
-    return new FirestoreProvider(result.user, $firestore, _db).initUser()
+    FirestoreProvider.instance = new FirestoreProvider(result.user, $firestore, _db)
+    return FirestoreProvider.instance.initUser()
   }).then(() => {
+    FirestoreProvider.instance?.listen({cancelBlocking: true})
     snackbar.show(tx(i18n, "syncPage.signInSuccess"))
     return null
   }).finally(() => {
@@ -102,23 +107,15 @@ const signIn = (provider: AuthProvider) => {
         snackbar.show(tx(i18n, "syncPage.schemaMismatchError"), "error")
         break
       case "mnt/conflict":
-        dialog.show(tx(i18n, "syncPage.conflictDialogTitle"), tx(i18n, "syncPage.conflictDialogMessage"), () => {
-          if (!currentUser.value) {
-            return
-          }
-
-          // send local data to resolve conflict
-          overlayLoading.message = tx(i18n, "syncPage.sendingLocalData")
-          overlayLoading.show = true
-          new FirestoreProvider(currentUser.value, $firestore, _db).sendLocalData().finally(() => {
-            overlayLoading.show = false
-          })
-            // eslint-disable-next-line promise/no-nesting
-            .catch((error) => {
-              console.error(error)
-              snackbar.show(tx(i18n, "errors.failedToSync"), "error")
-            })
-        })
+        dialog.show(
+          tx(i18n, "syncPage.conflictDialogTitle"),
+          tx(i18n, "syncPage.conflictDialogMessage"),
+          sendLocalDataToResolveConflict,
+          () => {
+            FirestoreProvider.instance?.listen({cancelBlocking: true})
+          },
+          {persistent: true},
+        )
 
         return // do not sign out
       default:
@@ -126,13 +123,37 @@ const signIn = (provider: AuthProvider) => {
         snackbar.show(tx(i18n, "syncPage.signInError"), "error")
     }
 
+    // sign out to prevent data corruption
     if ($auth.currentUser) {
       $auth.signOut()
     }
   })
 }
 
-const signOut = () => {
+const sendLocalDataToResolveConflict = () => {
+  if (!currentUser.value || !FirestoreProvider.instance) {
+    return
+  }
+
+  overlayLoading.message = tx(i18n, "syncPage.sendingLocalData")
+  overlayLoading.show = true
+  FirestoreProvider.instance.sendLocalData().then(() => {
+    FirestoreProvider.instance?.listen({cancelBlocking: true})
+    return null
+  }).finally(() => {
+    overlayLoading.show = false
+  }).catch((error) => {
+    console.error(error)
+    snackbar.show(tx(i18n, "errors.failedToSync"), "error")
+
+    // sign out to prevent data corruption
+    if ($auth.currentUser) {
+      $auth.signOut()
+    }
+  })
+}
+
+const signOutWithConfirmation = () => {
   dialog.show(tx(i18n, "syncPage.signOut"), tx(i18n, "syncPage.signOutConfirm"), () => {
     $auth.signOut().then(() => {
       snackbar.show(tx(i18n, "syncPage.signOutSuccess"))
@@ -234,7 +255,7 @@ const deleteUser = () => {
       </v-table>
 
       <v-row class="mt-4" no-gutters style="gap: 16px">
-        <v-btn :disabled="deletingUser" @click="signOut">
+        <v-btn :disabled="deletingUser" @click="signOutWithConfirmation">
           {{ tx("syncPage.signOut") }}
         </v-btn>
 

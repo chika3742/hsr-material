@@ -1,4 +1,4 @@
-import {doc, DocumentReference, Firestore, getDoc, setDoc, Timestamp} from "@firebase/firestore"
+import {doc, DocumentReference, Firestore, getDoc, onSnapshot, setDoc, Timestamp} from "@firebase/firestore"
 import {User} from "@firebase/auth"
 import {UserDocument} from "~/types/firestore/user-document"
 import {simpleFirestoreConverter} from "~/utils/simple-firestore-converter"
@@ -7,6 +7,14 @@ import {DataSyncError} from "~/libs/data-sync-error"
 
 export class FirestoreProvider {
   readonly userDoc: DocumentReference<UserDocument>
+
+  static instance: FirestoreProvider | null = null
+  /**
+   * Set this to true to avoid overwriting local data with remote data when signing in.
+   * ({@link listen} will be triggered by auth listener when signing in)
+   */
+  static blockListening = false
+  private unsubscribe?: () => void
 
   constructor(
     public readonly user: User,
@@ -51,5 +59,25 @@ export class FirestoreProvider {
 
     // remote data exists and local data is not empty
     throw new DataSyncError("mnt/conflict", "Local data exists and remote data exists")
+  }
+
+  listen(options: { cancelBlocking?: boolean } = {}): void {
+    if (!options.cancelBlocking && FirestoreProvider.blockListening) {
+      return
+    }
+    FirestoreProvider.blockListening = false
+
+    this.unsubscribe = onSnapshot(this.userDoc, async(doc) => {
+      if (!doc.metadata.hasPendingWrites) {
+        await this.db.importRemote(doc.data()!)
+      }
+    })
+  }
+
+  unListen() {
+    if (this.unsubscribe) {
+      this.unsubscribe()
+      this.unsubscribe = undefined
+    }
   }
 }
