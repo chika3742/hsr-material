@@ -41,15 +41,11 @@ export class FirestoreProvider {
     }
 
     // remote data exists
-    // remote schema version is newer than local schema version
-    if (remoteData.schemaVersion > this.db.verno) {
-      throw new DataSyncError("mnt/schema-ver-mismatch", "Remote schema version is newer than local schema version")
-    }
 
     const localData = await this.db.dump()
     // local data is empty
     if (Object.values(localData).every(v => v.length === 0)) {
-      await this.db.import(remoteData.data)
+      await this.db.importRemote(remoteData)
       return
     }
 
