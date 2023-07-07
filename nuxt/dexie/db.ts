@@ -29,18 +29,22 @@ export class MySubClassedDexie extends Dexie {
     }).then(result => Object.fromEntries(result)) as Promise<SyncUserData>
   }
 
+  import(data: SyncUserData) {
+    return this.transaction("rw", this.tables, () => {
+      return Object.entries(data).map(([tableName, tableData]) => {
+        const table = this.table(tableName)
+        return table.clear().then(() => table.bulkAdd(tableData))
+      })
+    })
+  }
+
   importRemote(data: UserDocument) {
     // remote schema version is newer than local schema version
     if (data.schemaVersion > this.verno) {
       throw new DataSyncError("mnt/schema-ver-mismatch", "Remote schema version is newer than local schema version")
     }
 
-    return this.transaction("rw", this.tables, () => {
-      return Object.entries(data.data).map(([tableName, tableData]) => {
-        const table = this.table(tableName)
-        return table.clear().then(() => table.bulkAdd(tableData))
-      })
-    })
+    return this.import(data.data)
   }
 }
 
