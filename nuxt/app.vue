@@ -49,7 +49,7 @@
 
           <v-dialog
             v-model="dialog.ref.value.displayed"
-            :persistent="!dialog.ref.value.cancelable"
+            :persistent="dialog.ref.value.persistent"
             max-width="500px"
             @close="dialog.ref.value.onCancel"
           >

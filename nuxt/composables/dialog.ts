@@ -6,9 +6,11 @@ export const useDialog = () => {
       content: "",
       onOk: null as (() => void) | null,
       onCancel: null as (() => void) | null,
-      cancelable: true,
+      persistent: false,
     })),
-    show(title: string, content: string, onOk: () => void, onCancel: (() => void) | null = null, cancelable = true) {
+    show(title: string, content: string, onOk: () => void, onCancel: (() => void) | null = null, options: {
+      persistent?: boolean
+    } = {}) {
       this.ref.value.displayed = true
       this.ref.value.title = title
       this.ref.value.content = content
@@ -20,7 +22,7 @@ export const useDialog = () => {
         onCancel?.()
         this.hide()
       }
-      this.ref.value.cancelable = cancelable
+      this.ref.value.persistent = options.persistent ?? false
     },
     hide() {
       this.ref.value.displayed = false
