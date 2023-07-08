@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import {DateTime} from "luxon"
+import _ from "lodash"
 import {getWastedTpCount} from "~/utils/tp"
 import {useConfigStore} from "~/store/config"
+import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 
 definePageMeta({
   title: "tpCalc",
@@ -30,8 +32,13 @@ watch(currentTpCount, (value: string) => {
   if (validate(value) === true) {
     config.tpCount = Number(value)
     config.tpBaseTime = DateTime.now().toISO()!
+    sendToFirestore()
   }
 })
+
+const sendToFirestore = _.debounce(() => {
+  FirestoreProvider.instance?.sendLocalData()
+}, 1000)
 
 const baseTime = computed(() => {
   return DateTime.fromISO(config.tpBaseTime)
