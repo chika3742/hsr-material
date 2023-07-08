@@ -40,7 +40,7 @@ yarn preview # to preview the generated site
 
 - Node.js 18.x
 - Yarn 1.x
-- Firebase CLI (can be installed with `yarn global add firebase-tools`)
+- Firebase CLI (can be installed with `npm -g install firebase-tools`)
 
 ### Setup
 
