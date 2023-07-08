@@ -25,7 +25,7 @@ export namespace Usage {
     type: "exp"
     characterId: string
     variant: Path | null
-    lightConeId: string | undefined
+    lightConeId: string | null
     purposeType: PurposeType & "ascension"
     upperLevel: number
   }

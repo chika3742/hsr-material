@@ -84,7 +84,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
         type: "exp",
         characterId: props.characterId,
         variant: props.variant,
-        lightConeId: props.lightConeId,
+        lightConeId: props.lightConeId ?? null,
         purposeType: "ascension",
         upperLevel: e.level,
       }
