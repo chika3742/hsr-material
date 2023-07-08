@@ -6,10 +6,11 @@ import {Bookmark} from "~/types/bookmark/bookmark"
 export interface UserDocument {
   schemaVersion: number
   savedAt: Timestamp
-  data: SyncUserData
+  data: SyncedUserData
+  config: SyncedConfig
 }
 
-export interface SyncUserData {
+export interface SyncedUserData {
   bookmarkCharacters: BookmarkCharacter[]
   bookmarks: Bookmark[]
   warps: Warp[]
