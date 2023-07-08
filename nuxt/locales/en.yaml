@@ -202,9 +202,12 @@ warpsPage:
 
     ## About Security
 
-    The URL used in this feature has an access key that allows only fetching warp history. Therefore, it cannot be used to access personal information such as email addresses and usernames, or to log in to the game. Please be assured.
+    The URL used in this feature has an access key that allows only fetching warp history.
+    Therefore, it cannot be used to access personal information such as email addresses and usernames,
+    or to log in to the game. Please be assured.
 
-    Also, this access key is processed only in the memory of the server and is destroyed after the processing is completed. It will not be recorded in the log or sent to a server other than miHoYo's API.
+    Also, when data sync is turned on, this URL is synchronized between devices.
+    This URL is never sent to external parties except for the API for history retrieval and the database for sync.
 
     ## Notes
 
