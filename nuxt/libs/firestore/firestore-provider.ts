@@ -1,9 +1,10 @@
 import {doc, DocumentReference, Firestore, getDoc, onSnapshot, setDoc, Timestamp} from "@firebase/firestore"
 import {User} from "@firebase/auth"
-import {UserDocument} from "~/types/firestore/user-document"
+import {configStoreToSyncedConfig, UserDocument} from "~/types/firestore/user-document"
 import {simpleFirestoreConverter} from "~/utils/simple-firestore-converter"
 import {MySubClassedDexie} from "~/dexie/db"
 import {DataSyncError} from "~/libs/data-sync-error"
+import {useConfigStore} from "~/store/config"
 
 export class FirestoreProvider {
   readonly userDoc: DocumentReference<UserDocument>
@@ -32,11 +33,13 @@ export class FirestoreProvider {
 
   async sendLocalData(): Promise<void> {
     const data = await this.db.dump()
+    const config = useConfigStore()
 
     await setDoc(this.userDoc, {
       schemaVersion: this.db.verno,
       savedAt: Timestamp.now(),
       data,
+      config: configStoreToSyncedConfig(config),
     })
   }
 
@@ -69,7 +72,14 @@ export class FirestoreProvider {
 
     this.unsubscribe = onSnapshot(this.userDoc, async(doc) => {
       if (!doc.metadata.hasPendingWrites) {
-        await this.db.importRemote(doc.data()!)
+        const data = doc.data()!
+
+        // import into IndexedDB
+        await this.db.importRemote(data)
+
+        // import into config store
+        const config = useConfigStore()
+        Object.assign(config, data.config)
       }
     })
   }
