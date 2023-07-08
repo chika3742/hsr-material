@@ -81,6 +81,10 @@ export class FirestoreProvider {
         const config = useConfigStore()
         Object.assign(config, data.config)
       }
+    }, (error) => {
+      console.error(error)
+
+      useSnackbar().show("サーバーとの接続が切断されました。", "error")
     })
   }
 
