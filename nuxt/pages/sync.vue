@@ -241,7 +241,7 @@ const deleteUser = () => {
     <section v-else>
       <h2>{{ tx("syncPage.accountInfo") }}</h2>
 
-      <v-table class="mt-2">
+      <v-table class="mt-2 text-no-wrap">
         <tbody>
           <tr>
             <td>{{ tx("syncPage.signedInWith") }}</td>
