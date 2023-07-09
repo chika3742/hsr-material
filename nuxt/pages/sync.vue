@@ -120,7 +120,7 @@ const signIn = (provider: AuthProvider) => {
         return // do not sign out
       default:
         console.error(error)
-        snackbar.show(tx(i18n, "syncPage.signInError"), "error")
+        snackbar.show(tx(i18n, "syncPage.signInError", {code: error.code}), "error")
     }
 
     // sign out to prevent data corruption
