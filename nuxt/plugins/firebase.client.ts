@@ -2,7 +2,7 @@ import {initializeApp} from "@firebase/app"
 import {connectFunctionsEmulator, getFunctions} from "@firebase/functions"
 import {connectAuthEmulator, getAuth} from "@firebase/auth"
 import {initializeAppCheck, ReCaptchaV3Provider} from "@firebase/app-check"
-import {connectFirestoreEmulator, getFirestore} from "@firebase/firestore"
+import {connectFirestoreEmulator, initializeFirestore, persistentLocalCache} from "@firebase/firestore"
 
 export default defineNuxtPlugin(({$config}) => {
   const app = initializeApp($config.public.isProdBranch
@@ -19,7 +19,9 @@ export default defineNuxtPlugin(({$config}) => {
 
   const auth = getAuth(app)
   const functions = getFunctions(app, "asia-northeast1")
-  const firestore = getFirestore(app)
+  const firestore = initializeFirestore(app, {
+    localCache: persistentLocalCache(),
+  })
 
   if (process.dev && $config.public.useFirebaseEmulator) {
     connectAuthEmulator(auth, "http://localhost:9099")

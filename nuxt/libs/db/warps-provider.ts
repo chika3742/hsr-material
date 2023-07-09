@@ -1,19 +1,17 @@
 import {Table} from "dexie"
 import {Warp} from "#shared/warp"
 import {_db} from "~/dexie/db"
+import {DbProvider} from "~/libs/db/db-provider"
 
 /**
  * Provides methods for warp-related database operations.
  */
-export class WarpsProvider {
+export class WarpsProvider extends DbProvider {
   warps: Table<Warp>
 
   constructor() {
+    super()
     this.warps = _db.warps
-  }
-
-  add(...warp: Warp[]) {
-    return this.warps.bulkAdd(warp)
   }
 
   async getLastIds(warpTypes: string[]) {
@@ -28,7 +26,15 @@ export class WarpsProvider {
     return result
   }
 
+  add(...warp: Warp[]) {
+    return this.transactionWithFirestore([this.warps], () => {
+      return this.warps.bulkAdd(warp)
+    })
+  }
+
   clear() {
-    return this.warps.clear()
+    return this.transactionWithFirestore([this.warps], () => {
+      return this.warps.clear()
+    })
   }
 }

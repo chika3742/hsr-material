@@ -11,15 +11,17 @@ import {
 } from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {_db} from "~/dexie/db"
+import {DbProvider} from "~/libs/db/db-provider"
 
 /**
  * Provides methods for bookmark-related database operations.
  */
-export class BookmarksProvider {
+export class BookmarksProvider extends DbProvider {
   bookmarks: Table<Bookmark>
   bookmarkCharacters: Table<BookmarkCharacter>
 
   constructor() {
+    super()
     this.bookmarks = _db.bookmarks
     this.bookmarkCharacters = _db.bookmarkCharacters
   }
@@ -103,7 +105,7 @@ export class BookmarksProvider {
    * @param selectedItem Selected item (only for exp)
    */
   addLevelingItems<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined) {
-    return _db.transaction("rw", this.bookmarks, this.bookmarkCharacters, async() => {
+    return this.transactionWithFirestore([this.bookmarks, this.bookmarkCharacters], async() => {
       const dataToSave: LevelingBookmark[] = data.map((e) => {
         if (isBookmarkableExp(e)) {
           return {
@@ -144,7 +146,7 @@ export class BookmarksProvider {
    * @param ids List of ids to remove
    */
   remove(...ids: number[]) {
-    return _db.transaction("rw", this.bookmarks, this.bookmarkCharacters, async() => {
+    return this.transactionWithFirestore([this.bookmarks, this.bookmarkCharacters], async() => {
       await this.bookmarks.bulkDelete(ids)
 
       // remove bookmark ids from bookmarkCharacters
@@ -158,7 +160,7 @@ export class BookmarksProvider {
   }
 
   addRelics(data: BookmarkableRelic[]) {
-    return _db.transaction("rw", this.bookmarks, this.bookmarkCharacters, async() => {
+    return this.transactionWithFirestore([this.bookmarks, this.bookmarkCharacters], async() => {
       for (const item of data) {
         const dataToSave: RelicBookmark = {
           ...item,

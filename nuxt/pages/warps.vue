@@ -71,6 +71,7 @@ import {WarpsApi} from "~/libs/warps-api"
 import {warpHistoryTicketConverter} from "~/utils/warp-history-ticket-converter"
 import {_db} from "~/dexie/db"
 import {db} from "~/libs/db/providers"
+import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 
 definePageMeta({
   title: "warps",
@@ -211,5 +212,10 @@ const registerStatusListener = (api: WarpsApi) => {
     unsubscribe()
   })
 }
+
+watch(toRefs(config).warpsShowPityList, () => {
+  FirestoreProvider.instance?.sendLocalData()
+})
+// `warpsUrl` is sent when fetching warps is complete
 
 </script>

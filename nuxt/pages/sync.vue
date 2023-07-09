@@ -7,13 +7,14 @@ import {
   signInWithPopup,
   User,
 } from "@firebase/auth"
-import {FirebaseError} from "@firebase/util"
+import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
+import {_db} from "~/dexie/db"
 
 definePageMeta({
   title: "sync",
 })
 
-const {$auth} = useNuxtApp()
+const {$auth, $firestore} = useNuxtApp()
 const dialog = useDialog()
 const snackbar = useSnackbar()
 const i18n = useI18n()
@@ -41,11 +42,15 @@ const signInMethods: SignInMethod[] = [
 
 const currentUser = ref<User | null>(null)
 const loadingCurrentUser = ref(true)
-const fetchingUser = ref(false)
+const overlayLoading = reactive({
+  show: false,
+  message: "",
+})
 const deletingUser = ref(false)
 let unsubscribe: (() => void) | undefined
 
 onMounted(() => {
+  // init current user
   unsubscribe = $auth.onAuthStateChanged((user) => {
     currentUser.value = user
     loadingCurrentUser.value = false
@@ -76,28 +81,79 @@ const signedInWith = computed(() => {
 })
 
 const signIn = (provider: AuthProvider) => {
-  signInWithPopup($auth, provider)
-    .then((result) => {
-      // TODO: init user
-      return null
-    })
-    .catch((error: FirebaseError) => {
-      switch (error.code) {
-        case "auth/popup-closed-by-user":
-        case "auth/cancelled-popup-request":
-          // do nothing (user canceled)
-          break
-        case "auth/popup-blocked":
-          snackbar.show(tx(i18n, "syncPage.signInErrorPopupBlocked"), "error")
-          break
-        default:
-          console.error(error)
-          snackbar.show(tx(i18n, "syncPage.signInError", {code: error.code}), "error")
-      }
-    })
+  FirestoreProvider.blockListening = true
+
+  signInWithPopup($auth, provider).then((result) => {
+    overlayLoading.message = tx(i18n, "syncPage.fetchingUserInfo")
+    overlayLoading.show = true
+    FirestoreProvider.instance = new FirestoreProvider(result.user, $firestore, _db)
+    return FirestoreProvider.instance.initUser()
+  }).then(() => {
+    FirestoreProvider.instance?.listen({cancelBlocking: true})
+    snackbar.show(tx(i18n, "syncPage.signInSuccess"))
+    return null
+  }).finally(() => {
+    overlayLoading.show = false
+  }).catch((error) => {
+    switch (error.code) {
+      case "auth/popup-closed-by-user":
+      case "auth/cancelled-popup-request":
+        // do nothing (user canceled)
+        break
+      case "auth/popup-blocked":
+        snackbar.show(tx(i18n, "syncPage.signInErrorPopupBlocked"), "error")
+        break
+      case "mnt/schema-version-mismatch":
+        snackbar.show(tx(i18n, "syncPage.schemaMismatchError"), "error")
+        break
+      case "mnt/conflict":
+        dialog.show(
+          tx(i18n, "syncPage.conflictDialogTitle"),
+          tx(i18n, "syncPage.conflictDialogMessage"),
+          sendLocalDataToResolveConflict,
+          () => {
+            FirestoreProvider.instance?.listen({cancelBlocking: true})
+          },
+          {persistent: true},
+        )
+
+        return // do not sign out
+      default:
+        console.error(error)
+        snackbar.show(tx(i18n, "syncPage.signInError", {code: error.code}), "error")
+    }
+
+    // sign out to prevent data corruption
+    if ($auth.currentUser) {
+      $auth.signOut()
+    }
+  })
 }
 
-const signOut = () => {
+const sendLocalDataToResolveConflict = () => {
+  if (!currentUser.value || !FirestoreProvider.instance) {
+    return
+  }
+
+  overlayLoading.message = tx(i18n, "syncPage.sendingLocalData")
+  overlayLoading.show = true
+  FirestoreProvider.instance.sendLocalData().then(() => {
+    FirestoreProvider.instance?.listen({cancelBlocking: true})
+    return null
+  }).finally(() => {
+    overlayLoading.show = false
+  }).catch((error) => {
+    console.error(error)
+    snackbar.show(tx(i18n, "errors.failedToSync"), "error")
+
+    // sign out to prevent data corruption
+    if ($auth.currentUser) {
+      $auth.signOut()
+    }
+  })
+}
+
+const signOutWithConfirmation = () => {
   dialog.show(tx(i18n, "syncPage.signOut"), tx(i18n, "syncPage.signOutConfirm"), () => {
     $auth.signOut().then(() => {
       snackbar.show(tx(i18n, "syncPage.signOutSuccess"))
@@ -185,7 +241,7 @@ const deleteUser = () => {
     <section v-else>
       <h2>{{ tx("syncPage.accountInfo") }}</h2>
 
-      <v-table class="mt-2">
+      <v-table class="mt-2 text-no-wrap">
         <tbody>
           <tr>
             <td>{{ tx("syncPage.signedInWith") }}</td>
@@ -199,7 +255,7 @@ const deleteUser = () => {
       </v-table>
 
       <v-row class="mt-4" no-gutters style="gap: 16px">
-        <v-btn :disabled="deletingUser" @click="signOut">
+        <v-btn :disabled="deletingUser" @click="signOutWithConfirmation">
           {{ tx("syncPage.signOut") }}
         </v-btn>
 
@@ -210,10 +266,10 @@ const deleteUser = () => {
     </section>
 
     <client-only>
-      <v-overlay :model-value="fetchingUser" style="display: grid; place-items: center">
+      <v-overlay :model-value="overlayLoading.show" style="display: grid; place-items: center">
         <v-row align="center" no-gutters>
           <v-progress-circular indeterminate size="32" />
-          <span class="ml-4">{{ tx("syncPage.fetchingUserInfo") }}</span>
+          <span class="ml-4">{{ overlayLoading.message }}</span>
         </v-row>
       </v-overlay>
     </client-only>
