@@ -63,7 +63,7 @@ router.beforeEach(() => {
   >
     <v-card :title="tx('common.details')">
       <div class="overflow-y-auto pa-2 h-100">
-        <v-expansion-panels model-value="ascension" multiple>
+        <v-expansion-panels :model-value="Object.keys(purposes)" multiple>
           <v-expansion-panel
             v-for="(_items, purpose) in purposes"
             :key="purpose"
