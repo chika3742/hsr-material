@@ -22,6 +22,8 @@ const snackbar = useSnackbar()
 const i18n = useI18n()
 const router = useRouter()
 
+const loadingCompleteLeveling = ref<string | null>(null)
+
 const purposes = computed(() => {
   const result: Partial<Record<PurposeType, LevelingBookmark[]>> = {}
 
@@ -43,8 +45,16 @@ const getSkillTitle = (item: LevelingBookmark) => {
 const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
   const ids = purposes.value[purposeType]?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
   if (ids) {
-    db.bookmarks.remove(...ids)
-    snackbar.show(tx(i18n, "bookmark.removed"))
+    loadingCompleteLeveling.value = `${purposeType}-${level}`
+    return db.bookmarks.remove(...ids).then(() => {
+      snackbar.show(tx(i18n, "bookmark.removed"))
+      return null
+    }).finally(() => {
+      loadingCompleteLeveling.value = null
+    }).catch((e) => {
+      console.error(e)
+      snackbar.show(tx(i18n, "errors.bookmark"))
+    })
   }
 }
 
@@ -78,7 +88,9 @@ router.beforeEach(() => {
                       Lv. {{ lv }}
                     </h3>
                     <v-btn
-                      :disabled="!bookmarks.some(e => __items.some(e2 => e2.id === e.id))"
+                      :disabled="loadingCompleteLeveling !== `${purpose}-${lv}` &&
+                        !bookmarks.some(b => __items.some(e => e.id === b.id))"
+                      :loading="loadingCompleteLeveling === `${purpose}-${lv}`"
                       class="ml-1"
                       prepend-icon="mdi-marker-check"
                       variant="text"
