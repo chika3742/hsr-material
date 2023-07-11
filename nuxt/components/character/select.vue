@@ -1,5 +1,8 @@
 <script lang="ts" setup>
+import {RouteLocationRaw} from "vue-router"
 import {CharacterIdWithVariant} from "~/types/strings"
+import characters from "~/assets/data/characters.yaml"
+import {Character, Path} from "~/types/generated/characters.g"
 
 interface Props {
   modelValue: CharacterIdWithVariant | CharacterIdWithVariant[]
@@ -14,10 +17,60 @@ withDefaults(defineProps<Props>(), {
   multiple: false,
 })
 
-defineEmits<{
+const emit = defineEmits<{
   (e: "update:modelValue", value: string | string[]): void
   (e: "update:error", value: string): void
 }>()
+
+const i18n = useI18n()
+const route = useRoute()
+
+interface VSelectCharacter extends Omit<Character, "variants"> {
+  variant?: Path | undefined
+  idWithVariant: CharacterIdWithVariant
+  route: RouteLocationRaw
+  title: string
+}
+
+const vSelectCharacters = (() => {
+  const result: VSelectCharacter[] = []
+
+  for (const character of characters) {
+    if (character.variants) {
+      for (const variant of character.variants) {
+        const newObj = {...character}
+        delete newObj.variants
+
+        result.push({
+          ...newObj,
+          title: tx(i18n, `characterNames.${newObj.id}_${variant.path}`),
+          variant: variant.path,
+          idWithVariant: `${newObj.id}_${variant.path}`,
+          route: {path: `/characters/${newObj.id}`, query: {variant: variant.path}},
+          materials: variant.materials,
+        })
+      }
+    } else {
+      result.push({
+        ...character,
+        title: tx(i18n, `characterNames.${character.id}`),
+        idWithVariant: character.id,
+        route: {path: `/characters/${character.id}`},
+      })
+    }
+  }
+
+  return result
+})()
+
+onMounted(() => {
+  const character = vSelectCharacters.find(e => e.idWithVariant === route.query.character)
+  if (character) {
+    emit("update:modelValue", character.idWithVariant)
+  } else {
+    emit("update:modelValue", vSelectCharacters[0].idWithVariant)
+  }
+})
 
 </script>
 
@@ -26,7 +79,7 @@ defineEmits<{
     <v-select
       :chips="multiple"
       :error-messages="error"
-      :items="$vSelectCharacters"
+      :items="vSelectCharacters"
       :label="tx('relicDetailsPage.characterToEquip')"
       :model-value="modelValue"
       :multiple="multiple as any"
