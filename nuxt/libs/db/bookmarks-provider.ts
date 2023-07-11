@@ -159,30 +159,28 @@ export class BookmarksProvider extends DbProvider {
     })
   }
 
-  addRelics(data: BookmarkableRelic[]) {
+  addRelic(data: BookmarkableRelic) {
     return this.transactionWithFirestore([this.bookmarks, this.bookmarkCharacters], async() => {
-      for (const item of data) {
-        const dataToSave: RelicBookmark = {
-          ...item,
-          bookmarkedAt: new Date(),
-        }
+      const dataToSave: RelicBookmark = {
+        ...data,
+        bookmarkedAt: new Date(),
+      }
 
-        // add bookmark
-        const id = (await this.bookmarks.add(dataToSave)) as number
+      // add bookmark
+      const id = (await this.bookmarks.add(dataToSave)) as number
 
-        // add bookmark id to bookmarkCharacters
-        const characterId = toCharacterIdWithVariant(item.characterId, item.variant)
-        const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
-        if (bookmarkCharacter) {
-          await this.bookmarkCharacters.update(characterId, {
-            bookmarks: bookmarkCharacter.bookmarks.concat(id),
-          })
-        } else {
-          await this.bookmarkCharacters.add({
-            characterId,
-            bookmarks: [id],
-          })
-        }
+      // add bookmark id to bookmarkCharacters
+      const characterId = toCharacterIdWithVariant(data.characterId, data.variant)
+      const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
+      if (bookmarkCharacter) {
+        await this.bookmarkCharacters.update(characterId, {
+          bookmarks: bookmarkCharacter.bookmarks.concat(id),
+        })
+      } else {
+        await this.bookmarkCharacters.add({
+          characterId,
+          bookmarks: [id],
+        })
       }
     })
   }

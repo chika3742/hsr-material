@@ -9,7 +9,6 @@ definePageMeta({
 })
 
 const route = useRoute()
-const {$vSelectCharacters} = useNuxtApp()
 
 if (!lightCones.some(e => e.id === route.params.lightConeId)) {
   throw createError({statusCode: 404, message: "Page not found", fatal: true})
@@ -17,10 +16,7 @@ if (!lightCones.some(e => e.id === route.params.lightConeId)) {
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
 
-const selectedCharacter = ref<CharacterIdWithVariant>(
-  $vSelectCharacters.some(e => e.idWithVariant === route.query.character)
-    ? route.query.character as string
-    : $vSelectCharacters[0].idWithVariant)
+const selectedCharacter = ref<CharacterIdWithVariant>()
 </script>
 
 <template>
@@ -59,6 +55,7 @@ const selectedCharacter = ref<CharacterIdWithVariant>(
 
     <v-expansion-panels mandatory="force">
       <SingleSliderPanel
+        v-if="selectedCharacter"
         :material-defs="lightCone.materials"
         :title="tx('lightConeDetailsPage.ascension')"
         :light-cone-id="lightCone.id"

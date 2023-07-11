@@ -89,7 +89,7 @@ const detailsDialog = reactive({
           </v-row>
         </section>
 
-        <section v-if="Object.keys(groupedBookmarks.lightCones).length >= 0">
+        <section v-if="Object.keys(groupedBookmarks.lightCones).length >= 1">
           <div class="d-flex flex-column" style="gap: 8px">
             <div v-for="[lcId, lcMaterials] in Object.entries(groupedBookmarks.lightCones)" :key="lcId">
               <v-list-item

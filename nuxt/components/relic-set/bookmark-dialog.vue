@@ -113,7 +113,7 @@ const radioGroups = computed<RadioGroup[]>(() => {
   throw new Error("Relic set or relic piece must be provided")
 })
 
-const selectedCharacters = ref<CharacterIdWithVariant[]>([])
+const selectedCharacter = ref<CharacterIdWithVariant>()
 const selectedStats = reactive({
   main: {} as Record<string, Stat | null>,
   sub: [] as Stat[],
@@ -130,42 +130,37 @@ const loading = ref(false)
 const initSelections = () => {
   selectedStats.main = Object.fromEntries(radioGroups.value.map(e => [e.type, null]))
   selectedStats.sub = []
-  selectedCharacters.value = []
 }
 
 const saveBookmark = async() => {
-  if (selectedCharacters.value.length === 0) {
+  if (typeof selectedCharacter.value === "undefined") {
     characterSelectError.value = tx(i18n, "relicDetailsPage.characterSelectError")
     return
   }
 
-  const data: BookmarkableRelic[] = (() => {
+  const data: BookmarkableRelic = (() => {
     if (props.relicSets) {
-      return selectedCharacters.value.map((character) => {
-        return new BookmarkableRelicSet({
-          relicSetIds: props.relicSets!.map(e => e.id),
-          characterId: toCharacterId(character),
-          variant: toVariant(character),
-          mainStats: toRaw(selectedStats.main),
-          subStats: toRaw(selectedStats.sub),
-        })
+      return new BookmarkableRelicSet({
+        relicSetIds: props.relicSets!.map(e => e.id),
+        characterId: toCharacterId(selectedCharacter.value!),
+        variant: toVariant(selectedCharacter.value!),
+        mainStats: toRaw(selectedStats.main),
+        subStats: toRaw(selectedStats.sub),
       })
     } else {
-      return selectedCharacters.value.map((character) => {
-        return new BookmarkableRelicPiece({
-          relicPieceId: props.relicPiece!.id,
-          characterId: toCharacterId(character),
-          variant: toVariant(character),
-          mainStat: selectedStats.main.piece!,
-          subStats: toRaw(selectedStats.sub),
-        })
+      return new BookmarkableRelicPiece({
+        relicPieceId: props.relicPiece!.id,
+        characterId: toCharacterId(selectedCharacter.value!),
+        variant: toVariant(selectedCharacter.value!),
+        mainStat: selectedStats.main.piece!,
+        subStats: toRaw(selectedStats.sub),
       })
     }
   })()
 
   loading.value = true
   try {
-    await db.bookmarks.addRelics(data)
+    await db.bookmarks.addRelic(data)
 
     emit("update:modelValue", false)
     snackbar.show(tx(i18n, "bookmark.bookmarked"))
@@ -215,7 +210,7 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
           />
 
           <!-- Character select -->
-          <CharacterSelect v-model="selectedCharacters" v-model:error="characterSelectError" multiple />
+          <CharacterSelect v-model="selectedCharacter" v-model:error="characterSelectError" />
 
           <!-- Main stat radio buttons -->
           <section v-for="group in radioGroups.filter(e => e.items.length >= 2)" :key="group.title">
