@@ -27,6 +27,15 @@ const query = ref("")
 const error = ref("")
 const results = ref<AlgoliaRecord[] | null>(null)
 const cachedResults = ref<Record<string, AlgoliaRecord[]>>({})
+const textField = ref<HTMLElement | null>(null)
+
+watch(toRefs(props).modelValue, (value) => {
+  if (value) {
+    nextTick(() => {
+      textField.value?.click()
+    })
+  }
+})
 
 const executeQuery = async(_query: string) => {
   loading.value = true
@@ -112,6 +121,7 @@ const urlToRouteLocation = (url: string): RawLocation => {
       <div class="h-100 d-flex flex-column">
         <v-row class="flex-grow-0 mx-4 mt-4" no-gutters style="gap: 8px">
           <v-text-field
+            ref="textField"
             v-model="query"
             :error-messages="error"
             :label="tx('common.search')"
