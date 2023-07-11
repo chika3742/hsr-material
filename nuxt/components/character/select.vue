@@ -5,10 +5,9 @@ import characters from "~/assets/data/characters.yaml"
 import {Character, Path} from "~/types/generated/characters.g"
 
 interface Props {
-  modelValue: CharacterIdWithVariant | CharacterIdWithVariant[]
+  modelValue: CharacterIdWithVariant
   maxWidth?: string
   error?: string
-  multiple?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
@@ -18,7 +17,7 @@ withDefaults(defineProps<Props>(), {
 })
 
 const emit = defineEmits<{
-  (e: "update:modelValue", value: string | string[]): void
+  (e: "update:modelValue", value: string): void
   (e: "update:error", value: string): void
 }>()
 
@@ -77,12 +76,10 @@ onMounted(() => {
 <template>
   <client-only>
     <v-select
-      :chips="multiple"
       :error-messages="error"
       :items="vSelectCharacters"
       :label="tx('relicDetailsPage.characterToEquip')"
       :model-value="modelValue"
-      :multiple="multiple as any"
       :style="{'max-width': maxWidth}"
       class="mt-2"
       item-value="idWithVariant"
@@ -91,9 +88,8 @@ onMounted(() => {
     >
       <template #item="{props: _props, item}">
         <v-list-item :title="item.title" v-bind="_props">
-          <template #prepend="{isSelected}">
+          <template #prepend>
             <div class="d-flex align-center mr-2">
-              <v-checkbox-btn v-if="multiple" :model-value="isSelected" :ripple="false" />
               <v-img :src="getCharacterImage(item.raw.id, 'small')" width="40" />
             </div>
           </template>
