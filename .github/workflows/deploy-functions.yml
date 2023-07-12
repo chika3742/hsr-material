@@ -4,14 +4,14 @@ on:
   push:
     branches:
       - main
-      - live
+      - dev
     paths:
       - firebase/**
       - .github/workflows/deploy-functions.yml
   workflow_dispatch:
 
 env:
-  prod_branch_name: live
+  prod_branch_name: main
   wi_provider_prod: projects/14422071885/locations/global/workloadIdentityPools/github-actions/providers/github
   wi_provider_dev: projects/599812122174/locations/global/workloadIdentityPools/github-actions/providers/github
   service_account_prod: github-actions@hsr-material.iam.gserviceaccount.com
