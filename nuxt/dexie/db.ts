@@ -4,6 +4,7 @@ import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {SyncedUserData, UserDocument} from "~/types/firestore/user-document"
 import {DataSyncError} from "~/libs/data-sync-error"
+import {migrate} from "~/utils/migrate"
 
 export class MySubClassedDexie extends Dexie {
   /**
@@ -39,12 +40,17 @@ export class MySubClassedDexie extends Dexie {
   }
 
   importRemote(data: UserDocument) {
-    // remote schema version is newer than local schema version
+    let userData = data.data
+
     if (data.schemaVersion > this.verno) {
+      // remote schema version is newer than local schema version
       throw new DataSyncError("mnt/schema-ver-mismatch", "Remote schema version is newer than local schema version")
+    } else if (data.schemaVersion < this.verno) {
+      // remote schema version is older than local schema version
+      userData = migrate(userData, data.schemaVersion, this.verno)
     }
 
-    return this.import(data.data)
+    return this.import(userData)
   }
 }
 
