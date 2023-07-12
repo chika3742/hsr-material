@@ -1,1 +1,3 @@
 lib/**/*
+!.env.hsr-material-dev
+!.env.hsr-material

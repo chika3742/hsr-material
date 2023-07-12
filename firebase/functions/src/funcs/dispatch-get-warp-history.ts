@@ -1,14 +1,17 @@
 import functions from "firebase-functions"
+import {defineInt} from "firebase-functions/params"
 import {getFunctions} from "firebase-admin/functions"
 import {firestoreCollections} from "../lib/firestore-collections.js"
 import {DispatchGetWarpHistoryParams, DispatchGetWarpHistoryResult} from "../types/shared/dispatch-get-warp-history"
 import {GetWarpHistoryParams} from "../types/get-warp-history-params"
 import {warpHistoryTicketConverter} from "../utils/warp-history-ticket-converter.js"
 
+const minInstancesConfig = defineInt("MIN_INSTANCES", {default: 0})
+
 export const dispatchGetWarpHistory = functions
   .region("asia-northeast1")
   .runWith({
-    minInstances: 1,
+    minInstances: minInstancesConfig,
   })
   .https.onCall((data: DispatchGetWarpHistoryParams, context): Promise<DispatchGetWarpHistoryResult> => {
     if (!context.app) {
