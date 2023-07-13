@@ -1,5 +1,6 @@
 import {Stat} from "~/types/generated/relic-stats.g"
 import {Usage} from "~/types/bookmark/usage"
+import {CharacterIdWithVariant} from "~/types/strings"
 
 export type Bookmark =
   | Bookmark.CharacterMaterial
@@ -17,6 +18,7 @@ export namespace Bookmark {
     id?: number
     type: "character_material"
     bookmarkedAt: Date
+    characterId: CharacterIdWithVariant
     materialId: string
     usage: Usage.Character
     quantity: number
@@ -26,6 +28,7 @@ export namespace Bookmark {
     id?: number
     type: "light_cone_material"
     bookmarkedAt: Date
+    characterId: CharacterIdWithVariant
     materialId: string
     usage: Usage.LightCone
     quantity: number
@@ -35,6 +38,7 @@ export namespace Bookmark {
     id?: number
     type: "character_exp" | "light_cone_exp"
     bookmarkedAt: Date
+    characterId: CharacterIdWithVariant
     usage: Usage.Exp
     exp: number
     selectedItem: string
@@ -44,8 +48,7 @@ export namespace Bookmark {
     id?: number
     type: "relic_set"
     bookmarkedAt: Date
-    characterId: string
-    variant: string | null
+    characterId: CharacterIdWithVariant
     relicSetIds: string[]
     mainStats: Record<string, Stat | null>
     subStats: Stat[]
@@ -55,8 +58,7 @@ export namespace Bookmark {
     id?: number
     type: "relic_piece"
     bookmarkedAt: Date
-    characterId: string
-    variant: string | null
+    characterId: CharacterIdWithVariant
     relicPieceId: string
     mainStat: Stat | null
     subStats: Stat[]

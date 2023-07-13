@@ -38,10 +38,10 @@ export class BookmarksProvider extends DbProvider {
   getLevelingItems(items: BookmarkableIngredient[], purposeTypes: PurposeType[], upperLevel?: number) {
     const firstItem = items[0]
     // query all bookmarks with the same characterId
-    return this.bookmarks.where("usage.characterId").equals(firstItem.usage.characterId)
+    return this.bookmarks.where("characterId").equals(firstItem.characterId)
       .and((e) => {
-        // filter by type and variant
-        if (e.type !== firstItem.type || e.usage.variant !== firstItem.usage.variant) {
+        // filter by type
+        if (e.type !== firstItem.type) {
           return false
         }
 
@@ -77,13 +77,9 @@ export class BookmarksProvider extends DbProvider {
   }
 
   getByPurpose(characterId: string, variant: string | null, lightConeId: string | undefined, purposeType: PurposeType) {
-    return this.bookmarks.where("usage.characterId").equals(characterId)
+    return this.bookmarks.where("characterId").equals(toCharacterIdWithVariant(characterId, variant))
       .and((e) => {
         const item = e as BookmarkableIngredient
-
-        if (item.usage.variant !== variant) {
-          return false
-        }
 
         switch (item.type) {
           case "character_exp":
@@ -125,7 +121,7 @@ export class BookmarksProvider extends DbProvider {
       const ids = (await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})) as number[]
 
       // add bookmark ids to bookmarkCharacters
-      const characterId = toCharacterIdWithVariant(data[0].usage.characterId, data[0].usage.variant)
+      const characterId = data[0].characterId
       const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
       if (bookmarkCharacter) {
         await this.bookmarkCharacters.update(characterId, {

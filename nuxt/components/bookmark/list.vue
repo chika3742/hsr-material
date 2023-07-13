@@ -3,28 +3,30 @@
 
 import {useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
-import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
+import _ from "lodash"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {_db} from "~/dexie/db"
 
-const bookmarkCharacters = useObservable<BookmarkCharacter[], BookmarkCharacter[]>(liveQuery(() => _db.bookmarkCharacters.toArray()) as any, {
-  initialValue: [],
-})
 const bookmarks = useObservable<Bookmark[], Bookmark[]>(liveQuery(() => _db.bookmarks.toArray()) as any, {
   initialValue: [],
 })
+
+const bookmarkCharacters = computed(() => {
+  return _.groupBy(bookmarks.value, v => v.characterId)
+})
+
 </script>
 
 <template>
   <div class="bookmark-cards-wrapper">
     <BookmarkCharacterCard
-      v-for="character in bookmarkCharacters"
-      :key="character.characterId"
-      :bookmarks="bookmarks.filter(e => character.bookmarks.includes(e.id!))"
-      :character="character.characterId"
+      v-for="(characterBookmarks, characterId) in bookmarkCharacters"
+      :key="characterId"
+      :bookmarks="characterBookmarks"
+      :character="characterId"
     />
 
-    <div v-if="bookmarkCharacters.length === 0" class="no-bookmarks">
+    <div v-if="Object.keys(bookmarkCharacters).length === 0" class="no-bookmarks">
       {{ tx("bookmark.noBookmarks") }}
     </div>
   </div>

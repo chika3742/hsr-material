@@ -21,6 +21,13 @@ export class MySubClassedDexie extends Dexie {
       bookmarks: "++id, usage.characterId",
       warps: "id, gachaType",
     })
+
+    this.version(2).stores({
+      bookmarkCharacters: null,
+      bookmarks: "++id, characterId",
+    }).upgrade(async() => {
+      await this.import(migrate(await this.dump(), 1, 2))
+    })
   }
 
   dump() {
