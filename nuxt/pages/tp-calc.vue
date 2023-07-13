@@ -51,6 +51,8 @@ const remainingTime = computed(() => {
   }
   return i18n.t("tpCalcPage.duration", _remainingTime.shiftToAll().toObject() as Record<string, number>)
 })
+
+const showWastedTp = ref(false)
 </script>
 
 <template>
@@ -88,7 +90,12 @@ const remainingTime = computed(() => {
           </tr>
           <tr>
             <td>{{ $t('tpCalcPage.wastedTp') }}</td>
-            <td>{{ getWastedTpCount(config.tpCount, baseTime) ?? "-" }}</td>
+            <td>
+              <v-btn v-if="!showWastedTp" variant="text" @click="showWastedTp = true">
+                {{ tx("tpCalcPage.show") }}
+              </v-btn>
+              <span v-show="showWastedTp">{{ getWastedTpCount(config.tpCount, baseTime) ?? "-" }}</span>
+            </td>
           </tr>
         </tbody>
       </v-table>
