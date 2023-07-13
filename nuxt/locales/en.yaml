@@ -259,6 +259,7 @@ tpCalcPage:
   alreadyReplenished: Already fully replenished.
   rangeError: Please enter a number between 0 and 180.
   wastedTp: Wasted TP
+  show: Show
   howToUse: |
     ## How to Use
     
