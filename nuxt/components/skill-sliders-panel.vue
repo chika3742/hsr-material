@@ -88,13 +88,12 @@ const ingredients = computed<BookmarkableItem[]>(() => {
     return e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
       .map(f => f.ingredients.map<BookmarkableItem>(g => ({
         type: "character_material",
+        characterId: toCharacterIdWithVariant(props.characterId, props.variant),
         materialId: getMaterialIdFromIngredient(g, props.materialDefs)!,
         quantity: g.quantity!.rarities[characterRarity.toString()],
         usage: {
           type: "character",
-          variant: props.variant,
           upperLevel: f.level,
-          characterId: props.characterId,
           purposeType: e.type,
         },
       }))).flat()
