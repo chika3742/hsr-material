@@ -1,7 +1,7 @@
 import {doc, DocumentReference, Firestore, getDoc, onSnapshot, setDoc, Timestamp} from "@firebase/firestore"
 import {User} from "@firebase/auth"
 import {configStoreToSyncedConfig, UserDocument} from "~/types/firestore/user-document"
-import {simpleFirestoreConverter} from "~/utils/simple-firestore-converter"
+import {userDocumentConverter} from "~/utils/user-document-converter"
 import {MySubClassedDexie} from "~/dexie/db"
 import {DataSyncError} from "~/libs/data-sync-error"
 import {useConfigStore} from "~/store/config"
@@ -23,7 +23,7 @@ export class FirestoreProvider {
     public readonly db: MySubClassedDexie,
   ) {
     this.userDoc = doc(this.firestore, "users", this.user.uid)
-      .withConverter(simpleFirestoreConverter<UserDocument>())
+      .withConverter(userDocumentConverter<UserDocument>())
   }
 
   async fetch(): Promise<UserDocument | undefined> {
