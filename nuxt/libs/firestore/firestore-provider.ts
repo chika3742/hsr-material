@@ -23,7 +23,7 @@ export class FirestoreProvider {
     public readonly db: MySubClassedDexie,
   ) {
     this.userDoc = doc(this.firestore, "users", this.user.uid)
-      .withConverter(userDocumentConverter<UserDocument>())
+      .withConverter(userDocumentConverter)
   }
 
   async fetch(): Promise<UserDocument | undefined> {
