@@ -1,16 +1,11 @@
 import Dexie, {Table} from "dexie"
 import {Warp} from "#shared/warp"
-import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {SyncedUserData, UserDocument} from "~/types/firestore/user-document"
 import {DataSyncError} from "~/libs/data-sync-error"
 import {migrate} from "~/utils/migrate"
 
 export class MySubClassedDexie extends Dexie {
-  /**
-   * Characters that have bookmarks (for redundancy)
-   */
-  bookmarkCharacters!: Table<BookmarkCharacter>
   bookmarks!: Table<Bookmark>
   warps!: Table<Warp>
 

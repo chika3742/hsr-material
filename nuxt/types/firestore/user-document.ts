@@ -1,7 +1,6 @@
 import {Timestamp} from "@firebase/firestore"
 import {Warp} from "#shared/warp"
 import {StoreDefinition} from "pinia"
-import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {useConfigStore} from "~/store/config"
 
@@ -13,7 +12,6 @@ export interface UserDocument {
 }
 
 export interface SyncedUserData {
-  bookmarkCharacters: BookmarkCharacter[]
   bookmarks: Bookmark[]
   warps: Warp[]
 }

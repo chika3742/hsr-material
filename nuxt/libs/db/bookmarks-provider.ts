@@ -1,6 +1,5 @@
 import {Table} from "dexie"
 import {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
-import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
 import {BookmarkableRelic} from "~/types/bookmarkable-relic"
 import {
   BookmarkableCharacterMaterial,
@@ -18,12 +17,10 @@ import {DbProvider} from "~/libs/db/db-provider"
  */
 export class BookmarksProvider extends DbProvider {
   bookmarks: Table<Bookmark>
-  bookmarkCharacters: Table<BookmarkCharacter>
 
   constructor() {
     super()
     this.bookmarks = _db.bookmarks
-    this.bookmarkCharacters = _db.bookmarkCharacters
   }
 
   /**
@@ -95,13 +92,13 @@ export class BookmarksProvider extends DbProvider {
   }
 
   /**
-   * Adds {@link LevelingBookmark}s to the database. Also adds bookmark ids to {@link BookmarkCharacter}.
+   * Adds {@link LevelingBookmark}s to the database.
    *
    * @param data List of {@link LevelingBookmark}s to add
    * @param selectedItem Selected item (only for exp)
    */
   addLevelingItems<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined) {
-    return this.transactionWithFirestore([this.bookmarks, this.bookmarkCharacters], async() => {
+    return this.transactionWithFirestore([this.bookmarks], async() => {
       const dataToSave: LevelingBookmark[] = data.map((e) => {
         if (isBookmarkableExp(e)) {
           return {
@@ -118,66 +115,30 @@ export class BookmarksProvider extends DbProvider {
       })
 
       // add bookmarks
-      const ids = (await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})) as number[]
-
-      // add bookmark ids to bookmarkCharacters
-      const characterId = data[0].characterId
-      const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
-      if (bookmarkCharacter) {
-        await this.bookmarkCharacters.update(characterId, {
-          bookmarks: bookmarkCharacter.bookmarks.concat(ids),
-        })
-      } else {
-        await this.bookmarkCharacters.add({
-          characterId,
-          bookmarks: ids,
-        })
-      }
+      await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})
     })
   }
 
   /**
-   * Removes {@link LevelingBookmark}s from the database. Also removes bookmark ids from {@link BookmarkCharacter}.
+   * Removes {@link LevelingBookmark}s from the database.
    *
    * @param ids List of ids to remove
    */
   remove(...ids: number[]) {
-    return this.transactionWithFirestore([this.bookmarks, this.bookmarkCharacters], async() => {
+    return this.transactionWithFirestore([this.bookmarks], async() => {
       await this.bookmarks.bulkDelete(ids)
-
-      // remove bookmark ids from bookmarkCharacters
-      await this.bookmarkCharacters.where("bookmarks").anyOf(ids).modify((bookmarkCharacter) => {
-        bookmarkCharacter.bookmarks = bookmarkCharacter.bookmarks.filter(id => !ids.includes(id))
-      })
-
-      // remove bookmarkCharacters with no bookmarks
-      await this.bookmarkCharacters.filter(e => e.bookmarks.length === 0).delete()
     })
   }
 
   addRelic(data: BookmarkableRelic) {
-    return this.transactionWithFirestore([this.bookmarks, this.bookmarkCharacters], async() => {
+    return this.transactionWithFirestore([this.bookmarks], async() => {
       const dataToSave: RelicBookmark = {
         ...data,
         bookmarkedAt: new Date(),
       }
 
       // add bookmark
-      const id = (await this.bookmarks.add(dataToSave)) as number
-
-      // add bookmark id to bookmarkCharacters
-      const characterId = toCharacterIdWithVariant(data.characterId, data.variant)
-      const bookmarkCharacter = await this.bookmarkCharacters.get(characterId)
-      if (bookmarkCharacter) {
-        await this.bookmarkCharacters.update(characterId, {
-          bookmarks: bookmarkCharacter.bookmarks.concat(id),
-        })
-      } else {
-        await this.bookmarkCharacters.add({
-          characterId,
-          bookmarks: [id],
-        })
-      }
+      await this.bookmarks.add(dataToSave)
     })
   }
 }
