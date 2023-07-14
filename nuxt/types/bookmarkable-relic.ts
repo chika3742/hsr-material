@@ -1,10 +1,10 @@
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {Stat} from "~/types/generated/relic-stats.g"
+import {CharacterIdWithVariant} from "~/types/strings"
 
 export class BookmarkableRelicSet implements Omit<Bookmark.RelicSet, "id" | "bookmarkedAt"> {
   relicSetIds: string[]
-  characterId: string
-  variant: string | null
+  characterId: CharacterIdWithVariant
   mainStats: Record<string, Stat | null>
   subStats: Stat[]
   type = "relic_set" as const
@@ -14,14 +14,12 @@ export class BookmarkableRelicSet implements Omit<Bookmark.RelicSet, "id" | "boo
     this.mainStats = data.mainStats
     this.relicSetIds = data.relicSetIds
     this.subStats = data.subStats
-    this.variant = data.variant
   }
 }
 
 export class BookmarkableRelicPiece implements Omit<Bookmark.RelicPiece, "id" | "bookmarkedAt"> {
   relicPieceId: string
-  characterId: string
-  variant: string | null
+  characterId: CharacterIdWithVariant
   mainStat: Stat | null
   subStats: Stat[]
   type = "relic_piece" as const
@@ -31,7 +29,6 @@ export class BookmarkableRelicPiece implements Omit<Bookmark.RelicPiece, "id" | 
     this.mainStat = data.mainStat
     this.relicPieceId = data.relicPieceId
     this.subStats = data.subStats
-    this.variant = data.variant
   }
 }
 
