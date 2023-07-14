@@ -5,9 +5,7 @@ import {initializeAppCheck, ReCaptchaV3Provider} from "@firebase/app-check"
 import {connectFirestoreEmulator, initializeFirestore, persistentLocalCache} from "@firebase/firestore"
 
 export default defineNuxtPlugin(({$config}) => {
-  const app = initializeApp($config.public.isProdBranch
-    ? $config.public.firebaseConfigProd
-    : $config.public.firebaseConfigDev)
+  const app = initializeApp($config.public.firebaseConfig)
 
   if (process.dev) {
     self.FIREBASE_APPCHECK_DEBUG_TOKEN = true
