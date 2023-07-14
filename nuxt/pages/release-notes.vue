@@ -24,7 +24,7 @@
               <span class="font-weight-bold">{{ getVersionText(item) }}</span>
               <span style="font-size: 0.8em">{{ item.date }}</span>
             </div>
-            <div style="font-size: 0.9em" v-html="marked.parse(item.content)" />
+            <div style="font-size: 0.9em; margin-top: -8px" v-html="marked.parse(item.content)" />
           </div>
         </v-timeline-item>
       </v-timeline>
