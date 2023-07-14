@@ -142,7 +142,21 @@ export class BookmarksProvider extends DbProvider {
         logEvent($analytics, "bookmark_removed", {
           item_type: item.type,
           character_id: item.characterId,
-          item_id: item.type === "character_material" || item.type === "light_cone_material" ? item.materialId : undefined,
+          item_id: (() => {
+            switch (item.type) {
+              case "character_material":
+              case "light_cone_material":
+                return item.materialId
+
+              case "relic_set":
+                return item.relicSetIds
+
+              case "relic_piece":
+                return item.relicPieceId
+            }
+
+            return undefined
+          })(),
         })
       }
 
