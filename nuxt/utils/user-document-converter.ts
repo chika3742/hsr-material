@@ -1,9 +1,6 @@
 import {FirestoreDataConverter, QueryDocumentSnapshot, Timestamp} from "@firebase/firestore"
 import {UserDocument} from "~/types/firestore/user-document"
 
-/**
- * Creates a FirestoreDataConverter that does not convert anything. This only
- */
 export const userDocumentConverter: FirestoreDataConverter<UserDocument> = {
   toFirestore: (modelObject: UserDocument) => modelObject,
   fromFirestore(snapshot: QueryDocumentSnapshot<UserDocument>): UserDocument {
