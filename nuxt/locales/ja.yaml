@@ -1,8 +1,7 @@
 common:
-  appName: 崩壊：スターレイル素材ノート
+  appName: 崩壊：スターレイル 素材ノート (β)
   gameName: 崩壊：スターレイル
   nonProdWarning: これは開発版であり、不具合や今後変更される機能が含まれる可能性が比較的高いです。
-  betaWarning: これはベータ版であり、不具合や今後変更される機能が含まれる可能性があります。
   backToHome: ホームに戻る
   ok: OK
   cancel: キャンセル
@@ -56,7 +55,7 @@ pageTitles:
   materials: 素材一覧(逆引き)
   materialDetails: 素材 / {materialId}
   sync: データ同期
-  warps: 跳躍天井カウンター(β)
+  warps: 跳躍天井カウンター
   tpCalc: 開拓力回復時刻計算機
   releaseNotes: 更新履歴
   terms: 利用規約
@@ -308,6 +307,13 @@ aboutPage:
     ## 開発者について
     
     大学2年(休学中)。ごちうさ難民。
+
+releaseNotesPage:
+  legends: 凡例
+  color: カラー
+  desc: 説明
+  orangeDesc: 機能関連の追加や改善を含む
+  lightBlueDesc: キャラ・武器等のデータ追加のみ
 
 paths:
   abundance: 豊穣

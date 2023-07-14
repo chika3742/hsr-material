@@ -2,8 +2,6 @@
 
 Tools for Honkai: Star Rail
 
-Alpha version website is live at [alpha.hsr-material.chikach.net](https://alpha.hsr-material.chikach.net/)
-
 ## Development (Nuxt)
 
 If you are using IntelliJ IDEA (or any other Jetbrains IDE), you can use the provided run configurations to run the dev
@@ -13,6 +11,12 @@ server.
 
 - Node.js 18.x
 - Yarn 1.x
+
+### Environment Variables
+
+- `FIREBASE_CONFIG`: Firebase config JSON string
+- `ALGOLIA_SEARCH_API_KEY`: Algolia search API key. App ID and index name are in `algolia.json`.
+- `RECAPTCHA_SITE_KEY`: reCAPTCHA site key
 
 ### Setup
 

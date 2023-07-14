@@ -1,9 +1,23 @@
 # コピー用改行
 
+- date: 2023/07/15
+  funcVersion: 1.0.0-beta.3
+  dataVersion: 1.0.0
+  isMajor: false
+  content: |
+    ### 調整
+    
+    * 更新履歴ページのレイアウト調整と凡例表示の改善
+    * ベータ版バナーの削除
+    
+    ### 修正
+    
+    * 遺物ブックマーク時、「開拓者(壊滅)」と「開拓者(存護)」が区別されない不具合の修正
+
 - date: 2023/07/14
   funcVersion: 1.0.0-beta.2
   dataVersion: 1.0.0
-  isMajor: true
+  isMajor: false
   content: |
     ### 修正
     
