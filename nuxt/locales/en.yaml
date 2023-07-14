@@ -283,6 +283,13 @@ aboutPage:
     
     2nd year of university (on leave).
 
+releaseNotesPage:
+  legends: Legends
+  color: Color
+  desc: Description
+  orangeDesc: Additions and improvements related to features
+  lightBlueDesc: Data addition of characters, weapons, etc.
+
 paths:
   abundance: Abundance
   destruction: Destruction

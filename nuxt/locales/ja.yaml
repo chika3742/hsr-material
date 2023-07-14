@@ -308,6 +308,13 @@ aboutPage:
     
     大学2年(休学中)。ごちうさ難民。
 
+releaseNotesPage:
+  legends: 凡例
+  color: カラー
+  desc: 説明
+  orangeDesc: 機能関連の追加や改善
+  lightBlueDesc: キャラ・武器等のデータ追加
+
 paths:
   abundance: 豊穣
   destruction: 壊滅
