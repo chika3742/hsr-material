@@ -1,6 +1,15 @@
 # コピー用改行
 
 - date: 2023/07/14
+  funcVersion: 1.0.0-beta.2
+  dataVersion: 1.0.0
+  isMajor: true
+  content: |
+    ### 修正
+    
+    * 製品版扱いの動作にならない問題の修正
+
+- date: 2023/07/14
   funcVersion: 1.0.0-beta.1
   dataVersion: 1.0.0
   isMajor: true
