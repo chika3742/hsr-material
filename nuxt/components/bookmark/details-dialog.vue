@@ -39,7 +39,7 @@ const purposes = computed(() => {
 })
 
 const getSkillTitle = (item: LevelingBookmark) => {
-  return tx(i18n, `skillTitles.${toCharacterIdWithVariant(item.usage.characterId, item.usage.variant).replace("_", ".")}.${item.usage.purposeType}`)
+  return tx(i18n, `skillTitles.${item.characterId.replace("_", ".")}.${item.usage.purposeType}`)
 }
 
 const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {

@@ -1,15 +1,11 @@
 import Dexie, {Table} from "dexie"
 import {Warp} from "#shared/warp"
-import {BookmarkCharacter} from "~/types/bookmark/bookmark-character"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {SyncedUserData, UserDocument} from "~/types/firestore/user-document"
 import {DataSyncError} from "~/libs/data-sync-error"
+import {migrate} from "~/utils/migrate"
 
 export class MySubClassedDexie extends Dexie {
-  /**
-   * Characters that have bookmarks (for redundancy)
-   */
-  bookmarkCharacters!: Table<BookmarkCharacter>
   bookmarks!: Table<Bookmark>
   warps!: Table<Warp>
 
@@ -19,6 +15,13 @@ export class MySubClassedDexie extends Dexie {
       bookmarkCharacters: "characterId, *bookmarks",
       bookmarks: "++id, usage.characterId",
       warps: "id, gachaType",
+    })
+
+    this.version(2).stores({
+      bookmarkCharacters: null,
+      bookmarks: "++id, characterId",
+    }).upgrade(async() => {
+      await this.import(migrate(await this.dump(), 1, 2))
     })
   }
 
@@ -39,12 +42,17 @@ export class MySubClassedDexie extends Dexie {
   }
 
   importRemote(data: UserDocument) {
-    // remote schema version is newer than local schema version
+    let userData = data.data
+
     if (data.schemaVersion > this.verno) {
+      // remote schema version is newer than local schema version
       throw new DataSyncError("mnt/schema-ver-mismatch", "Remote schema version is newer than local schema version")
+    } else if (data.schemaVersion < this.verno) {
+      // remote schema version is older than local schema version
+      userData = migrate(userData, data.schemaVersion, this.verno)
     }
 
-    return this.import(data.data)
+    return this.import(userData)
   }
 }
 

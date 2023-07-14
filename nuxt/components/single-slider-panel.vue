@@ -82,8 +82,6 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
     if (f.exp) {
       usage = {
         type: "exp",
-        characterId: props.characterId,
-        variant: props.variant,
         lightConeId: props.lightConeId ?? null,
         purposeType: "ascension",
         upperLevel: e.level,
@@ -91,8 +89,6 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
     } else if (props.lightConeId) {
       usage = {
         type: "light_cone",
-        characterId: props.characterId,
-        variant: props.variant,
         lightConeId: props.lightConeId,
         purposeType: "ascension",
         upperLevel: e.level,
@@ -100,8 +96,6 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
     } else {
       usage = {
         type: "character",
-        characterId: props.characterId,
-        variant: props.variant,
         purposeType: "ascension",
         upperLevel: e.level,
       }
@@ -110,6 +104,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
     if (usage.type === "exp") {
       const result: BookmarkableExp = {
         type: props.lightConeId ? "light_cone_exp" : "character_exp",
+        characterId: toCharacterIdWithVariant(props.characterId, props.variant),
         exp: f.exp!.rarities[rarity.toString()],
         usage,
       }
@@ -123,6 +118,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
       if (usage.type === "character") {
         result = {
           type: "character_material",
+          characterId: toCharacterIdWithVariant(props.characterId, props.variant),
           materialId: getMaterialIdFromIngredient(f, props.materialDefs),
           quantity: f.quantity.rarities[rarity.toString()],
           usage,
@@ -130,6 +126,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
       } else {
         result = {
           type: "light_cone_material",
+          characterId: toCharacterIdWithVariant(props.characterId, props.variant),
           materialId: getMaterialIdFromIngredient(f, props.materialDefs),
           quantity: f.quantity.rarities[rarity.toString()],
           usage,

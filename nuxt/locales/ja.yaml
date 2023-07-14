@@ -276,6 +276,7 @@ tpCalcPage:
   alreadyReplenished: すでに全回復しました
   rangeError: 0以上180未満の値を入力してください
   wastedTp: 無駄にした開拓力
+  show: 表示
   howToUse: |
     ## 使い方
     
