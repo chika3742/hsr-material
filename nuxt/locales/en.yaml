@@ -1,8 +1,7 @@
 common:
-  appName: "Honkai: Star Rail Material Note"
+  appName: "Honkai: Star Rail Material Note (Beta)"
   gameName: "Honkai: Star Rail"
   nonProdWarning: This is an development version, so it may contain bugs or features that will be changed in the future.
-  betaWarning: This is a beta version, so it may contain bugs or features that will be changed in the future.
   backToHome: Back to Home
   ok: OK
   cancel: Cancel
