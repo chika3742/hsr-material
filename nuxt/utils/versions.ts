@@ -34,8 +34,8 @@ export const getCurrentVersionText = () => {
  * Generates version string from {@link ReleaseNote}.
  *
  * @param releaseNote {@link ReleaseNote}
- * @returns {string} e.g. `1.0.0_D1.0.0`
+ * @returns {string} e.g. `v1.0.0_D1.0.0`
  */
 export const getVersionText = (releaseNote: ReleaseNote) => {
-  return `${releaseNote.funcVersion}_D${releaseNote.dataVersion}`
+  return `v${releaseNote.funcVersion}_D${releaseNote.dataVersion}`
 }
