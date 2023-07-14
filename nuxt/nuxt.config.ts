@@ -10,6 +10,7 @@ import algoliaConfig from "./algolia.json"
 import {generateSchemas} from "./scripts/generate-schemas"
 import {generateLocType} from "./scripts/generate-loc-type"
 
+const prodBranch = "main"
 const hostname = "https://hsr.matnote.app"
 const routes: string[] = []
 
@@ -115,25 +116,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      isProdBranch: process.env.CF_PAGES_BRANCH === "main",
+      isProdBranch: process.env.CF_PAGES_BRANCH === prodBranch,
       useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
-      firebaseConfigDev: {
-        apiKey: "AIzaSyDNEmiGxBoKLpT0Tf9SNR16sjPBacIoTic",
-        authDomain: "www.chikach.net",
-        projectId: "hsr-material-dev",
-        storageBucket: "hsr-material-dev.appspot.com",
-        messagingSenderId: "599812122174",
-        appId: "1:599812122174:web:6f0365509fa6cb15c1536f",
-      },
-      firebaseConfigProd: {
-        apiKey: "AIzaSyA1OsOCOJLXJRTweW380HjVPij87mY8weI",
-        authDomain: "www.chikach.net",
-        projectId: "hsr-material",
-        storageBucket: "hsr-material.appspot.com",
-        messagingSenderId: "14422071885",
-        appId: "1:14422071885:web:1120af7eab909844861a04",
-      },
-      recaptchaSiteKey: "6Le1pOIlAAAAAJk7pXcslkL7zaEUsPPxnMGmXyOx",
+      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG ?? "{}"),
+      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
       algolia: {
         appId: algoliaConfig.appId,
         apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
