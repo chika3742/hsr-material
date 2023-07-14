@@ -1,4 +1,5 @@
 import {Table} from "dexie"
+import {logEvent} from "@firebase/analytics"
 import {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
 import {BookmarkableRelic} from "~/types/bookmarkable-relic"
 import {
@@ -116,6 +117,15 @@ export class BookmarksProvider extends DbProvider {
 
       // add bookmarks
       await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})
+    }).then(() => {
+      const {$analytics} = useNuxtApp()
+      logEvent($analytics, "bookmark_added", {
+        item_type: data[0].type,
+        character_id: data[0].characterId,
+        item_id: !isBookmarkableExp(data[0]) ? data[0].materialId : undefined,
+      })
+
+      return null
     })
   }
 
@@ -126,6 +136,16 @@ export class BookmarksProvider extends DbProvider {
    */
   remove(...ids: number[]) {
     return this.transactionWithFirestore([this.bookmarks], async() => {
+      const item = await this.bookmarks.get(ids[0])
+      if (item) {
+        const {$analytics} = useNuxtApp()
+        logEvent($analytics, "bookmark_removed", {
+          item_type: item.type,
+          character_id: item.characterId,
+          item_id: item.type === "character_material" || item.type === "light_cone_material" ? item.materialId : undefined,
+        })
+      }
+
       await this.bookmarks.bulkDelete(ids)
     })
   }
@@ -139,6 +159,15 @@ export class BookmarksProvider extends DbProvider {
 
       // add bookmark
       await this.bookmarks.add(dataToSave)
+    }).then(() => {
+      const {$analytics} = useNuxtApp()
+      logEvent($analytics, "bookmark_added", {
+        item_type: data.type,
+        character_id: data.characterId,
+        item_id: data.type === "relic_set" ? data.relicSetIds : data.relicPieceId,
+      })
+
+      return null
     })
   }
 }
