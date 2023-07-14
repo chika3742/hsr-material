@@ -36,8 +36,8 @@
 
           <v-spacer />
 
-          <div class="warning-overlay-banner">
-            <span>{{ isProd ? tx("common.betaWarning") : tx("common.nonProdWarning") }}</span>
+          <div v-if="!isProd" class="warning-overlay-banner">
+            <span>{{ tx("common.nonProdWarning") }}</span>
           </div>
           <AppFooter />
         </div>
