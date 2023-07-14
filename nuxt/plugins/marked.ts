@@ -7,6 +7,16 @@ export default defineNuxtPlugin(() => {
         const renderer = new marked.Renderer()
 
         renderer.link = (href, title, text) => {
+          const pullMatch = href?.match(/^https:\/\/github\.com\/.+?\/.+?\/pull\/(\d+)/)
+          if (pullMatch) {
+            text = `#${pullMatch[1]}`
+          }
+
+          const compareMatch = href?.match(/^https:\/\/github\.com\/.+?\/.+?\/compare\/(.+?)\.\.\.(.+?)$/)
+          if (compareMatch) {
+            text = `${compareMatch[1]}...${compareMatch[2]}`
+          }
+
           return `<a href="${href}" title="${title ?? ""}" target="_blank" rel="noopener noreferrer">${text}</a>`
         }
 

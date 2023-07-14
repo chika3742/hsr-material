@@ -3,17 +3,20 @@
     <section>
       <h2>{{ $t("pageTitles.releaseNotes") }}</h2>
 
-      <v-timeline align="start" side="end">
+      <div class="mt-4">
+        <v-progress-circular v-if="pending" indeterminate />
+      </div>
+
+      <v-timeline v-if="data" align="start" side="end">
         <v-timeline-item
-          v-for="(item, i) in releaseNotes"
+          v-for="(item, i) in data"
           :key="i"
-          :dot-color="item.funcVersion !== releaseNotes[i + 1]?.funcVersion ? '#ffc046' : '#40fff8'"
-          :size="item.isMajor ? 'default' : 'small'"
+          :dot-color="item.tag_name.startsWith('v') ? '#ffc046' : '#40fff8'"
         >
           <template #opposite>
             <div v-show="!$vuetify.display.smAndDown" class="changelog-title">
-              <span class="font-weight-bold">{{ getVersionText(item) }}</span>
-              <span style="font-size: 0.8em">{{ item.date }}</span>
+              <span class="font-weight-bold">{{ item.tag_name }}</span>
+              <span style="font-size: 0.8em">{{ DateTime.fromISO(item.published_at).toFormat("yyyy/MM/dd") }}</span>
             </div>
           </template>
           <div class="d-flex flex-column">
@@ -21,10 +24,10 @@
               v-show="$vuetify.display.smAndDown"
               class="changelog-title--mobile"
             >
-              <span class="font-weight-bold">{{ getVersionText(item) }}</span>
-              <span style="font-size: 0.8em">{{ item.date }}</span>
+              <span class="font-weight-bold">{{ item.tag_name }}</span>
+              <span style="font-size: 0.8em">{{ DateTime.fromISO(item.published_at).toFormat("yyyy/MM/dd") }}</span>
             </div>
-            <div style="font-size: 0.9em" v-html="marked.parse(item.content)" />
+            <div style="font-size: 0.9em" v-html="marked.parse(item.body)" />
           </div>
         </v-timeline-item>
       </v-timeline>
@@ -55,7 +58,8 @@
 </template>
 
 <script lang="ts" setup>
-import releaseNotes from "~/assets/data/release-notes.yaml"
+import {Ref} from "vue"
+import {DateTime} from "luxon"
 
 definePageMeta({
   title: "releaseNotes",
@@ -64,6 +68,13 @@ definePageMeta({
 const {$marked} = useNuxtApp()
 
 const marked = $marked({})
+
+const {data: _data, pending} = useLazyFetch("https://api.github.com/repos/chika3742/hsr-material/releases")
+const data = _data as Ref<{
+  tag_name: string
+  published_at: string
+  body: string
+}[] | null>
 </script>
 
 <style lang="sass">
