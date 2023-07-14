@@ -31,22 +31,26 @@
     </section>
 
     <section>
-      <h2>凡例</h2>
+      <h2>{{ tx("releaseNotesPage.legends") }}</h2>
       <v-table>
         <thead>
           <tr>
-            <th>カラー</th>
-            <th>説明</th>
+            <th>{{ tx("releaseNotesPage.color") }}</th>
+            <th>{{ tx("releaseNotesPage.desc") }}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>オレンジ</td>
-            <td>機能関連の更新を含みます</td>
+            <td>
+              <div style="background: #ffc046; width: 20px; height: 20px; border-radius: 50%" />
+            </td>
+            <td>{{ tx("releaseNotesPage.orangeDesc") }}</td>
           </tr>
           <tr>
-            <td>水色</td>
-            <td>キャラ・武器等のデータ追加のみの更新です</td>
+            <td>
+              <div style="background: #40fff8; width: 20px; height: 20px; border-radius: 50%" />
+            </td>
+            <td>{{ tx("releaseNotesPage.lightBlueDesc") }}</td>
           </tr>
         </tbody>
       </v-table>
