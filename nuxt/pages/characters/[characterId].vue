@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
 import {CharacterVariant} from "~/types/generated/characters.g"
+import {useConfigStore} from "~/store/config"
 
 definePageMeta({
   title: "characterDetails",
@@ -9,6 +10,7 @@ definePageMeta({
 
 const route = useRoute()
 const router = useRouter()
+const config = useConfigStore()
 
 if (!characters.some(e => e.id === route.params.characterId)) {
   throw createError({statusCode: 404, message: "Page not found", fatal: true})
@@ -36,9 +38,12 @@ onActivated(() => {
 
 <template>
   <div>
-    <v-row align="center" no-gutters>
+    <v-row align="center" class="g-4" no-gutters>
+      <!-- character image -->
       <v-img :src="getCharacterImage(character.id, 'small')" max-width="80" />
-      <div class="ml-4 d-flex flex-column" style="gap: 4px">
+
+      <!-- character info -->
+      <div class="d-flex flex-column" style="gap: 4px">
         <div>
           <v-icon v-for="i of character.rarity" :key="i" color="star" size="18">
             mdi-star
@@ -62,6 +67,14 @@ onActivated(() => {
           <span class="ml-1">{{ tx(`combatTypes.${currentVariant.combatType}` as const) }}</span>
         </div>
       </div>
+
+      <!-- Is owned checkbox -->
+      <v-checkbox-btn
+        v-if="character.id !== 'trailblazer'"
+        v-model="config.ownedCharacters"
+        :label="tx('characterDetailsPage.iHave')"
+        :value="character.id"
+      />
     </v-row>
 
     <client-only>

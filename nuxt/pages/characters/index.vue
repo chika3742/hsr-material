@@ -1,28 +1,40 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
 import {CombatType, Path} from "~/types/generated/characters.g"
+import {useConfigStore} from "~/store/config"
+import {reactive} from "#imports"
 
 definePageMeta({
   title: "characters",
 })
 
+const config = useConfigStore()
+
 const paths = new Set(characters.map(e => e.path ?? "destruction"))
 const combatTypes = new Set(characters.map(e => e.combatType ?? "physical"))
 
-const filter = ref({
+const filter = reactive({
   rarity: [] as number[],
   path: [] as Path[],
   combatType: [] as CombatType[],
+  possessionStatus: [] as ("owned" | "not-owned")[],
 })
 
 const filteredCharacters = computed(() => {
   return characters.filter((character) => {
-    if (filter.value.path.length > 0 && (!character.path || !filter.value.path.includes(character.path))) {
+    if (filter.path.length > 0 && (!character.path || !filter.path.includes(character.path))) {
       return false
-    } else if (filter.value.combatType.length > 0 && (!character.combatType || !filter.value.combatType.includes(character.combatType))) {
+    } else if (filter.combatType.length > 0 && (!character.combatType || !filter.combatType.includes(character.combatType))) {
       return false
-    } else if (filter.value.rarity.length > 0 && !filter.value.rarity.includes(character.rarity)) {
+    } else if (filter.rarity.length > 0 && !filter.rarity.includes(character.rarity)) {
       return false
+    } else if (filter.possessionStatus.length > 0) {
+      const owned = [...config.ownedCharacters, "trailblazer"] // Trailblazer is always owned
+      if (filter.possessionStatus[0] === "owned" && !owned.includes(character.id)) {
+        return false
+      } else if (filter.possessionStatus[0] === "not-owned" && owned.includes(character.id)) {
+        return false
+      }
     }
 
     return true
@@ -33,11 +45,24 @@ const filteredCharacters = computed(() => {
 <template>
   <div>
     <v-row no-gutters>
+      <!-- filter button -->
       <v-btn :color="Object.values(filter).some(e => e.length >= 1) ? 'star' : ''" prepend-icon="mdi-filter">
         <span>{{ tx("common.filter") }}</span>
         <client-only>
           <v-menu activator="parent" :close-on-content-click="false" max-width="400px">
             <v-card>
+              <div>
+                <div class="filter-row-title">
+                  {{ tx("charactersPage.possessionStatus") }}
+                </div>
+                <v-list v-model:selected="filter.possessionStatus">
+                  <v-row no-gutters>
+                    <v-list-item :title="tx('charactersPage.owned')" prepend-icon="mdi-check" value="owned" />
+                    <v-list-item :title="tx('charactersPage.notOwned')" prepend-icon="mdi-close" value="not-owned" />
+                  </v-row>
+                </v-list>
+              </div>
+              <v-divider />
               <div>
                 <div class="filter-row-title">
                   {{ tx("common.rarity") }}
@@ -105,6 +130,7 @@ const filteredCharacters = computed(() => {
         </client-only>
       </v-btn>
     </v-row>
+
     <v-row no-gutters class="mt-4" style="gap: 16px">
       <CharacterCard v-for="character in filteredCharacters" :key="character.id" :character="character" />
     </v-row>
