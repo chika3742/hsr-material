@@ -24,6 +24,10 @@ export const useConfigStore = defineStore("config", {
      * Whether to show the pity history in Warps Pity Counter.
      */
     warpsShowPityList: false,
+    /**
+     * Owned characters.
+     */
+    ownedCharacters: [] as string[],
   }),
   actions: {
     /**
