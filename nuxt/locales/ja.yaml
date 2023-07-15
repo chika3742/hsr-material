@@ -83,7 +83,13 @@ bookmark:
   completeLeveling: 育成完了
   completeLevelingDesc: これより上のブックマークをすべて解除します。
 
+charactersPage:
+  possessionStatus: 所持状況
+  owned: 所持
+  notOwned: 未所持
+
 characterDetailsPage:
+  iHave: 所持
   ascension: キャラLvアップ/昇格素材
   skills: スキルLvアップ素材
 
@@ -164,7 +170,7 @@ warpsPage:
   urlInput: URL入力
   get: "跳躍を取得"
   clear: "跳躍をクリア"
-  progress: "{n} 件の跳躍を取得しました"
+  progress: "取得済みの跳躍数: {gachaCount} ({gachaTypeCount}/{gachaTypeTotal})"
   preparing: 履歴取得の準備をしています...
   getPityHistory: 天井カウントの履歴を表示
   getPityHistoryDesc: オンにすると過去6ヶ月の全ての履歴を取得し、☆4/☆5天井カウントの履歴を確認できますが、初回の取得に時間がかかります。変更するには、跳躍履歴をクリアする必要があります。

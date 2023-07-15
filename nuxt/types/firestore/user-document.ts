@@ -17,11 +17,12 @@ export interface SyncedUserData {
 }
 
 export type SyncedConfig = typeof useConfigStore extends StoreDefinition<any, infer S> ?
-  Pick<S, "warpsUrl" | "tpCount" | "tpBaseTime" | "warpsShowPityList"> : never
+  Pick<S, "warpsUrl" | "tpCount" | "tpBaseTime" | "warpsShowPityList" | "ownedCharacters"> : never
 
 export const configStoreToSyncedConfig = (config: ReturnType<typeof useConfigStore>): SyncedConfig => ({
   warpsUrl: config.warpsUrl,
   tpCount: config.tpCount,
   tpBaseTime: config.tpBaseTime,
   warpsShowPityList: config.warpsShowPityList,
+  ownedCharacters: config.ownedCharacters,
 })

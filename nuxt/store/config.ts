@@ -24,13 +24,17 @@ export const useConfigStore = defineStore("config", {
      * Whether to show the pity history in Warps Pity Counter.
      */
     warpsShowPityList: false,
+    /**
+     * Owned characters.
+     */
+    ownedCharacters: [] as string[],
   }),
   actions: {
     /**
-     * Gets the actual theme to set. (This method is in `actions` to avoid caching the result.)
+     * Gets the actual theme to set. (To avoid caching the result, this method is an action.)
      *
-     * If the theme is set to "auto", it will return "dark" or "light" depending on the user's OS.
-     * otherwise, it will return the theme set by the user.
+     * If the theme is set to `auto`, it will return `dark` or `light` depending on the user's OS settings.
+     * Otherwise, it will return the theme set in app.
      */
     getCurrentTheme() {
       if (this.theme === "auto") {

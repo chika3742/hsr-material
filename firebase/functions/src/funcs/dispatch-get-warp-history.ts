@@ -5,6 +5,7 @@ import {firestoreCollections} from "../lib/firestore-collections.js"
 import {DispatchGetWarpHistoryParams, DispatchGetWarpHistoryResult} from "../types/shared/dispatch-get-warp-history"
 import {GetWarpHistoryParams} from "../types/get-warp-history-params"
 import {warpHistoryTicketConverter} from "../utils/warp-history-ticket-converter.js"
+import {GachaLogRequest} from "../lib/gacha-log-request.js"
 
 const minInstancesConfig = defineInt("MIN_INSTANCES", {default: 0})
 
@@ -26,7 +27,11 @@ export const dispatchGetWarpHistory = functions
 
     return doc.set({
       status: "processing",
-      count: 0,
+      progress: {
+        gachaCount: 0,
+        gachaTypeCount: 1,
+        gachaTypeTotal: GachaLogRequest.warpTypes.length,
+      },
       timestamp: Date.now(),
     }).then(() => {
       return queue.enqueue({

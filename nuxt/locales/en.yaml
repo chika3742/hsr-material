@@ -85,7 +85,13 @@ bookmark:
   completeLeveling: Complete Leveling
   completeLevelingDesc: Removes all bookmarks above this.
 
+charactersPage:
+  possessionStatus: Possession Status
+  owned: Owned
+  notOwned: Not Owned
+
 characterDetailsPage:
+  iHave: I have this character.
   ascension: Ascension / Character Level Up Materials
   skills: Skill Leveling Materials
 
@@ -167,7 +173,7 @@ warpsPage:
   urlInput: URL Input
   get: "Get Warps"
   clear: "Clear Warps"
-  progress: "Fetched {n} @:{'warpsPage.warp'}"
+  progress: "Fetched {gachaCount} warp(s) ({gachaTypeCount}/{gachaTypeTotal})"
   preparing: Preparing...
   invalidUrl: Invalid URL
   getPityHistory: Show Pity History
