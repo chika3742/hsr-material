@@ -20,7 +20,7 @@ export class GachaLogRequest {
 
     for (const i in GachaLogRequest.warpTypes) {
       this.onProgress({
-        "progress.gachaTypeCount": parseInt(i),
+        "progress.gachaTypeCount": parseInt(i) + 1,
       })
       result.push(...await this.getGachaLogForWarpType(GachaLogRequest.warpTypes[i].toString()))
     }
