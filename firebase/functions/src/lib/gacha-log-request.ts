@@ -3,7 +3,6 @@ import {sleep} from "../utils/sleep.js"
 import {GetWarpHistoryParams} from "../types/get-warp-history-params"
 import {Warp} from "../types/shared/warp"
 import {GetWarpHistoryError} from "../types/shared/get-warp-history-error.js"
-import {WarpGettingProgress} from "../types/shared/warp-history-ticket"
 
 export class GachaLogRequest {
   static readonly warpTypes = [11, 12, 1]
@@ -12,7 +11,7 @@ export class GachaLogRequest {
 
   constructor(
     private readonly params: GetWarpHistoryParams,
-    private readonly onProgress: (progress: WarpGettingProgress) => void,
+    private readonly onProgress: (updateProgress: { [key: string]: number }) => void,
   ) {
   }
 
@@ -20,14 +19,17 @@ export class GachaLogRequest {
     const result: Warp[] = []
 
     for (const i in GachaLogRequest.warpTypes) {
-      result.push(...await this.getGachaLogForWarpType(GachaLogRequest.warpTypes, parseInt(i)))
+      this.onProgress({
+        "progress.gachaTypeCount": parseInt(i),
+      })
+      result.push(...await this.getGachaLogForWarpType(GachaLogRequest.warpTypes[i].toString()))
     }
 
     return result
   }
 
-  async getGachaLogForWarpType(warpTypes: number[], n: number): Promise<Warp[]> {
-    const lastId = this.params.lastIds[warpTypes[n]]
+  async getGachaLogForWarpType(warpType: string): Promise<Warp[]> {
+    const lastId = this.params.lastIds[warpType]
     const result: Warp[] = []
     let endLoop = false
     let lastIdTemp: string | null = null
@@ -36,7 +38,7 @@ export class GachaLogRequest {
     let has4Star = false
 
     while (!endLoop) {
-      const list: Warp[] = await this.sendGachaLogRequest(warpTypes[n].toString(), lastIdTemp)
+      const list: Warp[] = await this.sendGachaLogRequest(warpType, lastIdTemp)
 
       if (list.length === 0) {
         break
@@ -66,9 +68,7 @@ export class GachaLogRequest {
       lastIdTemp = list.splice(-1)[0].id
 
       this.onProgress({
-        gachaCount: this.processedCount,
-        gachaTypeCount: n + 1,
-        gachaTypeTotal: warpTypes.length,
+        "progress.gachaCount": this.processedCount,
       })
 
       await sleep(1000)

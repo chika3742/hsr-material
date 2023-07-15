@@ -9,10 +9,8 @@ export class WarpHistoryHandler {
     const doc = firestoreCollections.warpHistoryTickets.doc(params.ticketId)
       .withConverter(warpHistoryTicketConverter)
 
-    return new GachaLogRequest(params, async(progress) => {
-      await firestoreCollections.warpHistoryTickets.doc(doc.id).update({
-        progress,
-      })
+    return new GachaLogRequest(params, async(updateProgress) => {
+      await firestoreCollections.warpHistoryTickets.doc(doc.id).update(updateProgress)
     }).getGachaLogForAllWarpTypes().then((result) => {
       return doc.update({
         status: "done",
