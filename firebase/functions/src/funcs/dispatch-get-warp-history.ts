@@ -5,7 +5,7 @@ import {firestoreCollections} from "../lib/firestore-collections.js"
 import {DispatchGetWarpHistoryParams, DispatchGetWarpHistoryResult} from "../types/shared/dispatch-get-warp-history"
 import {GetWarpHistoryParams} from "../types/get-warp-history-params"
 import {warpHistoryTicketConverter} from "../utils/warp-history-ticket-converter.js"
-import {GachaLogRequest} from "../lib/gacha-log-request"
+import {GachaLogRequest} from "../lib/gacha-log-request.js"
 
 const minInstancesConfig = defineInt("MIN_INSTANCES", {default: 0})
 
