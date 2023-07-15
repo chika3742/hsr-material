@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
 import {CombatType, Path} from "~/types/generated/characters.g"
+import {reactive} from "#imports"
 
 definePageMeta({
   title: "characters",
@@ -9,7 +10,7 @@ definePageMeta({
 const paths = new Set(characters.map(e => e.path ?? "destruction"))
 const combatTypes = new Set(characters.map(e => e.combatType ?? "physical"))
 
-const filter = ref({
+const filter = reactive({
   rarity: [] as number[],
   path: [] as Path[],
   combatType: [] as CombatType[],
@@ -17,11 +18,11 @@ const filter = ref({
 
 const filteredCharacters = computed(() => {
   return characters.filter((character) => {
-    if (filter.value.path.length > 0 && (!character.path || !filter.value.path.includes(character.path))) {
+    if (filter.path.length > 0 && (!character.path || !filter.path.includes(character.path))) {
       return false
-    } else if (filter.value.combatType.length > 0 && (!character.combatType || !filter.value.combatType.includes(character.combatType))) {
+    } else if (filter.combatType.length > 0 && (!character.combatType || !filter.combatType.includes(character.combatType))) {
       return false
-    } else if (filter.value.rarity.length > 0 && !filter.value.rarity.includes(character.rarity)) {
+    } else if (filter.rarity.length > 0 && !filter.rarity.includes(character.rarity)) {
       return false
     }
 
