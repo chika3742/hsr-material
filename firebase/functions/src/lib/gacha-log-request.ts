@@ -3,29 +3,31 @@ import {sleep} from "../utils/sleep.js"
 import {GetWarpHistoryParams} from "../types/get-warp-history-params"
 import {Warp} from "../types/shared/warp"
 import {GetWarpHistoryError} from "../types/shared/get-warp-history-error.js"
+import {WarpGettingProgress} from "../types/shared/warp-history-ticket"
 
 export class GachaLogRequest {
-  constructor(
-    private readonly params: GetWarpHistoryParams,
-    private readonly onProgress: (processedCount: number) => void,
-  ) {}
+  static readonly warpTypes = [11, 12, 1]
 
   private processedCount = 0
+
+  constructor(
+    private readonly params: GetWarpHistoryParams,
+    private readonly onProgress: (progress: WarpGettingProgress) => void,
+  ) {
+  }
 
   async getGachaLogForAllWarpTypes(): Promise<Warp[]> {
     const result: Warp[] = []
 
-    const warpTypes = [11, 12, 1]
-
-    for (const warpType of warpTypes) {
-      result.push(...await this.getGachaLogForWarpType(warpType.toString()))
+    for (const i in GachaLogRequest.warpTypes) {
+      result.push(...await this.getGachaLogForWarpType(GachaLogRequest.warpTypes, parseInt(i)))
     }
 
     return result
   }
 
-  async getGachaLogForWarpType(warpType: string): Promise<Warp[]> {
-    const lastId = this.params.lastIds[warpType]
+  async getGachaLogForWarpType(warpTypes: number[], n: number): Promise<Warp[]> {
+    const lastId = this.params.lastIds[warpTypes[n]]
     const result: Warp[] = []
     let endLoop = false
     let lastIdTemp: string | null = null
@@ -34,7 +36,7 @@ export class GachaLogRequest {
     let has4Star = false
 
     while (!endLoop) {
-      const list: Warp[] = await this.sendGachaLogRequest(warpType, lastIdTemp)
+      const list: Warp[] = await this.sendGachaLogRequest(warpTypes[n].toString(), lastIdTemp)
 
       if (list.length === 0) {
         break
@@ -63,7 +65,11 @@ export class GachaLogRequest {
 
       lastIdTemp = list.splice(-1)[0].id
 
-      this.onProgress(this.processedCount)
+      this.onProgress({
+        gachaCount: this.processedCount,
+        gachaTypeCount: n + 1,
+        gachaTypeTotal: warpTypes.length,
+      })
 
       await sleep(1000)
     }

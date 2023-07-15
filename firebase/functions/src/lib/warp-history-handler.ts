@@ -11,12 +11,13 @@ export class WarpHistoryHandler {
 
     return new GachaLogRequest(params, async(progress) => {
       await firestoreCollections.warpHistoryTickets.doc(doc.id).update({
-        count: progress,
+        progress,
       })
     }).getGachaLogForAllWarpTypes().then((result) => {
       return doc.update({
         status: "done",
-        count: result.length,
+        // @ts-ignore
+        "progress.gachaCount": result.length,
         result,
       })
     }).catch((error) => {
