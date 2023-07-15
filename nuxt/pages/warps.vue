@@ -37,7 +37,7 @@
         </v-row>
         <div v-show="fetching" class="mt-2" style="text-align: end">
           {{
-            fetchedCount !== null ? i18n.t("warpsPage.progress", fetchedCount) : $t('warpsPage.preparing')
+            fetchProgress !== null ? i18n.t("warpsPage.progress", fetchProgress) : $t('warpsPage.preparing')
           }}
         </div>
       </section>
@@ -65,6 +65,7 @@ import {useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
 import {Warp} from "#shared/warp"
 import _ from "lodash"
+import {WarpGettingProgress} from "#shared/warp-history-ticket"
 import {ref} from "#imports"
 import {useConfigStore} from "~/store/config"
 import {WarpsApi} from "~/libs/warps-api"
@@ -85,7 +86,7 @@ const {$functions, $firestore} = useNuxtApp()
 
 const url = ref(config.warpsUrl)
 const error = ref("")
-const fetchedCount = ref<number | null>(null)
+const fetchProgress = ref<WarpGettingProgress | null>(null)
 const fetching = ref(false)
 
 const warpTypes: {
@@ -129,7 +130,7 @@ const groupedWarps = computed(() => {
 })
 
 const getWarps = async() => {
-  fetchedCount.value = null
+  fetchProgress.value = null
   error.value = ""
   fetching.value = true
 
@@ -179,7 +180,7 @@ const registerStatusListener = (api: WarpsApi) => {
 
     switch (data.status) {
       case "processing":
-        fetchedCount.value = data.count
+        fetchProgress.value = data.progress
         break
 
       case "done":

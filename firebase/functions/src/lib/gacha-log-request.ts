@@ -5,20 +5,24 @@ import {Warp} from "../types/shared/warp"
 import {GetWarpHistoryError} from "../types/shared/get-warp-history-error.js"
 
 export class GachaLogRequest {
-  constructor(
-    private readonly params: GetWarpHistoryParams,
-    private readonly onProgress: (processedCount: number) => void,
-  ) {}
+  static readonly warpTypes = [11, 12, 1]
 
   private processedCount = 0
+
+  constructor(
+    private readonly params: GetWarpHistoryParams,
+    private readonly onProgress: (updateProgress: { [key: string]: number }) => void,
+  ) {
+  }
 
   async getGachaLogForAllWarpTypes(): Promise<Warp[]> {
     const result: Warp[] = []
 
-    const warpTypes = [11, 12, 1]
-
-    for (const warpType of warpTypes) {
-      result.push(...await this.getGachaLogForWarpType(warpType.toString()))
+    for (const i in GachaLogRequest.warpTypes) {
+      this.onProgress({
+        "progress.gachaTypeCount": parseInt(i) + 1,
+      })
+      result.push(...await this.getGachaLogForWarpType(GachaLogRequest.warpTypes[i].toString()))
     }
 
     return result
@@ -63,7 +67,9 @@ export class GachaLogRequest {
 
       lastIdTemp = list.splice(-1)[0].id
 
-      this.onProgress(this.processedCount)
+      this.onProgress({
+        "progress.gachaCount": this.processedCount,
+      })
 
       await sleep(1000)
     }
