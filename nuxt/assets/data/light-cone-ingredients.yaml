@@ -7,17 +7,16 @@ expItems:
     expPerItem: 500
 
 levels:
-  # TODO: Add light cone exp for rarity 3
   '20':
     - exp:
         rarities:
-          '3': 0
+          '3': 16000
           '4': 21500
           '5': 26500
   '30':
     - exp:
         rarities:
-          '3': 0
+          '3': 26000
           '4': 34500
           '5': 43000
     - type: common
@@ -36,7 +35,7 @@ levels:
   '40':
     - exp:
         rarities:
-          '3': 0
+          '3': 36000
           '4': 48000
           '5': 59500
     - type: primary
@@ -62,7 +61,7 @@ levels:
   '50':
     - exp:
         rarities:
-          '3': 0
+          '3': 55500
           '4': 74000
           '5': 92500
     - type: primary
@@ -88,7 +87,7 @@ levels:
   '60':
     - exp:
         rarities:
-          '3': 0
+          '3': 86500
           '4': 115000
           '5': 143500
     - type: primary
@@ -114,7 +113,7 @@ levels:
   '70':
     - exp:
         rarities:
-          '3': 0
+          '3': 131500
           '4': 175000
           '5': 218500
     - type: primary
@@ -140,7 +139,7 @@ levels:
   '80':
     - exp:
         rarities:
-          '3': 0
+          '3': 248000
           '4': 330500
           '5': 413000
     - type: primary
