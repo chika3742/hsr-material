@@ -51,7 +51,13 @@ const selectedCharacter = ref<CharacterIdWithVariant>()
       <EmphasizedText :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)" class="pl-4 mt-1" />
     </section>
 
-    <CharacterSelect v-model="selectedCharacter" class="mt-4" max-width="300px" />
+    <CharacterSelect
+      v-model="selectedCharacter"
+      :characters="$characterSelectItems"
+      :label="tx('relicDetailsPage.characterToEquip')"
+      class="mt-4"
+      max-width="300px"
+    />
 
     <v-expansion-panels mandatory="force">
       <SingleSliderPanel
