@@ -9,17 +9,16 @@ expItems:
 purposeTypes:
   ascension:
     levels:
-      # TODO: Add character exp for rarity 5
       '20':
         - exp:
             rarities:
               '4': 113000
-              '5': 0
+              '5': 113000
       '30':
         - exp:
             rarities:
               '4': 178000
-              '5': 0
+              '5': 178000
         - type: common
           craftLevel: 1
           quantity:
@@ -35,7 +34,7 @@ purposeTypes:
         - exp:
             rarities:
               '4': 207000
-              '5': 0
+              '5': 207000
         - type: common
           craftLevel: 1
           quantity:
@@ -51,7 +50,7 @@ purposeTypes:
         - exp:
             rarities:
               '4': 390000
-              '5': 0
+              '5': 390000
         - type: ascension
           quantity:
             rarities:
@@ -72,7 +71,7 @@ purposeTypes:
         - exp:
             rarities:
               '4': 823000
-              '5': 0
+              '5': 823000
         - type: ascension
           quantity:
             rarities:
@@ -93,7 +92,7 @@ purposeTypes:
         - exp:
             rarities:
               '4': 1327000
-              '5': 0
+              '5': 1327000
         - type: ascension
           quantity:
             rarities:
@@ -114,7 +113,7 @@ purposeTypes:
         - exp:
             rarities:
               '4': 2763000
-              '5': 0
+              '5': 2763000
         - type: ascension
           quantity:
             rarities:
