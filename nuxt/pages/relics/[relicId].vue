@@ -119,19 +119,17 @@ const bookmarkPiece = (piece: RelicPiece) => {
       <v-expansion-panel :title="tx('relicDetailsPage.recommendedCharacters')" text="Coming soon..." />
     </v-expansion-panels>
 
-    <client-only>
-      <RelicSetChooseDialog
-        v-model="chooseRelicSetDialog"
-        :current-set-id="relicSet.id"
-        @ok-pressed="bookmarkSets($event)"
-      />
+    <RelicSetChooseDialog
+      v-model="chooseRelicSetDialog"
+      :current-set-id="relicSet.id"
+      @ok-pressed="bookmarkSets($event)"
+    />
 
-      <RelicSetBookmarkDialog
-        v-model="relicSetBookmarkDialog.show"
-        :relic-piece="relicSetBookmarkDialog.relicPiece"
-        :relic-sets="relicSetBookmarkDialog.relicSets"
-      />
-    </client-only>
+    <RelicBookmarkDialog
+      v-model="relicSetBookmarkDialog.show"
+      :relic-piece="relicSetBookmarkDialog.relicPiece"
+      :relic-sets="relicSetBookmarkDialog.relicSets"
+    />
   </div>
 </template>
 
