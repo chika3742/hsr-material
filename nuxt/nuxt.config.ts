@@ -40,6 +40,7 @@ export default defineNuxtConfig({
   },
   css: ["assets/styles/global.sass"],
   modules: [
+    "mhy-material-components",
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
@@ -176,5 +177,9 @@ export default defineNuxtConfig({
 
   piniaPersistedstate: {
     storage: "localStorage",
+  },
+
+  mhyMaterialComponents: {
+    injectVuetify: false,
   },
 })
