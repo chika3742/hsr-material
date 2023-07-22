@@ -10,7 +10,7 @@ import algoliaConfig from "./algolia.json"
 import {generateSchemas} from "./scripts/generate-schemas"
 import {generateLocType} from "./scripts/generate-loc-type"
 
-const prodBranch = "main"
+const prodBranch = "live"
 const hostname = "https://hsr.matnote.app"
 const routes: string[] = []
 
