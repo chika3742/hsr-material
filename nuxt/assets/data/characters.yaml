@@ -293,3 +293,27 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs007
     skillsAdvanced: id:guardians-lament
+
+- id: yukong
+  $nameJA: 御空
+  yomi: ギョクウ
+  rarity: 4
+  path: harmony
+  combatType: imaginary
+  materials:
+    common: group:com006
+    ascension: id:golden-crown-of-the-past-shadow
+    skills: group:lcs006
+    skillsAdvanced: id:destroyers-final-road
+
+- id: blade
+  $nameJA: 刃
+  yomi: ジン
+  rarity: 5
+  path: destruction
+  combatType: wind
+  materials:
+    common: group:com005
+    ascension: id:ascendant-debris
+    skills: group:lcs005
+    skillsAdvanced: id:regret-of-infinite-ochema

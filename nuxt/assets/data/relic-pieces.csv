@@ -63,3 +63,15 @@ guards-cast-iron-helmet,兵士の鉄製ヘルム,guard-of-wuthering-snow,head,�
 guards-shining-gauntlets,兵士の銀鱗ガントレット,guard-of-wuthering-snow,hands,ヘイシノギンリンガントレット
 guards-uniform-of-old,兵士の旧制軍服,guard-of-wuthering-snow,body,ヘイシノキュウセイグンプク
 guards-silver-greaves,兵士の白銀グリーブ,guard-of-wuthering-snow,feet,ヘイシノハクギングリーブ
+disciples-prosthetic-eye,蒔者の光をもたらす義眼,longevous-disciple,head,
+disciples-ingenium-hand,蒔者の機巧義手,longevous-disciple,hands,
+disciples-dewy-feather-garb,蒔者の露払いの羽衣,longevous-disciple,body,
+disciples-celestial-silk-sandals,蒔者の天人絲鞋,longevous-disciple,feet,
+messengers-holovisor,メッセンジャーのホログラフィーゴーグル,messenger-traversing-hackerspace,head,
+messengers-transformative-arm,メッセンジャーの百変義手,messenger-traversing-hackerspace,hands,
+messengers-secret-satchel,メッセンジャーの密書ショルダーバッグ,messenger-traversing-hackerspace,body,
+messengers-par-kool-sneakers,メッセンジャーのパルクールシューズ,messenger-traversing-hackerspace,feet,
+taikiyan-laser-stadium,タイキヤンのレーザー球場,rutilant-arena,planar_sphere,
+taikiyans-arclight-race-track,タイキヤンのアークトラック,rutilant-arena,link_rope,
+insumousus-whalefall-ship,伊須磨州の沈没遺跡,broken-keel,planar_sphere,
+insumousus-frayed-hawser,伊須磨州の千切れたホーサー,broken-keel,link_rope,

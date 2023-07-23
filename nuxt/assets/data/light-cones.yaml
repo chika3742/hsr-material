@@ -542,3 +542,36 @@
   materials:
     primary: group:lcs007
     common: group:com002
+- id: before-the-tutorial-mission-starts
+  $nameJA: 初めてのクエストの前に
+  yomi: ハジメテノクエストノマエニ
+  rarity: 4
+  path: nihility
+  materials:
+    primary: group:lcs004
+    common: group:com002
+- id: incessant-rain
+  $nameJA: 降りやまぬ雨
+  yomi: フリヤマヌアメ
+  rarity: 5
+  path: nihility
+  materials:
+    primary: group:lcs004
+    common: group:com004
+- id: echoes-of-the-coffin
+  $nameJA: 棺のこだま
+  yomi: ヒツギノコダマ
+  rarity: 5
+  path: abundance
+  materials:
+    primary: group:lcs007
+    common: group:com006
+
+- id: the-unreachable-side
+  $nameJA: 着かない彼岸
+  yomi: ツカナイヒガン
+  rarity: 5
+  path: destruction
+  materials:
+    primary: group:lcs005
+    common: group:com005
