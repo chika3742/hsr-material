@@ -567,3 +567,11 @@
     primary: group:lcs007
     common: group:com006
 
+- id: the-unreachable-side
+  $nameJA: 着かない彼岸
+  yomi: ツカナイヒガン
+  rarity: 5
+  path: destruction
+  materials:
+    primary: group:lcs005
+    common: group:com005

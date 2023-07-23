@@ -306,3 +306,14 @@
     skills: group:lcs006
     skillsAdvanced: id:destroyers-final-road
 
+- id: blade
+  $nameJA: 刃
+  yomi: ジン
+  rarity: 5
+  path: destruction
+  combatType: wind
+  materials:
+    common: group:com005
+    ascension: id:ascendant-debris
+    skills: group:lcs005
+    skillsAdvanced: id:regret-of-infinite-ochema

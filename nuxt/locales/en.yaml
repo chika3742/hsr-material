@@ -386,6 +386,7 @@ characterNames:
   trailblazer: Trailblazer
   trailblazer_destruction: Trailblazer (Destruction)
   trailblazer_preservation: Trailblazer (Preservation)
+  blade: Blade
 
 materialCategories:
   exp: EXP Materials
@@ -455,6 +456,8 @@ materialNames:
   sparse-aether: Sparse Aether
   condensed-aether: Condensed Aether
   refined-aether: Refined Aether
+  ascendant-debris: Ascendant Debris
+  regret-of-infinite-ochema: Regret of Infinite Ochema
 
 skillTitles:
   trailblazer:
@@ -588,6 +591,11 @@ skillTitles:
     skill: Emboldening Salvo
     ultimate: Diving Kestrel
     talent: Seven Layers, One Arrow
+  blade:
+    basicAttack: Shard Sword
+    skill: Hellscape
+    ultimate: Death Sentence
+    talent: Shuhu's Gift
 
 lightConeNames:
   arrows: Arrows
@@ -661,6 +669,7 @@ lightConeNames:
   before-the-tutorial-mission-starts: Before the Tutorial Mission Starts
   incessant-rain: Incessant Rain
   echoes-of-the-coffin: Echoes of the Coffin
+  the-unreachable-side: The Unreachable Side
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -823,7 +832,10 @@ lightConeSkillDescriptions:
     different enemy target the wearer hits, regenerates <3> Energy. Each attack
     can regenerate Energy up to 3 time(s) this way. After the wearer uses their
     Ultimate, all allies gain <12> SPD for 1 turn.
-
+  the-unreachable-side: >-
+    Increases the wearer's CRIT rate by <18%> and increases their Max HP by <18%>.
+    When the wearer is attacked or consumes their own HP, their DMG increases by <24%>.
+    This effect is removed after the wearer uses an attack.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
