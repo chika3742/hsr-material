@@ -386,6 +386,7 @@ characterNames:
   trailblazer: Trailblazer
   trailblazer_destruction: Trailblazer (Destruction)
   trailblazer_preservation: Trailblazer (Preservation)
+  blade: Blade
 
 materialCategories:
   exp: EXP Materials
@@ -455,6 +456,8 @@ materialNames:
   sparse-aether: Sparse Aether
   condensed-aether: Condensed Aether
   refined-aether: Refined Aether
+  ascendant-debris: Ascendant Debris
+  regret-of-infinite-ochema: Regret of Infinite Ochema
 
 skillTitles:
   trailblazer:
@@ -583,6 +586,16 @@ skillTitles:
     skill: Singing Among Clouds
     ultimate: Felicitous Thunderleap
     talent: Gourdful of Elixir
+  yukong:
+    basicAttack: Arrowslinger
+    skill: Emboldening Salvo
+    ultimate: Diving Kestrel
+    talent: Seven Layers, One Arrow
+  blade:
+    basicAttack: Shard Sword
+    skill: Hellscape
+    ultimate: Death Sentence
+    talent: Shuhu's Gift
 
 lightConeNames:
   arrows: Arrows
@@ -653,6 +666,10 @@ lightConeNames:
   something-irreplaceable: Something Irreplaceable
   dance-dance-dance: Dance! Dance! Dance!
   past-and-future: Past and Future
+  before-the-tutorial-mission-starts: Before the Tutorial Mission Starts
+  incessant-rain: Incessant Rain
+  echoes-of-the-coffin: Echoes of the Coffin
+  the-unreachable-side: The Unreachable Side
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -800,6 +817,25 @@ lightConeSkillDescriptions:
   past-and-future: >-
     When the wearer uses their Skill, the next ally taking action (except the
     wearer) deals <16%> increased DMG for 1 turn(s).
+  before-the-tutorial-mission-starts: >-
+    Increases the wearer's Effect Hit Rate by <20%>. When the wearer attacks
+    DEF-reduced enemies, regenerates <4> Energy.
+  incessant-rain: >-
+    Increases the wearer's Effect Hit Rate by <24%>. When the wearer deals DMG to
+    an enemy that currently has 3 or more debuffs, increases the wearer's CRIT
+    Rate by <12%>. After the wearer uses their Basic ATK, Skill, or Ultimate,
+    there is a 100% base chance to implant Aether Code on a random hit target that
+    does not yet have it. Targets with Aether Code receive <12%> increased DMG for
+    1 turn.
+  echoes-of-the-coffin: >-
+    Increases the wearer's ATK by <24%>. After the wearer uses an attack, for each
+    different enemy target the wearer hits, regenerates <3> Energy. Each attack
+    can regenerate Energy up to 3 time(s) this way. After the wearer uses their
+    Ultimate, all allies gain <12> SPD for 1 turn.
+  the-unreachable-side: >-
+    Increases the wearer's CRIT rate by <18%> and increases their Max HP by <18%>.
+    When the wearer is attacked or consumes their own HP, their DMG increases by <24%>.
+    This effect is removed after the wearer uses an attack.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
@@ -822,6 +858,10 @@ relicSetTitles:
   inert-salsotto: Inert Salsotto
   talia-kingdom-of-banditry: 'Talia: Kingdom of Banditry'
   sprightly-vonwacq: Sprightly Vonwacq
+  longevous-disciple: Longevous Disciple
+  messenger-traversing-hackerspace: Messenger Traversing Hackerspace
+  rutilant-arena: Rutilant Arena
+  broken-keel: Broken Keel
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -917,6 +957,25 @@ relicSetEffects:
       Increases the wearer's Energy Regeneration Rate by <5%>. When the wearer's
       SPD reaches <120> or higher, the wearer's action is Advanced Forward by
       <40%> immediately upon entering battle.
+  longevous-disciple:
+    2pc: Increases Max HP by <12%>.
+    4pc: >-
+      When the wearer is hit or has their HP consumed by an ally or themselves,
+      their CRIT Rate increases by <8%> for <2> turn(s) and up to <2> stacks.
+  messenger-traversing-hackerspace:
+    2pc: Increases SPD by <6%>.
+    4pc: >-
+      When the wearer uses their Ultimate on an ally, SPD for all allies increases
+      by <12%> for <1> turn(s). This effect cannot be stacked.
+  rutilant-arena:
+    2pc: >-
+      Increases the wearer's CRIT Rate by <8%>. When the wearer's current CRIT
+      Rate reaches <70%> or higher, the wearer's Basic ATK and Skill DMG increase
+      by <20%>.
+  broken-keel:
+    2pc: >-
+      Increases the wearer's Effect RES by <10%>. When the wearer's Effect RES is
+      at <30%> or higher, all allies' CRIT DMG increases by <10%>.
 
 relicPieceNames:
   bands-polarized-sunglasses: Band's Polarized Sunglasses
@@ -983,3 +1042,15 @@ relicPieceNames:
   guards-shining-gauntlets: Guard's Shining Gauntlets
   guards-uniform-of-old: Guard's Uniform of Old
   guards-silver-greaves: Guard's Silver Greaves
+  disciples-prosthetic-eye: Disciple's Prosthetic Eye
+  disciples-ingenium-hand: Disciple's Ingenium Hand
+  disciples-dewy-feather-garb: Disciple's Dewy Feather Garb
+  disciples-celestial-silk-sandals: Disciple's Celestial Silk Sandals
+  messengers-holovisor: Messenger's Holovisor
+  messengers-transformative-arm: Messenger's Transformative Arm
+  messengers-secret-satchel: Messenger's Secret Satchel
+  messengers-par-kool-sneakers: Messenger's Par-kool Sneakers
+  taikiyan-laser-stadium: Taikiyan Laser Stadium
+  taikiyans-arclight-race-track: Taikiyan's Arclight Race Track
+  insumousus-whalefall-ship: Insumousu's Whalefall Ship
+  insumousus-frayed-hawser: Insumousu's Frayed Hawser
