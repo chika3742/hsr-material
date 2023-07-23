@@ -858,6 +858,10 @@ relicSetTitles:
   inert-salsotto: Inert Salsotto
   talia-kingdom-of-banditry: 'Talia: Kingdom of Banditry'
   sprightly-vonwacq: Sprightly Vonwacq
+  longevous-disciple: Longevous Disciple
+  messenger-traversing-hackerspace: Messenger Traversing Hackerspace
+  rutilant-arena: Rutilant Arena
+  broken-keel: Broken Keel
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -953,6 +957,25 @@ relicSetEffects:
       Increases the wearer's Energy Regeneration Rate by <5%>. When the wearer's
       SPD reaches <120> or higher, the wearer's action is Advanced Forward by
       <40%> immediately upon entering battle.
+  longevous-disciple:
+    2pc: Increases Max HP by <12%>.
+    4pc: >-
+      When the wearer is hit or has their HP consumed by an ally or themselves,
+      their CRIT Rate increases by <8%> for <2> turn(s) and up to <2> stacks.
+  messenger-traversing-hackerspace:
+    2pc: Increases SPD by <6%>.
+    4pc: >-
+      When the wearer uses their Ultimate on an ally, SPD for all allies increases
+      by <12%> for <1> turn(s). This effect cannot be stacked.
+  rutilant-arena:
+    2pc: >-
+      Increases the wearer's CRIT Rate by <8%>. When the wearer's current CRIT
+      Rate reaches <70%> or higher, the wearer's Basic ATK and Skill DMG increase
+      by <20%>.
+  broken-keel:
+    2pc: >-
+      Increases the wearer's Effect RES by <10%>. When the wearer's Effect RES is
+      at <30%> or higher, all allies' CRIT DMG increases by <10%>.
 
 relicPieceNames:
   bands-polarized-sunglasses: Band's Polarized Sunglasses
@@ -1019,3 +1042,15 @@ relicPieceNames:
   guards-shining-gauntlets: Guard's Shining Gauntlets
   guards-uniform-of-old: Guard's Uniform of Old
   guards-silver-greaves: Guard's Silver Greaves
+  disciples-prosthetic-eye: Disciple's Prosthetic Eye
+  disciples-ingenium-hand: Disciple's Ingenium Hand
+  disciples-dewy-feather-garb: Disciple's Dewy Feather Garb
+  disciples-celestial-silk-sandals: Disciple's Celestial Silk Sandals
+  messengers-holovisor: Messenger's Holovisor
+  messengers-transformative-arm: Messenger's Transformative Arm
+  messengers-secret-satchel: Messenger's Secret Satchel
+  messengers-par-kool-sneakers: Messenger's Par-kool Sneakers
+  taikiyan-laser-stadium: Taikiyan Laser Stadium
+  taikiyans-arclight-race-track: Taikiyan's Arclight Race Track
+  insumousus-whalefall-ship: Insumousu's Whalefall Ship
+  insumousus-frayed-hawser: Insumousu's Frayed Hawser
