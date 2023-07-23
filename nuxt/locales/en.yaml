@@ -583,6 +583,11 @@ skillTitles:
     skill: Singing Among Clouds
     ultimate: Felicitous Thunderleap
     talent: Gourdful of Elixir
+  yukong:
+    basicAttack: Arrowslinger
+    skill: Emboldening Salvo
+    ultimate: Diving Kestrel
+    talent: Seven Layers, One Arrow
 
 lightConeNames:
   arrows: Arrows
@@ -653,6 +658,9 @@ lightConeNames:
   something-irreplaceable: Something Irreplaceable
   dance-dance-dance: Dance! Dance! Dance!
   past-and-future: Past and Future
+  before-the-tutorial-mission-starts: Before the Tutorial Mission Starts
+  incessant-rain: Incessant Rain
+  echoes-of-the-coffin: Echoes of the Coffin
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -800,6 +808,22 @@ lightConeSkillDescriptions:
   past-and-future: >-
     When the wearer uses their Skill, the next ally taking action (except the
     wearer) deals <16%> increased DMG for 1 turn(s).
+  before-the-tutorial-mission-starts: >-
+    Increases the wearer's Effect Hit Rate by <20%>. When the wearer attacks
+    DEF-reduced enemies, regenerates <4> Energy.
+  incessant-rain: >-
+    Increases the wearer's Effect Hit Rate by <24%>. When the wearer deals DMG to
+    an enemy that currently has 3 or more debuffs, increases the wearer's CRIT
+    Rate by <12%>. After the wearer uses their Basic ATK, Skill, or Ultimate,
+    there is a 100% base chance to implant Aether Code on a random hit target that
+    does not yet have it. Targets with Aether Code receive <12%> increased DMG for
+    1 turn.
+  echoes-of-the-coffin: >-
+    Increases the wearer's ATK by <24%>. After the wearer uses an attack, for each
+    different enemy target the wearer hits, regenerates <3> Energy. Each attack
+    can regenerate Energy up to 3 time(s) this way. After the wearer uses their
+    Ultimate, all allies gain <12> SPD for 1 turn.
+
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
