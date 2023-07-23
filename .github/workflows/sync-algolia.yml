@@ -2,6 +2,8 @@ name: Sync Algolia Search Index
 
 on:
   push:
+    branches:
+      - live
     paths:
       - "nuxt/assets/data/characters.yaml"
       - "nuxt/assets/data/light-cones.yaml"
