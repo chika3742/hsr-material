@@ -178,6 +178,16 @@ export default defineNuxtConfig({
       globPatterns: [
         "**/*.{js,css,html,webp}",
       ],
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*$/,
+          handler: "StaleWhileRevalidate",
+        },
+        {
+          urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*$/,
+          handler: "StaleWhileRevalidate",
+        },
+      ],
     },
     manifest: {
       name: "崩壊：スターレイル 素材ノート",
@@ -190,6 +200,7 @@ export default defineNuxtConfig({
           type: "image/webp",
         },
       ],
+      lang: "ja",
     },
   },
 })
