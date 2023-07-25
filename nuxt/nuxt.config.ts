@@ -174,13 +174,19 @@ export default defineNuxtConfig({
       navigateFallbackAllowlist: [/^\/$/],
     },
     workbox: {
-      navigateFallback: "/",
       // globPatterns: [
       //   "**/*.{js,css,html,webp}",
       // ],
+      globIgnores: [
+        "**/*.*",
+      ],
       runtimeCaching: [
         {
-          urlPattern: "**/*.{js,css,html,webp}",
+          urlPattern: /.+(\/|\.html|\.js)$/,
+          handler: "NetworkFirst",
+        },
+        {
+          urlPattern: /.+(\.css|\.webp)$/,
           handler: "CacheFirst",
         },
         {
