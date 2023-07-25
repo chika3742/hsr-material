@@ -189,6 +189,9 @@ export default defineNuxtConfig({
         },
       ],
     },
+    client: {
+      installPrompt: true,
+    },
     manifest: {
       name: "崩壊：スターレイル 素材ノート",
       short_name: "スタレ素材",
