@@ -197,21 +197,21 @@ export default defineNuxtConfig({
       short_name: "スタレ素材",
       theme_color: "#b5f68b",
       background_color: "#888888",
+      lang: "ja",
       icons: [
         {
           src: "/pwa-x192.webp",
-          size: "192x192",
+          sizes: "192x192",
           type: "image/webp",
           purpose: "any",
         },
         {
           src: "/pwa-maskable-x192.webp",
-          size: "192x192",
+          sizes: "192x192",
           type: "image/webp",
           purpose: "maskable",
         },
       ],
-      lang: "ja",
     },
   },
 })
