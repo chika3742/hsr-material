@@ -83,8 +83,10 @@ const drawerItems: (DrawerItem | Divider)[] = [
     title: "install",
     if: computed(() => !$pwa.isInstalled),
     onClick() {
-      console.log(toRaw($pwa))
-      $pwa.install()
+      $pwa.showInstallPrompt = true
+      setTimeout(() => {
+        console.log(toRaw($pwa))
+      }, 3000)
     },
   },
 ]
