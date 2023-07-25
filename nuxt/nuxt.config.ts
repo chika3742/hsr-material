@@ -192,12 +192,20 @@ export default defineNuxtConfig({
     manifest: {
       name: "崩壊：スターレイル 素材ノート",
       short_name: "スタレ素材",
-      theme_color: "#2ed5bd",
+      theme_color: "#b5f68b",
+      background_color: "#888888",
       icons: [
         {
-          src: "/pwa-256x256.webp",
-          size: "256x256",
+          src: "/pwa-x192.webp",
+          size: "192x192",
           type: "image/webp",
+          purpose: "any",
+        },
+        {
+          src: "/pwa-maskable-x192.webp",
+          size: "192x192",
+          type: "image/webp",
+          purpose: "maskable",
         },
       ],
       lang: "ja",
