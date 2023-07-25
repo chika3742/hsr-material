@@ -39,6 +39,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
+    "@vite-pwa/nuxt",
   ],
   vite: {
     build: {
@@ -163,5 +164,32 @@ export default defineNuxtConfig({
 
   piniaPersistedstate: {
     storage: "localStorage",
+  },
+
+  pwa: {
+    registerType: "autoUpdate",
+    devOptions: {
+      enabled: process.env.NODE_ENV !== "production",
+      type: "module",
+      navigateFallbackAllowlist: [/^\/$/],
+    },
+    workbox: {
+      navigateFallback: "/",
+      globPatterns: [
+        "**/*.{js,css,html,webp}",
+      ],
+    },
+    manifest: {
+      name: "崩壊：スターレイル 素材ノート",
+      short_name: "スタレ素材",
+      theme_color: "#2ed5bd",
+      icons: [
+        {
+          src: "/pwa-256x256.webp",
+          size: "256x256",
+          type: "image/webp",
+        },
+      ],
+    },
   },
 })
