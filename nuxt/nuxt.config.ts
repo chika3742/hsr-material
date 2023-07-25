@@ -177,9 +177,6 @@ export default defineNuxtConfig({
       // globPatterns: [
       //   "**/*.{js,css,html,webp}",
       // ],
-      globIgnores: [
-        "**/*.*",
-      ],
       runtimeCaching: [
         {
           urlPattern: /.+(\/|\.html|\.js)$/,
