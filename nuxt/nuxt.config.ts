@@ -181,11 +181,11 @@ export default defineNuxtConfig({
       runtimeCaching: [
         {
           urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*$/,
-          handler: "StaleWhileRevalidate",
+          handler: "CacheFirst",
         },
         {
           urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*$/,
-          handler: "StaleWhileRevalidate",
+          handler: "CacheFirst",
         },
       ],
     },
