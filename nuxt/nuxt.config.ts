@@ -175,10 +175,14 @@ export default defineNuxtConfig({
     },
     workbox: {
       navigateFallback: "/",
-      globPatterns: [
-        "**/*.{js,css,html,webp}",
-      ],
+      // globPatterns: [
+      //   "**/*.{js,css,html,webp}",
+      // ],
       runtimeCaching: [
+        {
+          urlPattern: "**/*.{js,css,html,webp}",
+          handler: "CacheFirst",
+        },
         {
           urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*$/,
           handler: "CacheFirst",
