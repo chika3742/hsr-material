@@ -175,20 +175,20 @@ export default defineNuxtConfig({
     },
     workbox: {
       globPatterns: [
-        "**/*.{js}",
+        "**/*.js",
       ],
       runtimeCaching: [
         {
-          urlPattern: /.+(\.css|\.webp)$/,
+          urlPattern: ({url, sameOrigin}) => sameOrigin && url.pathname.match(/(\.webp|\.css)$/),
           handler: "CacheFirst",
         },
         {
           urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*$/,
-          handler: "CacheFirst",
+          handler: "StaleWhileRevalidate",
         },
         {
           urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*$/,
-          handler: "CacheFirst",
+          handler: "StaleWhileRevalidate",
         },
       ],
     },
