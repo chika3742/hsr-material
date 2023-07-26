@@ -18,13 +18,15 @@ const bookmarkCharacters = computed(() => {
 </script>
 
 <template>
-  <div class="bookmark-cards-wrapper">
-    <BookmarkCharacterCard
-      v-for="(characterBookmarks, characterId) in bookmarkCharacters"
-      :key="characterId"
-      :bookmarks="characterBookmarks"
-      :character="characterId"
-    />
+  <div>
+    <Draggable container-class="bookmark-cards-wrapper">
+      <BookmarkCharacterCard
+        v-for="(characterBookmarks, characterId) in bookmarkCharacters"
+        :key="characterId"
+        :bookmarks="characterBookmarks"
+        :character="characterId"
+      />
+    </Draggable>
 
     <div v-if="Object.keys(bookmarkCharacters).length === 0" class="no-bookmarks">
       {{ tx("bookmark.noBookmarks") }}
@@ -32,7 +34,7 @@ const bookmarkCharacters = computed(() => {
   </div>
 </template>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .bookmark-cards-wrapper
   display: grid
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))

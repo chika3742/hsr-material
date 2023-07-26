@@ -59,21 +59,26 @@ const detailsDialog = reactive({
   <v-card>
     <div class="d-flex flex-column pa-1">
       <!-- Character image/name row -->
-      <v-list-item
-        class="d-flex"
-        :title="tx(`characterNames.${character}`)"
-        :to="localePath({path: `/characters/${toCharacterId(character)}`, query: {variant: toVariant(character) ?? undefined}})"
-      >
-        <template #prepend>
-          <v-img
-            :src="getCharacterImage(toCharacterId(character), 'small')"
-            aspect-ratio="1"
-            class="mr-2"
-            max-width="50px"
-            width="50px"
-          />
-        </template>
-      </v-list-item>
+      <div class="d-flex align-center">
+        <div class="py-2 pl-4 sortable-handle">
+          <v-icon>mdi-drag-horizontal-variant</v-icon>
+        </div>
+
+        <v-list-item
+          :title="tx(`characterNames.${character}`)"
+          :to="localePath({path: `/characters/${toCharacterId(character)}`, query: {variant: toVariant(character) ?? undefined}})"
+          class="d-flex flex-grow-1"
+        >
+          <template #prepend>
+            <v-img
+              :src="getCharacterImage(toCharacterId(character), 'small')"
+              aspect-ratio="1"
+              class="mr-2"
+              width="50px"
+            />
+          </template>
+        </v-list-item>
+      </div>
 
       <div class="pa-2 d-flex flex-column" style="gap: 8px">
         <section v-if="groupedBookmarks.characterMaterials.length >= 1">
