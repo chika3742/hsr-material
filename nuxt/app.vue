@@ -1,5 +1,7 @@
 <template>
   <div>
+    <VitePwaManifest />
+
     <v-app>
       <client-only>
         <AppDrawer v-model="isDrawerOpenOnMobile" />
