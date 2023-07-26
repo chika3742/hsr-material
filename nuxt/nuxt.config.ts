@@ -179,11 +179,11 @@ export default defineNuxtConfig({
       ],
       runtimeCaching: [
         {
-          urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*$/,
+          urlPattern: ({url}) => url.host === "fonts.gstatic.com",
           handler: "CacheFirst",
         },
         {
-          urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*$/,
+          urlPattern: ({url}) => url.host === "fonts.googleapis.com",
           handler: "CacheFirst",
         },
       ],
