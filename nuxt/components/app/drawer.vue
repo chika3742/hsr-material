@@ -11,7 +11,6 @@ const emit = defineEmits<{
 }>()
 
 const display = useDisplay()
-const {$pwa} = useNuxtApp()
 
 const isOpen = computed({
   get() {
@@ -77,17 +76,6 @@ const drawerItems: (DrawerItem | Divider)[] = [
   {
     icon: "mdi-information",
     to: "/about",
-  },
-  {
-    icon: "mdi-download",
-    title: "install",
-    if: computed(() => !$pwa.isInstalled),
-    onClick() {
-      $pwa.showInstallPrompt = true
-      setTimeout(() => {
-        console.log(toRaw($pwa))
-      }, 3000)
-    },
   },
 ]
 </script>
