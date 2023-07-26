@@ -26,7 +26,7 @@
   "dependencies": {
     "@mdi/font": "^7.2.96",
     "@nuxtjs/google-fonts": "^3.0.2",
-    "@nuxtjs/i18n": "8.0.0-beta.10",
+    "@nuxtjs/i18n": "^8.0.0-beta.13",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
     "@pinia/nuxt": "^0.4.11",
     "@rollup/plugin-yaml": "^4.1.1",
