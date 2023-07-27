@@ -18,7 +18,7 @@ const bookmarkCharacters = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div class="position-relative">
     <Draggable container-class="bookmark-cards-wrapper">
       <BookmarkCharacterCard
         v-for="(characterBookmarks, characterId) in bookmarkCharacters"
