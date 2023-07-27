@@ -60,14 +60,14 @@ const detailsDialog = reactive({
     <div class="d-flex flex-column pa-1">
       <!-- Character image/name row -->
       <div class="d-flex align-center">
-        <div class="py-2 pl-4 sortable-handle">
+        <div class="py-2 px-4 sortable-handle">
           <v-icon>mdi-drag-horizontal-variant</v-icon>
         </div>
 
         <v-list-item
           :title="tx(`characterNames.${character}`)"
           :to="localePath({path: `/characters/${toCharacterId(character)}`, query: {variant: toVariant(character) ?? undefined}})"
-          class="d-flex flex-grow-1"
+          class="d-flex flex-grow-1 pl-0"
         >
           <template #prepend>
             <v-img
