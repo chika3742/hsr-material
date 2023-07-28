@@ -16,7 +16,7 @@
     "@types/marked": "^5.0.1",
     "@types/node": "^18.17.1",
     "@types/ua-parser-js": "^0.7.36",
-    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@vite-pwa/nuxt": "^0.1.0",
     "eslint": "^8.45.0",
     "eslint-plugin-vue": "^9.15.1",
