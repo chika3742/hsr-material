@@ -1,0 +1,28 @@
+name: "lint: nuxt"
+
+on:
+  push:
+    paths:
+      - "nuxt/**"
+
+jobs:
+  lint-nuxt:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_PATH: nuxt
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+          cache-dependency-path: ${{ env.PROJECT_PATH }}/yarn.lock
+
+      - name: yarn install
+        working-directory: ${{ env.PROJECT_PATH }}
+        run: yarn install --frozen-lockfile
+
+      - name: yarn lint
+        working-directory: ${{ env.PROJECT_PATH }}
+        run: yarn lint
