@@ -63,9 +63,6 @@ pageTitles:
   privacy: プライバシーポリシー
   about: このアプリについて
 
-navDrawer:
-  install: ホーム画面に追加
-
 footer:
   feedback: Issueを立てる
   theme: テーマ

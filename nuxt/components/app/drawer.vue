@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {useDisplay} from "vuetify"
-import {Ref} from "vue"
 
 const props = defineProps<{
   modelValue: boolean
@@ -24,7 +23,6 @@ const isOpen = computed({
 interface DrawerItem {
   icon: string
   title?: string
-  if?: Ref<boolean>
   to?: string
   href?: string
   target?: string
@@ -86,7 +84,6 @@ const drawerItems: (DrawerItem | Divider)[] = [
       <template v-for="(item, i) in drawerItems">
         <v-list-item
           v-if="item !== '---'"
-          v-show="item.if === undefined || item.if.value"
           :key="i"
           :href="item.href"
           :prepend-icon="item.icon"
