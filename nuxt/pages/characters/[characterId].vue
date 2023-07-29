@@ -40,7 +40,7 @@ onActivated(() => {
   <div>
     <v-row align="center" class="g-4" no-gutters>
       <!-- character image -->
-      <v-img :src="getCharacterImage(character.id, 'small')" max-width="80" />
+      <v-img :src="getCharacterImage(character.id, 'small')" aspect-ratio="1" max-width="80px" width="80px" />
 
       <!-- character info -->
       <div class="d-flex flex-column" style="gap: 4px">

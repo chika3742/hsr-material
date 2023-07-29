@@ -14,7 +14,7 @@ const characterName = computed(() => {
 <template>
   <v-card :to="localePath({path: `/characters/${characterId}`, query: {variant}})" color="card">
     <div class="d-flex flex-column align-center">
-      <v-img :src="getCharacterImage(characterId, 'small')" aspect-ratio="a" width="80px" />
+      <v-img :src="getCharacterImage(characterId, 'small')" aspect-ratio="1" width="80px" />
 
       <v-card-subtitle v-show="$isTouchDevice" class="px-2 py-1">
         {{ characterName }}

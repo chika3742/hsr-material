@@ -90,7 +90,7 @@ onMounted(() => {
         <v-list-item :title="item.title" v-bind="_props">
           <template #prepend>
             <div class="d-flex align-center mr-2">
-              <v-img :src="getCharacterImage(item.raw.id, 'small')" width="40" />
+              <v-img :src="getCharacterImage(item.raw.id, 'small')" aspect-ratio="1" width="40" />
             </div>
           </template>
         </v-list-item>

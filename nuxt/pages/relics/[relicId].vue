@@ -61,7 +61,7 @@ const bookmarkPiece = (piece: RelicPiece) => {
 <template>
   <div class="d-flex flex-column" style="gap: 8px">
     <v-row align="center" no-gutters>
-      <v-img :src="getRelicSetImage(relicSet.id)" max-width="60px" />
+      <v-img :src="getRelicSetImage(relicSet.id)" max-width="60px" width="60px" />
       <div class="ml-2 d-flex" style="gap: 8px">
         <span class="text-surface-variant">{{ tx("common.kind") }}</span>
         <span>{{ tx(`relicTypes.${relicSet.type}`) }}</span>

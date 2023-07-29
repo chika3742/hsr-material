@@ -46,7 +46,7 @@ const _relics = computed(() => {
       <v-expansion-panel v-for="relic in _relics" :key="relic.id" :value="relic.id">
         <v-expansion-panel-title>
           <v-row align="center" class="my-n2" no-gutters style="gap: 8px">
-            <v-img :src="getRelicSetImage(relic.id)" aspect-ratio="1" max-width="35px" />
+            <v-img :src="getRelicSetImage(relic.id)" aspect-ratio="1" max-width="35px" width="35px" />
             <span>{{ tx(`relicSetTitles.${relic.id}`) }}</span>
             <v-fade-transition>
               <v-btn
