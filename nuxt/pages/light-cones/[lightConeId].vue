@@ -22,7 +22,7 @@ const selectedCharacter = ref<CharacterIdWithVariant>()
 <template>
   <div>
     <v-row align="center" no-gutters>
-      <v-img :src="getLightConeImage(lightCone.id)" max-width="60" />
+      <v-img :src="getLightConeImage(lightCone.id)" max-width="60px" width="60px" />
       <div class="ml-4 d-flex flex-column" style="gap: 4px">
         <div>
           <v-icon v-for="i of lightCone.rarity" :key="i" color="star" size="18">

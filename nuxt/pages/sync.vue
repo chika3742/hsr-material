@@ -229,7 +229,7 @@ const deleteUser = () => {
             <v-img
               :class="{filter: method.iconFilter && $vuetify.theme.current.dark, 'mr-3': true}"
               :src="method.icon"
-              height="30px"
+              aspect-ratio="1"
               width="30px"
             />
           </template>

@@ -22,7 +22,7 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
 <template>
   <div class="d-flex flex-column" style="gap: 16px">
     <v-row align="center" no-gutters>
-      <v-img :src="getMaterialImage(material.id)" aspect-ratio="1" max-width="50" />
+      <v-img :src="getMaterialImage(material.id)" aspect-ratio="1" max-width="50px" width="50px" />
       <div class="ml-4">
         <v-icon v-for="i in material.rarity" :key="i" color="star" size="18">
           mdi-star

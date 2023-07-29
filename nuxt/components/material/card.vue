@@ -16,7 +16,7 @@
         size="small"
         @click.prevent="forwardSelectedExpItem"
       />
-      <v-img :src="getMaterialImage(materialId)" height="30" width="30" />
+      <v-img :src="getMaterialImage(materialId)" aspect-ratio="1" width="30" />
       <span
         v-show="$isTouchDevice"
         class="ml-1 font-kiwi-maru"

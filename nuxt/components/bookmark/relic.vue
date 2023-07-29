@@ -91,7 +91,7 @@ const removeBookmark = (id: number) => {
             :key="image"
             :src="image"
             class="mr-2"
-            height="32"
+            aspect-ratio="1"
             width="32"
           />
         </div>

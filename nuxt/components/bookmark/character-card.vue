@@ -70,6 +70,7 @@ const detailsDialog = reactive({
             aspect-ratio="1"
             class="mr-2"
             max-width="50px"
+            width="50px"
           />
         </template>
       </v-list-item>
