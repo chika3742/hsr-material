@@ -72,9 +72,12 @@ onActivated(() => {
       <v-checkbox-btn
         v-if="character.id !== 'trailblazer'"
         v-model="config.ownedCharacters"
-        :label="tx('characterDetailsPage.iHave')"
         :value="character.id"
-      />
+      >
+        <template #label>
+          <span class="text-no-wrap">{{ tx('characterDetailsPage.iHave') }}</span>
+        </template>
+      </v-checkbox-btn>
     </v-row>
 
     <client-only>
