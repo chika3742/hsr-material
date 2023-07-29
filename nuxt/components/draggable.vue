@@ -14,6 +14,9 @@ onMounted(() => {
     animation: 200,
     handle: ".sortable-handle",
     ghostClass: "sortable-ghost",
+    scroll: true,
+    scrollSensitivity: 60,
+    forceFallback: true,
   })
 })
 </script>
