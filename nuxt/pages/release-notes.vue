@@ -12,7 +12,14 @@
         >
           <template #opposite>
             <div v-show="!$vuetify.display.smAndDown" class="changelog-title">
-              <span class="font-weight-bold">{{ getVersionText(item) }}</span>
+              <span
+                v-if="item.funcVersion !== reversedReleaseNotes[i + 1]?.funcVersion"
+                class="font-weight-bold"
+              >v{{ item.funcVersion }}</span>
+              <span
+                v-if="item.dataVersion !== reversedReleaseNotes[i + 1]?.dataVersion"
+                class="font-weight-bold"
+              >D{{ item.dataVersion }}</span>
               <span style="font-size: 0.8em">{{ item.date }}</span>
             </div>
           </template>
@@ -60,6 +67,7 @@
 
 <script lang="ts" setup>
 import releaseNotes from "~/assets/data/release-notes.yaml"
+import {ReleaseNote} from "~/types/generated/release-notes.g"
 
 definePageMeta({
   title: "releaseNotes",
