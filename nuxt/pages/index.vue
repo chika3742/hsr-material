@@ -9,7 +9,7 @@
         :key="entry.path"
         :prepend-icon="entry.icon"
         :title="getPageTitle(entry.path)"
-        :to="entry.path"
+        :to="localePath(entry.path)"
       />
     </v-list>
   </div>
@@ -43,12 +43,12 @@ const entries: Entry[] = [
     path: "/materials",
   },
   {
-    path: "/tp-calc",
     icon: "mdi-sphere",
+    path: "/tp-calc",
   },
   {
-    path: "/warps",
     icon: "mdi-history",
+    path: "/warps",
   },
 ]
 </script>
