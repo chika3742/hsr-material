@@ -5,8 +5,22 @@
         <v-btn icon="mdi-twitter" href="https://twitter.com/gms_material" target="_blank" variant="text" density="comfortable" />
         <v-btn icon="mdi-github" href="https://github.com/chika3742/hsr-material" target="_blank" variant="text" density="comfortable" />
         <client-only>
-          <v-btn :href="feedbackUrl" variant="text" density="comfortable" target="_blank">
+          <v-btn density="comfortable" variant="text">
             {{ $t('footer.feedback') }}
+
+            <v-menu activator="parent">
+              <v-list>
+                <v-list-item
+                  v-for="(item, i) in feedbackMenuItems"
+                  :key="i"
+                  :href="item.url"
+                  :subtitle="item.desc"
+                  :title="item.title"
+                  lines="two"
+                  target="_blank"
+                />
+              </v-list>
+            </v-menu>
           </v-btn>
         </client-only>
         <v-btn :to="localePath('/release-notes')" color="primary" variant="text" density="comfortable">
@@ -86,6 +100,7 @@ import {ThemeSetting} from "~/types/strings"
 
 const config = useConfigStore()
 const vTheme = useTheme()
+const i18n = useI18n()
 
 const availableLocales: {code: string, name: string}[] = [
   {code: "en", name: "English"},
@@ -103,6 +118,26 @@ const feedbackUrl = computed(() => {
   const ua = new UAParser(navigator.userAgent)
   const browser = ua.getBrowser()
   return `https://github.com/chika3742/hsr-material/issues/new/choose?browser=${browser.name} ${browser.version}&app-version=${getCurrentVersionText()}`
+})
+
+const feedbackMenuItems = computed(() => {
+  return [
+    {
+      title: tx(i18n, "footer.feedbackMenuItems.comment"),
+      desc: tx(i18n, "footer.feedbackMenuItems.commentDesc"),
+      url: "https://www.chikach.net/hsr-material-fb",
+    },
+    {
+      title: tx(i18n, "footer.feedbackMenuItems.hoyolab"),
+      desc: tx(i18n, "footer.feedbackMenuItems.hoyolabDesc"),
+      url: "https://www.hoyolab.com/article/18406761",
+    },
+    {
+      title: tx(i18n, "footer.feedbackMenuItems.github"),
+      desc: tx(i18n, "footer.feedbackMenuItems.githubDesc"),
+      url: feedbackUrl.value,
+    },
+  ]
 })
 
 </script>
