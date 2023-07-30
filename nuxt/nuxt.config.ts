@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     ],
   },
   nitro: {
-    preset: "node-server",
+    preset: "cloudflare-pages-static",
     hooks: {
       "prerender:route"(route) {
         routes.push(route.route)
