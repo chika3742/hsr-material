@@ -63,6 +63,9 @@ pageTitles:
   privacy: プライバシーポリシー
   about: このアプリについて
 
+navDrawer:
+  kofi: コーヒーを奢る
+
 footer:
   feedback: Issueを立てる
   theme: テーマ

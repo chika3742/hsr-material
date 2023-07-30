@@ -75,6 +75,12 @@ const drawerItems: (DrawerItem | Divider)[] = [
     icon: "mdi-information",
     to: "/about",
   },
+  {
+    icon: "mdi-coffee",
+    title: "kofi",
+    href: "https://ko-fi.com/chika3742",
+    target: "_blank",
+  },
 ]
 </script>
 

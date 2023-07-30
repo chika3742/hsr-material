@@ -63,6 +63,9 @@ pageTitles:
   privacy: Privacy Policy
   about: About This App
 
+navDrawer:
+  kofi: Buy me a coffee
+
 footer:
   feedback: Submit Issue
   theme: Theme
