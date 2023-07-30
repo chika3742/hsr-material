@@ -63,8 +63,11 @@ pageTitles:
   privacy: Privacy Policy
   about: About This App
 
+navDrawer:
+  kofi: Buy me a coffee
+
 footer:
-  feedback: Submit Issue
+  feedback: Feedback
   theme: Theme
   disclaimer: |
     This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE.

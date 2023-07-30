@@ -63,8 +63,18 @@ pageTitles:
   privacy: プライバシーポリシー
   about: このアプリについて
 
+navDrawer:
+  kofi: コーヒーを奢る
+
 footer:
-  feedback: Issueを立てる
+  feedback: フィードバック
+  feedbackMenuItems:
+    comment: コメントページ
+    commentDesc: アカウント作成不要で送信できます。
+    hoyolab: HoYoLAB
+    hoyolabDesc: 記事へのコメントでフィードバックできます。
+    github: GitHub
+    githubDesc: 知識のある方は、直接Issueを立てることもできます。
   theme: テーマ
   disclaimer: このアプリは非公式です。画像・データの著作権はmiHoYo/COGNOSPHEREに帰属します。
   themeOptions:
