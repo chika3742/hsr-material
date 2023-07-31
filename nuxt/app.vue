@@ -46,7 +46,7 @@
 
         <client-only>
           <v-snackbar v-model="snackbar.ref.value.displayed" :color="snackbar.ref.value.color ?? undefined">
-            {{ snackbar.ref.value.message }}
+            <span>{{ snackbar.ref.value.message }}</span>
           </v-snackbar>
 
           <v-dialog
@@ -145,6 +145,7 @@ onBeforeUnmount(() => {
 
 router.beforeEach(() => {
   loadingPage.value = true
+  snackbar.ref.value.displayed = false
 })
 
 router.afterEach(() => {
