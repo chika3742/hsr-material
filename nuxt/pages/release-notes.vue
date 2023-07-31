@@ -3,7 +3,7 @@
     <section>
       <h2>{{ $t("pageTitles.releaseNotes") }}</h2>
 
-      <v-timeline align="start" side="end">
+      <v-timeline ref="timeline" :style="timelineStyle" align="start" class="timeline" side="end">
         <v-timeline-item
           v-for="(item, i) in releaseNotes"
           :key="i"
@@ -27,6 +27,18 @@
             <div style="font-size: 0.9em; margin-top: -8px" v-html="marked.parse(item.content)" />
           </div>
         </v-timeline-item>
+
+        <div v-show="!timelineExpanded && timeline && timeline.$el.scrollHeight >= 600" class="show-more-blur">
+          <v-btn
+            class="mb-4 show-more-blur__btn"
+            color="primary"
+            variant="flat"
+            width="200px"
+            @click="timelineExpanded = true"
+          >
+            すべて表示
+          </v-btn>
+        </div>
       </v-timeline>
     </section>
 
@@ -68,6 +80,24 @@ definePageMeta({
 const {$marked} = useNuxtApp()
 
 const marked = $marked({})
+
+const timelineExpanded = ref(false)
+const timeline = ref<{ $el: HTMLElement } | null>(null)
+
+const timelineStyle = computed(() => {
+  if (!timeline.value) {
+    return "max-height: 600px"
+  } // fallback
+
+  if (timeline.value.$el.scrollHeight < 600) { // if content is less than 600px
+    return ""
+  }
+
+  if (timelineExpanded.value) { // expanded
+    return `height: ${timeline.value.$el.scrollHeight}px`
+  }
+  return "max-height: 600px; height: 600px" // collapsed
+})
 </script>
 
 <style lang="sass">
@@ -85,4 +115,29 @@ const marked = $marked({})
     border-radius: 8px
     width: 250px
     max-width: 250px
+
+.timeline
+  overflow: hidden
+  transition: height 300ms ease
+
+.show-more-blur
+  position: absolute
+  width: 100%
+  bottom: 0
+  height: 150px
+  display: flex
+  justify-content: center
+  align-items: flex-end
+
+  &__btn
+    z-index: 2
+
+  &::before
+    content: ""
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 1
+    backdrop-filter: blur(4px)
+    mask: linear-gradient(to bottom, transparent 0%, black 50%)
 </style>
