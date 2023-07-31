@@ -11,19 +11,20 @@
           :size="item.isMajor ? 'default' : 'small'"
         >
           <template #opposite>
-            <div v-show="!$vuetify.display.smAndDown" class="changelog-title">
-              <span class="font-weight-bold">{{ getVersionText(item) }}</span>
-              <span style="font-size: 0.8em">{{ item.date }}</span>
-            </div>
+            <ReleaseNotesVersionHeading
+              v-show="!$vuetify.display.smAndDown"
+              :item="item"
+              :previous-item="releaseNotes[i + 1]"
+              class="changelog-title"
+            />
           </template>
           <div class="d-flex flex-column">
-            <div
+            <ReleaseNotesVersionHeading
               v-show="$vuetify.display.smAndDown"
               class="changelog-title--mobile"
-            >
-              <span class="font-weight-bold">{{ getVersionText(item) }}</span>
-              <span style="font-size: 0.8em">{{ item.date }}</span>
-            </div>
+              :item="item"
+              :previous-item="releaseNotes[i + 1]"
+            />
             <div style="font-size: 0.9em; margin-top: -8px" v-html="marked.parse(item.content)" />
           </div>
         </v-timeline-item>
