@@ -175,6 +175,7 @@ export default defineNuxtConfig({
     },
     workbox: {
       globDirectory: "dist/_nuxt",
+      globPatterns: ["**/*.{js,css,woff2}"],
       runtimeCaching: [
         {
           urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
