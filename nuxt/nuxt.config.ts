@@ -175,7 +175,7 @@ export default defineNuxtConfig({
     },
     workbox: {
       globPatterns: [
-        "**/*.{js,css,webp}",
+        "**/*.{js,css,webp,woff2}",
       ],
       runtimeCaching: [
         {
