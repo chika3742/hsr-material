@@ -174,8 +174,8 @@ export default defineNuxtConfig({
       navigateFallbackAllowlist: [/^\/$/],
     },
     workbox: {
-      globDirectory: "dist/_nuxt",
-      globPatterns: ["**/*.{js,css,woff2}"],
+      globDirectory: "dist",
+      globPatterns: ["_nuxt/*.{js,css,woff2}"],
       runtimeCaching: [
         {
           urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
