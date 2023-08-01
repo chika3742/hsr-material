@@ -173,23 +173,18 @@ export default defineNuxtConfig({
       navigateFallbackAllowlist: [/^\/$/],
     },
     workbox: {
+      navigateFallback: "/",
       globPatterns: [
-        "**/*.{js,css}",
+        "**/*.{js,css,html,webp}",
       ],
       runtimeCaching: [
         {
-          urlPattern: /.*\.woff2$/i,
+          urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*$/,
           handler: "CacheFirst",
-          options: {
-            cacheName: "google-fonts-cache",
-            expiration: {
-              maxEntries: 10,
-              maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
-            },
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
+        },
+        {
+          urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*$/,
+          handler: "CacheFirst",
         },
       ],
     },
