@@ -176,7 +176,7 @@ export default defineNuxtConfig({
     workbox: {
       navigateFallback: "/",
       globPatterns: [
-        "**/*.{js,css,html,webp}",
+        "**/*.{js,css,webp}",
       ],
       runtimeCaching: [
         {
@@ -192,6 +192,7 @@ export default defineNuxtConfig({
     manifest: {
       name: "崩壊：スターレイル 素材ノート",
       short_name: "スタレ素材",
+      start_url: "/",
       theme_color: "#b5f68b",
       background_color: "#888888",
       lang: "ja",
