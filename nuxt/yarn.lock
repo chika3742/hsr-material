@@ -10324,6 +10324,7 @@ __metadata:
     typescript: ^4
     ua-parser-js: ^1.0.35
     vuetify: ^3.3.10
+    workbox-build: ^7.0.0
   languageName: unknown
   linkType: soft
 
