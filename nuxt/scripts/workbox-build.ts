@@ -12,6 +12,7 @@ export const workboxBuild = async() => {
     globDirectory,
     skipWaiting: true,
     clientsClaim: true,
+    dontCacheBustURLsMatching: /\.[0-9a-f]{8}\./,
     globPatterns: [
       "**/*.{js,css,webp}",
     ],
@@ -27,5 +28,6 @@ export const workboxBuild = async() => {
     ],
   })
 
+  // eslint-disable-next-line no-console
   console.log(`Generated ${swPath}, which will precache ${count} files, totaling ${(size / 1024 / 1024).toFixed(2)} MB.`)
 }
