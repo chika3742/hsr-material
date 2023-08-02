@@ -2802,7 +2802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.6.5, @nuxt/kit@npm:^3.2.3, @nuxt/kit@npm:^3.4.1, @nuxt/kit@npm:^3.5.0, @nuxt/kit@npm:^3.5.3, @nuxt/kit@npm:^3.6.5":
+"@nuxt/kit@npm:3.6.5, @nuxt/kit@npm:^3.2.3, @nuxt/kit@npm:^3.4.1, @nuxt/kit@npm:^3.5.0, @nuxt/kit@npm:^3.6.5":
   version: 3.6.5
   resolution: "@nuxt/kit@npm:3.6.5"
   dependencies:
@@ -3758,19 +3758,6 @@ __metadata:
   bin:
     nft: out/cli.js
   checksum: 03ab38477ca7006b3d5568a716128a5abb13a425205ea5cb23eed86967334a6c7fc9d36c58154e1ccd4e349e3ec0d725aa7496ef4159bf232ad706d842d85c29
-  languageName: node
-  linkType: hard
-
-"@vite-pwa/nuxt@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@vite-pwa/nuxt@npm:0.1.0"
-  dependencies:
-    "@nuxt/kit": ^3.5.3
-    vite-plugin-pwa: ">=0.16.3 <1"
-  peerDependencies:
-    "@nuxt/kit": ^3.5.3
-    vite-plugin-pwa: ">=0.16.3 <1"
-  checksum: c53492047b2e007ab85ff54bf3310e90362f909153cffac3c7ea14522470f5e2d484e974b7698be6d792c03bcb406d863c0246f015e89c3c224ffe800e81280b
   languageName: node
   linkType: hard
 
@@ -9818,7 +9805,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-bytes@npm:^6.0.0, pretty-bytes@npm:^6.1.0":
+"pretty-bytes@npm:^6.1.0":
   version: 6.1.1
   resolution: "pretty-bytes@npm:6.1.1"
   checksum: 43d29d909d2d88072da2c3d72f8fd0f2d2523c516bfa640aff6e31f596ea1004b6601f4cabc50d14b2cf10e82635ebe5b7d9378f3d5bae1c0067131829421b8a
@@ -10307,7 +10294,6 @@ __metadata:
     "@types/node": ^18.17.1
     "@types/ua-parser-js": ^0.7.36
     "@typescript-eslint/eslint-plugin": ^5.62.0
-    "@vite-pwa/nuxt": ^0.1.0
     "@vueuse/rxjs": ^10.2.1
     algoliasearch: ^4.19.1
     dexie: ^3.2.4
@@ -11755,23 +11741,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-pwa@npm:>=0.16.3 <1":
-  version: 0.16.4
-  resolution: "vite-plugin-pwa@npm:0.16.4"
-  dependencies:
-    debug: ^4.3.4
-    fast-glob: ^3.2.12
-    pretty-bytes: ^6.0.0
-    workbox-build: ^7.0.0
-    workbox-window: ^7.0.0
-  peerDependencies:
-    vite: ^3.1.0 || ^4.0.0
-    workbox-build: ^7.0.0
-    workbox-window: ^7.0.0
-  checksum: 16810da98ca3d347f2c760024ac2f2ab5d1e61cb7f0157c5f4b75a7e1c8f91442ac304463f1b3e3a5088b4aab4ca464ff8a67f6c996ffdd23e78a2a75c4fc03e
-  languageName: node
-  linkType: hard
-
 "vite@npm:^3.0.0 || ^4.0.0":
   version: 4.4.7
   resolution: "vite@npm:4.4.7"
@@ -12364,7 +12333,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"workbox-window@npm:7.0.0, workbox-window@npm:^7.0.0":
+"workbox-window@npm:7.0.0":
   version: 7.0.0
   resolution: "workbox-window@npm:7.0.0"
   dependencies:

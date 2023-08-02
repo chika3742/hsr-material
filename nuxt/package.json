@@ -18,12 +18,12 @@
     "@types/node": "^18.17.1",
     "@types/ua-parser-js": "^0.7.36",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@vite-pwa/nuxt": "^0.1.0",
     "eslint": "^8.45.0",
     "eslint-plugin-vue": "^9.15.1",
     "nuxt": "^3.6.5",
     "sass": "^1.64.1",
-    "typescript": "^4"
+    "typescript": "^4",
+    "workbox-build": "^7.0.0"
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
@@ -42,8 +42,7 @@
     "rxjs": "^7.8.1",
     "sitemap": "^7.1.1",
     "ua-parser-js": "^1.0.35",
-    "vuetify": "^3.3.10",
-    "workbox-build": "^7.0.0"
+    "vuetify": "^3.3.10"
   },
   "packageManager": "yarn@3.6.0"
 }
