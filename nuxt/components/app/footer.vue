@@ -39,7 +39,8 @@
               <v-list-item
                 v-for="lang in availableLocales"
                 :key="lang.code"
-                :to="switchLocalePath(lang.code)"
+                :active="$route.path === switchLocalePath(lang.code)"
+                :href="switchLocalePath(lang.code)"
               >
                 <v-list-item-title>{{ lang.name }}</v-list-item-title>
               </v-list-item>
