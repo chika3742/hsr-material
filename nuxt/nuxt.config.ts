@@ -119,6 +119,11 @@ export default defineNuxtConfig({
     "nitro:build:public-assets"() {
       return workboxBuild()
     },
+    async "build:done"() {
+      if (process.env.NODE_ENV === "development") {
+        await workboxBuild()
+      }
+    },
   },
   experimental: {
     payloadExtraction: false,
