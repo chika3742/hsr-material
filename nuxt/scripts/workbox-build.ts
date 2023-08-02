@@ -10,6 +10,8 @@ export const workboxBuild = async() => {
     swDest: swPath,
     sourcemap: false,
     globDirectory,
+    skipWaiting: true,
+    clientsClaim: true,
     globPatterns: [
       "**/*.{js,css,webp}",
     ],
