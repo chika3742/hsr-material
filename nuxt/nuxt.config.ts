@@ -168,6 +168,7 @@ export default defineNuxtConfig({
 
   pwa: {
     registerType: "autoUpdate",
+    injectRegister: "inline",
     devOptions: {
       enabled: process.env.NODE_ENV !== "production",
       type: "module",
