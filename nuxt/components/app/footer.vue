@@ -103,8 +103,8 @@ const vTheme = useTheme()
 const i18n = useI18n()
 
 const availableLocales: {code: string, name: string}[] = [
-  {code: "en", name: "English"},
   {code: "ja", name: "日本語"},
+  {code: "en", name: "English"},
 ]
 
 const setTheme = (theme: ThemeSetting) => {
