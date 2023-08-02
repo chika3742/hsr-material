@@ -14,9 +14,13 @@ export const workboxBuild = async() => {
     clientsClaim: true,
     dontCacheBustURLsMatching: /\.[0-9a-f]{8}\./,
     globPatterns: [
-      "**/*.{js,css,webp}",
+      "**/*.{js,css}",
     ],
     runtimeCaching: [
+      {
+        urlPattern: ({sameOrigin, url}) => sameOrigin && url.pathname.endsWith(".webp"),
+        handler: "StaleWhileRevalidate",
+      },
       {
         urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*$/,
         handler: "CacheFirst",
