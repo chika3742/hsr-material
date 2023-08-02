@@ -34,20 +34,17 @@
         </v-btn>
         <v-btn prepend-icon="mdi-earth" variant="text" density="comfortable">
           LANG
-          <!-- to avoid hydration node mismatch error -->
-          <client-only>
-            <v-menu activator="parent">
-              <v-list>
-                <v-list-item
-                  v-for="lang in availableLocales"
-                  :key="lang.code"
-                  :to="switchLocalePath(lang.code)"
-                >
-                  <v-list-item-title>{{ lang.name }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-menu>
-          </client-only>
+          <v-menu activator="parent">
+            <v-list>
+              <v-list-item
+                v-for="lang in availableLocales"
+                :key="lang.code"
+                :to="switchLocalePath(lang.code)"
+              >
+                <v-list-item-title>{{ lang.name }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
         </v-btn>
         <v-btn prepend-icon="mdi-brightness-4" variant="text" density="comfortable">
           {{ $t('footer.theme') }}
