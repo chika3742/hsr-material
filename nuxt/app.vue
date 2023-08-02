@@ -1,7 +1,5 @@
 <template>
   <div>
-    <VitePwaManifest />
-
     <v-app>
       <client-only>
         <AppDrawer v-model="isDrawerOpenOnMobile" />
@@ -117,6 +115,15 @@ useHead({
 })
 
 let unsubscribeAuthListener: Unsubscribe | null = null
+
+onBeforeMount(() => {
+  if ("serviceWorker" in navigator) {
+    const scriptUrl = process.env.NODE_ENV === "production" ? "/sw.js" : "/sw-dev.js"
+    navigator.serviceWorker.register(scriptUrl).catch((e) => {
+      console.error("Service worker registration failed:", e)
+    })
+  }
+})
 
 onMounted(() => {
   mounted.value = true

@@ -8,6 +8,8 @@ node_modules
 dist
 /py/
 types/generated
+public/sw-dev.js
+public/workbox-*.js
 
 # yarn not using zero-installs
 .pnp.*

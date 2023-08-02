@@ -9,6 +9,7 @@ import {EnumChangefreq, SitemapItemLoose, SitemapStream, streamToPromise} from "
 import algoliaConfig from "./algolia.json"
 import {generateSchemas} from "./scripts/generate-schemas"
 import {generateLocType} from "./scripts/generate-loc-type"
+import {workboxBuild} from "./scripts/workbox-build"
 
 const prodBranch = "live"
 const hostname = "https://hsr.matnote.app"
@@ -27,6 +28,10 @@ export default defineNuxtConfig({
           rel: "shortcut icon",
           href: "/favicon.webp",
         },
+        {
+          rel: "manifest",
+          href: "/manifest.webmanifest",
+        },
       ],
     },
   },
@@ -39,7 +44,6 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
-    "@vite-pwa/nuxt",
   ],
   vite: {
     build: {
@@ -101,14 +105,22 @@ export default defineNuxtConfig({
   hooks: {
     async "build:before"() {
       await generateSchemas()
-      await generateLocType()
+      generateLocType()
     },
     async "builder:watch"(_, _path) {
       if (_path.startsWith(path.resolve("schemas/"))) {
         await generateSchemas()
       }
       if (_path.startsWith(path.resolve("locales/"))) {
-        await generateLocType()
+        generateLocType()
+      }
+    },
+    "nitro:build:public-assets"() {
+      return workboxBuild()
+    },
+    async "build:done"() {
+      if (process.env.NODE_ENV === "development") {
+        await workboxBuild()
       }
     },
   },
@@ -164,53 +176,5 @@ export default defineNuxtConfig({
 
   piniaPersistedstate: {
     storage: "localStorage",
-  },
-
-  pwa: {
-    registerType: "autoUpdate",
-    devOptions: {
-      enabled: process.env.NODE_ENV !== "production",
-      type: "module",
-      navigateFallbackAllowlist: [/^\/$/],
-    },
-    workbox: {
-      globPatterns: [
-        "**/*.{js,css,webp}",
-      ],
-      runtimeCaching: [
-        {
-          urlPattern: ({url}) => url.host === "fonts.gstatic.com",
-          handler: "CacheFirst",
-        },
-        {
-          urlPattern: ({url}) => url.host === "fonts.googleapis.com",
-          handler: "CacheFirst",
-        },
-      ],
-    },
-    client: {
-      installPrompt: true,
-    },
-    manifest: {
-      name: "崩壊：スターレイル 素材ノート",
-      short_name: "スタレ素材",
-      theme_color: "#b5f68b",
-      background_color: "#888888",
-      lang: "ja",
-      icons: [
-        {
-          src: "/pwa-x192.webp",
-          sizes: "192x192",
-          type: "image/webp",
-          purpose: "any",
-        },
-        {
-          src: "/pwa-maskable-x192.webp",
-          sizes: "192x192",
-          type: "image/webp",
-          purpose: "maskable",
-        },
-      ],
-    },
   },
 })
