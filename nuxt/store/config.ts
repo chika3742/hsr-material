@@ -28,6 +28,7 @@ export const useConfigStore = defineStore("config", {
      * Owned characters.
      */
     ownedCharacters: [] as string[],
+    characterOrder: [] as string[],
   }),
   actions: {
     /**

@@ -4,8 +4,13 @@ import Sortable from "sortablejs"
 interface Props {
   containerClass?: string
 }
-
 defineProps<Props>()
+
+interface Emits {
+  (e: "sort", ev: Sortable.SortableEvent): void
+}
+
+const emit = defineEmits<Emits>()
 
 const container = ref<HTMLElement | null>(null)
 
@@ -17,6 +22,9 @@ onMounted(() => {
     scroll: true,
     scrollSensitivity: 60,
     forceFallback: true,
+    onSort(ev) {
+      emit("sort", ev)
+    },
   })
 })
 </script>
