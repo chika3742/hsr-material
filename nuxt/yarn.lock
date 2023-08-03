@@ -3552,6 +3552,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/sortablejs@npm:^1.15.1":
+  version: 1.15.1
+  resolution: "@types/sortablejs@npm:1.15.1"
+  checksum: 242c0350f63b86541d667d5aa5d1695a9b98644a1c1f52b537f7733baf187dd2618fadde4deab01e655ebf06294cebf0a889ebebf9202ef0a8750a7afed3ecfd
+  languageName: node
+  linkType: hard
+
 "@types/trusted-types@npm:^2.0.2":
   version: 2.0.3
   resolution: "@types/trusted-types@npm:2.0.3"
@@ -10292,6 +10299,7 @@ __metadata:
     "@types/luxon": ^3.3.1
     "@types/marked": ^5.0.1
     "@types/node": ^18.17.1
+    "@types/sortablejs": ^1.15.1
     "@types/ua-parser-js": ^0.7.36
     "@typescript-eslint/eslint-plugin": ^5.62.0
     "@vueuse/rxjs": ^10.2.1
@@ -10307,6 +10315,7 @@ __metadata:
     rxjs: ^7.8.1
     sass: ^1.64.1
     sitemap: ^7.1.1
+    sortablejs: ^1.15.0
     typescript: ^4
     ua-parser-js: ^1.0.35
     vuetify: ^3.3.10
@@ -10639,6 +10648,13 @@ __metadata:
     ip: ^2.0.0
     smart-buffer: ^4.2.0
   checksum: 259d9e3e8e1c9809a7f5c32238c3d4d2a36b39b83851d0f573bfde5f21c4b1288417ce1af06af1452569cd1eb0841169afd4998f0e04ba04656f6b7f0e46d748
+  languageName: node
+  linkType: hard
+
+"sortablejs@npm:^1.15.0":
+  version: 1.15.0
+  resolution: "sortablejs@npm:1.15.0"
+  checksum: bb82223a663484640d317cad510ac987f26b7a443631040407224de1be069afcc6c39048b6d8527f10f269e33595e8128d7de2fac23517c8260470f77f932d55
   languageName: node
   linkType: hard
 
