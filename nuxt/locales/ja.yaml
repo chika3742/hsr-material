@@ -621,6 +621,11 @@ skillTitles:
     skill: 雲吟乍然、零れる珠露
     ultimate: 雷鳴率いる躍渊の蛟龍
     talent: 懸壺済世
+  luocha:
+    basicAttack: 黒淵の棘
+    skill: 白花の祈望
+    ultimate: 帰葬の成就
+    talent: 生命の輪廻
   yukong:
     basicAttack: 流鏑
     skill: 天宮に鳴り響む弦

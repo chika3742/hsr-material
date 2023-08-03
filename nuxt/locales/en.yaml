@@ -589,6 +589,11 @@ skillTitles:
     skill: Singing Among Clouds
     ultimate: Felicitous Thunderleap
     talent: Gourdful of Elixir
+  luocha:
+    basicAttack: Thorns of the Abyss
+    skill: Prayer of Abyss Flower
+    ultimate: Death Wish
+    talent: Cycle of Life
   yukong:
     basicAttack: Arrowslinger
     skill: Emboldening Salvo

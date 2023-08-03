@@ -294,6 +294,18 @@
     skills: group:lcs007
     skillsAdvanced: id:guardians-lament
 
+- id: luocha
+  $nameJA: 羅刹
+  yomi: ラセツ
+  rarity: 5
+  path: abundance
+  combatType: imaginary
+  materials:
+    common: group:com006
+    ascension: id:golden-crown-of-the-past-shadow
+    skills: group:lcs007
+    skillsAdvanced: id:guardians-lament
+
 - id: yukong
   $nameJA: 御空
   yomi: ギョクウ
