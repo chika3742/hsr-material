@@ -1,5 +1,14 @@
 # コピー用改行
 
+- date: 2023/08/10
+  funcVersion: 1.0.1
+  dataVersion: 1.2.2
+  isMajor: false
+  content: |
+    ### 修正
+    
+    - 「開拓力回復時刻計算機」に、計算結果が何も表示されない不具合を修正しました。
+
 - date: 2023/08/09
   funcVersion: 1.0.0
   dataVersion: 1.2.2
