@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import {DateTime} from "luxon"
 import _ from "lodash"
+import {Ref} from "vue"
 import {getWastedTpCount} from "~/utils/tp"
 import {useConfigStore} from "~/store/config"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
+import {computed} from "#imports"
 
 definePageMeta({
   title: "tpCalc",
@@ -53,6 +55,36 @@ const remainingTime = computed(() => {
 })
 
 const showWastedTp = ref(false)
+
+interface TableDataItem {
+  label: string
+  value: string | number
+  isShownRef?: Ref<boolean>
+}
+
+const getTableData = (): TableDataItem[] => ([
+  {
+    label: i18n.t("tpCalcPage.baseTime"),
+    value: baseTime.value.toFormat("MM/dd HH:mm") + " (" + baseTime.value.toRelative({locale: i18n.locale.value}) + ")",
+  },
+  {
+    label: i18n.t("tpCalcPage.fullReplenishmentTime"),
+    value: getTpFullReplenishmentTime(config.tpCount, baseTime.value)?.toFormat("MM/dd HH:mm") ?? "-",
+  },
+  {
+    label: i18n.t("tpCalcPage.remainingTime"),
+    value: remainingTime.value,
+  },
+  {
+    label: i18n.t("tpCalcPage.currentTpCount"),
+    value: getRealtimeTpCount(config.tpCount, baseTime.value),
+  },
+  {
+    label: i18n.t("tpCalcPage.wastedTp"),
+    value: getWastedTpCount(config.tpCount, baseTime.value) ?? "-",
+    isShownRef: showWastedTp,
+  },
+])
 </script>
 
 <template>
@@ -69,41 +101,27 @@ const showWastedTp = ref(false)
       suffix="/ 180"
     />
 
-    <client-only>
-      <v-table :key="currentSecond" style="max-width: 500px">
-        <tbody>
-          <tr>
-            <td>{{ $t('tpCalcPage.baseTime') }}</td>
-            <td>{{ baseTime.toFormat("MM/dd HH:mm") }} ({{ baseTime.toRelative() }})</td>
-          </tr>
-          <tr>
-            <td>{{ $t('tpCalcPage.fullReplenishmentTime') }}</td>
-            <td>{{ getTpFullReplenishmentTime(config.tpCount, baseTime)?.toFormat("MM/dd HH:mm") ?? "-" }}</td>
-          </tr>
-          <tr>
-            <td>{{ $t('tpCalcPage.remainingTime') }}</td>
-            <td>{{ remainingTime }}</td>
-          </tr>
-          <tr>
-            <td>{{ $t('tpCalcPage.currentTpCount') }}</td>
-            <td>{{ getRealtimeTpCount(config.tpCount, baseTime) }}</td>
-          </tr>
-          <tr>
-            <td>{{ $t('tpCalcPage.wastedTp') }}</td>
-            <td>
-              <v-btn v-if="!showWastedTp" variant="text" @click="showWastedTp = true">
-                {{ tx("tpCalcPage.show") }}
-              </v-btn>
-              <span v-show="showWastedTp">{{ getWastedTpCount(config.tpCount, baseTime) ?? "-" }}</span>
-            </td>
-          </tr>
-        </tbody>
-      </v-table>
+    <v-table style="max-width: 500px">
+      <tbody>
+        <tr v-for="(item, i) in getTableData()" :key="i">
+          <td>{{ item.label }}</td>
+          <td>
+            <v-btn v-if="item.isShownRef && !item.isShownRef.value" variant="text" @click="item.isShownRef.value = true">
+              {{ tx("tpCalcPage.show") }}
+            </v-btn>
+            <span v-show="!item.isShownRef || item.isShownRef.value" :key="currentSecond">
+              <client-only>
+                {{ item.value }}
+              </client-only>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </v-table>
 
-      <p v-if="remainingTime === '-'" class="text-red">
-        {{ $t("tpCalcPage.alreadyReplenished") }}
-      </p>
-    </client-only>
+    <p v-if="remainingTime === '-'" class="text-red">
+      {{ $t("tpCalcPage.alreadyReplenished") }}
+    </p>
 
     <div class="doc-container mt-4" v-html="marked.parse($t('tpCalcPage.howToUse'))" />
   </div>
