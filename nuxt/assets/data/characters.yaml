@@ -329,3 +329,28 @@
     ascension: id:ascendant-debris
     skills: group:lcs005
     skillsAdvanced: id:regret-of-infinite-ochema
+
+- id: kafka
+  $nameJA: カフカ
+  yomi: カフカ
+  rarity: 5
+  path: nihility
+  combatType: lightning
+  materials:
+    common: group:com001
+    ascension: id:shape-shifters-lightning-staff
+    skills: group:lcs004
+    skillsAdvanced: id:regret-of-infinite-ochema
+
+- id: luka
+  $nameJA: ルカ
+  yomi: ルカ
+  rarity: 4
+  path: nihility
+  combatType: physical
+  materials:
+    common: group:com004
+    ascension: id:broken-teeth-of-iron-wolf
+    skills: group:lcs004
+    skillsAdvanced: id:regret-of-infinite-ochema
+

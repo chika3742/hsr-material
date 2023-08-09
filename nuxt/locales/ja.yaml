@@ -422,6 +422,7 @@ characterNames:
   yanqing: 彦卿
   bailu: 白露
   blade: 刃
+  luka: ルカ
 
 materialCategories:
   exp: 経験値素材
@@ -636,6 +637,16 @@ skillTitles:
     skill: 地獄変
     ultimate: 大辟万死
     talent: 倏忽の恩賜
+  kafka:
+    basicAttack: 止まない夜の喧騒
+    skill: 月明かりが撫でる連綿
+    ultimate: 悲劇最果ての顫音
+    talent: 優しさもまた残酷
+  luka:
+    basicAttack: 裂地拳
+    skill: 裂創拳
+    ultimate: 勝利の一撃
+    talent: 飛び散る火花
 
 lightConeNames:
   arrows: 矢じり
@@ -710,6 +721,7 @@ lightConeNames:
   incessant-rain: 降りやまぬ雨
   echoes-of-the-coffin: 棺のこだま
   the-unreachable-side: 着かない彼岸
+  patience-is-all-you-need: 待つのみ
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -784,6 +796,10 @@ lightConeSkillDescriptions:
   incessant-rain: 装備キャラの効果命中+<24%>。デバフが3つ以上ある敵に対して、装備キャラの会心率+<12%>。装備キャラが通常攻撃、戦闘スキル、必殺技を発動した後、100%の基礎確率で攻撃を受けた敵の中から、「エーテルコード」を付与されてないランダムな敵1体に「エーテルコード」を付与する。「エーテルコード」を付与された敵の被ダメージ+<12%>、1ターン継続。
   echoes-of-the-coffin: 装備キャラの攻撃力+<24%>。装備キャラが攻撃を行った後、異なる敵に攻撃が命中するごとにEPを<3>回復する。1回の攻撃で、この効果を通して最大で3回EPを回復できる。装備キャラが必殺技を発動した後、味方全体の速度+<12>、1ターン継続。
   the-unreachable-side: 装備キャラの会心率+<18%>、最大HP+<18%>。装備キャラが攻撃を受ける、または自身のHPを消費すると、与ダメージ+<24%>、この効果は装備キャラが攻撃を行った後に解除される。
+  patience-is-all-you-need: >-
+    装備キャラの与ダメージ+<24%>。装備キャラが攻撃を行った後、速度+<4.8%>、最大で3層累積できる。
+
+    装備キャラの攻撃が敵に命中した時、その敵が「遊糸」状態でない場合、<100%>の基礎確率で敵を「遊糸」状態にする。敵が「遊糸」状態の時、感電状態と見なされる。「遊糸」状態の敵はターンが回ってくるたびに、装備キャラの攻撃力<60%>分の雷属性持続ダメージを受ける、1ターン継続。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

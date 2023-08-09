@@ -566,7 +566,6 @@
   materials:
     primary: group:lcs007
     common: group:com006
-
 - id: the-unreachable-side
   $nameJA: 着かない彼岸
   yomi: ツカナイヒガン
@@ -575,3 +574,12 @@
   materials:
     primary: group:lcs005
     common: group:com005
+- id: patience-is-all-you-need
+  $nameJA: 待つのみ
+  yomi: マツノミ
+  rarity: 5
+  path: nihility
+  materials:
+    primary: group:lcs004
+    common: group:com001
+
