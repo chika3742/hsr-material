@@ -1,5 +1,14 @@
 # コピー用改行
 
+- date: 2023/08/13
+  funcVersion: 1.0.1
+  dataVersion: 1.2.3
+  isMajor: false
+  content: |
+    ### データ修正
+    
+    - 次元界オーブをブックマークする際、メインステータスの選択肢が誤って表示される不具合を修正しました。
+
 - date: 2023/08/10
   funcVersion: 1.0.1
   dataVersion: 1.2.2
