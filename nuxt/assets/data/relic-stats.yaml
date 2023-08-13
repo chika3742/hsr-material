@@ -24,10 +24,13 @@ main:
     - hp_percent
     - atk_percent
     - def_percent
-    - crit_rate
-    - crit_dmg
-    - outgoing_healing
-    - effect_hit_rate
+    - physical_dmg
+    - fire_dmg
+    - ice_dmg
+    - lightning_dmg
+    - wind_dmg
+    - quantum_dmg
+    - imaginary_dmg
 
   link_rope:
     - hp_percent
