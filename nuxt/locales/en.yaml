@@ -265,8 +265,8 @@ tpCalcPage:
   remainingTime: Until full replenishment
   duration: "{hours} hour(s) {minutes} minute(s)"
   alreadyReplenished: Already fully replenished.
-  rangeError: Please enter a number between 0 and 180.
-  wastedTp: Wasted TP
+  rangeError: Please enter a number between 0 and {max}.
+  reservedTp: Reserved TP
   show: Show
   howToUse: |
     ## How to Use

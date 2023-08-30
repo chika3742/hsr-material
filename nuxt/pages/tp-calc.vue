@@ -2,7 +2,7 @@
 import {DateTime} from "luxon"
 import _ from "lodash"
 import {Ref} from "vue"
-import {getWastedTpCount} from "~/utils/tp"
+import {maxTpCount} from "~/utils/tp"
 import {useConfigStore} from "~/store/config"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 import {computed} from "#imports"
@@ -26,7 +26,7 @@ onMounted(() => {
 
 const validate = (value: string): string | true => {
   const intValue = Number(value)
-  return (!isNaN(intValue) && intValue >= 0 && intValue < 180) || i18n.t("tpCalcPage.rangeError")
+  return (!isNaN(intValue) && intValue >= 0 && intValue < maxTpCount) || i18n.t("tpCalcPage.rangeError", {max: maxTpCount})
 }
 
 const currentTpCount = ref(config.tpCount.toString())
@@ -54,8 +54,6 @@ const remainingTime = computed(() => {
   return i18n.t("tpCalcPage.duration", _remainingTime.shiftToAll().toObject() as Record<string, number>)
 })
 
-const showWastedTp = ref(false)
-
 interface TableDataItem {
   label: string
   value: string | number
@@ -80,9 +78,8 @@ const getTableData = (): TableDataItem[] => ([
     value: getRealtimeTpCount(config.tpCount, baseTime.value),
   },
   {
-    label: i18n.t("tpCalcPage.wastedTp"),
-    value: getWastedTpCount(config.tpCount, baseTime.value) ?? "-",
-    isShownRef: showWastedTp,
+    label: i18n.t("tpCalcPage.reservedTp"),
+    value: getReservedTpCount(config.tpCount, baseTime.value) ?? "-",
   },
 ])
 </script>
@@ -98,7 +95,7 @@ const getTableData = (): TableDataItem[] => ([
       :rules="[validate]"
       validate-on="input"
       clearable
-      suffix="/ 180"
+      :suffix="`/ ${maxTpCount}`"
     />
 
     <v-table style="max-width: 500px">
