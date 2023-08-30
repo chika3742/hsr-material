@@ -27,6 +27,5 @@ export const getReservedTpCount = (tpCount: number, baseTime: DateTime): number 
   if (!tpFullReplenishmentTime) { return null }
 
   const diff = tpFullReplenishmentTime.diffNow().shiftTo("minutes")
-  console.log(diff.minutes)
   return Math.max(0, Math.floor(-diff.minutes / reserveTpReplenishMinute)) || null
 }
