@@ -1,5 +1,16 @@
 # コピー用改行
 
+- date: 2023/08/30
+  funcVersion: 1.0.1
+  dataVersion: 1.3.0
+  isMajor: false
+  content: |
+    ### データ追加
+    
+    - キャラクター「丹恒・飲月」
+    - 光円錐「陽光より輝くもの」「孤独の癒やし」
+    - アイテム「霊鎮めの勅符」
+
 - date: 2023/08/13
   funcVersion: 1.0.1
   dataVersion: 1.2.3
