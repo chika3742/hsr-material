@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {computed, getMaterialIdFromIngredient, levelIngredientsToSliderTicks, ref} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import {BookmarkableItem} from "~/types/bookmarkable-ingredient"
+import {BookmarkableMaterial} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LevelIngredients} from "~/types/level-ingredients"
@@ -80,13 +80,13 @@ onMounted(() => {
   setInitialRangeBasedOnBookmarks()
 })
 
-const ingredients = computed<BookmarkableItem[]>(() => {
+const ingredients = computed<BookmarkableMaterial[]>(() => {
   return sliders.map((e, i) => {
     if (!checkedList.value[i]) {
       return []
     }
     return e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
-      .map(f => f.ingredients.map<BookmarkableItem>(g => ({
+      .map(f => f.ingredients.map<BookmarkableMaterial>(g => ({
         type: "character_material",
         characterId: toCharacterIdWithVariant(props.characterId, props.variant),
         materialId: getMaterialIdFromIngredient(g, props.materialDefs)!,

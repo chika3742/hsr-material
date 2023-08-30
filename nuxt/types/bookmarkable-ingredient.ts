@@ -6,7 +6,7 @@ export type BookmarkableLightConeMaterial = Omit<Bookmark.LightConeMaterial, "id
 
 export type BookmarkableExp = Omit<Bookmark.Exp, "id" | "bookmarkedAt" | "selectedItem">
 
-export type BookmarkableItem = BookmarkableCharacterMaterial | BookmarkableLightConeMaterial
+export type BookmarkableMaterial = BookmarkableCharacterMaterial | BookmarkableLightConeMaterial
 
 export type BookmarkableIngredient =
   | BookmarkableCharacterMaterial

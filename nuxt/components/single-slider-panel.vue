@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types/bookmarkable-ingredient"
+import {BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial} from "~/types/bookmarkable-ingredient"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
@@ -114,7 +114,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
         throw new Error("Invalid ingredient markup")
       }
 
-      let result: BookmarkableItem
+      let result: BookmarkableMaterial
       if (usage.type === "character") {
         result = {
           type: "character_material",

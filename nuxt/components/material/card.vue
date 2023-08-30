@@ -56,7 +56,7 @@ import {useTheme} from "vuetify"
 import {
   BookmarkableExp,
   BookmarkableIngredient,
-  BookmarkableItem,
+  BookmarkableMaterial,
   isBookmarkableExp,
 } from "~/types/bookmarkable-ingredient"
 import {computed, ref} from "#imports"
@@ -123,7 +123,7 @@ const materialId = computed(() => {
   if (selectedExpItem.value) {
     return selectedExpItem.value.itemId
   } else {
-    return (props.items[0] as BookmarkableItem).materialId
+    return (props.items[0] as BookmarkableMaterial).materialId
   }
 })
 
@@ -132,7 +132,7 @@ const quantity = computed(() => {
     const items = props.items as BookmarkableExp[]
     return items.reduce((acc, e) => acc + Math.ceil(e.exp! / selectedExpItem.value!.expPerItem), 0)
   } else {
-    const items = props.items as BookmarkableItem[]
+    const items = props.items as BookmarkableMaterial[]
     return items.reduce((acc, e) => acc + e.quantity, 0)
   }
 })
