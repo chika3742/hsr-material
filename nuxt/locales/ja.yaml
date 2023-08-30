@@ -423,6 +423,7 @@ characterNames:
   bailu: 白露
   blade: 刃
   luka: ルカ
+  dan-heng-imbibitor-lunae: 丹恒・飲月
 
 materialCategories:
   exp: 経験値素材
@@ -494,6 +495,7 @@ materialNames:
   refined-aether: 精製エーテル
   ascendant-debris: 天人の残穢
   regret-of-infinite-ochema: 無窮なる仮身の遺恨
+  suppressing-edict: 霊鎮めの勅符
 
 skillTitles:
   trailblazer:
@@ -647,6 +649,11 @@ skillTitles:
     skill: 裂創拳
     ultimate: 勝利の一撃
     talent: 飛び散る火花
+  dan-heng-imbibitor-lunae:
+    basicAttack: 水華
+    skill: 龍力自在
+    ultimate: 傲睨せし蒼龍、世を濯ぐ劫水
+    talent: 亢心
 
 lightConeNames:
   arrows: 矢じり
@@ -722,6 +729,8 @@ lightConeNames:
   echoes-of-the-coffin: 棺のこだま
   the-unreachable-side: 着かない彼岸
   patience-is-all-you-need: 待つのみ
+  brighter-than-the-sun: 陽光より輝くもの
+  solitary-healing: 孤独の癒やし
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -800,6 +809,8 @@ lightConeSkillDescriptions:
     装備キャラの与ダメージ+<24%>。装備キャラが攻撃を行った後、速度+<4.8%>、最大で3層累積できる。
 
     装備キャラの攻撃が敵に命中した時、その敵が「遊糸」状態でない場合、<100%>の基礎確率で敵を「遊糸」状態にする。敵が「遊糸」状態の時、感電状態と見なされる。「遊糸」状態の敵はターンが回ってくるたびに、装備キャラの攻撃力<60%>分の雷属性持続ダメージを受ける、1ターン継続。
+  brighter-than-the-sun: 装備キャラの会心率+<18%>。装備キャラが通常攻撃を行った時、「龍吟」を1層獲得する、2ターン継続。「龍吟」1層につき、装備キャラの攻撃力+<18%>、EP回復効率+<6%>。「龍吟」は最大で2層累積できる。
+  solitary-healing: 装備キャラの撃破特効+<20%>。装備キャラが必殺技を発動した時、装備キャラの持続与ダメージ+<24%>、2ターン継続。装備キャラに持続ダメージ系デバフを付与された敵が倒された時、装備キャラのEPを<4>回復する。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

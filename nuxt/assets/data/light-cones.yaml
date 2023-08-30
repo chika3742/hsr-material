@@ -582,4 +582,22 @@
   materials:
     primary: group:lcs004
     common: group:com001
+- id: brighter-than-the-sun
+  $nameJA: 陽光より輝くもの
+  yomi: ヨウコウヨリカガヤクモノ
+  rarity: 5
+  path: destruction
+  materials:
+    primary: group:lcs005
+    common: group:com005
+- id: solitary-healing
+  $nameJA: 孤独の癒やし
+  yomi: コドクノイヤシ
+  rarity: 5
+  path: nihility
+  materials:
+    primary: group:lcs004
+    common: group:com002
+
+
 
