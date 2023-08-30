@@ -265,8 +265,8 @@ tpCalcPage:
   remainingTime: Until full replenishment
   duration: "{hours} hour(s) {minutes} minute(s)"
   alreadyReplenished: Already fully replenished.
-  rangeError: Please enter a number between 0 and 180.
-  wastedTp: Wasted TP
+  rangeError: Please enter a number between 0 and {max}.
+  reservedTp: Reserved TP
   show: Show
   howToUse: |
     ## How to Use
@@ -391,6 +391,7 @@ characterNames:
   trailblazer_preservation: Trailblazer (Preservation)
   blade: Blade
   luka: Luka
+  dan-heng-imbibitor-lunae: Dan Heng・Imbibitor Lunae
 
 materialCategories:
   exp: EXP Materials
@@ -462,6 +463,7 @@ materialNames:
   refined-aether: Refined Aether
   ascendant-debris: Ascendant Debris
   regret-of-infinite-ochema: Regret of Infinite Ochema
+  suppressing-edict: Suppressing Edict
 
 skillTitles:
   trailblazer:
@@ -615,6 +617,11 @@ skillTitles:
     skill: Lacerating Fist
     ultimate: Coup de Grâce
     talent: Flying Sparks
+  dan-heng-imbibitor-lunae:
+    basicAttack: Beneficent Lotus
+    skill: Dracore Libre
+    ultimate: Azure's Aqua Ablutes All
+    talent: Righteous Heart
 
 lightConeNames:
   arrows: Arrows
@@ -690,6 +697,8 @@ lightConeNames:
   echoes-of-the-coffin: Echoes of the Coffin
   the-unreachable-side: The Unreachable Side
   patience-is-all-you-need: Patience Is All You Need
+  brighter-than-the-sun: Brighter Than the Sun
+  solitary-healing: Solitary Healing
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -865,6 +874,16 @@ lightConeSkillDescriptions:
     afflicted with Erode are also considered to be Shocked and will receive
     Lightning DoT at the start of each turn equal to <60%> of the wearer's ATK,
     lasting for 1 turn(s).
+  solitary-healing: >-
+    Increases the wearer's Break Effect by <20%>. When the wearer uses their
+    Ultimate, increases DoT dealt by the wearer by <24%>, lasting for 2 turn(s).
+    When a target enemy suffering from DoT imposed by the wearer is defeated,
+    regenerates <4> Energy for the wearer.
+  brighter-than-the-sun: >-
+    Increases the wearer's CRIT Rate by <18%>. When the wearer uses their Basic
+    ATK, they will gain 1 stack of Dragon's Call, lasting for 2 turns. Each stack
+    of Dragon's Call increases the wearer's ATK by <18%> and Energy Regeneration
+    Rate by <6%>. Dragon's Call can be stacked up to 2 times.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

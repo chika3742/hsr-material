@@ -1,12 +1,13 @@
 import {DateTime, Duration} from "luxon"
 
-const maxTpCount = 180
-const singleTpReplenishmentTime = 6
+export const maxTpCount = 240
+const singleTpReplenishMinute = 6
+const reserveTpReplenishMinute = 18
 
 export const getTpFullReplenishmentTime = (tpCount: number, baseTime: DateTime): DateTime | null => {
   if (tpCount >= maxTpCount || tpCount < 0) { return null }
 
-  return baseTime.plus({minutes: (maxTpCount - tpCount) * singleTpReplenishmentTime})
+  return baseTime.plus({minutes: (maxTpCount - tpCount) * singleTpReplenishMinute})
 }
 
 export const getTpReplenishmentRemainingTime = (tpCount: number, baseTime: DateTime): Duration | null => {
@@ -18,13 +19,13 @@ export const getTpReplenishmentRemainingTime = (tpCount: number, baseTime: DateT
 
 export const getRealtimeTpCount = (tpCount: number, baseTime: DateTime): number => {
   const diff = baseTime.diffNow().shiftTo("minutes")
-  return Math.min(maxTpCount, tpCount + Math.floor(-diff.minutes / singleTpReplenishmentTime))
+  return Math.min(maxTpCount, tpCount + Math.floor(-diff.minutes / singleTpReplenishMinute))
 }
 
-export const getWastedTpCount = (tpCount: number, baseTime: DateTime): number | null => {
+export const getReservedTpCount = (tpCount: number, baseTime: DateTime): number | null => {
   const tpFullReplenishmentTime = getTpFullReplenishmentTime(tpCount, baseTime)
   if (!tpFullReplenishmentTime) { return null }
 
   const diff = tpFullReplenishmentTime.diffNow().shiftTo("minutes")
-  return Math.max(0, Math.floor(-diff.minutes / singleTpReplenishmentTime)) || null
+  return Math.max(0, Math.floor(-diff.minutes / reserveTpReplenishMinute)) || null
 }
