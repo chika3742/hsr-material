@@ -178,8 +178,4 @@ export default defineNuxtConfig({
   piniaPersistedstate: {
     storage: "localStorage",
   },
-
-  mhyMaterialComponents: {
-    injectVuetify: false,
-  },
 })
