@@ -18,7 +18,7 @@ withDefaults(defineProps<{
 
     <v-row align="center" no-gutters style="gap: 8px">
       <v-list-item-title>{{ tx(`${itemI18nKey}.${item.id}`) }}</v-list-item-title>
-      <v-chip :color="`rank${item.rarity}`" size="small">
+      <v-chip :color="`rarity-${item.rarity}`" size="small">
         <v-icon>mdi-star</v-icon>
         {{ item.rarity }}
       </v-chip>
