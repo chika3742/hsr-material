@@ -2,7 +2,7 @@
   <v-expansion-panel :title="title">
     <v-expansion-panel-text eager>
       <LevelSlider v-model="range" :slider-ticks="sliderTicks" />
-      <MaterialCards
+      <MaterialItems
         :items="items"
         :range="range"
         :purpose-types="['ascension']"
