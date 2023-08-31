@@ -52,7 +52,7 @@ export default defineNuxtConfig({
     },
     plugins: [
       yaml({
-        exclude: "locales/**",
+        exclude: "**/locales/**",
       }),
       dsv({
         // @ts-ignore: https://github.com/rollup/plugins/pull/1493
