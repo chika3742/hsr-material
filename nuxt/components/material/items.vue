@@ -2,7 +2,7 @@
   <v-row no-gutters style="gap: 16px">
     <MaterialItem
       v-for="merged in mergeItems(items)"
-      :key="getMaterialId(merged[0])"
+      :key="getMaterialId(merged[0]) + '-' + merged[0].characterId"
       :items="merged"
       :purpose-types="purposeTypes"
     />
