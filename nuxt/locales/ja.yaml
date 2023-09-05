@@ -22,6 +22,7 @@ common:
   mainStatShort: メイン
   subStatShort: サブ
   details: 詳細
+  showAllCharacters: 異なる運命のキャラクターを表示
   skillTypes:
     basicAttack: 通常攻撃
     skill: 戦闘スキル
