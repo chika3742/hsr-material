@@ -105,7 +105,7 @@ router.beforeEach(() => {
                     </v-btn>
                   </v-row>
                   <div class="material-cards-container">
-                    <MaterialCard
+                    <MaterialItem
                       v-for="item in __items.sort(materialSortFunc)"
                       :key="item.id"
                       :initial-selected-exp-item="isBookmarkableExp(item) ? item.selectedItem : undefined"

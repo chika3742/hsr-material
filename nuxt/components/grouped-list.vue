@@ -7,6 +7,7 @@ const props = withDefaults(defineProps<{
   categoryI18nKey: string
   itemI18nKey: string
   linkBasePath: string
+  preserveQuery?: boolean
   hasSubtitle?: boolean
 }>(), {
   hasSubtitle: false,
@@ -48,6 +49,7 @@ const opened = computed({
         :item="item"
         :item-i18n-key="itemI18nKey"
         :link-base-path="linkBasePath"
+        :preserve-query="preserveQuery"
         :lines="hasSubtitle ? 'two' : 'one'"
       >
         <template #subtitle>

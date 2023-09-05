@@ -22,6 +22,7 @@ common:
   mainStatShort: メイン
   subStatShort: サブ
   details: 詳細
+  showAllCharacters: 異なる運命のキャラクターを表示
   skillTypes:
     basicAttack: 通常攻撃
     skill: 戦闘スキル
@@ -100,6 +101,7 @@ charactersPage:
 
 characterDetailsPage:
   iHave: 所持
+  bookmarkLightCone: 光円錐をブックマーク
   ascension: キャラLvアップ/昇格素材
   skills: スキルLvアップ素材
 

@@ -6,7 +6,7 @@ export type BookmarkableLightConeMaterial = Omit<Bookmark.LightConeMaterial, "id
 
 export type BookmarkableExp = Omit<Bookmark.Exp, "id" | "bookmarkedAt" | "selectedItem">
 
-export type BookmarkableItem = BookmarkableCharacterMaterial | BookmarkableLightConeMaterial
+export type BookmarkableMaterial = BookmarkableCharacterMaterial | BookmarkableLightConeMaterial
 
 export type BookmarkableIngredient =
   | BookmarkableCharacterMaterial
@@ -17,8 +17,6 @@ export function isBookmarkableExp(item: BookmarkableIngredient): item is Bookmar
   return item.type === "character_exp" || item.type === "light_cone_exp"
 }
 
-type BookmarkableLightConeIngredient = BookmarkableLightConeMaterial | (BookmarkableExp & { type: "light_cone_exp" })
-
-export function isBookmarkableLightCone(item: BookmarkableIngredient): item is BookmarkableLightConeIngredient {
-  return item.type === "light_cone_exp" || item.type === "light_cone_material"
+export function isBookmarkableMaterial(item: BookmarkableIngredient): item is BookmarkableMaterial {
+  return item.type === "character_material" || item.type === "light_cone_material"
 }

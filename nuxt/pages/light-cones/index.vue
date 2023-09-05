@@ -2,10 +2,13 @@
 import GroupedList from "~/components/grouped-list.vue"
 import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
+import characters from "~/assets/data/characters.yaml"
 
 definePageMeta({
   title: "lightCones",
 })
+
+const route = useRoute()
 
 const filteringRarity = ref<number[]>([])
 const expanded = ref<number[]>([])
@@ -17,6 +20,15 @@ const items = computed(() => {
 
 const spiltByRarity = splitByField(lightCones, "rarity")
 const spiltByPath = splitByField(lightCones, "path")
+
+onActivated(() => {
+  if (route.query.character) {
+    const queryCharacter = characters.find(e => e.id === route.query.character)
+    if (typeof queryCharacter !== "undefined") {
+      expanded.value = [spiltByPath.findIndex(e => e[0].path === queryCharacter.path)]
+    }
+  }
+})
 </script>
 
 <template>
@@ -73,6 +85,7 @@ const spiltByPath = splitByField(lightCones, "path")
       item-i18n-key="lightConeNames"
       link-base-path="/light-cones"
       :has-subtitle="showSkillDescriptions"
+      preserve-query
     >
       <template #subtitle="{itemId}">
         <v-list-item-subtitle v-if="showSkillDescriptions" class="mt-1">

@@ -31,7 +31,7 @@
   "dependencies": {
     "@mdi/font": "^7.2.96",
     "@nuxtjs/google-fonts": "^3.0.2",
-    "@nuxtjs/i18n": "^8.0.0-beta.13",
+    "@nuxtjs/i18n": "^8.0.0-rc.3",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
     "@pinia/nuxt": "^0.4.11",
     "@rollup/plugin-yaml": "^4.1.1",
@@ -42,6 +42,7 @@
     "json-schema-to-typescript": "^13.0.2",
     "luxon": "^3.3.0",
     "marked": "^5.1.2",
+    "mhy-material-components": "https://github.com/chika3742/mhy-material-components.git#commit=7f136a171f7fe14abc9f3d75451dca50f4a3c034",
     "rxjs": "^7.8.1",
     "sitemap": "^7.1.1",
     "sortablejs": "^1.15.0",

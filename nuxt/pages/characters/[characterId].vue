@@ -69,15 +69,20 @@ onActivated(() => {
       </div>
 
       <!-- Is owned checkbox -->
-      <v-checkbox-btn
+      <v-checkbox
         v-if="character.id !== 'trailblazer'"
         v-model="config.ownedCharacters"
+        :label="tx('characterDetailsPage.iHave')"
         :value="character.id"
-      >
-        <template #label>
-          <span class="text-no-wrap">{{ tx('characterDetailsPage.iHave') }}</span>
-        </template>
-      </v-checkbox-btn>
+        class="flex-0-0"
+        hide-details
+      />
+
+      <v-btn
+        :text="tx('characterDetailsPage.bookmarkLightCone')"
+        :to="localePath({path: '/light-cones', query: {character: character.id}})"
+        prepend-icon="mdi-cone"
+      />
     </v-row>
 
     <client-only>

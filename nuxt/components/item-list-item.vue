@@ -2,6 +2,7 @@
 withDefaults(defineProps<{
   item: Record<string, unknown> & { id: string, rarity: number }
   linkBasePath: string
+  preserveQuery?: boolean
   itemI18nKey: string
   imageFunc: (id: string) => string
   lines?: "one" | "two"
@@ -11,14 +12,20 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <v-list-item :lines="lines" :to="localePath(`${linkBasePath}/${item.id}`)">
+  <v-list-item
+    :lines="lines"
+    :to="localePath({
+      path: `${linkBasePath}/${item.id}`,
+      query: preserveQuery ? $route.query : {},
+    })"
+  >
     <template #prepend>
       <v-img :src="imageFunc(item.id)" aspect-ratio="1" class="mr-2" width="45px" />
     </template>
 
     <v-row align="center" no-gutters style="gap: 8px">
       <v-list-item-title>{{ tx(`${itemI18nKey}.${item.id}`) }}</v-list-item-title>
-      <v-chip :color="`rank${item.rarity}`" size="small">
+      <v-chip :color="`rarity-${item.rarity}`" size="small">
         <v-icon>mdi-star</v-icon>
         {{ item.rarity }}
       </v-chip>

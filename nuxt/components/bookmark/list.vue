@@ -48,7 +48,7 @@ const saveCharacterSort = (ev: Sortable.SortableEvent) => {
         :key="characterId"
         :data-character-id="characterId"
         :bookmarks="characterBookmarks"
-        :character="characterId"
+        :character="characterId as string"
       />
     </Draggable>
 
