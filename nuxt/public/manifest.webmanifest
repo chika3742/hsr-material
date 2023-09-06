@@ -4,6 +4,8 @@
   "theme_color": "#b5f68b",
   "background_color": "#888888",
   "lang": "ja",
+  "start_url": "/",
+  "display": "standalone",
   "icons": [
     {
       "src": "/pwa-x192.webp",
