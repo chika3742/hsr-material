@@ -3,7 +3,8 @@ import * as _ from "lodash"
 import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {CharacterIdWithVariant} from "~/types/strings"
 import {reactive} from "#imports"
-import {isBookmarkableExp} from "~/types/bookmarkable-ingredient"
+
+import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
 
 interface Props {
   character: CharacterIdWithVariant

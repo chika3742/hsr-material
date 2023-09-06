@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import {groupBy} from "lodash"
-import {isBookmarkableExp} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {materialSortFunc} from "~/utils/merge-items"
 import {db} from "~/libs/db/providers"
+import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
 
 interface Props {
   modelValue: boolean

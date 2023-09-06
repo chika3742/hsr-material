@@ -1,17 +1,17 @@
 import {Table} from "dexie"
 import {logEvent} from "@firebase/analytics"
 import {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
-import {BookmarkableRelic} from "~/types/bookmarkable-relic"
+import {PurposeType} from "~/types/strings"
+import {_db} from "~/dexie/db"
+import {DbProvider} from "~/libs/db/db-provider"
 import {
   BookmarkableCharacterMaterial,
   BookmarkableExp,
   BookmarkableIngredient,
   BookmarkableLightConeMaterial,
+  BookmarkableRelic,
   isBookmarkableExp,
-} from "~/types/bookmarkable-ingredient"
-import {PurposeType} from "~/types/strings"
-import {_db} from "~/dexie/db"
-import {DbProvider} from "~/libs/db/db-provider"
+} from "~/types/bookmark/bookmarkables"
 
 /**
  * Provides methods for bookmark-related database operations.

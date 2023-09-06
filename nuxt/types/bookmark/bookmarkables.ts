@@ -1,6 +1,23 @@
 import {Bookmark} from "~/types/bookmark/bookmark"
-import {Stat} from "~/types/generated/relic-stats.g"
 import {CharacterIdWithVariant} from "~/types/strings"
+import {Stat} from "~/types/generated/relic-stats.g"
+
+export type BookmarkableCharacterMaterial = Omit<Bookmark.CharacterMaterial, "id" | "bookmarkedAt">
+export type BookmarkableLightConeMaterial = Omit<Bookmark.LightConeMaterial, "id" | "bookmarkedAt">
+export type BookmarkableExp = Omit<Bookmark.Exp, "id" | "bookmarkedAt" | "selectedItem">
+export type BookmarkableMaterial = BookmarkableCharacterMaterial | BookmarkableLightConeMaterial
+export type BookmarkableIngredient =
+  | BookmarkableCharacterMaterial
+  | BookmarkableLightConeMaterial
+  | BookmarkableExp
+
+export function isBookmarkableExp(item: BookmarkableIngredient): item is BookmarkableExp {
+  return item.type === "character_exp" || item.type === "light_cone_exp"
+}
+
+export function isBookmarkableMaterial(item: BookmarkableIngredient): item is BookmarkableMaterial {
+  return item.type === "character_material" || item.type === "light_cone_material"
+}
 
 export class BookmarkableRelicSet implements Omit<Bookmark.RelicSet, "id" | "bookmarkedAt"> {
   relicSetIds: string[]
@@ -33,3 +50,5 @@ export class BookmarkableRelicPiece implements Omit<Bookmark.RelicPiece, "id" | 
 }
 
 export type BookmarkableRelic = BookmarkableRelicSet | BookmarkableRelicPiece
+
+export type Bookmarkable = BookmarkableIngredient | BookmarkableRelic

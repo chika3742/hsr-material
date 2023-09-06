@@ -3,8 +3,8 @@ import {RelicPiece, RelicSet} from "~/types/data/relics"
 import relicStats from "assets/data/relic-stats.yaml"
 import {Stat} from "~/types/generated/relic-stats.g"
 import {CharacterIdWithVariant} from "~/types/strings"
-import {BookmarkableRelic, BookmarkableRelicPiece, BookmarkableRelicSet} from "~/types/bookmarkable-relic"
 import {db} from "~/libs/db/providers"
+import {BookmarkableRelic, BookmarkableRelicPiece, BookmarkableRelicSet} from "~/types/bookmark/bookmarkables"
 
 interface Props {
   modelValue: boolean
