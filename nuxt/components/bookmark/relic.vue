@@ -64,9 +64,15 @@ const mainStats = (() => {
 
 const showRelicSetMenu = ref(false)
 
-const removeBookmark = (id: number) => {
-  db.bookmarks.remove(id)
-  snackbar.show(tx(i18n, "bookmark.removed"))
+const removeBookmark = async(id: number) => {
+  const result = await db.bookmarks.remove(id)
+
+  snackbar.show(tx(i18n, "bookmark.removed"), null, {
+    text: tx(i18n, "common.undo"),
+    onClick: () => {
+      db.bookmarks.bulkAdd(result)
+    },
+  })
 }
 </script>
 

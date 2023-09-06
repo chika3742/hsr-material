@@ -2,13 +2,6 @@
 import {useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
 import _ from "lodash"
-import {
-  BookmarkableExp,
-  BookmarkableIngredient,
-  BookmarkableMaterial,
-  isBookmarkableExp,
-  isBookmarkableMaterial,
-} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import materials from "~/assets/data/materials.csv"
 import {computed} from "#imports"
@@ -16,6 +9,13 @@ import {LevelingBookmark} from "~/types/bookmark/bookmark"
 import {db} from "~/libs/db/providers"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
+import {
+  BookmarkableExp,
+  BookmarkableIngredient,
+  BookmarkableMaterial,
+  isBookmarkableExp,
+  isBookmarkableMaterial,
+} from "~/types/bookmark/bookmarkables"
 
 interface Props {
   /**
@@ -115,8 +115,13 @@ const toggleBookmark = async(selectedExpItemId: string | undefined) => {
       await db.bookmarks.addLevelingItems(props.items.map(e => toRaw(e)), selectedExpItemId)
       snackbar.show(tx(i18n, "bookmark.bookmarked"))
     } else {
-      await db.bookmarks.remove(...savedBookmarks.value.map(e => e.id!))
-      snackbar.show(tx(i18n, "bookmark.removed"))
+      const result = await db.bookmarks.remove(...savedBookmarks.value.map(e => e.id!))
+      snackbar.show(tx(i18n, "bookmark.removed"), null, {
+        text: tx(i18n, "common.undo"),
+        onClick: () => {
+          db.bookmarks.bulkAdd(result)
+        },
+      })
     }
   } catch (e) {
     console.error(e)

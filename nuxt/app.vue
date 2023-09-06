@@ -45,6 +45,17 @@
         <client-only>
           <v-snackbar v-model="snackbar.ref.value.displayed" :color="snackbar.ref.value.color ?? undefined">
             <span>{{ snackbar.ref.value.message }}</span>
+
+            <template #actions>
+              <v-btn
+                v-for="(action, i) in snackbar.ref.value.actions"
+                :key="i"
+                :text="action.text"
+                color="secondary"
+                variant="text"
+                @click="action.onClick(); snackbar.ref.value.displayed = false"
+              />
+            </template>
           </v-snackbar>
 
           <v-dialog

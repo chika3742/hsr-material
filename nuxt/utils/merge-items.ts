@@ -1,6 +1,7 @@
 import _ from "lodash"
 import materials from "~/assets/data/materials.csv"
-import {BookmarkableIngredient, isBookmarkableExp} from "~/types/bookmarkable-ingredient"
+
+import {BookmarkableIngredient, isBookmarkableExp} from "~/types/bookmark/bookmarkables"
 
 /**
  * Merges items in the list with the same material IDs and returns an array of arrays.

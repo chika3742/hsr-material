@@ -13,7 +13,6 @@
 </template>
 
 <script lang="ts" setup>
-import {BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial} from "~/types/bookmarkable-ingredient"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
@@ -23,6 +22,7 @@ import lightCones from "~/assets/data/light-cones.yaml"
 import {LevelIngredients} from "~/types/level-ingredients"
 import {Usage} from "~/types/bookmark/usage"
 import {db} from "~/libs/db/providers"
+import {BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
 
 const props = defineProps<{
   title: string

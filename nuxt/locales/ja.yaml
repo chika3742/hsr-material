@@ -5,6 +5,7 @@ common:
   backToHome: ホームに戻る
   ok: OK
   cancel: キャンセル
+  undo: 元に戻す
   rarity: レアリティ
   path: 運命
   combatType: 属性

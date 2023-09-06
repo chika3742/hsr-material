@@ -1,23 +1,24 @@
 import {Table} from "dexie"
-import {logEvent} from "@firebase/analytics"
 import {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
-import {BookmarkableRelic} from "~/types/bookmarkable-relic"
+import {PurposeType} from "~/types/strings"
+import {_db} from "~/dexie/db"
+import {DbProvider} from "~/libs/db/db-provider"
 import {
   BookmarkableCharacterMaterial,
   BookmarkableExp,
   BookmarkableIngredient,
   BookmarkableLightConeMaterial,
+  BookmarkableRelic,
   isBookmarkableExp,
-} from "~/types/bookmarkable-ingredient"
-import {PurposeType} from "~/types/strings"
-import {_db} from "~/dexie/db"
-import {DbProvider} from "~/libs/db/db-provider"
+} from "~/types/bookmark/bookmarkables"
+import {EventLogger} from "~/libs/event-logger"
 
 /**
  * Provides methods for bookmark-related database operations.
  */
 export class BookmarksProvider extends DbProvider {
   bookmarks: Table<Bookmark>
+  logger = new EventLogger(useNuxtApp().$analytics)
 
   constructor() {
     super()
@@ -118,12 +119,7 @@ export class BookmarksProvider extends DbProvider {
       // add bookmarks
       await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})
     }).then(() => {
-      const {$analytics} = useNuxtApp()
-      logEvent($analytics, "bookmark_added", {
-        item_type: data[0].type,
-        character_id: data[0].characterId,
-        item_id: !isBookmarkableExp(data[0]) ? data[0].materialId : undefined,
-      })
+      this.logger.logBookmarkAdded(data[0])
 
       return null
     })
@@ -133,34 +129,19 @@ export class BookmarksProvider extends DbProvider {
    * Removes {@link LevelingBookmark}s from the database.
    *
    * @param ids List of ids to remove
+   * @returns List of removed {@link Bookmark}s
    */
   remove(...ids: number[]) {
     return this.transactionWithFirestore([this.bookmarks], async() => {
-      const item = await this.bookmarks.get(ids[0])
-      if (item) {
-        const {$analytics} = useNuxtApp()
-        logEvent($analytics, "bookmark_removed", {
-          item_type: item.type,
-          character_id: item.characterId,
-          item_id: (() => {
-            switch (item.type) {
-              case "character_material":
-              case "light_cone_material":
-                return item.materialId
-
-              case "relic_set":
-                return item.relicSetIds
-
-              case "relic_piece":
-                return item.relicPieceId
-            }
-
-            return undefined
-          })(),
-        })
+      const items = await this.bookmarks.bulkGet(ids) as Bookmark[]
+      const firstItem = items[0]
+      if (firstItem) {
+        this.logger.logBookmarkRemoved(firstItem)
       }
 
       await this.bookmarks.bulkDelete(ids)
+
+      return items
     })
   }
 
@@ -174,14 +155,16 @@ export class BookmarksProvider extends DbProvider {
       // add bookmark
       await this.bookmarks.add(dataToSave)
     }).then(() => {
-      const {$analytics} = useNuxtApp()
-      logEvent($analytics, "bookmark_added", {
-        item_type: data.type,
-        character_id: data.characterId,
-        item_id: data.type === "relic_set" ? data.relicSetIds : data.relicPieceId,
-      })
+      this.logger.logBookmarkAdded(data)
 
       return null
+    })
+  }
+
+  bulkAdd(data: Bookmark[]) {
+    return this.transactionWithFirestore([this.bookmarks], async() => {
+      // add bookmarks
+      await this.bookmarks.bulkAdd(data, {allKeys: true})
     })
   }
 }

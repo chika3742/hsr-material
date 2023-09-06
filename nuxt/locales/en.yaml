@@ -5,6 +5,7 @@ common:
   backToHome: Back to Home
   ok: OK
   cancel: Cancel
+  undo: Undo
   rarity: Rarity
   filter: Filter
   expandAll: Expand All
