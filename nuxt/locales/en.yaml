@@ -98,6 +98,7 @@ charactersPage:
 characterDetailsPage:
   iHave: I have this character.
   bookmarkLightCone: Bookmark Light Cone
+  bookmarkRelics: Bookmark Relics
   ascension: Ascension / Character Level Up Materials
   skills: Skill Leveling Materials
 

@@ -78,14 +78,29 @@ onActivated(() => {
         hide-details
       />
 
-      <v-btn
-        :text="tx('characterDetailsPage.bookmarkLightCone')"
-        :to="localePath({
-          path: '/light-cones',
-          query: {character: toCharacterIdWithVariant(character.id, currentVariant.path)},
-        })"
-        prepend-icon="mdi-cone"
-      />
+      <div class="d-flex flex-column g-2">
+        <v-btn
+          :text="tx('characterDetailsPage.bookmarkLightCone')"
+          :to="localePath({
+            path: '/light-cones',
+            query: {character: toCharacterIdWithVariant(character.id, currentVariant.path)},
+          })"
+          color="primary"
+          prepend-icon="mdi-cone"
+          variant="outlined"
+        />
+
+        <v-btn
+          :text="tx('characterDetailsPage.bookmarkRelics')"
+          :to="localePath({
+            path: '/relics',
+            query: {character: toCharacterIdWithVariant(character.id, currentVariant.path)},
+          })"
+          color="primary"
+          prepend-icon="mdi-star-david"
+          variant="outlined"
+        />
+      </div>
     </v-row>
 
     <client-only>
