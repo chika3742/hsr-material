@@ -115,8 +115,13 @@ const toggleBookmark = async(selectedExpItemId: string | undefined) => {
       await db.bookmarks.addLevelingItems(props.items.map(e => toRaw(e)), selectedExpItemId)
       snackbar.show(tx(i18n, "bookmark.bookmarked"))
     } else {
-      await db.bookmarks.remove(...savedBookmarks.value.map(e => e.id!))
-      snackbar.show(tx(i18n, "bookmark.removed"))
+      const result = await db.bookmarks.remove(...savedBookmarks.value.map(e => e.id!))
+      snackbar.show(tx(i18n, "bookmark.removed"), null, {
+        text: tx(i18n, "common.undo"),
+        onClick: () => {
+          db.bookmarks.bulkAdd(result)
+        },
+      })
     }
   } catch (e) {
     console.error(e)

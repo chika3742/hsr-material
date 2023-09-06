@@ -129,16 +129,20 @@ export class BookmarksProvider extends DbProvider {
    * Removes {@link LevelingBookmark}s from the database.
    *
    * @param ids List of ids to remove
+   * @returns List of removed {@link Bookmark}s
    */
   remove(...ids: number[]) {
     return this.transactionWithFirestore([this.bookmarks], async() => {
-      const item = await this.bookmarks.get(ids[0])
-      if (item) {
+      const items = await this.bookmarks.bulkGet(ids) as Bookmark[]
+      const firstItem = items[0]
+      if (firstItem) {
         const {$analytics} = useNuxtApp()
-        new EventLogger($analytics).logBookmarkRemoved(item)
+        new EventLogger($analytics).logBookmarkRemoved(firstItem)
       }
 
       await this.bookmarks.bulkDelete(ids)
+
+      return items
     })
   }
 
@@ -156,6 +160,13 @@ export class BookmarksProvider extends DbProvider {
       new EventLogger($analytics).logBookmarkAdded(data)
 
       return null
+    })
+  }
+
+  bulkAdd(data: Bookmark[]) {
+    return this.transactionWithFirestore([this.bookmarks], async() => {
+      // add bookmarks
+      await this.bookmarks.bulkAdd(data, {allKeys: true})
     })
   }
 }

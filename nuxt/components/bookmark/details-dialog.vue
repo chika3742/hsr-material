@@ -24,6 +24,8 @@ const router = useRouter()
 
 const loadingCompleteLeveling = ref<string | null>(null)
 
+const _persistent = ref(false)
+
 const purposes = computed(() => {
   const result: Partial<Record<PurposeType, LevelingBookmark[]>> = {}
 
@@ -46,8 +48,19 @@ const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
   const ids = purposes.value[purposeType]?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
   if (ids) {
     loadingCompleteLeveling.value = `${purposeType}-${level}`
-    return db.bookmarks.remove(...ids).then(() => {
-      snackbar.show(tx(i18n, "bookmark.removed"))
+    return db.bookmarks.remove(...ids).then((result) => {
+      snackbar.show(tx(i18n, "bookmark.removed"), null, {
+        text: tx(i18n, "common.undo"),
+        onClick: () => {
+          db.bookmarks.bulkAdd(result)
+
+          // avoid closing dialog
+          _persistent.value = true
+          setTimeout(() => {
+            _persistent.value = false
+          }, 0)
+        },
+      })
       return null
     }).finally(() => {
       loadingCompleteLeveling.value = null
@@ -68,6 +81,7 @@ router.beforeEach(() => {
     :model-value="modelValue"
     max-width="600px"
     scrollable
+    :persistent="_persistent"
     :fullscreen="$vuetify.display.xs"
     @update:model-value="$emit('update:modelValue', $event)"
   >
