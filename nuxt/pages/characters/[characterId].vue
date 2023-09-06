@@ -80,7 +80,10 @@ onActivated(() => {
 
       <v-btn
         :text="tx('characterDetailsPage.bookmarkLightCone')"
-        :to="localePath({path: '/light-cones', query: {character: character.id}})"
+        :to="localePath({
+          path: '/light-cones',
+          query: {character: toCharacterIdWithVariant(character.id, currentVariant.path)},
+        })"
         prepend-icon="mdi-cone"
       />
     </v-row>

@@ -23,9 +23,13 @@ const spiltByPath = splitByField(lightCones, "path")
 
 onActivated(() => {
   if (route.query.character) {
-    const queryCharacter = characters.find(e => e.id === route.query.character)
-    if (typeof queryCharacter !== "undefined") {
-      expanded.value = [spiltByPath.findIndex(e => e[0].path === queryCharacter.path)]
+    if (toVariant(route.query.character as string)) {
+      expanded.value = [spiltByPath.findIndex(e => e[0].path === toVariant(route.query.character as string))]
+    } else {
+      const queryCharacter = characters.find(e => e.id === route.query.character)
+      if (typeof queryCharacter !== "undefined") {
+        expanded.value = [spiltByPath.findIndex(e => e[0].path === queryCharacter.path)]
+      }
     }
   }
 })
