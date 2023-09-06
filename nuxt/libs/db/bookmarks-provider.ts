@@ -18,6 +18,7 @@ import {EventLogger} from "~/libs/event-logger"
  */
 export class BookmarksProvider extends DbProvider {
   bookmarks: Table<Bookmark>
+  logger = new EventLogger(useNuxtApp().$analytics)
 
   constructor() {
     super()
@@ -118,8 +119,7 @@ export class BookmarksProvider extends DbProvider {
       // add bookmarks
       await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})
     }).then(() => {
-      const {$analytics} = useNuxtApp()
-      new EventLogger($analytics).logBookmarkAdded(data[0])
+      this.logger.logBookmarkAdded(data[0])
 
       return null
     })
@@ -136,8 +136,7 @@ export class BookmarksProvider extends DbProvider {
       const items = await this.bookmarks.bulkGet(ids) as Bookmark[]
       const firstItem = items[0]
       if (firstItem) {
-        const {$analytics} = useNuxtApp()
-        new EventLogger($analytics).logBookmarkRemoved(firstItem)
+        this.logger.logBookmarkRemoved(firstItem)
       }
 
       await this.bookmarks.bulkDelete(ids)
@@ -156,8 +155,7 @@ export class BookmarksProvider extends DbProvider {
       // add bookmark
       await this.bookmarks.add(dataToSave)
     }).then(() => {
-      const {$analytics} = useNuxtApp()
-      new EventLogger($analytics).logBookmarkAdded(data)
+      this.logger.logBookmarkAdded(data)
 
       return null
     })
