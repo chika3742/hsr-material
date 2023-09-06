@@ -31,7 +31,7 @@
 
         <div class="d-flex flex-column h-100">
           <v-container>
-            <NuxtPage :keepalive="{max: 5, exclude: ['v-tooltip']}" :page-key="$route.fullPath" />
+            <NuxtPage :keepalive="{max: 5, exclude: ['v-tooltip']}" :page-key="$route.path" />
           </v-container>
 
           <v-spacer />
