@@ -1,5 +1,4 @@
 import {Table} from "dexie"
-import {logEvent} from "@firebase/analytics"
 import {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
 import {PurposeType} from "~/types/strings"
 import {_db} from "~/dexie/db"
@@ -12,6 +11,7 @@ import {
   BookmarkableRelic,
   isBookmarkableExp,
 } from "~/types/bookmark/bookmarkables"
+import {EventLogger} from "~/libs/event-logger"
 
 /**
  * Provides methods for bookmark-related database operations.
@@ -119,11 +119,7 @@ export class BookmarksProvider extends DbProvider {
       await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})
     }).then(() => {
       const {$analytics} = useNuxtApp()
-      logEvent($analytics, "bookmark_added", {
-        item_type: data[0].type,
-        character_id: data[0].characterId,
-        item_id: !isBookmarkableExp(data[0]) ? data[0].materialId : undefined,
-      })
+      new EventLogger($analytics).logBookmarkAdded(data[0])
 
       return null
     })
@@ -139,25 +135,7 @@ export class BookmarksProvider extends DbProvider {
       const item = await this.bookmarks.get(ids[0])
       if (item) {
         const {$analytics} = useNuxtApp()
-        logEvent($analytics, "bookmark_removed", {
-          item_type: item.type,
-          character_id: item.characterId,
-          item_id: (() => {
-            switch (item.type) {
-              case "character_material":
-              case "light_cone_material":
-                return item.materialId
-
-              case "relic_set":
-                return item.relicSetIds
-
-              case "relic_piece":
-                return item.relicPieceId
-            }
-
-            return undefined
-          })(),
-        })
+        new EventLogger($analytics).logBookmarkRemoved(item)
       }
 
       await this.bookmarks.bulkDelete(ids)
@@ -175,11 +153,7 @@ export class BookmarksProvider extends DbProvider {
       await this.bookmarks.add(dataToSave)
     }).then(() => {
       const {$analytics} = useNuxtApp()
-      logEvent($analytics, "bookmark_added", {
-        item_type: data.type,
-        character_id: data.characterId,
-        item_id: data.type === "relic_set" ? data.relicSetIds : data.relicPieceId,
-      })
+      new EventLogger($analytics).logBookmarkAdded(data)
 
       return null
     })
