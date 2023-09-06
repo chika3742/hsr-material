@@ -80,16 +80,19 @@ export class BookmarksProvider extends DbProvider {
       .and((e) => {
         const item = e as BookmarkableIngredient
 
-        switch (item.type) {
-          case "character_exp":
-          case "character_material":
-            // filtered by characterId, variant, and purposeType
-            return item.usage.purposeType === purposeType
-          case "light_cone_exp":
-          case "light_cone_material":
-            // filtered by characterId, variant, lightConeId, and purposeType
-            return item.usage.lightConeId === lightConeId && item.usage.purposeType === purposeType
+        if (
+          typeof lightConeId !== "undefined" &&
+          (item.type === "light_cone_exp" || item.type === "light_cone_material")
+        ) {
+          return item.usage.lightConeId === lightConeId && item.usage.purposeType === purposeType
+        } else if (
+          typeof lightConeId === "undefined" &&
+          (item.type === "character_exp" || item.type === "character_material")
+        ) {
+          return item.usage.purposeType === purposeType
         }
+
+        return false
       }).toArray() as Promise<LevelingBookmark[]>
   }
 

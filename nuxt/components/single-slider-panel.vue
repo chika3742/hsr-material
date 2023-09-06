@@ -59,18 +59,18 @@ const setInitialRangeBasedOnBookmarks = async() => {
     "ascension",
   )
 
-  if (bookmarks.length === 0) {
-    return
+  if (bookmarks.length !== 0) {
+    const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+    const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+
+    range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1], max]
+  } else {
+    range.value = [sliderTicks.value[0], sliderTicks.value.slice(-1)[0]]
   }
-
-  const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-  const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-
-  range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1], max]
 }
-onMounted(() => {
+watch(toRefs(props).characterId, () => {
   setInitialRangeBasedOnBookmarks()
-})
+}, {immediate: true})
 
 const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
   return levelIngredients.filter(e => range.value[0] < e.level && e.level <= range.value[1])
