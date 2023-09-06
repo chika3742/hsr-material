@@ -83,7 +83,7 @@ onActivated(() => {
           :text="tx('characterDetailsPage.bookmarkLightCone')"
           :to="localePath({
             path: '/light-cones',
-            query: {character: toCharacterIdWithVariant(character.id, currentVariant.path)},
+            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
           })"
           color="primary"
           prepend-icon="mdi-cone"
@@ -94,7 +94,7 @@ onActivated(() => {
           :text="tx('characterDetailsPage.bookmarkRelics')"
           :to="localePath({
             path: '/relics',
-            query: {character: toCharacterIdWithVariant(character.id, currentVariant.path)},
+            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
           })"
           color="primary"
           prepend-icon="mdi-star-david"
