@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import {groupBy} from "lodash"
-import {isBookmarkableExp} from "~/types/bookmarkable-ingredient"
 import {PurposeType} from "~/types/strings"
 import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {materialSortFunc} from "~/utils/merge-items"
 import {db} from "~/libs/db/providers"
+import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
 
 interface Props {
   modelValue: boolean
@@ -23,6 +23,8 @@ const i18n = useI18n()
 const router = useRouter()
 
 const loadingCompleteLeveling = ref<string | null>(null)
+
+const _persistent = ref(false)
 
 const purposes = computed(() => {
   const result: Partial<Record<PurposeType, LevelingBookmark[]>> = {}
@@ -46,8 +48,19 @@ const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
   const ids = purposes.value[purposeType]?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
   if (ids) {
     loadingCompleteLeveling.value = `${purposeType}-${level}`
-    return db.bookmarks.remove(...ids).then(() => {
-      snackbar.show(tx(i18n, "bookmark.removed"))
+    return db.bookmarks.remove(...ids).then((result) => {
+      snackbar.show(tx(i18n, "bookmark.removed"), null, {
+        text: tx(i18n, "common.undo"),
+        onClick: () => {
+          db.bookmarks.bulkAdd(result)
+
+          // avoid closing dialog
+          _persistent.value = true
+          setTimeout(() => {
+            _persistent.value = false
+          }, 0)
+        },
+      })
       return null
     }).finally(() => {
       loadingCompleteLeveling.value = null
@@ -68,6 +81,7 @@ router.beforeEach(() => {
     :model-value="modelValue"
     max-width="600px"
     scrollable
+    :persistent="_persistent"
     :fullscreen="$vuetify.display.xs"
     @update:model-value="$emit('update:modelValue', $event)"
   >
@@ -105,7 +119,7 @@ router.beforeEach(() => {
                     </v-btn>
                   </v-row>
                   <div class="material-cards-container">
-                    <MaterialCard
+                    <MaterialItem
                       v-for="item in __items.sort(materialSortFunc)"
                       :key="item.id"
                       :initial-selected-exp-item="isBookmarkableExp(item) ? item.selectedItem : undefined"

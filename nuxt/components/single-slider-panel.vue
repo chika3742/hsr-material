@@ -2,7 +2,7 @@
   <v-expansion-panel :title="title">
     <v-expansion-panel-text eager>
       <LevelSlider v-model="range" :slider-ticks="sliderTicks" />
-      <MaterialCards
+      <MaterialItems
         :items="items"
         :range="range"
         :purpose-types="['ascension']"
@@ -13,7 +13,6 @@
 </template>
 
 <script lang="ts" setup>
-import {BookmarkableExp, BookmarkableIngredient, BookmarkableItem} from "~/types/bookmarkable-ingredient"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
@@ -23,6 +22,7 @@ import lightCones from "~/assets/data/light-cones.yaml"
 import {LevelIngredients} from "~/types/level-ingredients"
 import {Usage} from "~/types/bookmark/usage"
 import {db} from "~/libs/db/providers"
+import {BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
 
 const props = defineProps<{
   title: string
@@ -59,18 +59,18 @@ const setInitialRangeBasedOnBookmarks = async() => {
     "ascension",
   )
 
-  if (bookmarks.length === 0) {
-    return
+  if (bookmarks.length !== 0) {
+    const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+    const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+
+    range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1], max]
+  } else {
+    range.value = [sliderTicks.value[0], sliderTicks.value.slice(-1)[0]]
   }
-
-  const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-  const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-
-  range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1], max]
 }
-onMounted(() => {
+watch(toRefs(props).characterId, () => {
   setInitialRangeBasedOnBookmarks()
-})
+}, {immediate: true})
 
 const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
   return levelIngredients.filter(e => range.value[0] < e.level && e.level <= range.value[1])
@@ -114,7 +114,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
         throw new Error("Invalid ingredient markup")
       }
 
-      let result: BookmarkableItem
+      let result: BookmarkableMaterial
       if (usage.type === "character") {
         result = {
           type: "character_material",

@@ -5,6 +5,7 @@ common:
   backToHome: Back to Home
   ok: OK
   cancel: Cancel
+  undo: Undo
   rarity: Rarity
   filter: Filter
   expandAll: Expand All
@@ -22,6 +23,7 @@ common:
   details: Details
   2pcEffect: 2-Piece Effect
   4pcEffect: 4-Piece Effect
+  showAllCharacters: Show All Characters
   skillTypes:
     basicAttack: Basic Attack
     skill: Skill
@@ -95,6 +97,8 @@ charactersPage:
 
 characterDetailsPage:
   iHave: I have this character.
+  bookmarkLightCone: Bookmark Light Cone
+  bookmarkRelics: Bookmark Relics
   ascension: Ascension / Character Level Up Materials
   skills: Skill Leveling Materials
 

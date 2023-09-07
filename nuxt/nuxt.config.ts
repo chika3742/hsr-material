@@ -40,6 +40,7 @@ export default defineNuxtConfig({
   },
   css: ["assets/styles/global.sass"],
   modules: [
+    "mhy-material-components",
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
@@ -51,7 +52,7 @@ export default defineNuxtConfig({
     },
     plugins: [
       yaml({
-        exclude: "locales/**",
+        exclude: "**/locales/**",
       }),
       dsv({
         // @ts-ignore: https://github.com/rollup/plugins/pull/1493

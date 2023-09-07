@@ -261,8 +261,8 @@ const rank5Prob = computed(() => {
       bottom: 0
 
       &--rank5
-        background-color: rgb(var(--v-theme-rank5))
+        background-color: rgb(var(--v-theme-rarity-5))
 
       &--rank4
-        background-color: rgb(var(--v-theme-rank4))
+        background-color: rgb(var(--v-theme-rarity-4))
 </style>

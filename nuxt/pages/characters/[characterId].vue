@@ -25,7 +25,7 @@ const currentVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
 })
 
 watch(currentVariant, (value) => {
-  history.replaceState(null, "", router.resolve({query: {variant: value.path}}).href)
+  router.replace({query: {variant: value.path}})
 })
 
 onActivated(() => {
@@ -69,15 +69,38 @@ onActivated(() => {
       </div>
 
       <!-- Is owned checkbox -->
-      <v-checkbox-btn
+      <v-checkbox
         v-if="character.id !== 'trailblazer'"
         v-model="config.ownedCharacters"
+        :label="tx('characterDetailsPage.iHave')"
         :value="character.id"
-      >
-        <template #label>
-          <span class="text-no-wrap">{{ tx('characterDetailsPage.iHave') }}</span>
-        </template>
-      </v-checkbox-btn>
+        class="flex-0-0"
+        hide-details
+      />
+
+      <div class="d-flex flex-column g-2">
+        <v-btn
+          :text="tx('characterDetailsPage.bookmarkLightCone')"
+          :to="localePath({
+            path: '/light-cones',
+            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
+          })"
+          color="primary"
+          prepend-icon="mdi-cone"
+          variant="outlined"
+        />
+
+        <v-btn
+          :text="tx('characterDetailsPage.bookmarkRelics')"
+          :to="localePath({
+            path: '/relics',
+            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
+          })"
+          color="primary"
+          prepend-icon="mdi-star-david"
+          variant="outlined"
+        />
+      </div>
     </v-row>
 
     <client-only>

@@ -2,6 +2,7 @@
 import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
 import {CharacterIdWithVariant} from "~/types/strings"
+import characters from "~/assets/data/characters.yaml"
 
 definePageMeta({
   title: "lightConeDetails",
@@ -17,6 +18,15 @@ if (!lightCones.some(e => e.id === route.params.lightConeId)) {
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
 
 const selectedCharacter = ref<CharacterIdWithVariant>()
+
+const characterSelectFilter = (id: string): boolean => {
+  const variant = toVariant(id)
+  if (variant !== null) {
+    return variant === lightCone.path
+  } else {
+    return characters.find(e => e.id === id)!.path === lightCone.path
+  }
+}
 </script>
 
 <template>
@@ -51,7 +61,15 @@ const selectedCharacter = ref<CharacterIdWithVariant>()
       <EmphasizedText :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)" class="pl-4 mt-1" />
     </section>
 
-    <CharacterSelect v-model="selectedCharacter" class="mt-4" max-width="300px" />
+    <CharacterSelect
+      v-model="selectedCharacter"
+      :characters="$characterSelectItems"
+      :label="tx('relicDetailsPage.characterToEquip')"
+      class="mt-4"
+      :filter="characterSelectFilter"
+      :filter-disable-checkbox-text="tx('common.showAllCharacters')"
+      max-width="300px"
+    />
 
     <v-expansion-panels mandatory="force">
       <SingleSliderPanel

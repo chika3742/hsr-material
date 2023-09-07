@@ -4,6 +4,8 @@ import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {CharacterIdWithVariant} from "~/types/strings"
 import {reactive} from "#imports"
 
+import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
+
 interface Props {
   character: CharacterIdWithVariant
   bookmarks: Bookmark[]
@@ -82,17 +84,22 @@ const detailsDialog = reactive({
 
       <div class="pa-2 d-flex flex-column" style="gap: 8px">
         <section v-if="groupedBookmarks.characterMaterials.length >= 1">
-          <v-row no-gutters style="gap: 8px">
-            <MaterialCard
+          <div class="d-flex g-2 flex-wrap">
+            <MaterialItem
               v-for="(materials, mId) in _.groupBy(groupedBookmarks.characterMaterials, 'materialId') as Record<string, (Bookmark.CharacterMaterial | Bookmark.Exp)[]>"
               :key="mId"
-              :initial-selected-exp-item="(materials[0] as any).selectedItem"
+              :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
               :items="materials"
               :purpose-types="['ascension', 'basicAttack', 'skill', 'talent', 'ultimate']"
-              show-details-button
-              @click:details-button="detailsDialog.items = groupedBookmarks.characterMaterials; detailsDialog.show = true"
             />
-          </v-row>
+            <v-btn
+              :text="tx('common.details')"
+              class="align-self-center"
+              prepend-icon="mdi-loupe"
+              variant="text"
+              @click="detailsDialog.items = groupedBookmarks.characterMaterials; detailsDialog.show = true"
+            />
+          </div>
         </section>
 
         <section v-if="Object.keys(groupedBookmarks.lightCones).length >= 1">
@@ -107,17 +114,23 @@ const detailsDialog = reactive({
                 lines="two"
                 rounded
               />
-              <v-row class="ml-2 mt-2" no-gutters style="gap: 8px">
-                <MaterialCard
+              <div class="d-flex g-2 flex-wrap ml-4 mt-2">
+                <MaterialItem
                   v-for="(materials, mId) in _.groupBy(lcMaterials, 'materialId') as Record<string, (Bookmark.LightConeMaterial | Bookmark.Exp)[]>"
                   :key="mId"
-                  :initial-selected-exp-item="(materials[0] as any).selectedItem"
+                  :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
                   :items="materials"
                   :purpose-types="['ascension']"
-                  show-details-button
-                  @click:details-button="detailsDialog.items = lcMaterials; detailsDialog.show = true"
                 />
-              </v-row>
+
+                <v-btn
+                  :text="tx('common.details')"
+                  class="align-self-center"
+                  prepend-icon="mdi-loupe"
+                  variant="text"
+                  @click="detailsDialog.items = lcMaterials; detailsDialog.show = true"
+                />
+              </div>
             </div>
           </div>
         </section>

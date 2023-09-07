@@ -132,7 +132,16 @@ const filteredCharacters = computed(() => {
     </v-row>
 
     <v-row no-gutters class="mt-4" style="gap: 16px">
-      <CharacterCard v-for="character in filteredCharacters" :key="character.id" :character="character" />
+      <CharacterCard
+        v-for="character in filteredCharacters"
+        :key="character.id"
+        :attribute-images="[
+          ...character.combatType ? [getCombatTypeImage(character.combatType)] : [],
+          ...character.path ? [getPathImage(character.path)] : [],
+        ]"
+        :character-id="character.id"
+        :image="getCharacterImage(character.id, 'full')"
+      />
     </v-row>
   </div>
 </template>

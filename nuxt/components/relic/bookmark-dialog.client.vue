@@ -3,8 +3,8 @@ import {RelicPiece, RelicSet} from "~/types/data/relics"
 import relicStats from "assets/data/relic-stats.yaml"
 import {Stat} from "~/types/generated/relic-stats.g"
 import {CharacterIdWithVariant} from "~/types/strings"
-import {BookmarkableRelic, BookmarkableRelicPiece, BookmarkableRelicSet} from "~/types/bookmarkable-relic"
 import {db} from "~/libs/db/providers"
+import {BookmarkableRelic, BookmarkableRelicPiece, BookmarkableRelicSet} from "~/types/bookmark/bookmarkables"
 
 interface Props {
   modelValue: boolean
@@ -208,7 +208,12 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
           />
 
           <!-- Character select -->
-          <CharacterSelect v-model="selectedCharacter" v-model:error="characterSelectError" />
+          <CharacterSelect
+            v-model="selectedCharacter"
+            v-model:error="characterSelectError"
+            :characters="$characterSelectItems"
+            :label="tx('relicDetailsPage.characterToEquip')"
+          />
 
           <!-- Main stat radio buttons -->
           <section v-for="group in radioGroups.filter(e => e.items.length >= 2)" :key="group.title">
