@@ -51,7 +51,8 @@
                 v-for="(action, i) in snackbar.ref.value.actions"
                 :key="i"
                 :text="action.text"
-                color="secondary"
+                color="primary"
+                style="filter: invert(1)"
                 variant="text"
                 @click="action.onClick(); snackbar.ref.value.displayed = false"
               />
