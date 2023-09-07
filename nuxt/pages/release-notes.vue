@@ -119,6 +119,7 @@ const timelineStyle = computed(() => {
 
 .timeline
   overflow: hidden
+  padding: 0 16px
   transition: height 300ms ease
 
 .show-more-blur
