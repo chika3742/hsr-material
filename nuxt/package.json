@@ -49,5 +49,5 @@
     "ua-parser-js": "^1.0.35",
     "vuetify": "^3.3.10"
   },
-  "packageManager": "yarn@3.6.0"
+  "packageManager": "yarn@3.6.3"
 }
