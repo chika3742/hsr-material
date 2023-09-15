@@ -9,7 +9,7 @@ server.
 
 ### Requirements
 
-- Node.js 18.x
+- Node.js 20.x
 - Yarn 1.x
 
 ### Environment Variables
@@ -42,7 +42,7 @@ yarn preview # to preview the generated site
 
 ### Requirements
 
-- Node.js 18.x
+- Node.js 20.x
 - Yarn 1.x
 - Firebase CLI (can be installed with `npm -g install firebase-tools`)
 
