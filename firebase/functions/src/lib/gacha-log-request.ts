@@ -17,12 +17,15 @@ export class GachaLogRequest {
 
   async getGachaLogForAllWarpTypes(): Promise<Warp[]> {
     const result: Warp[] = []
+    let count = 0
 
-    for (const i in GachaLogRequest.warpTypes) {
+    for (const warpType of GachaLogRequest.warpTypes) {
+      count++
+
       this.onProgress({
-        "progress.gachaTypeCount": parseInt(i) + 1,
+        "progress.gachaTypeCount": count,
       })
-      result.push(...await this.getGachaLogForWarpType(GachaLogRequest.warpTypes[i].toString()))
+      result.push(...await this.getGachaLogForWarpType(warpType.toString()))
     }
 
     return result
