@@ -136,11 +136,18 @@ const getWarps = async() => {
 
   const api = new WarpsApi($functions, url.value)
 
-  const validationResult = await api.validateUrl()
+  try {
+    const validationResult = await api.validateUrl()
 
-  if (!validationResult.valid) {
-    error.value = i18n.t(`warpsPage.errors.${validationResult.errorCode}`)
+    if (!validationResult.valid) {
+      error.value = tx(i18n, `warpsPage.errors.${validationResult.errorCode}`)
+      fetching.value = false
+      return
+    }
+  } catch (e) {
+    console.error(e)
     fetching.value = false
+    error.value = tx(i18n, "warpsPage.errors.internal")
     return
   }
 
