@@ -25,3 +25,4 @@ rules:
   vue/no-v-html: off
   import/named: off
   no-use-before-define: off
+  "@typescript-eslint/ban-ts-comment": off

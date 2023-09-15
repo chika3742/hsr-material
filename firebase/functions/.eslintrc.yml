@@ -10,7 +10,6 @@ overrides: []
 extends:
   - eslint:recommended
   - plugin:@typescript-eslint/recommended
-  - "@nuxtjs/eslint-config-typescript"
   - ../../.eslintrc.yml
 
 parser: "@typescript-eslint/parser"
