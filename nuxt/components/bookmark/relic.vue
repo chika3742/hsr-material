@@ -70,7 +70,7 @@ const removeBookmark = async(id: number) => {
   snackbar.show(tx(i18n, "bookmark.removed"), null, {
     text: tx(i18n, "common.undo"),
     onClick: () => {
-      db.bookmarks.bulkAdd(result)
+      void db.bookmarks.bulkAdd(result)
     },
   })
 }

@@ -69,7 +69,7 @@ const setInitialRangeBasedOnBookmarks = async() => {
   }
 }
 watch(toRefs(props).characterId, () => {
-  setInitialRangeBasedOnBookmarks()
+  void setInitialRangeBasedOnBookmarks()
 }, {immediate: true})
 
 const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {

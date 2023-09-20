@@ -5,6 +5,7 @@ import {useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
 import _ from "lodash"
 import Sortable from "sortablejs"
+import {Observable} from "rxjs"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {_db} from "~/dexie/db"
 import {useConfigStore} from "~/store/config"
@@ -12,9 +13,11 @@ import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 
 const config = useConfigStore()
 
-const bookmarks = useObservable<Bookmark[], Bookmark[]>(liveQuery(() => _db.bookmarks.toArray()) as any, {
-  initialValue: [],
-})
+const bookmarks = useObservable<Bookmark[], Bookmark[]>(
+  liveQuery(() => _db.bookmarks.toArray()) as Observable<Bookmark[]>, {
+    initialValue: [],
+  },
+)
 
 const bookmarkCharacters = computed(() => {
   return Object.fromEntries(Object.entries(_.groupBy(bookmarks.value, v => v.characterId)).sort((a, b) => {
@@ -35,7 +38,7 @@ const bookmarkCharacters = computed(() => {
 
 const saveCharacterSort = (ev: Sortable.SortableEvent) => {
   config.characterOrder = Array.from(ev.to.children).map(el => (el as HTMLElement).dataset.characterId!)
-  FirestoreProvider.instance?.sendLocalData()
+  void FirestoreProvider.instance?.sendLocalData()
 }
 
 </script>

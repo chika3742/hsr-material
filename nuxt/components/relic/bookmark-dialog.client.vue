@@ -141,15 +141,15 @@ const saveBookmark = async() => {
   const data: BookmarkableRelic = (() => {
     if (props.relicSets) {
       return new BookmarkableRelicSet({
-        relicSetIds: props.relicSets!.map(e => e.id),
-        characterId: selectedCharacter.value!,
+        relicSetIds: props.relicSets.map(e => e.id),
+        characterId: selectedCharacter.value,
         mainStats: toRaw(selectedStats.main),
         subStats: toRaw(selectedStats.sub),
       })
     } else {
       return new BookmarkableRelicPiece({
         relicPieceId: props.relicPiece!.id,
-        characterId: selectedCharacter.value!,
+        characterId: selectedCharacter.value,
         mainStat: selectedStats.main.piece!,
         subStats: toRaw(selectedStats.sub),
       })

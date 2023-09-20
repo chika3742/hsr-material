@@ -49,27 +49,30 @@ const ranges = ref(sliders.map((e) => {
 }))
 const checkedList = ref(sliders.map(() => true))
 const setInitialRangeBasedOnBookmarks = async() => {
-  for (const i in sliders) {
-    const slider = sliders[i]
+  {
+    let index = 0
+    for (const slider of sliders) {
+      const bookmarks = await db.bookmarks.getByPurpose(
+        props.characterId,
+        props.variant,
+        undefined,
+        slider.type,
+      )
 
-    const bookmarks = await db.bookmarks.getByPurpose(
-      props.characterId,
-      props.variant,
-      undefined,
-      slider.type,
-    )
+      if (bookmarks.length === 0) {
+        checkedList.value[index] = false
+        continue
+      }
 
-    if (bookmarks.length === 0) {
-      checkedList.value[i] = false
-      continue
+      const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+      const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+
+      const sliderTicks = levelIngredientsToSliderTicks(slider.levelIngredients)
+
+      ranges.value[index] = [sliderTicks[sliderTicks.indexOf(min) - 1], max]
+
+      index++
     }
-
-    const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-    const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-
-    const sliderTicks = levelIngredientsToSliderTicks(slider.levelIngredients)
-
-    ranges.value[i] = [sliderTicks[sliderTicks.indexOf(min) - 1], max]
   }
 
   if (checkedList.value.every(e => !e)) {
@@ -77,7 +80,7 @@ const setInitialRangeBasedOnBookmarks = async() => {
   }
 }
 onMounted(() => {
-  setInitialRangeBasedOnBookmarks()
+  void setInitialRangeBasedOnBookmarks()
 })
 
 const ingredients = computed<BookmarkableMaterial[]>(() => {

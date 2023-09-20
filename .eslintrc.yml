@@ -26,3 +26,14 @@ rules:
   import/named: off
   no-use-before-define: off
   "@typescript-eslint/ban-ts-comment": off
+  no-void:
+    - error
+    - allowAsStatement: true
+  "@typescript-eslint/no-floating-promises":
+    - error
+    - ignoreIIFE: true
+  "@typescript-eslint/no-misused-promises":
+    - error
+    - checksVoidReturn:
+        arguments: false
+  "@typescript-eslint/no-unsafe-member-access": off

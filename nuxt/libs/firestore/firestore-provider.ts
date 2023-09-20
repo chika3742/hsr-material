@@ -55,7 +55,7 @@ export class FirestoreProvider {
 
     const localData = await this.db.dump()
     // local data is empty
-    if (Object.values(localData).every(v => v.length === 0)) {
+    if (Object.values(localData).every((v: Array<unknown>) => v.length === 0)) {
       await this.db.importRemote(remoteData)
       return
     }

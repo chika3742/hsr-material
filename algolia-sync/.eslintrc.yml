@@ -5,15 +5,13 @@ env:
 
 extends:
   - eslint:recommended
-  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-type-checked
   - ../.eslintrc.yml
 
 parserOptions:
+  project: true
   sourceType: module
   ecmaVersion: latest
-
-plugins:
-  - "@typescript-eslint"
 
 ignorePatterns: [ ]
 

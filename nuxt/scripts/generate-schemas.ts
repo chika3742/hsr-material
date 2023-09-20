@@ -3,6 +3,7 @@ import path from "path"
 import {compile} from "json-schema-to-typescript"
 import {parse} from "yaml"
 import {pascalCase} from "scule"
+import {JSONSchema4} from "json-schema"
 
 export const generateSchemas = async() => {
   const inputDir = "./schemas"
@@ -11,7 +12,8 @@ export const generateSchemas = async() => {
   const files = fs.readdirSync(inputDir)
   for (const fileName of files) {
     const name = pascalCase(fileName.split(".")[0])
-    const result = await compile(parse(fs.readFileSync(path.resolve(inputDir, fileName)).toString()), name, {
+
+    const result = await compile(parse(fs.readFileSync(path.resolve(inputDir, fileName)).toString()) as JSONSchema4, name, {
       bannerComment: "/* This file was generated. DO NOT edit by hand. */",
       cwd: inputDir,
     })

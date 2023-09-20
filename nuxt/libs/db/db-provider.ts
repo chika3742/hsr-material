@@ -12,7 +12,7 @@ export abstract class DbProvider {
       return result
     }).catch((e) => {
       // restore backup
-      _db.import(backup)
+      void _db.import(backup)
       throw e
     })
   }

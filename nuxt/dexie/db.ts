@@ -34,9 +34,10 @@ export class MySubClassedDexie extends Dexie {
 
   import(data: SyncedUserData) {
     return this.transaction("rw", this.tables, () => {
-      return Object.entries(data).map(([tableName, tableData]) => {
+      return Object.entries(data).map(async([tableName, tableData]) => {
         const table = this.table(tableName)
-        return table.clear().then(() => table.bulkAdd(tableData))
+        await table.clear()
+        return await table.bulkAdd(tableData as unknown[])
       })
     })
   }

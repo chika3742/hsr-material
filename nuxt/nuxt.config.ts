@@ -132,7 +132,7 @@ export default defineNuxtConfig({
     public: {
       isProdBranch: process.env.CF_PAGES_BRANCH === prodBranch,
       useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
-      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG ?? "{}"),
+      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG ?? "{}") as object,
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
       algolia: {
         appId: algoliaConfig.appId,

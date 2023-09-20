@@ -66,6 +66,7 @@ import {liveQuery} from "dexie"
 import {Warp} from "#shared/warp"
 import _ from "lodash"
 import {WarpGettingProgress} from "#shared/warp-history-ticket"
+import {Observable} from "rxjs"
 import {ref} from "#imports"
 import {useConfigStore} from "~/store/config"
 import {WarpsApi} from "~/libs/warps-api"
@@ -120,7 +121,7 @@ const warpTypes: {
 ]
 
 const warps = process.client
-  ? useObservable<Warp[], Warp[]>(liveQuery(() => _db.warps.toArray()) as any, {
+  ? useObservable<Warp[], Warp[]>(liveQuery(() => _db.warps.toArray()) as Observable<Warp>, {
     initialValue: [],
   })
   : ref([])
@@ -222,7 +223,7 @@ const registerStatusListener = (api: WarpsApi) => {
 }
 
 watch(toRefs(config).warpsShowPityList, () => {
-  FirestoreProvider.instance?.sendLocalData()
+  void FirestoreProvider.instance?.sendLocalData()
 })
 // `warpsUrl` is sent when fetching warps is complete
 

@@ -24,7 +24,7 @@ onMounted(() => {
   }, 1000)
 })
 
-const validate = (value: string): string | true => {
+const validate = (value: string): boolean | string => {
   const intValue = Number(value)
   return (!isNaN(intValue) && intValue >= 0 && intValue < maxTpCount) || i18n.t("tpCalcPage.rangeError", {max: maxTpCount})
 }
@@ -39,7 +39,7 @@ watch(currentTpCount, (value: string) => {
 })
 
 const sendToFirestore = _.debounce(() => {
-  FirestoreProvider.instance?.sendLocalData()
+  void FirestoreProvider.instance?.sendLocalData()
 }, 1000)
 
 const baseTime = computed(() => {

@@ -2,6 +2,7 @@
 import {useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
 import _ from "lodash"
+import {Observable} from "rxjs"
 import {PurposeType} from "~/types/strings"
 import materials from "~/assets/data/materials.csv"
 import {computed} from "#imports"
@@ -70,7 +71,7 @@ const savedBookmarks = process.client
       props.items,
       props.purposeTypes,
       props.individual ? props.items[0].usage.upperLevel : undefined,
-    )) as any, {
+    )) as Observable<LevelingBookmark[]>, {
     initialValue: null,
   })
   : ref([])
@@ -119,7 +120,7 @@ const toggleBookmark = async(selectedExpItemId: string | undefined) => {
       snackbar.show(tx(i18n, "bookmark.removed"), null, {
         text: tx(i18n, "common.undo"),
         onClick: () => {
-          db.bookmarks.bulkAdd(result)
+          void db.bookmarks.bulkAdd(result)
         },
       })
     }
@@ -131,12 +132,12 @@ const toggleBookmark = async(selectedExpItemId: string | undefined) => {
   }
 }
 
-const reBookmark = (selectedExpItemId: string | undefined) => {
+const reBookmark = async(selectedExpItemId: string | undefined) => {
   loading.value = true
 
   try {
-    db.bookmarks.remove(...(savedBookmarks.value as LevelingBookmark[]).map(e => e.id!))
-    db.bookmarks.addLevelingItems(props.items, selectedExpItemId)
+    await db.bookmarks.remove(...(savedBookmarks.value as LevelingBookmark[]).map(e => e.id!))
+    await db.bookmarks.addLevelingItems(props.items, selectedExpItemId)
 
     snackbar.show(tx(i18n, "bookmark.bookmarked"))
   } catch (e) {

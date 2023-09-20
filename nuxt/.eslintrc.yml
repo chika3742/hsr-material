@@ -8,16 +8,20 @@ overrides: []
 
 extends:
   - eslint:recommended
-  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-type-checked
   - plugin:vue/vue3-recommended
   - plugin:promise/recommended
   - "@nuxtjs/eslint-config-typescript"
   - ../.eslintrc.yml
 
 parserOptions:
+  project: .nuxt/tsconfig.json
   sourceType: module
   ecmaVersion: latest
+  extraFileExtensions:
+    - .vue
 
 ignorePatterns:
   - .output/**
   - "**/generated/**"
+  - py/**
