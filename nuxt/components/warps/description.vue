@@ -1,8 +1,9 @@
 <script setup lang="ts">
-const {$marked} = useNuxtApp()
+import {CustomMarked} from "~/libs/custom-marked"
+
 const i18n = useI18n()
 
-const marked = $marked({gfm: false})
+const marked = new CustomMarked({gfm: false})
 
 const streamUrl = "https://apps.apple.com/app/stream/id1312141691"
 </script>

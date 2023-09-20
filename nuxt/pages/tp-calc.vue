@@ -6,16 +6,16 @@ import {maxTpCount} from "~/utils/tp"
 import {useConfigStore} from "~/store/config"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 import {computed} from "#imports"
+import {CustomMarked} from "~/libs/custom-marked"
 
 definePageMeta({
   title: "tpCalc",
 })
 
 const config = useConfigStore()
-const {$marked} = useNuxtApp()
 const i18n = useI18n()
 
-const marked = $marked({})
+const marked = new CustomMarked()
 
 const currentSecond = ref(DateTime.now().second)
 onMounted(() => {
