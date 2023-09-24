@@ -15,7 +15,7 @@
     "@types/lodash": "^4.14.196",
     "@types/luxon": "^3.3.1",
     "@types/marked": "^5.0.1",
-    "@types/node": "^18.17.1",
+    "@types/node": "^20.6.3",
     "@types/sortablejs": "^1.15.1",
     "@types/ua-parser-js": "^0.7.36",
     "@typescript-eslint/eslint-plugin": "^6.5.0",

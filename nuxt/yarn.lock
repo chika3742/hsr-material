@@ -3590,10 +3590,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.17.1":
-  version: 18.17.1
-  resolution: "@types/node@npm:18.17.1"
-  checksum: 56201bda9a2d05d68602df63b4e67b0545ac8c6d0280bd5fb31701350a978a577a027501fbf49db99bf177f2242ebd1244896bfd35e89042d5bd7dfebff28d4e
+"@types/node@npm:^20.6.3":
+  version: 20.6.3
+  resolution: "@types/node@npm:20.6.3"
+  checksum: 444a6f1f41cfa8d3e20ce0108e6e43960fb2ae0e481f233bb1c14d6252aa63a92e021de561cd317d9fdb411688f871065f40175a1f18763282dee2613a08f8a3
   languageName: node
   linkType: hard
 
@@ -10622,7 +10622,7 @@ __metadata:
     "@types/lodash": ^4.14.196
     "@types/luxon": ^3.3.1
     "@types/marked": ^5.0.1
-    "@types/node": ^18.17.1
+    "@types/node": ^20.6.3
     "@types/sortablejs": ^1.15.1
     "@types/ua-parser-js": ^0.7.36
     "@typescript-eslint/eslint-plugin": ^6.5.0
