@@ -32,7 +32,7 @@
     "eslint-import-resolver-typescript": "^3.6.0",
     "eslint-plugin-vue": "^9.15.1",
     "firebase": "^10.1.0",
-    "json-schema-to-typescript": "^13.0.2",
+    "json-schema-to-typescript": "^13.1.1",
     "luxon": "^3.3.0",
     "marked": "^9.0.2",
     "mhy-material-components": "https://github.com/chika3742/mhy-material-components.git#commit=7f136a171f7fe14abc9f3d75451dca50f4a3c034",

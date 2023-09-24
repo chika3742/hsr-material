@@ -8087,9 +8087,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-schema-to-typescript@npm:^13.0.2":
-  version: 13.0.2
-  resolution: "json-schema-to-typescript@npm:13.0.2"
+"json-schema-to-typescript@npm:^13.1.1":
+  version: 13.1.1
+  resolution: "json-schema-to-typescript@npm:13.1.1"
   dependencies:
     "@bcherny/json-schema-ref-parser": 10.0.5-fork
     "@types/json-schema": ^7.0.11
@@ -8107,7 +8107,7 @@ __metadata:
     prettier: ^2.6.2
   bin:
     json2ts: dist/src/cli.js
-  checksum: 2d9871d2c9391dddfb59e3d188fc6bd9f25241b62b06bac0a415bb4a86676388a28c231c4f151a5dbe05ef3c73211b14fb80d0adf804f66e5f8938fcbf4c822c
+  checksum: e6d894741703c27e0fae4a30b860fdd063439b78b5f98175203a6fe0c1152e2f6a5c4be34fbb2bc460ca50e14d8514cb3da3979d4f912bf2c6fada2f97b551b8
   languageName: node
   linkType: hard
 
@@ -10633,7 +10633,7 @@ __metadata:
     eslint-import-resolver-typescript: ^3.6.0
     eslint-plugin-vue: ^9.15.1
     firebase: ^10.1.0
-    json-schema-to-typescript: ^13.0.2
+    json-schema-to-typescript: ^13.1.1
     luxon: ^3.3.0
     marked: ^9.0.2
     mhy-material-components: "https://github.com/chika3742/mhy-material-components.git#commit=7f136a171f7fe14abc9f3d75451dca50f4a3c034"
