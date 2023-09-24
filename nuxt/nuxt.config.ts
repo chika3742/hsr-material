@@ -6,6 +6,7 @@ import yaml from "@rollup/plugin-yaml"
 import {DateTime} from "luxon"
 import dsv from "@rollup/plugin-dsv"
 import {EnumChangefreq, SitemapItemLoose, SitemapStream, streamToPromise} from "sitemap"
+import {FirebaseOptions} from "@firebase/app"
 import algoliaConfig from "./algolia.json"
 import {generateSchemas} from "./scripts/generate-schemas"
 import {generateLocType} from "./scripts/generate-loc-type"
@@ -132,7 +133,7 @@ export default defineNuxtConfig({
     public: {
       isProdBranch: process.env.CF_PAGES_BRANCH === prodBranch,
       useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
-      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG ?? "{}") as object,
+      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG ?? "{}") as FirebaseOptions,
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
       algolia: {
         appId: algoliaConfig.appId,
