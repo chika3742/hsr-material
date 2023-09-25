@@ -15,20 +15,20 @@ jobs:
           cache: yarn
           cache-dependency-path: "**/yarn.lock"
 
+      - name: yarn install
+        run: |
+          (cd nuxt && yarn install --immutable)
+          (cd algolia-sync && yarn install --frozen-lockfile)
+          (cd firebase/functions && yarn install --immutable)
+
       - name: Lint (nuxt)
         working-directory: nuxt
-        run: |
-          yarn install --immutable
-          yarn lint
+        run: yarn lint
 
       - name: Lint (algolia-sync)
         working-directory: algolia-sync
-        run: |
-          yarn install --frozen-lockfile
-          yarn lint
+        run: yarn lint
 
       - name: Lint (firebase)
         working-directory: firebase/functions
-        run: |
-          yarn install --immutable
-          yarn lint
+        run: yarn lint
