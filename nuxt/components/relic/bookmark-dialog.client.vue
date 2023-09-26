@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import {RelicPiece, RelicSet} from "~/types/data/relics"
 import relicStats from "assets/data/relic-stats.yaml"
+import {RelicPiece, RelicSet} from "~/types/data/relics"
 import {Stat} from "~/types/generated/relic-stats.g"
 import {CharacterIdWithVariant} from "~/types/strings"
 import {db} from "~/libs/db/providers"

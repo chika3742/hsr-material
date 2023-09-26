@@ -61,12 +61,11 @@
 
 <script lang="ts" setup>
 import {doc, onSnapshot} from "@firebase/firestore"
-import {useObservable} from "@vueuse/rxjs"
+import {from, useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
-import {Warp} from "#shared/warp"
 import _ from "lodash"
+import {Warp} from "#shared/warp"
 import {WarpGettingProgress} from "#shared/warp-history-ticket"
-import {Observable} from "rxjs"
 import {ref} from "#imports"
 import {useConfigStore} from "~/store/config"
 import {WarpsApi} from "~/libs/warps-api"
@@ -121,7 +120,7 @@ const warpTypes: {
 ]
 
 const warps = process.client
-  ? useObservable<Warp[], Warp[]>(liveQuery(() => _db.warps.toArray()) as Observable<Warp>, {
+  ? useObservable<Warp[], Warp[]>(from(liveQuery(() => _db.warps.toArray())), {
     initialValue: [],
   })
   : ref([])

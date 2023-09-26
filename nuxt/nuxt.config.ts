@@ -96,7 +96,8 @@ export default defineNuxtConfig({
     },
   },
   alias: {
-    "#shared": "../firebase/functions/src/types/shared",
+    // TODO: https://github.com/nuxt/nuxt/issues/22994
+    "#shared": "../../firebase/functions/src/types/shared",
   },
   typescript: {
     tsConfig: {
