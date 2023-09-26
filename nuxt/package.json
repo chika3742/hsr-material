@@ -42,7 +42,7 @@
     "sitemap": "^7.1.1",
     "sortablejs": "^1.15.0",
     "typescript": "^5.2.2",
-    "ua-parser-js": "^1.0.35",
+    "ua-parser-js": "^1.0.36",
     "vuetify": "^3.3.17",
     "workbox-build": "^7.0.0"
   },
