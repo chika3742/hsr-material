@@ -3950,10 +3950,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/sortablejs@npm:^1.15.1":
-  version: 1.15.1
-  resolution: "@types/sortablejs@npm:1.15.1"
-  checksum: 242c0350f63b86541d667d5aa5d1695a9b98644a1c1f52b537f7733baf187dd2618fadde4deab01e655ebf06294cebf0a889ebebf9202ef0a8750a7afed3ecfd
+"@types/sortablejs@npm:^1.15.3":
+  version: 1.15.3
+  resolution: "@types/sortablejs@npm:1.15.3"
+  checksum: 189cc8b16666e27f0de5894731b95889a8be29d8e68d0afdcbd703e1cd519623b2e42049fe66d25e4ec403dffed594b19bb1d16aab6939d0cdfb4d50e2fb99b6
   languageName: node
   linkType: hard
 
@@ -11138,7 +11138,7 @@ __metadata:
     "@types/luxon": ^3.3.2
     "@types/marked": ^5.0.1
     "@types/node": ^20.7.0
-    "@types/sortablejs": ^1.15.1
+    "@types/sortablejs": ^1.15.3
     "@types/ua-parser-js": ^0.7.36
     "@typescript-eslint/eslint-plugin": ^6.7.3
     "@vue/language-server": ^1.8.14
