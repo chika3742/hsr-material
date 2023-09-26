@@ -6,8 +6,7 @@ updates:
       interval: weekly
       timezone: Asia/Tokyo
       day: sunday
-    labels:
-      - dependencies
+    open-pull-requests-limit: 10
 
   - package-ecosystem: npm
     directory: /firebase/functions
@@ -15,5 +14,4 @@ updates:
       interval: weekly
       timezone: Asia/Tokyo
       day: sunday
-    labels:
-      - dependencies
+    open-pull-requests-limit: 10
