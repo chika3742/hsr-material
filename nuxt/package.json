@@ -16,7 +16,7 @@
     "@nuxtjs/i18n": "^8.0.0-rc.3",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
     "@pinia/nuxt": "^0.4.11",
-    "@rollup/plugin-dsv": "^3.0.2",
+    "@rollup/plugin-dsv": "^3.0.3",
     "@rollup/plugin-yaml": "^4.1.1",
     "@types/luxon": "^3.3.2",
     "@types/marked": "^5.0.1",

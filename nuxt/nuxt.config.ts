@@ -56,7 +56,6 @@ export default defineNuxtConfig({
         exclude: "**/locales/**",
       }),
       dsv({
-        // @ts-ignore: https://github.com/rollup/plugins/pull/1493
         processRow(row) {
           const result: Record<string, unknown> = {}
           for (const key of Object.keys(row)) {
