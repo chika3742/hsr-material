@@ -24,7 +24,7 @@
     "@types/sortablejs": "^1.15.1",
     "@types/ua-parser-js": "^0.7.36",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
-    "@vue/language-server": "^1.8.8",
+    "@vue/language-server": "^1.8.14",
     "@vueuse/rxjs": "^10.4.1",
     "algoliasearch": "^4.19.1",
     "dexie": "^3.2.4",
