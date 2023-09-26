@@ -30,7 +30,7 @@
     "dexie": "^3.2.4",
     "eslint": "^8.50.0",
     "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-vue": "^9.15.1",
+    "eslint-plugin-vue": "^9.17.0",
     "firebase": "^10.4.0",
     "json-schema-to-typescript": "^13.1.1",
     "luxon": "^3.4.3",
