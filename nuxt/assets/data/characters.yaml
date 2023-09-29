@@ -366,3 +366,27 @@
     skills: group:lcs005
     skillsAdvanced: id:regret-of-infinite-ochema
 
+- id: fu-xuan
+  $nameJA: 符玄
+  yomi: フゲン
+  rarity: 5
+  path: preservation
+  combatType: quantum
+  materials:
+    common: group:com006
+    ascension: id:nail-of-the-ape
+    skills: group:lcs001
+    skillsAdvanced: id:regret-of-infinite-ochema
+
+- id: lynx
+  $nameJA: リンクス
+  yomi: リンクス
+  rarity: 4
+  path: abundance
+  combatType: quantum
+  materials:
+    common: group:com002
+    ascension: id:nail-of-the-ape
+    skills: group:lcs007
+    skillsAdvanced: id:regret-of-infinite-ochema
+
