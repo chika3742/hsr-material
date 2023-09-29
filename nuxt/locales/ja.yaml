@@ -210,6 +210,7 @@ warpsPage:
     failedToSave: 跳躍履歴の保存に失敗しました。
     unknown: 不明なエラーが発生しました。
   aboutTitle: 初めての方はこちら
+  copied: コピーしました
   about: |
     ## 本機能について
 
@@ -237,10 +238,10 @@ warpsPage:
         1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を選択します。
         1. WindowsキーとRキーを同時に押し、「ファイル名を指定して実行」を開きます。
         1. 以下のコマンドをコピー＆ペーストし、Enterキーを押します。
-            ```
-            {'powershell -Command "iex ""&{$(irm https://gist.githubusercontent.com/chika3742/0542db8a5e329fb15af9e37714e92893/raw/getlink.ps1)} global -lang ja-JP"""'}
-            ```
+            <div id="cmd-win" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline}</code></pre></div>
         1. URLがコピーされるので、本ページに貼り付けてください。
+      cmdline: |
+        {'powershell -Command "iex ""&{$(irm https://gist.githubusercontent.com/chika3742/0542db8a5e329fb15af9e37714e92893/raw/getlink.ps1)} global -lang ja-JP"""'}
     ios:
       title: URL取得方法 (iOS)
       contents: |
@@ -268,21 +269,13 @@ warpsPage:
         
         1. [Homebrew](https://brew.sh) と [mitmproxy](https://mitmproxy.org) をインストールしておきます。
         1. ターミナルで以下のコマンドを実行します。パスワードの入力が要求されるので、入力します。
-        
-            ```sh
-            {'curl "https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f/raw/install-ca.sh" | bash'}
-            ```
-        
+            <div id="cmd-macos-1" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline1}</code></pre></div>
             ※このコマンドは、証明書を信頼することでHTTPS通信を監視できるようにするためのものです。
         
         ### URL取得
         
         1. ターミナルで以下のコマンドを実行します。
-        
-            ```sh
-            {'curl "https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f/raw/run.sh" | bash'}
-            ```
-        
+            <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
         1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を開きます。
         1. 自動的にURLがコピーされ、自動的にスクリプトが終了します。
 
