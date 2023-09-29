@@ -396,6 +396,8 @@ characterNames:
   blade: Blade
   luka: Luka
   dan-heng-imbibitor-lunae: Dan Heng・Imbibitor Lunae
+  fu-xuan: Fu Xuan
+  lynx: Lynx
 
 materialCategories:
   exp: EXP Materials
@@ -468,6 +470,7 @@ materialNames:
   ascendant-debris: Ascendant Debris
   regret-of-infinite-ochema: Regret of Infinite Ochema
   suppressing-edict: Suppressing Edict
+  nail-of-the-ape: Nail of the Ape
 
 skillTitles:
   trailblazer:
@@ -626,6 +629,16 @@ skillTitles:
     skill: Dracore Libre
     ultimate: Azure's Aqua Ablutes All
     talent: Righteous Heart
+  fu-xuan:
+    basicAttack: Novaburst
+    skill: Known by Stars, Shown by Hearts
+    ultimate: Woes of Many Morphed to One
+    talent: Bleak Breeds Bliss
+  lynx:
+    basicAttack: Ice Crampon Technique
+    skill: Salted Camping Cans
+    ultimate: Snowfield First Aid
+    talent: Outdoor Survival Experience
 
 lightConeNames:
   arrows: Arrows
@@ -703,6 +716,7 @@ lightConeNames:
   patience-is-all-you-need: Patience Is All You Need
   brighter-than-the-sun: Brighter Than the Sun
   solitary-healing: Solitary Healing
+  she-already-shut-her-eyes: She Already Shut Her Eyes
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -888,6 +902,11 @@ lightConeSkillDescriptions:
     ATK, they will gain 1 stack of Dragon's Call, lasting for 2 turns. Each stack
     of Dragon's Call increases the wearer's ATK by <18%> and Energy Regeneration
     Rate by <6%>. Dragon's Call can be stacked up to 2 times.
+  she-already-shut-her-eyes: >-
+    Increases the wearer's Max HP by <24%> and Energy Regeneration Rate by <12%>.
+    When the wearer's HP is reduced, all allies' DMG dealt increases by <9%>,
+    lasting for 2 turn(s).\nAt the start of every wave, restores HP to all allies
+    by an amount equal to <80%> of their respective lost HP.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
