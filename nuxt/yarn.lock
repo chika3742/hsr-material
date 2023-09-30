@@ -3203,7 +3203,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:^3.2.3, @nuxt/kit@npm:^3.5.0, @nuxt/kit@npm:^3.6.5":
+"@nuxt/kit@npm:^3.5.0, @nuxt/kit@npm:^3.6.5":
   version: 3.6.5
   resolution: "@nuxt/kit@npm:3.6.5"
   dependencies:
@@ -3638,16 +3638,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pinia-plugin-persistedstate/nuxt@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@pinia-plugin-persistedstate/nuxt@npm:1.1.1"
+"@pinia-plugin-persistedstate/nuxt@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@pinia-plugin-persistedstate/nuxt@npm:1.1.2"
   dependencies:
-    "@nuxt/kit": ^3.2.3
+    "@nuxt/kit": ^3.7.3
     defu: ^6.1.2
-    pinia-plugin-persistedstate: ">=3.1.0"
+    pinia-plugin-persistedstate: ">=3.2.0"
   peerDependencies:
     "@pinia/nuxt": ^0.4.4
-  checksum: 992c06b71b65827dc7c05521e033251969c1766905ba1087a1f7143c01b784fcf86b8d0640a35cf70f25d53ce35a0feebd93f70d2413d619f39ec87193d14f8a
+  checksum: 49911f7098e3ed34a58b4a36af86b95d772909839d06506337047de1572a28e0f58ad8d0a61e2ccffe4ba5af123ce6377aa09f7f2d96069bd0fde38456989d9e
   languageName: node
   linkType: hard
 
@@ -10439,7 +10439,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia-plugin-persistedstate@npm:>=3.1.0":
+"pinia-plugin-persistedstate@npm:>=3.2.0":
   version: 3.2.0
   resolution: "pinia-plugin-persistedstate@npm:3.2.0"
   peerDependencies:
@@ -11388,7 +11388,7 @@ __metadata:
     "@nuxtjs/eslint-config-typescript": ^12.1.0
     "@nuxtjs/google-fonts": ^3.0.2
     "@nuxtjs/i18n": ^8.0.0-rc.4
-    "@pinia-plugin-persistedstate/nuxt": ^1.1.1
+    "@pinia-plugin-persistedstate/nuxt": ^1.1.2
     "@pinia/nuxt": ^0.4.11
     "@rollup/plugin-dsv": ^3.0.3
     "@rollup/plugin-yaml": ^4.1.1
