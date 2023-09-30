@@ -9,7 +9,7 @@
     "lint": "eslint --ext .ts,.vue --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230518.0",
+    "@cloudflare/workers-types": "^4.20230922.0",
     "@mdi/font": "^7.2.96",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/google-fonts": "^3.0.2",
