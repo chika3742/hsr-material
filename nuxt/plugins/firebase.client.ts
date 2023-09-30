@@ -1,4 +1,4 @@
-import {initializeApp} from "@firebase/app"
+import {FirebaseOptions, initializeApp} from "@firebase/app"
 import {connectFunctionsEmulator, getFunctions} from "@firebase/functions"
 import {connectAuthEmulator, getAuth} from "@firebase/auth"
 import {initializeAppCheck, ReCaptchaV3Provider} from "@firebase/app-check"
@@ -6,7 +6,7 @@ import {connectFirestoreEmulator, initializeFirestore, persistentLocalCache} fro
 import {getAnalytics} from "@firebase/analytics"
 
 export default defineNuxtPlugin(({$config}) => {
-  const app = initializeApp($config.public.firebaseConfig)
+  const app = initializeApp($config.public.firebaseConfig as FirebaseOptions)
 
   if (process.dev) {
     self.FIREBASE_APPCHECK_DEBUG_TOKEN = true

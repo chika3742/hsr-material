@@ -36,7 +36,6 @@ const opened = computed({
           v-bind="_props"
         >
           <template #prepend>
-            <!-- TODO: https://github.com/vuetifyjs/vuetify/issues/17413 -->
             <v-img :src="imageFunc(group[0].id)" class="mr-2" height="40px" width="40px" />
           </template>
         </v-list-item>
@@ -46,7 +45,8 @@ const opened = computed({
         v-for="item in group"
         :key="item.id"
         :image-func="imageFunc"
-        :item="item"
+        :item-id="item.id"
+        :item-rarity="item.rarity"
         :item-i18n-key="itemI18nKey"
         :link-base-path="linkBasePath"
         :preserve-query="preserveQuery"

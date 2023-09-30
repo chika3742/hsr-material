@@ -26,7 +26,7 @@
 
       <v-main class="h-100">
         <div class="position-fixed" style="top: 64px; width: 100%; z-index: 9999">
-          <v-progress-linear :active="loadingPage" color="primary" indeterminate />
+          <v-progress-linear :active="isLoadingPage" color="primary" indeterminate />
         </div>
 
         <div class="d-flex flex-column h-100">
@@ -116,10 +116,10 @@ const isProd = rConfig.public.isProdBranch
 
 const isDrawerOpenOnMobile = ref(false)
 const mounted = ref(false)
-const loadingPage = ref(false)
+const isLoadingPage = ref(false)
 const showSearchDialog = ref(false)
 
-const title = computed(() => getPageTitle(route.fullPath, router, i18n))
+const title = ref(getPageTitle(route.fullPath, router, i18n))
 
 useHead({
   title,
@@ -163,12 +163,13 @@ onBeforeUnmount(() => {
 })
 
 router.beforeEach(() => {
-  loadingPage.value = true
+  isLoadingPage.value = true
   snackbar.ref.value.displayed = false
 })
 
-router.afterEach(() => {
-  loadingPage.value = false
+router.afterEach((to) => {
+  isLoadingPage.value = false
+  title.value = getPageTitle(to.fullPath, router, i18n)
 })
 
 </script>

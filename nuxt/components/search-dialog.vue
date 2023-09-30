@@ -31,7 +31,7 @@ const textField = ref<HTMLElement | null>(null)
 
 watch(toRefs(props).modelValue, (value) => {
   if (value) {
-    nextTick(() => {
+    void nextTick(() => {
       textField.value?.click()
     })
   }
@@ -70,7 +70,7 @@ watch(query, (value) => {
     return
   }
 
-  executeQuery(value)
+  void executeQuery(value)
 })
 
 const clearQuery = () => {

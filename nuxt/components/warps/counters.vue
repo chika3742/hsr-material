@@ -146,12 +146,12 @@ const pityInfo = computed<Record<number, { count: number, lastPulled: string }>>
 
     if (pityInfo[5].lastPulled === "-" && warp.rankType === "5") {
       pityInfo[5] = {
-        count: i + 1,
+        count: i,
         lastPulled: getItemNameI18nKey(warp),
       }
     } else if (pityInfo[4].lastPulled === "-" && warp.rankType === "4") {
       pityInfo[4] = {
-        count: i + 1,
+        count: i,
         lastPulled: getItemNameI18nKey(warp),
       }
     }

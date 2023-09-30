@@ -38,7 +38,7 @@ export const onRequest: PagesFunction = async(context) => {
     })
   }
 
-  const result = await fetchResult.json() as { retcode: number }
+  const result = await fetchResult.json<{ retcode: number }>()
 
   const response: { success: boolean, errorCode?: GetWarpHistoryErrorCode } = (() => {
     switch (result.retcode) {

@@ -1,28 +1,34 @@
-name: "lint: nuxt"
+name: "lint"
 
 on:
   push:
-    paths:
-      - "nuxt/**"
 
 jobs:
-  lint-nuxt:
+  lint:
     runs-on: ubuntu-latest
-    env:
-      PROJECT_PATH: nuxt
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           cache: yarn
-          cache-dependency-path: ${{ env.PROJECT_PATH }}/yarn.lock
+          cache-dependency-path: "**/yarn.lock"
 
       - name: yarn install
-        working-directory: ${{ env.PROJECT_PATH }}
-        run: yarn install --frozen-lockfile
+        run: |
+          (cd nuxt && yarn install --immutable)
+          (cd algolia-sync && yarn install --frozen-lockfile)
+          (cd firebase/functions && yarn install --immutable)
 
-      - name: yarn lint
-        working-directory: ${{ env.PROJECT_PATH }}
+      - name: Lint (nuxt)
+        working-directory: nuxt
+        run: yarn lint
+
+      - name: Lint (algolia-sync)
+        working-directory: algolia-sync
+        run: yarn lint
+
+      - name: Lint (firebase)
+        working-directory: firebase/functions
         run: yarn lint

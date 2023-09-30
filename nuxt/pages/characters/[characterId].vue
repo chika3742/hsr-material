@@ -25,7 +25,7 @@ const currentVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
 })
 
 watch(currentVariant, (value) => {
-  router.replace({query: {variant: value.path}})
+  void router.replace({query: {variant: value.path}})
 })
 
 onActivated(() => {

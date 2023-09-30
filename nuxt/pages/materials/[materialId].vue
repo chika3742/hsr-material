@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import materials from "~/assets/data/materials.csv"
-import ItemListItem from "~/components/item-list-item.vue"
 
 definePageMeta({
   title: "materialDetails",
@@ -58,7 +57,8 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
             v-for="lightCone in group"
             :key="lightCone.id"
             :image-func="getLightConeImage"
-            :item="lightCone"
+            :item-id="lightCone.id"
+            :item-rarity="lightCone.rarity"
             item-i18n-key="lightConeNames"
             link-base-path="/light-cones"
           />

@@ -5,4 +5,5 @@ export type ThemeSetting = "dark" | "light" | "auto"
 
 export type PurposeType = keyof CharacterIngredients["purposeTypes"]
 
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 export type CharacterIdWithVariant = string | `${string}_${Path}`

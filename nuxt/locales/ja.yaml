@@ -210,6 +210,7 @@ warpsPage:
     failedToSave: 跳躍履歴の保存に失敗しました。
     unknown: 不明なエラーが発生しました。
   aboutTitle: 初めての方はこちら
+  copied: コピーしました
   about: |
     ## 本機能について
 
@@ -237,10 +238,10 @@ warpsPage:
         1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を選択します。
         1. WindowsキーとRキーを同時に押し、「ファイル名を指定して実行」を開きます。
         1. 以下のコマンドをコピー＆ペーストし、Enterキーを押します。
-            ```
-            {'powershell -Command "iex ""&{$(irm https://gist.githubusercontent.com/chika3742/0542db8a5e329fb15af9e37714e92893/raw/getlink.ps1)} global -lang ja-JP"""'}
-            ```
+            <div id="cmd-win" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline}</code></pre></div>
         1. URLがコピーされるので、本ページに貼り付けてください。
+      cmdline: |
+        {'powershell -Command "iex ""&{$(irm https://gist.githubusercontent.com/chika3742/0542db8a5e329fb15af9e37714e92893/raw/getlink.ps1)} global -lang ja-JP"""'}
     ios:
       title: URL取得方法 (iOS)
       contents: |
@@ -268,21 +269,13 @@ warpsPage:
         
         1. [Homebrew](https://brew.sh) と [mitmproxy](https://mitmproxy.org) をインストールしておきます。
         1. ターミナルで以下のコマンドを実行します。パスワードの入力が要求されるので、入力します。
-        
-            ```sh
-            {'curl "https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f/raw/install-ca.sh" | bash'}
-            ```
-        
+            <div id="cmd-macos-1" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline1}</code></pre></div>
             ※このコマンドは、証明書を信頼することでHTTPS通信を監視できるようにするためのものです。
         
         ### URL取得
         
         1. ターミナルで以下のコマンドを実行します。
-        
-            ```sh
-            {'curl "https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f/raw/run.sh" | bash'}
-            ```
-        
+            <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
         1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を開きます。
         1. 自動的にURLがコピーされ、自動的にスクリプトが終了します。
 
@@ -428,6 +421,8 @@ characterNames:
   blade: 刃
   luka: ルカ
   dan-heng-imbibitor-lunae: 丹恒・飲月
+  fu-xuan: 符玄
+  lynx: リンクス
 
 materialCategories:
   exp: 経験値素材
@@ -500,6 +495,7 @@ materialNames:
   ascendant-debris: 天人の残穢
   regret-of-infinite-ochema: 無窮なる仮身の遺恨
   suppressing-edict: 霊鎮めの勅符
+  nail-of-the-ape: 蒼猿の釘
 
 skillTitles:
   trailblazer:
@@ -658,6 +654,16 @@ skillTitles:
     skill: 龍力自在
     ultimate: 傲睨せし蒼龍、世を濯ぐ劫水
     talent: 亢心
+  fu-xuan:
+    basicAttack: 始撃歳星
+    skill: 太微の行棋、影示す霊台
+    ultimate: 天律大衍、歴劫帰一
+    talent: 乾坤清夷、一陽来復
+  lynx:
+    basicAttack: アイスクライミングテクニック
+    skill: 塩漬け野営缶詰
+    ultimate: 雪原救急処置
+    talent: 野外サバイバル経験
 
 lightConeNames:
   arrows: 矢じり
@@ -735,6 +741,7 @@ lightConeNames:
   patience-is-all-you-need: 待つのみ
   brighter-than-the-sun: 陽光より輝くもの
   solitary-healing: 孤独の癒やし
+  she-already-shut-her-eyes: 閉ざした瞳
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -815,6 +822,7 @@ lightConeSkillDescriptions:
     装備キャラの攻撃が敵に命中した時、その敵が「遊糸」状態でない場合、<100%>の基礎確率で敵を「遊糸」状態にする。敵が「遊糸」状態の時、感電状態と見なされる。「遊糸」状態の敵はターンが回ってくるたびに、装備キャラの攻撃力<60%>分の雷属性持続ダメージを受ける、1ターン継続。
   brighter-than-the-sun: 装備キャラの会心率+<18%>。装備キャラが通常攻撃を行った時、「龍吟」を1層獲得する、2ターン継続。「龍吟」1層につき、装備キャラの攻撃力+<18%>、EP回復効率+<6%>。「龍吟」は最大で2層累積できる。
   solitary-healing: 装備キャラの撃破特効+<20%>。装備キャラが必殺技を発動した時、装備キャラの持続与ダメージ+<24%>、2ターン継続。装備キャラに持続ダメージ系デバフを付与された敵が倒された時、装備キャラのEPを<4>回復する。
+  she-already-shut-her-eyes: 装備キャラの最大HP+<24%>、EP回復効率+<12%>。装備キャラのHPが減った時、味方全体の与ダメージ+<9%>、2ターン継続。\n各ウェーブ開始時、味方全体のHPをそれぞれ失ったHPの<80%>分回復する。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

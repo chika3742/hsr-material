@@ -598,6 +598,11 @@
   materials:
     primary: group:lcs004
     common: group:com002
-
-
-
+- id: she-already-shut-her-eyes
+  $nameJA: 閉ざした瞳
+  yomi: トザシタヒトミ
+  rarity: 5
+  path: preservation
+  materials:
+    primary: group:lcs001
+    common: group:com006

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import {RelicPiece, RelicSet} from "~/types/data/relics"
 import relicStats from "assets/data/relic-stats.yaml"
+import {RelicPiece, RelicSet} from "~/types/data/relics"
 import {Stat} from "~/types/generated/relic-stats.g"
 import {CharacterIdWithVariant} from "~/types/strings"
 import {db} from "~/libs/db/providers"
@@ -141,15 +141,15 @@ const saveBookmark = async() => {
   const data: BookmarkableRelic = (() => {
     if (props.relicSets) {
       return new BookmarkableRelicSet({
-        relicSetIds: props.relicSets!.map(e => e.id),
-        characterId: selectedCharacter.value!,
+        relicSetIds: props.relicSets.map(e => e.id),
+        characterId: selectedCharacter.value,
         mainStats: toRaw(selectedStats.main),
         subStats: toRaw(selectedStats.sub),
       })
     } else {
       return new BookmarkableRelicPiece({
         relicPieceId: props.relicPiece!.id,
-        characterId: selectedCharacter.value!,
+        characterId: selectedCharacter.value,
         mainStat: selectedStats.main.piece!,
         subStats: toRaw(selectedStats.sub),
       })

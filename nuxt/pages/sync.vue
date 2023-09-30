@@ -125,7 +125,7 @@ const signIn = (provider: AuthProvider) => {
 
     // sign out to prevent data corruption
     if ($auth.currentUser) {
-      $auth.signOut()
+      void $auth.signOut()
     }
   })
 }
@@ -148,7 +148,7 @@ const sendLocalDataToResolveConflict = () => {
 
     // sign out to prevent data corruption
     if ($auth.currentUser) {
-      $auth.signOut()
+      void $auth.signOut()
     }
   })
 }

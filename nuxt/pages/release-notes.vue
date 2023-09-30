@@ -73,14 +73,13 @@
 
 <script lang="ts" setup>
 import releaseNotes from "~/assets/data/release-notes.yaml"
+import {CustomMarked} from "~/libs/custom-marked"
 
 definePageMeta({
   title: "releaseNotes",
 })
 
-const {$marked} = useNuxtApp()
-
-const marked = $marked({})
+const marked = new CustomMarked()
 
 const timelineExpanded = ref(false)
 const timeline = ref<{ $el: HTMLElement } | null>(null)

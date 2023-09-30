@@ -14,6 +14,7 @@ export const userDocumentConverter: FirestoreDataConverter<UserDocument> = {
           ...bookmark,
           // convert Timestamp to Date
           // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           bookmarkedAt: new Timestamp(bookmark.bookmarkedAt.seconds, bookmark.bookmarkedAt.nanoseconds).toDate(),
         })),
       },

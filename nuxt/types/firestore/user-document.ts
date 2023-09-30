@@ -1,6 +1,5 @@
 import {Timestamp} from "@firebase/firestore"
 import {Warp} from "#shared/warp"
-import {StoreDefinition} from "pinia"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {useConfigStore} from "~/store/config"
 
@@ -16,15 +15,14 @@ export interface SyncedUserData {
   warps: Warp[]
 }
 
-export type SyncedConfig = typeof useConfigStore extends StoreDefinition<any, infer S> ?
-  Pick<S,
+export type SyncedConfig = Pick<ReturnType<typeof useConfigStore>,
     | "warpsUrl"
     | "tpCount"
     | "tpBaseTime"
     | "warpsShowPityList"
     | "ownedCharacters"
     | "characterOrder"
-  > : never
+>
 
 export const configStoreToSyncedConfig = (config: ReturnType<typeof useConfigStore>): SyncedConfig => ({
   warpsUrl: config.warpsUrl,

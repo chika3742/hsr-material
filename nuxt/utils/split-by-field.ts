@@ -6,7 +6,7 @@
  * @returns Array of arrays of objects
  */
 
-export const splitByField = <T extends Record<string, unknown>, U extends keyof T>(source: T[], field: U): T[][] => {
+export const splitByField = <T extends { [K in U]: unknown }, U extends keyof T>(source: T[], field: U): T[][] => {
   const result: T[][] = []
 
   for (const element of source) {

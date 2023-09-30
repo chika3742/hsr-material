@@ -61,10 +61,10 @@
 
 <script lang="ts" setup>
 import {doc, onSnapshot} from "@firebase/firestore"
-import {useObservable} from "@vueuse/rxjs"
+import {from, useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
-import {Warp} from "#shared/warp"
 import _ from "lodash"
+import {Warp} from "#shared/warp"
 import {WarpGettingProgress} from "#shared/warp-history-ticket"
 import {ref} from "#imports"
 import {useConfigStore} from "~/store/config"
@@ -120,7 +120,7 @@ const warpTypes: {
 ]
 
 const warps = process.client
-  ? useObservable<Warp[], Warp[]>(liveQuery(() => _db.warps.toArray()) as any, {
+  ? useObservable<Warp[], Warp[]>(from(liveQuery(() => _db.warps.toArray())), {
     initialValue: [],
   })
   : ref([])
@@ -136,11 +136,18 @@ const getWarps = async() => {
 
   const api = new WarpsApi($functions, url.value)
 
-  const validationResult = await api.validateUrl()
+  try {
+    const validationResult = await api.validateUrl()
 
-  if (!validationResult.valid) {
-    error.value = i18n.t(`warpsPage.errors.${validationResult.errorCode}`)
+    if (!validationResult.valid) {
+      error.value = tx(i18n, `warpsPage.errors.${validationResult.errorCode}`)
+      fetching.value = false
+      return
+    }
+  } catch (e) {
+    console.error(e)
     fetching.value = false
+    error.value = tx(i18n, "warpsPage.errors.internal")
     return
   }
 
@@ -215,7 +222,7 @@ const registerStatusListener = (api: WarpsApi) => {
 }
 
 watch(toRefs(config).warpsShowPityList, () => {
-  FirestoreProvider.instance?.sendLocalData()
+  void FirestoreProvider.instance?.sendLocalData()
 })
 // `warpsUrl` is sent when fetching warps is complete
 

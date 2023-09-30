@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import {CustomMarked} from "~/libs/custom-marked"
+
 definePageMeta({
   title: "about",
 })
 
-const {$marked} = useNuxtApp()
-
-const marked = $marked({})
+const marked = new CustomMarked()
 
 const hoyolabUrl = "https://www.hoyolab.com/article/18406761"
 </script>

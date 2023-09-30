@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 withDefaults(defineProps<{
-  item: Record<string, unknown> & { id: string, rarity: number }
+  itemId: string
+  itemRarity: number
   linkBasePath: string
   preserveQuery?: boolean
   itemI18nKey: string
@@ -15,19 +16,19 @@ withDefaults(defineProps<{
   <v-list-item
     :lines="lines"
     :to="localePath({
-      path: `${linkBasePath}/${item.id}`,
+      path: `${linkBasePath}/${itemId}`,
       query: preserveQuery ? $route.query : {},
     })"
   >
     <template #prepend>
-      <v-img :src="imageFunc(item.id)" aspect-ratio="1" class="mr-2" width="45px" />
+      <v-img :src="imageFunc(itemId)" aspect-ratio="1" class="mr-2" width="45px" />
     </template>
 
     <v-row align="center" no-gutters style="gap: 8px">
-      <v-list-item-title>{{ tx(`${itemI18nKey}.${item.id}`) }}</v-list-item-title>
-      <v-chip :color="`rarity-${item.rarity}`" size="small">
+      <v-list-item-title>{{ tx(`${itemI18nKey}.${itemId}`) }}</v-list-item-title>
+      <v-chip :color="`rarity-${itemRarity}`" size="small">
         <v-icon>mdi-star</v-icon>
-        {{ item.rarity }}
+        {{ itemRarity }}
       </v-chip>
     </v-row>
 

@@ -24,7 +24,7 @@ interface UsageCharacter {
  * @returns `true` if the material is used.
  */
 const getIsMaterialUsedByCharacter = (materialId: string, defs: CharacterMaterialDefinitions): boolean => {
-  for (const defExpr of Object.values(defs)) {
+  for (const defExpr of Object.values(defs) as string[]) {
     const [defType, id] = defExpr.split(":")
 
     if (defType === "id" && id === materialId) {
@@ -72,7 +72,7 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
  */
 export const getMaterialUsageLightCone = (materialId: string): LightCone[] => {
   return lightCones.filter((lightCone) => {
-    for (const defExpr of Object.values(lightCone.materials)) {
+    for (const defExpr of Object.values(lightCone.materials) as string[]) {
       const [defType, id] = defExpr.split(":")
 
       if (defType === "id" && id === materialId) {

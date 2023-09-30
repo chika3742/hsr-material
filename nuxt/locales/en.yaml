@@ -70,6 +70,13 @@ navDrawer:
 
 footer:
   feedback: Feedback
+  feedbackMenuItems:
+    comment: Special Page
+    commentDesc: You can submit feedback in the comments section without creating an account.
+    hoyolab: HoYoLAB
+    hoyolabDesc: You can post comments on HoYoLAB article.
+    github: GitHub
+    githubDesc: You can create an issue on GitHub (advanced).
   theme: Theme
   disclaimer: |
     This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE.
@@ -207,6 +214,7 @@ warpsPage:
     failedToSave: Failed to save the warp history.
     unknown: An unknown error occurred.
   aboutTitle: About
+  copied: Copied.
   about: |
     ## About This Feature
 
@@ -234,10 +242,10 @@ warpsPage:
         1. Launch @:{'common.gameName'}, select Warp > View Details > Records.
         1. Press Windows key + R key to open the Run dialog.
         1. Copy and paste the following command then press Enter key.
-            ```
-            {'powershell -Command "iex ""&{$(irm https://gist.githubusercontent.com/chika3742/0542db8a5e329fb15af9e37714e92893/raw/getlink.ps1)} global -lang en-US"""'}
-            ```
+            <div id="cmd-win" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline}</code></pre></div>
         1. The URL will be copied, so paste it into this page.
+      cmdline: |
+        {'powershell -Command "iex ""&{$(irm https://gist.githubusercontent.com/chika3742/0542db8a5e329fb15af9e37714e92893/raw/getlink.ps1)} global -lang en-US"""'}
     ios:
       title: How to Get URL (iOS)
       contents: |
@@ -260,7 +268,19 @@ warpsPage:
     macos:
       title: How to Get URL (macOS with PlayCover)
       contents: |
-        See [https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f](https://gist.githubusercontent.com/chika3742/3a65b7530c021b9ac631408b033edc4f)
+        ### Preparation (required for the first time only)
+        
+        1. Install [Homebrew](https://brew.sh/) and [mitmproxy](https://mitmproxy.org/).
+        1. Run the command below on the terminal. (may be required to enter the password)
+            <div id="cmd-macos-1" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline1}</code></pre></div>
+            (This command installs the certificate required to monitor HTTPS communications with mitmproxy.)
+        
+        ### Getting the URL
+        
+        1. Run the command below on the terminal.
+            <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
+        1. Run @:{'common.gameName'} and open the warp record page (tab).
+        1. URL will be copied and the script exits automatically.
 
 tpCalcPage:
   baseTime: Base time
@@ -396,6 +416,8 @@ characterNames:
   blade: Blade
   luka: Luka
   dan-heng-imbibitor-lunae: Dan Heng・Imbibitor Lunae
+  fu-xuan: Fu Xuan
+  lynx: Lynx
 
 materialCategories:
   exp: EXP Materials
@@ -468,6 +490,7 @@ materialNames:
   ascendant-debris: Ascendant Debris
   regret-of-infinite-ochema: Regret of Infinite Ochema
   suppressing-edict: Suppressing Edict
+  nail-of-the-ape: Nail of the Ape
 
 skillTitles:
   trailblazer:
@@ -626,6 +649,16 @@ skillTitles:
     skill: Dracore Libre
     ultimate: Azure's Aqua Ablutes All
     talent: Righteous Heart
+  fu-xuan:
+    basicAttack: Novaburst
+    skill: Known by Stars, Shown by Hearts
+    ultimate: Woes of Many Morphed to One
+    talent: Bleak Breeds Bliss
+  lynx:
+    basicAttack: Ice Crampon Technique
+    skill: Salted Camping Cans
+    ultimate: Snowfield First Aid
+    talent: Outdoor Survival Experience
 
 lightConeNames:
   arrows: Arrows
@@ -703,6 +736,7 @@ lightConeNames:
   patience-is-all-you-need: Patience Is All You Need
   brighter-than-the-sun: Brighter Than the Sun
   solitary-healing: Solitary Healing
+  she-already-shut-her-eyes: She Already Shut Her Eyes
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -888,6 +922,11 @@ lightConeSkillDescriptions:
     ATK, they will gain 1 stack of Dragon's Call, lasting for 2 turns. Each stack
     of Dragon's Call increases the wearer's ATK by <18%> and Energy Regeneration
     Rate by <6%>. Dragon's Call can be stacked up to 2 times.
+  she-already-shut-her-eyes: >-
+    Increases the wearer's Max HP by <24%> and Energy Regeneration Rate by <12%>.
+    When the wearer's HP is reduced, all allies' DMG dealt increases by <9%>,
+    lasting for 2 turn(s).\nAt the start of every wave, restores HP to all allies
+    by an amount equal to <80%> of their respective lost HP.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

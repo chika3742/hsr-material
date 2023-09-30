@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import relicPieces from "assets/data/relic-pieces.csv"
-import {Bookmark} from "~/types/bookmark/bookmark"
 import relicSets from "assets/data/relic-sets.csv"
+import {Bookmark} from "~/types/bookmark/bookmark"
 import {db} from "~/libs/db/providers"
 
 interface Props {
@@ -70,7 +70,7 @@ const removeBookmark = async(id: number) => {
   snackbar.show(tx(i18n, "bookmark.removed"), null, {
     text: tx(i18n, "common.undo"),
     onClick: () => {
-      db.bookmarks.bulkAdd(result)
+      void db.bookmarks.bulkAdd(result)
     },
   })
 }

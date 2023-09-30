@@ -49,8 +49,8 @@ const ranges = ref(sliders.map((e) => {
 }))
 const checkedList = ref(sliders.map(() => true))
 const setInitialRangeBasedOnBookmarks = async() => {
-  for (const i in sliders) {
-    const slider = sliders[i]
+  for (let index = 0; index < sliders.length; index++) {
+    const slider = sliders[index]
 
     const bookmarks = await db.bookmarks.getByPurpose(
       props.characterId,
@@ -60,7 +60,7 @@ const setInitialRangeBasedOnBookmarks = async() => {
     )
 
     if (bookmarks.length === 0) {
-      checkedList.value[i] = false
+      checkedList.value[index] = false
       continue
     }
 
@@ -69,7 +69,7 @@ const setInitialRangeBasedOnBookmarks = async() => {
 
     const sliderTicks = levelIngredientsToSliderTicks(slider.levelIngredients)
 
-    ranges.value[i] = [sliderTicks[sliderTicks.indexOf(min) - 1], max]
+    ranges.value[index] = [sliderTicks[sliderTicks.indexOf(min) - 1], max]
   }
 
   if (checkedList.value.every(e => !e)) {
@@ -77,7 +77,7 @@ const setInitialRangeBasedOnBookmarks = async() => {
   }
 }
 onMounted(() => {
-  setInitialRangeBasedOnBookmarks()
+  void setInitialRangeBasedOnBookmarks()
 })
 
 const ingredients = computed<BookmarkableMaterial[]>(() => {

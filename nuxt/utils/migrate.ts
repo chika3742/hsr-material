@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+
 import {SyncedUserData} from "~/types/firestore/user-document"
 
 export const migrate = (data: { [table: string]: any }, oldVersion: number, newVersion: number): SyncedUserData => {

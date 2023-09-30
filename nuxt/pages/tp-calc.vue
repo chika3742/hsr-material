@@ -6,16 +6,16 @@ import {maxTpCount} from "~/utils/tp"
 import {useConfigStore} from "~/store/config"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 import {computed} from "#imports"
+import {CustomMarked} from "~/libs/custom-marked"
 
 definePageMeta({
   title: "tpCalc",
 })
 
 const config = useConfigStore()
-const {$marked} = useNuxtApp()
 const i18n = useI18n()
 
-const marked = $marked({})
+const marked = new CustomMarked()
 
 const currentSecond = ref(DateTime.now().second)
 onMounted(() => {
@@ -24,7 +24,7 @@ onMounted(() => {
   }, 1000)
 })
 
-const validate = (value: string): string | true => {
+const validate = (value: string): boolean | string => {
   const intValue = Number(value)
   return (!isNaN(intValue) && intValue >= 0 && intValue < maxTpCount) || i18n.t("tpCalcPage.rangeError", {max: maxTpCount})
 }
@@ -39,7 +39,7 @@ watch(currentTpCount, (value: string) => {
 })
 
 const sendToFirestore = _.debounce(() => {
-  FirestoreProvider.instance?.sendLocalData()
+  void FirestoreProvider.instance?.sendLocalData()
 }, 1000)
 
 const baseTime = computed(() => {
