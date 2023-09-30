@@ -19,7 +19,7 @@
     "@rollup/plugin-dsv": "^3.0.3",
     "@rollup/plugin-yaml": "^4.1.1",
     "@types/luxon": "^3.3.2",
-    "@types/marked": "^5.0.1",
+    "@types/marked": "^5.0.2",
     "@types/node": "^20.7.0",
     "@types/sortablejs": "^1.15.3",
     "@types/ua-parser-js": "^0.7.36",
