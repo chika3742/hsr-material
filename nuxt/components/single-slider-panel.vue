@@ -52,6 +52,10 @@ const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredient
 
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
 const setInitialRangeBasedOnBookmarks = async() => {
+  if (process.server) {
+    return
+  }
+
   const bookmarks = await db.bookmarks.getByPurpose(
     props.characterId,
     props.variant,
