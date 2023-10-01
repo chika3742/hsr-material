@@ -31,7 +31,7 @@
 
         <div class="d-flex flex-column h-100">
           <v-container>
-            <NuxtPage :keepalive="{max: 5, exclude: ['v-tooltip']}" :page-key="$route.path" />
+            <NuxtPage :keepalive="{max: 5, exclude: ['v-tooltip']}" :page-key="$router.currentRoute.value.path" />
           </v-container>
 
           <v-spacer />
@@ -102,7 +102,6 @@ import {useConfigStore} from "~/store/config"
 import {_db} from "~/dexie/db"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 
-const route = useRoute()
 const router = useRouter()
 const i18n = useI18n()
 const dialog = useDialog()
@@ -119,7 +118,7 @@ const mounted = ref(false)
 const isLoadingPage = ref(false)
 const showSearchDialog = ref(false)
 
-const title = ref(getPageTitle(route.fullPath, router, i18n))
+const title = computed(() => getPageTitle(router.currentRoute.value.fullPath, router, i18n))
 
 useHead({
   title,
@@ -167,9 +166,8 @@ router.beforeEach(() => {
   snackbar.ref.value.displayed = false
 })
 
-router.afterEach((to) => {
+router.afterEach(() => {
   isLoadingPage.value = false
-  title.value = getPageTitle(to.fullPath, router, i18n)
 })
 
 </script>
