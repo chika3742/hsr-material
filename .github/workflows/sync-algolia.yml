@@ -11,6 +11,7 @@ on:
       - "nuxt/assets/data/relic-sets.csv"
       - "nuxt/assets/data/relic-pieces.csv"
       - "algolia-sync/**"
+  workflow_dispatch:
 
 jobs:
   sync-algolia:
