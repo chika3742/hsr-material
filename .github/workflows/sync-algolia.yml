@@ -20,7 +20,8 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          # TODO: https://github.com/TypeStrong/ts-node/issues/1997
+          node-version: 18
           cache: yarn
           cache-dependency-path: "algolia-sync/yarn.lock"
 
