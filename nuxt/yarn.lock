@@ -4706,9 +4706,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/language-core@npm:1.8.14":
-  version: 1.8.14
-  resolution: "@vue/language-core@npm:1.8.14"
+"@vue/language-core@npm:1.8.15":
+  version: 1.8.15
+  resolution: "@vue/language-core@npm:1.8.15"
   dependencies:
     "@volar/language-core": ~1.10.0
     "@volar/source-map": ~1.10.0
@@ -4723,36 +4723,36 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 18b1b3818f078e67c9d57b34f688cdcc38d046eace9719a976ae306f39fcfaf2903c238591874b6fcec7eafc3642b1c82aa18e917c2365f655578102f1f15a1f
+  checksum: 78bf328c07205569620255ece07ed983c8fd8bdaa0c5c0711546a43955fd09004a680193a3922c88e1821125ac1b502969724ae48d40848fa24bef155e8e1a13
   languageName: node
   linkType: hard
 
-"@vue/language-server@npm:^1.8.14":
-  version: 1.8.14
-  resolution: "@vue/language-server@npm:1.8.14"
+"@vue/language-server@npm:^1.8.15":
+  version: 1.8.15
+  resolution: "@vue/language-server@npm:1.8.15"
   dependencies:
     "@volar/language-core": ~1.10.0
     "@volar/language-server": ~1.10.0
     "@volar/typescript": ~1.10.0
-    "@vue/language-core": 1.8.14
-    "@vue/language-service": 1.8.14
+    "@vue/language-core": 1.8.15
+    "@vue/language-service": 1.8.15
     vscode-languageserver-protocol: ^3.17.3
-    vue-component-meta: 1.8.14
+    vue-component-meta: 1.8.15
   bin:
     vue-language-server: bin/vue-language-server.js
-  checksum: dac6f7411b255e50f659bf2571fd0ea5098fd6cdaceded64a6df9b26c6b54c07004607d6ad41a7b4b6dd6a49f77b589e8226dbd4abab8eb47ef847af8588eb80
+  checksum: 23f686e119456fa4b8838e73a219d6b9925daf074a604f873d1437d463aad3baeb0a65f9c90229c1995c9a6e209f82a1a9bd95af4aa720e27c83bae562fbc9ef
   languageName: node
   linkType: hard
 
-"@vue/language-service@npm:1.8.14":
-  version: 1.8.14
-  resolution: "@vue/language-service@npm:1.8.14"
+"@vue/language-service@npm:1.8.15":
+  version: 1.8.15
+  resolution: "@vue/language-service@npm:1.8.15"
   dependencies:
     "@volar/language-core": ~1.10.0
     "@volar/language-service": ~1.10.0
     "@volar/typescript": ~1.10.0
     "@vue/compiler-dom": ^3.3.0
-    "@vue/language-core": 1.8.14
+    "@vue/language-core": 1.8.15
     "@vue/reactivity": ^3.3.0
     "@vue/shared": ^3.3.0
     volar-service-css: 0.0.13
@@ -4765,7 +4765,7 @@ __metadata:
     volar-service-typescript-twoslash-queries: 0.0.13
     vscode-html-languageservice: ^5.0.4
     vscode-languageserver-textdocument: ^1.0.8
-  checksum: 2874dafa150321fdb1af38e8bd8ab72fbafb8257579ce27f6178edaa2baa5fb70fd5aac9756e15a4246dffb1874aed8c420aa352a525302d151d80bda8de43a6
+  checksum: 68003fd5e519e4448b7adb1a2f496ff206ccfc055f76820164605522108cd3fe0c759e7e747e53f4cdc72cee838d44f4ddee1adfc921aebbf83d505ff0ee6c6b
   languageName: node
   linkType: hard
 
@@ -11398,7 +11398,7 @@ __metadata:
     "@types/sortablejs": ^1.15.3
     "@types/ua-parser-js": ^0.7.36
     "@typescript-eslint/eslint-plugin": ^6.7.3
-    "@vue/language-server": ^1.8.14
+    "@vue/language-server": ^1.8.15
     "@vueuse/rxjs": ^10.4.1
     algoliasearch: ^4.20.0
     dexie: ^3.2.4
@@ -13382,27 +13382,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-component-meta@npm:1.8.14":
-  version: 1.8.14
-  resolution: "vue-component-meta@npm:1.8.14"
+"vue-component-meta@npm:1.8.15":
+  version: 1.8.15
+  resolution: "vue-component-meta@npm:1.8.15"
   dependencies:
     "@volar/typescript": ~1.10.0
-    "@vue/language-core": 1.8.14
+    "@vue/language-core": 1.8.15
     typesafe-path: ^0.2.2
-    vue-component-type-helpers: 1.8.14
+    vue-component-type-helpers: 1.8.15
   peerDependencies:
     typescript: "*"
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 9c158cf8ec108348d195bc5a7c073c7f517b1b1792bdf817306f99ca8ffc35744286fe3b7ce4f11d3e455b2619963a42820515557f9305a5cec27018ed93cf7e
+  checksum: 43526f741ec0a9c50e851b7e68df6132f3692fcb3e2c7ae31b3e0e4729586166555276fa33d97bd44d00ae5766a5c7c941c87a8f937c43c43a940ea2f10eca76
   languageName: node
   linkType: hard
 
-"vue-component-type-helpers@npm:1.8.14":
-  version: 1.8.14
-  resolution: "vue-component-type-helpers@npm:1.8.14"
-  checksum: 5a26c4b3e1005b46859da6060ec6259bacc9ec482a3e4188f4497f1505e078b5e1df3e08851f24bc95d881f8ed343dee7c3a2e68279532b23661294368f79db3
+"vue-component-type-helpers@npm:1.8.15":
+  version: 1.8.15
+  resolution: "vue-component-type-helpers@npm:1.8.15"
+  checksum: 31a4c129f84920b33e3d9e142cc9b3079d835aaa33a30b6859e0b81184f48cb93f6473be4a5d4a231e985c769094f1eab90ba2b55c6636bde7643c5fe068b0ff
   languageName: node
   linkType: hard
 
