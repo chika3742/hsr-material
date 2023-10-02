@@ -190,12 +190,15 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
 <template>
   <v-dialog
     :model-value="modelValue"
-    max-width="600px"
+    :max-width="!$vuetify.display.xs ? '600px' : ''"
     :fullscreen="$vuetify.display.xs"
     scrollable
     @update:model-value="$emit('update:modelValue', $event)"
   >
-    <v-card :title="relicSets ? tx('relicDetailsPage.bookmarkRelicSet') : tx('relicDetailsPage.bookmarkRelicPiece')">
+    <v-card
+      v-safe-area
+      :title="relicSets ? tx('relicDetailsPage.bookmarkRelicSet') : tx('relicDetailsPage.bookmarkRelicPiece')"
+    >
       <template #text>
         <div>
           <!-- Relic set view -->
