@@ -30,7 +30,7 @@
         </div>
 
         <div class="d-flex flex-column h-100">
-          <v-container>
+          <v-container v-safe-area="{left: 16, right: 16, top: false, bottom: false}">
             <NuxtPage :keepalive="{max: 5, exclude: ['v-tooltip']}" :page-key="$router.currentRoute.value.path" />
           </v-container>
 
