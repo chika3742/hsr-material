@@ -1,0 +1,3 @@
+[submodule "nuxt/assets/resources"]
+	path = nuxt/assets/resources
+	url = https://github.com/chika3742/hsr-material-assets.git
