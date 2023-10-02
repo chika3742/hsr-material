@@ -72,7 +72,7 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
  */
 export const getMaterialUsageLightCone = (materialId: string): LightCone[] => {
   return lightCones.filter((lightCone) => {
-    for (const defExpr of Object.values(lightCone.materials)) {
+    for (const defExpr of Object.values(lightCone.materials) as string[]) {
       const [defType, id] = defExpr.split(":")
 
       if (defType === "id" && id === materialId) {
