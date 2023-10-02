@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import relics from "assets/data/relic-sets.csv"
+import relics from "#data/relic-sets.csv"
 
 definePageMeta({
   title: "relics",

@@ -106,8 +106,8 @@
 <script lang="ts" setup>
 import {DateTime} from "luxon"
 import {Warp} from "#shared/warp"
-import characters from "~/assets/data/characters.yaml"
-import lightCones from "~/assets/data/light-cones.yaml"
+import characters from "#data/characters.yaml"
+import lightCones from "#data/light-cones.yaml"
 
 const props = defineProps<{
   warps: Warp[]

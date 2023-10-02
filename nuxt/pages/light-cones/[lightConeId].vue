@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import lightCones from "~/assets/data/light-cones.yaml"
+import lightCones from "#data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
 import {CharacterIdWithVariant} from "~/types/strings"
-import characters from "~/assets/data/characters.yaml"
+import characters from "#data/characters.yaml"
 
 definePageMeta({
   title: "lightConeDetails",

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import relicPieces from "assets/data/relic-pieces.csv"
-import relicSets from "assets/data/relic-sets.csv"
+import relicPieces from "#data/relic-pieces.csv"
+import relicSets from "#data/relic-sets.csv"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {db} from "~/libs/db/providers"
 

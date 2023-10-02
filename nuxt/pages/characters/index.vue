@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import characters from "~/assets/data/characters.yaml"
+import characters from "#data/characters.yaml"
 import {CombatType, Path} from "~/types/generated/characters.g"
 import {useConfigStore} from "~/store/config"
 import {reactive} from "#imports"

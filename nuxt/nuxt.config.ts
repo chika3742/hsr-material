@@ -104,6 +104,7 @@ export default defineNuxtConfig({
   alias: {
     // TODO: https://github.com/nuxt/nuxt/issues/22994
     "#shared": "../../firebase/functions/src/types/shared",
+    "#data": "./assets/resources/data",
   },
   typescript: {
     tsConfig: {

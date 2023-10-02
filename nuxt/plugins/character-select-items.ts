@@ -1,4 +1,4 @@
-import characters from "~/assets/data/characters.yaml"
+import characters from "#data/characters.yaml"
 
 export default defineNuxtPlugin(() => {
   const characterSelectItems: { id: string, image: string }[] = []

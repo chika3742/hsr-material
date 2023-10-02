@@ -4,12 +4,12 @@ import {liveQuery} from "dexie"
 import _ from "lodash"
 import {Observable} from "rxjs"
 import {PurposeType} from "~/types/strings"
-import materials from "~/assets/data/materials.csv"
+import materials from "#data/materials.csv"
 import {computed} from "#imports"
 import {LevelingBookmark} from "~/types/bookmark/bookmark"
 import {db} from "~/libs/db/providers"
-import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
+import characterIngredients from "#data/character-ingredients.yaml"
+import lightConeIngredients from "#data/light-cone-ingredients.yaml"
 import {
   BookmarkableExp,
   BookmarkableIngredient,

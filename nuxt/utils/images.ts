@@ -1,5 +1,7 @@
 import {CombatType, Path} from "~/types/generated/characters.g"
 
+const imgBaseUrl = "../assets/resources/img"
+
 /**
  * Gets character image URL.
  *
@@ -9,9 +11,9 @@ import {CombatType, Path} from "~/types/generated/characters.g"
  */
 export const getCharacterImage = (characterId: string, variant: "full" | "small"): string => {
   if (variant === "full") {
-    return new URL(`../assets/img/characters/${characterId}.webp`, import.meta.url).toString()
+    return new URL(`${imgBaseUrl}/characters/${characterId}.webp`, import.meta.url).toString()
   } else {
-    return new URL(`../assets/img/characters/${characterId}_small.webp`, import.meta.url).toString()
+    return new URL(`${imgBaseUrl}/characters/${characterId}_small.webp`, import.meta.url).toString()
   }
 }
 
@@ -22,7 +24,7 @@ export const getCharacterImage = (characterId: string, variant: "full" | "small"
  * @returns Image URL
  */
 export const getLightConeImage = (lightConeId: string) => {
-  return new URL(`../assets/img/light-cones/${lightConeId}.webp`, import.meta.url).toString()
+  return new URL(`${imgBaseUrl}/light-cones/${lightConeId}.webp`, import.meta.url).toString()
 }
 
 /**
@@ -32,7 +34,7 @@ export const getLightConeImage = (lightConeId: string) => {
  * @returns Image URL
  */
 export const getCombatTypeImage = (type: CombatType) => {
-  return new URL(`../assets/img/combat-types/${type}.webp`, import.meta.url).toString()
+  return new URL(`${imgBaseUrl}/combat-types/${type}.webp`, import.meta.url).toString()
 }
 
 /**
@@ -42,7 +44,7 @@ export const getCombatTypeImage = (type: CombatType) => {
  * @returns Image URL
  */
 export const getPathImage = (path: Path) => {
-  return new URL(`../assets/img/paths/${path}.webp`, import.meta.url).toString()
+  return new URL(`${imgBaseUrl}/paths/${path}.webp`, import.meta.url).toString()
 }
 
 /**
@@ -52,7 +54,7 @@ export const getPathImage = (path: Path) => {
  * @returns Image URL
  */
 export const getMaterialImage = (materialId: string) => {
-  return new URL(`../assets/img/materials/${materialId}.webp`, import.meta.url).toString()
+  return new URL(`${imgBaseUrl}/materials/${materialId}.webp`, import.meta.url).toString()
 }
 
 /**
@@ -62,7 +64,7 @@ export const getMaterialImage = (materialId: string) => {
  * @returns Image URL
  */
 export const getRelicSetImage = (relicSetId: string) => {
-  return new URL(`../assets/img/relic-sets/${relicSetId}.webp`, import.meta.url).toString()
+  return new URL(`${imgBaseUrl}/relic-sets/${relicSetId}.webp`, import.meta.url).toString()
 }
 
 /**
@@ -72,7 +74,7 @@ export const getRelicSetImage = (relicSetId: string) => {
  * @returns Image URL
  */
 export const getRelicPieceImage = (relicPieceId: string) => {
-  return new URL(`../assets/img/relic-pieces/${relicPieceId}.webp`, import.meta.url).toString()
+  return new URL(`${imgBaseUrl}/relic-pieces/${relicPieceId}.webp`, import.meta.url).toString()
 }
 
 /**

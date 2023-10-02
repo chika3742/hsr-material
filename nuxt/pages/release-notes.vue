@@ -72,7 +72,7 @@
 </template>
 
 <script lang="ts" setup>
-import releaseNotes from "~/assets/data/release-notes.yaml"
+import releaseNotes from "#data/release-notes.yaml"
 import {CustomMarked} from "~/libs/custom-marked"
 
 definePageMeta({

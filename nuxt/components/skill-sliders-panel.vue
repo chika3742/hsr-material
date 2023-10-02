@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import {computed, getMaterialIdFromIngredient, levelIngredientsToSliderTicks, ref} from "#imports"
-import characterIngredients from "~/assets/data/character-ingredients.yaml"
+import characterIngredients from "#data/character-ingredients.yaml"
 import {PurposeType} from "~/types/strings"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 import {LevelIngredients} from "~/types/level-ingredients"
-import characters from "~/assets/data/characters.yaml"
+import characters from "#data/characters.yaml"
 import {db} from "~/libs/db/providers"
 import {BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
 

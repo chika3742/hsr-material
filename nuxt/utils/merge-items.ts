@@ -1,5 +1,5 @@
 import _ from "lodash"
-import materials from "~/assets/data/materials.csv"
+import materials from "#data/materials.csv"
 
 import {BookmarkableIngredient, isBookmarkableExp} from "~/types/bookmark/bookmarkables"
 

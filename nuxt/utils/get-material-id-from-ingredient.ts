@@ -1,4 +1,4 @@
-import materials from "~/assets/data/materials.csv"
+import materials from "#data/materials.csv"
 import {Ingredient} from "~/types/generated/character-ingredients.g"
 import {CharacterMaterialDefinitions} from "~/types/generated/characters.g"
 import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"

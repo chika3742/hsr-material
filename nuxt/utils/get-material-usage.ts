@@ -1,6 +1,6 @@
-import characters from "~/assets/data/characters.yaml"
-import materials from "~/assets/data/materials.csv"
-import lightCones from "~/assets/data/light-cones.yaml"
+import characters from "#data/characters.yaml"
+import materials from "#data/materials.csv"
+import lightCones from "#data/light-cones.yaml"
 import {LightCone} from "~/types/generated/light-cones.g"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 
@@ -72,7 +72,7 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
  */
 export const getMaterialUsageLightCone = (materialId: string): LightCone[] => {
   return lightCones.filter((lightCone) => {
-    for (const defExpr of Object.values(lightCone.materials) as string[]) {
+    for (const defExpr of Object.values(lightCone.materials)) {
       const [defType, id] = defExpr.split(":")
 
       if (defType === "id" && id === materialId) {
