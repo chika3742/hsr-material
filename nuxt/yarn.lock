@@ -11417,7 +11417,6 @@ __metadata:
     sortablejs: ^1.15.0
     typescript: ^5.2.2
     ua-parser-js: ^1.0.36
-    vuetify: ^3.3.19
     workbox-build: ^7.0.0
   languageName: unknown
   linkType: soft
@@ -13567,28 +13566,6 @@ __metadata:
     "@vue/server-renderer": 3.3.4
     "@vue/shared": 3.3.4
   checksum: 58b6c62a66a375ce5df460fcb7ba41b37c8637c635faf06ef472ae4197f412cf9ad83586cd8e3f66c486404fbe8550e694f90ff724a571d1ba78830791099c59
-  languageName: node
-  linkType: hard
-
-"vuetify@npm:^3.3.19":
-  version: 3.3.19
-  resolution: "vuetify@npm:3.3.19"
-  peerDependencies:
-    typescript: ">=4.7"
-    vite-plugin-vuetify: ^1.0.0-alpha.12
-    vue: ^3.2.0
-    vue-i18n: ^9.0.0
-    webpack-plugin-vuetify: ^2.0.0-alpha.11
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-    vite-plugin-vuetify:
-      optional: true
-    vue-i18n:
-      optional: true
-    webpack-plugin-vuetify:
-      optional: true
-  checksum: d004fb6caf57a5bb9da32fa93d013295f587571ae55f27327c2d48a5fd9b47703eba706f8156ee9e239c97d80c311d6ae69fc980202fdc2ad86b997bad1d1987
   languageName: node
   linkType: hard
 
