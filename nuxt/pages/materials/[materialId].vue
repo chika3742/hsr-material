@@ -38,9 +38,8 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
           <CharacterIconCard
             v-for="character in characterUsage"
             :key="character.id"
-            :character-id="character.id"
-            :image="getCharacterImage(character.id, 'small')"
-            :query="character.variant ? {variant: character.variant} : {}"
+            :character-id-with-variant="toCharacterIdWithVariant(character.id, character.variant ?? null)"
+            :image-url="getCharacterImage(character.id, 'small')"
           />
         </v-row>
       </v-card-text>
