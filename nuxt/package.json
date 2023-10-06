@@ -35,7 +35,7 @@
     "json-schema-to-typescript": "^13.1.1",
     "luxon": "^3.4.3",
     "marked": "^9.0.3",
-    "mhy-material-components": "https://github.com/chika3742/mhy-material-components.git#dependabot/npm_and_yarn/vuetify-3.3.20",
+    "mhy-material-components": "https://github.com/chika3742/mhy-material-components.git#commit=0ccff91cc6e21566658a5648a913afc1db9fb35d",
     "nuxt": "^3.7.4",
     "rxjs": "^7.8.1",
     "sass": "^1.68.0",
