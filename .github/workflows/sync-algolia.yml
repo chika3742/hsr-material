@@ -11,6 +11,7 @@ on:
       - "nuxt/assets/data/relic-sets.csv"
       - "nuxt/assets/data/relic-pieces.csv"
       - "algolia-sync/**"
+  workflow_dispatch:
 
 jobs:
   sync-algolia:
@@ -20,7 +21,8 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          # TODO: https://github.com/TypeStrong/ts-node/issues/1997
+          node-version: 18
           cache: yarn
           cache-dependency-path: "algolia-sync/yarn.lock"
 

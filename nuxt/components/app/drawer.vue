@@ -59,16 +59,16 @@ const drawerItems: (DrawerItem | Divider)[] = [
   },
   "---" as const,
   {
-    icon: "mdi-book-sync",
-    to: "/sync",
+    icon: "ms:history",
+    to: "/warps",
   },
   {
     icon: "mdi-sphere",
     to: "/tp-calc",
   },
   {
-    icon: "ms:history",
-    to: "/warps",
+    icon: "mdi-book-sync",
+    to: "/sync",
   },
   "---" as const,
   {
@@ -86,7 +86,7 @@ const drawerItems: (DrawerItem | Divider)[] = [
 
 <template>
   <v-navigation-drawer v-model="isOpen" expand-on-hover>
-    <v-list nav>
+    <v-list v-safe-area="{left: 8, top: false, right: false, bottom: false}" nav>
       <template v-for="(item, i) in drawerItems">
         <v-list-item
           v-if="item !== '---'"
@@ -104,7 +104,3 @@ const drawerItems: (DrawerItem | Divider)[] = [
     </v-list>
   </v-navigation-drawer>
 </template>
-
-<style scoped>
-
-</style>
