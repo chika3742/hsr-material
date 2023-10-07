@@ -11206,7 +11206,7 @@ __metadata:
     mhy-material-components: "https://github.com/chika3742/mhy-material-components.git#commit=0ccff91cc6e21566658a5648a913afc1db9fb35d"
     nuxt: ^3.7.4
     rxjs: ^7.8.1
-    sass: ^1.68.0
+    sass: ^1.69.0
     sitemap: ^7.1.1
     sortablejs: ^1.15.0
     typescript: ^5.2.2
@@ -11290,19 +11290,6 @@ __metadata:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
-  languageName: node
-  linkType: hard
-
-"sass@npm:^1.68.0":
-  version: 1.68.0
-  resolution: "sass@npm:1.68.0"
-  dependencies:
-    chokidar: ">=3.0.0 <4.0.0"
-    immutable: ^4.0.0
-    source-map-js: ">=0.6.2 <2.0.0"
-  bin:
-    sass: sass.js
-  checksum: 65ccede83c96768beeb8dcaf67957b7c76b12ff1276bfd2849d7be151d46ba1400048a67717e6e5e4969bc75e87348e5530f5f272833f2e60a891c21a33d8ab0
   languageName: node
   linkType: hard
 

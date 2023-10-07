@@ -38,7 +38,7 @@
     "mhy-material-components": "https://github.com/chika3742/mhy-material-components.git#commit=0ccff91cc6e21566658a5648a913afc1db9fb35d",
     "nuxt": "^3.7.4",
     "rxjs": "^7.8.1",
-    "sass": "^1.68.0",
+    "sass": "^1.69.0",
     "sitemap": "^7.1.1",
     "sortablejs": "^1.15.0",
     "typescript": "^5.2.2",
