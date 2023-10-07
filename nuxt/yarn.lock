@@ -3622,20 +3622,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-dsv@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "@rollup/plugin-dsv@npm:3.0.3"
+"@rollup/plugin-dsv@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "@rollup/plugin-dsv@npm:3.0.4"
   dependencies:
     "@rollup/pluginutils": ^5.0.1
     "@types/d3-dsv": ^3.0.0
     d3-dsv: 2.0.0
     tosource: ^2.0.0-alpha.3
   peerDependencies:
-    rollup: ^1.20.0||^2.0.0||^3.0.0
+    rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
   peerDependenciesMeta:
     rollup:
       optional: true
-  checksum: 8b3aa4bd221db61e941f1bd19e0ce8c15e04748803d5bf4ef3c1bc9eb04f2832bf11c43018339b3a982b1e3fd21d1dc0df7b7d10f4ed0190cc991b66598310ab
+  checksum: a287776603e56217b1f79ba36ecbb6d5dabf0510af16e918a2b496368e1d9058448a88ce901e543dc08075de8f4010813e2166e044b4e49778e4cb812c73e06d
   languageName: node
   linkType: hard
 
@@ -11184,7 +11184,7 @@ __metadata:
     "@nuxtjs/i18n": ^8.0.0-rc.5
     "@pinia-plugin-persistedstate/nuxt": ^1.1.2
     "@pinia/nuxt": ^0.4.11
-    "@rollup/plugin-dsv": ^3.0.3
+    "@rollup/plugin-dsv": ^3.0.4
     "@rollup/plugin-yaml": ^4.1.1
     "@types/luxon": ^3.3.2
     "@types/marked": ^5.0.2
