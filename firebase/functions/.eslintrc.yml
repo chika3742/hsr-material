@@ -5,14 +5,10 @@ env:
   node: true
   browser: false
 
-overrides: []
-
 extends:
   - eslint:recommended
   - plugin:@typescript-eslint/recommended-type-checked
   - ../../.eslintrc.yml
-
-parser: "@typescript-eslint/parser"
 
 parserOptions:
   project: true
