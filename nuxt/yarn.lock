@@ -3759,22 +3759,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-yaml@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "@rollup/plugin-yaml@npm:4.1.1"
-  dependencies:
-    "@rollup/pluginutils": ^5.0.1
-    js-yaml: ^4.1.0
-    tosource: ^2.0.0-alpha.3
-  peerDependencies:
-    rollup: ^1.20.0||^2.0.0||^3.0.0
-  peerDependenciesMeta:
-    rollup:
-      optional: true
-  checksum: 99c8f9d4a354056bec8a9398786777203d87db32db0cad681f65ee896cbbbb8a61ace0b1c3d801622782ccf28e56eac6cdde950541fb1f7b3e651ad9c705d5c3
-  languageName: node
-  linkType: hard
-
 "@rollup/plugin-yaml@npm:^4.1.2":
   version: 4.1.2
   resolution: "@rollup/plugin-yaml@npm:4.1.2"
@@ -11203,7 +11187,7 @@ __metadata:
     "@pinia-plugin-persistedstate/nuxt": ^1.1.2
     "@pinia/nuxt": ^0.4.11
     "@rollup/plugin-dsv": ^3.0.4
-    "@rollup/plugin-yaml": ^4.1.1
+    "@rollup/plugin-yaml": ^4.1.2
     "@types/luxon": ^3.3.2
     "@types/marked": ^5.0.2
     "@types/node": ^20.8.3
