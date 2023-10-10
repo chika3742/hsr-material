@@ -29,7 +29,7 @@
     "@vueuse/rxjs": "^10.4.1",
     "algoliasearch": "^4.20.0",
     "dexie": "^3.2.4",
-    "eslint": "^8.50.0",
+    "eslint": "^8.51.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-vue": "^9.17.0",
     "firebase": "^10.4.0",
