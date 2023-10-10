@@ -146,13 +146,20 @@ onBeforeMount(() => {
   }
 })
 
+const updateCurrentTheme = () => {
+  theme.global.name.value = config.getCurrentTheme()
+}
+watch(toRefs(config).theme, () => {
+  updateCurrentTheme()
+})
+
 onMounted(() => {
   mounted.value = true
 
   // set theme & listen to theme change
-  theme.global.name.value = config.getCurrentTheme()
+  updateCurrentTheme()
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-    theme.global.name.value = config.getCurrentTheme()
+    updateCurrentTheme()
   })
 
   // init firestore snapshot listener
