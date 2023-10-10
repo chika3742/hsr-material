@@ -39,7 +39,14 @@
           <div v-if="!isProd" class="warning-overlay-banner">
             <span>{{ tx("common.nonProdWarning") }}</span>
           </div>
-          <AppFooter />
+
+          <AppFooter
+            v-model:theme-setting="config.theme"
+            :current-version="getCurrentVersionText()"
+            :feedback-page-url="feedbackPageUrl"
+            :hoyolab-article-url="hoyolabArticleUrl"
+            :repository-url="repositoryUrl"
+          />
         </div>
 
         <client-only>
@@ -112,6 +119,9 @@ const rConfig = useRuntimeConfig()
 const {$auth, $firestore} = useNuxtApp()
 
 const isProd = rConfig.public.isProdBranch
+const repositoryUrl = "https://github.com/chika3742/hsr-material"
+const feedbackPageUrl = "https://www.chikach.net/hsr-material-fb"
+const hoyolabArticleUrl = "https://www.hoyolab.com/article/18406761"
 
 const isDrawerOpenOnMobile = ref(false)
 const mounted = ref(false)

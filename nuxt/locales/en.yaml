@@ -68,24 +68,6 @@ pageTitles:
 navDrawer:
   kofi: Buy me a coffee
 
-footer:
-  feedback: Feedback
-  feedbackMenuItems:
-    comment: Special Page
-    commentDesc: You can submit feedback in the comments section without creating an account.
-    hoyolab: HoYoLAB
-    hoyolabDesc: You can post comments on HoYoLAB article.
-    github: GitHub
-    githubDesc: You can create an issue on GitHub (advanced).
-  theme: Theme
-  disclaimer: |
-    This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE.
-    If you find any mistranslations, please report them via @:pageTitles.about > Feedback.
-  themeOptions:
-    light: Light
-    dark: Dark
-    auto: Follow system settings
-
 bookmark:
   reBookmark: Re-register Bookmarks
   reBookmarkDesc: Bookmarks again with the current slider range.

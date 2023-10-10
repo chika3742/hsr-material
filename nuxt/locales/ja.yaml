@@ -68,22 +68,6 @@ pageTitles:
 navDrawer:
   kofi: コーヒーを奢る
 
-footer:
-  feedback: フィードバック
-  feedbackMenuItems:
-    comment: コメントページ
-    commentDesc: アカウント作成不要で送信できます。
-    hoyolab: HoYoLAB
-    hoyolabDesc: 記事へのコメントでフィードバックできます。
-    github: GitHub
-    githubDesc: 知識のある方は、直接Issueを立てることもできます。
-  theme: テーマ
-  disclaimer: このアプリは非公式です。画像・データの著作権はmiHoYo/COGNOSPHEREに帰属します。
-  themeOptions:
-    light: ライト
-    dark: ダーク
-    auto: システム設定に従う
-
 bookmark:
   reBookmark: ブックマークを再登録
   reBookmarkDesc: 現在のスライダー範囲でブックマークし直します。
