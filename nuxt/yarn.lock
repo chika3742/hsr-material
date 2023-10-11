@@ -2958,6 +2958,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mdi/font@npm:^7.3.67":
+  version: 7.3.67
+  resolution: "@mdi/font@npm:7.3.67"
+  checksum: 34af78e108b1cbf30760a062a0d4c25e58fb13b719cef535b96116c6f522f877f19448d4389dac87176bd3bbca240b9f721b1b01599f0b333311edbff5d2fba9
+  languageName: node
+  linkType: hard
+
 "@mizchi/sucrase@npm:^4.1.0":
   version: 4.1.0
   resolution: "@mizchi/sucrase@npm:4.1.0"
@@ -4016,13 +4023,6 @@ __metadata:
   version: 2.0.3
   resolution: "@types/trusted-types@npm:2.0.3"
   checksum: 4794804bc4a4a173d589841b6d26cf455ff5dc4f3e704e847de7d65d215f2e7043d8757e4741ce3a823af3f08260a8d04a1a6e9c5ec9b20b7b04586956a6b005
-  languageName: node
-  linkType: hard
-
-"@types/ua-parser-js@npm:^0.7.37":
-  version: 0.7.37
-  resolution: "@types/ua-parser-js@npm:0.7.37"
-  checksum: dde3733d30801d96959c73fd164c5431080f00bfa5b6bec79eff4726349c9832b3dbac5ce07dae29033cb8bb878b459d63ba25a31aee4e64b37272b90d1f1ca9
   languageName: node
   linkType: hard
 
@@ -9149,11 +9149,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mhy-material-components@https://github.com/chika3742/mhy-material-components.git#commit=0ccff91cc6e21566658a5648a913afc1db9fb35d":
+"mhy-material-components@github:chika3742/mhy-material-components#d2cad88d77899b6dfa07665e9b470d73c2635e18":
   version: 0.0.0
-  resolution: "mhy-material-components@https://github.com/chika3742/mhy-material-components.git#commit=0ccff91cc6e21566658a5648a913afc1db9fb35d"
+  resolution: "mhy-material-components@https://github.com/chika3742/mhy-material-components.git#commit=d2cad88d77899b6dfa07665e9b470d73c2635e18"
   dependencies:
-    "@mdi/font": ^7.2.96
+    "@mdi/font": ^7.3.67
     "@nuxt/kit": ^3.5.2
     "@nuxtjs/i18n": ^8.0.0-rc.5
     "@rollup/plugin-yaml": ^4.1.2
@@ -9161,7 +9161,7 @@ __metadata:
     js-yaml: ^4.1.0
     sass: ^1.69.0
     vuetify: ^3.3.20
-  checksum: f88ad81378e73aa3181d36416b9b58f327aed9c822d6d0775762a55ac5c2b3a725693e1521b8fdc15f5cad094288bbf72fcaedd29ed5a069734b731264cb9aa3
+  checksum: 0ed28058e6526ef5ae6332a4933bb3df65bf44efbd81b3b676a609edd69c5b0f19315a26fe25ba07c5326e84f268aa732f91fd60148f2fba1bb3ad35123a66f8
   languageName: node
   linkType: hard
 
@@ -11216,7 +11216,6 @@ __metadata:
     "@types/marked": ^5.0.2
     "@types/node": ^20.8.3
     "@types/sortablejs": ^1.15.3
-    "@types/ua-parser-js": ^0.7.37
     "@typescript-eslint/eslint-plugin": ^6.7.4
     "@typescript-eslint/parser": ^6.7.4
     "@vue/language-server": ^1.8.18
@@ -11230,14 +11229,13 @@ __metadata:
     json-schema-to-typescript: ^13.1.1
     luxon: ^3.4.3
     marked: ^9.1.0
-    mhy-material-components: "https://github.com/chika3742/mhy-material-components.git#commit=0ccff91cc6e21566658a5648a913afc1db9fb35d"
+    mhy-material-components: "github:chika3742/mhy-material-components#d2cad88d77899b6dfa07665e9b470d73c2635e18"
     nuxt: ^3.7.4
     rxjs: ^7.8.1
     sass: ^1.69.0
     sitemap: ^7.1.1
     sortablejs: ^1.15.0
     typescript: ^5.2.2
-    ua-parser-js: ^1.0.36
     workbox-build: ^7.0.0
   languageName: unknown
   linkType: soft
@@ -12290,13 +12288,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 0f4da2f15e6f1245e49db15801dbee52f2bbfb267e1c39225afdab5afee1a72839cd86000e65ee9d7e4dfaff12239d28beaf5ee431357fcced15fb08583d72ca
-  languageName: node
-  linkType: hard
-
-"ua-parser-js@npm:^1.0.36":
-  version: 1.0.36
-  resolution: "ua-parser-js@npm:1.0.36"
-  checksum: 5b2c8a5e3443dfbba7624421805de946457c26ae167cb2275781a2729d1518f7067c9d5c74c3b0acac4b9ff3278cae4eace08ca6eecb63848bc3b2f6a63cc975
   languageName: node
   linkType: hard
 

@@ -1,6 +1,5 @@
 import {defineStore} from "pinia"
 import {DateTime} from "luxon"
-import {ThemeSetting} from "~/types/strings"
 
 export const useConfigStore = defineStore("config", {
   state: () => ({

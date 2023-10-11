@@ -2,7 +2,7 @@
   <div>
     <v-app>
       <client-only>
-        <AppDrawer v-model="isDrawerOpenOnMobile" />
+        <AppDrawer v-model="isDrawerOpenOnMobile" :drawer-items="drawerItems" />
       </client-only>
 
       <v-app-bar>
@@ -39,7 +39,14 @@
           <div v-if="!isProd" class="warning-overlay-banner">
             <span>{{ tx("common.nonProdWarning") }}</span>
           </div>
-          <AppFooter />
+
+          <AppFooter
+            v-model:theme-setting="config.theme"
+            :current-version="getCurrentVersionText()"
+            :feedback-page-url="feedbackPageUrl"
+            :hoyolab-article-url="hoyolabArticleUrl"
+            :repository-url="repositoryUrl"
+          />
         </div>
 
         <client-only>
@@ -112,6 +119,60 @@ const rConfig = useRuntimeConfig()
 const {$auth, $firestore} = useNuxtApp()
 
 const isProd = rConfig.public.isProdBranch
+const repositoryUrl = "https://github.com/chika3742/hsr-material"
+const feedbackPageUrl = "https://www.chikach.net/hsr-material-fb"
+const hoyolabArticleUrl = "https://www.hoyolab.com/article/18406761"
+const drawerItems: DrawerItemOrDivider[] = [
+  {
+    icon: "mdi-home",
+    to: "/",
+  },
+  {
+    icon: "mdi-bookmark-multiple",
+    to: "/bookmarks",
+  },
+  "---" as const,
+  {
+    icon: "mdi-account",
+    to: "/characters",
+  },
+  {
+    icon: "mdi-cone",
+    to: "/light-cones",
+  },
+  {
+    icon: "mdi-star-david",
+    to: "/relics",
+  },
+  {
+    icon: "mdi-grass",
+    to: "/materials",
+  },
+  "---" as const,
+  {
+    icon: "ms:history",
+    to: "/warps",
+  },
+  {
+    icon: "mdi-sphere",
+    to: "/tp-calc",
+  },
+  {
+    icon: "mdi-book-sync",
+    to: "/sync",
+  },
+  "---" as const,
+  {
+    icon: "mdi-information",
+    to: "/about",
+  },
+  {
+    icon: "mdi-coffee",
+    title: "kofi",
+    href: "https://ko-fi.com/chika3742",
+    target: "_blank",
+  },
+]
 
 const isDrawerOpenOnMobile = ref(false)
 const mounted = ref(false)
@@ -136,13 +197,20 @@ onBeforeMount(() => {
   }
 })
 
+const updateCurrentTheme = () => {
+  theme.global.name.value = config.getCurrentTheme()
+}
+watch(toRefs(config).theme, () => {
+  updateCurrentTheme()
+})
+
 onMounted(() => {
   mounted.value = true
 
   // set theme & listen to theme change
-  theme.global.name.value = config.getCurrentTheme()
+  updateCurrentTheme()
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-    theme.global.name.value = config.getCurrentTheme()
+    updateCurrentTheme()
   })
 
   // init firestore snapshot listener
