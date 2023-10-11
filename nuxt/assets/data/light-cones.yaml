@@ -612,5 +612,5 @@
   path: destruction
   rarity: 5
   materials:
-    primary: lcs005
-    common: com005
+    primary: group:lcs005
+    common: group:com005
