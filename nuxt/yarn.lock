@@ -4704,24 +4704,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/rxjs@npm:^10.4.1":
-  version: 10.4.1
-  resolution: "@vueuse/rxjs@npm:10.4.1"
+"@vueuse/rxjs@npm:^10.5.0":
+  version: 10.5.0
+  resolution: "@vueuse/rxjs@npm:10.5.0"
   dependencies:
-    "@vueuse/shared": 10.4.1
-    vue-demi: ">=0.14.5"
+    "@vueuse/shared": 10.5.0
+    vue-demi: ">=0.14.6"
   peerDependencies:
     rxjs: ">=6.0.0"
-  checksum: 9cca8fdc4818e2c3723151195d8eb40ae9c5c079b2295ebd7395a156c3b31294cf1050db7e483199237edf0e1bcd84e923d3356950c4142f2c43dc86e00c4b2b
+  checksum: 476211cf58b5c07c279907b03a434d2a11296a05b9644dc4c0bcff3e2f278549a0da65caa0897dfe1963b0266efc8de020315aed99fe22b574acf1b14b13507f
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:10.4.1":
-  version: 10.4.1
-  resolution: "@vueuse/shared@npm:10.4.1"
+"@vueuse/shared@npm:10.5.0":
+  version: 10.5.0
+  resolution: "@vueuse/shared@npm:10.5.0"
   dependencies:
-    vue-demi: ">=0.14.5"
-  checksum: e1cc0b970e0ce06c8bc2cbed3ce37a9ee7ff0667fc3f354398b4201259db1848da428d62c9ea19c3124f5eb80ce0b3f97328f537e3238ec68cdbb726ff3e3fe8
+    vue-demi: ">=0.14.6"
+  checksum: 8ec1b6e18ccdff2940efbee943539831ce54d59294bb1b1e309c82a845035807ee6b11cca29c3eca2df321e79136b13650399c54cde366212e8b2c69c4befb48
   languageName: node
   linkType: hard
 
@@ -11219,7 +11219,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.7.4
     "@typescript-eslint/parser": ^6.7.4
     "@vue/language-server": ^1.8.18
-    "@vueuse/rxjs": ^10.4.1
+    "@vueuse/rxjs": ^10.5.0
     algoliasearch: ^4.20.0
     dexie: ^3.2.4
     eslint: ^8.51.0
@@ -13217,6 +13217,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vue-demi@npm:>=0.14.6, vue-demi@npm:^0.14.5":
+  version: 0.14.6
+  resolution: "vue-demi@npm:0.14.6"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 424b1f340d5111fc4d4a0f8042c14ae836ba983bc968773a6d955d6846202d7e6f951993ac1525be8732b0cfe0c81d94ab88f427c97bfa86ead08db06491279b
+  languageName: node
+  linkType: hard
+
 "vue-demi@npm:^0.13.5":
   version: 0.13.11
   resolution: "vue-demi@npm:0.13.11"
@@ -13230,22 +13246,6 @@ __metadata:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
   checksum: 0fbe9bf8ab7fe498ffa2bbd0cfc8f6f43a6bbaa5eda3e20ef1b70dca7c8b0ddb216a7ff2f632b694fe0735805638975abb441c621ec0bd2e6d4656353f316c15
-  languageName: node
-  linkType: hard
-
-"vue-demi@npm:^0.14.5":
-  version: 0.14.6
-  resolution: "vue-demi@npm:0.14.6"
-  peerDependencies:
-    "@vue/composition-api": ^1.0.0-rc.1
-    vue: ^3.0.0-0 || ^2.6.0
-  peerDependenciesMeta:
-    "@vue/composition-api":
-      optional: true
-  bin:
-    vue-demi-fix: bin/vue-demi-fix.js
-    vue-demi-switch: bin/vue-demi-switch.js
-  checksum: 424b1f340d5111fc4d4a0f8042c14ae836ba983bc968773a6d955d6846202d7e6f951993ac1525be8732b0cfe0c81d94ab88f427c97bfa86ead08db06491279b
   languageName: node
   linkType: hard
 
