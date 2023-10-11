@@ -390,3 +390,14 @@
     skills: group:lcs007
     skillsAdvanced: id:regret-of-infinite-ochema
 
+- id: jingliu
+  $nameJA: 鏡流
+  yomi: ケイリュウ
+  rarity: 5
+  path: destruction
+  combatType: ice
+  materials:
+    ascension: id:gelid-chitin
+    skills: group:lcs005
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com005
