@@ -1,0 +1,48 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": [
+    "every weekend"
+  ],
+  "branchConcurrentLimit": 0,
+  "dependencyDashboard": false,
+  "packageRules": [
+    {
+      "matchFileNames": [
+        "nuxt/package.json"
+      ],
+      "labels": [
+        "deps:nuxt"
+      ]
+    },
+    {
+      "matchFileNames": [
+        "firebase/functions/package.json"
+      ],
+      "labels": [
+        "deps:functions"
+      ]
+    },
+    {
+      "matchFileNames": [
+        "algolia-sync/package.json"
+      ],
+      "labels": [
+        "deps:algolia-sync"
+      ]
+    },
+    {
+      "matchFileNames": [
+        ".github/workflows/deploy-functions.yml",
+        ".github/workflows/lint-nuxt.yml",
+        ".github/workflows/sync-algolia.yml"
+      ],
+      "labels": [
+        "deps:workflow"
+      ]
+    }
+  ]
+}
