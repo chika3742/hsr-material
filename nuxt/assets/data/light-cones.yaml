@@ -606,3 +606,11 @@
   materials:
     primary: group:lcs001
     common: group:com006
+- id: i-shall-be-my-own-sword
+  yomi: コノミハケンナリ
+  $nameJA: この身は剣なり
+  path: destruction
+  rarity: 5
+  materials:
+    primary: group:lcs005
+    common: group:com005

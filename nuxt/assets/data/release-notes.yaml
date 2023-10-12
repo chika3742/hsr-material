@@ -1,9 +1,18 @@
 # コピー用改行
 
+- date: 2023/10/11
+  funcVersion: 1.1.2
+  dataVersion: 1.4.0
+  isMajor: false
+  content: |
+    ### データ追加
+    - キャラクター「鏡流」
+    - 光円錐「この身は剣なり」
+
 - date: 2023/10/06
   funcVersion: 1.1.2
   dataVersion: 1.3.1
-  isMajor: true
+  isMajor: false
   content: |
     ### 調整
     - 主にiPhoneで「ホーム画面に追加」して利用時、UI部品が下部のバーに隠れる問題を修正しました。 
@@ -15,7 +24,7 @@
 - date: 2023/10/01
   funcVersion: 1.1.1
   dataVersion: 1.3.1
-  isMajor: true
+  isMajor: false
   content: |
     ### データ追加
     - キャラクター「符玄」「リンクス」

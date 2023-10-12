@@ -400,6 +400,7 @@ characterNames:
   dan-heng-imbibitor-lunae: Dan Heng・Imbibitor Lunae
   fu-xuan: Fu Xuan
   lynx: Lynx
+  jingliu: Jingliu
 
 materialCategories:
   exp: EXP Materials
@@ -492,8 +493,8 @@ skillTitles:
     ultimate: Glacial Cascade
     talent: Girl Power
   dan-heng:
-    basicAttack: 'Cloudlancer Art: North Wind'
-    skill: 'Cloudlancer Art: Torrent'
+    basicAttack: "Cloudlancer Art: North Wind"
+    skill: "Cloudlancer Art: Torrent"
     ultimate: Ethereal Dream
     talent: Superiority of Reach
   himeko:
@@ -587,9 +588,9 @@ skillTitles:
     ultimate: Lightbringer
     talent: Prana Extirpated
   sushang:
-    basicAttack: 'Cloudfencer Art: Starshine'
-    skill: 'Cloudfencer Art: Mountainfall'
-    ultimate: 'Shape of Taixu: Dawn Herald'
+    basicAttack: "Cloudfencer Art: Starshine"
+    skill: "Cloudfencer Art: Mountainfall"
+    ultimate: "Shape of Taixu: Dawn Herald"
     talent: Dancing Blade
   yanqing:
     basicAttack: Frost Thorn
@@ -641,6 +642,11 @@ skillTitles:
     skill: Salted Camping Cans
     ultimate: Snowfield First Aid
     talent: Outdoor Survival Experience
+  jingliu:
+    basicAttack: Lucent Moonglow
+    skill: Transcendent Flash
+    ultimate: Florephemeral Dreamflux
+    talent: Crescent Transmigration
 
 lightConeNames:
   arrows: Arrows
@@ -719,25 +725,28 @@ lightConeNames:
   brighter-than-the-sun: Brighter Than the Sun
   solitary-healing: Solitary Healing
   she-already-shut-her-eyes: She Already Shut Her Eyes
+  i-shall-be-my-own-sword: I Shall Be My Own Sword
 
 lightConeSkillDescriptions:
   arrows: >-
     At the start of the battle, the wearer's CRIT Rate increases by <12%> for 3
     turn(s).
   cornucopia: >-
-    When the wearer uses their Skill or Ultimate, their Outgoing Healing increases
-    by <12%>.
+    When the wearer uses their Skill or Ultimate, their Outgoing Healing
+    increases by <12%>.
   collapsing-sky: Increases the wearer's Basic ATK and Skill DMG by <20%>.
   amber: Increases the wearer's DEF by <16%>.
   void: >-
     At the start of the battle, the wearer's Effect Hit Rate increases by <20%>
     for 3 turn(s).
   chorus: >-
-    After entering battle, increases the ATK of all allies by <8%>. Effects of the
-    same type cannot stack.
+    After entering battle, increases the ATK of all allies by <8%>. Effects of
+    the same type cannot stack.
   data-bank: Increases the wearer's Ultimate DMG by <28%>.
   darting-arrow: When the wearer defeats an enemy, increases ATK by <24%> for 3 turn(s).
-  fine-fruit: At the start of the battle, immediately regenerates <6> Energy for all allies.
+  fine-fruit: >-
+    At the start of the battle, immediately regenerates <6> Energy for all
+    allies.
   shattered-home: Deals <20%> increased DMG to any enemies whose HP is above 50%.
   defense: >-
     When the wearer unleashes their Ultimate, they restore HP by <18%> of their
@@ -755,8 +764,8 @@ lightConeSkillDescriptions:
     Forward by <12%>.
   mutual-demise: If the wearer's current HP is lower than 80%, CRIT Rate increases by <12%>.
   pioneering: >-
-    When the wearer Breaks an enemy's Weakness, the wearer restores HP by <12%> of
-    their Max HP.
+    When the wearer Breaks an enemy's Weakness, the wearer restores HP by <12%>
+    of their Max HP.
   hidden-shadow: >-
     After using Skill, the wearer's next Basic ATK deals Additional DMG equal to
     <60%> of ATK to the target enemy.
@@ -789,8 +798,8 @@ lightConeSkillDescriptions:
     After entering battle, if an ally deals the same DMG Type as the wearer, DMG
     dealt increases by <12%>.
   a-secret-vow: >-
-    Increases DMG dealt by the wearer by <20%> of DMG to enemies whose current HP
-    percentage is equal to or higher than the wearer's current HP percentage.
+    Increases DMG dealt by the wearer by <20%> of DMG to enemies whose current
+    HP percentage is equal to or higher than the wearer's current HP percentage.
   perfect-timing: Increases the wearer's Effect RES by <15%>.
   resolution-shines-as-pearls-of-sweat: >-
     When the wearer hits an enemy and if the hit enemy is not already Ensnared,
@@ -815,42 +824,45 @@ lightConeSkillDescriptions:
     Increases the wearer's CRIT DMG by <36%> for 1 turn(s). This effect can only
     trigger once every 3 turn(s).
   time-waits-for-no-one: >-
-    Increases the wearer's Max HP by <36%> of the recorded Outgoing Healing value.
-    This Additional DMG is of the same Type as the wearer's, is not affected by
-    other buffs, and can only occur 1 time per turn.
+    Increases the wearer's Max HP by <36%> of the recorded Outgoing Healing
+    value. This Additional DMG is of the same Type as the wearer's, is not
+    affected by other buffs, and can only occur 1 time per turn.
   on-the-fall-of-an-aeon: Whenever the wearer attacks, their ATK is increased by <12%> for 2 turn(s).
   cruising-in-the-stellar-sea: Increases the wearer's CRIT rate by <20%> for 2 turn(s).
   texture-of-memories: Increases the wearer's Effect RES by <12%>.
   make-the-world-clamor: The wearer regenerates <32%>.
-  night-on-the-milky-way: For every enemy on the field, increases the wearer's ATK by <30%> for 1 turn.
+  night-on-the-milky-way: >-
+    For every enemy on the field, increases the wearer's ATK by <30%> for 1
+    turn.
   before-dawn: Increases the wearer's CRIT DMG by <48%>.
   under-the-blue-sky: Increases the wearer's ATK by <12%> for 3 turn(s).
   geniuses-repose: Increases the wearer's ATK by <24%> for 3 turn(s).
   we-are-wildfire: >-
-    At the start of the battle, the DMG dealt to all allies decreases by <30%> of
-    the respective HP difference between the characters' Max HP and current HP.
+    At the start of the battle, the DMG dealt to all allies decreases by <30%>
+    of the respective HP difference between the characters' Max HP and current
+    HP.
   river-flows-in-spring: >-
     After entering battle, increases the wearer's SPD by <12%>. When the wearer
     takes DMG, this effect will disappear. This effect will resume after the end
     of the wearer's next turn.
   fermata: >-
-    Increases the Break Effect dealt by the wearer by <16%>. This also applies to
-    DoT.
+    Increases the Break Effect dealt by the wearer by <16%>. This also applies
+    to DoT.
   woof-walk-time: Increases the wearer's ATK by <16%>. This also applies to DoT.
   the-seriousness-of-breakfast: Increases the wearer's DMG by <4%>, stacking up to 3 time(s).
   we-will-meet-again: >-
-    After the wearer uses Basic ATK or Skill, deals Additional DMG equal to <48%>
-    of the wearer's ATK to a random enemy that has been attacked.
+    After the wearer uses Basic ATK or Skill, deals Additional DMG equal to
+    <48%> of the wearer's ATK to a random enemy that has been attacked.
   this-is-me: >-
     Increases the wearer's DEF by <60%> of the wearer's DEF. This effect only
     applies 1 time per enemy target during each use of the wearer's Ultimate.
   return-to-darkness: >-
-    Increases the wearer's CRIT Rate by <16%> fixed chance to dispel 1 buff on the
-    target enemy. This effect can only trigger 1 time per attack.
+    Increases the wearer's CRIT Rate by <16%> fixed chance to dispel 1 buff on
+    the target enemy. This effect can only trigger 1 time per attack.
   carve-the-moon-weave-the-clouds: >-
     At the start of the battle and whenever the wearer's turn begins, one of the
-    following effects is applied randomly: All allies' ATK increases by <6%>. The
-    applied effect cannot be identical to the last effect applied, and will
+    following effects is applied randomly: All allies' ATK increases by <6%>.
+    The applied effect cannot be identical to the last effect applied, and will
     replace the previous effect. The applied effect will be removed when the
     wearer has been knocked down. Effects of the similar type cannot be stacked.
   nowhere-to-run: Increases the wearer's ATK by <12%> of their ATK.
@@ -861,8 +873,8 @@ lightConeSkillDescriptions:
     Increases the wearer's ATK by <24%> until the end of their next turn. This
     effect cannot stack and can only trigger 1 time per turn.
   dance-dance-dance: >-
-    When the wearer uses their Ultimate, all allies' actions are Advanced Forward
-    by <16%>.
+    When the wearer uses their Ultimate, all allies' actions are Advanced
+    Forward by <16%>.
   past-and-future: >-
     When the wearer uses their Skill, the next ally taking action (except the
     wearer) deals <16%> increased DMG for 1 turn(s).
@@ -870,30 +882,30 @@ lightConeSkillDescriptions:
     Increases the wearer's Effect Hit Rate by <20%>. When the wearer attacks
     DEF-reduced enemies, regenerates <4> Energy.
   incessant-rain: >-
-    Increases the wearer's Effect Hit Rate by <24%>. When the wearer deals DMG to
-    an enemy that currently has 3 or more debuffs, increases the wearer's CRIT
-    Rate by <12%>. After the wearer uses their Basic ATK, Skill, or Ultimate,
-    there is a 100% base chance to implant Aether Code on a random hit target that
-    does not yet have it. Targets with Aether Code receive <12%> increased DMG for
-    1 turn.
+    Increases the wearer's Effect Hit Rate by <24%>. When the wearer deals DMG
+    to an enemy that currently has 3 or more debuffs, increases the wearer's
+    CRIT Rate by <12%>. After the wearer uses their Basic ATK, Skill, or
+    Ultimate, there is a 100% base chance to implant Aether Code on a random hit
+    target that does not yet have it. Targets with Aether Code receive <12%>
+    increased DMG for 1 turn.
   echoes-of-the-coffin: >-
-    Increases the wearer's ATK by <24%>. After the wearer uses an attack, for each
-    different enemy target the wearer hits, regenerates <3> Energy. Each attack
-    can regenerate Energy up to 3 time(s) this way. After the wearer uses their
-    Ultimate, all allies gain <12> SPD for 1 turn.
+    Increases the wearer's ATK by <24%>. After the wearer uses an attack, for
+    each different enemy target the wearer hits, regenerates <3> Energy. Each
+    attack can regenerate Energy up to 3 time(s) this way. After the wearer uses
+    their Ultimate, all allies gain <12> SPD for 1 turn.
   the-unreachable-side: >-
-    Increases the wearer's CRIT rate by <18%> and increases their Max HP by <18%>.
-    When the wearer is attacked or consumes their own HP, their DMG increases by <24%>.
-    This effect is removed after the wearer uses an attack.
+    Increases the wearer's CRIT rate by <18%> and increases their Max HP by
+    <18%>. When the wearer is attacked or consumes their own HP, their DMG
+    increases by <24%>. This effect is removed after the wearer uses an attack.
   patience-is-all-you-need: >-
     Increases DMG dealt by the wearer by <24%>. After every attack launched by
     wearer, their SPD increases by <4.8%>, stacking up to 3 times.
 
-    If the wearer hits an enemy target that is not afflicted by Erode, there is a
-    <unbreak>100%</unbreak> base chance to inflict Erode to the target. Enemies
-    afflicted with Erode are also considered to be Shocked and will receive
-    Lightning DoT at the start of each turn equal to <60%> of the wearer's ATK,
-    lasting for 1 turn(s).
+    If the wearer hits an enemy target that is not afflicted by Erode, there is
+    a <unbreak>100%</unbreak> base chance to inflict Erode to the target.
+    Enemies afflicted with Erode are also considered to be Shocked and will
+    receive Lightning DoT at the start of each turn equal to <60%> of the
+    wearer's ATK, lasting for 1 turn(s).
   solitary-healing: >-
     Increases the wearer's Break Effect by <20%>. When the wearer uses their
     Ultimate, increases DoT dealt by the wearer by <24%>, lasting for 2 turn(s).
@@ -901,14 +913,21 @@ lightConeSkillDescriptions:
     regenerates <4> Energy for the wearer.
   brighter-than-the-sun: >-
     Increases the wearer's CRIT Rate by <18%>. When the wearer uses their Basic
-    ATK, they will gain 1 stack of Dragon's Call, lasting for 2 turns. Each stack
-    of Dragon's Call increases the wearer's ATK by <18%> and Energy Regeneration
-    Rate by <6%>. Dragon's Call can be stacked up to 2 times.
+    ATK, they will gain 1 stack of Dragon's Call, lasting for 2 turns. Each
+    stack of Dragon's Call increases the wearer's ATK by <18%> and Energy
+    Regeneration Rate by <6%>. Dragon's Call can be stacked up to 2 times.
   she-already-shut-her-eyes: >-
-    Increases the wearer's Max HP by <24%> and Energy Regeneration Rate by <12%>.
-    When the wearer's HP is reduced, all allies' DMG dealt increases by <9%>,
-    lasting for 2 turn(s).\nAt the start of every wave, restores HP to all allies
-    by an amount equal to <80%> of their respective lost HP.
+    Increases the wearer's Max HP by <24%> and Energy Regeneration Rate by
+    <12%>. When the wearer's HP is reduced, all allies' DMG dealt increases by
+    <9%>, lasting for 2 turn(s).\nAt the start of every wave, restores HP to all
+    allies by an amount equal to <80%> of their respective lost HP.
+  i-shall-be-my-own-sword: >-
+    Increases the wearer's CRIT DMG by <20%>. When an ally (excluding the
+    wearer) gets attacked or loses HP, the wearer gains 1 stack of Eclipse, up
+    to a max of 3 stack(s). Each stack of Eclipse increases the DMG of the
+    wearer's next attack by <14%>. When 3 stack(s) are reached, additionally
+    enables that attack to ignore <12%> of the enemy's DEF. This effect will be
+    removed after the wearer uses an attack.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
