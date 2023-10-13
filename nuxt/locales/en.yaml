@@ -64,6 +64,7 @@ pageTitles:
   termsSummarized: Terms of Use (Summarized)
   privacy: Privacy Policy
   about: About This App
+  settings: Settings
 
 navDrawer:
   kofi: Buy me a coffee
@@ -304,6 +305,19 @@ releaseNotesPage:
   desc: Description
   orangeDesc: Includes additions and improvements related to features
   lightBlueDesc: Only data additions of characters, weapons, etc.
+
+settingsPage:
+  bookmarkDisplay: Bookmark Display
+  showFarmingCount: Show farming count for each item
+  equilibriumLevel: Equilibrium Level
+  equilibriumLevelDesc: Farming count is calculated based on the equilibrium level. If you want to change the equilibrium level, please change it here.
+  dropRateTable: Drop Rate Table
+  itemKind: Item Kind
+  dropRate: Drop Rate (per run)
+  itemTypes:
+    characterExp: Character EXP
+    lightConeExp: Light Cone EXP
+  dataSource: Data source
 
 paths:
   abundance: Abundance

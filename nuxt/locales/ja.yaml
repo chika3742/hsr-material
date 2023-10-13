@@ -64,6 +64,7 @@ pageTitles:
   termsSummarized: 利用規約 (要約)
   privacy: プライバシーポリシー
   about: このアプリについて
+  settings: 設定
 
 navDrawer:
   kofi: コーヒーを奢る
@@ -311,6 +312,19 @@ releaseNotesPage:
   desc: 説明
   orangeDesc: 機能関連の追加や改善を含む
   lightBlueDesc: キャラ・武器等のデータ追加のみ
+
+settingsPage:
+  bookmarkDisplay: ブックマーク表示設定
+  showFarmingCount: アイテムの周回目安回数を表示する
+  equilibriumLevel: 均衡レベル
+  equilibriumLevelDesc: この設定値に応じて、周回回数の目安が表示されます。
+  dropRateTable: ドロップ率一覧
+  itemKind: 種類
+  dropRate: ドロップ率 (個/回)
+  itemTypes:
+    characterExp: キャラクター経験値
+    lightConeExp: 光円錐経験値
+  dataSource: データソース
 
 paths:
   abundance: 豊穣

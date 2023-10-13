@@ -28,6 +28,8 @@ export const useConfigStore = defineStore("config", {
      */
     ownedCharacters: [] as string[],
     characterOrder: [] as string[],
+    equilibriumLevel: 6,
+    showFarmingCount: true,
   }),
   actions: {
     /**
