@@ -1,0 +1,44 @@
+$schema: https://json-schema.org/draft-07/schema
+
+type: array
+items:
+  type: object
+  additionalProperties: false
+  required:
+    - drops
+  properties:
+    readableType:
+      type: string
+      description: I18n key for the type of drops
+    ids:
+      type: array
+      description: Specific item ids (exclusive with type)
+      items:
+        type: string
+    type:
+      type: string
+      description: Item type (exclusive with ids)
+      enum:
+        - character_ascension
+        - light_cone_or_skill_upgrade
+        - advanced_skill_upgrade
+    drops:
+      type: array
+      description: Drop rate entries
+      items:
+        type: object
+        additionalProperties: false
+        required:
+          - equilibriumLevels
+          - rarities
+        properties:
+          equilibriumLevels:
+            type: array
+            description: Applicable equilibrium levels
+            items:
+              type: integer
+          rarities:
+            type: object
+            description: Drop rates for each rarity
+            additionalProperties:
+              type: number
