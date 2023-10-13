@@ -51,3 +51,9 @@ declare module "assets/data/relic-stats.yaml" {
   const relicStats: RelicStats
   export default relicStats
 }
+
+declare module "assets/data/drop-rates.yaml" {
+  import {DropRates} from "~/types/generated/drop-rates.g"
+  const dropRates: DropRates
+  export default dropRates
+}
