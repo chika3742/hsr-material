@@ -14,10 +14,16 @@ defineEmits<Emits>()
 </script>
 
 <template>
-  <v-list-item :title="title" density="comfortable" @click="$emit('update:modelValue', !modelValue)">
-    <template #append>
+  <v-list-item
+    :active="modelValue"
+    :title="title"
+    color="primary"
+    density="comfortable"
+    @click="$emit('update:modelValue', !modelValue)"
+  >
+    <template #append="{isActive}">
       <div class="px-2">
-        <v-switch :model-value="modelValue" color="primary" density="compact" hide-details />
+        <v-switch :model-value="isActive" color="primary" density="compact" hide-details />
       </div>
     </template>
   </v-list-item>
