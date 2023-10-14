@@ -26,6 +26,7 @@ interface Props {
   purposeTypes: PurposeType[]
   initialSelectedExpItem?: string
   individual?: boolean
+  showFarmingCount?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -162,6 +163,7 @@ const reBookmark = async(selectedExpItemId: string | undefined) => {
     :material-image="getMaterialImage"
     :quantity="quantity"
     :rarity="getRarity"
+    :farming-count="showFarmingCount ? getFarmingCount : undefined"
     @toggle-bookmark="toggleBookmark"
     @re-bookmark="reBookmark"
   />

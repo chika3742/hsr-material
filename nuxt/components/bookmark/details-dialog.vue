@@ -10,6 +10,7 @@ interface Props {
   modelValue: boolean
   items: LevelingBookmark[]
   bookmarks: Bookmark[]
+  showFarmingCount?: boolean
 }
 
 const props = defineProps<Props>()
@@ -126,6 +127,7 @@ router.beforeEach(() => {
                       :items="[item]"
                       :purpose-types="[purpose]"
                       individual
+                      :show-farming-count="showFarmingCount"
                     />
                   </div>
                 </li>

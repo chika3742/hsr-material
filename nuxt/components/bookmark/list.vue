@@ -52,6 +52,7 @@ const saveCharacterSort = (ev: Sortable.SortableEvent) => {
         :data-character-id="characterId"
         :bookmarks="characterBookmarks"
         :character="characterId as string"
+        :show-farming-count="config.showFarmingCount"
       />
     </Draggable>
 
