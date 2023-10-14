@@ -22,6 +22,17 @@ items:
         - character_ascension
         - light_cone_or_skill_upgrade
         - advanced_skill_upgrade
+    craftFactors:
+      type: object
+      description: Craft factors for item with each rarity
+      additionalProperties: false
+      required:
+        - rarities
+      properties:
+        rarities:
+          type: object
+          additionalProperties:
+            type: integer
     drops:
       type: array
       description: Drop rate entries

@@ -3,6 +3,10 @@
     - travel-encounters
     - adventure-log
     - travelers-guide
+  craftFactors:
+    rarities:
+      2: 5
+      3: 4
   drops:
     - equilibriumLevels:
         - 0
@@ -42,6 +46,10 @@
     - sparse-aether
     - condensed-aether
     - refined-aether
+  craftFactors:
+    rarities:
+      2: 4
+      3: 3
   drops:
     - equilibriumLevels:
         - 0
@@ -97,6 +105,10 @@
         4: 5
 
 - type: light_cone_or_skill_upgrade
+  craftFactors:
+    rarities:
+      2: 3
+      3: 3
   drops:
     - equilibriumLevels:
         - 0
