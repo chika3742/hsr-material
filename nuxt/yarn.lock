@@ -2951,14 +2951,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdi/font@npm:^7.2.96":
-  version: 7.2.96
-  resolution: "@mdi/font@npm:7.2.96"
-  checksum: f193bb99175e723864a7fd4010594637395a77c8011668f65856aa65abd70848239ab8642fe8aabb0f57f0ffe513a32687fddcd1a927f5aa6c7329b8d8c13e75
-  languageName: node
-  linkType: hard
-
-"@mdi/font@npm:^7.3.67":
+"@mdi/font@npm:^7.2.96, @mdi/font@npm:^7.3.67":
   version: 7.3.67
   resolution: "@mdi/font@npm:7.3.67"
   checksum: 34af78e108b1cbf30760a062a0d4c25e58fb13b719cef535b96116c6f522f877f19448d4389dac87176bd3bbca240b9f721b1b01599f0b333311edbff5d2fba9
