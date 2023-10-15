@@ -2,7 +2,6 @@ import dropRates from "assets/data/drop-rates.yaml"
 import materials from "~/assets/data/materials.csv"
 import {useConfigStore} from "~/store/config"
 
-// TODO: 詳細ダイアログを開いた際に何故か異様に重い。ボトルネック箇所の特定要。
 export const getDropRateForMaterial = (id: string) => {
   const el = useConfigStore().equilibriumLevel
 
