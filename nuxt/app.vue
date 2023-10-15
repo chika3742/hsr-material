@@ -163,6 +163,10 @@ const drawerItems: DrawerItemOrDivider[] = [
   },
   "---" as const,
   {
+    icon: "mdi-cog",
+    to: "/settings",
+  },
+  {
     icon: "mdi-information",
     to: "/about",
   },

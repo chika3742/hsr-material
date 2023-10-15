@@ -35,7 +35,7 @@
     "json-schema-to-typescript": "^13.1.1",
     "luxon": "^3.4.3",
     "marked": "^9.1.0",
-    "mhy-material-components": "github:chika3742/mhy-material-components#d2cad88d77899b6dfa07665e9b470d73c2635e18",
+    "mhy-material-components": "github:chika3742/mhy-material-components#8297fb05b45bd9620978f00babb30b4351c8120f",
     "nuxt": "^3.7.4",
     "rxjs": "^7.8.1",
     "sass": "^1.69.0",

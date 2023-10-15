@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {groupBy} from "lodash"
+import {flatMap, groupBy, mapValues} from "lodash"
 import {PurposeType} from "~/types/strings"
 import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {materialSortFunc} from "~/utils/merge-items"
@@ -10,6 +10,7 @@ interface Props {
   modelValue: boolean
   items: LevelingBookmark[]
   bookmarks: Bookmark[]
+  showFarmingCount?: boolean
 }
 
 const props = defineProps<Props>()
@@ -27,25 +28,33 @@ const loadingCompleteLeveling = ref<string | null>(null)
 const _persistent = ref(false)
 
 const purposes = computed(() => {
-  const result: Partial<Record<PurposeType, LevelingBookmark[]>> = {}
+  const _purposes: Partial<Record<PurposeType, LevelingBookmark[]>> = {}
 
   for (const item of props.items) {
     if (item.usage.type === "exp") {
-      (result.ascension ||= []).push(item)
+      (_purposes.ascension ||= []).push(item)
     } else {
-      (result[item.usage.purposeType] ||= []).push(item)
+      (_purposes[item.usage.purposeType] ||= []).push(item)
     }
   }
 
-  return result
+  const grouped = mapValues(_purposes, bookmarks => groupByLevel(bookmarks))
+
+  const sorted = mapValues(grouped, levels => mapValues(levels, items => items.sort(materialSortFunc)))
+
+  return sorted
 })
+
+const groupByLevel = (items: LevelingBookmark[] | undefined): { [purpose: string]: LevelingBookmark[] } => {
+  return groupBy(items, e => e.usage.upperLevel)
+}
 
 const getSkillTitle = (item: LevelingBookmark) => {
   return tx(i18n, `skillTitles.${item.characterId.replace("_", ".")}.${item.usage.purposeType}`)
 }
 
 const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
-  const ids = purposes.value[purposeType]?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
+  const ids = flatMap(purposes.value[purposeType])?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
   if (ids) {
     loadingCompleteLeveling.value = `${purposeType}-${level}`
     return db.bookmarks.remove(...ids).then((result) => {
@@ -91,12 +100,12 @@ router.beforeEach(() => {
           <v-expansion-panel
             v-for="(_items, purpose) in purposes"
             :key="purpose"
-            :title="tx(`purposeTypes.${purpose}`, {title: getSkillTitle(_items![0])})"
+            :title="tx(`purposeTypes.${purpose}`, {title: getSkillTitle(Object.values(_items!)[0][0])})"
             :value="purpose"
           >
             <template #text>
               <ul>
-                <li v-for="(__items, lv) in groupBy(_items, (e) => e.usage.upperLevel)" :key="lv">
+                <li v-for="(__items, lv) in _items" :key="lv">
                   <v-row align="center" class="mb-2" no-gutters>
                     <h3 class="text-slight-heading">
                       Lv. {{ lv }}
@@ -108,7 +117,7 @@ router.beforeEach(() => {
                       class="ml-1"
                       prepend-icon="mdi-marker-check"
                       variant="text"
-                      @click="removeBookmarksInLevel(purpose, parseInt(lv))"
+                      @click="removeBookmarksInLevel(purpose, Number(lv))"
                     >
                       <span>{{ tx('bookmark.completeLeveling') }}</span>
 
@@ -120,12 +129,13 @@ router.beforeEach(() => {
                   </v-row>
                   <div class="material-cards-container">
                     <MaterialItem
-                      v-for="item in __items.sort(materialSortFunc)"
+                      v-for="item in __items"
                       :key="item.id"
                       :initial-selected-exp-item="isBookmarkableExp(item) ? item.selectedItem : undefined"
                       :items="[item]"
                       :purpose-types="[purpose]"
                       individual
+                      :show-farming-count="showFarmingCount"
                     />
                   </div>
                 </li>

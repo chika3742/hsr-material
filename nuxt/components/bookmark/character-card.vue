@@ -9,6 +9,7 @@ import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
 interface Props {
   character: CharacterIdWithVariant
   bookmarks: Bookmark[]
+  showFarmingCount?: boolean
 }
 
 const props = defineProps<Props>()
@@ -91,6 +92,7 @@ const detailsDialog = reactive({
               :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
               :items="materials"
               :purpose-types="['ascension', 'basicAttack', 'skill', 'talent', 'ultimate']"
+              :show-farming-count="showFarmingCount"
             />
             <v-btn
               :text="tx('common.details')"
@@ -148,7 +150,12 @@ const detailsDialog = reactive({
         </section>
       </div>
 
-      <BookmarkDetailsDialog v-model="detailsDialog.show" :bookmarks="bookmarks" :items="detailsDialog.items" />
+      <BookmarkDetailsDialog
+        v-model="detailsDialog.show"
+        :bookmarks="bookmarks"
+        :items="detailsDialog.items"
+        :show-farming-count="showFarmingCount"
+      />
     </div>
   </v-card>
 </template>
