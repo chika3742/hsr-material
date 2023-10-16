@@ -4,10 +4,6 @@
     "config:base"
   ],
   "timezone": "Asia/Tokyo",
-  "schedule": [
-    "every weekend"
-  ],
-  "branchConcurrentLimit": 0,
   "dependencyDashboard": false,
   "branchPrefix": "deps-pages-nodeploy/",
   "packageRules": [
