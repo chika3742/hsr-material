@@ -9,10 +9,26 @@
   ],
   "branchConcurrentLimit": 0,
   "dependencyDashboard": false,
+  "branchPrefix": "deps-pages-nodeploy/",
   "packageRules": [
     {
       "matchFileNames": [
         "nuxt/package.json"
+      ],
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "branchPrefix": "deps/",
+      "labels": [
+        "deps:nuxt"
+      ]
+    },
+    {
+      "matchFileNames": [
+        "nuxt/package.json"
+      ],
+      "matchDepTypes": [
+        "devDependencies"
       ],
       "labels": [
         "deps:nuxt"
