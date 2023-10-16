@@ -23,6 +23,12 @@ export class MySubClassedDexie extends Dexie {
     }).upgrade(async() => {
       await this.import(migrate(await this.dump(), 1, 2))
     })
+
+    this.version(3).stores({
+      bookmarks: "++id, characterId, hash",
+    }).upgrade(async() => {
+      await this.import(migrate(await this.dump(), 2, 3))
+    })
   }
 
   dump() {

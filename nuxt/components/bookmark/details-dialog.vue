@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import {flatMap, groupBy, mapValues} from "lodash"
+import _ from "lodash"
 import {PurposeType} from "~/types/strings"
 import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {materialSortFunc} from "~/utils/merge-items"
 import {db} from "~/libs/db/providers"
-import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
 
 interface Props {
   modelValue: boolean
@@ -38,15 +37,15 @@ const purposes = computed(() => {
     }
   }
 
-  const grouped = mapValues(_purposes, bookmarks => groupByLevel(bookmarks))
+  const grouped = _.mapValues(_purposes, bookmarks => groupByLevel(bookmarks))
 
-  const sorted = mapValues(grouped, levels => mapValues(levels, items => items.sort(materialSortFunc)))
+  const sorted = _.mapValues(grouped, levels => _.mapValues(levels, items => items.sort(materialSortFunc)))
 
   return sorted
 })
 
 const groupByLevel = (items: LevelingBookmark[] | undefined): { [purpose: string]: LevelingBookmark[] } => {
-  return groupBy(items, e => e.usage.upperLevel)
+  return _.groupBy(items, e => e.usage.upperLevel)
 }
 
 const getSkillTitle = (item: LevelingBookmark) => {
@@ -54,7 +53,7 @@ const getSkillTitle = (item: LevelingBookmark) => {
 }
 
 const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
-  const ids = flatMap(purposes.value[purposeType])?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
+  const ids = _.flatMap(purposes.value[purposeType])?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
   if (ids) {
     loadingCompleteLeveling.value = `${purposeType}-${level}`
     return db.bookmarks.remove(...ids).then((result) => {
@@ -98,47 +97,23 @@ router.beforeEach(() => {
       <div class="overflow-y-auto pa-2 h-100">
         <v-expansion-panels :model-value="Object.keys(purposes)" multiple>
           <v-expansion-panel
-            v-for="(_items, purpose) in purposes"
+            v-for="(levels, purpose) in purposes"
             :key="purpose"
-            :title="tx(`purposeTypes.${purpose}`, {title: getSkillTitle(Object.values(_items!)[0][0])})"
+            :title="tx(`purposeTypes.${purpose}`, {title: getSkillTitle(Object.values(levels!)[0][0])})"
             :value="purpose"
           >
             <template #text>
               <ul>
-                <li v-for="(__items, lv) in _items" :key="lv">
-                  <v-row align="center" class="mb-2" no-gutters>
-                    <h3 class="text-slight-heading">
-                      Lv. {{ lv }}
-                    </h3>
-                    <v-btn
-                      :disabled="loadingCompleteLeveling !== `${purpose}-${lv}` &&
-                        !bookmarks.some(b => __items.some(e => e.id === b.id))"
-                      :loading="loadingCompleteLeveling === `${purpose}-${lv}`"
-                      class="ml-1"
-                      prepend-icon="mdi-marker-check"
-                      variant="text"
-                      @click="removeBookmarksInLevel(purpose, Number(lv))"
-                    >
-                      <span>{{ tx('bookmark.completeLeveling') }}</span>
-
-                      <!-- complete leveling button hint -->
-                      <v-tooltip activator="parent" location="bottom" open-delay="200">
-                        <span>{{ tx("bookmark.completeLevelingDesc") }}</span>
-                      </v-tooltip>
-                    </v-btn>
-                  </v-row>
-                  <div class="material-cards-container">
-                    <MaterialItem
-                      v-for="item in __items"
-                      :key="item.id"
-                      :initial-selected-exp-item="isBookmarkableExp(item) ? item.selectedItem : undefined"
-                      :items="[item]"
-                      :purpose-types="[purpose]"
-                      individual
-                      :show-farming-count="showFarmingCount"
-                    />
-                  </div>
-                </li>
+                <BookmarkDetailsLevel
+                  v-for="(_items, level) in levels"
+                  :key="level"
+                  :items="_items"
+                  :level="Number(level)"
+                  :loading-level="loadingCompleteLeveling"
+                  :purpose="purpose"
+                  :show-farming-count="showFarmingCount"
+                  @remove-bookmarks-in-level="removeBookmarksInLevel($event.purpose, $event.level)"
+                />
               </ul>
             </template>
           </v-expansion-panel>
@@ -164,10 +139,4 @@ ul
   flex-direction: column
   gap: 8px
   list-style: none
-
-  li
-    .material-cards-container
-      display: flex
-      flex-wrap: wrap
-      gap: 8px
 </style>

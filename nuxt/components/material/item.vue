@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import {useObservable} from "@vueuse/rxjs"
+import {from, useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
 import _ from "lodash"
-import {Observable} from "rxjs"
+import hash from "object-hash"
 import {PurposeType} from "~/types/strings"
 import materials from "~/assets/data/materials.csv"
 import {computed} from "#imports"
@@ -23,15 +23,19 @@ interface Props {
    * `type` of the items must be the same.
    */
   items: BookmarkableIngredient[]
+  /**
+   * {@link Bookmark} id used for single bookmark.
+   * If this is set, the item will be treated as a individual bookmark.
+   */
+  itemId?: number
   purposeTypes: PurposeType[]
   initialSelectedExpItem?: string
-  individual?: boolean
   showFarmingCount?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   initialSelectedExpItem: undefined,
-  individual: false,
+  itemId: undefined,
 })
 
 const snackbar = useSnackbar()
@@ -66,16 +70,28 @@ const expItemLineup = computed(() => {
 })
 
 // Bookmarks
-const savedBookmarks = process.client
-  ? useObservable<LevelingBookmark[], null>(liveQuery(() =>
+const savedBookmarks = (() => {
+  if (process.server) {
+    return ref([])
+  }
+
+  if (typeof props.itemId !== "undefined") {
+    return useObservable<LevelingBookmark[], null>(from(liveQuery(() => {
+      return db.bookmarks.getLevelingItemByHash(hash(props.items[0]))
+    })), {
+      initialValue: null,
+    })
+  }
+
+  return useObservable<LevelingBookmark[], null>(from(liveQuery(() =>
     db.bookmarks.getLevelingItems(
       props.items,
       props.purposeTypes,
-      props.individual ? props.items[0].usage.upperLevel : undefined,
-    )) as Observable<LevelingBookmark[]>, {
+      typeof props.itemId !== "undefined" ? props.items[0].usage.upperLevel : undefined,
+    ))), {
     initialValue: null,
   })
-  : ref([])
+})()
 
 /**
  * Bookmark state
@@ -114,7 +130,7 @@ const toggleBookmark = async(selectedExpItemId: string | undefined) => {
 
   try {
     if (bookmarkState.value === "none") {
-      await db.bookmarks.addLevelingItems(props.items.map(e => toRaw(e)), selectedExpItemId)
+      await db.bookmarks.addLevelingItems(props.items.map(e => JSON.parse(JSON.stringify(e)) as BookmarkableIngredient), selectedExpItemId, props.itemId)
       snackbar.show(tx(i18n, "bookmark.bookmarked"))
     } else {
       const result = await db.bookmarks.remove(...savedBookmarks.value.map(e => e.id!))
@@ -155,7 +171,7 @@ const reBookmark = async(selectedExpItemId: string | undefined) => {
   <MaterialCard
     :bookmark-button-loading="loading"
     :bookmark-state="bookmarkState"
-    :dimmed="individual && bookmarkState === 'none'"
+    :dimmed="typeof itemId !== 'undefined' && bookmarkState === 'none'"
     :exp-item-lineup="expItemLineup"
     :initial-selected-exp-item-id="initialSelectedExpItem"
     :is-exp-item="isBookmarkableExp(items[0])"
