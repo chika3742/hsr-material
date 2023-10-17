@@ -4,7 +4,6 @@ import {configStoreToSyncedConfig, UserDocument} from "~/types/firestore/user-do
 import {userDocumentConverter} from "~/utils/user-document-converter"
 import {MySubClassedDexie} from "~/dexie/db"
 import {DataSyncError} from "~/libs/data-sync-error"
-import {useConfigStore} from "~/store/config"
 
 export class FirestoreProvider {
   readonly userDoc: DocumentReference<UserDocument>

@@ -105,7 +105,6 @@ import {Unsubscribe} from "firebase/auth"
 import {ref} from "#imports"
 import {useSnackbar} from "~/composables/snackbar"
 import {useDialog} from "~/composables/dialog"
-import {useConfigStore} from "~/store/config"
 import {_db} from "~/dexie/db"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 

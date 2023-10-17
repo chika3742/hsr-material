@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
 import {CharacterVariant} from "~/types/generated/characters.g"
-import {useConfigStore} from "~/store/config"
 
 definePageMeta({
   title: "characterDetails",
