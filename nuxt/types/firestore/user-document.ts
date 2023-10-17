@@ -14,20 +14,15 @@ export interface SyncedUserData {
   warps: Warp[]
 }
 
-export type SyncedConfig = Pick<ReturnType<typeof useConfigStore>,
-    | "warpsUrl"
-    | "tpCount"
-    | "tpBaseTime"
-    | "warpsShowPityList"
-    | "ownedCharacters"
-    | "characterOrder"
->
-
-export const configStoreToSyncedConfig = (config: ReturnType<typeof useConfigStore>): SyncedConfig => ({
+export const configStoreToSyncedConfig = (config: ReturnType<typeof useConfigStore>) => ({
   warpsUrl: config.warpsUrl,
   tpCount: config.tpCount,
   tpBaseTime: config.tpBaseTime,
   warpsShowPityList: config.warpsShowPityList,
   ownedCharacters: config.ownedCharacters,
   characterOrder: config.characterOrder,
+  showFarmingCount: config.showFarmingCount,
+  equilibriumLevel: config.equilibriumLevel,
 })
+
+export type SyncedConfig = ReturnType<typeof configStoreToSyncedConfig>
