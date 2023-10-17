@@ -78,7 +78,13 @@ const getFirstMaterialId = (entry: typeof dropRates[number], rarity: number) => 
           href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRG_cISC2N-_1Lef-GofaydNa-VZ_r9QfnPNnsPNMSw5JHeAu_nLPrOe9ObPM8XmqTMrO5NWGF8L4b3/pubhtml"
           target="_blank"
         >
-          {{ tx("settingsPage.dataSource") }}
+          {{ tx("settingsPage.dataSource") }}1
+        </a>
+        <a
+          href="https://www.hoyolab.com/article/19515455"
+          target="_blank"
+        >
+          {{ tx("settingsPage.dataSource") }}2
         </a>
       </p>
     </section>

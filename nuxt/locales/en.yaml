@@ -317,6 +317,7 @@ settingsPage:
   itemTypes:
     characterExp: Character EXP
     lightConeExp: Light Cone EXP
+    credit: Credit
   dataSource: Data source
 
 paths:

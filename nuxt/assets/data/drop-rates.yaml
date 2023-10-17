@@ -84,6 +84,33 @@
         3: 2
         4: 1
 
+- readableType: credit
+  ids:
+    - credit
+  drops:
+    - equilibriumLevels:
+        - 0
+      rarities:
+        3: 9500
+    - equilibriumLevels:
+        - 1
+      rarities:
+        3: 12500
+    - equilibriumLevels:
+        - 2
+      rarities:
+        3: 16000
+    - equilibriumLevels:
+        - 3
+      rarities:
+        3: 20000
+    - equilibriumLevels:
+        - 4
+        - 5
+        - 6
+      rarities:
+        3: 24000
+
 - type: character_ascension
   drops:
     - equilibriumLevels:
