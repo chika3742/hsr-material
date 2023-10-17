@@ -324,6 +324,7 @@ settingsPage:
   itemTypes:
     characterExp: キャラクター経験値
     lightConeExp: 光円錐経験値
+    credit: 信用ポイント
   dataSource: データソース
 
 paths:
