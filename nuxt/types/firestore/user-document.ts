@@ -1,7 +1,6 @@
 import {Timestamp} from "@firebase/firestore"
 import {Warp} from "#shared/warp"
 import {Bookmark} from "~/types/bookmark/bookmark"
-import {useConfigStore} from "~/store/config"
 
 export interface UserDocument {
   schemaVersion: number

@@ -8,7 +8,6 @@ import Sortable from "sortablejs"
 import {Observable} from "rxjs"
 import {Bookmark} from "~/types/bookmark/bookmark"
 import {_db} from "~/dexie/db"
-import {useConfigStore} from "~/store/config"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 
 const config = useConfigStore()

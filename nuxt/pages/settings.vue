@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import dropRates from "assets/data/drop-rates.yaml"
 import materials from "~/assets/data/materials.csv"
-import {useConfigStore} from "~/store/config"
 import SwitchListItem from "~/components/switch-list-item.vue"
 
 definePageMeta({
