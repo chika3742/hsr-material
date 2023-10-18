@@ -80,24 +80,24 @@ onActivated(() => {
       <div class="d-flex flex-column g-2">
         <v-btn
           :text="tx('characterDetailsPage.bookmarkLightCone')"
-          :to="localePath({
-            path: '/light-cones',
-            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
-          })"
           color="primary"
           prepend-icon="mdi-cone"
           variant="outlined"
+          @click="$router.push(localePath({
+            path: '/light-cones',
+            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
+          }))"
         />
 
         <v-btn
           :text="tx('characterDetailsPage.bookmarkRelics')"
-          :to="localePath({
-            path: '/relics',
-            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
-          })"
           color="primary"
           prepend-icon="mdi-star-david"
           variant="outlined"
+          @click="$router.push(localePath({
+            path: '/relics',
+            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
+          }))"
         />
       </div>
     </v-row>
