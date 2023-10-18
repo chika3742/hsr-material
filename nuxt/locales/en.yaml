@@ -29,6 +29,7 @@ common:
     skill: Skill
     ultimate: Ultimate
     talent: Talent
+  updated: Updated to {version}.
 
 errors:
   404: Page not found.

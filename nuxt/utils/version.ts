@@ -5,12 +5,12 @@ import {ReleaseNote} from "~/types/generated/release-notes.g"
 /**
  * Gets current version.
  *
- * @returns {@link ReleaseNote} of current version
+ * @returns Release note of current version
  */
 export const getCurrentVersion = () => releaseNotes[0]
 
 /**
- * @returns {string} e.g. `v1.0.0_D1.0.0` when prod,
+ * @returns e.g. `v1.0.0_D1.0.0` when prod,
  *   `v1.0.0-dev.abcdefg_D1.0.0 (built at 2023/01/23 12:34:56)` when dev
  */
 export const getCurrentVersionText = () => {
@@ -33,8 +33,8 @@ export const getCurrentVersionText = () => {
 /**
  * Generates version string from {@link ReleaseNote}.
  *
- * @param releaseNote {@link ReleaseNote}
- * @returns {string} e.g. `v1.0.0_D1.0.0`
+ * @param releaseNote Release note entry
+ * @returns e.g. `v1.0.0_D1.0.0`
  */
 export const getVersionText = (releaseNote: ReleaseNote) => {
   return `v${releaseNote.funcVersion}_D${releaseNote.dataVersion}`
