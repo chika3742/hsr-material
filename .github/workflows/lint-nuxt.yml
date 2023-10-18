@@ -6,9 +6,6 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    permissions:
-      packages: read
-      contents: read
     steps:
       - uses: actions/checkout@v4
 
@@ -20,7 +17,7 @@ jobs:
 
       - name: bun/yarn install
         run: |
-          (cd nuxt && GITHUB_PACKAGES_TOKEN="${{ secrets.GITHUB_TOKEN }}" bun install)
+          (cd nuxt && GITHUB_PACKAGES_TOKEN="${{ secrets.MMC_PACKAGES_TOKEN }}" bun install)
           (cd algolia-sync && yarn install --frozen-lockfile)
           (cd firebase/functions && yarn install --immutable)
 
