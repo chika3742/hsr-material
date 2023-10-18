@@ -116,6 +116,7 @@ const theme = useTheme()
 const config = useConfigStore()
 const rConfig = useRuntimeConfig()
 const {$auth, $firestore} = useNuxtApp()
+const localePath = useLocalePath()
 
 const isProd = rConfig.public.isProdBranch
 const repositoryUrl = "https://github.com/chika3742/hsr-material"
@@ -226,6 +227,19 @@ onMounted(() => {
       FirestoreProvider.instance = null
     }
   })
+
+  // show update snackbar
+  if (rConfig.public.isProdBranch && config.previousVersion !== getCurrentVersionText()) {
+    snackbar.show(tx(i18n, "common.updated", {version: getCurrentVersionText()}), null, {
+      text: tx(i18n, "pageTitles.releaseNotes"),
+      onClick() {
+        void router.push(localePath("/release-notes"))
+      },
+    })
+
+    config.previousVersion = getCurrentVersionText()
+  }
+  config.$persist()
 })
 
 onBeforeUnmount(() => {

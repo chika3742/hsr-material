@@ -29,6 +29,7 @@ common:
     skill: 戦闘スキル
     ultimate: 必殺技
     talent: 天賦
+  updated: "{version} に更新されました。"
 
 errors:
   404: お探しのページは見つかりませんでした。
