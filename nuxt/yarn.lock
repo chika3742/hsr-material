@@ -9035,9 +9035,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mhy-material-components@github:chika3742/mhy-material-components#9f50cbfe170beb9a06ae27b923507a384ce33981":
+"mhy-material-components@github:chika3742/mhy-material-components#7810a5741c6218467a920a19561097c8713965ed":
   version: 0.0.0
-  resolution: "mhy-material-components@https://github.com/chika3742/mhy-material-components.git#commit=9f50cbfe170beb9a06ae27b923507a384ce33981"
+  resolution: "mhy-material-components@https://github.com/chika3742/mhy-material-components.git#commit=7810a5741c6218467a920a19561097c8713965ed"
   dependencies:
     "@mdi/font": ^7.3.67
     "@nuxt/kit": ^3.5.2
@@ -9047,7 +9047,7 @@ __metadata:
     js-yaml: ^4.1.0
     sass: ^1.69.0
     vuetify: ^3.3.20
-  checksum: c75d0dbd91b01d49552108933ab3ffeef81707f92282d9edbe786e30cbb6296593cb18ebcbf9bd0ccb628db9d5a15b90fc8db3251240b80844bc4474a7b5d2f1
+  checksum: d639dd99ecbdc14b3fde92cb6a49a69b22594f6493c0a2cd1d8bd534d547eadc58835cba5ae905c38d997c51a61c971bccf9200d28d05e861fc1ef86417edd0f
   languageName: node
   linkType: hard
 
@@ -11231,7 +11231,7 @@ __metadata:
     json-schema-to-typescript: ^13.1.1
     luxon: ^3.4.3
     marked: ^9.1.0
-    mhy-material-components: "github:chika3742/mhy-material-components#9f50cbfe170beb9a06ae27b923507a384ce33981"
+    mhy-material-components: "github:chika3742/mhy-material-components#7810a5741c6218467a920a19561097c8713965ed"
     nuxt: ^3.7.4
     object-hash: ^3.0.0
     rxjs: ^7.8.1
