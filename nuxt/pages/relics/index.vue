@@ -64,7 +64,7 @@ const _relics = computed(() => {
           <div>
             <RelicSetEffects :relic-id="relic.id" />
             <v-btn
-              :to="{path: `/relics/${relic.id}`, query: $route.query}"
+              :to="localePath({path: `/relics/${relic.id}`, query: $route.query})"
               class="mt-2"
               color="primary"
               prepend-icon="mdi-loupe"
