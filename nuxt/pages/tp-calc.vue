@@ -85,7 +85,6 @@ const getTableData = (): TableDataItem[] => ([
 
 <template>
   <div>
-    <!--suppress TypeScriptValidateTypes -->
     <v-text-field
       v-model="currentTpCount"
       class="mb-4"
@@ -115,7 +114,7 @@ const getTableData = (): TableDataItem[] => ([
       </tbody>
     </v-table>
 
-    <p v-if="remainingTime === '-'" class="text-red">
+    <p v-show="remainingTime === '-'" class="text-red">
       {{ $t("tpCalcPage.alreadyReplenished") }}
     </p>
 
