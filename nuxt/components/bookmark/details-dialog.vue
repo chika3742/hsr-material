@@ -60,7 +60,7 @@ const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
       snackbar.show(tx(i18n, "bookmark.removed"), null, {
         text: tx(i18n, "common.undo"),
         onClick: () => {
-          void db.bookmarks.bulkAdd(result)
+          void db.bookmarks.bulkAdd(result.filter(e => typeof e !== "undefined"))
 
           // avoid closing dialog
           _persistent.value = true
