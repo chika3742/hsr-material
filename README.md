@@ -10,7 +10,7 @@ server.
 ### Requirements
 
 - Node.js 20.x
-- Yarn 1.x
+- Bun 1.x
 
 ### Environment Variables
 
@@ -22,20 +22,20 @@ server.
 
 ```bash
 cd nuxt
-yarn install
+GITHUB_PACKAGES_TOKEN=<token> bun install
 ```
 
 ### Run Dev Server
 
 ```bash
-yarn dev
+bun run dev
 ```
 
 ### Generate Static Site
 
 ```bash
-yarn generate
-yarn preview # to preview the generated site
+bun run generate
+bun run preview # to preview the generated site
 ```
 
 ## Development (Firebase)
@@ -43,7 +43,7 @@ yarn preview # to preview the generated site
 ### Requirements
 
 - Node.js 20.x
-- Yarn 1.x
+- Yarn 1.x (runs v3.x)
 - Firebase CLI (can be installed with `npm -g install firebase-tools`)
 
 ### Setup
