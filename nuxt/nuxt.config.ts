@@ -17,6 +17,13 @@ const hostname = "https://hsr.matnote.app"
 const routes: string[] = []
 
 export default defineNuxtConfig({
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
   app: {
     pageTransition: {
       name: "scroll-y-reverse-transition",
@@ -47,7 +54,7 @@ export default defineNuxtConfig({
   },
   css: ["assets/styles/global.sass"],
   modules: [
-    "mhy-material-components",
+    "@chika3742/mhy-material-components",
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",

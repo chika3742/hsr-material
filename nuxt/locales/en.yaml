@@ -29,6 +29,7 @@ common:
     skill: Skill
     ultimate: Ultimate
     talent: Talent
+  updated: Updated to {version}.
 
 errors:
   404: Page not found.
@@ -64,27 +65,10 @@ pageTitles:
   termsSummarized: Terms of Use (Summarized)
   privacy: Privacy Policy
   about: About This App
+  settings: Settings
 
 navDrawer:
   kofi: Buy me a coffee
-
-footer:
-  feedback: Feedback
-  feedbackMenuItems:
-    comment: Special Page
-    commentDesc: You can submit feedback in the comments section without creating an account.
-    hoyolab: HoYoLAB
-    hoyolabDesc: You can post comments on HoYoLAB article.
-    github: GitHub
-    githubDesc: You can create an issue on GitHub (advanced).
-  theme: Theme
-  disclaimer: |
-    This app is unofficial. All images and data are owned by miHoYo/COGNOSPHERE.
-    If you find any mistranslations, please report them via @:pageTitles.about > Feedback.
-  themeOptions:
-    light: Light
-    dark: Dark
-    auto: Follow system settings
 
 bookmark:
   reBookmark: Re-register Bookmarks
@@ -322,6 +306,20 @@ releaseNotesPage:
   desc: Description
   orangeDesc: Includes additions and improvements related to features
   lightBlueDesc: Only data additions of characters, weapons, etc.
+
+settingsPage:
+  bookmarkDisplay: Bookmark Display
+  showFarmingCount: Show farming count for each item
+  equilibriumLevel: Equilibrium Level
+  equilibriumLevelDesc: Farming count is calculated based on the equilibrium level. If you want to change the equilibrium level, please change it here.
+  dropRateTable: Drop Rate Table
+  itemKind: Item Kind
+  dropRate: Drop Rate (per run)
+  itemTypes:
+    characterExp: Character EXP
+    lightConeExp: Light Cone EXP
+    credit: Credit
+  dataSource: Data source
 
 paths:
   abundance: Abundance

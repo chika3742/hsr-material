@@ -33,6 +33,9 @@
                   <Item>
                     <option name="path" value="nuxt/schemas/relic-stats.yaml" />
                   </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/drop-rates.yaml" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>
@@ -66,6 +69,23 @@
                 <list>
                   <Item>
                     <option name="path" value="nuxt/assets/data/characters.yaml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="drop-rates">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="drop-rates" />
+              <option name="relativePathToSchema" value="nuxt/schemas/drop-rates.yaml" />
+              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="nuxt/assets/data/drop-rates.yaml" />
                   </Item>
                 </list>
               </option>

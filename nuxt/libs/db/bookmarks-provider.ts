@@ -1,4 +1,5 @@
 import {Table} from "dexie"
+import hash from "object-hash"
 import {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
 import {PurposeType} from "~/types/strings"
 import {_db} from "~/dexie/db"
@@ -75,6 +76,10 @@ export class BookmarksProvider extends DbProvider {
       }).toArray() as Promise<LevelingBookmark[]>
   }
 
+  getLevelingItemByHash(hash: string) {
+    return this.bookmarks.where("hash").equals(hash).toArray() as Promise<LevelingBookmark[]>
+  }
+
   getByPurpose(characterId: string, variant: string | null, lightConeId: string | undefined, purposeType: PurposeType) {
     return this.bookmarks.where("characterId").equals(toCharacterIdWithVariant(characterId, variant))
       .and((e) => {
@@ -102,21 +107,16 @@ export class BookmarksProvider extends DbProvider {
    * @param data List of {@link LevelingBookmark}s to add
    * @param selectedItem Selected item (only for exp)
    */
-  addLevelingItems<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined) {
+  addLevelingItems<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined, id?: number) {
     return this.transactionWithFirestore([this.bookmarks], async() => {
       const dataToSave: LevelingBookmark[] = data.map((e) => {
-        if (isBookmarkableExp(e)) {
-          return {
-            ...e,
-            bookmarkedAt: new Date(),
-            selectedItem,
-          } as Bookmark.Exp
-        }
-
         return {
+          ...typeof id !== "undefined" ? {id} : {},
           ...e,
           bookmarkedAt: new Date(),
-        } as Bookmark.CharacterMaterial | Bookmark.LightConeMaterial
+          ...isBookmarkableExp(e) ? {selectedItem} : {},
+          hash: hash(e),
+        } as LevelingBookmark
       })
 
       // add bookmarks

@@ -3,7 +3,6 @@ import {DateTime} from "luxon"
 import _ from "lodash"
 import {Ref} from "vue"
 import {maxTpCount} from "~/utils/tp"
-import {useConfigStore} from "~/store/config"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 import {computed} from "#imports"
 import {CustomMarked} from "~/libs/custom-marked"
@@ -86,7 +85,6 @@ const getTableData = (): TableDataItem[] => ([
 
 <template>
   <div>
-    <!--suppress TypeScriptValidateTypes -->
     <v-text-field
       v-model="currentTpCount"
       class="mb-4"
@@ -116,7 +114,7 @@ const getTableData = (): TableDataItem[] => ([
       </tbody>
     </v-table>
 
-    <p v-if="remainingTime === '-'" class="text-red">
+    <p v-show="remainingTime === '-'" class="text-red">
       {{ $t("tpCalcPage.alreadyReplenished") }}
     </p>
 

@@ -10,12 +10,3 @@ dist
 types/generated
 public/sw-dev.js
 public/workbox-*.js
-
-# yarn not using zero-installs
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions

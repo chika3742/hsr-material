@@ -1,6 +1,4 @@
-import {defineStore} from "pinia"
 import {DateTime} from "luxon"
-import {ThemeSetting} from "~/types/strings"
 
 export const useConfigStore = defineStore("config", {
   state: () => ({
@@ -29,6 +27,9 @@ export const useConfigStore = defineStore("config", {
      */
     ownedCharacters: [] as string[],
     characterOrder: [] as string[],
+    equilibriumLevel: 6,
+    showFarmingCount: true,
+    previousVersion: getCurrentVersionText(),
   }),
   actions: {
     /**

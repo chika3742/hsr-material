@@ -29,6 +29,7 @@ common:
     skill: 戦闘スキル
     ultimate: 必殺技
     talent: 天賦
+  updated: "{version} に更新されました。"
 
 errors:
   404: お探しのページは見つかりませんでした。
@@ -64,25 +65,10 @@ pageTitles:
   termsSummarized: 利用規約 (要約)
   privacy: プライバシーポリシー
   about: このアプリについて
+  settings: 設定
 
 navDrawer:
   kofi: コーヒーを奢る
-
-footer:
-  feedback: フィードバック
-  feedbackMenuItems:
-    comment: コメントページ
-    commentDesc: アカウント作成不要で送信できます。
-    hoyolab: HoYoLAB
-    hoyolabDesc: 記事へのコメントでフィードバックできます。
-    github: GitHub
-    githubDesc: 知識のある方は、直接Issueを立てることもできます。
-  theme: テーマ
-  disclaimer: このアプリは非公式です。画像・データの著作権はmiHoYo/COGNOSPHEREに帰属します。
-  themeOptions:
-    light: ライト
-    dark: ダーク
-    auto: システム設定に従う
 
 bookmark:
   reBookmark: ブックマークを再登録
@@ -327,6 +313,20 @@ releaseNotesPage:
   desc: 説明
   orangeDesc: 機能関連の追加や改善を含む
   lightBlueDesc: キャラ・武器等のデータ追加のみ
+
+settingsPage:
+  bookmarkDisplay: ブックマーク表示設定
+  showFarmingCount: アイテムの周回目安回数を表示する
+  equilibriumLevel: 均衡レベル
+  equilibriumLevelDesc: この設定値に応じて、周回回数の目安が表示されます。
+  dropRateTable: ドロップ率一覧
+  itemKind: 種類
+  dropRate: ドロップ率 (個/回)
+  itemTypes:
+    characterExp: キャラクター経験値
+    lightConeExp: 光円錐経験値
+    credit: 信用ポイント
+  dataSource: データソース
 
 paths:
   abundance: 豊穣
