@@ -2,12 +2,24 @@
 import dropRates from "assets/data/drop-rates.yaml"
 import materials from "~/assets/data/materials.csv"
 import SwitchListItem from "~/components/switch-list-item.vue"
+import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 
 definePageMeta({
   title: "settings",
 })
 
 const config = useConfigStore()
+
+// firestore sync watcher
+let cancelWatch: (() => void) | null = null
+onActivated(() => {
+  cancelWatch = watch(config, () => {
+    void FirestoreProvider.instance?.sendLocalData()
+  })
+})
+onDeactivated(() => {
+  cancelWatch?.()
+})
 
 const range = (start: number, end: number) => Array.from({length: end - start + 1}, (_, i) => start + i)
 
