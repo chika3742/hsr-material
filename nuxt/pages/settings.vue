@@ -10,17 +10,6 @@ definePageMeta({
 
 const config = useConfigStore()
 
-// firestore sync watcher
-let cancelWatch: (() => void) | null = null
-onActivated(() => {
-  cancelWatch = watch(config, () => {
-    void FirestoreProvider.instance?.sendLocalData()
-  })
-})
-onDeactivated(() => {
-  cancelWatch?.()
-})
-
 const range = (start: number, end: number) => Array.from({length: end - start + 1}, (_, i) => start + i)
 
 const equilibriumLevelPossibleValues = range(0, 6)
@@ -33,6 +22,10 @@ const getFirstMaterialId = (entry: typeof dropRates[number], rarity: number) => 
     ? materials.find(e => entry.ids!.includes(e.id) && e.rarity === rarity)!.id
     : materials.find(e => e.category === entry.type && e.rarity === rarity)!.id
 }
+
+const syncFirestore = () => {
+  void FirestoreProvider.instance?.sendLocalData()
+}
 </script>
 
 <template>
@@ -40,13 +33,17 @@ const getFirstMaterialId = (entry: typeof dropRates[number], rarity: number) => 
     <section>
       <h2>{{ tx("settingsPage.bookmarkDisplay") }}</h2>
       <v-list>
-        <SwitchListItem v-model="config.showFarmingCount" :title="tx('settingsPage.showFarmingCount')" />
+        <SwitchListItem
+          v-model="config.showFarmingCount"
+          :title="tx('settingsPage.showFarmingCount')"
+          @click="syncFirestore"
+        />
       </v-list>
     </section>
 
     <h2>{{ tx("settingsPage.equilibriumLevel") }}</h2>
     <p>{{ tx("settingsPage.equilibriumLevelDesc") }}</p>
-    <v-radio-group v-model="config.equilibriumLevel" hide-details inline>
+    <v-radio-group v-model="config.equilibriumLevel" hide-details inline @update:model-value="syncFirestore">
       <v-radio v-for="i in equilibriumLevelPossibleValues" :key="i" :label="i.toString()" :value="i" />
     </v-radio-group>
 
