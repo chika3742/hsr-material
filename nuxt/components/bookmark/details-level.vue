@@ -3,9 +3,10 @@ import _ from "lodash"
 import {from, useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
 import {db} from "~/libs/db/providers"
-import {BookmarkableIngredient, isBookmarkableExp} from "~/types/bookmark/bookmarkables"
-import {PurposeType} from "~/types/strings"
-import {LevelingBookmark} from "~/types/bookmark/bookmark"
+import type {BookmarkableIngredient} from "~/types/bookmark/bookmarkables"
+import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
+import type {PurposeType} from "~/types/strings"
+import type {LevelingBookmark} from "~/types/bookmark/bookmark"
 
 interface Props {
   items: LevelingBookmark[]

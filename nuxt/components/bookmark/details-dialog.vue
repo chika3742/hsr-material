@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import _ from "lodash"
-import {PurposeType} from "~/types/strings"
-import {LevelingBookmark} from "~/types/bookmark/bookmark"
+import type {PurposeType} from "~/types/strings"
+import type {LevelingBookmark} from "~/types/bookmark/bookmark"
 import {materialSortFunc} from "~/utils/merge-items"
 import {db} from "~/libs/db/providers"
 

@@ -1,5 +1,5 @@
-import {Composer} from "vue-i18n"
-import {Loc} from "~/types/generated/loc.g"
+import type {Composer} from "vue-i18n"
+import type {Loc} from "~/types/generated/loc.g"
 
 type Tx = {
   (key: Loc, named?: Record<string, unknown>): string

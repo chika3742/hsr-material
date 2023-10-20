@@ -10,8 +10,9 @@
 </template>
 
 <script lang="ts" setup>
-import {PurposeType} from "~/types/strings"
-import {BookmarkableIngredient, isBookmarkableMaterial} from "~/types/bookmark/bookmarkables"
+import type {PurposeType} from "~/types/strings"
+import type {BookmarkableIngredient} from "~/types/bookmark/bookmarkables"
+import {isBookmarkableMaterial} from "~/types/bookmark/bookmarkables"
 
 defineProps<{
   items: BookmarkableIngredient[]
