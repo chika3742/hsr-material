@@ -1,7 +1,7 @@
 import {Table} from "dexie"
 import hash from "object-hash"
 import {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
-import {PurposeType} from "~/types/strings"
+import {CharacterIdWithVariant, PurposeType} from "~/types/strings"
 import {_db} from "~/dexie/db"
 import {DbProvider} from "~/libs/db/db-provider"
 import {
@@ -78,6 +78,10 @@ export class BookmarksProvider extends DbProvider {
 
   getLevelingItemByHash(hash: string) {
     return this.bookmarks.where("hash").equals(hash).toArray() as Promise<LevelingBookmark[]>
+  }
+
+  getByCharacter(character: CharacterIdWithVariant) {
+    return this.bookmarks.where("characterId").equals(character).toArray() as Promise<Bookmark[]>
   }
 
   getByPurpose(characterId: string, variant: string | null, lightConeId: string | undefined, purposeType: PurposeType) {

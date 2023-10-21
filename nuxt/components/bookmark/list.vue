@@ -1,38 +1,33 @@
 <script lang="ts" setup>
 /* This component must be rendered only on the client side. */
 
-import {useObservable} from "@vueuse/rxjs"
+import {from, useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
-import _ from "lodash"
 import Sortable from "sortablejs"
-import {Observable} from "rxjs"
-import {Bookmark} from "~/types/bookmark/bookmark"
 import {_db} from "~/dexie/db"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
+import {CharacterIdWithVariant} from "~/types/strings"
 
 const config = useConfigStore()
 
-const bookmarks = useObservable<Bookmark[], Bookmark[]>(
-  liveQuery(() => _db.bookmarks.toArray()) as Observable<Bookmark[]>, {
-    initialValue: [],
-  },
-)
+const _bookmarkedCharacterIds = useObservable(from(liveQuery(() => {
+  return _db.bookmarks.orderBy("characterId").uniqueKeys() as Promise<CharacterIdWithVariant[]>
+})), {
+  initialValue: [] as string[],
+})
 
-const bookmarkCharacters = computed(() => {
-  return Object.fromEntries(Object.entries(_.groupBy(bookmarks.value, v => v.characterId)).sort((a, b) => {
-    const [aId] = a
-    const [bId] = b
-
-    if (config.characterOrder.includes(aId) && config.characterOrder.includes(bId)) {
-      return config.characterOrder.indexOf(aId) - config.characterOrder.indexOf(bId)
-    } else if (config.characterOrder.includes(aId)) {
+const bookmarkedCharacterIds = computed(() => {
+  return _bookmarkedCharacterIds.value.toSorted((a, b) => {
+    if (config.characterOrder.includes(a) && config.characterOrder.includes(b)) {
+      return config.characterOrder.indexOf(a) - config.characterOrder.indexOf(b)
+    } else if (config.characterOrder.includes(a)) {
       return -1
-    } else if (config.characterOrder.includes(bId)) {
+    } else if (config.characterOrder.includes(b)) {
       return 1
     } else {
       return 0
     }
-  }))
+  })
 })
 
 const saveCharacterSort = (ev: Sortable.SortableEvent) => {
@@ -46,16 +41,15 @@ const saveCharacterSort = (ev: Sortable.SortableEvent) => {
   <div class="position-relative">
     <Draggable container-class="bookmark-cards-wrapper" @sort="saveCharacterSort">
       <BookmarkCharacterCard
-        v-for="(characterBookmarks, characterId) in bookmarkCharacters"
+        v-for="characterId in bookmarkedCharacterIds"
         :key="characterId"
         :data-character-id="characterId"
-        :bookmarks="characterBookmarks"
-        :character="characterId as string"
+        :character="characterId"
         :show-farming-count="config.showFarmingCount"
       />
     </Draggable>
 
-    <div v-if="Object.keys(bookmarkCharacters).length === 0" class="no-bookmarks">
+    <div v-if="Object.keys(bookmarkedCharacterIds).length === 0" class="no-bookmarks">
       {{ tx("bookmark.noBookmarks") }}
     </div>
   </div>

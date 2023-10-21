@@ -1,14 +1,13 @@
 <script lang="ts" setup>
 import _ from "lodash"
 import {PurposeType} from "~/types/strings"
-import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
+import {LevelingBookmark} from "~/types/bookmark/bookmark"
 import {materialSortFunc} from "~/utils/merge-items"
 import {db} from "~/libs/db/providers"
 
 interface Props {
   modelValue: boolean
   items: LevelingBookmark[]
-  bookmarks: Bookmark[]
   showFarmingCount?: boolean
 }
 

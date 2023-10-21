@@ -1,18 +1,25 @@
 <script lang="ts" setup>
-import * as _ from "lodash"
+import _ from "lodash"
+import {from, useObservable} from "@vueuse/rxjs"
+import {liveQuery} from "dexie"
 import {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
 import {CharacterIdWithVariant} from "~/types/strings"
 import {reactive} from "#imports"
-
 import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
+import {db} from "~/libs/db/providers"
 
 interface Props {
   character: CharacterIdWithVariant
-  bookmarks: Bookmark[]
   showFarmingCount?: boolean
 }
 
 const props = defineProps<Props>()
+
+const bookmarks = process.client
+  ? useObservable(from(liveQuery(() => db.bookmarks.getByCharacter(props.character))), {
+    initialValue: [] as Bookmark[],
+  })
+  : ref([])
 
 interface BookmarkGroups {
   characterMaterials: (Bookmark.CharacterMaterial | Bookmark.Exp)[]
@@ -29,7 +36,7 @@ const groupedBookmarks = computed(() => {
     relicPieces: [],
   }
 
-  for (const bookmark of props.bookmarks) {
+  for (const bookmark of bookmarks.value) {
     switch (bookmark.type) {
       case "character_material":
       case "character_exp":
@@ -152,7 +159,6 @@ const detailsDialog = reactive({
 
       <BookmarkDetailsDialog
         v-model="detailsDialog.show"
-        :bookmarks="bookmarks"
         :items="detailsDialog.items"
         :show-farming-count="showFarmingCount"
       />
