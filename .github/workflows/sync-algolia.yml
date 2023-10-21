@@ -21,17 +21,16 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          # TODO: https://github.com/TypeStrong/ts-node/issues/1997
-          node-version: 18
-          cache: yarn
-          cache-dependency-path: "algolia-sync/yarn.lock"
+          node-version: 20
 
-      - name: yarn install
+      - uses: oven-sh/setup-bun@v1
+
+      - name: bun install
         working-directory: algolia-sync
-        run: yarn install --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: Sync Algolia Search Index
         working-directory: algolia-sync
-        run: yarn start
+        run: bun start
         env:
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
