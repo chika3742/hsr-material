@@ -10,8 +10,11 @@ import {CharacterIdWithVariant} from "~/types/strings"
 
 const config = useConfigStore()
 
-const _bookmarkedCharacterIds = useObservable(from(liveQuery(() => {
-  return _db.bookmarks.orderBy("characterId").uniqueKeys() as Promise<CharacterIdWithVariant[]>
+const _bookmarkedCharacterIds = useObservable(from(liveQuery(async() => {
+  if (await _db.bookmarks.count() === 0) {
+    return []
+  }
+  return await _db.bookmarks.orderBy("characterId").uniqueKeys() as CharacterIdWithVariant[]
 })), {
   initialValue: [] as string[],
 })
