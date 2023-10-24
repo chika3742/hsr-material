@@ -7,6 +7,9 @@
   "timezone": "Asia/Tokyo",
   "dependencyDashboard": false,
   "branchPrefix": "deps-pages-nodeploy/",
+  "ignoreDeps": [
+    "@chika3742/mhy-material-components"
+  ],
   "packageRules": [
     {
       "matchFileNames": [

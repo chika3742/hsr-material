@@ -56,10 +56,10 @@
       </v-card>
     </v-row>
 
-    <v-expansion-panels v-if="showPityHistory" class="mt-4" style="max-width: 600px">
+    <v-expansion-panels v-if="showPityHistory" class="mt-4" style="max-width: 800px">
       <v-expansion-panel>
         <v-expansion-panel-title>{{ $t("warpsPage.pityHistory") }}</v-expansion-panel-title>
-        <v-expansion-panel-text>
+        <v-expansion-panel-text class="pity-history-container">
           <v-table>
             <thead>
               <tr>
@@ -83,9 +83,9 @@
                     <span>{{ item.rank }}</span>
                   </v-row>
                 </td>
-                <td style="white-space: nowrap">
+                <td style="white-space: nowrap; min-width: 150px">
                   <v-icon>{{ item.type === "キャラクター" ? "mdi-account" : "mdi-sword" }}</v-icon>
-                  <span>{{ item.name }}</span>
+                  <span style="white-space: normal">{{ item.name }}</span>
                 </td>
                 <td
                   :class="getTableNumberColorClass(item)"
@@ -93,7 +93,10 @@
                 >
                   {{ item.count }}
                 </td>
-                <td>{{ item.dateTime.toFormat("yyyy/MM/dd HH:mm") }} ({{ item.dateTime.toRelative() }})</td>
+                <td>
+                  {{ item.dateTime.toFormat("yyyy/MM/dd HH:mm") }}
+                  ({{ item.dateTime.toRelative({locale: $i18n.locale}) }})
+                </td>
               </tr>
             </tbody>
           </v-table>
@@ -265,4 +268,10 @@ const rank5Prob = computed(() => {
 
       &--rank4
         background-color: rgb(var(--v-theme-rarity-4))
+</style>
+
+<style lang="sass">
+.pity-history-container .v-expansion-panel-text__wrapper
+  padding-left: 0
+  padding-right: 0
 </style>

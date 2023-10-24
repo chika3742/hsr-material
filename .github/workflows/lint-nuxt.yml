@@ -12,22 +12,24 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+          cache: yarn
+          cache-dependency-path: "**/yarn.lock"
 
       - uses: oven-sh/setup-bun@v1
 
       - name: bun/yarn install
         run: |
           (cd nuxt && GITHUB_PACKAGES_TOKEN="${{ secrets.MMC_PACKAGES_TOKEN }}" bun install)
-          (cd algolia-sync && yarn install --frozen-lockfile)
+          (cd algolia-sync && bun install --frozen-lockfile)
           (cd firebase/functions && yarn install --immutable)
 
       - name: Lint (nuxt)
         working-directory: nuxt
-        run: bun run lint
+        run: bun lint
 
       - name: Lint (algolia-sync)
         working-directory: algolia-sync
-        run: yarn lint
+        run: bun lint
 
       - name: Lint (firebase)
         working-directory: firebase/functions

@@ -21,13 +21,13 @@ export class MySubClassedDexie extends Dexie {
       bookmarkCharacters: null,
       bookmarks: "++id, characterId",
     }).upgrade(async() => {
-      await this.import(migrate(await this.dump(), 1, 2))
+      await this.migrateIdb(2)
     })
 
     this.version(3).stores({
       bookmarks: "++id, characterId, hash",
     }).upgrade(async() => {
-      await this.import(migrate(await this.dump(), 2, 3))
+      await this.migrateIdb(3)
     })
   }
 
@@ -46,6 +46,10 @@ export class MySubClassedDexie extends Dexie {
         return await table.bulkAdd(tableData as unknown[])
       })
     })
+  }
+
+  async migrateIdb(version: number) {
+    return await this.import(migrate(await this.dump(), version - 1, version))
   }
 
   importRemote(data: UserDocument) {
