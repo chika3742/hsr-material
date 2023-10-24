@@ -1,6 +1,20 @@
 # コピー用改行
 
 - date: 2023/10/19
+  funcVersion: 1.2.3
+  dataVersion: 1.4.0
+  isMajor: false
+  content: |
+    ### パフォーマンス改善
+    - ブックマーク一覧ページのパフォーマンスを若干改善しました。
+    
+    ### 調整
+    - 天井履歴一覧のレイアウトを調整しました。
+    
+    ### 不具合修正
+    - 一部テキストに言語設定が反映されないバグの修正
+
+- date: 2023/10/19
   funcVersion: 1.2.2
   dataVersion: 1.4.0
   isMajor: true
