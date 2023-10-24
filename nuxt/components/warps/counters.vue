@@ -93,7 +93,10 @@
                 >
                   {{ item.count }}
                 </td>
-                <td>{{ item.dateTime.toFormat("yyyy/MM/dd HH:mm") }} ({{ item.dateTime.toRelative() }})</td>
+                <td>
+                  {{ item.dateTime.toFormat("yyyy/MM/dd HH:mm") }}
+                  ({{ item.dateTime.toRelative({locale: $i18n.locale}) }})
+                </td>
               </tr>
             </tbody>
           </v-table>
