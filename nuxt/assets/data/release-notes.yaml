@@ -1,5 +1,15 @@
 # コピー用改行
 
+- date: 2023/10/28
+  funcVersion: 1.2.3
+  dataVersion: 1.4.1
+  isMajor: false
+  content: |
+    ### データ追加
+    - キャラクター「トパーズ&カブ」「桂乃芬」
+    - 光円錐「悩んで笑って」
+    - 素材「灼熱の鋼刃」
+
 - date: 2023/10/19
   funcVersion: 1.2.3
   dataVersion: 1.4.0

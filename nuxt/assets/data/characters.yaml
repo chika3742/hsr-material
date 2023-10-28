@@ -401,3 +401,27 @@
     skills: group:lcs005
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
+
+- id: topaz-and-numby
+  $nameJA: トパーズ&カブ
+  yomi: トパーズアンドカブ
+  rarity: 5
+  path: the_hunt
+  combatType: fire
+  materials:
+    ascension: id:searing-steel-blade
+    skills: group:lcs002
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com003
+
+- id: guinaifen
+  $nameJA: 桂乃芬
+  yomi: ケイナイフン
+  rarity: 4
+  path: nihility
+  combatType: fire
+  materials:
+    ascension: id:searing-steel-blade
+    skills: group:lcs004
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com006

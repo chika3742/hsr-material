@@ -417,6 +417,8 @@ characterNames:
   fu-xuan: Fu Xuan
   lynx: Lynx
   jingliu: Jingliu
+  topaz-and-numby: Topaz and Numby
+  guinaifen: Guinaifen
 
 materialCategories:
   exp: EXP Materials
@@ -490,6 +492,7 @@ materialNames:
   regret-of-infinite-ochema: Regret of Infinite Ochema
   suppressing-edict: Suppressing Edict
   nail-of-the-ape: Nail of the Ape
+  searing-steel-blade: Searing Steel Blade
 
 skillTitles:
   trailblazer:
@@ -663,6 +666,16 @@ skillTitles:
     skill: Transcendent Flash
     ultimate: Florephemeral Dreamflux
     talent: Crescent Transmigration
+  topaz-and-numby:
+    basicAttack: Deficit...
+    skill: Difficulty Paying?
+    ultimate: Turn a Profit!
+    talent: Trotter Market!?
+  guinaifen:
+    basicAttack: Standing Ovation
+    skill: Blazing Welcome
+    ultimate: Watch This Showstopper
+    talent: PatrAeon Benefits
 
 lightConeNames:
   arrows: Arrows
@@ -742,6 +755,7 @@ lightConeNames:
   solitary-healing: Solitary Healing
   she-already-shut-her-eyes: She Already Shut Her Eyes
   i-shall-be-my-own-sword: I Shall Be My Own Sword
+  worrisome-blissful: Worrisome, Blissful
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -944,6 +958,11 @@ lightConeSkillDescriptions:
     wearer's next attack by <14%>. When 3 stack(s) are reached, additionally
     enables that attack to ignore <12%> of the enemy's DEF. This effect will be
     removed after the wearer uses an attack.
+  worrisome-blissful: >-
+    Increase the wearer's CRIT Rate by <18%> and their follow-up attacks' DMG by
+    <30%>. After the wearer uses a follow-up attack, apply the Tame state to the
+    target, stacking up to 2 stacks. When allies hit enemy targets under the
+    Tame state, every Tame stack increases the CRIT DMG dealt by <12%>.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
