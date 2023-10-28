@@ -424,6 +424,8 @@ characterNames:
   fu-xuan: 符玄
   lynx: リンクス
   jingliu: 鏡流
+  topaz-and-numby: トパーズ&カブ
+  guinaifen: 桂乃芬
 
 materialCategories:
   exp: 経験値素材
@@ -497,6 +499,7 @@ materialNames:
   regret-of-infinite-ochema: 無窮なる仮身の遺恨
   suppressing-edict: 霊鎮めの勅符
   nail-of-the-ape: 蒼猿の釘
+  searing-steel-blade: 灼熱の鋼刃
 
 skillTitles:
   trailblazer:
@@ -670,6 +673,16 @@ skillTitles:
     skill: 無罅の飛光
     ultimate: 曇華生滅、夢瀉す天河
     talent: 淡月転魄
+  topaz-and-numby:
+    basicAttack: 赤字…
+    skill: 支払困難？
+    ultimate: 赤字を黒字に！
+    talent: ピッグ・マーケット！？
+  guinaifen:
+    basicAttack: 喝采満場
+    skill: 出だし好調
+    ultimate: 十八番を披露するね
+    talent: 古来、芸人は君子に頼る
 
 lightConeNames:
   arrows: 矢じり
@@ -749,6 +762,7 @@ lightConeNames:
   solitary-healing: 孤独の癒やし
   she-already-shut-her-eyes: 閉ざした瞳
   i-shall-be-my-own-sword: この身は剣なり
+  worrisome-blissful: 悩んで笑って
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -840,6 +854,8 @@ lightConeSkillDescriptions:
     装備キャラの最大HP+<24%>、EP回復効率+<12%>。装備キャラのHPが減った時、味方全体の与ダメージ+<9%>、2ターン継続。\n各ウェーブ開始時、味方全体のHPをそれぞれ失ったHPの<80%>分回復する。
   i-shall-be-my-own-sword: >-
     装備キャラの会心ダメージ+<20%>。自身以外の味方が攻撃を受ける、またはHPを消費した後、装備キャラは「月蝕」を1層獲得する。この効果は最大で3層累積できる。「月蝕」1層につき、装備キャラの次の攻撃の与ダメージ+<14%>。「月蝕」が上限の3層に累積した時、その回の攻撃は敵の防御力を<12%>無視する。この効果は装備キャラが攻撃を行った後に解除される。
+  worrisome-blissful: >-
+    装備キャラの会心率+<18%>、追加攻撃の与ダメージ+<30%>。装備キャラが追加攻撃を行った後、敵を「従順」状態にする。この効果は最大で2層累積できる。味方の攻撃が「従順」状態の敵に命中した時、「従順」1層につき与える会心ダメージ+<12%>。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

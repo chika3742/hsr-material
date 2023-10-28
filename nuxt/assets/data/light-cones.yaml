@@ -614,3 +614,11 @@
   materials:
     primary: group:lcs005
     common: group:com005
+- id: worrisome-blissful
+  yomi: ナヤンデワラッテ
+  $nameJA: 悩んで笑って
+  path: the_hunt
+  rarity: 5
+  materials:
+    primary: group:lcs002
+    common: group:com003
