@@ -17,7 +17,7 @@
     "@typescript-eslint/parser": "^6.7.2",
     "dotenv": "^16.0.3",
     "eslint": "^8.49.0",
-    "tsx": "^3.14.0",
+    "tsx": "^4.0.0",
     "algoliasearch": "^4.17.1",
     "csv-parse": "^5.4.0",
     "js-yaml": "^4.1.0",
