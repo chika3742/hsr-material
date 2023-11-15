@@ -30,5 +30,5 @@
     "typescript": "<5.3"
   },
   "private": true,
-  "packageManager": "yarn@3.6.3"
+  "packageManager": "yarn@3.7.0"
 }
