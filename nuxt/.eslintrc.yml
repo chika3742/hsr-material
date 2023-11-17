@@ -25,3 +25,6 @@ ignorePatterns:
   - .output/**
   - "**/generated/**"
   - py/**
+
+rules:
+  "@typescript-eslint/consistent-type-imports": error

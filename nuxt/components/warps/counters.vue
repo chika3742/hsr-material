@@ -108,7 +108,7 @@
 
 <script lang="ts" setup>
 import {DateTime} from "luxon"
-import {Warp} from "#shared/warp"
+import type {Warp} from "#shared/warp"
 import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 

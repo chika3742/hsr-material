@@ -1,5 +1,6 @@
-import {FirestoreDataConverter, QueryDocumentSnapshot, Timestamp} from "@firebase/firestore"
-import {UserDocument} from "~/types/firestore/user-document"
+import type {FirestoreDataConverter, QueryDocumentSnapshot} from "@firebase/firestore"
+import {Timestamp} from "@firebase/firestore"
+import type {UserDocument} from "~/types/firestore/user-document"
 
 export const userDocumentConverter: FirestoreDataConverter<UserDocument> = {
   toFirestore: (modelObject: UserDocument) => modelObject,

@@ -1,7 +1,8 @@
-import Dexie, {Table} from "dexie"
-import {Warp} from "#shared/warp"
-import {Bookmark} from "~/types/bookmark/bookmark"
-import {SyncedUserData, UserDocument} from "~/types/firestore/user-document"
+import type {Table} from "dexie"
+import Dexie from "dexie"
+import type {Warp} from "#shared/warp"
+import type {Bookmark} from "~/types/bookmark/bookmark"
+import type {SyncedUserData, UserDocument} from "~/types/firestore/user-document"
 import {DataSyncError} from "~/libs/data-sync-error"
 import {migrate} from "~/utils/migrate"
 

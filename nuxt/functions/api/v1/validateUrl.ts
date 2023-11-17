@@ -1,4 +1,4 @@
-import {GetWarpHistoryErrorCode} from "~/../firebase/functions/src/types/shared/get-warp-history-error"
+import type {GetWarpHistoryErrorCode} from "~/../firebase/functions/src/types/shared/get-warp-history-error"
 
 export const onRequest: PagesFunction = async(context) => {
   if (context.request.method !== "GET") {

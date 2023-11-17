@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import relicStats from "assets/data/relic-stats.yaml"
-import {RelicPiece, RelicSet} from "~/types/data/relics"
-import {Stat} from "~/types/generated/relic-stats.g"
-import {CharacterIdWithVariant} from "~/types/strings"
+import type {RelicPiece, RelicSet} from "~/types/data/relics"
+import type {Stat} from "~/types/generated/relic-stats.g"
+import type {CharacterIdWithVariant} from "~/types/strings"
 import {db} from "~/libs/db/providers"
-import {BookmarkableRelic, BookmarkableRelicPiece, BookmarkableRelicSet} from "~/types/bookmark/bookmarkables"
+import type {BookmarkableRelic} from "~/types/bookmark/bookmarkables"
+import {BookmarkableRelicPiece, BookmarkableRelicSet} from "~/types/bookmark/bookmarkables"
 
 interface Props {
   modelValue: boolean

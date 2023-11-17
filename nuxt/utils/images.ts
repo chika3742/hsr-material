@@ -1,4 +1,4 @@
-import {CombatType, Path} from "~/types/generated/characters.g"
+import type {CombatType, Path} from "~/types/generated/characters.g"
 
 /**
  * Gets character image URL.

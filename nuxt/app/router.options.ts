@@ -1,4 +1,4 @@
-import {RouterConfig} from "@nuxt/schema"
+import type {RouterConfig} from "@nuxt/schema"
 
 export default <RouterConfig>{
   scrollBehavior(_, __, savedPosition) {

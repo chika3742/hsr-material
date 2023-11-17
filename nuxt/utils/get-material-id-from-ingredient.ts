@@ -1,7 +1,7 @@
 import materials from "~/assets/data/materials.csv"
-import {Ingredient} from "~/types/generated/character-ingredients.g"
-import {CharacterMaterialDefinitions} from "~/types/generated/characters.g"
-import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
+import type {Ingredient} from "~/types/generated/character-ingredients.g"
+import type {CharacterMaterialDefinitions} from "~/types/generated/characters.g"
+import type {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
 
 type MaterialDefinitions = Partial<Record<keyof CharacterMaterialDefinitions | keyof LightConeMaterialDefinitions, string>>
 

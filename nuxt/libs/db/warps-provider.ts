@@ -1,5 +1,5 @@
-import {Table} from "dexie"
-import {Warp} from "#shared/warp"
+import type {Table} from "dexie"
+import type {Warp} from "#shared/warp"
 import {_db} from "~/dexie/db"
 import {DbProvider} from "~/libs/db/db-provider"
 

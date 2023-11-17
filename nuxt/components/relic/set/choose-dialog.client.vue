@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import relicSets from "assets/data/relic-sets.csv"
-import {RelicSet} from "~/types/data/relics"
+import type {RelicSet} from "~/types/data/relics"
 
 interface Props {
   modelValue: boolean

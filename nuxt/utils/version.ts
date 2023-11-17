@@ -1,6 +1,6 @@
 import {DateTime} from "luxon"
 import releaseNotes from "~/assets/data/release-notes.yaml"
-import {ReleaseNote} from "~/types/generated/release-notes.g"
+import type {ReleaseNote} from "~/types/generated/release-notes.g"
 
 /**
  * Gets current version.

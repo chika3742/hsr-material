@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {DateTime} from "luxon"
 import _ from "lodash"
-import {Ref} from "vue"
+import type {Ref} from "vue"
 import {maxTpCount} from "~/utils/tp"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 import {computed} from "#imports"

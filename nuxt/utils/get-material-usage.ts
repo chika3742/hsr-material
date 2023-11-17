@@ -1,8 +1,8 @@
 import characters from "~/assets/data/characters.yaml"
 import materials from "~/assets/data/materials.csv"
 import lightCones from "~/assets/data/light-cones.yaml"
-import {LightCone} from "~/types/generated/light-cones.g"
-import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
+import type {LightCone} from "~/types/generated/light-cones.g"
+import type {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
 
 interface UsageCharacter {
   id: string

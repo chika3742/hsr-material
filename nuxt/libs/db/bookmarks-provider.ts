@@ -1,17 +1,17 @@
-import {Table} from "dexie"
+import type {Table} from "dexie"
 import hash from "object-hash"
-import {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
-import {CharacterIdWithVariant, PurposeType} from "~/types/strings"
+import type {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
+import type {CharacterIdWithVariant, PurposeType} from "~/types/strings"
 import {_db} from "~/dexie/db"
 import {DbProvider} from "~/libs/db/db-provider"
-import {
+import type {
   BookmarkableCharacterMaterial,
   BookmarkableExp,
   BookmarkableIngredient,
   BookmarkableLightConeMaterial,
   BookmarkableRelic,
-  isBookmarkableExp,
 } from "~/types/bookmark/bookmarkables"
+import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
 import {EventLogger} from "~/libs/event-logger"
 
 /**

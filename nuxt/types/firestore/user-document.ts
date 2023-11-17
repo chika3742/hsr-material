@@ -1,6 +1,6 @@
-import {Timestamp} from "@firebase/firestore"
-import {Warp} from "#shared/warp"
-import {Bookmark} from "~/types/bookmark/bookmark"
+import type {Timestamp} from "@firebase/firestore"
+import type {Warp} from "#shared/warp"
+import type {Bookmark} from "~/types/bookmark/bookmark"
 
 export interface UserDocument {
   schemaVersion: number

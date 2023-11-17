@@ -14,15 +14,15 @@
 
 <script lang="ts" setup>
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
-import {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
+import type {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
+import type {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
-import {LevelIngredients} from "~/types/level-ingredients"
-import {Usage} from "~/types/bookmark/usage"
+import type {LevelIngredients} from "~/types/level-ingredients"
+import type {Usage} from "~/types/bookmark/usage"
 import {db} from "~/libs/db/providers"
-import {BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
+import type {BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
 
 const props = defineProps<{
   title: string

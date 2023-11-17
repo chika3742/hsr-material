@@ -101,7 +101,7 @@
 
 <script lang="ts" setup>
 import {useTheme} from "vuetify"
-import {Unsubscribe} from "firebase/auth"
+import type {Unsubscribe} from "firebase/auth"
 import {ref} from "#imports"
 import {useSnackbar} from "~/composables/snackbar"
 import {useDialog} from "~/composables/dialog"

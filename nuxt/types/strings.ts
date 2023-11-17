@@ -1,5 +1,5 @@
-import {CharacterIngredients} from "~/types/generated/character-ingredients.g"
-import {Path} from "~/types/generated/characters.g"
+import type {CharacterIngredients} from "~/types/generated/character-ingredients.g"
+import type {Path} from "~/types/generated/characters.g"
 
 export type PurposeType = keyof CharacterIngredients["purposeTypes"]
 

@@ -3,10 +3,10 @@
 
 import {from, useObservable} from "@vueuse/rxjs"
 import {liveQuery} from "dexie"
-import Sortable from "sortablejs"
+import type Sortable from "sortablejs"
 import {_db} from "~/dexie/db"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
-import {CharacterIdWithVariant} from "~/types/strings"
+import type {CharacterIdWithVariant} from "~/types/strings"
 
 const config = useConfigStore()
 
