@@ -1,5 +1,14 @@
 # コピー用改行
 
+- date: 2023/11/17
+  funcVersion: 1.2.3
+  dataVersion: 1.5.0
+  isMajor: false
+  content: |
+    ### データ追加
+    - キャラクター「フォフォ」
+    - 光円錐「驚魂の夜」「よぉ、ここにいるぜ」
+
 - date: 2023/10/28
   funcVersion: 1.2.3
   dataVersion: 1.4.1
