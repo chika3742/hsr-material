@@ -622,3 +622,19 @@
   materials:
     primary: group:lcs002
     common: group:com003
+- id: hey-over-here
+  yomi: ''
+  $nameJA: よぉ、ここにいるぜ
+  path: abundance
+  rarity: 4
+  materials:
+    primary: group:lcs007
+    common: group:com006
+- id: night-of-fright
+  yomi: ''
+  $nameJA: 驚魂の夜
+  path: abundance
+  rarity: 5
+  materials:
+    primary: group:lcs007
+    common: group:com005
