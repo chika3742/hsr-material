@@ -419,6 +419,7 @@ characterNames:
   jingliu: Jingliu
   topaz-and-numby: Topaz and Numby
   guinaifen: Guinaifen
+  huohuo: Huohuo
 
 materialCategories:
   exp: EXP Materials
@@ -676,6 +677,11 @@ skillTitles:
     skill: Blazing Welcome
     ultimate: Watch This Showstopper
     talent: PatrAeon Benefits
+  huohuo:
+    basicAttack: "Banner: Stormcaller"
+    skill: "Talisman: Protection"
+    ultimate: "Tail: Spiritual Domination"
+    talent: "Possession: Ethereal Metaflow"
 
 lightConeNames:
   arrows: Arrows
@@ -756,6 +762,8 @@ lightConeNames:
   she-already-shut-her-eyes: She Already Shut Her Eyes
   i-shall-be-my-own-sword: I Shall Be My Own Sword
   worrisome-blissful: Worrisome, Blissful
+  hey-over-here: Hey, Over Here
+  night-of-fright: Night of Fright
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -963,6 +971,16 @@ lightConeSkillDescriptions:
     <30%>. After the wearer uses a follow-up attack, apply the Tame state to the
     target, stacking up to 2 stacks. When allies hit enemy targets under the
     Tame state, every Tame stack increases the CRIT DMG dealt by <12%>.
+  hey-over-here: >-
+    Increases the wearer's Max HP by <8%>. When the wearer uses their Skill,
+    increases Outgoing Healing by <16%>, lasting for 2 turn(s).
+  night-of-fright: >-
+    Increases the wearer's Energy Regeneration Rate by <12%>. When any ally uses
+    their Ultimate, the wearer restores HP for the ally currently with the
+    lowest HP percentage by an amount equal to <10%> of the healed ally's Max
+    HP. When the wearer provides healing for an ally, increases the healed
+    ally's ATK by <2.4%>. This effect can stack up to 5 times and lasts for 2
+    turn(s).
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

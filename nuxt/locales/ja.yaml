@@ -426,6 +426,7 @@ characterNames:
   jingliu: 鏡流
   topaz-and-numby: トパーズ&カブ
   guinaifen: 桂乃芬
+  huohuo: フォフォ
 
 materialCategories:
   exp: 経験値素材
@@ -683,6 +684,11 @@ skillTitles:
     skill: 出だし好調
     ultimate: 十八番を披露するね
     talent: 古来、芸人は君子に頼る
+  huohuo:
+    basicAttack: 令旗・風雨招来
+    skill: 霊符・護身
+    ultimate: シッポ・神鬼使役
+    talent: 憑依・真気通天
 
 lightConeNames:
   arrows: 矢じり
@@ -763,6 +769,8 @@ lightConeNames:
   she-already-shut-her-eyes: 閉ざした瞳
   i-shall-be-my-own-sword: この身は剣なり
   worrisome-blissful: 悩んで笑って
+  hey-over-here: よぉ、ここにいるぜ
+  night-of-fright: 驚魂の夜
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -856,6 +864,9 @@ lightConeSkillDescriptions:
     装備キャラの会心ダメージ+<20%>。自身以外の味方が攻撃を受ける、またはHPを消費した後、装備キャラは「月蝕」を1層獲得する。この効果は最大で3層累積できる。「月蝕」1層につき、装備キャラの次の攻撃の与ダメージ+<14%>。「月蝕」が上限の3層に累積した時、その回の攻撃は敵の防御力を<12%>無視する。この効果は装備キャラが攻撃を行った後に解除される。
   worrisome-blissful: >-
     装備キャラの会心率+<18%>、追加攻撃の与ダメージ+<30%>。装備キャラが追加攻撃を行った後、敵を「従順」状態にする。この効果は最大で2層累積できる。味方の攻撃が「従順」状態の敵に命中した時、「従順」1層につき与える会心ダメージ+<12%>。
+  hey-over-here: 装備キャラの最大HP+<8%>。装備キャラが戦闘スキルを発動した時、治癒量+<16%>、2ターン継続。
+  night-of-fright: >-
+    装備キャラのEP回復効率+<12%>。味方が必殺技を発動した時、装備キャラは残りHP割合が最も低い味方のHPを、その味方の最大HP<10%>分回復する。装備キャラが味方に治癒を行った時、その味方の攻撃力+<2.4%>、この効果は最大で5層累積できる、2ターン継続。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

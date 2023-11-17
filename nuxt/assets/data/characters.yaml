@@ -425,3 +425,14 @@
     skills: group:lcs004
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
+- id: huohuo
+  $nameJA: フォフォ
+  yomi: フォフォ
+  rarity: 5
+  path: abundance
+  combatType: wind
+  materials:
+    ascension: id:ascendant-debris
+    skills: group:lcs007
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com005
