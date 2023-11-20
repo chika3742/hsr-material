@@ -1887,8 +1887,8 @@ __metadata:
   linkType: hard
 
 "firebase-functions@npm:^4.4.1":
-  version: 4.4.1
-  resolution: "firebase-functions@npm:4.4.1"
+  version: 4.5.0
+  resolution: "firebase-functions@npm:4.5.0"
   dependencies:
     "@types/cors": ^2.8.5
     "@types/express": 4.17.3
@@ -1900,7 +1900,7 @@ __metadata:
     firebase-admin: ^10.0.0 || ^11.0.0
   bin:
     firebase-functions: lib/bin/firebase-functions.js
-  checksum: 27e912228b7604de860abae071083af9531ef90ff5f14d3ff5559f1d8cc375d8ef77c85b65cb85ac2486a1f2fe61768172c8c8b21994bff3a05370646bfe46a0
+  checksum: 002d56391865ff1917e42053d92be7f09eead16f2ded09b28784005df69e12ef5c650b5b15d7f6c75d4827eaea0a7877e7511af448163539bcdce5ced9dedd00
   languageName: node
   linkType: hard
 
