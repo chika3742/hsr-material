@@ -7,6 +7,7 @@
   "timezone": "Asia/Tokyo",
   "dependencyDashboard": false,
   "branchPrefix": "deps-pages-nodeploy/",
+  "semanticCommitScope": "{{parentDir}}",
   "ignoreDeps": [
     "@chika3742/mhy-material-components"
   ],
