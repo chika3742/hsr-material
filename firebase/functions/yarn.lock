@@ -177,15 +177,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/firestore@npm:^6.6.0":
-  version: 6.7.0
-  resolution: "@google-cloud/firestore@npm:6.7.0"
+"@google-cloud/firestore@npm:^6.8.0":
+  version: 6.8.0
+  resolution: "@google-cloud/firestore@npm:6.8.0"
   dependencies:
     fast-deep-equal: "npm:^3.1.1"
     functional-red-black-tree: "npm:^1.0.1"
     google-gax: "npm:^3.5.7"
-    protobufjs: "npm:^7.0.0"
-  checksum: 5d032be2dd6a9dcb05054da9a7001193017e537bb84858475c1a1f39b894008398892b8b5d8887fabf4ba0e42e1ae4917b7ffe747955d21dc174a5080b64763e
+    protobufjs: "npm:^7.2.5"
+  checksum: 7b01c1aa49a8428671a6c26ebb0d18071c53acbb6f9624748c765e078ad938fdfc2e1624fe6c54f0b78a287025b09a11a5cfe6de1f173f34c8ab7fc917551484
   languageName: node
   linkType: hard
 
@@ -1849,13 +1849,13 @@ __metadata:
   linkType: hard
 
 "firebase-admin@npm:^11.11.0":
-  version: 11.11.0
-  resolution: "firebase-admin@npm:11.11.0"
+  version: 11.11.1
+  resolution: "firebase-admin@npm:11.11.1"
   dependencies:
     "@fastify/busboy": "npm:^1.2.1"
     "@firebase/database-compat": "npm:^0.3.4"
     "@firebase/database-types": "npm:^0.10.4"
-    "@google-cloud/firestore": "npm:^6.6.0"
+    "@google-cloud/firestore": "npm:^6.8.0"
     "@google-cloud/storage": "npm:^6.9.5"
     "@types/node": "npm:>=12.12.47"
     jsonwebtoken: "npm:^9.0.0"
@@ -1867,7 +1867,7 @@ __metadata:
       optional: true
     "@google-cloud/storage":
       optional: true
-  checksum: 74f8592589c9d31b5ce14c117911df812123924c7ff06f1e0e744c85a78f54448aaefd9fd2642cf22d1b928b3161c724b1a1041e2deb5502dea16feb7f32c4e7
+  checksum: e0b7058239e22bd8dbd4a0352187241b62c2fcbf202f7b630ebed1e639822a32ca5e7da967ab883dd41398ac07504974c0c8c6b6f6b38a8c9f2a271a6d9f16de
   languageName: node
   linkType: hard
 
@@ -3434,7 +3434,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs@npm:^7.0.0, protobufjs@npm:^7.2.2, protobufjs@npm:^7.2.4":
+"protobufjs@npm:^7.0.0, protobufjs@npm:^7.2.2, protobufjs@npm:^7.2.4, protobufjs@npm:^7.2.5":
   version: 7.2.5
   resolution: "protobufjs@npm:7.2.5"
   dependencies:
