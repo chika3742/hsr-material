@@ -68,6 +68,7 @@ pageTitles:
   settings: Settings
 
 navDrawer:
+  gameDataSync: Game Data Sync
   kofi: Buy me a coffee
 
 bookmark:

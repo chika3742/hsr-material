@@ -68,6 +68,7 @@ pageTitles:
   settings: 設定
 
 navDrawer:
+  gameDataSync: ゲームデータ同期
   kofi: コーヒーを奢る
 
 bookmark:

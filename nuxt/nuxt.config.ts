@@ -192,4 +192,10 @@ export default defineNuxtConfig({
   piniaPersistedstate: {
     storage: "localStorage",
   },
+
+  mhyMaterialComponents: {
+    i18nKeys: {
+      equipment: "lightConeNames",
+    },
+  },
 })

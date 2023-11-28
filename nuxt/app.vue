@@ -90,6 +90,14 @@
             </v-card>
           </v-dialog>
         </client-only>
+
+        <GameDataSyncDialog
+          v-model="showGameDataSyncDialog"
+          v-model:user="showcaseUser"
+          :getters="getters"
+          :loading="loadingShowcaseUser"
+          @get-data="getShowcaseCharacters"
+        />
       </v-main>
 
       <v-fade-transition>
@@ -100,13 +108,15 @@
 </template>
 
 <script lang="ts" setup>
-import {useTheme} from "vuetify"
-import {Unsubscribe} from "firebase/auth"
-import {ref} from "#imports"
-import {useSnackbar} from "~/composables/snackbar"
-import {useDialog} from "~/composables/dialog"
-import {_db} from "~/dexie/db"
-import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
+import { useTheme } from "vuetify";
+import { Unsubscribe } from "firebase/auth";
+import { ref } from "#imports";
+import { useSnackbar } from "~/composables/snackbar";
+import { useDialog } from "~/composables/dialog";
+import { _db } from "~/dexie/db";
+import { FirestoreProvider } from "~/libs/firestore/firestore-provider";
+import characters from "~/assets/data/characters.yaml";
+import lightCones from "~/assets/data/light-cones.yaml";
 
 const router = useRouter()
 const i18n = useI18n()
@@ -130,6 +140,13 @@ const drawerItems: DrawerItemOrDivider[] = [
   {
     icon: "mdi-bookmark-multiple",
     to: "/bookmarks",
+  },
+  {
+    icon: "mdi-import",
+    title: "gameDataSync",
+    onClick() {
+      showGameDataSyncDialog.value = true;
+    }
   },
   "---" as const,
   {
@@ -183,7 +200,38 @@ const mounted = ref(false)
 const isLoadingPage = ref(false)
 const showSearchDialog = ref(false)
 
-const title = computed(() => getPageTitle(router.currentRoute.value.fullPath, router, i18n))
+const showGameDataSyncDialog = ref(false);
+const showcaseUser = ref<UserInfoResponse>();
+const loadingShowcaseUser = ref(false);
+const getters: DataSyncMapGetters = {
+  getCharacterId: (characterName: string) =>
+    characters.find(e => e.$nameJA === characterName)?.id ?? "",
+  getCharacterImage: (characterId: string) =>
+    getCharacterImage(characterId, "small"),
+  getEquipmentId: (lightConeName: string) =>
+    lightCones.find(e => e.$nameJA === lightConeName)?.id ?? "",
+  getEquipmentImage: (lightConeId: string) => getLightConeImage(lightConeId)
+};
+const getShowcaseCharacters = async (uid: string) => {
+  if (uid.length !== 9) {
+    snackbar.show("UIDは9桁で入力してください", "error");
+    return;
+  }
+
+  loadingShowcaseUser.value = true;
+
+  try {
+    const result = await $fetch<UserInfoResponse>(`/api/v1/showcase?uid=${uid}`);
+    showcaseUser.value = result;
+  } catch (e) {
+    console.error(e);
+    snackbar.show("ユーザー情報の取得に失敗しました", "error");
+  }
+
+  loadingShowcaseUser.value = false;
+};
+
+const title = computed(() => getPageTitle(router.currentRoute.value.fullPath, router, i18n));
 
 useHead({
   title,
