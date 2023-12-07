@@ -623,7 +623,7 @@
     primary: group:lcs002
     common: group:com003
 - id: hey-over-here
-  yomi: ''
+  yomi: 'ヨオココニイルゼ'
   $nameJA: よぉ、ここにいるぜ
   path: abundance
   rarity: 4
@@ -631,10 +631,18 @@
     primary: group:lcs007
     common: group:com006
 - id: night-of-fright
-  yomi: ''
+  yomi: 'キョウコンノヨル'
   $nameJA: 驚魂の夜
   path: abundance
   rarity: 5
   materials:
     primary: group:lcs007
     common: group:com005
+- id: an-instant-before-a-gaze
+  yomi: 'ソノイッコクメニヤキツケテ'
+  $nameJA: その一刻、目に焼き付けて
+  path: erudition
+  rarity: 5
+  materials:
+    primary: group:lcs003
+    common: group:com002

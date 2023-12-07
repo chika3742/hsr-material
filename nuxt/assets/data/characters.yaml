@@ -436,3 +436,25 @@
     skills: group:lcs007
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
+- id: argenti
+  $nameJA: アルジェンティ
+  yomi: 'アルジェンティ'
+  rarity: 5
+  path: erudition
+  combatType: physical
+  materials:
+    ascension: id:netherworld-token
+    skills: group:lcs003
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com002
+- id: hanya
+  $nameJA: 寒鴉
+  yomi: 'カンウ'
+  rarity: 4
+  path: harmony
+  combatType: physical
+  materials:
+    ascension: id:netherworld-token
+    skills: group:lcs006
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com006
