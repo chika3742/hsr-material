@@ -420,6 +420,8 @@ characterNames:
   topaz-and-numby: Topaz and Numby
   guinaifen: Guinaifen
   huohuo: Huohuo
+  argenti: Argenti
+  hanya: Hanya
 
 materialCategories:
   exp: EXP Materials
@@ -494,6 +496,7 @@ materialNames:
   suppressing-edict: Suppressing Edict
   nail-of-the-ape: Nail of the Ape
   searing-steel-blade: Searing Steel Blade
+  netherworld-token: Netherworld Token
 
 skillTitles:
   trailblazer:
@@ -682,6 +685,16 @@ skillTitles:
     skill: "Talisman: Protection"
     ultimate: "Tail: Spiritual Domination"
     talent: "Possession: Ethereal Metaflow"
+  argenti:
+    basicAttack: Fleeting Fragrance
+    skill: Justice, Hereby Blooms
+    ultimate: For In This Garden, Supreme Beauty Bestows
+    talent: Sublime Object
+  hanya:
+    basicAttack: Oracle Brush
+    skill: Samsara, Locked
+    ultimate: Ten-Lords' Decree, All Shall Obey
+    talent: Sanction
 
 lightConeNames:
   arrows: Arrows
@@ -764,6 +777,7 @@ lightConeNames:
   worrisome-blissful: Worrisome, Blissful
   hey-over-here: Hey, Over Here
   night-of-fright: Night of Fright
+  an-instant-before-a-gaze: An Instant Before A Gaze
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -981,6 +995,10 @@ lightConeSkillDescriptions:
     HP. When the wearer provides healing for an ally, increases the healed
     ally's ATK by <2.4%>. This effect can stack up to 5 times and lasts for 2
     turn(s).
+  an-instant-before-a-gaze: >-
+    Increases the wearer's CRIT DMG by <36%>. When the wearer uses Ultimate,
+    increases the wearer's Ultimate DMG based on their Max Energy. Each point of
+    Energy increases the Ultimate DMG by <0.36%>, up to 180 points of Energy.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

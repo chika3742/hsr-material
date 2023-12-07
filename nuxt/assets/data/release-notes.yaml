@@ -1,5 +1,14 @@
 # コピー用改行
 
+- date: 2023/12/07
+  funcVersion: 1.2.4
+  dataVersion: 1.5.1
+  isMajor: false
+  content: |
+    ### データ追加
+    - キャラクター「アルジェンティ」「寒鴉」
+    - 光円錐「その一刻、目に焼き付けて」
+
 - date: 2023/11/19
   funcVersion: 1.2.4
   dataVersion: 1.5.0
