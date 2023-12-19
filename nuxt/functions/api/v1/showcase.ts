@@ -70,7 +70,18 @@ export const onRequest: PagesFunction = async(context) => {
         }
 
         return {
-          type: skill.type,
+          type: (() => {
+            switch (skill.type) {
+              case "Normal":
+                return "basicAttack"
+              case "BPSkill":
+                return "skill"
+              case "Ultra":
+                return "ultimate"
+              case "Talent":
+                return "talent"
+            }
+          })(),
           iconUrl: `https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${skill.icon}`,
           originalLevel,
           extraLevel,

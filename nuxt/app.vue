@@ -94,9 +94,11 @@
         <GameDataSyncDialog
           v-model="showGameDataSyncDialog"
           v-model:user="showcaseUser"
+          v-model:uid="showcaseUid"
           :getters="getters"
           :loading="loadingShowcaseUser"
           @get-data="getShowcaseCharacters"
+          @import="importGameData"
         />
       </v-main>
 
@@ -117,6 +119,7 @@ import {_db} from "~/dexie/db"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
+import {db} from "~/libs/db/providers"
 
 const router = useRouter()
 const i18n = useI18n()
@@ -145,6 +148,7 @@ const drawerItems: DrawerItemOrDivider[] = [
     icon: "mdi-import",
     title: "gameDataSync",
     onClick() {
+      showcaseUid.value = config.uid
       showGameDataSyncDialog.value = true
     },
   },
@@ -201,6 +205,7 @@ const isLoadingPage = ref(false)
 const showSearchDialog = ref(false)
 
 const showGameDataSyncDialog = ref(false)
+const showcaseUid = ref("")
 const showcaseUser = ref<UserInfoResponse>()
 const loadingShowcaseUser = ref(false)
 const getters: DataSyncMapGetters = {
@@ -212,8 +217,8 @@ const getters: DataSyncMapGetters = {
     lightCones.find(e => e.$nameJA === lightConeName)?.id ?? "",
   getEquipmentImage: (lightConeId: string) => getLightConeImage(lightConeId),
 }
-const getShowcaseCharacters = async(uid: string) => {
-  if (uid.length !== 9) {
+const getShowcaseCharacters = async() => {
+  if (showcaseUid.value.length !== 9) {
     snackbar.show("UIDは9桁で入力してください", "error")
     return
   }
@@ -221,14 +226,35 @@ const getShowcaseCharacters = async(uid: string) => {
   loadingShowcaseUser.value = true
 
   try {
-    const result = await $fetch<UserInfoResponse>(`/api/v1/showcase?uid=${uid}`)
+    const result = await $fetch<UserInfoResponse>(`/api/v1/showcase?uid=${showcaseUid.value}`)
     showcaseUser.value = result
+    config.uid = showcaseUid.value
   } catch (e) {
     console.error(e)
     snackbar.show("ユーザー情報の取得に失敗しました", "error")
   }
 
   loadingShowcaseUser.value = false
+}
+const importGameData = async() => {
+  if (typeof showcaseUser.value === "undefined") {
+    return
+  }
+
+  loadingShowcaseUser.value = true
+
+  await db.bookmarks.removeByShowcase(showcaseUser.value.characters)
+  for (const character of showcaseUser.value.characters) {
+    const characterId = parseShowcaseCharacterId(character.nameJP, character.variant)
+    if (typeof characterId === "undefined") {
+      continue
+    }
+
+    config.characterSkillLevels[characterId] = Object.fromEntries(character.skills.map(e => [e.type, e.originalLevel]))
+  }
+
+  loadingShowcaseUser.value = false
+  showGameDataSyncDialog.value = false
 }
 
 const title = computed(() => getPageTitle(router.currentRoute.value.fullPath, router, i18n))

@@ -13,6 +13,8 @@ import {
   isBookmarkableExp,
 } from "~/types/bookmark/bookmarkables"
 import {EventLogger} from "~/libs/event-logger"
+import lightCones from "~/assets/data/light-cones.yaml"
+import {parseShowcaseCharacterId} from "~/utils/parse-showcase-character-id"
 
 /**
  * Provides methods for bookmark-related database operations.
@@ -149,6 +151,52 @@ export class BookmarksProvider extends DbProvider {
       await this.bookmarks.bulkDelete(ids)
 
       return items
+    })
+  }
+
+  removeByShowcase(showcaseCharacters: ShowcaseCharacter[]) {
+    const upperLevelToPromotion = (upperLevel: number) => {
+      return upperLevel / 10 - 2
+    }
+    return this.transactionWithFirestore([this.bookmarks], async() => {
+      for (const character of showcaseCharacters) {
+        const characterId = parseShowcaseCharacterId(character.nameJP, character.variant)
+        if (!characterId) {
+          continue
+        }
+
+        const lightConeId = lightCones.find(e => e.$nameJA === character.equipment.nameJP)?.id
+
+        const skillLevels = Object.fromEntries(character.skills.map(e => [e.type, e.originalLevel]))
+
+        const itemsToDelete = await this.bookmarks.where("characterId").equals(characterId).and((e) => {
+          switch (e.type) {
+            case "character_exp":
+              return e.usage.upperLevel <= character.level
+            case "character_material":
+              if (e.usage.purposeType !== "ascension") {
+                return e.usage.upperLevel <= skillLevels[e.usage.purposeType]
+              } else {
+                return upperLevelToPromotion(e.usage.upperLevel) <= character.promotion
+              }
+            case "light_cone_exp":
+              if (lightConeId !== e.usage.lightConeId) {
+                return false
+              }
+              return e.usage.upperLevel <= character.equipment.level
+            case "light_cone_material":
+              if (lightConeId !== e.usage.lightConeId) {
+                return false
+              }
+              return upperLevelToPromotion(e.usage.upperLevel) <= character.equipment.promotion
+            default:
+              return false
+          }
+        }).toArray()
+        const idsToDelete = itemsToDelete.map(e => e.id!)
+
+        await this.bookmarks.bulkDelete(idsToDelete)
+      }
     })
   }
 

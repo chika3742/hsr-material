@@ -23,6 +23,14 @@ export const useConfigStore = defineStore("config", {
      */
     warpsShowPityList: false,
     /**
+     * Uid for sync game data.
+     */
+    uid: "",
+    /**
+     * Character skill levels stored in the app.
+     */
+    characterSkillLevels: {} as {[characterId: string]: {[skill: string]: number}},
+    /**
      * Owned characters.
      */
     ownedCharacters: [] as string[],
