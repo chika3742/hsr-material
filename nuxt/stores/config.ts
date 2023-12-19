@@ -29,7 +29,7 @@ export const useConfigStore = defineStore("config", {
     /**
      * Character skill levels stored in the app.
      */
-    characterSkillLevels: {} as {[characterId: string]: {[skill: string]: number}},
+    characterLevels: {} as {[characterId: string]: {[skill: string]: number}},
     /**
      * Owned characters.
      */

@@ -32,6 +32,8 @@ const props = defineProps<{
   materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
 }>()
 
+const config = useConfigStore()
+
 const rarity = (() => {
   if (props.lightConeId) {
     return lightCones.find(e => e.id === props.lightConeId)!.rarity
@@ -69,10 +71,12 @@ const setInitialRangeBasedOnBookmarks = async() => {
 
     range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1], max]
   } else {
-    range.value = [sliderTicks.value[0], sliderTicks.value.slice(-1)[0]]
+    const characterId = toCharacterIdWithVariant(props.characterId, props.variant)
+    const sliderLowerRange = config.characterLevels[characterId]?.ascension ?? sliderTicks.value[0]
+    range.value = [sliderLowerRange, sliderTicks.value.slice(-1)[0]]
   }
 }
-watch(toRefs(props).characterId, () => {
+watch([toRefs(props).characterId, toRefs(props).variant], () => {
   void setInitialRangeBasedOnBookmarks()
 }, {immediate: true})
 

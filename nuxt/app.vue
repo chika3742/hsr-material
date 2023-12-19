@@ -250,11 +250,38 @@ const importGameData = async() => {
       continue
     }
 
-    config.characterSkillLevels[characterId] = Object.fromEntries(character.skills.map(e => [e.type, e.originalLevel]))
+    config.characterLevels[characterId] = {
+      ascension: (() => {
+        if (character.level >= 1 && character.level < 20) {
+          return 1
+        }
+        if (character.level >= 20 && character.level < 30) {
+          return 20
+        }
+        if (character.level >= 30 && character.level < 40) {
+          return 30
+        }
+        if (character.level >= 40 && character.level < 50) {
+          return 40
+        }
+        if (character.level >= 50 && character.level < 60) {
+          return 50
+        }
+        if (character.level >= 60 && character.level < 70) {
+          return 60
+        }
+        if (character.level >= 70 && character.level < 80) {
+          return 70
+        }
+        return 80
+      })(),
+      ...Object.fromEntries(character.skills.map(e => [e.type, e.originalLevel])),
+    }
   }
 
   loadingShowcaseUser.value = false
   showGameDataSyncDialog.value = false
+  snackbar.show("インポートしました")
 }
 
 const title = computed(() => getPageTitle(router.currentRoute.value.fullPath, router, i18n))
