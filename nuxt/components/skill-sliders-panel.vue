@@ -105,7 +105,7 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
 <template>
   <v-expansion-panel :title="title">
     <v-expansion-panel-text eager>
-      <div class="d-flex flex-column sliders-container" style="gap: 8px">
+      <div class="d-flex flex-column sliders-container mx-n4 mx-sm-0">
         <section v-for="(item, i) in sliders" :key="i">
           <v-row align="center" no-gutters>
             <v-checkbox-btn v-model="checkedList[i]" class="flex-grow-0" />
@@ -121,7 +121,7 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
               :slider-ticks="levelIngredientsToSliderTicks(item.levelIngredients)"
             />
           </v-expand-transition>
-          <v-divider />
+          <v-divider class="my-2" />
         </section>
 
         <MaterialItems :items="ingredients" :purpose-types="sliders.map(e => e.type)" />
