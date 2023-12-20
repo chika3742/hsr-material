@@ -328,6 +328,10 @@ settingsPage:
     lightConeExp: 光円錐経験値
     credit: 信用ポイント
   dataSource: データソース
+  others: その他
+  clearCharacterLevels: 同期した育成状況をクリア
+  clearCharacterLevelsDesc: 「@:{'navDrawer.gameDataSync'}」で同期したキャラクターの育成状況(キャラ・スキルのレベル)をクリアします。
+  clearCharacterLevelsSuccess: クリアしました
 
 paths:
   abundance: 豊穣

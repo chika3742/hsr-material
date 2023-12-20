@@ -321,6 +321,10 @@ settingsPage:
     lightConeExp: Light Cone EXP
     credit: Credit
   dataSource: Data source
+  others: Others
+  clearCharacterLevels: Clear Leveling Statuses
+  clearCharacterLevelsDesc: Clears the leveling statuses synced using "@:{'navDrawer.gameDataSync'}".
+  clearCharacterLevelsSuccess: Cleared.
 
 paths:
   abundance: Abundance
