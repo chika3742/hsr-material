@@ -50,11 +50,13 @@ export const onRequest: PagesFunction = async(context) => {
       level: character.level,
       rank: character.rank,
       promotion: character.promotion,
-      equipment: {
-        nameJP: character.light_cone.name,
-        level: character.light_cone.level,
-        promotion: character.light_cone.promotion,
-      },
+      equipment: character.light_cone
+        ? {
+            nameJP: character.light_cone.name,
+            level: character.light_cone.level,
+            promotion: character.light_cone.promotion,
+          }
+        : null,
       skills: (character.skills as any[]).slice(0, 4).map((skill) => {
         let originalLevel = skill.level
         let extraLevel = 0
