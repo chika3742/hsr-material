@@ -31,6 +31,9 @@ common:
     talent: Talent
   updated: Updated to {version}.
 
+gameSpecific:
+  showcaseTitle: Support Character" or "Starfaring Companions
+
 errors:
   404: Page not found.
   500: An error occurred during rendering.
