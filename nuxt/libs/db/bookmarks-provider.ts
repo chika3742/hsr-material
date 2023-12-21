@@ -165,7 +165,9 @@ export class BookmarksProvider extends DbProvider {
           continue
         }
 
-        const lightConeId = lightCones.find(e => e.$nameJA === character.equipment.nameJP)?.id
+        const lightConeId = character.equipment !== null
+          ? lightCones.find(e => e.$nameJA === character.equipment!.nameJP)?.id
+          : undefined
 
         const skillLevels = Object.fromEntries(character.skills.map(e => [e.type, e.originalLevel]))
 
@@ -180,15 +182,15 @@ export class BookmarksProvider extends DbProvider {
                 return upperLevelToPromotion(e.usage.upperLevel) <= character.promotion
               }
             case "light_cone_exp":
-              if (lightConeId !== e.usage.lightConeId) {
+              if (typeof lightConeId === "undefined" || lightConeId !== e.usage.lightConeId) {
                 return false
               }
-              return e.usage.upperLevel <= character.equipment.level
+              return e.usage.upperLevel <= character.equipment!.level
             case "light_cone_material":
-              if (lightConeId !== e.usage.lightConeId) {
+              if (typeof lightConeId === "undefined" || lightConeId !== e.usage.lightConeId) {
                 return false
               }
-              return upperLevelToPromotion(e.usage.upperLevel) <= character.equipment.promotion
+              return upperLevelToPromotion(e.usage.upperLevel) <= character.equipment!.promotion
             default:
               return false
           }
