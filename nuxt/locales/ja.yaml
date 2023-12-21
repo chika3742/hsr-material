@@ -85,6 +85,12 @@ bookmark:
   completeLeveling: 育成完了
   completeLevelingDesc: これより上のブックマークをすべて解除します。
 
+gameDataSync:
+  invalidUidLength: UIDは9桁で入力してください。
+  fetchError: プレイヤーデータの取得に失敗しました。
+  importSuccess: インポートしました。
+  importError: インポートに失敗しました。
+
 charactersPage:
   possessionStatus: 所持状況
   owned: 所持

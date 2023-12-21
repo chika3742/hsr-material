@@ -15,6 +15,7 @@ const emit = defineEmits<Emits>()
 
 const snackbar = useSnackbar()
 const config = useConfigStore()
+const i18n = useI18n()
 
 watch(toRefs(props).modelValue, (value) => {
   if (value) {
@@ -36,7 +37,7 @@ const getters: DataSyncMapGetters = {
 }
 const getShowcaseCharacters = async() => {
   if (showcaseUid.value.length !== 9) {
-    snackbar.show("UIDは9桁で入力してください", "error")
+    snackbar.show(tx(i18n, "gameDataSync.invalidUidLength"), "error")
     return
   }
 
@@ -48,7 +49,7 @@ const getShowcaseCharacters = async() => {
     config.uid = showcaseUid.value
   } catch (e) {
     console.error(e)
-    snackbar.show("ユーザー情報の取得に失敗しました", "error")
+    snackbar.show(tx(i18n, "gameDataSync.fetchError"), "error")
   }
 
   loadingShowcaseUser.value = false
@@ -97,10 +98,10 @@ const importGameData = async() => {
       }
     }
     emit("update:modelValue", false)
-    snackbar.show("インポートしました")
+    snackbar.show(tx(i18n, "gameDataSync.importSuccess"))
   } catch (e) {
     console.error(e)
-    snackbar.show("インポートに失敗しました", "error")
+    snackbar.show(tx(i18n, "gameDataSync.importError"), "error")
   }
 
   loadingShowcaseUser.value = false

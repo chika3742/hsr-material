@@ -85,6 +85,12 @@ bookmark:
   completeLeveling: Complete Leveling
   completeLevelingDesc: Removes all bookmarks above this.
 
+gameDataSync:
+  invalidUidLength: UID must be 9 digits.
+  fetchError: Failed to fetch the player data.
+  importSuccess: Imported.
+  importError: Failed to import.
+
 charactersPage:
   possessionStatus: Possession Status
   owned: Owned
