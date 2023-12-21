@@ -91,15 +91,7 @@
           </v-dialog>
         </client-only>
 
-        <GameDataSyncDialog
-          v-model="showGameDataSyncDialog"
-          v-model:user="showcaseUser"
-          v-model:uid="showcaseUid"
-          :getters="getters"
-          :loading="loadingShowcaseUser"
-          @get-data="getShowcaseCharacters"
-          @import="importGameData"
-        />
+        <GameDataSyncDialogImpl v-model="showGameDataSyncDialog" />
       </v-main>
 
       <v-fade-transition>
@@ -117,9 +109,6 @@ import {useSnackbar} from "~/composables/snackbar"
 import {useDialog} from "~/composables/dialog"
 import {_db} from "~/dexie/db"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
-import characters from "~/assets/data/characters.yaml"
-import lightCones from "~/assets/data/light-cones.yaml"
-import {db} from "~/libs/db/providers"
 
 const router = useRouter()
 const i18n = useI18n()
@@ -148,7 +137,6 @@ const drawerItems: DrawerItemOrDivider[] = [
     icon: "mdi-import",
     title: "gameDataSync",
     onClick() {
-      showcaseUid.value = config.uid
       showGameDataSyncDialog.value = true
     },
   },
@@ -203,91 +191,7 @@ const isDrawerOpenOnMobile = ref(false)
 const mounted = ref(false)
 const isLoadingPage = ref(false)
 const showSearchDialog = ref(false)
-
 const showGameDataSyncDialog = ref(false)
-const showcaseUid = ref("")
-const showcaseUser = ref<UserInfoResponse>()
-const loadingShowcaseUser = ref(false)
-const getters: DataSyncMapGetters = {
-  getCharacterId: (characterName: string) =>
-    characters.find(e => e.$nameJA === characterName)?.id ?? "",
-  getCharacterImage: (characterId: string) =>
-    getCharacterImage(characterId, "small"),
-  getEquipmentId: (lightConeName: string) =>
-    lightCones.find(e => e.$nameJA === lightConeName)?.id ?? "",
-  getEquipmentImage: (lightConeId: string) => getLightConeImage(lightConeId),
-}
-const getShowcaseCharacters = async() => {
-  if (showcaseUid.value.length !== 9) {
-    snackbar.show("UIDは9桁で入力してください", "error")
-    return
-  }
-
-  loadingShowcaseUser.value = true
-
-  try {
-    const result = await $fetch<UserInfoResponse>(`/api/v1/showcase?uid=${showcaseUid.value}`)
-    showcaseUser.value = result
-    config.uid = showcaseUid.value
-  } catch (e) {
-    console.error(e)
-    snackbar.show("ユーザー情報の取得に失敗しました", "error")
-  }
-
-  loadingShowcaseUser.value = false
-}
-const importGameData = async() => {
-  if (typeof showcaseUser.value === "undefined") {
-    return
-  }
-
-  loadingShowcaseUser.value = true
-
-  try {
-    await db.bookmarks.removeByShowcase(showcaseUser.value.characters)
-    for (const character of showcaseUser.value.characters) {
-      const characterId = parseShowcaseCharacterId(character.nameJP, character.variant)
-      if (typeof characterId === "undefined") {
-        continue
-      }
-
-      config.characterLevels[characterId] = {
-        ascension: (() => {
-          if (character.level >= 1 && character.level < 20) {
-            return 1
-          }
-          if (character.level >= 20 && character.level < 30) {
-            return 20
-          }
-          if (character.level >= 30 && character.level < 40) {
-            return 30
-          }
-          if (character.level >= 40 && character.level < 50) {
-            return 40
-          }
-          if (character.level >= 50 && character.level < 60) {
-            return 50
-          }
-          if (character.level >= 60 && character.level < 70) {
-            return 60
-          }
-          if (character.level >= 70 && character.level < 80) {
-            return 70
-          }
-          return 80
-        })(),
-        ...Object.fromEntries(character.skills.map(e => [e.type, e.originalLevel])),
-      }
-    }
-    showGameDataSyncDialog.value = false
-    snackbar.show("インポートしました")
-  } catch (e) {
-    console.error(e)
-    snackbar.show("インポートに失敗しました", "error")
-  }
-
-  loadingShowcaseUser.value = false
-}
 
 const title = computed(() => getPageTitle(router.currentRoute.value.fullPath, router, i18n))
 
