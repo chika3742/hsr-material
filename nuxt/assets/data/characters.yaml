@@ -458,3 +458,25 @@
     skills: group:lcs006
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
+- id: ruan-mei
+  $nameJA: ルアン・メェイ
+  yomi: ルアン・メェイ
+  rarity: 5
+  path: harmony
+  combatType: ice
+  materials:
+    ascension: id:gelid-chitin
+    skills: group:lcs006
+    skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
+    common: group:com005
+- id: xueyi
+  $nameJA: 雪衣
+  yomi: セツイ
+  rarity: 4
+  path: destruction
+  combatType: quantum
+  materials:
+    ascension: id:nail-of-the-ape
+    skills: group:lcs005
+    skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
+    common: group:com002
