@@ -422,6 +422,8 @@ characterNames:
   huohuo: Huohuo
   argenti: Argenti
   hanya: Hanya
+  ruan-mei: Ruan Mei
+  xueyi: Xueyi
 
 materialCategories:
   exp: EXP Materials
@@ -497,6 +499,7 @@ materialNames:
   nail-of-the-ape: Nail of the Ape
   searing-steel-blade: Searing Steel Blade
   netherworld-token: Netherworld Token
+  past-evils-of-the-borehole-planet-disaster: Past Evils of the Borehole Planet Disaster
 
 skillTitles:
   trailblazer:
@@ -695,6 +698,16 @@ skillTitles:
     skill: Samsara, Locked
     ultimate: Ten-Lords' Decree, All Shall Obey
     talent: Sanction
+  ruan-mei:
+    basicAttack: Threading Fragrance
+    skill: String Sings Slow Swirls
+    ultimate: Petals to Stream, Repose in Dream
+    talent: Somatotypical Helix
+  xueyi:
+    basicAttack: Mara-Sunder Awl
+    skill: Iniquity Obliteration
+    ultimate: Divine Castigation
+    talent: Karmic Perpetuation
 
 lightConeNames:
   arrows: Arrows
@@ -778,6 +791,7 @@ lightConeNames:
   hey-over-here: Hey, Over Here
   night-of-fright: Night of Fright
   an-instant-before-a-gaze: An Instant Before A Gaze
+  past-self-in-mirror: Past Self in Mirror
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -999,6 +1013,14 @@ lightConeSkillDescriptions:
     Increases the wearer's CRIT DMG by <36%>. When the wearer uses Ultimate,
     increases the wearer's Ultimate DMG based on their Max Energy. Each point of
     Energy increases the Ultimate DMG by <0.36%>, up to 180 points of Energy.
+  past-self-in-mirror: >-
+    Increases the wearer's Break Effect by <60%>. When the wearer uses their
+    Ultimate, increases all allies' DMG by <24%>, lasting for 3 turn(s). Should
+    the wearer's Break Effect exceed or equal 150%, 1 Skill Point will be
+    recovered.
+
+    At the start of each wave, all allies regenerate <10> Energy immediately.
+    Effects of the same type cannot stack.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

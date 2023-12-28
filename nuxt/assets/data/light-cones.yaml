@@ -646,3 +646,11 @@
   materials:
     primary: group:lcs003
     common: group:com002
+- id: past-self-in-mirror
+  yomi: カガミノナカノワタシ
+  $nameJA: 鏡の中の私
+  path: harmony
+  rarity: 5
+  materials:
+    primary: group:lcs006
+    common: group:com005
