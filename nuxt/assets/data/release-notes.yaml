@@ -1,5 +1,14 @@
 # コピー用改行
 
+- date: 2023/12/28
+  funcVersion: 1.2.4
+  dataVersion: 1.6.0
+  isMajor: false
+  content: |
+    ### データ追加
+    - キャラクター「ルアン・メェイ」「雪衣」
+    - 光円錐「鏡の中の私」
+
 - date: 2023/12/07
   funcVersion: 1.2.4
   dataVersion: 1.5.1
