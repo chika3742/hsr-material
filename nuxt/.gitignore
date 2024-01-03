@@ -10,3 +10,4 @@ dist
 types/generated
 public/sw-dev.js
 public/workbox-*.js
+.wrangler

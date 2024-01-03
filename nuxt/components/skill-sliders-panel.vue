@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import {computed, getMaterialIdFromIngredient, levelIngredientsToSliderTicks, ref} from "#imports"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import {PurposeType} from "~/types/strings"
 import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
@@ -19,6 +18,8 @@ const props = defineProps<{
   variant: Path | null
   materialDefs: CharacterMaterialDefinitions
 }>()
+
+const config = useConfigStore()
 
 const skillI18nKeyBase = computed(() => `skillTitles.${props.characterId + (props.variant ? `.${props.variant}` : "")}`)
 
@@ -49,6 +50,8 @@ const ranges = ref(sliders.map((e) => {
 }))
 const checkedList = ref(sliders.map(() => true))
 const setInitialRangeBasedOnBookmarks = async() => {
+  const checkedListTmp = sliders.map(() => false)
+
   for (let index = 0; index < sliders.length; index++) {
     const slider = sliders[index]
 
@@ -59,24 +62,33 @@ const setInitialRangeBasedOnBookmarks = async() => {
       slider.type,
     )
 
-    if (bookmarks.length === 0) {
-      checkedList.value[index] = false
-      continue
-    }
-
-    const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-    const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-
     const sliderTicks = levelIngredientsToSliderTicks(slider.levelIngredients)
 
-    ranges.value[index] = [sliderTicks[sliderTicks.indexOf(min) - 1], max]
+    if (bookmarks.length !== 0) {
+      checkedListTmp[index] = true
+
+      const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+      const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+
+      ranges.value[index] = [sliderTicks[sliderTicks.indexOf(min) - 1], max]
+    } else {
+      // restore minimum value from persist store (game data sync)
+      const characterId = toCharacterIdWithVariant(props.characterId, props.variant)
+      ranges.value[index] =
+        [config.characterLevels[characterId]?.[slider.type] ?? sliderTicks[0], sliderTicks.slice(-1)[0]]
+    }
   }
 
-  if (checkedList.value.every(e => !e)) {
+  if (checkedListTmp.every(e => !e)) {
     checkedList.value = sliders.map(() => true)
+  } else {
+    checkedList.value = checkedListTmp
   }
 }
 onMounted(() => {
+  void setInitialRangeBasedOnBookmarks()
+})
+watch(toRefs(props).variant, () => {
   void setInitialRangeBasedOnBookmarks()
 })
 
@@ -105,7 +117,7 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
 <template>
   <v-expansion-panel :title="title">
     <v-expansion-panel-text eager>
-      <div class="d-flex flex-column sliders-container" style="gap: 8px">
+      <div class="d-flex flex-column sliders-container mx-n4 mx-sm-0">
         <section v-for="(item, i) in sliders" :key="i">
           <v-row align="center" no-gutters>
             <v-checkbox-btn v-model="checkedList[i]" class="flex-grow-0" />
@@ -121,7 +133,7 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
               :slider-ticks="levelIngredientsToSliderTicks(item.levelIngredients)"
             />
           </v-expand-transition>
-          <v-divider />
+          <v-divider class="my-2" />
         </section>
 
         <MaterialItems :items="ingredients" :purpose-types="sliders.map(e => e.type)" />

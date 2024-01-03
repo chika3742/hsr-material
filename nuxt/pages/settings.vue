@@ -9,6 +9,9 @@ definePageMeta({
 })
 
 const config = useConfigStore()
+const dialog = useDialog()
+const i18n = useI18n()
+const snackbar = useSnackbar()
 
 const range = (start: number, end: number) => Array.from({length: end - start + 1}, (_, i) => start + i)
 
@@ -26,13 +29,24 @@ const getFirstMaterialId = (entry: typeof dropRates[number], rarity: number) => 
 const syncFirestore = () => {
   void FirestoreProvider.instance?.sendLocalData()
 }
+
+const clearCharacterLevels = () => {
+  dialog.show(
+    tx(i18n, "settingsPage.others"),
+    tx(i18n, "settingsPage.clearCharacterLevelsDesc"),
+    () => {
+      config.characterLevels = {}
+      snackbar.show(tx(i18n, "settingsPage.clearCharacterLevelsSuccess"))
+    },
+  )
+}
 </script>
 
 <template>
   <div class="doc-container">
     <section>
       <h2>{{ tx("settingsPage.bookmarkDisplay") }}</h2>
-      <v-list>
+      <v-list rounded elevation="2">
         <SwitchListItem
           v-model="config.showFarmingCount"
           :title="tx('settingsPage.showFarmingCount')"
@@ -96,6 +110,13 @@ const syncFirestore = () => {
           {{ tx("settingsPage.dataSource") }}2
         </a>
       </p>
+    </section>
+
+    <section>
+      <h2>{{ tx("settingsPage.others") }}</h2>
+      <v-list class="mt-2" elevation="2" rounded>
+        <v-list-item :title="tx('settingsPage.clearCharacterLevels')" @click="clearCharacterLevels" />
+      </v-list>
     </section>
   </div>
 </template>
