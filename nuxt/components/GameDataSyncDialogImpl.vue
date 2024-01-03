@@ -27,10 +27,19 @@ const showcaseUid = ref("")
 const showcaseUser = ref<UserInfoResponse>()
 const loadingShowcaseUser = ref(false)
 const getters: DataSyncMapGetters = {
-  getCharacterId: (characterName: string) =>
-    characters.find(e => e.$nameJA === characterName)?.id ?? "",
-  getCharacterImage: (characterId: string) =>
-    getCharacterImage(characterId, "small"),
+  getCharacterId: (character: ShowcaseCharacter) => {
+    if (character.nameJP === "開拓者") {
+      const variant = characters.find(e => e.id === "trailblazer")!.variants!
+        .find(e => e.combatType === character.variant)
+      if (!variant) { return "" }
+
+      return toCharacterIdWithVariant("trailblazer", variant.path)
+    } else {
+      return characters.find(e => e.$nameJA === character.nameJP)?.id ?? ""
+    }
+  },
+  getCharacterImage: (character: ShowcaseCharacter) =>
+    getCharacterImage(characters.find(e => e.$nameJA === character.nameJP)?.id ?? "", "small"),
   getEquipmentId: (lightConeName: string) =>
     lightCones.find(e => e.$nameJA === lightConeName)?.id ?? "",
   getEquipmentImage: (lightConeId: string) => getLightConeImage(lightConeId),
