@@ -90,6 +90,8 @@
             </v-card>
           </v-dialog>
         </client-only>
+
+        <GameDataSyncDialogImpl v-model="showGameDataSyncDialog" />
       </v-main>
 
       <v-fade-transition>
@@ -130,6 +132,13 @@ const drawerItems: DrawerItemOrDivider[] = [
   {
     icon: "mdi-bookmark-multiple",
     to: "/bookmarks",
+  },
+  {
+    icon: "mdi-import",
+    title: "gameDataSync",
+    onClick() {
+      showGameDataSyncDialog.value = true
+    },
   },
   "---" as const,
   {
@@ -182,6 +191,7 @@ const isDrawerOpenOnMobile = ref(false)
 const mounted = ref(false)
 const isLoadingPage = ref(false)
 const showSearchDialog = ref(false)
+const showGameDataSyncDialog = ref(false)
 
 const title = computed(() => getPageTitle(router.currentRoute.value.fullPath, router, i18n))
 

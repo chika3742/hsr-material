@@ -31,6 +31,9 @@ common:
     talent: Talent
   updated: Updated to {version}.
 
+gameSpecific:
+  showcaseTitle: Support Character" or "Starfaring Companions
+
 errors:
   404: Page not found.
   500: An error occurred during rendering.
@@ -68,6 +71,7 @@ pageTitles:
   settings: Settings
 
 navDrawer:
+  gameDataSync: Game Data Sync
   kofi: Buy me a coffee
 
 bookmark:
@@ -80,6 +84,12 @@ bookmark:
   noBookmarks: No bookmarks. Let's find it in the menu in the upper left corner!
   completeLeveling: Complete Leveling
   completeLevelingDesc: Removes all bookmarks above this.
+
+gameDataSync:
+  invalidUidLength: UID must be 9 digits.
+  fetchError: Failed to fetch the player data.
+  importSuccess: Imported.
+  importError: Failed to import.
 
 charactersPage:
   possessionStatus: Possession Status
@@ -320,6 +330,10 @@ settingsPage:
     lightConeExp: Light Cone EXP
     credit: Credit
   dataSource: Data source
+  others: Others
+  clearCharacterLevels: Clear Leveling Statuses
+  clearCharacterLevelsDesc: Clears the leveling statuses synced using "@:{'navDrawer.gameDataSync'}".
+  clearCharacterLevelsSuccess: Cleared.
 
 paths:
   abundance: Abundance

@@ -1,7 +1,6 @@
 import {execSync} from "child_process"
 import {Readable} from "stream"
 import fs from "fs"
-import * as path from "path"
 import yaml from "@rollup/plugin-yaml"
 import {DateTime} from "luxon"
 import dsv from "@rollup/plugin-dsv"
@@ -123,10 +122,10 @@ export default defineNuxtConfig({
       generateLocType()
     },
     async "builder:watch"(_, _path) {
-      if (_path.startsWith(path.resolve("schemas/"))) {
+      if (_path.startsWith("schemas/")) {
         await generateSchemas()
       }
-      if (_path.startsWith(path.resolve("locales/"))) {
+      if (_path.startsWith("locales/")) {
         generateLocType()
       }
     },
@@ -191,5 +190,11 @@ export default defineNuxtConfig({
 
   piniaPersistedstate: {
     storage: "localStorage",
+  },
+
+  mhyMaterialComponents: {
+    i18nKeys: {
+      equipment: "lightConeNames",
+    },
   },
 })

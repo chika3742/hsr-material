@@ -22,7 +22,7 @@ export namespace Bookmark {
     materialId: string
     usage: Usage.Character
     quantity: number
-    hash: string
+    hash?: string
   }
 
   export interface LightConeMaterial {
@@ -33,7 +33,7 @@ export namespace Bookmark {
     materialId: string
     usage: Usage.LightCone
     quantity: number
-    hash: string
+    hash?: string
   }
 
   export interface Exp {
@@ -44,7 +44,7 @@ export namespace Bookmark {
     usage: Usage.Exp
     exp: number
     selectedItem: string
-    hash: string
+    hash?: string
   }
 
   export interface RelicSet {
