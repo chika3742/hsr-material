@@ -118,5 +118,9 @@ const importGameData = async() => {
     @get-data="getShowcaseCharacters"
     @import="importGameData"
     @update:model-value="$emit('update:modelValue', $event)"
-  />
+  >
+    <template #help>
+      <GameDataSyncHelp />
+    </template>
+  </GameDataSyncDialog>
 </template>
