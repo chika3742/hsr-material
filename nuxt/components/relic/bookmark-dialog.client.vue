@@ -196,7 +196,7 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
     @update:model-value="$emit('update:modelValue', $event)"
   >
     <v-card
-      v-safe-area
+      v-safe-area="{top: true, right: true, bottom: true, left: true}"
       :title="relicSets ? tx('relicDetailsPage.bookmarkRelicSet') : tx('relicDetailsPage.bookmarkRelicPiece')"
     >
       <template #text>

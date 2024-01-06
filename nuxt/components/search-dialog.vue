@@ -118,7 +118,7 @@ const urlToRouteLocation = (url: string): RawLocation => {
     height="100%"
   >
     <v-card height="100%">
-      <div v-safe-area="{bottom: false}" class="h-100 d-flex flex-column">
+      <div v-safe-area="{top: true, right: true, left: true}" class="h-100 d-flex flex-column">
         <v-row class="flex-grow-0 mx-4 mt-4" no-gutters style="gap: 8px">
           <v-text-field
             ref="textField"
