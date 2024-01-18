@@ -731,10 +731,10 @@ skillTitles:
     ultimate: 身を貫く天罰
     talent: 十王の聖裁、業報は常に在り
   dr-ratio:
-    basicAttack: "{RUBY_B#ちしき}知識{RUBY_E#}は{RUBY_B#ちから}力{RUBY_E#}なり"
-    skill: "{RUBY_B#さんばじゅつ}産婆術{RUBY_E#}"
-    ultimate: "{RUBY_B#さんだんかい}三段階{RUBY_E#}のパラドックス"
-    talent: "{RUBY_B#われおも}我思{RUBY_E#}う、{RUBY_B#ゆえ}故{RUBY_E#}に{RUBY_B#われ}我{RUBY_E#}あり"
+    basicAttack: "知識は力なり"
+    skill: "産婆術"
+    ultimate: "三段階のパラドックス"
+    talent: "我思う、故に我あり"
 
 lightConeNames:
   arrows: 矢じり
