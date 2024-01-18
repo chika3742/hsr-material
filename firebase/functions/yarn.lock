@@ -1888,8 +1888,8 @@ __metadata:
   linkType: hard
 
 "firebase-functions@npm:^4.4.1":
-  version: 4.5.0
-  resolution: "firebase-functions@npm:4.5.0"
+  version: 4.6.0
+  resolution: "firebase-functions@npm:4.6.0"
   dependencies:
     "@types/cors": "npm:^2.8.5"
     "@types/express": "npm:4.17.3"
@@ -1898,10 +1898,10 @@ __metadata:
     node-fetch: "npm:^2.6.7"
     protobufjs: "npm:^7.2.2"
   peerDependencies:
-    firebase-admin: ^10.0.0 || ^11.0.0
+    firebase-admin: ^10.0.0 || ^11.0.0 || ^12.0.0
   bin:
     firebase-functions: lib/bin/firebase-functions.js
-  checksum: e84cf6b3152caa95acb8cb08351db341c1488cde4b74f20cba7a12fb463c00b6565e02cda4fd2c22ca427c817686499009023312a8ab265cdf6a76df346c8c44
+  checksum: a51dec932d551e90c39aa642037927ddeee727cdab545fcbf3dc15c5086e9ac9e0cf9f32ba251d0c76a830e9537e77e47fa2d6e2d58d153b42e893ef8944151b
   languageName: node
   linkType: hard
 

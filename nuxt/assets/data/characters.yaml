@@ -480,3 +480,14 @@
     skills: group:lcs005
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com002
+- id: dr-ratio
+  $nameJA: Dr.レイシオ
+  yomi: ドクターレイシオ
+  rarity: 5
+  path: the_hunt
+  combatType: imaginary
+  materials:
+    ascension: id:suppressing-edict
+    skills: group:lcs002
+    skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
+    common: group:com001
