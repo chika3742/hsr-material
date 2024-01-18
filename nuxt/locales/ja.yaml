@@ -445,6 +445,7 @@ characterNames:
   hanya: 寒鴉
   ruan-mei: ルアン・メェイ
   xueyi: 雪衣
+  dr-ratio: Dr.レイシオ
 
 materialCategories:
   exp: 経験値素材
@@ -729,6 +730,11 @@ skillTitles:
     skill: 諸悪摂伏
     ultimate: 身を貫く天罰
     talent: 十王の聖裁、業報は常に在り
+  dr-ratio:
+    basicAttack: "{RUBY_B#ちしき}知識{RUBY_E#}は{RUBY_B#ちから}力{RUBY_E#}なり"
+    skill: "{RUBY_B#さんばじゅつ}産婆術{RUBY_E#}"
+    ultimate: "{RUBY_B#さんだんかい}三段階{RUBY_E#}のパラドックス"
+    talent: "{RUBY_B#われおも}我思{RUBY_E#}う、{RUBY_B#ゆえ}故{RUBY_E#}に{RUBY_B#われ}我{RUBY_E#}あり"
 
 lightConeNames:
   arrows: 矢じり
@@ -813,6 +819,7 @@ lightConeNames:
   night-of-fright: 驚魂の夜
   an-instant-before-a-gaze: その一刻、目に焼き付けて
   past-self-in-mirror: 鏡の中の私
+  baptism-of-pure-thought: 純粋なる思惟の洗礼
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -915,6 +922,8 @@ lightConeSkillDescriptions:
     装備キャラの撃破特効+<60%>。装備キャラが必殺技を発動した後、味方全体の与ダメージ+<24%>、3ターン継続。また、装備キャラの撃破特効が150%以上の場合、SPを1回復。
 
     各ウェーブ開始時、味方全体のEPを<10>回復する。同系統のスキルは重ね掛け不可。
+  baptism-of-pure-thought: >-
+    装備キャラの会心ダメージ+<20%>。敵にあるデバフ1つにつき、装備キャラがその敵に与える会心ダメージ+<8%>、最大で3層累積できる。必殺技で敵を攻撃する時、装備キャラは「論弁」効果を獲得し、与ダメージ+<36%>、追加攻撃が敵の防御力を<24%>無視する、この効果は2ターン継続する。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

@@ -654,3 +654,11 @@
   materials:
     primary: group:lcs006
     common: group:com005
+- id: baptism-of-pure-thought
+  yomi: ジュンスイナルシユイノセンレイ
+  $nameJA: 純粋なる思惟の洗礼
+  path: the_hunt
+  rarity: 5
+  materials:
+    primary: group:lcs002
+    common: group:com001
