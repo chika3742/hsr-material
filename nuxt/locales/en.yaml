@@ -439,6 +439,8 @@ characterNames:
   ruan-mei: Ruan Mei
   xueyi: Xueyi
   dr-ratio: Dr. Ratio
+  black-swan: Black Swan
+  misha: Misha
 
 materialCategories:
   exp: EXP Materials
@@ -515,6 +517,22 @@ materialNames:
   searing-steel-blade: Searing Steel Blade
   netherworld-token: Netherworld Token
   past-evils-of-the-borehole-planet-disaster: Past Evils of the Borehole Planet Disaster
+  fiery-spirit: Fiery Spirit
+  borisin-teeth: Borisin Teeth
+  dream-collection-component: Dream Collection Component
+  dream-fridge: Dream Fridge
+  lupitoxin-sawteeth: Lupitoxin Sawteeth
+  moon-madness-fang: Moon Madness Fang
+  dream-flow-valve: Dream Flow Valve
+  dream-making-engine: Dream Making Engine
+  starfire-essence: Starfire Essence
+  heaven-incinerator: Heaven Incinerator
+  firmament-note: Firmament Note
+  celestial-section: Celestial Section
+  heavenly-melody: Heavenly Melody
+  tatters-of-thought: Tatters of Thought
+  fragments-of-impression: Fragments of Impression
+  shards-of-desires: Shards of Desires
 
 skillTitles:
   trailblazer:
@@ -728,6 +746,16 @@ skillTitles:
     skill: Intellectual Midwifery
     ultimate: Syllogistic Paradox
     talent: Cogito, Ergo Sum
+  black-swan:
+    basicAttack: Percipience, Silent Dawn
+    skill: Decadence, False Twilight
+    ultimate: Bliss of Otherworld's Embrace
+    talent: Loom of Fate's Caprice
+  misha:
+    basicAttack: E—Excuse Me, Please!
+    skill: R—Room Service
+    ultimate: G—Gonna Be Late!
+    talent: Horological Escapement
 
 lightConeNames:
   arrows: Arrows
@@ -813,6 +841,15 @@ lightConeNames:
   an-instant-before-a-gaze: An Instant Before A Gaze
   past-self-in-mirror: Past Self in Mirror
   baptism-of-pure-thought: Baptism of Pure Thought
+  indelible-promise: Indelible Promise
+  reforged-remembrance: Reforged Remembrance
+  what-is-real: What Is Real?
+  dreamville-adventure: Dreamville Adventure
+  final-victor: Final Victor
+  flames-afar: Flames Afar
+  destinys-threads-forewoven: Destiny's Threads Forewoven
+  the-day-the-cosmos-fell: The Day The Cosmos Fell
+  its-showtime: It's Showtime
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1049,6 +1086,49 @@ lightConeSkillDescriptions:
     wearer receives the Disputation effect, which increases DMG dealt by <36%>
     and enables their follow-up attacks to ignore <24%> of the target's DEF.
     This effect lasts for 2 turns.
+  indelible-promise: >-
+    Increases the wearer's Break Effect by <28%>. When the wearer uses their
+    Ultimate, increases CRIT Rate by <15%>, lasting for 2 turn(s).
+  reforged-remembrance: >-
+    Increases the wearer's Effect Hit Rate by <40%>. When the wearer deals DMG
+    to an enemy inflicted with Wind Shear, Burn, Shock, or Bleed, each
+    respectively grants 1 stack of Prophet, stacking up to 4 time(s). In a
+    single battle, only 1 stack of Prophet can be granted for each type of DoT.
+    Every stack of Prophet increases wearer's ATK by <5%> and enables the DoT
+    dealt to ignore <7.2%> of the target's DEF.
+  what-is-real: >-
+    Increases the wearer's Break Effect by <24%>. After using Basic ATK,
+    restores HP for the wearer by an amount equal to <2%> of Max HP plus 800.
+  dreamville-adventure: >-
+    After the wearer uses a certain type of ability such as Basic ATK, Skill, or
+    Ultimate, all allies gain Childishness, which increases allies' DMG for the
+    same type of ability as used by the wearer by <12%>. Childishness only takes
+    effect for the most recent type of ability the wearer used and cannot be
+    stacked.
+  final-victor: >-
+    Increases the wearer's ATK by <12%>. When the wearer lands a CRIT hit on
+    enemies, gains a stack of Good Fortune, stacking up to 4 time(s). Every
+    stack of Good Fortune the wearer has will increase their CRIT DMG by <8%>.
+    Good Fortune will be removed at the end of the wearer's turn.
+  flames-afar: >-
+    When the cumulative HP loss of the wearer during a single attack exceeds 25%
+    of their Max HP, or if the amount of their own HP they consume at one time
+    is greater than 25% of their Max HP, immediately heals the wearer for 15% of
+    their Max HP, and at the same time, increases the DMG they deal by <25%> for
+    2 turn(s). This effect can only be triggered once every 3 turn(s).
+  destinys-threads-forewoven: >-
+    Increases the wearer's Effect RES by <12%>. For every 100 of DEF the wearer
+    has, increases the wearer's DMG dealt by <0.8%>, up to a maximum DMG
+    increase of <32%>.
+  the-day-the-cosmos-fell: >-
+    Increases the wearer's ATK by <16%>. When the wearer uses an attack and at
+    least 2 attacked enemies have the corresponding Weakness, the wearer's CRIT
+    DMG increases by <20%> for 2 turn(s).
+  its-showtime: >-
+    When the wearer inflicts a debuff on an enemy, gains a stack of Trick. Every
+    stack of Trick increases the wearer's DMG dealt by <6%>, stacking up to 3
+    time(s). This effect lasts for 1 turn(s). When the wearer's Effect Hit Rate
+    is 80% or higher, increases ATK by <20%>.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
