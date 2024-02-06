@@ -446,6 +446,8 @@ characterNames:
   ruan-mei: ルアン・メェイ
   xueyi: 雪衣
   dr-ratio: Dr.レイシオ
+  black-swan: ブラックスワン
+  misha: ミーシャ
 
 materialCategories:
   exp: 経験値素材
@@ -522,6 +524,22 @@ materialNames:
   searing-steel-blade: 灼熱の鋼刃
   netherworld-token: 幽府通令
   past-evils-of-the-borehole-planet-disaster: 星を蝕む古の悪
+  fiery-spirit: 熾烈の霊
+  borisin-teeth: 歩離の犬牙
+  dream-collection-component: ドリームコレクションパーツ
+  dream-fridge: 夢の冷蔵庫
+  lupitoxin-sawteeth: 狼毒の牙
+  moon-madness-fang: 月狂いの凶牙
+  dream-flow-valve: ドリームフローバルブ
+  dream-making-engine: ドリームメイキングモーター
+  starfire-essence: 星火の精
+  heaven-incinerator: 焼天の魔
+  firmament-note: 雲端の音符
+  celestial-section: 空際の小節
+  heavenly-melody: 天外の楽章
+  tatters-of-thought: 思考の粉末
+  fragments-of-impression: 印象の残晶
+  shards-of-desires: 砕けた欲望の鏡
 
 skillTitles:
   trailblazer:
@@ -731,10 +749,20 @@ skillTitles:
     ultimate: 身を貫く天罰
     talent: 十王の聖裁、業報は常に在り
   dr-ratio:
-    basicAttack: "知識は力なり"
-    skill: "産婆術"
-    ultimate: "三段階のパラドックス"
-    talent: "我思う、故に我あり"
+    basicAttack: 知識は力なり
+    skill: 産婆術
+    ultimate: 三段階のパラドックス
+    talent: 我思う、故に我あり
+  black-swan:
+    basicAttack: "洞察、緘黙の黎明"
+    skill: "失墜、偽神の黄昏"
+    ultimate: "彼方の抱擁に酔いしれて"
+    talent: "果てなき運命の機織り"
+  misha:
+    basicAttack: ど…退いてくださーい！
+    skill: ル…ルームサービスです！
+    ultimate: ち…遅刻する！
+    talent: "脱進機"
 
 lightConeNames:
   arrows: 矢じり
@@ -820,6 +848,15 @@ lightConeNames:
   an-instant-before-a-gaze: その一刻、目に焼き付けて
   past-self-in-mirror: 鏡の中の私
   baptism-of-pure-thought: 純粋なる思惟の洗礼
+  indelible-promise: "心に刻まれた約束"
+  reforged-remembrance: "時間の記憶を再構築して"
+  what-is-real: "何が真か"
+  dreamville-adventure: ドリームタウンの大冒険
+  final-victor: "最後の勝者"
+  flames-afar: "烈火の彼方"
+  destinys-threads-forewoven: "運命を紡ぐ糸"
+  the-day-the-cosmos-fell: "銀河が陥落した日"
+  its-showtime: ショーの始まり
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -924,6 +961,21 @@ lightConeSkillDescriptions:
     各ウェーブ開始時、味方全体のEPを<10>回復する。同系統のスキルは重ね掛け不可。
   baptism-of-pure-thought: >-
     装備キャラの会心ダメージ+<20%>。敵にあるデバフ1つにつき、装備キャラがその敵に与える会心ダメージ+<8%>、最大で3層累積できる。必殺技で敵を攻撃する時、装備キャラは「論弁」効果を獲得し、与ダメージ+<36%>、追加攻撃が敵の防御力を<24%>無視する、この効果は2ターン継続する。
+  indelible-promise: 装備キャラの撃破特効+<28%>。装備キャラが必殺技を発動する時、会心率+<15%>、2ターン継続。
+  reforged-remembrance: >-
+    装備キャラの効果命中+<40%>。装備キャラが風化、燃焼、感電、または裂創状態の敵にダメージを与える時、それぞれ「予見」を1層獲得する、最大で4層累積できる。一度の戦闘において、各種類の持続ダメージ系デバフがそれぞれ累積できる「予見」は1層のみ。「予見」1層につき、装備キャラの攻撃力+<5%>、与える持続ダメージが敵の防御力を<7.2%>無視する。
+  what-is-real: 装備キャラの撃破特効+<24%>。通常攻撃を行った後、装備キャラのHPを最大HP<2%>+800回復する。
+  dreamville-adventure: >-
+    装備キャラが通常攻撃、戦闘スキル、必殺技のうち、任意のタイプのスキルを発動した後、味方全体に「童心」を付与する。「童心」を持つ味方の、対応するタイプのスキルの与ダメージ+<12%>。「童心」は装備キャラが最後に発動したタイプのスキルにのみ効果を発揮する。この効果は累積できない。
+  final-victor: >-
+    装備キャラの攻撃力+<12%>。装備キャラが敵に攻撃を行い、会心が発生した後、「好運」を1層獲得する、最大で4層累積できる。「好運」1層につき、装備キャラの会心ダメージ+<8%>。「好運」は装備キャラのターン終了時に解除される。
+  flames-afar: >-
+    装備キャラが1回の攻撃で最大HP25%分を超えるHPを失う、または1回で最大HP25%分を超えるHPを消費した後、装備キャラの最大HP15%分のHPを回復し、与ダメージ+<25%>、2ターン継続。この効果は3ターンごとに1回発動できる。
+  destinys-threads-forewoven: 装備キャラの効果抵抗+<12%>。装備キャラの防御力100につき、与ダメージ+<0.8%>、最大で与ダメージ+<32%>。
+  the-day-the-cosmos-fell: >-
+    装備キャラの攻撃力+<16%>。装備キャラが攻撃を行った後、攻撃を受けた敵の内、攻撃の属性と同じ弱点を持つ敵が2体以上の場合、装備キャラの会心ダメージ+<20%>、2ターン継続。
+  its-showtime: >-
+    装備キャラが敵にデバフを付与した後、「トリック」を1層獲得する。「トリック」1層につき、装備キャラの与ダメージ+<6%>、1ターン継続、最大で3層累積できる。装備キャラの効果命中が80%以上の時、攻撃力+<20%>。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

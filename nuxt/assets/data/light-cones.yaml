@@ -662,3 +662,75 @@
   materials:
     primary: group:lcs002
     common: group:com001
+- id: indelible-promise
+  yomi: ココロニキザマレタヤクソク
+  $nameJA: '心に刻まれた約束'
+  path: destruction
+  rarity: 4
+  materials:
+    primary: group:lcs009
+    common: group:com007
+- id: reforged-remembrance
+  yomi: トキノキオクヲサイコウチクシテ
+  $nameJA: '時間の記憶を再構築して'
+  path: nihility
+  rarity: 5
+  materials:
+    primary: group:lcs008
+    common: group:com002
+- id: what-is-real
+  yomi: ナニガマコトカ
+  $nameJA: '何が真か'
+  path: abundance
+  rarity: 4
+  materials:
+    primary: group:lcs007
+    common: group:com007
+- id: dreamville-adventure
+  yomi: ドリームタウンノダイボウケン
+  $nameJA: ドリームタウンの大冒険
+  path: harmony
+  rarity: 4
+  materials:
+    primary: group:lcs010
+    common: group:com007
+- id: final-victor
+  yomi: サイゴノショウシャ
+  $nameJA: '最後の勝者'
+  path: the_hunt
+  rarity: 4
+  materials:
+    primary: group:lcs002
+    common: group:com008
+- id: flames-afar
+  yomi: レッカノカナタ
+  $nameJA: '烈火の彼方'
+  path: destruction
+  rarity: 4
+  materials:
+    primary: group:lcs009
+    common: group:com007
+- id: destinys-threads-forewoven
+  yomi: ウンメイヲツムグイト
+  $nameJA: '運命を紡ぐ糸'
+  path: preservation
+  rarity: 4
+  materials:
+    primary: group:lcs001
+    common: group:com008
+- id: the-day-the-cosmos-fell
+  yomi: ギンガガカンラクシタヒ
+  $nameJA: '銀河が陥落した日'
+  path: erudition
+  rarity: 4
+  materials:
+    primary: group:lcs003
+    common: group:com007
+- id: its-showtime
+  yomi: ショーノハジマリ
+  $nameJA: ショーの始まり
+  path: nihility
+  rarity: 4
+  materials:
+    primary: group:lcs008
+    common: group:com002
