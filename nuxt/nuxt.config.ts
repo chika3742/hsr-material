@@ -1,3 +1,4 @@
+import { relative, resolve } from 'node:path'
 import {execSync} from "child_process"
 import {Readable} from "stream"
 import fs from "fs"
@@ -123,6 +124,7 @@ export default defineNuxtConfig({
       generateLocType()
     },
     async "builder:watch"(_, _path) {
+      _path = relative(nuxt.options.srcDir, resolve(nuxt.options.srcDir, _path))
       if (_path.startsWith("schemas/")) {
         await generateSchemas()
       }
