@@ -72,7 +72,7 @@ export default defineNuxtConfig({
         processRow(row) {
           const result: Record<string, unknown> = {}
           for (const key of Object.keys(row)) {
-            const value = row[key]!
+            const value = row[key]
             if (value !== "") {
               result[key] = isNaN(+value) ? value : +value
             }
@@ -154,7 +154,7 @@ export default defineNuxtConfig({
         indexName: algoliaConfig.indexName,
       },
       pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
-      builtAt: DateTime.now().toISO()!,
+      builtAt: DateTime.now().toISO(),
     },
   },
 

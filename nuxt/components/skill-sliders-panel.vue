@@ -101,7 +101,7 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
       .map(f => f.ingredients.map<BookmarkableMaterial>(g => ({
         type: "character_material",
         characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-        materialId: getMaterialIdFromIngredient(g, props.materialDefs)!,
+        materialId: getMaterialIdFromIngredient(g, props.materialDefs),
         quantity: g.quantity!.rarities[characterRarity.toString()],
         usage: {
           type: "character",
