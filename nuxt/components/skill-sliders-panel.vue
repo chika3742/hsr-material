@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import {PurposeType} from "~/types/strings"
-import {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
-import {LevelIngredients} from "~/types/level-ingredients"
+import type {PurposeType} from "~/types/strings"
+import type {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
+import type {LevelIngredients} from "~/types/level-ingredients"
 import characters from "~/assets/data/characters.yaml"
 import {db} from "~/libs/db/providers"
-import {BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
+import type {BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
 
 interface Slider {
   type: PurposeType
@@ -101,7 +101,7 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
       .map(f => f.ingredients.map<BookmarkableMaterial>(g => ({
         type: "character_material",
         characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-        materialId: getMaterialIdFromIngredient(g, props.materialDefs)!,
+        materialId: getMaterialIdFromIngredient(g, props.materialDefs),
         quantity: g.quantity!.rarities[characterRarity.toString()],
         usage: {
           type: "character",

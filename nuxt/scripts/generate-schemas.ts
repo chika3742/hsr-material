@@ -3,7 +3,7 @@ import path from "path"
 import {compile} from "json-schema-to-typescript"
 import {parse} from "yaml"
 import {pascalCase} from "scule"
-import {JSONSchema4} from "json-schema"
+import type {JSONSchema4} from "json-schema"
 
 export const generateSchemas = async() => {
   const inputDir = "./schemas"

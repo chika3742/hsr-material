@@ -1,8 +1,10 @@
-import {doc, DocumentReference, Firestore, getDoc, onSnapshot, setDoc, Timestamp} from "@firebase/firestore"
-import {User} from "@firebase/auth"
-import {configStoreToSyncedConfig, UserDocument} from "~/types/firestore/user-document"
+import type {DocumentReference, Firestore} from "@firebase/firestore"
+import {doc, getDoc, onSnapshot, setDoc, Timestamp} from "@firebase/firestore"
+import type {User} from "@firebase/auth"
+import type {UserDocument} from "~/types/firestore/user-document"
+import {configStoreToSyncedConfig} from "~/types/firestore/user-document"
 import {userDocumentConverter} from "~/utils/user-document-converter"
-import {MySubClassedDexie} from "~/dexie/db"
+import type {MySubClassedDexie} from "~/dexie/db"
 import {DataSyncError} from "~/libs/data-sync-error"
 
 export class FirestoreProvider {

@@ -1,4 +1,4 @@
-import {LevelIngredients} from "~/types/level-ingredients"
+import type {LevelIngredients} from "~/types/level-ingredients"
 
 /**
  * Converts {@link LevelIngredients} array to slider ticks.

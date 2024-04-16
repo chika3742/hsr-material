@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
-import {CombatType, Path} from "~/types/generated/characters.g"
+import type {CombatType, Path} from "~/types/generated/characters.g"
 import {reactive} from "#imports"
 
 definePageMeta({

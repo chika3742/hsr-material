@@ -17,7 +17,7 @@ export const useConfigStore = defineStore("config", {
     /**
      * Time the user set the Trailblaze Point count.
      */
-    tpBaseTime: DateTime.now().toISO()!,
+    tpBaseTime: DateTime.now().toISO(),
     /**
      * Whether to show the pity history in Warps Pity Counter.
      */

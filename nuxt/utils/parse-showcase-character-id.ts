@@ -1,5 +1,5 @@
 import characters from "~/assets/data/characters.yaml"
-import {CombatType, Path} from "~/types/generated/characters.g"
+import type {CombatType, Path} from "~/types/generated/characters.g"
 
 const trailblazerCombatTypeToPath = (combatType: string): Path => {
   switch (combatType as CombatType) {

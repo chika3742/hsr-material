@@ -1,4 +1,4 @@
-import {Table, Transaction} from "dexie"
+import type {Table, Transaction} from "dexie"
 import {_db} from "~/dexie/db"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 
