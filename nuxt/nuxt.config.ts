@@ -1,4 +1,4 @@
-import { relative, resolve } from 'node:path'
+import {relative, resolve} from "path"
 import {execSync} from "child_process"
 import {Readable} from "stream"
 import fs from "fs"
@@ -8,6 +8,7 @@ import dsv from "@rollup/plugin-dsv"
 import type {SitemapItemLoose} from "sitemap"
 import {EnumChangefreq, SitemapStream, streamToPromise} from "sitemap"
 import type {FirebaseOptions} from "@firebase/app"
+import {useNuxt} from "@nuxt/kit"
 import algoliaConfig from "./algolia.json"
 import {generateSchemas} from "./scripts/generate-schemas"
 import {generateLocType} from "./scripts/generate-loc-type"
@@ -124,6 +125,7 @@ export default defineNuxtConfig({
       generateLocType()
     },
     async "builder:watch"(_, _path) {
+      const nuxt = useNuxt()
       _path = relative(nuxt.options.srcDir, resolve(nuxt.options.srcDir, _path))
       if (_path.startsWith("schemas/")) {
         await generateSchemas()
