@@ -521,8 +521,8 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
 - id: acheron
-  $nameJA: '{RUBY_B#よみ}黄泉{RUBY_E#}'
-  yomi: ''
+  $nameJA: 黄泉
+  yomi: ヨミ
   rarity: 5
   path: nihility
   combatType: lightning
@@ -533,7 +533,7 @@
     common: group:com007
 - id: aventurine
   $nameJA: アベンチュリン
-  yomi: ''
+  yomi: アベンチュリン
   rarity: 5
   path: preservation
   combatType: imaginary
@@ -544,7 +544,7 @@
     common: group:com008
 - id: gallagher
   $nameJA: ギャラガー
-  yomi: ''
+  yomi: ギャラガー
   rarity: 4
   path: abundance
   combatType: fire
@@ -555,7 +555,7 @@
     common: group:com007
 - id: robin
   $nameJA: ロビン
-  yomi: ''
+  yomi: ロビン
   rarity: 5
   path: harmony
   combatType: physical
