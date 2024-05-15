@@ -453,6 +453,7 @@ characterNames:
   aventurine: アベンチュリン
   gallagher: ギャラガー
   robin: ロビン
+  sparkle: 花火
 
 materialCategories:
   exp: 経験値素材
@@ -556,6 +557,7 @@ materialNames:
   meteoric-bullet: 隕鉄の弾丸
   destined-expiration: 定められた死因
   countertemporal-shot: 時に抗う一撃
+  dream-flamer: 夢を炙るトーチバーナー
 
 skillTitles:
   trailblazer:
@@ -804,6 +806,11 @@ skillTitles:
     skill: 飛翔のアリア
     ultimate: 千の音で、群星にフーガを
     talent: 調和の純正律
+  sparkle:
+    basicAttack: 独り芝居
+    skill: 夢を泳ぐ魚
+    ultimate: 一人千役
+    talent: 叙述トリック
 
 lightConeNames:
   arrows: 矢じり
