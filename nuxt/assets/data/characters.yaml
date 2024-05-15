@@ -520,6 +520,17 @@
     skills: group:lcs009
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
+- id: sparkle
+  $nameJA: 花火
+  yomi: ハナビ
+  rarity: 5
+  path: harmony
+  combatType: quantum
+  materials:
+    ascension: id:dream-flamer
+    skills: group:lcs010
+    skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
+    common: group:com008
 - id: acheron
   $nameJA: 黄泉
   yomi: ヨミ
@@ -564,14 +575,3 @@
     skills: group:lcs010
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
-- id: sparkle
-  $nameJA: 花火
-  yomi: ハナビ
-  rarity: 5
-  path: harmony
-  combatType: quantum
-  materials:
-    ascension: id:dream-flamer
-    skills: group:lcs010
-    skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
-    common: group:com008
