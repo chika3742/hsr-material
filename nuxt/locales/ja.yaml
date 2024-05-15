@@ -406,6 +406,7 @@ characterNames:
   trailblazer: 開拓者
   trailblazer_destruction: 開拓者 (壊滅)
   trailblazer_preservation: 開拓者 (存護)
+  trailblazer_harmony: 開拓者 (調和)
   march-7th: 三月なのか
   dan-heng: 丹恒
   himeko: 姫子
@@ -448,6 +449,10 @@ characterNames:
   dr-ratio: Dr.レイシオ
   black-swan: ブラックスワン
   misha: ミーシャ
+  acheron: 黄泉
+  aventurine: アベンチュリン
+  gallagher: ギャラガー
+  robin: ロビン
 
 materialCategories:
   exp: 経験値素材
@@ -540,6 +545,17 @@ materialNames:
   tatters-of-thought: 思考の粉末
   fragments-of-impression: 印象の残晶
   shards-of-desires: 砕けた欲望の鏡
+  scattered-stardust: 散らばった星の砂
+  crystal-meteorites: 流星プリズム
+  divine-amber: 聖なる琥珀
+  alien-tree-seed: 珍木の種
+  nourishing-honey: 育みの蜜
+  myriad-fruit: 森羅の果実
+  raging-heart: 憤怒の心
+  ipc-work-permit: スターピース社員証
+  meteoric-bullet: 隕鉄の弾丸
+  destined-expiration: 定められた死因
+  countertemporal-shot: 時に抗う一撃
 
 skillTitles:
   trailblazer:
@@ -553,6 +569,11 @@ skillTitles:
       skill: 不滅のアンバー
       ultimate: 陥陣無帰の炎槍
       talent: 建創者の失われし宝
+    harmony:
+      basicAttack: 揺らめく礼儀
+      skill: 間奏曲が降らす雨
+      ultimate: 賑やかなパレード
+      talent: エアリアルステップ
   march-7th:
     basicAttack: 極寒の弓矢
     skill: 可愛いは正義
@@ -754,15 +775,35 @@ skillTitles:
     ultimate: 三段階のパラドックス
     talent: 我思う、故に我あり
   black-swan:
-    basicAttack: "洞察、緘黙の黎明"
-    skill: "失墜、偽神の黄昏"
-    ultimate: "彼方の抱擁に酔いしれて"
-    talent: "果てなき運命の機織り"
+    basicAttack: 洞察、緘黙の黎明
+    skill: 失墜、偽神の黄昏
+    ultimate: 彼方の抱擁に酔いしれて
+    talent: 果てなき運命の機織り
   misha:
     basicAttack: ど…退いてくださーい！
     skill: ル…ルームサービスです！
     ultimate: ち…遅刻する！
-    talent: "脱進機"
+    talent: 脱進機
+  acheron:
+    basicAttack: 三途の枯木
+    skill: 八雷渡り
+    ultimate: 残夢染める繚乱の一太刀
+    talent: 紅葉に時雨、万里の空
+  aventurine:
+    basicAttack: ストレートべット
+    skill: 繁栄の基石
+    ultimate: ロード・オブ・ルーレット
+    talent: 銃口の右には…
+  gallagher:
+    basicAttack: 持ち込み料
+    skill: 特製ドリンク
+    ultimate: シャンパン・マナー
+    talent: 飲み比べ
+  robin:
+    basicAttack: 羽ばたくホワイトノイズ
+    skill: 飛翔のアリア
+    ultimate: 千の音で、群星にフーガを
+    talent: 調和の純正律
 
 lightConeNames:
   arrows: 矢じり
@@ -848,14 +889,14 @@ lightConeNames:
   an-instant-before-a-gaze: その一刻、目に焼き付けて
   past-self-in-mirror: 鏡の中の私
   baptism-of-pure-thought: 純粋なる思惟の洗礼
-  indelible-promise: "心に刻まれた約束"
-  reforged-remembrance: "時間の記憶を再構築して"
-  what-is-real: "何が真か"
+  indelible-promise: 心に刻まれた約束
+  reforged-remembrance: 時間の記憶を再構築して
+  what-is-real: 何が真か
   dreamville-adventure: ドリームタウンの大冒険
-  final-victor: "最後の勝者"
-  flames-afar: "烈火の彼方"
-  destinys-threads-forewoven: "運命を紡ぐ糸"
-  the-day-the-cosmos-fell: "銀河が陥落した日"
+  final-victor: 最後の勝者
+  flames-afar: 烈火の彼方
+  destinys-threads-forewoven: 運命を紡ぐ糸
+  the-day-the-cosmos-fell: 銀河が陥落した日
   its-showtime: ショーの始まり
 
 lightConeSkillDescriptions:

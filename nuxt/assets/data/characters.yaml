@@ -17,6 +17,13 @@
         ascension: id:enigmatic-ectostella
         skills: group:lcs001
         skillsAdvanced: id:destroyers-final-road
+    - path: harmony
+      combatType: imaginary
+      materials:
+        common: group:com001
+        ascension: id:enigmatic-ectostella
+        skills: group:lcs010
+        skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
 
 - id: march-7th
   $nameJA: 三月なのか
@@ -511,5 +518,49 @@
   materials:
     ascension: id:dream-fridge
     skills: group:lcs009
+    skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
+    common: group:com007
+- id: acheron
+  $nameJA: '{RUBY_B#よみ}黄泉{RUBY_E#}'
+  yomi: ''
+  rarity: 5
+  path: nihility
+  combatType: lightning
+  materials:
+    ascension: id:shape-shifters-lightning-staff
+    skills: group:lcs008
+    skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
+    common: group:com007
+- id: aventurine
+  $nameJA: アベンチュリン
+  yomi: ''
+  rarity: 5
+  path: preservation
+  combatType: imaginary
+  materials:
+    ascension: id:suppressing-edict
+    skills: group:lcs011
+    skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
+    common: group:com008
+- id: gallagher
+  $nameJA: ギャラガー
+  yomi: ''
+  rarity: 4
+  path: abundance
+  combatType: fire
+  materials:
+    ascension: id:raging-heart
+    skills: group:tree-seeds
+    skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
+    common: group:com007
+- id: robin
+  $nameJA: ロビン
+  yomi: ''
+  rarity: 5
+  path: harmony
+  combatType: physical
+  materials:
+    ascension: id:ipc-work-permit
+    skills: group:lcs010
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
