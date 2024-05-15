@@ -1,4 +1,4 @@
-import {Ingredient} from "~/types/generated/character-ingredients.g"
+import type {Ingredient} from "~/types/generated/character-ingredients.g"
 
 export interface LevelIngredients {
   level: number

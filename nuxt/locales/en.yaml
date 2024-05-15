@@ -425,6 +425,7 @@ characterNames:
   trailblazer: Trailblazer
   trailblazer_destruction: Trailblazer (Destruction)
   trailblazer_preservation: Trailblazer (Preservation)
+  trailblazer_harmony: Trailblazer (Harmony)
   blade: Blade
   luka: Luka
   dan-heng-imbibitor-lunae: Dan Heng・Imbibitor Lunae
@@ -441,6 +442,11 @@ characterNames:
   dr-ratio: Dr. Ratio
   black-swan: Black Swan
   misha: Misha
+  acheron: Acheron
+  aventurine: Aventurine
+  gallagher: Gallagher
+  robin: Robin
+  sparkle: Sparkle
 
 materialCategories:
   exp: EXP Materials
@@ -533,6 +539,18 @@ materialNames:
   tatters-of-thought: Tatters of Thought
   fragments-of-impression: Fragments of Impression
   shards-of-desires: Shards of Desires
+  scattered-stardust: Scattered Stardust
+  crystal-meteorites: Crystal Meteorites
+  divine-amber: Divine Amber
+  alien-tree-seed: Alien Tree Seed
+  nourishing-honey: Nourishing Honey
+  myriad-fruit: Myriad Fruit
+  raging-heart: Raging Heart
+  ipc-work-permit: IPC Work Permit
+  meteoric-bullet: Meteoric Bullet
+  destined-expiration: Destined Expiration
+  countertemporal-shot: Countertemporal Shot
+  dream-flamer: Dream Flamer
 
 skillTitles:
   trailblazer:
@@ -546,6 +564,11 @@ skillTitles:
       skill: Ever-Burning Amber
       ultimate: War-Flaming Lance
       talent: Treasure of the Architects
+    harmony:
+      basicAttack: Swing Dance Etiquette
+      skill: Halftime to Make It Rain
+      ultimate: All-Out Footlight Parade
+      talent: Full-on Aerial Dance
   march-7th:
     basicAttack: Frigid Cold Arrow
     skill: The Power of Cuteness
@@ -756,6 +779,31 @@ skillTitles:
     skill: R—Room Service
     ultimate: G—Gonna Be Late!
     talent: Horological Escapement
+  acheron:
+    basicAttack: Trilateral Wiltcross
+    skill: Octobolt Flash
+    ultimate: Slashed Dream Cries in Red
+    talent: Atop Rainleaf Hangs Oneness
+  aventurine:
+    basicAttack: Straight Bet
+    skill: Cornerstone Deluxe
+    ultimate: Roulette Shark
+    talent: Shot Loaded Right
+  gallagher:
+    basicAttack: Corkage Fee
+    skill: Special Brew
+    ultimate: Champagne Etiquette
+    talent: Tipsy Tussle
+  robin:
+    basicAttack: Wingflip White Noise
+    skill: Pinion's Aria
+    ultimate: Vox Harmonique, Opus Cosmique
+    talent: Tonal Resonance
+  sparkle:
+    basicAttack: Monodrama
+    skill: Dreamdiver
+    ultimate: The Hero with a Thousand Faces
+    talent: Red Herring
 
 lightConeNames:
   arrows: Arrows

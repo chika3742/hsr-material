@@ -1,12 +1,6 @@
 <script lang="ts" setup>
-import {
-  AuthProvider,
-  GoogleAuthProvider,
-  OAuthProvider,
-  reauthenticateWithPopup,
-  signInWithPopup,
-  User,
-} from "@firebase/auth"
+import type {AuthProvider, User} from "@firebase/auth"
+import {GoogleAuthProvider, OAuthProvider, reauthenticateWithPopup, signInWithPopup} from "@firebase/auth"
 import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
 import {_db} from "~/dexie/db"
 

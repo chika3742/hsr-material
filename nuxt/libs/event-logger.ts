@@ -1,5 +1,6 @@
-import {Analytics, logEvent} from "@firebase/analytics"
-import {Bookmarkable} from "~/types/bookmark/bookmarkables"
+import type {Analytics} from "@firebase/analytics"
+import {logEvent} from "@firebase/analytics"
+import type {Bookmarkable} from "~/types/bookmark/bookmarkables"
 
 export class EventLogger {
   constructor(public readonly analytics: Analytics) {

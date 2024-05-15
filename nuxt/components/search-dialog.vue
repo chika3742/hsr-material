@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import {RawLocation} from "@intlify/vue-router-bridge"
-import {AlgoliaRecord} from "~/types/algolia-record"
+import type {RawLocation} from "@intlify/vue-router-bridge"
+import type {AlgoliaRecord} from "~/types/algolia-record"
 
 const props = defineProps<{
   modelValue: boolean

@@ -1,11 +1,14 @@
+import {relative, resolve} from "path"
 import {execSync} from "child_process"
 import {Readable} from "stream"
 import fs from "fs"
 import yaml from "@rollup/plugin-yaml"
 import {DateTime} from "luxon"
 import dsv from "@rollup/plugin-dsv"
-import {EnumChangefreq, SitemapItemLoose, SitemapStream, streamToPromise} from "sitemap"
-import {FirebaseOptions} from "@firebase/app"
+import type {SitemapItemLoose} from "sitemap"
+import {EnumChangefreq, SitemapStream, streamToPromise} from "sitemap"
+import type {FirebaseOptions} from "@firebase/app"
+import {useNuxt} from "@nuxt/kit"
 import algoliaConfig from "./algolia.json"
 import {generateSchemas} from "./scripts/generate-schemas"
 import {generateLocType} from "./scripts/generate-loc-type"
@@ -71,7 +74,7 @@ export default defineNuxtConfig({
         processRow(row) {
           const result: Record<string, unknown> = {}
           for (const key of Object.keys(row)) {
-            const value = row[key]!
+            const value = row[key]
             if (value !== "") {
               result[key] = isNaN(+value) ? value : +value
             }
@@ -122,6 +125,8 @@ export default defineNuxtConfig({
       generateLocType()
     },
     async "builder:watch"(_, _path) {
+      const nuxt = useNuxt()
+      _path = relative(nuxt.options.srcDir, resolve(nuxt.options.srcDir, _path))
       if (_path.startsWith("schemas/")) {
         await generateSchemas()
       }
@@ -153,7 +158,7 @@ export default defineNuxtConfig({
         indexName: algoliaConfig.indexName,
       },
       pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
-      builtAt: DateTime.now().toISO()!,
+      builtAt: DateTime.now().toISO(),
     },
   },
 

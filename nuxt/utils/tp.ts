@@ -1,4 +1,4 @@
-import {DateTime, Duration} from "luxon"
+import type {DateTime, Duration} from "luxon"
 
 export const maxTpCount = 240
 const singleTpReplenishMinute = 6
