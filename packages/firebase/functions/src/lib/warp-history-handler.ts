@@ -1,8 +1,8 @@
-import {GetWarpHistoryParams} from "../types/get-warp-history-params"
-import {warpHistoryTicketConverter} from "../utils/warp-history-ticket-converter.js"
-import {GetWarpHistoryError} from "../types/shared/get-warp-history-error.js"
-import {firestoreCollections} from "./firestore-collections.js"
-import {GachaLogRequest} from "./gacha-log-request.js"
+import type { GetWarpHistoryParams } from "../types/get-warp-history-params"
+import { warpHistoryTicketConverter } from "../utils/warp-history-ticket-converter.js"
+import { GetWarpHistoryError } from "../types/shared/get-warp-history-error.js"
+import { firestoreCollections } from "./firestore-collections.js"
+import { GachaLogRequest } from "./gacha-log-request.js"
 
 export class WarpHistoryHandler {
   get(params: GetWarpHistoryParams) {
@@ -13,8 +13,7 @@ export class WarpHistoryHandler {
       void firestoreCollections.warpHistoryTickets.doc(doc.id).update(updateProgress)
     }).getGachaLogForAllWarpTypes().then((result) => {
       return doc.update({
-        status: "done",
-        // @ts-ignore
+        "status": "done",
         "progress.gachaCount": result.length,
         result,
       })

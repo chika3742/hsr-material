@@ -1,5 +1,5 @@
 import admin from "firebase-admin"
-import {warpHistoryTicketConverter} from "../utils/warp-history-ticket-converter.js"
+import { warpHistoryTicketConverter } from "../utils/warp-history-ticket-converter.js"
 
 export const firestoreCollections = {
   get warpHistoryTickets() {

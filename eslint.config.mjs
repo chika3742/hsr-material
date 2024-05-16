@@ -3,7 +3,7 @@
 /** @type {import("./packages/nuxt/.nuxt/eslint.config.d.mjs").withNuxt} */
 import withNuxt from "./packages/nuxt/.nuxt/eslint.config.mjs"
 
-/** @type {import("eslint/rules").ESLintRules} */
+/** @type {import("eslint/rules").ESLintRules & import("@stylistic/eslint-plugin").RuleOptions} */
 const commonRules = {
   "@stylistic/quotes": [
     "error",
@@ -21,6 +21,7 @@ const commonRules = {
     "error",
     "never",
   ],
+  "@stylistic/brace-style": ["error", "1tbs"],
   "no-useless-constructor": "off",
   "vue/multi-word-component-names": "off",
   "vue/no-v-html": "off",

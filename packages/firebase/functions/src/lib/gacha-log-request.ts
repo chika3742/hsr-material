@@ -1,8 +1,8 @@
 import axios from "axios"
-import {sleep} from "../utils/sleep.js"
-import {GetWarpHistoryParams} from "../types/get-warp-history-params"
-import {Warp} from "../types/shared/warp"
-import {GetWarpHistoryError} from "../types/shared/get-warp-history-error.js"
+import { sleep } from "../utils/sleep.js"
+import type { GetWarpHistoryParams } from "../types/get-warp-history-params"
+import type { Warp } from "../types/shared/warp"
+import { GetWarpHistoryError } from "../types/shared/get-warp-history-error.js"
 
 export class GachaLogRequest {
   static readonly warpTypes = [11, 12, 1]

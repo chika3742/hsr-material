@@ -1,12 +1,12 @@
-import functions, {logger} from "firebase-functions"
-import {firestoreCollections} from "../lib/firestore-collections.js"
+import functions, { logger } from "firebase-functions"
+import { firestoreCollections } from "../lib/firestore-collections.js"
 
 const expiresIn = 1000 * 60 * 30 // 30 minutes
 
 export const ticketCleaner = functions.region("asia-northeast1").pubsub
   .schedule("every 1 hours synchronized")
   .timeZone("Asia/Tokyo")
-  .onRun(async(context) => {
+  .onRun(async (context) => {
     const tickets = await firestoreCollections.warpHistoryTickets.get()
     let count = 0
     for (const ticket of tickets.docs) {

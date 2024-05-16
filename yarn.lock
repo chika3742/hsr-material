@@ -12861,6 +12861,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@stylistic/eslint-plugin": "npm:^2.1.0"
     eslint: "npm:^9.2.0"
   languageName: unknown
   linkType: soft
