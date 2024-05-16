@@ -1,13 +1,13 @@
-import algoliasearch from "algoliasearch"
-import * as dotenv from "dotenv"
 import * as path from "path"
-import {Characters} from "../../nuxt/types/generated/characters.g"
-import {loadCsvSync, loadYamlSync} from "./utils.js"
-import {Materials} from "../../nuxt/types/data/materials"
-import {LightCones} from "../../nuxt/types/generated/light-cones.g"
-import {AlgoliaRecord} from "../../nuxt/types/algolia-record"
+import * as dotenv from "dotenv"
+import algoliasearch from "algoliasearch"
+import type { Characters } from "../../nuxt/types/generated/characters.g"
+import type { Materials } from "../../nuxt/types/data/materials"
+import type { LightCones } from "../../nuxt/types/generated/light-cones.g"
+import type { AlgoliaRecord } from "../../nuxt/types/algolia-record"
 import algoliaConfig from "../../nuxt/algolia.json" assert {type: "json"}
-import {RelicPiece, RelicSet} from "../../nuxt/types/data/relics"
+import type { RelicPiece, RelicSet } from "../../nuxt/types/data/relics"
+import { loadCsvSync, loadYamlSync } from "./utils.js"
 
 type LocaleObject = {
   characterNames: Record<string, string>
@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 const kataToHira = (input: string) => {
-  return input.replace(/[\u30a1-\u30f6]/g, function(match) {
+  return input.replace(/[\u30a1-\u30f6]/g, function (match) {
     const chr = match.charCodeAt(0) - 0x60
     return String.fromCharCode(chr)
   })
@@ -31,7 +31,7 @@ const kataToHira = (input: string) => {
 const dataDir = "../nuxt/assets/data"
 const localeDir = "../nuxt/locales"
 
-const syncObjects = async() => {
+const syncObjects = async () => {
   if (process.env.ALGOLIA_API_KEY === undefined) {
     throw new Error("Environment variable ALGOLIA_API_KEY is not defined")
   }

@@ -7,6 +7,7 @@
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
     "types": [
       "node"
     ]
