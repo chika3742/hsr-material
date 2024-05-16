@@ -6,14 +6,14 @@ env:
 extends:
   - eslint:recommended
   - plugin:@typescript-eslint/recommended-type-checked
-  - ../.eslintrc.yml
+  - ../../.eslintrc.yml
 
 parserOptions:
   project: true
   sourceType: module
   ecmaVersion: latest
 
-ignorePatterns: [ ]
+ignorePatterns: []
 
 rules:
   no-console: off

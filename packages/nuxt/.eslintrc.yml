@@ -12,7 +12,7 @@ extends:
   - plugin:vue/vue3-recommended
   - plugin:promise/recommended
   - "@nuxtjs/eslint-config-typescript"
-  - ../.eslintrc.yml
+  - ../../.eslintrc.yml
 
 parserOptions:
   project: .nuxt/tsconfig.json

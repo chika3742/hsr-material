@@ -1,12 +1,12 @@
 {
-  "name": "algolia-sync",
+  "name": "@hsr-material/algolia-sync",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production tsx src/index.ts",
-    "dev": "tsc --noEmit && NODE_ENV=development tsx src/index.ts",
+    "start": "NODE_ENV=production bun src/index.ts",
+    "dev": "NODE_ENV=development bun src/index.ts",
     "lint": "eslint --ext .ts src"
   },
   "devDependencies": {
@@ -15,12 +15,12 @@
     "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
-    "dotenv": "^16.0.3",
-    "eslint": "^8.49.0",
-    "tsx": "^4.0.0",
     "algoliasearch": "^4.17.1",
     "csv-parse": "^5.4.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.49.0",
     "js-yaml": "^4.1.0",
     "typescript": "^5.1.6"
-  }
+  },
+  "packageManager": "yarn@4.2.2"
 }

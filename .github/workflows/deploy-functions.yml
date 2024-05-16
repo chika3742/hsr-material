@@ -35,8 +35,7 @@ jobs:
           cache-dependency-path: "**/yarn.lock"
 
       - name: yarn install
-        working-directory: firebase/functions
-        run: yarn install --frozen-lockfile
+        run: yarn workspace @hsr-material/functions install
 
       - name: Install Firebase CLI
         run: yarn global add firebase-tools

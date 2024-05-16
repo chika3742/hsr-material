@@ -1,5 +1,5 @@
 {
-  "name": "functions",
+  "name": "@hsr-material/functions",
   "type": "module",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
