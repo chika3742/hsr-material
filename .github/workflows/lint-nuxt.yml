@@ -26,7 +26,10 @@ jobs:
 
       - name: yarn install
         run: |
-          GITHUB_PACKAGES_TOKEN="${{ secrets.MMC_PACKAGES_TOKEN }}" yarn install:all
+          yarn install
+          yarn install:all
+        env:
+          GITHUB_PACKAGES_TOKEN: ${{ secrets.MMC_PACKAGES_TOKEN }}
 
-      - name: Lint (nuxt)
-        run: yarn lint:all
+      - name: Lint
+        run: yarn lint
