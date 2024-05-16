@@ -61,6 +61,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
+    "@nuxt/eslint",
   ],
   vite: {
     build: {
@@ -200,6 +201,12 @@ export default defineNuxtConfig({
   mhyMaterialComponents: {
     i18nKeys: {
       equipment: "lightConeNames",
+    },
+  },
+
+  eslint: {
+    config: {
+      stylistic: true,
     },
   },
 })
