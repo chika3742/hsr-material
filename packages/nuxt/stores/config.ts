@@ -1,4 +1,4 @@
-import {DateTime} from "luxon"
+import { DateTime } from "luxon"
 
 export const useConfigStore = defineStore("config", {
   state: () => ({
@@ -29,7 +29,7 @@ export const useConfigStore = defineStore("config", {
     /**
      * Character skill levels stored in the app.
      */
-    characterLevels: {} as {[characterId: string]: {[skill: string]: number}},
+    characterLevels: {} as { [characterId: string]: { [skill: string]: number } },
     /**
      * Owned characters.
      */
@@ -48,7 +48,7 @@ export const useConfigStore = defineStore("config", {
      */
     getCurrentTheme() {
       if (this.theme === "auto") {
-        if (process.client) {
+        if (import.meta.client) {
           return window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
             : "light"

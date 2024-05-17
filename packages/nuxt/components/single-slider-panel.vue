@@ -1,7 +1,10 @@
 <template>
   <v-expansion-panel :title="title">
     <v-expansion-panel-text eager>
-      <LevelSlider v-model="range" :slider-ticks="sliderTicks" />
+      <LevelSlider
+        v-model="range"
+        :slider-ticks="sliderTicks"
+      />
       <MaterialItems
         :items="items"
         :range="range"
@@ -14,15 +17,15 @@
 
 <script lang="ts" setup>
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import type {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
-import type {LightConeMaterialDefinitions} from "~/types/generated/light-cones.g"
+import type { CharacterMaterialDefinitions, Path } from "~/types/generated/characters.g"
+import type { LightConeMaterialDefinitions } from "~/types/generated/light-cones.g"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
-import type {LevelIngredients} from "~/types/level-ingredients"
-import type {Usage} from "~/types/bookmark/usage"
-import {db} from "~/libs/db/providers"
-import type {BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
+import type { LevelIngredients } from "~/types/level-ingredients"
+import type { Usage } from "~/types/bookmark/usage"
+import { db } from "~/libs/db/providers"
+import type { BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
 
 const props = defineProps<{
   title: string
@@ -53,8 +56,8 @@ const levelIngredients = (() => {
 const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredients))
 
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
-const setInitialRangeBasedOnBookmarks = async() => {
-  if (process.server) {
+const setInitialRangeBasedOnBookmarks = async () => {
+  if (import.meta.server) {
     return
   }
 
@@ -78,7 +81,7 @@ const setInitialRangeBasedOnBookmarks = async() => {
 }
 watch([toRefs(props).characterId, toRefs(props).variant], () => {
   void setInitialRangeBasedOnBookmarks()
-}, {immediate: true})
+}, { immediate: true })
 
 const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
   return levelIngredients.filter(e => range.value[0] < e.level && e.level <= range.value[1])

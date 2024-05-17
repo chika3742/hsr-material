@@ -26,16 +26,27 @@
             {{ $t('warpsPage.getPityHistoryDesc') }}
           </div>
         </div>
-        <v-row no-gutters style="gap: 16px">
+        <v-row
+          no-gutters
+          style="gap: 16px"
+        >
           <v-spacer />
           <v-btn @click="clearWarps">
             {{ $t("warpsPage.clear") }}
           </v-btn>
-          <v-btn :loading="fetching" color="primary" @click="getWarps">
+          <v-btn
+            :loading="fetching"
+            color="primary"
+            @click="getWarps"
+          >
             {{ $t("warpsPage.get") }}
           </v-btn>
         </v-row>
-        <div v-show="fetching" class="mt-2" style="text-align: end">
+        <div
+          v-show="fetching"
+          class="mt-2"
+          style="text-align: end"
+        >
           {{
             fetchProgress !== null ? i18n.t("warpsPage.progress", fetchProgress) : $t('warpsPage.preparing')
           }}
@@ -44,7 +55,10 @@
     </client-only>
 
     <client-only>
-      <section v-for="warpType in warpTypes" :key="warpType.type">
+      <section
+        v-for="warpType in warpTypes"
+        :key="warpType.type"
+      >
         <h2>{{ warpType.title }}</h2>
         <WarpsCounters
           :pseudo-pity-border="warpType.pseudoPityBorder"
@@ -60,18 +74,18 @@
 </template>
 
 <script lang="ts" setup>
-import {doc, onSnapshot} from "@firebase/firestore"
-import {from, useObservable} from "@vueuse/rxjs"
-import {liveQuery} from "dexie"
+import { doc, onSnapshot } from "@firebase/firestore"
+import { from, useObservable } from "@vueuse/rxjs"
+import { liveQuery } from "dexie"
 import _ from "lodash"
-import type {Warp} from "#shared/warp"
-import type {WarpGettingProgress} from "#shared/warp-history-ticket"
-import {ref} from "#imports"
-import {WarpsApi} from "~/libs/warps-api"
-import {warpHistoryTicketConverter} from "~/utils/warp-history-ticket-converter"
-import {_db} from "~/dexie/db"
-import {db} from "~/libs/db/providers"
-import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
+import type { Warp } from "#shared/warp"
+import type { WarpGettingProgress } from "#shared/warp-history-ticket"
+import { ref } from "#imports"
+import { WarpsApi } from "~/libs/warps-api"
+import { warpHistoryTicketConverter } from "~/utils/warp-history-ticket-converter"
+import { _db } from "~/dexie/db"
+import { db } from "~/libs/db/providers"
+import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
 
 definePageMeta({
   title: "warps",
@@ -81,7 +95,7 @@ const config = useConfigStore()
 const i18n = useI18n()
 const snackbar = useSnackbar()
 const dialog = useDialog()
-const {$functions, $firestore} = useNuxtApp()
+const { $functions, $firestore } = useNuxtApp()
 
 const url = ref(config.warpsUrl)
 const error = ref("")
@@ -118,7 +132,7 @@ const warpTypes: {
   },
 ]
 
-const warps = process.client
+const warps = import.meta.client
   ? useObservable<Warp[], Warp[]>(from(liveQuery(() => _db.warps.toArray())), {
     initialValue: [],
   })
@@ -128,7 +142,7 @@ const groupedWarps = computed(() => {
   return _.groupBy(warps.value, "gachaType") as Record<string, Warp[]>
 })
 
-const getWarps = async() => {
+const getWarps = async () => {
   fetchProgress.value = null
   error.value = ""
   fetching.value = true
@@ -224,5 +238,4 @@ watch(toRefs(config).warpsShowPityList, () => {
   void FirestoreProvider.instance?.sendLocalData()
 })
 // `warpsUrl` is sent when fetching warps is complete
-
 </script>

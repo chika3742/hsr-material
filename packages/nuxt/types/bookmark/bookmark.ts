@@ -1,6 +1,6 @@
-import type {Stat} from "~/types/generated/relic-stats.g"
-import type {Usage} from "~/types/bookmark/usage"
-import type {CharacterIdWithVariant} from "~/types/strings"
+import type { Stat } from "~/types/generated/relic-stats.g"
+import type { Usage } from "~/types/bookmark/usage"
+import type { CharacterIdWithVariant } from "~/types/strings"
 
 export type Bookmark =
   | Bookmark.CharacterMaterial

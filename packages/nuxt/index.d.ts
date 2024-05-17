@@ -1,9 +1,9 @@
-import {RawLocation, RouteLocation} from "@intlify/vue-router-bridge"
-import {Locale} from "@intlify/vue-i18n-bridge"
-import {Auth} from "@firebase/auth"
-import {Firestore} from "@firebase/firestore"
-import {Functions} from "@firebase/functions"
-import {Analytics} from "@firebase/analytics"
+import type { RawLocation, RouteLocation } from "@intlify/vue-router-bridge"
+import type { Locale } from "@intlify/vue-i18n-bridge"
+import type { Auth } from "@firebase/auth"
+import type { Firestore } from "@firebase/firestore"
+import type { Functions } from "@firebase/functions"
+import type { Analytics } from "@firebase/analytics"
 
 declare module "nuxt/dist/pages/runtime/composables" {
   interface PageMeta {
@@ -21,7 +21,7 @@ declare module "#app" {
   }
 }
 
-declare module '@vue/runtime-core' {
+declare module "@vue/runtime-core" {
   interface ComponentCustomProperties {
     readonly $isTouchDevice: boolean
     // shim for volar

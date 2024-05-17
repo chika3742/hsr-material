@@ -28,15 +28,28 @@ const opened = computed({
 </script>
 
 <template>
-  <v-list v-model:opened="opened" class="v-list--sticky-header" style="user-select: none">
-    <v-list-group v-for="(group, i) in splitByField(items, categoryField)" :key="group[0].id" :value="i">
-      <template #activator="{props: _props}">
+  <v-list
+    v-model:opened="opened"
+    class="v-list--sticky-header"
+    style="user-select: none"
+  >
+    <v-list-group
+      v-for="(group, i) in splitByField(items, categoryField)"
+      :key="group[0].id"
+      :value="i"
+    >
+      <template #activator="{ props: _props }">
         <v-list-item
           :title="tx(`${categoryI18nKey}.${group[0][categoryField]}`)"
           v-bind="_props"
         >
           <template #prepend>
-            <v-img :src="imageFunc(group[0].id)" class="mr-2" height="40px" width="40px" />
+            <v-img
+              :src="imageFunc(group[0].id)"
+              class="mr-2"
+              height="40px"
+              width="40px"
+            />
           </template>
         </v-list-item>
       </template>
@@ -53,7 +66,10 @@ const opened = computed({
         :lines="hasSubtitle ? 'two' : 'one'"
       >
         <template #subtitle>
-          <slot :item-id="item.id" name="subtitle" />
+          <slot
+            :item-id="item.id"
+            name="subtitle"
+          />
         </template>
       </ItemListItem>
     </v-list-group>

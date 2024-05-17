@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import _ from "lodash"
-import {from, useObservable} from "@vueuse/rxjs"
-import {liveQuery} from "dexie"
-import {db} from "~/libs/db/providers"
-import type {BookmarkableIngredient} from "~/types/bookmark/bookmarkables"
-import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
-import type {PurposeType} from "~/types/strings"
-import type {LevelingBookmark} from "~/types/bookmark/bookmark"
+import { from, useObservable } from "@vueuse/rxjs"
+import { liveQuery } from "dexie"
+import { db } from "~/libs/db/providers"
+import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
+import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
+import type { PurposeType } from "~/types/strings"
+import type { LevelingBookmark } from "~/types/bookmark/bookmark"
 
 interface Props {
   items: LevelingBookmark[]
@@ -24,7 +24,7 @@ interface Emits {
 
 defineEmits<Emits>()
 
-const bookmarkedItemCount = process.client
+const bookmarkedItemCount = import.meta.client
   ? useObservable(from(liveQuery(() => {
     return db.bookmarks.bookmarks.where("id").anyOf(_.flatMap(props.items, e => e.id!)).count()
   })), {
@@ -35,7 +35,11 @@ const bookmarkedItemCount = process.client
 
 <template>
   <li>
-    <v-row align="center" class="mb-2" no-gutters>
+    <v-row
+      align="center"
+      class="mb-2"
+      no-gutters
+    >
       <h3 class="text-slight-heading">
         Lv. {{ level }}
       </h3>
@@ -45,12 +49,16 @@ const bookmarkedItemCount = process.client
         class="ml-1"
         prepend-icon="mdi-marker-check"
         variant="text"
-        @click="$emit('removeBookmarksInLevel', {purpose, level})"
+        @click="$emit('removeBookmarksInLevel', { purpose, level })"
       >
         <span>{{ tx('bookmark.completeLeveling') }}</span>
 
         <!-- complete leveling button hint -->
-        <v-tooltip activator="parent" location="bottom" open-delay="200">
+        <v-tooltip
+          activator="parent"
+          location="bottom"
+          open-delay="200"
+        >
           <span>{{ tx("bookmark.completeLevelingDesc") }}</span>
         </v-tooltip>
       </v-btn>

@@ -1,5 +1,8 @@
 <template>
-  <v-row no-gutters style="gap: 16px">
+  <v-row
+    no-gutters
+    style="gap: 16px"
+  >
     <MaterialItem
       v-for="merged in mergeItems(items)"
       :key="getMaterialId(merged[0]) + '-' + merged[0].characterId"
@@ -10,9 +13,9 @@
 </template>
 
 <script lang="ts" setup>
-import type {PurposeType} from "~/types/strings"
-import type {BookmarkableIngredient} from "~/types/bookmark/bookmarkables"
-import {isBookmarkableMaterial} from "~/types/bookmark/bookmarkables"
+import type { PurposeType } from "~/types/strings"
+import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
+import { isBookmarkableMaterial } from "~/types/bookmark/bookmarkables"
 
 defineProps<{
   items: BookmarkableIngredient[]

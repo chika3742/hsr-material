@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import {parse} from "yaml"
+import { parse } from "yaml"
 
 type LocObject = { [key: string]: string | LocObject }
 

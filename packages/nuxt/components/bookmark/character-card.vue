@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import _ from "lodash"
-import {from, useObservable} from "@vueuse/rxjs"
-import {liveQuery} from "dexie"
-import type {Bookmark, LevelingBookmark} from "~/types/bookmark/bookmark"
-import type {CharacterIdWithVariant} from "~/types/strings"
-import {reactive} from "#imports"
-import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
-import {db} from "~/libs/db/providers"
+import { from, useObservable } from "@vueuse/rxjs"
+import { liveQuery } from "dexie"
+import type { Bookmark, LevelingBookmark } from "~/types/bookmark/bookmark"
+import type { CharacterIdWithVariant } from "~/types/strings"
+import { reactive } from "#imports"
+import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
+import { db } from "~/libs/db/providers"
 
 interface Props {
   character: CharacterIdWithVariant
@@ -15,7 +15,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const bookmarks = process.client
+const bookmarks = import.meta.client
   ? useObservable(from(liveQuery(() => db.bookmarks.getByCharacter(props.character))), {
     initialValue: [] as Bookmark[],
   })
@@ -62,7 +62,6 @@ const detailsDialog = reactive({
   show: false,
   items: [] as LevelingBookmark[],
 })
-
 </script>
 
 <template>
@@ -76,7 +75,7 @@ const detailsDialog = reactive({
 
         <v-list-item
           :title="tx(`characterNames.${character}`)"
-          :to="localePath({path: `/characters/${toCharacterId(character)}`, query: {variant: toVariant(character) ?? undefined}})"
+          :to="localePath({ path: `/characters/${toCharacterId(character)}`, query: { variant: toVariant(character) ?? undefined } })"
           class="d-flex flex-grow-1 pl-0"
         >
           <template #prepend>
@@ -90,7 +89,10 @@ const detailsDialog = reactive({
         </v-list-item>
       </div>
 
-      <div class="pa-2 d-flex flex-column" style="gap: 8px">
+      <div
+        class="pa-2 d-flex flex-column"
+        style="gap: 8px"
+      >
         <section v-if="groupedBookmarks.characterMaterials.length >= 1">
           <div class="d-flex g-2 flex-wrap">
             <MaterialItem
@@ -112,13 +114,19 @@ const detailsDialog = reactive({
         </section>
 
         <section v-if="Object.keys(groupedBookmarks.lightCones).length >= 1">
-          <div class="d-flex flex-column" style="gap: 8px">
-            <div v-for="[lcId, lcMaterials] in Object.entries(groupedBookmarks.lightCones)" :key="lcId">
+          <div
+            class="d-flex flex-column"
+            style="gap: 8px"
+          >
+            <div
+              v-for="[lcId, lcMaterials] in Object.entries(groupedBookmarks.lightCones)"
+              :key="lcId"
+            >
               <v-list-item
                 :prepend-avatar="getLightConeImage(lcId)"
                 :subtitle="tx('searchRecordTypes.light-cone')"
                 :title="tx(`lightConeNames.${lcId}`)"
-                :to="localePath({path: `/light-cones/${lcId}`, query: {character}})"
+                :to="localePath({ path: `/light-cones/${lcId}`, query: { character } })"
                 density="compact"
                 lines="two"
                 rounded
@@ -145,14 +153,28 @@ const detailsDialog = reactive({
         </section>
 
         <section v-if="groupedBookmarks.relicSets.length >= 1">
-          <div class="d-flex flex-column" style="gap: 8px">
-            <BookmarkRelic v-for="set in groupedBookmarks.relicSets" :key="set.id" :item="set" />
+          <div
+            class="d-flex flex-column"
+            style="gap: 8px"
+          >
+            <BookmarkRelic
+              v-for="set in groupedBookmarks.relicSets"
+              :key="set.id"
+              :item="set"
+            />
           </div>
         </section>
 
         <section v-if="groupedBookmarks.relicPieces.length >= 1">
-          <div class="d-flex flex-column" style="gap: 8px">
-            <BookmarkRelic v-for="piece in groupedBookmarks.relicPieces" :key="piece.id" :item="piece" />
+          <div
+            class="d-flex flex-column"
+            style="gap: 8px"
+          >
+            <BookmarkRelic
+              v-for="piece in groupedBookmarks.relicPieces"
+              :key="piece.id"
+              :item="piece"
+            />
           </div>
         </section>
       </div>

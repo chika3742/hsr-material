@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-
 definePageMeta({
   title: "bookmarks",
 })
-
 </script>
 
 <template>

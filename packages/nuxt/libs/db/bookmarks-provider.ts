@@ -1,9 +1,9 @@
-import type {Table} from "dexie"
+import type { Table } from "dexie"
 import hash from "object-hash"
-import type {Bookmark, LevelingBookmark, RelicBookmark} from "~/types/bookmark/bookmark"
-import type {CharacterIdWithVariant, PurposeType} from "~/types/strings"
-import {_db} from "~/dexie/db"
-import {DbProvider} from "~/libs/db/db-provider"
+import type { Bookmark, LevelingBookmark, RelicBookmark } from "~/types/bookmark/bookmark"
+import type { CharacterIdWithVariant, PurposeType } from "~/types/strings"
+import { _db } from "~/dexie/db"
+import { DbProvider } from "~/libs/db/db-provider"
 import type {
   BookmarkableCharacterMaterial,
   BookmarkableExp,
@@ -11,10 +11,10 @@ import type {
   BookmarkableLightConeMaterial,
   BookmarkableRelic,
 } from "~/types/bookmark/bookmarkables"
-import {isBookmarkableExp} from "~/types/bookmark/bookmarkables"
-import {EventLogger} from "~/libs/event-logger"
+import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
+import { EventLogger } from "~/libs/event-logger"
 import lightCones from "~/assets/data/light-cones.yaml"
-import {parseShowcaseCharacterId} from "~/utils/parse-showcase-character-id"
+import { parseShowcaseCharacterId } from "~/utils/parse-showcase-character-id"
 
 /**
  * Provides methods for bookmark-related database operations.
@@ -70,9 +70,9 @@ export class BookmarksProvider extends DbProvider {
           case "light_cone_material": {
             const item = firstItem as BookmarkableLightConeMaterial // e.type and firstItem.type are the same
             // materialId and lightConeId is same (characterId and variant is already filtered)
-            return e.materialId === item.materialId &&
-              e.usage.lightConeId === item.usage.lightConeId &&
-              e.usage.purposeType === item.usage.purposeType // for convenience (currently it can only be one type)
+            return e.materialId === item.materialId
+              && e.usage.lightConeId === item.usage.lightConeId
+              && e.usage.purposeType === item.usage.purposeType // for convenience (currently it can only be one type)
           }
         }
       }).toArray() as Promise<LevelingBookmark[]>
@@ -92,13 +92,13 @@ export class BookmarksProvider extends DbProvider {
         const item = e as BookmarkableIngredient
 
         if (
-          typeof lightConeId !== "undefined" &&
-          (item.type === "light_cone_exp" || item.type === "light_cone_material")
+          typeof lightConeId !== "undefined"
+          && (item.type === "light_cone_exp" || item.type === "light_cone_material")
         ) {
           return item.usage.lightConeId === lightConeId && item.usage.purposeType === purposeType
         } else if (
-          typeof lightConeId === "undefined" &&
-          (item.type === "character_exp" || item.type === "character_material")
+          typeof lightConeId === "undefined"
+          && (item.type === "character_exp" || item.type === "character_material")
         ) {
           return item.usage.purposeType === purposeType
         }
@@ -114,19 +114,19 @@ export class BookmarksProvider extends DbProvider {
    * @param selectedItem Selected item (only for exp)
    */
   addLevelingItems<T extends BookmarkableIngredient>(data: T[], selectedItem: T extends BookmarkableExp ? string : undefined, id?: number) {
-    return this.transactionWithFirestore([this.bookmarks], async() => {
+    return this.transactionWithFirestore([this.bookmarks], async () => {
       const dataToSave: LevelingBookmark[] = data.map((e) => {
         return {
-          ...typeof id !== "undefined" ? {id} : {},
+          ...typeof id !== "undefined" ? { id } : {},
           ...e,
           bookmarkedAt: new Date(),
-          ...isBookmarkableExp(e) ? {selectedItem} : {},
+          ...isBookmarkableExp(e) ? { selectedItem } : {},
           hash: hash(e),
         } as LevelingBookmark
       })
 
       // add bookmarks
-      await this.bookmarks.bulkAdd(dataToSave, {allKeys: true})
+      await this.bookmarks.bulkAdd(dataToSave, { allKeys: true })
     }).then(() => {
       this.logger.logBookmarkAdded(data[0])
 
@@ -141,7 +141,7 @@ export class BookmarksProvider extends DbProvider {
    * @returns List of removed {@link Bookmark}s
    */
   remove(...ids: number[]) {
-    return this.transactionWithFirestore([this.bookmarks], async() => {
+    return this.transactionWithFirestore([this.bookmarks], async () => {
       const items = await this.bookmarks.bulkGet(ids) as Bookmark[]
       const firstItem = items[0]
       if (firstItem) {
@@ -158,7 +158,7 @@ export class BookmarksProvider extends DbProvider {
     const upperLevelToPromotion = (upperLevel: number) => {
       return upperLevel / 10 - 2
     }
-    return this.transactionWithFirestore([this.bookmarks], async() => {
+    return this.transactionWithFirestore([this.bookmarks], async () => {
       for (const character of showcaseCharacters) {
         const characterId = parseShowcaseCharacterId(character.nameJP, character.variant)
         if (!characterId) {
@@ -203,7 +203,7 @@ export class BookmarksProvider extends DbProvider {
   }
 
   addRelic(data: BookmarkableRelic) {
-    return this.transactionWithFirestore([this.bookmarks], async() => {
+    return this.transactionWithFirestore([this.bookmarks], async () => {
       const dataToSave: RelicBookmark = {
         ...data,
         bookmarkedAt: new Date(),
@@ -219,9 +219,9 @@ export class BookmarksProvider extends DbProvider {
   }
 
   bulkAdd(data: Bookmark[]) {
-    return this.transactionWithFirestore([this.bookmarks], async() => {
+    return this.transactionWithFirestore([this.bookmarks], async () => {
       // add bookmarks
-      await this.bookmarks.bulkAdd(data, {allKeys: true})
+      await this.bookmarks.bulkAdd(data, { allKeys: true })
     })
   }
 }

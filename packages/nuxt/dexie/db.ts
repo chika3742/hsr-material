@@ -1,10 +1,10 @@
-import type {Table} from "dexie"
+import type { Table } from "dexie"
 import Dexie from "dexie"
-import type {Warp} from "#shared/warp"
-import type {Bookmark} from "~/types/bookmark/bookmark"
-import type {SyncedUserData, UserDocument} from "~/types/firestore/user-document"
-import {DataSyncError} from "~/libs/data-sync-error"
-import {migrate} from "~/utils/migrate"
+import type { Warp } from "#shared/warp"
+import type { Bookmark } from "~/types/bookmark/bookmark"
+import type { SyncedUserData, UserDocument } from "~/types/firestore/user-document"
+import { DataSyncError } from "~/libs/data-sync-error"
+import { migrate } from "~/utils/migrate"
 
 export class MySubClassedDexie extends Dexie {
   bookmarks!: Table<Bookmark>
@@ -21,13 +21,13 @@ export class MySubClassedDexie extends Dexie {
     this.version(2).stores({
       bookmarkCharacters: null,
       bookmarks: "++id, characterId",
-    }).upgrade(async() => {
+    }).upgrade(async () => {
       await this.migrateIdb(2)
     })
 
     this.version(3).stores({
       bookmarks: "++id, characterId, hash",
-    }).upgrade(async() => {
+    }).upgrade(async () => {
       await this.migrateIdb(3)
     })
   }
@@ -41,7 +41,7 @@ export class MySubClassedDexie extends Dexie {
 
   import(data: SyncedUserData) {
     return this.transaction("rw", this.tables, () => {
-      return Promise.all(Object.entries(data).map(async([tableName, tableData]) => {
+      return Promise.all(Object.entries(data).map(async ([tableName, tableData]) => {
         const table = this.table(tableName)
         await table.clear()
         return await table.bulkAdd(tableData as unknown[])

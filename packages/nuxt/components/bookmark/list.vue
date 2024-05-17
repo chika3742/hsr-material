@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 /* This component must be rendered only on the client side. */
 
-import {from, useObservable} from "@vueuse/rxjs"
-import {liveQuery} from "dexie"
+import { from, useObservable } from "@vueuse/rxjs"
+import { liveQuery } from "dexie"
 import type Sortable from "sortablejs"
-import {_db} from "~/dexie/db"
-import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
-import type {CharacterIdWithVariant} from "~/types/strings"
+import { _db } from "~/dexie/db"
+import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
+import type { CharacterIdWithVariant } from "~/types/strings"
 
 const config = useConfigStore()
 
-const _bookmarkedCharacterIds = useObservable(from(liveQuery(async() => {
+const _bookmarkedCharacterIds = useObservable(from(liveQuery(async () => {
   if (await _db.bookmarks.count() === 0) {
     return []
   }
@@ -37,12 +37,14 @@ const saveCharacterSort = (ev: Sortable.SortableEvent) => {
   config.characterOrder = Array.from(ev.to.children).map(el => (el as HTMLElement).dataset.characterId!)
   void FirestoreProvider.instance?.sendLocalData()
 }
-
 </script>
 
 <template>
   <div class="position-relative">
-    <Draggable container-class="bookmark-cards-wrapper" @sort="saveCharacterSort">
+    <Draggable
+      container-class="bookmark-cards-wrapper"
+      @sort="saveCharacterSort"
+    >
       <BookmarkCharacterCard
         v-for="characterId in bookmarkedCharacterIds"
         :key="characterId"
@@ -52,7 +54,10 @@ const saveCharacterSort = (ev: Sortable.SortableEvent) => {
       />
     </Draggable>
 
-    <div v-if="Object.keys(bookmarkedCharacterIds).length === 0" class="no-bookmarks">
+    <div
+      v-if="Object.keys(bookmarkedCharacterIds).length === 0"
+      class="no-bookmarks"
+    >
       {{ tx("bookmark.noBookmarks") }}
     </div>
   </div>

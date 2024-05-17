@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import relicSets from "assets/data/relic-sets.csv"
-import type {RelicSet} from "~/types/data/relics"
+import type { RelicSet } from "~/types/data/relics"
 
 interface Props {
   modelValue: boolean
@@ -32,7 +32,10 @@ watch(toRefs(props).modelValue, (value) => {
   >
     <v-card :title="tx('relicDetailsPage.chooseRelicSet')">
       <template #text>
-        <v-list v-model:selected="selectedItem" mandatory>
+        <v-list
+          v-model:selected="selectedItem"
+          mandatory
+        >
           <v-list-item
             v-for="item in relicSets.filter(e => e.id !== currentSetId && e.type === 'cavern')"
             :key="item.id"
@@ -41,14 +44,22 @@ watch(toRefs(props).modelValue, (value) => {
             :value="item"
             color="primary"
           >
-            <RelicSetEffects :relic-id="item.id" show2pc-only style="font-size: 0.9em; margin-top: 2px" />
+            <RelicSetEffects
+              :relic-id="item.id"
+              show2pc-only
+              style="font-size: 0.9em; margin-top: 2px"
+            />
           </v-list-item>
         </v-list>
       </template>
 
       <template #actions>
         <v-spacer />
-        <v-btn :text="tx('common.cancel')" variant="text" @click="$emit('update:modelValue', false)" />
+        <v-btn
+          :text="tx('common.cancel')"
+          variant="text"
+          @click="$emit('update:modelValue', false)"
+        />
         <v-btn
           :disabled="selectedItem.length === 0"
           :text="tx('common.ok')"

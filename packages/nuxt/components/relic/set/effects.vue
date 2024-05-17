@@ -13,13 +13,22 @@ withDefaults(defineProps<{
       <h4 class="c-subheader">
         {{ tx("common.2pcEffect") }}
       </h4>
-      <EmphasizedText :class="['pl-4', show2pcOnly ? '' : 'my-1']" :text="tx(`relicSetEffects.${relicId}.2pc`)" />
+      <EmphasizedText
+        :class="['pl-4', show2pcOnly ? '' : 'my-1']"
+        :text="tx(`relicSetEffects.${relicId}.2pc`)"
+      />
     </section>
-    <section v-if="$te(`relicSetEffects.${relicId}.4pc`)" v-show="!show2pcOnly">
+    <section
+      v-if="$te(`relicSetEffects.${relicId}.4pc`)"
+      v-show="!show2pcOnly"
+    >
       <h4 class="c-subheader">
         {{ tx("common.4pcEffect") }}
       </h4>
-      <EmphasizedText :text="tx(`relicSetEffects.${relicId}.4pc`)" class="pl-4 my-1" />
+      <EmphasizedText
+        :text="tx(`relicSetEffects.${relicId}.4pc`)"
+        class="pl-4 my-1"
+      />
     </section>
   </div>
 </template>

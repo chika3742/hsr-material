@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import materials from "~/assets/data/materials.csv"
-import {splitByField} from "#imports"
+import { splitByField } from "#imports"
 
 definePageMeta({
   title: "materials",
@@ -16,7 +16,10 @@ const materialList = computed(() => {
 
 <template>
   <div>
-    <v-btn :color="filteringRarity.length >= 1 ? 'star' : ''" prepend-icon="mdi-filter">
+    <v-btn
+      :color="filteringRarity.length >= 1 ? 'star' : ''"
+      prepend-icon="mdi-filter"
+    >
       <span>{{ tx("common.filter") }}</span>
 
       <client-only>
@@ -28,7 +31,12 @@ const materialList = computed(() => {
               :value="g[0].rarity"
             >
               <v-row no-gutters>
-                <v-icon v-for="i in g[0].rarity" :key="i" color="star" size="18">
+                <v-icon
+                  v-for="i in g[0].rarity"
+                  :key="i"
+                  color="star"
+                  size="18"
+                >
                   mdi-star
                 </v-icon>
               </v-row>

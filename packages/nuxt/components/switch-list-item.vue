@@ -21,9 +21,14 @@ defineEmits<Emits>()
     density="comfortable"
     @click="$emit('update:modelValue', !modelValue)"
   >
-    <template #append="{isActive}">
+    <template #append="{ isActive }">
       <div class="px-2">
-        <v-switch :model-value="isActive" color="primary" density="compact" hide-details />
+        <v-switch
+          :model-value="isActive"
+          color="primary"
+          density="compact"
+          hide-details
+        />
       </div>
     </template>
   </v-list-item>

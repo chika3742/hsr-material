@@ -1,8 +1,8 @@
 import characters from "~/assets/data/characters.yaml"
 import materials from "~/assets/data/materials.csv"
 import lightCones from "~/assets/data/light-cones.yaml"
-import type {LightCone} from "~/types/generated/light-cones.g"
-import type {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
+import type { LightCone } from "~/types/generated/light-cones.g"
+import type { CharacterMaterialDefinitions, Path } from "~/types/generated/characters.g"
 
 interface UsageCharacter {
   id: string
@@ -53,11 +53,11 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
     if (character.variants) {
       for (const variant of character.variants) {
         if (getIsMaterialUsedByCharacter(materialId, variant.materials)) {
-          result.push({id: character.id, variant: variant.path})
+          result.push({ id: character.id, variant: variant.path })
         }
       }
     } else if (getIsMaterialUsedByCharacter(materialId, character.materials!)) {
-      result.push({id: character.id})
+      result.push({ id: character.id })
     }
   }
 

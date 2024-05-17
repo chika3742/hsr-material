@@ -8,6 +8,8 @@ const statusMessage = computed(() => {
     case 500:
       return "Internal Server Error"
   }
+
+  return null
 })
 </script>
 
@@ -21,7 +23,7 @@ const statusMessage = computed(() => {
             <p>{{ tx(`errors.${error.statusCode}`) }}</p>
           </v-col>
           <v-col>
-            <v-btn @click="clearError({redirect: localePath('/')})">
+            <v-btn @click="clearError({ redirect: localePath('/') })">
               {{ tx("common.backToHome") }}
             </v-btn>
           </v-col>

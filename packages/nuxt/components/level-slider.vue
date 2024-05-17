@@ -12,7 +12,7 @@
       strict
       thumb-label
     >
-      <template #thumb-label="{modelValue: _modelValue}">
+      <template #thumb-label="{ modelValue: _modelValue }">
         <div style="white-space: nowrap">
           {{ _modelValue === rangeIndexes[0] ? tx("common.currentLevel") : tx("common.targetLevel") }}
         </div>
@@ -21,14 +21,17 @@
     <div class="mx-2 mt-3 levels">
       <span>Lv. </span>
       <span class="font-cairo levels__number">{{ modelValue[0] }}</span>
-      <v-icon icon="ms:double_arrow" style="margin-bottom: 6px" />
+      <v-icon
+        icon="ms:double_arrow"
+        style="margin-bottom: 6px"
+      />
       <span class="font-cairo levels__number">{{ modelValue[1] }}</span>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {computed} from "#imports"
+import { computed } from "#imports"
 
 const props = defineProps<{
   modelValue: number[]
@@ -67,5 +70,4 @@ const rangeIndexes = computed({
     margin: 0 4px
     width: 25px
     font-size: 1.5em
-
 </style>

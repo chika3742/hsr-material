@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-export const onRequest: PagesFunction = async(context) => {
+export const onRequest: PagesFunction = async (context) => {
   if (context.request.method !== "GET") {
     return new Response(null, {
       status: 405,

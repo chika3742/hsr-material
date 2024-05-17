@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type {RawLocation} from "@intlify/vue-router-bridge"
-import type {AlgoliaRecord} from "~/types/algolia-record"
+import type { RawLocation } from "@intlify/vue-router-bridge"
+import type { AlgoliaRecord } from "~/types/algolia-record"
 
 const props = defineProps<{
   modelValue: boolean
@@ -19,7 +19,7 @@ const isOpen = computed({
   },
 })
 
-const {$algoliaClient} = useNuxtApp()
+const { $algoliaClient } = useNuxtApp()
 const i18n = useI18n()
 
 const loading = ref(false)
@@ -37,7 +37,7 @@ watch(toRefs(props).modelValue, (value) => {
   }
 })
 
-const executeQuery = async(_query: string) => {
+const executeQuery = async (_query: string) => {
   loading.value = true
 
   try {
@@ -118,8 +118,15 @@ const urlToRouteLocation = (url: string): RawLocation => {
     height="100%"
   >
     <v-card height="100%">
-      <div v-safe-area="{top: true, right: true, left: true}" class="h-100 d-flex flex-column">
-        <v-row class="flex-grow-0 mx-4 mt-4" no-gutters style="gap: 8px">
+      <div
+        v-safe-area="{ top: true, right: true, left: true }"
+        class="h-100 d-flex flex-column"
+      >
+        <v-row
+          class="flex-grow-0 mx-4 mt-4"
+          no-gutters
+          style="gap: 8px"
+        >
           <v-text-field
             ref="textField"
             v-model="query"
@@ -141,7 +148,11 @@ const urlToRouteLocation = (url: string): RawLocation => {
           />
         </v-row>
 
-        <v-progress-linear :active="loading" color="primary" indeterminate />
+        <v-progress-linear
+          :active="loading"
+          color="primary"
+          indeterminate
+        />
 
         <div v-if="results && results.length === 0">
           <v-card-text class="text-center">
@@ -154,7 +165,10 @@ const urlToRouteLocation = (url: string): RawLocation => {
           </v-card-text>
         </div>
 
-        <v-list v-if="results" style="overflow: auto !important">
+        <v-list
+          v-if="results"
+          style="overflow: auto !important"
+        >
           <!-- :to="localePath(item.url)" https://github.com/nuxt-modules/i18n/issues/2020 -->
           <v-list-item
             v-for="item in results"

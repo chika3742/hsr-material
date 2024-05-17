@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
-import type {CharacterIdWithVariant} from "~/types/strings"
+import type { CharacterIdWithVariant } from "~/types/strings"
 import characters from "~/assets/data/characters.yaml"
 
 definePageMeta({
@@ -12,7 +12,7 @@ definePageMeta({
 const route = useRoute()
 
 if (!lightCones.some(e => e.id === route.params.lightConeId)) {
-  throw createError({statusCode: 404, message: "Page not found", fatal: true})
+  throw createError({ statusCode: 404, message: "Page not found", fatal: true })
 }
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
@@ -31,11 +31,26 @@ const characterSelectFilter = (id: string): boolean => {
 
 <template>
   <div>
-    <v-row align="center" no-gutters>
-      <v-img :src="getLightConeImage(lightCone.id)" max-width="60px" width="60px" />
-      <div class="ml-4 d-flex flex-column" style="gap: 4px">
+    <v-row
+      align="center"
+      no-gutters
+    >
+      <v-img
+        :src="getLightConeImage(lightCone.id)"
+        max-width="60px"
+        width="60px"
+      />
+      <div
+        class="ml-4 d-flex flex-column"
+        style="gap: 4px"
+      >
         <div>
-          <v-icon v-for="i of lightCone.rarity" :key="i" color="star" size="18">
+          <v-icon
+            v-for="i of lightCone.rarity"
+            :key="i"
+            color="star"
+            size="18"
+          >
             mdi-star
           </v-icon>
         </div>
@@ -58,7 +73,10 @@ const characterSelectFilter = (id: string): boolean => {
       <h4 class="c-subheader">
         {{ tx('lightConeDetailsPage.skillDescriptions') }}
       </h4>
-      <EmphasizedText :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)" class="pl-4 mt-1" />
+      <EmphasizedText
+        :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)"
+        class="pl-4 mt-1"
+      />
     </section>
 
     <CharacterSelect
@@ -81,7 +99,10 @@ const characterSelectFilter = (id: string): boolean => {
         :variant="toVariant(selectedCharacter)"
       />
 
-      <v-expansion-panel :title="tx('lightConeDetailsPage.recommendedCharacters')" text="Coming soon..." />
+      <v-expansion-panel
+        :title="tx('lightConeDetailsPage.recommendedCharacters')"
+        text="Coming soon..."
+      />
     </v-expansion-panels>
   </div>
 </template>

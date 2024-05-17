@@ -1,11 +1,11 @@
-import type {DocumentReference, Firestore} from "@firebase/firestore"
-import {doc, getDoc, onSnapshot, setDoc, Timestamp} from "@firebase/firestore"
-import type {User} from "@firebase/auth"
-import type {UserDocument} from "~/types/firestore/user-document"
-import {configStoreToSyncedConfig} from "~/types/firestore/user-document"
-import {userDocumentConverter} from "~/utils/user-document-converter"
-import type {MySubClassedDexie} from "~/dexie/db"
-import {DataSyncError} from "~/libs/data-sync-error"
+import type { DocumentReference, Firestore } from "@firebase/firestore"
+import { doc, getDoc, onSnapshot, setDoc, Timestamp } from "@firebase/firestore"
+import type { User } from "@firebase/auth"
+import type { UserDocument } from "~/types/firestore/user-document"
+import { configStoreToSyncedConfig } from "~/types/firestore/user-document"
+import { userDocumentConverter } from "~/utils/user-document-converter"
+import type { MySubClassedDexie } from "~/dexie/db"
+import { DataSyncError } from "~/libs/data-sync-error"
 
 export class FirestoreProvider {
   readonly userDoc: DocumentReference<UserDocument>
@@ -71,7 +71,7 @@ export class FirestoreProvider {
     }
     FirestoreProvider.blockListening = false
 
-    this.unsubscribe = onSnapshot(this.userDoc, async(doc) => {
+    this.unsubscribe = onSnapshot(this.userDoc, async (doc) => {
       if (!doc.metadata.hasPendingWrites) {
         const data = doc.data()!
 

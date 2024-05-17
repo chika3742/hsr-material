@@ -2,7 +2,10 @@
   <div>
     <v-app>
       <client-only>
-        <AppDrawer v-model="isDrawerOpenOnMobile" :drawer-items="drawerItems" />
+        <AppDrawer
+          v-model="isDrawerOpenOnMobile"
+          :drawer-items="drawerItems"
+        />
       </client-only>
 
       <v-app-bar>
@@ -16,7 +19,10 @@
         <v-app-bar-title>{{ title }}</v-app-bar-title>
 
         <template #append>
-          <v-app-bar-nav-icon icon="mdi-magnify" @click="showSearchDialog = true" />
+          <v-app-bar-nav-icon
+            icon="mdi-magnify"
+            @click="showSearchDialog = true"
+          />
         </template>
       </v-app-bar>
 
@@ -25,18 +31,31 @@
       </client-only>
 
       <v-main class="h-100">
-        <div class="position-fixed" style="top: 64px; width: 100%; z-index: 9999">
-          <v-progress-linear :active="isLoadingPage" color="primary" indeterminate />
+        <div
+          class="position-fixed"
+          style="top: 64px; width: 100%; z-index: 9999"
+        >
+          <v-progress-linear
+            :active="isLoadingPage"
+            color="primary"
+            indeterminate
+          />
         </div>
 
         <div class="d-flex flex-column h-100">
-          <v-container v-safe-area="{left: 16, right: 16}">
-            <NuxtPage :keepalive="{max: 5, exclude: ['v-tooltip']}" :page-key="$router.currentRoute.value.path" />
+          <v-container v-safe-area="{ left: 16, right: 16 }">
+            <NuxtPage
+              :keepalive="{ max: 5, exclude: ['v-tooltip'] }"
+              :page-key="$router.currentRoute.value.path"
+            />
           </v-container>
 
           <v-spacer />
 
-          <div v-if="!isProd" class="warning-overlay-banner">
+          <div
+            v-if="!isProd"
+            class="warning-overlay-banner"
+          >
             <span>{{ tx("common.nonProdWarning") }}</span>
           </div>
 
@@ -50,7 +69,10 @@
         </div>
 
         <client-only>
-          <v-snackbar v-model="snackbar.ref.value.displayed" :color="snackbar.ref.value.color ?? undefined">
+          <v-snackbar
+            v-model="snackbar.ref.value.displayed"
+            :color="snackbar.ref.value.color ?? undefined"
+          >
             <span>{{ snackbar.ref.value.message }}</span>
 
             <template #actions>
@@ -95,20 +117,23 @@
       </v-main>
 
       <v-fade-transition>
-        <div v-show="!mounted" class="loading-overlay" />
+        <div
+          v-show="!mounted"
+          class="loading-overlay"
+        />
       </v-fade-transition>
     </v-app>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {useTheme} from "vuetify"
-import type {Unsubscribe} from "firebase/auth"
-import {ref} from "#imports"
-import {useSnackbar} from "~/composables/snackbar"
-import {useDialog} from "~/composables/dialog"
-import {_db} from "~/dexie/db"
-import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
+import { useTheme } from "vuetify"
+import type { Unsubscribe } from "firebase/auth"
+import { ref } from "#imports"
+import { useSnackbar } from "~/composables/snackbar"
+import { useDialog } from "~/composables/dialog"
+import { _db } from "~/dexie/db"
+import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
 
 const router = useRouter()
 const i18n = useI18n()
@@ -117,7 +142,7 @@ const snackbar = useSnackbar()
 const theme = useTheme()
 const config = useConfigStore()
 const rConfig = useRuntimeConfig()
-const {$auth, $firestore} = useNuxtApp()
+const { $auth, $firestore } = useNuxtApp()
 const localePath = useLocalePath()
 
 const isProd = rConfig.public.isProdBranch
@@ -240,7 +265,7 @@ onMounted(() => {
 
   // show update snackbar
   if (rConfig.public.isProdBranch && config.previousVersion !== getCurrentVersionText()) {
-    snackbar.show(tx(i18n, "common.updated", {version: getCurrentVersionText()}), null, {
+    snackbar.show(tx(i18n, "common.updated", { version: getCurrentVersionText() }), null, {
       text: tx(i18n, "pageTitles.releaseNotes"),
       onClick() {
         void router.push(localePath("/release-notes"))
@@ -264,7 +289,6 @@ router.beforeEach(() => {
 router.afterEach(() => {
   isLoadingPage.value = false
 })
-
 </script>
 
 <style lang="sass" scoped>
@@ -309,5 +333,4 @@ router.afterEach(() => {
   background: rgba(var(--v-theme-warning), 0.6)
   font-weight: bold
   backdrop-filter: blur(8px)
-
 </style>

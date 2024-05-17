@@ -2,7 +2,7 @@
 import dropRates from "assets/data/drop-rates.yaml"
 import materials from "~/assets/data/materials.csv"
 import SwitchListItem from "~/components/switch-list-item.vue"
-import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
+import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
 
 definePageMeta({
   title: "settings",
@@ -13,7 +13,7 @@ const dialog = useDialog()
 const i18n = useI18n()
 const snackbar = useSnackbar()
 
-const range = (start: number, end: number) => Array.from({length: end - start + 1}, (_, i) => start + i)
+const range = (start: number, end: number) => Array.from({ length: end - start + 1 }, (_, i) => start + i)
 
 const equilibriumLevelPossibleValues = range(0, 6)
 
@@ -46,7 +46,10 @@ const clearCharacterLevels = () => {
   <div class="doc-container">
     <section>
       <h2>{{ tx("settingsPage.bookmarkDisplay") }}</h2>
-      <v-list rounded elevation="2">
+      <v-list
+        rounded
+        elevation="2"
+      >
         <SwitchListItem
           v-model="config.showFarmingCount"
           :title="tx('settingsPage.showFarmingCount')"
@@ -57,8 +60,18 @@ const clearCharacterLevels = () => {
 
     <h2>{{ tx("settingsPage.equilibriumLevel") }}</h2>
     <p>{{ tx("settingsPage.equilibriumLevelDesc") }}</p>
-    <v-radio-group v-model="config.equilibriumLevel" hide-details inline @update:model-value="syncFirestore">
-      <v-radio v-for="i in equilibriumLevelPossibleValues" :key="i" :label="i.toString()" :value="i" />
+    <v-radio-group
+      v-model="config.equilibriumLevel"
+      hide-details
+      inline
+      @update:model-value="syncFirestore"
+    >
+      <v-radio
+        v-for="i in equilibriumLevelPossibleValues"
+        :key="i"
+        :label="i.toString()"
+        :value="i"
+      />
     </v-radio-group>
 
     <section>
@@ -71,7 +84,10 @@ const clearCharacterLevels = () => {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(entry, i) in dropRates" :key="i">
+          <tr
+            v-for="(entry, i) in dropRates"
+            :key="i"
+          >
             <td>
               {{
                 tx(typeof entry.readableType !== "undefined"
@@ -81,13 +97,19 @@ const clearCharacterLevels = () => {
             </td>
             <td>
               <client-only>
-                <div v-if="getDropRates(entry)" class="d-flex g-4">
+                <div
+                  v-if="getDropRates(entry)"
+                  class="d-flex g-4"
+                >
                   <div
                     v-for="item in Object.entries(getDropRates(entry)!.rarities)"
                     :key="item[0]"
                     class="d-flex align-center g-2"
                   >
-                    <v-img :src="getMaterialImage(getFirstMaterialId(entry, Number(item[0])))" width="35px" />
+                    <v-img
+                      :src="getMaterialImage(getFirstMaterialId(entry, Number(item[0])))"
+                      width="35px"
+                    />
                     <span>{{ item[1] }}</span>
                   </div>
                 </div>
@@ -114,8 +136,15 @@ const clearCharacterLevels = () => {
 
     <section>
       <h2>{{ tx("settingsPage.others") }}</h2>
-      <v-list class="mt-2" elevation="2" rounded>
-        <v-list-item :title="tx('settingsPage.clearCharacterLevels')" @click="clearCharacterLevels" />
+      <v-list
+        class="mt-2"
+        elevation="2"
+        rounded
+      >
+        <v-list-item
+          :title="tx('settingsPage.clearCharacterLevels')"
+          @click="clearCharacterLevels"
+        />
       </v-list>
     </section>
   </div>

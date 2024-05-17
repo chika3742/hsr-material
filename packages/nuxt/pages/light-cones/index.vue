@@ -37,8 +37,14 @@ onActivated(() => {
 
 <template>
   <div>
-    <v-row no-gutters style="gap: 8px">
-      <v-btn :color="filteringRarity.length >= 1 ? 'star' : ''" prepend-icon="mdi-filter">
+    <v-row
+      no-gutters
+      style="gap: 8px"
+    >
+      <v-btn
+        :color="filteringRarity.length >= 1 ? 'star' : ''"
+        prepend-icon="mdi-filter"
+      >
         <span>{{ tx("common.filter") }}</span>
 
         <client-only>
@@ -50,7 +56,12 @@ onActivated(() => {
                 :value="g[0].rarity"
               >
                 <v-row no-gutters>
-                  <v-icon v-for="i in g[0].rarity" :key="i" color="star" size="18">
+                  <v-icon
+                    v-for="i in g[0].rarity"
+                    :key="i"
+                    color="star"
+                    size="18"
+                  >
                     mdi-star
                   </v-icon>
                 </v-row>
@@ -68,7 +79,11 @@ onActivated(() => {
         {{ tx("common.expandAll") }}
       </v-btn>
 
-      <v-btn :disabled="expanded.length === 0" prepend-icon="mdi-collapse-all" @click="expanded = []">
+      <v-btn
+        :disabled="expanded.length === 0"
+        prepend-icon="mdi-collapse-all"
+        @click="expanded = []"
+      >
         {{ tx("common.collapseAll") }}
       </v-btn>
     </v-row>
@@ -91,8 +106,11 @@ onActivated(() => {
       :has-subtitle="showSkillDescriptions"
       preserve-query
     >
-      <template #subtitle="{itemId}">
-        <v-list-item-subtitle v-if="showSkillDescriptions" class="mt-1">
+      <template #subtitle="{ itemId }">
+        <v-list-item-subtitle
+          v-if="showSkillDescriptions"
+          class="mt-1"
+        >
           <EmphasizedText :text="tx(`lightConeSkillDescriptions.${itemId}`)" />
         </v-list-item-subtitle>
       </template>

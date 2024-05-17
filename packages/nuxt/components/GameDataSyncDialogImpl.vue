@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
-import {db} from "~/libs/db/providers"
+import { db } from "~/libs/db/providers"
 
 interface Props {
   modelValue: boolean
@@ -31,7 +31,9 @@ const getters: DataSyncMapGetters = {
     if (character.nameJP === "開拓者") {
       const variant = characters.find(e => e.id === "trailblazer")!.variants!
         .find(e => e.combatType === character.variant)
-      if (!variant) { return "" }
+      if (!variant) {
+        return ""
+      }
 
       return toCharacterIdWithVariant("trailblazer", variant.path)
     } else {
@@ -44,7 +46,7 @@ const getters: DataSyncMapGetters = {
     lightCones.find(e => e.$nameJA === lightConeName)?.id ?? "",
   getEquipmentImage: (lightConeId: string) => getLightConeImage(lightConeId),
 }
-const getShowcaseCharacters = async() => {
+const getShowcaseCharacters = async () => {
   if (showcaseUid.value.length !== 9) {
     snackbar.show(tx(i18n, "gameDataSync.invalidUidLength"), "error")
     return
@@ -63,7 +65,7 @@ const getShowcaseCharacters = async() => {
 
   loadingShowcaseUser.value = false
 }
-const importGameData = async() => {
+const importGameData = async () => {
   if (typeof showcaseUser.value === "undefined") {
     return
   }

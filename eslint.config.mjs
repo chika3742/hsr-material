@@ -3,7 +3,7 @@
 /** @type {import("./packages/nuxt/.nuxt/eslint.config.d.mjs").withNuxt} */
 import withNuxt from "./packages/nuxt/.nuxt/eslint.config.mjs"
 
-/** @type {import("eslint/rules").ESLintRules & import("@stylistic/eslint-plugin").RuleOptions} */
+/** @type {import("eslint/rules").ESLintRules & import("./packages/nuxt/node_modules/@stylistic/eslint-plugin").RuleOptions} */
 const commonRules = {
   "@stylistic/quotes": [
     "error",
@@ -17,6 +17,8 @@ const commonRules = {
     "error",
     "always-multiline",
   ],
+  "@stylistic/object-curly-spacing": ["error", "always"],
+  "@stylistic/block-spacing": ["error", "always"],
   "space-before-function-paren": [
     "error",
     "never",
@@ -49,13 +51,15 @@ const commonRules = {
     },
   ],
   "@typescript-eslint/no-unsafe-member-access": "off",
+  "@typescript-eslint/no-explicit-any": "off",
+  "@typescript-eslint/no-namespace": "off",
 }
 
 export default withNuxt(
   {
     files: ["packages/nuxt/**"],
     rules: {
-      "no-console": "warn",
+      "no-console": ["warn", { allow: ["error", "warn"] }],
     },
   },
   {

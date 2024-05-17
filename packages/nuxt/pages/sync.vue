@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import type {AuthProvider, User} from "@firebase/auth"
-import {GoogleAuthProvider, OAuthProvider, reauthenticateWithPopup, signInWithPopup} from "@firebase/auth"
-import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
-import {_db} from "~/dexie/db"
+import type { AuthProvider, User } from "@firebase/auth"
+import { GoogleAuthProvider, OAuthProvider, reauthenticateWithPopup, signInWithPopup } from "@firebase/auth"
+import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
+import { _db } from "~/dexie/db"
 
 definePageMeta({
   title: "sync",
 })
 
-const {$auth, $firestore} = useNuxtApp()
+const { $auth, $firestore } = useNuxtApp()
 const dialog = useDialog()
 const snackbar = useSnackbar()
 const i18n = useI18n()
@@ -83,7 +83,7 @@ const signIn = (provider: AuthProvider) => {
     FirestoreProvider.instance = new FirestoreProvider(result.user, $firestore, _db)
     return FirestoreProvider.instance.initUser()
   }).then(() => {
-    FirestoreProvider.instance?.listen({cancelBlocking: true})
+    FirestoreProvider.instance?.listen({ cancelBlocking: true })
     snackbar.show(tx(i18n, "syncPage.signInSuccess"))
     return null
   }).finally(() => {
@@ -106,15 +106,15 @@ const signIn = (provider: AuthProvider) => {
           tx(i18n, "syncPage.conflictDialogMessage"),
           sendLocalDataToResolveConflict,
           () => {
-            FirestoreProvider.instance?.listen({cancelBlocking: true})
+            FirestoreProvider.instance?.listen({ cancelBlocking: true })
           },
-          {persistent: true},
+          { persistent: true },
         )
 
         return // do not sign out
       default:
         console.error(error)
-        snackbar.show(tx(i18n, "syncPage.signInError", {code: error.code}), "error")
+        snackbar.show(tx(i18n, "syncPage.signInError", { code: error.code }), "error")
     }
 
     // sign out to prevent data corruption
@@ -132,7 +132,7 @@ const sendLocalDataToResolveConflict = () => {
   overlayLoading.message = tx(i18n, "syncPage.sendingLocalData")
   overlayLoading.show = true
   FirestoreProvider.instance.sendLocalData().then(() => {
-    FirestoreProvider.instance?.listen({cancelBlocking: true})
+    FirestoreProvider.instance?.listen({ cancelBlocking: true })
     return null
   }).finally(() => {
     overlayLoading.show = false
@@ -154,7 +154,7 @@ const signOutWithConfirmation = () => {
       return null
     }).catch((error) => {
       console.error(error)
-      snackbar.show(tx(i18n, "syncPage.signOutError", {code: error.code}), "error")
+      snackbar.show(tx(i18n, "syncPage.signOutError", { code: error.code }), "error")
     })
   })
 }
@@ -192,7 +192,7 @@ const deleteUser = () => {
       deletingUser.value = false
     }).catch((error) => {
       console.error(error)
-      snackbar.show(tx(i18n, "syncPage.deleteUserError", {code: error.code}), "error")
+      snackbar.show(tx(i18n, "syncPage.deleteUserError", { code: error.code }), "error")
     })
   })
 }
@@ -201,7 +201,11 @@ const deleteUser = () => {
 <template>
   <div class="doc-container">
     <!-- user loading indicator -->
-    <v-row v-if="loadingCurrentUser" align="center" no-gutters>
+    <v-row
+      v-if="loadingCurrentUser"
+      align="center"
+      no-gutters
+    >
       <v-progress-circular indeterminate />
       <span class="ml-2">{{ tx("syncPage.loading") }}</span>
     </v-row>
@@ -221,7 +225,7 @@ const deleteUser = () => {
         >
           <template #prepend>
             <v-img
-              :class="{filter: method.iconFilter && $vuetify.theme.current.dark, 'mr-3': true}"
+              :class="{ 'filter': method.iconFilter && $vuetify.theme.current.dark, 'mr-3': true }"
               :src="method.icon"
               aspect-ratio="1"
               width="30px"
@@ -248,21 +252,42 @@ const deleteUser = () => {
         </tbody>
       </v-table>
 
-      <v-row class="mt-4" no-gutters style="gap: 16px">
-        <v-btn :disabled="deletingUser" @click="signOutWithConfirmation">
+      <v-row
+        class="mt-4"
+        no-gutters
+        style="gap: 16px"
+      >
+        <v-btn
+          :disabled="deletingUser"
+          @click="signOutWithConfirmation"
+        >
           {{ tx("syncPage.signOut") }}
         </v-btn>
 
-        <v-btn :loading="deletingUser" color="red" variant="text" @click="deleteUser">
+        <v-btn
+          :loading="deletingUser"
+          color="red"
+          variant="text"
+          @click="deleteUser"
+        >
           {{ tx("syncPage.deleteUser") }}
         </v-btn>
       </v-row>
     </section>
 
     <client-only>
-      <v-overlay :model-value="overlayLoading.show" style="display: grid; place-items: center">
-        <v-row align="center" no-gutters>
-          <v-progress-circular indeterminate size="32" />
+      <v-overlay
+        :model-value="overlayLoading.show"
+        style="display: grid; place-items: center"
+      >
+        <v-row
+          align="center"
+          no-gutters
+        >
+          <v-progress-circular
+            indeterminate
+            size="32"
+          />
           <span class="ml-4">{{ overlayLoading.message }}</span>
         </v-row>
       </v-overlay>

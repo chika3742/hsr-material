@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import _ from "lodash"
-import type {PurposeType} from "~/types/strings"
-import type {LevelingBookmark} from "~/types/bookmark/bookmark"
-import {materialSortFunc} from "~/utils/merge-items"
-import {db} from "~/libs/db/providers"
+import type { PurposeType } from "~/types/strings"
+import type { LevelingBookmark } from "~/types/bookmark/bookmark"
+import { materialSortFunc } from "~/utils/merge-items"
+import { db } from "~/libs/db/providers"
 
 interface Props {
   modelValue: boolean
@@ -94,11 +94,14 @@ router.beforeEach(() => {
   >
     <v-card :title="tx('common.details')">
       <div class="overflow-y-auto pa-2 h-100">
-        <v-expansion-panels :model-value="Object.keys(purposes)" multiple>
+        <v-expansion-panels
+          :model-value="Object.keys(purposes)"
+          multiple
+        >
           <v-expansion-panel
             v-for="(levels, purpose) in purposes"
             :key="purpose"
-            :title="tx(`purposeTypes.${purpose}`, {title: getSkillTitle(Object.values(levels!)[0][0])})"
+            :title="tx(`purposeTypes.${purpose}`, { title: getSkillTitle(Object.values(levels!)[0][0]) })"
             :value="purpose"
           >
             <template #text>
@@ -121,7 +124,10 @@ router.beforeEach(() => {
 
       <template #actions>
         <v-spacer />
-        <v-btn variant="text" @click.prevent="$emit('update:modelValue', false)">
+        <v-btn
+          variant="text"
+          @click.prevent="$emit('update:modelValue', false)"
+        >
           {{ tx('common.cancel') }}
         </v-btn>
       </template>

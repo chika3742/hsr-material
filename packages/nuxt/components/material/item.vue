@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-import {from, useObservable} from "@vueuse/rxjs"
-import {liveQuery} from "dexie"
+import { from, useObservable } from "@vueuse/rxjs"
+import { liveQuery } from "dexie"
 import _ from "lodash"
 import hash from "object-hash"
-import type {PurposeType} from "~/types/strings"
+import type { PurposeType } from "~/types/strings"
 import materials from "~/assets/data/materials.csv"
-import {computed} from "#imports"
-import type {LevelingBookmark} from "~/types/bookmark/bookmark"
-import {db} from "~/libs/db/providers"
+import { computed } from "#imports"
+import type { LevelingBookmark } from "~/types/bookmark/bookmark"
+import { db } from "~/libs/db/providers"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
-import type {BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
-import {isBookmarkableExp, isBookmarkableMaterial} from "~/types/bookmark/bookmarkables"
+import type { BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
+import { isBookmarkableExp, isBookmarkableMaterial } from "~/types/bookmark/bookmarkables"
 
 interface Props {
   /**
@@ -66,7 +66,7 @@ const expItemLineup = computed(() => {
 
 // Bookmarks
 const savedBookmarks = (() => {
-  if (process.server) {
+  if (import.meta.server) {
     return ref([])
   }
 
@@ -95,7 +95,7 @@ const savedBookmarks = (() => {
  * - none: no items are bookmarked
  */
 const bookmarkState = computed<"full" | "partial" | "none" | undefined>(() => {
-  if (process.server) {
+  if (import.meta.server) {
     return undefined
   }
 
@@ -116,7 +116,7 @@ const bookmarkState = computed<"full" | "partial" | "none" | undefined>(() => {
   }
 })
 
-const toggleBookmark = async(selectedExpItemId: string | undefined) => {
+const toggleBookmark = async (selectedExpItemId: string | undefined) => {
   if (savedBookmarks.value === null) {
     return
   }
@@ -144,7 +144,7 @@ const toggleBookmark = async(selectedExpItemId: string | undefined) => {
   }
 }
 
-const reBookmark = async(selectedExpItemId: string | undefined) => {
+const reBookmark = async (selectedExpItemId: string | undefined) => {
   loading.value = true
 
   try {
@@ -159,7 +159,6 @@ const reBookmark = async(selectedExpItemId: string | undefined) => {
     loading.value = false
   }
 }
-
 </script>
 
 <template>

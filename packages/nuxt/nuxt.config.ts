@@ -1,18 +1,18 @@
-import {relative, resolve} from "path"
-import {execSync} from "child_process"
-import {Readable} from "stream"
+import { relative, resolve } from "path"
+import { execSync } from "child_process"
+import { Readable } from "stream"
 import fs from "fs"
 import yaml from "@rollup/plugin-yaml"
-import {DateTime} from "luxon"
+import { DateTime } from "luxon"
 import dsv from "@rollup/plugin-dsv"
-import type {SitemapItemLoose} from "sitemap"
-import {EnumChangefreq, SitemapStream, streamToPromise} from "sitemap"
-import type {FirebaseOptions} from "@firebase/app"
-import {useNuxt} from "@nuxt/kit"
+import type { SitemapItemLoose } from "sitemap"
+import { EnumChangefreq, SitemapStream, streamToPromise } from "sitemap"
+import type { FirebaseOptions } from "@firebase/app"
+import { useNuxt } from "@nuxt/kit"
 import algoliaConfig from "./algolia.json"
-import {generateSchemas} from "./scripts/generate-schemas"
-import {generateLocType} from "./scripts/generate-loc-type"
-import {workboxBuild} from "./scripts/workbox-build"
+import { generateSchemas } from "./scripts/generate-schemas"
+import { generateLocType } from "./scripts/generate-loc-type"
+import { workboxBuild } from "./scripts/workbox-build"
 
 const prodBranch = "live"
 const hostname = "https://hsr.matnote.app"
@@ -188,7 +188,7 @@ export default defineNuxtConfig({
     families: {
       "M PLUS 2": [500, 700],
       "Kaisei Opti": [700],
-      Cairo: [700],
+      "Cairo": [700],
       "Kiwi Maru": [500],
       "Material Symbols Outlined": true,
     },

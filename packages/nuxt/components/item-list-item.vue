@@ -21,12 +21,24 @@ withDefaults(defineProps<{
     })"
   >
     <template #prepend>
-      <v-img :src="imageFunc(itemId)" aspect-ratio="1" class="mr-2" width="45px" />
+      <v-img
+        :src="imageFunc(itemId)"
+        aspect-ratio="1"
+        class="mr-2"
+        width="45px"
+      />
     </template>
 
-    <v-row align="center" no-gutters style="gap: 8px">
+    <v-row
+      align="center"
+      no-gutters
+      style="gap: 8px"
+    >
       <v-list-item-title>{{ tx(`${itemI18nKey}.${itemId}`) }}</v-list-item-title>
-      <v-chip :color="`rarity-${itemRarity}`" size="small">
+      <v-chip
+        :color="`rarity-${itemRarity}`"
+        size="small"
+      >
         <v-icon>mdi-star</v-icon>
         {{ itemRarity }}
       </v-chip>

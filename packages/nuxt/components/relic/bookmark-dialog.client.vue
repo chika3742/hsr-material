@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import relicStats from "assets/data/relic-stats.yaml"
-import type {RelicPiece, RelicSet} from "~/types/data/relics"
-import type {Stat} from "~/types/generated/relic-stats.g"
-import type {CharacterIdWithVariant} from "~/types/strings"
-import {db} from "~/libs/db/providers"
-import type {BookmarkableRelic} from "~/types/bookmark/bookmarkables"
-import {BookmarkableRelicPiece, BookmarkableRelicSet} from "~/types/bookmark/bookmarkables"
+import type { RelicPiece, RelicSet } from "~/types/data/relics"
+import type { Stat } from "~/types/generated/relic-stats.g"
+import type { CharacterIdWithVariant } from "~/types/strings"
+import { db } from "~/libs/db/providers"
+import type { BookmarkableRelic } from "~/types/bookmark/bookmarkables"
+import { BookmarkableRelicPiece, BookmarkableRelicSet } from "~/types/bookmark/bookmarkables"
 
 interface Props {
   modelValue: boolean
@@ -133,7 +133,7 @@ const initSelections = () => {
   selectedStats.sub = []
 }
 
-const saveBookmark = async() => {
+const saveBookmark = async () => {
   if (typeof selectedCharacter.value === "undefined") {
     characterSelectError.value = tx(i18n, "relicDetailsPage.characterSelectError")
     return
@@ -197,7 +197,7 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
     @update:model-value="$emit('update:modelValue', $event)"
   >
     <v-card
-      v-safe-area="{top: true, right: true, bottom: true, left: true}"
+      v-safe-area="{ top: true, right: true, bottom: true, left: true }"
       :title="relicSets ? tx('relicDetailsPage.bookmarkRelicSet') : tx('relicDetailsPage.bookmarkRelicPiece')"
     >
       <template #text>
@@ -220,10 +220,19 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
           />
 
           <!-- Main stat radio buttons -->
-          <section v-for="group in radioGroups.filter(e => e.items.length >= 2)" :key="group.title">
+          <section
+            v-for="group in radioGroups.filter(e => e.items.length >= 2)"
+            :key="group.title"
+          >
             <h4>{{ tx(group.title) }}</h4>
-            <v-radio-group v-model="selectedStats.main[group.type]" inline>
-              <v-radio :label="tx('relicDetailsPage.unspecified')" :value="null" />
+            <v-radio-group
+              v-model="selectedStats.main[group.type]"
+              inline
+            >
+              <v-radio
+                :label="tx('relicDetailsPage.unspecified')"
+                :value="null"
+              />
               <v-radio
                 v-for="stat in group.items"
                 :key="stat"
@@ -236,7 +245,7 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
 
           <!-- Sub stat checkboxes -->
           <section>
-            <h4>{{ tx("common.subStat", {n: 0}) }}</h4>
+            <h4>{{ tx("common.subStat", { n: 0 }) }}</h4>
             <v-row no-gutters>
               <v-checkbox-btn
                 v-for="stat in relicStats.sub"
@@ -254,10 +263,17 @@ const getCheckBoxDisabled = (stat: Stat): boolean => {
 
       <template #actions>
         <v-spacer />
-        <v-btn variant="text" @click="$emit('update:modelValue', false)">
+        <v-btn
+          variant="text"
+          @click="$emit('update:modelValue', false)"
+        >
           {{ tx("common.cancel") }}
         </v-btn>
-        <v-btn :loading="loading" variant="text" @click="saveBookmark">
+        <v-btn
+          :loading="loading"
+          variant="text"
+          @click="saveBookmark"
+        >
           {{ tx("common.ok") }}
         </v-btn>
       </template>

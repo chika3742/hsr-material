@@ -30,7 +30,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="container" :class="containerClass">
+  <div
+    ref="container"
+    :class="containerClass"
+  >
     <slot />
   </div>
 </template>

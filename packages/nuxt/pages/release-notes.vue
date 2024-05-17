@@ -3,7 +3,13 @@
     <section>
       <h2>{{ $t("pageTitles.releaseNotes") }}</h2>
 
-      <v-timeline ref="timeline" :style="timelineStyle" align="start" class="timeline" side="end">
+      <v-timeline
+        ref="timeline"
+        :style="timelineStyle"
+        align="start"
+        class="timeline"
+        side="end"
+      >
         <v-timeline-item
           v-for="(item, i) in releaseNotes"
           :key="i"
@@ -25,11 +31,17 @@
               :item="item"
               :previous-item="releaseNotes[i + 1]"
             />
-            <div style="font-size: 0.9em; margin-top: -8px" v-html="marked.parse(item.content)" />
+            <div
+              style="font-size: 0.9em; margin-top: -8px"
+              v-html="marked.parse(item.content)"
+            />
           </div>
         </v-timeline-item>
 
-        <div v-show="!timelineExpanded && timeline && timeline.$el.scrollHeight >= 600" class="show-more-blur">
+        <div
+          v-show="!timelineExpanded && timeline && timeline.$el.scrollHeight >= 600"
+          class="show-more-blur"
+        >
           <v-btn
             class="mb-4 show-more-blur__btn"
             color="primary"
@@ -73,7 +85,7 @@
 
 <script lang="ts" setup>
 import releaseNotes from "~/assets/data/release-notes.yaml"
-import {CustomMarked} from "~/libs/custom-marked"
+import { CustomMarked } from "~/libs/custom-marked"
 
 definePageMeta({
   title: "releaseNotes",

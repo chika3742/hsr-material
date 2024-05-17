@@ -1,59 +1,69 @@
 declare module "~/assets/data/release-notes.yaml" {
-  import {ReleaseNotes} from "~/types/generated/release-notes.g"
+  import type { ReleaseNotes } from "~/types/generated/release-notes.g"
+
   const releaseNotes: ReleaseNotes
   export default releaseNotes
 }
 
 declare module "~/assets/data/characters.yaml" {
-  import {Characters} from "~/types/generated/characters.g"
+  import type { Characters } from "~/types/generated/characters.g"
+
   const characters: Characters
   export default characters
 }
 
 declare module "~/assets/data/character-ingredients.yaml" {
-  import {CharacterIngredients} from "~/types/generated/character-ingredients.g"
+  import type { CharacterIngredients } from "~/types/generated/character-ingredients.g"
+
   const characterIngredients: CharacterIngredients
   export default characterIngredients
 }
 
 declare module "~/assets/data/light-cones.yaml" {
-  import {LightCone} from "~/types/generated/light-cones.g"
+  import type { LightCone } from "~/types/generated/light-cones.g"
+
   const lightCones: (LightCone & Record<string, unknown>)[]
   export default lightCones
 }
 
 declare module "~/assets/data/light-cone-ingredients.yaml" {
-  import {LightConeIngredients} from "~/types/generated/light-cone-ingredients.g"
+  import type { LightConeIngredients } from "~/types/generated/light-cone-ingredients.g"
+
   const lightConeIngredients: LightConeIngredients
   export default lightConeIngredients
 }
 
 declare module "~/assets/data/materials.csv" {
-  import {Material} from "~/types/data/materials"
+  import type { Material } from "~/types/data/materials"
+
   const materials: Material[]
   export default materials
 }
 
 declare module "assets/data/relic-sets.csv" {
-  import {RelicSet} from "~/types/data/relics"
+  import type { RelicSet } from "~/types/data/relics"
+
   const relicSets: RelicSet[]
   export default relicSets
 }
 
 declare module "assets/data/relic-pieces.csv" {
-  import {RelicPiece} from "~/types/data/relics"
+  import type { RelicPiece } from "~/types/data/relics"
+
   const relicPieces: RelicPiece[]
   export default relicPieces
 }
 
 declare module "assets/data/relic-stats.yaml" {
-  import {RelicStats} from "~/types/generated/relic-stats.g"
+  import type { RelicStats } from "~/types/generated/relic-stats.g"
+
   const relicStats: RelicStats
   export default relicStats
 }
 
 declare module "assets/data/drop-rates.yaml" {
-  import {DropRates} from "~/types/generated/drop-rates.g"
+  import type { DropRates } from "~/types/generated/drop-rates.g"
+
   const dropRates: DropRates
   export default dropRates
 }

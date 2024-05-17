@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-
 import _ from "lodash"
 import hash from "object-hash"
-import type {SyncedUserData} from "~/types/firestore/user-document"
+import type { SyncedUserData } from "~/types/firestore/user-document"
 
 export const migrate = (data: { [table: string]: any }, oldVersion: number, newVersion: number): SyncedUserData => {
   if (oldVersion >= newVersion) {

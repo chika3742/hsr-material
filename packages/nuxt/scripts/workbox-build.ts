@@ -1,10 +1,10 @@
-import {generateSW} from "workbox-build"
+import { generateSW } from "workbox-build"
 
-export const workboxBuild = async() => {
+export const workboxBuild = async () => {
   const swPath = process.env.NODE_ENV === "production" ? "dist/sw.js" : "public/sw-dev.js"
   const globDirectory = process.env.NODE_ENV === "production" ? "dist" : ".nuxt/dist/client/_nuxt"
 
-  const {count, size} = await generateSW({
+  const { count, size } = await generateSW({
     swDest: swPath,
     sourcemap: false,
     globDirectory,
@@ -16,7 +16,7 @@ export const workboxBuild = async() => {
     ],
     runtimeCaching: [
       {
-        urlPattern: ({sameOrigin, url}) => sameOrigin && url.pathname.endsWith(".webp"),
+        urlPattern: ({ sameOrigin, url }) => sameOrigin && url.pathname.endsWith(".webp"),
         handler: "StaleWhileRevalidate",
       },
       {

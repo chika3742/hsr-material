@@ -1,6 +1,6 @@
-import type {Bookmark} from "~/types/bookmark/bookmark"
-import type {CharacterIdWithVariant} from "~/types/strings"
-import type {Stat} from "~/types/generated/relic-stats.g"
+import type { Bookmark } from "~/types/bookmark/bookmark"
+import type { CharacterIdWithVariant } from "~/types/strings"
+import type { Stat } from "~/types/generated/relic-stats.g"
 
 export type BookmarkableCharacterMaterial = Omit<Bookmark.CharacterMaterial, "id" | "bookmarkedAt">
 export type BookmarkableLightConeMaterial = Omit<Bookmark.LightConeMaterial, "id" | "bookmarkedAt">

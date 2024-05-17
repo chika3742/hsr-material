@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import relicSets from "assets/data/relic-sets.csv"
 import relicPieces from "assets/data/relic-pieces.csv"
-import type {RelicPiece, RelicSet} from "~/types/data/relics"
+import type { RelicPiece, RelicSet } from "~/types/data/relics"
 
 definePageMeta({
   title: "relicDetails",
@@ -26,7 +26,7 @@ const relicSetBookmarkDialog = reactive({
 })
 
 if (!relicSets.some(e => e.id === route.params.relicId)) {
-  throw createError({statusCode: 404, message: "Page not found", fatal: true})
+  throw createError({ statusCode: 404, message: "Page not found", fatal: true })
 }
 
 const relicSet = relicSets.find(e => e.id === route.params.relicId)!
@@ -37,6 +37,8 @@ const bookmarkBtnText = computed(() => {
       return tx("relicDetailsPage.bookmark4Pcs")
     case "planar":
       return tx("relicDetailsPage.bookmark2Pcs")
+    default:
+      throw "Unexpected relic set type"
   }
 })
 
@@ -55,14 +57,26 @@ const bookmarkPiece = (piece: RelicPiece) => {
   relicSetBookmarkDialog.relicSets = null
   relicSetBookmarkDialog.show = true
 }
-
 </script>
 
 <template>
-  <div class="d-flex flex-column" style="gap: 8px">
-    <v-row align="center" no-gutters>
-      <v-img :src="getRelicSetImage(relicSet.id)" max-width="60px" width="60px" />
-      <div class="ml-2 d-flex" style="gap: 8px">
+  <div
+    class="d-flex flex-column"
+    style="gap: 8px"
+  >
+    <v-row
+      align="center"
+      no-gutters
+    >
+      <v-img
+        :src="getRelicSetImage(relicSet.id)"
+        max-width="60px"
+        width="60px"
+      />
+      <div
+        class="ml-2 d-flex"
+        style="gap: 8px"
+      >
         <span class="text-surface-variant">{{ tx("common.kind") }}</span>
         <span>{{ tx(`relicTypes.${relicSet.type}`) }}</span>
       </div>
@@ -73,7 +87,10 @@ const bookmarkPiece = (piece: RelicPiece) => {
     <v-expansion-panels v-model="expandedPanels">
       <v-expansion-panel :title="tx('relicDetailsPage.bookmarkInSets')">
         <template #text>
-          <div class="d-flex flex-column" style="gap: 16px">
+          <div
+            class="d-flex flex-column"
+            style="gap: 16px"
+          >
             <v-row no-gutters>
               <v-btn
                 v-show="relicSet.type === 'cavern'"
@@ -116,7 +133,10 @@ const bookmarkPiece = (piece: RelicPiece) => {
           </v-list>
         </template>
       </v-expansion-panel>
-      <v-expansion-panel :title="tx('relicDetailsPage.recommendedCharacters')" text="Coming soon..." />
+      <v-expansion-panel
+        :title="tx('relicDetailsPage.recommendedCharacters')"
+        text="Coming soon..."
+      />
     </v-expansion-panels>
 
     <RelicSetChooseDialog

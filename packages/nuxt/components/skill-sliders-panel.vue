@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import type {PurposeType} from "~/types/strings"
-import type {CharacterMaterialDefinitions, Path} from "~/types/generated/characters.g"
-import type {LevelIngredients} from "~/types/level-ingredients"
+import type { PurposeType } from "~/types/strings"
+import type { CharacterMaterialDefinitions, Path } from "~/types/generated/characters.g"
+import type { LevelIngredients } from "~/types/level-ingredients"
 import characters from "~/assets/data/characters.yaml"
-import {db} from "~/libs/db/providers"
-import type {BookmarkableMaterial} from "~/types/bookmark/bookmarkables"
+import { db } from "~/libs/db/providers"
+import type { BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
 
 interface Slider {
   type: PurposeType
@@ -49,7 +49,7 @@ const ranges = ref(sliders.map((e) => {
   return [sliderTicks[0], sliderTicks.slice(-1)[0]]
 }))
 const checkedList = ref(sliders.map(() => true))
-const setInitialRangeBasedOnBookmarks = async() => {
+const setInitialRangeBasedOnBookmarks = async () => {
   const checkedListTmp = sliders.map(() => false)
 
   for (let index = 0; index < sliders.length; index++) {
@@ -74,8 +74,8 @@ const setInitialRangeBasedOnBookmarks = async() => {
     } else {
       // restore minimum value from persist store (game data sync)
       const characterId = toCharacterIdWithVariant(props.characterId, props.variant)
-      ranges.value[index] =
-        [config.characterLevels[characterId]?.[slider.type] ?? sliderTicks[0], sliderTicks.slice(-1)[0]]
+      ranges.value[index]
+        = [config.characterLevels[characterId]?.[slider.type] ?? sliderTicks[0], sliderTicks.slice(-1)[0]]
     }
   }
 
@@ -111,16 +111,24 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
       }))).flat()
   }).flat()
 })
-
 </script>
 
 <template>
   <v-expansion-panel :title="title">
     <v-expansion-panel-text eager>
       <div class="d-flex flex-column sliders-container mx-n4 mx-sm-0">
-        <section v-for="(item, i) in sliders" :key="i">
-          <v-row align="center" no-gutters>
-            <v-checkbox-btn v-model="checkedList[i]" class="flex-grow-0" />
+        <section
+          v-for="(item, i) in sliders"
+          :key="i"
+        >
+          <v-row
+            align="center"
+            no-gutters
+          >
+            <v-checkbox-btn
+              v-model="checkedList[i]"
+              class="flex-grow-0"
+            />
             <h4>
               <span class="label-subtitle">{{ tx(`common.skillTypes.${item.type}`) }}</span>
               <span class="ml-2 text-primary">{{ tx(`${skillI18nKeyBase}.${item.type}`) }}</span>
@@ -136,7 +144,10 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
           <v-divider class="my-2" />
         </section>
 
-        <MaterialItems :items="ingredients" :purpose-types="sliders.map(e => e.type)" />
+        <MaterialItems
+          :items="ingredients"
+          :purpose-types="sliders.map(e => e.type)"
+        />
       </div>
     </v-expansion-panel-text>
   </v-expansion-panel>

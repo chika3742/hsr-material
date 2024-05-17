@@ -1,9 +1,13 @@
 <template>
   <div>
-    <v-row class="cards" no-gutters style="gap: 16px">
+    <v-row
+      class="cards"
+      no-gutters
+      style="gap: 16px"
+    >
       <v-card>
         <div class="card">
-          <h4>{{ i18n.t("warpsPage.pityCountWithStar", {star: "5"}) }}</h4>
+          <h4>{{ i18n.t("warpsPage.pityCountWithStar", { star: "5" }) }}</h4>
           <div class="card__content">
             <span
               :class="pityInfo[5].count > pseudoPityBorder
@@ -17,7 +21,7 @@
 
       <v-card>
         <div class="card">
-          <h4>{{ i18n.t("warpsPage.lastPulled", {star: "5"}) }}</h4>
+          <h4>{{ i18n.t("warpsPage.lastPulled", { star: "5" }) }}</h4>
           <div class="card__content">
             {{ $t(pityInfo[5].lastPulled) }}
           </div>
@@ -27,7 +31,7 @@
 
       <v-card>
         <div class="card">
-          <h4>{{ i18n.t("warpsPage.pityCountWithStar", {star: "4"}) }}</h4>
+          <h4>{{ i18n.t("warpsPage.pityCountWithStar", { star: "4" }) }}</h4>
           <div class="card__content">
             <span>{{ pityInfo[4].count }}</span> / {{ star4Pity }}
           </div>
@@ -37,7 +41,7 @@
 
       <v-card>
         <div class="card">
-          <h4>{{ i18n.t("warpsPage.lastPulled", {star: "4"}) }}</h4>
+          <h4>{{ i18n.t("warpsPage.lastPulled", { star: "4" }) }}</h4>
           <div class="card__content">
             {{ $t(pityInfo[4].lastPulled) }}
           </div>
@@ -56,7 +60,11 @@
       </v-card>
     </v-row>
 
-    <v-expansion-panels v-if="showPityHistory" class="mt-4" style="max-width: 800px">
+    <v-expansion-panels
+      v-if="showPityHistory"
+      class="mt-4"
+      style="max-width: 800px"
+    >
       <v-expansion-panel>
         <v-expansion-panel-title>{{ $t("warpsPage.pityHistory") }}</v-expansion-panel-title>
         <v-expansion-panel-text class="pity-history-container">
@@ -70,10 +78,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(item, i) in pityCountList" :key="i">
+              <tr
+                v-for="(item, i) in pityCountList"
+                :key="i"
+              >
                 <td style="width: 70px">
                   <v-row
-                    :class="{'text-orange': item.rank === '4', 'text-red': item.rank === '5', 'flex-nowrap': true}"
+                    :class="{ 'text-orange': item.rank === '4', 'text-red': item.rank === '5', 'flex-nowrap': true }"
                     align="center"
                     no-gutters
                   >
@@ -95,7 +106,7 @@
                 </td>
                 <td>
                   {{ item.dateTime.toFormat("yyyy/MM/dd HH:mm") }}
-                  ({{ item.dateTime.toRelative({locale: $i18n.locale}) }})
+                  ({{ item.dateTime.toRelative({ locale: $i18n.locale }) }})
                 </td>
               </tr>
             </tbody>
@@ -107,8 +118,8 @@
 </template>
 
 <script lang="ts" setup>
-import {DateTime} from "luxon"
-import type {Warp} from "#shared/warp"
+import { DateTime } from "luxon"
+import type { Warp } from "#shared/warp"
 import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 
@@ -234,7 +245,6 @@ const rank5Prob = computed(() => {
     return 1 - prob
   }
 })
-
 </script>
 
 <style lang="sass" scoped>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
-import type {CharacterVariant} from "~/types/generated/characters.g"
+import type { CharacterVariant } from "~/types/generated/characters.g"
 
 definePageMeta({
   title: "characterDetails",
@@ -12,7 +12,7 @@ const router = useRouter()
 const config = useConfigStore()
 
 if (!characters.some(e => e.id === route.params.characterId)) {
-  throw createError({statusCode: 404, message: "Page not found", fatal: true})
+  throw createError({ statusCode: 404, message: "Page not found", fatal: true })
 }
 
 const character = characters.find(e => e.id === route.params.characterId)!
@@ -24,7 +24,7 @@ const currentVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
 })
 
 watch(currentVariant, (value) => {
-  void router.replace({query: {variant: value.path}})
+  void router.replace({ query: { variant: value.path } })
 })
 
 onActivated(() => {
@@ -32,19 +32,35 @@ onActivated(() => {
     currentVariant.value = character.variants.find(e => e.path === route.query.variant) ?? currentVariant.value
   }
 })
-
 </script>
 
 <template>
   <div>
-    <v-row align="center" class="g-4" no-gutters>
+    <v-row
+      align="center"
+      class="g-4"
+      no-gutters
+    >
       <!-- character image -->
-      <v-img :src="getCharacterImage(character.id, 'small')" aspect-ratio="1" max-width="80px" width="80px" />
+      <v-img
+        :src="getCharacterImage(character.id, 'small')"
+        aspect-ratio="1"
+        max-width="80px"
+        width="80px"
+      />
 
       <!-- character info -->
-      <div class="d-flex flex-column" style="gap: 4px">
+      <div
+        class="d-flex flex-column"
+        style="gap: 4px"
+      >
         <div>
-          <v-icon v-for="i of character.rarity" :key="i" color="star" size="18">
+          <v-icon
+            v-for="i of character.rarity"
+            :key="i"
+            color="star"
+            size="18"
+          >
             mdi-star
           </v-icon>
         </div>
@@ -62,7 +78,12 @@ onActivated(() => {
         </div>
         <div class="d-flex align-center">
           <span class="font-weight-bold">{{ tx("common.combatType") }}</span>
-          <v-img :src="getCombatTypeImage(currentVariant.combatType)" class="ml-3" max-width="22px" width="22px" />
+          <v-img
+            :src="getCombatTypeImage(currentVariant.combatType)"
+            class="ml-3"
+            max-width="22px"
+            width="22px"
+          />
           <span class="ml-1">{{ tx(`combatTypes.${currentVariant.combatType}` as const) }}</span>
         </div>
       </div>
@@ -85,7 +106,7 @@ onActivated(() => {
           variant="outlined"
           @click="$router.push(localePath({
             path: '/light-cones',
-            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
+            query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
           }))"
         />
 
@@ -96,7 +117,7 @@ onActivated(() => {
           variant="outlined"
           @click="$router.push(localePath({
             path: '/relics',
-            query: {character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null)},
+            query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
           }))"
         />
       </div>
@@ -106,7 +127,7 @@ onActivated(() => {
       <v-select
         v-if="character.variants"
         v-model="currentVariant"
-        :items="character.variants.map(e => ({title: tx(`paths.${e.path}` as const), value: e}))"
+        :items="character.variants.map(e => ({ title: tx(`paths.${e.path}` as const), value: e }))"
         :label="tx('common.path')"
         class="mt-4"
         hide-details
@@ -114,12 +135,15 @@ onActivated(() => {
       />
     </client-only>
 
-    <v-expansion-panels class="mt-4" mandatory="force">
+    <v-expansion-panels
+      class="mt-4"
+      mandatory="force"
+    >
       <SingleSliderPanel
         :material-defs="currentVariant.materials"
         :character-id="character.id"
         :variant="character.variants ? currentVariant.path : null"
-        :title="tx( 'characterDetailsPage.ascension')"
+        :title="tx('characterDetailsPage.ascension')"
       />
       <SkillSlidersPanel
         :character-id="character.id"

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import relicPieces from "assets/data/relic-pieces.csv"
 import relicSets from "assets/data/relic-sets.csv"
-import type {Bookmark} from "~/types/bookmark/bookmark"
-import {db} from "~/libs/db/providers"
+import type { Bookmark } from "~/types/bookmark/bookmark"
+import { db } from "~/libs/db/providers"
 
 interface Props {
   item: Bookmark.RelicSet | Bookmark.RelicPiece
@@ -64,7 +64,7 @@ const mainStats = (() => {
 
 const showRelicSetMenu = ref(false)
 
-const removeBookmark = async(id: number) => {
+const removeBookmark = async (id: number) => {
   const result = await db.bookmarks.remove(id)
 
   snackbar.show(tx(i18n, "bookmark.removed"), null, {
@@ -82,7 +82,7 @@ const removeBookmark = async(id: number) => {
       :subtitle="subtitle"
       :to="setIds.length === 1 ? localePath({
         path: `/relics/${setIds[0]}`,
-        query: {expansion_index: item.type === 'relic_piece' ? '1' : undefined},
+        query: { expansion_index: item.type === 'relic_piece' ? '1' : undefined },
       }) : undefined"
       density="compact"
       lines="two"
@@ -103,15 +103,27 @@ const removeBookmark = async(id: number) => {
         </div>
       </template>
       <template #title>
-        <p v-for="line in titleLines" :key="line" style="white-space: pre-wrap">
+        <p
+          v-for="line in titleLines"
+          :key="line"
+          style="white-space: pre-wrap"
+        >
           {{ line }}
         </p>
       </template>
       <template #append>
-        <v-btn icon="mdi-bookmark-remove" variant="text" @click.prevent="removeBookmark(item.id!)" />
+        <v-btn
+          icon="mdi-bookmark-remove"
+          variant="text"
+          @click.prevent="removeBookmark(item.id!)"
+        />
       </template>
 
-      <v-menu v-model="showRelicSetMenu" :open-on-click="false" activator="parent">
+      <v-menu
+        v-model="showRelicSetMenu"
+        :open-on-click="false"
+        activator="parent"
+      >
         <v-list>
           <v-list-item
             v-for="id in setIds"
@@ -125,12 +137,21 @@ const removeBookmark = async(id: number) => {
     </v-list-item>
 
     <div class="ml-2">
-      <p v-for="[heading, stat] in mainStats.filter(([_, _stat]) => _stat)" :key="heading">
-        <span class="text-slight-heading" style="font-size: 0.9em">{{ heading }}: </span>
+      <p
+        v-for="[heading, stat] in mainStats.filter(([_, _stat]) => _stat)"
+        :key="heading"
+      >
+        <span
+          class="text-slight-heading"
+          style="font-size: 0.9em"
+        >{{ heading }}: </span>
         <span>{{ tx(`stats.${stat}`) }}</span>
       </p>
       <p v-if="item.subStats.length >= 1">
-        <span class="text-slight-heading" style="font-size: 0.9em">{{ tx("common.subStatShort") }}: </span>
+        <span
+          class="text-slight-heading"
+          style="font-size: 0.9em"
+        >{{ tx("common.subStatShort") }}: </span>
         <span>{{ item.subStats.map(e => tx(`stats.${e}`)).join(", ") }}</span>
       </p>
     </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
-import type {CombatType, Path} from "~/types/generated/characters.g"
-import {reactive} from "#imports"
+import type { CombatType, Path } from "~/types/generated/characters.g"
+import { reactive } from "#imports"
 
 definePageMeta({
   title: "characters",
@@ -45,10 +45,17 @@ const filteredCharacters = computed(() => {
   <div>
     <v-row no-gutters>
       <!-- filter button -->
-      <v-btn :color="Object.values(filter).some(e => e.length >= 1) ? 'star' : ''" prepend-icon="mdi-filter">
+      <v-btn
+        :color="Object.values(filter).some(e => e.length >= 1) ? 'star' : ''"
+        prepend-icon="mdi-filter"
+      >
         <span>{{ tx("common.filter") }}</span>
         <client-only>
-          <v-menu activator="parent" :close-on-content-click="false" max-width="400px">
+          <v-menu
+            activator="parent"
+            :close-on-content-click="false"
+            max-width="400px"
+          >
             <v-card>
               <div>
                 <div class="filter-row-title">
@@ -56,8 +63,16 @@ const filteredCharacters = computed(() => {
                 </div>
                 <v-list v-model:selected="filter.possessionStatus">
                   <v-row no-gutters>
-                    <v-list-item :title="tx('charactersPage.owned')" prepend-icon="mdi-check" value="owned" />
-                    <v-list-item :title="tx('charactersPage.notOwned')" prepend-icon="mdi-close" value="not-owned" />
+                    <v-list-item
+                      :title="tx('charactersPage.owned')"
+                      prepend-icon="mdi-check"
+                      value="owned"
+                    />
+                    <v-list-item
+                      :title="tx('charactersPage.notOwned')"
+                      prepend-icon="mdi-close"
+                      value="not-owned"
+                    />
                   </v-row>
                 </v-list>
               </div>
@@ -68,8 +83,18 @@ const filteredCharacters = computed(() => {
                 </div>
                 <v-list v-model:selected="filter.rarity">
                   <v-row no-gutters>
-                    <v-list-item v-for="rarity in [4, 5]" :key="rarity" :value="rarity">
-                      <v-icon v-for="i of rarity" :key="i" :class="i !== 1 ? 'ml-n1' : ''" size="18" color="star">
+                    <v-list-item
+                      v-for="rarity in [4, 5]"
+                      :key="rarity"
+                      :value="rarity"
+                    >
+                      <v-icon
+                        v-for="i of rarity"
+                        :key="i"
+                        :class="i !== 1 ? 'ml-n1' : ''"
+                        size="18"
+                        color="star"
+                      >
                         mdi-star
                       </v-icon>
                     </v-list-item>
@@ -118,7 +143,12 @@ const filteredCharacters = computed(() => {
                       :value="type"
                     >
                       <template #prepend>
-                        <v-img class="mr-2" :src="getCombatTypeImage(type)" width="30" aspect-ratio="1" />
+                        <v-img
+                          class="mr-2"
+                          :src="getCombatTypeImage(type)"
+                          width="30"
+                          aspect-ratio="1"
+                        />
                       </template>
                     </v-list-item>
                   </v-row>
@@ -130,7 +160,11 @@ const filteredCharacters = computed(() => {
       </v-btn>
     </v-row>
 
-    <v-row no-gutters class="mt-4" style="gap: 16px">
+    <v-row
+      no-gutters
+      class="mt-4"
+      style="gap: 16px"
+    >
       <CharacterCard
         v-for="character in filteredCharacters"
         :key="character.id"

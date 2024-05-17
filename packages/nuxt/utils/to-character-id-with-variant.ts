@@ -1,5 +1,5 @@
-import type {CharacterIdWithVariant} from "~/types/strings"
-import type {Path} from "~/types/generated/characters.g"
+import type { CharacterIdWithVariant } from "~/types/strings"
+import type { Path } from "~/types/generated/characters.g"
 
 /**
  * Converts characterId and variant to a single string.

@@ -1,5 +1,5 @@
-import {BookmarksProvider} from "~/libs/db/bookmarks-provider"
-import {WarpsProvider} from "~/libs/db/warps-provider"
+import { BookmarksProvider } from "~/libs/db/bookmarks-provider"
+import { WarpsProvider } from "~/libs/db/warps-provider"
 
 /**
  * Provides access to all database providers.

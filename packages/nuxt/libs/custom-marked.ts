@@ -1,4 +1,4 @@
-import {Marked, Renderer} from "marked"
+import { Marked, Renderer } from "marked"
 
 const toPartial = <T>(obj: T) => {
   return obj as Partial<T>

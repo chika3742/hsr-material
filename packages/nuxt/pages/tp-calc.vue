@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {DateTime} from "luxon"
+import { DateTime } from "luxon"
 import _ from "lodash"
-import type {Ref} from "vue"
-import {maxTpCount} from "~/utils/tp"
-import {FirestoreProvider} from "~/libs/firestore/firestore-provider"
-import {computed} from "#imports"
-import {CustomMarked} from "~/libs/custom-marked"
+import type { Ref } from "vue"
+import { maxTpCount } from "~/utils/tp"
+import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
+import { computed } from "#imports"
+import { CustomMarked } from "~/libs/custom-marked"
 
 definePageMeta({
   title: "tpCalc",
@@ -25,7 +25,7 @@ onMounted(() => {
 
 const validate = (value: string): boolean | string => {
   const intValue = Number(value)
-  return (!isNaN(intValue) && intValue >= 0 && intValue < maxTpCount) || i18n.t("tpCalcPage.rangeError", {max: maxTpCount})
+  return (!isNaN(intValue) && intValue >= 0 && intValue < maxTpCount) || i18n.t("tpCalcPage.rangeError", { max: maxTpCount })
 }
 
 const currentTpCount = ref(config.tpCount.toString())
@@ -62,7 +62,7 @@ interface TableDataItem {
 const getTableData = (): TableDataItem[] => ([
   {
     label: i18n.t("tpCalcPage.baseTime"),
-    value: baseTime.value.toFormat("MM/dd HH:mm") + " (" + baseTime.value.toRelative({locale: i18n.locale.value}) + ")",
+    value: baseTime.value.toFormat("MM/dd HH:mm") + " (" + baseTime.value.toRelative({ locale: i18n.locale.value }) + ")",
   },
   {
     label: i18n.t("tpCalcPage.fullReplenishmentTime"),
@@ -98,13 +98,23 @@ const getTableData = (): TableDataItem[] => ([
 
     <v-table style="max-width: 500px">
       <tbody>
-        <tr v-for="(item, i) in getTableData()" :key="i">
+        <tr
+          v-for="(item, i) in getTableData()"
+          :key="i"
+        >
           <td>{{ item.label }}</td>
           <td>
-            <v-btn v-if="item.isShownRef && !item.isShownRef.value" variant="text" @click="item.isShownRef.value = true">
+            <v-btn
+              v-if="item.isShownRef && !item.isShownRef.value"
+              variant="text"
+              @click="item.isShownRef.value = true"
+            >
               {{ tx("tpCalcPage.show") }}
             </v-btn>
-            <span v-show="!item.isShownRef || item.isShownRef.value" :key="currentSecond">
+            <span
+              v-show="!item.isShownRef || item.isShownRef.value"
+              :key="currentSecond"
+            >
               <client-only>
                 {{ item.value }}
               </client-only>
@@ -114,11 +124,17 @@ const getTableData = (): TableDataItem[] => ([
       </tbody>
     </v-table>
 
-    <p v-show="remainingTime === '-'" class="text-red">
+    <p
+      v-show="remainingTime === '-'"
+      class="text-red"
+    >
       {{ $t("tpCalcPage.alreadyReplenished") }}
     </p>
 
-    <div class="doc-container mt-4" v-html="marked.parse($t('tpCalcPage.howToUse'))" />
+    <div
+      class="doc-container mt-4"
+      v-html="marked.parse($t('tpCalcPage.howToUse'))"
+    />
   </div>
 </template>
 

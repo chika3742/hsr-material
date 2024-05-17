@@ -1,6 +1,6 @@
-import type {FirestoreDataConverter, QueryDocumentSnapshot} from "@firebase/firestore"
-import {Timestamp} from "@firebase/firestore"
-import type {UserDocument} from "~/types/firestore/user-document"
+import type { FirestoreDataConverter, QueryDocumentSnapshot } from "@firebase/firestore"
+import { Timestamp } from "@firebase/firestore"
+import type { UserDocument } from "~/types/firestore/user-document"
 
 export const userDocumentConverter: FirestoreDataConverter<UserDocument> = {
   toFirestore: (modelObject: UserDocument) => modelObject,
@@ -14,8 +14,8 @@ export const userDocumentConverter: FirestoreDataConverter<UserDocument> = {
         bookmarks: data.data.bookmarks.map(bookmark => ({
           ...bookmark,
           // convert Timestamp to Date
-          // @ts-ignore
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          // @ts-expect-error
+
           bookmarkedAt: new Timestamp(bookmark.bookmarkedAt.seconds, bookmark.bookmarkedAt.nanoseconds).toDate(),
         })),
       },
