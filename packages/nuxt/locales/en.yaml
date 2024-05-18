@@ -898,6 +898,13 @@ lightConeNames:
   destinys-threads-forewoven: Destiny's Threads Forewoven
   the-day-the-cosmos-fell: The Day The Cosmos Fell
   its-showtime: It's Showtime
+  inherently-unjust-destiny: Inherently Unjust Destiny
+  along-the-passing-shore: Along the Passing Shore
+  concert-for-two: Concert for Two
+  flowing-nightglow: Flowing Nightglow
+  boundless-choreo: Boundless Choreo
+  for-tomorrows-journey: For Tomorrow's Journey
+  sailing-towards-a-second-life: Sailing Towards a Second Life
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1177,6 +1184,37 @@ lightConeSkillDescriptions:
     stack of Trick increases the wearer's DMG dealt by <6%>, stacking up to 3
     time(s). This effect lasts for 1 turn(s). When the wearer's Effect Hit Rate
     is 80% or higher, increases ATK by <20%>.
+  inherently-unjust-destiny: >-
+    Increases the wearer's DEF by <40%>. When the wearer provides a Shield to an
+    ally, the wearer's CRIT DMG increases by <40%>, lasting for 2 turn(s). When
+    the wearer's follow-up attack hits an enemy target, there is a <100%> base
+    chance to increase the DMG taken by the attacked enemy target by <10%>,
+    lasting for 2 turn(s).
+  along-the-passing-shore: >-
+    Increases the wearer's CRIT DMG by <36%>. When the wearer hits an enemy
+    target, inflicts Mirage Fizzle on the enemy, lasting for 1 turn. Each time
+    the wearer attacks, this effect can only trigger 1 time on each target. The
+    wearer deals <24%> increased DMG to targets afflicted with Mirage Fizzle,
+    and the DMG dealt by the wearer's Ultimate additionally increases by <24%>.
+  concert-for-two: >-
+    Increases the wearer's DEF by <16%>. For every on-field character that has a
+    Shield, the DMG dealt by the wearer increases by <4%>.
+  flowing-nightglow: >-
+    Every time an ally attacks, the wearer gains 1 stack of Cantillation. Each
+    stack of Cantillation increases the wearer's Energy Regeneration Rate by
+    <3%>, stacking up to 5 time(s). When the wearer uses their Ultimate, removes
+    Cantillation and gains Cadenza. Cadenza increases the Wearer's ATK by <48%>
+    and increases all allies' DMG dealt by <24%>, lasting for 1 turn(s).
+  boundless-choreo: >-
+    Increase the wearer's CRIT Rate by <8%>. The wearer deals <24%> more CRIT
+    DMG to enemies that are currently Slowed or have reduced DEF.
+  for-tomorrows-journey: >-
+    Increases the wearer's ATK by <16%>. After the wearer uses their Ultimate,
+    increases their DMG dealt by <18%>, lasting for 1 turn(s).
+  sailing-towards-a-second-life: >-
+    Increases the wearer's Break Effect by <60%>. The Break DMG dealt by the
+    wearer ignores <20%> of the target's DEF. When the wearer's Break Effect in
+    battle is at 150% or greater, increases their SPD by <12%>.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

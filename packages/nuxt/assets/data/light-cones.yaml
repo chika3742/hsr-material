@@ -734,3 +734,59 @@
   materials:
     primary: group:lcs008
     common: group:com002
+- id: inherently-unjust-destiny
+  yomi: ウンメイハツネニフコウヘイ
+  $nameJA: 運命は常に不公平
+  path: preservation
+  rarity: 5
+  materials:
+    primary: group:lcs011
+    common: group:com008
+- id: along-the-passing-shore
+  yomi: ナガレユクキシヲアルイテ
+  $nameJA: 流れ逝く岸を歩いて
+  path: nihility
+  rarity: 5
+  materials:
+    primary: group:lcs008
+    common: group:com007
+- id: concert-for-two
+  yomi: フタリダケノコンサート
+  $nameJA: 二人だけのコンサート
+  path: preservation
+  rarity: 4
+  materials:
+    primary: group:lcs011
+    common: group:com008
+- id: flowing-nightglow
+  yomi: ヒカリアフレルヨル
+  $nameJA: 光あふれる夜
+  path: harmony
+  rarity: 5
+  materials:
+    primary: group:lcs010
+    common: group:com007
+- id: boundless-choreo
+  yomi: オワリナキブトウ
+  $nameJA: 終わりなき舞踏
+  path: nihility
+  rarity: 4
+  materials:
+    primary: group:lcs008
+    common: group:com008
+- id: for-tomorrows-journey
+  yomi: アスノタメノタビ
+  $nameJA: 明日のための旅
+  path: harmony
+  rarity: 4
+  materials:
+    primary: group:lcs010
+    common: group:com007
+- id: sailing-towards-a-second-life
+  yomi: ニドメノセイニムカッテ
+  $nameJA: 二度目の生に向かって
+  path: the_hunt
+  rarity: 5
+  materials:
+    primary: group:zzP0
+    common: group:com008
