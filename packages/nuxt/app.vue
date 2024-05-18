@@ -1,30 +1,28 @@
 <template>
   <div>
     <v-app>
-      <client-only>
-        <AppDrawer
-          v-model="isDrawerOpenOnMobile"
-          :drawer-items="drawerItems"
-        />
+      <AppDrawer
+        v-model="isDrawerOpenOnMobile"
+        :drawer-items="drawerItems"
+      />
 
-        <v-app-bar>
-          <template #prepend>
-            <v-app-bar-nav-icon
-              v-if="$vuetify.display.mobile"
-              @click="isDrawerOpenOnMobile = true"
-            />
-          </template>
+      <v-app-bar>
+        <template #prepend>
+          <v-app-bar-nav-icon
+            v-if="$vuetify.display.mobile"
+            @click="isDrawerOpenOnMobile = true"
+          />
+        </template>
 
-          <v-app-bar-title>{{ title }}</v-app-bar-title>
+        <v-app-bar-title>{{ title }}</v-app-bar-title>
 
-          <template #append>
-            <v-app-bar-nav-icon
-              icon="mdi-magnify"
-              @click="showSearchDialog = true"
-            />
-          </template>
-        </v-app-bar>
-      </client-only>
+        <template #append>
+          <v-app-bar-nav-icon
+            icon="mdi-magnify"
+            @click="showSearchDialog = true"
+          />
+        </template>
+      </v-app-bar>
 
       <v-main class="h-100">
         <div

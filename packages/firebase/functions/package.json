@@ -8,7 +8,9 @@
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
+    "deploy:dev": "yarn dlx firebase-tools deploy -P dev",
+    "deploy:prod": "yarn dlx firebase-tools deploy -P prod",
+    "emulators": "yarn dlx firebase-tools emulators:start --import ./emulators-data --export-on-exit",
     "logs": "firebase functions:log"
   },
   "engines": {

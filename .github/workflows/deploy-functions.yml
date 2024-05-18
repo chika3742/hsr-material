@@ -36,8 +36,7 @@ jobs:
           cache: yarn
           cache-dependency-path: "**/yarn.lock"
 
-      - name: yarn install
-        run: yarn workspace @hsr-material/functions install
+      - run: yarn install
 
       - name: 'Authenticate to Google Cloud'
         id: auth
@@ -49,8 +48,10 @@ jobs:
 
       - name: Deploy to Cloud Functions (dev)
         if: github.ref_name != env.prod_branch_name
-        run: yarn firebase-deploy:dev --debug
+        working-directory: packages/firebase/functions
+        run: yarn deploy:dev --debug
 
       - name: Deploy to Cloud Functions (prod)
         if: github.ref_name == env.prod_branch_name
-        run: yarn firebase-deploy:prod --debug
+        working-directory: packages/firebase/functions
+        run: yarn deploy:prod --debug

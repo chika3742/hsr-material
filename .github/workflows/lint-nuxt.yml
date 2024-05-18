@@ -24,10 +24,7 @@ jobs:
           cache: yarn
           cache-dependency-path: "**/yarn.lock"
 
-      - name: yarn install
-        run: |
-          yarn install
-          yarn install:all
+      - run: yarn install
         env:
           GITHUB_PACKAGES_TOKEN: ${{ secrets.MMC_PACKAGES_TOKEN }}
 
