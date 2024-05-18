@@ -2,7 +2,6 @@
   "name": "@hsr-material/functions",
   "type": "module",
   "scripts": {
-    "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
     "build:watch": "yarn build --watch",
     "serve": "npm run build && firebase emulators:start --only functions",
