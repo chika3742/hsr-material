@@ -6,7 +6,7 @@ on:
       - main
       - live
     paths:
-      - firebase/**
+      - packages/firebase/**
       - .github/workflows/deploy-functions.yml
   workflow_dispatch:
 

@@ -5,12 +5,12 @@ on:
     branches:
       - live
     paths:
-      - "nuxt/assets/data/characters.yaml"
-      - "nuxt/assets/data/light-cones.yaml"
-      - "nuxt/assets/data/materials.csv"
-      - "nuxt/assets/data/relic-sets.csv"
-      - "nuxt/assets/data/relic-pieces.csv"
-      - "algolia-sync/**"
+      - "packages/nuxt/assets/data/characters.yaml"
+      - "packages/nuxt/assets/data/light-cones.yaml"
+      - "packages/nuxt/assets/data/materials.csv"
+      - "packages/nuxt/assets/data/relic-sets.csv"
+      - "packages/nuxt/assets/data/relic-pieces.csv"
+      - "packages/algolia-sync/**"
   workflow_dispatch:
 
 jobs:
