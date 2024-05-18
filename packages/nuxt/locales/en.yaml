@@ -1235,12 +1235,16 @@ relicSetTitles:
   belobog-of-the-architects: Belobog of the Architects
   celestial-differentiator: Celestial Differentiator
   inert-salsotto: Inert Salsotto
-  talia-kingdom-of-banditry: 'Talia: Kingdom of Banditry'
+  talia-kingdom-of-banditry: "Talia: Kingdom of Banditry"
   sprightly-vonwacq: Sprightly Vonwacq
   longevous-disciple: Longevous Disciple
   messenger-traversing-hackerspace: Messenger Traversing Hackerspace
   rutilant-arena: Rutilant Arena
   broken-keel: Broken Keel
+  pioneer-diver-of-dead-waters: Pioneer Diver of Dead Waters
+  watchmaker-master-of-dream-machinations: Watchmaker, Master of Dream Machinations
+  sigonia-the-unclaimed-desolation: Sigonia, the Unclaimed Desolation
+  izumo-gensei-and-takama-divine-realm: Izumo Gensei and Takama Divine Realm
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -1257,18 +1261,19 @@ relicSetEffects:
   hunter-of-glacial-forest:
     2pc: Increases Ice DMG by <10%>.
     4pc: >-
-      After the wearer uses their Ultimate, their CRIT DMG increases by <25%> for
-      <2> turn(s).
+      After the wearer uses their Ultimate, their CRIT DMG increases by <25%>
+      for <2> turn(s).
   champion-of-streetwise-boxing:
     2pc: Increases Physical DMG by <10%>.
     4pc: >-
-      After the wearer attacks or is hit, their ATK increases by <5%> for the rest
-      of the battle. This effect can stack up to <5> time(s).
+      After the wearer attacks or is hit, their ATK increases by <5%> for the
+      rest of the battle. This effect can stack up to <5> time(s).
   guard-of-wuthering-snow:
     2pc: Reduces DMG taken by <8%>.
     4pc: >-
       At the beginning of the turn, if the wearer's HP is equal to or less than
-      <50%>, restores HP equal to <8%> of their Max HP and regenerates <5> Energy.
+      <50%>, restores HP equal to <8%> of their Max HP and regenerates <5>
+      Energy.
   firesmith-of-lava-forging:
     2pc: Increases Fire DMG by <10%>.
     4pc: >-
@@ -1298,39 +1303,40 @@ relicSetEffects:
   wastelander-of-banditry-desert:
     2pc: Increases Imaginary DMG by <10%>.
     4pc: >-
-      When attacking debuffed enemies, the wearer's CRIT Rate increases by <10%>,
-      and their CRIT DMG increases by <20%> against Imprisoned enemies.
+      When attacking debuffed enemies, the wearer's CRIT Rate increases by
+      <10%>, and their CRIT DMG increases by <20%> against Imprisoned enemies.
   space-sealing-station:
     2pc: >-
-      Increases the wearer's ATK by <12%>. When the wearer's SPD reaches <120> or
-      higher, the wearer's ATK increases by an extra <12%>.
+      Increases the wearer's ATK by <12%>. When the wearer's SPD reaches <120>
+      or higher, the wearer's ATK increases by an extra <12%>.
   fleet-of-the-ageless:
     2pc: >-
-      Increases the wearer's Max HP by <12%>. When the wearer's SPD reaches <120>
-      or higher, all allies' ATK increases by <8%>.
+      Increases the wearer's Max HP by <12%>. When the wearer's SPD reaches
+      <120> or higher, all allies' ATK increases by <8%>.
   pan-galactic-commercial-enterprise:
     2pc: >-
-      Increases the wearer's Effect Hit Rate by <10%>. Meanwhile, the wearer's ATK
-      increases by an amount that is equal to <25%> of the current Effect Hit
-      Rate, up to a maximum of <25%>.
+      Increases the wearer's Effect Hit Rate by <10%>. Meanwhile, the wearer's
+      ATK increases by an amount that is equal to <25%> of the current Effect
+      Hit Rate, up to a maximum of <25%>.
   belobog-of-the-architects:
     2pc: >-
       Increases the wearer's DEF by <15%>. When the wearer's Effect Hit Rate is
       <50%> or higher, the wearer gains an extra <15%> DEF.
   celestial-differentiator:
     2pc: >-
-      Increases the wearer's CRIT DMG by <16%>. When the wearer's current CRIT DMG
-      reaches <120%> or higher, after entering battle, the wearer's CRIT Rate
-      increases by <60%> until the end of their first attack.
+      Increases the wearer's CRIT DMG by <16%>. When the wearer's current CRIT
+      DMG reaches <120%> or higher, after entering battle, the wearer's CRIT
+      Rate increases by <60%> until the end of their first attack.
   inert-salsotto:
     2pc: >-
       Increases the wearer's CRIT Rate by <8%>. When the wearer's current CRIT
-      Rate reaches <50%> or higher, the wearer's Ultimate and follow-up attack DMG
-      increases by <15%>.
+      Rate reaches <50%> or higher, the wearer's Ultimate and follow-up attack
+      DMG increases by <15%>.
   talia-kingdom-of-banditry:
     2pc: >-
-      Increases the wearer's Break Effect by <16%>. When the wearer's SPD reaches
-      <145> or higher, the wearer's Break effect increases by an extra <20%>.
+      Increases the wearer's Break Effect by <16%>. When the wearer's SPD
+      reaches <145> or higher, the wearer's Break effect increases by an extra
+      <20%>.
   sprightly-vonwacq:
     2pc: >-
       Increases the wearer's Energy Regeneration Rate by <5%>. When the wearer's
@@ -1344,17 +1350,39 @@ relicSetEffects:
   messenger-traversing-hackerspace:
     2pc: Increases SPD by <6%>.
     4pc: >-
-      When the wearer uses their Ultimate on an ally, SPD for all allies increases
-      by <12%> for <1> turn(s). This effect cannot be stacked.
+      When the wearer uses their Ultimate on an ally, SPD for all allies
+      increases by <12%> for <1> turn(s). This effect cannot be stacked.
   rutilant-arena:
     2pc: >-
       Increases the wearer's CRIT Rate by <8%>. When the wearer's current CRIT
-      Rate reaches <70%> or higher, the wearer's Basic ATK and Skill DMG increase
-      by <20%>.
+      Rate reaches <70%> or higher, the wearer's Basic ATK and Skill DMG
+      increase by <20%>.
   broken-keel:
     2pc: >-
-      Increases the wearer's Effect RES by <10%>. When the wearer's Effect RES is
-      at <30%> or higher, all allies' CRIT DMG increases by <10%>.
+      Increases the wearer's Effect RES by <10%>. When the wearer's Effect RES
+      is at <30%> or higher, all allies' CRIT DMG increases by <10%>.
+  pioneer-diver-of-dead-waters:
+    2pc: Increases DMG dealt to enemies with debuffs by <12%>.
+    4pc: >-
+      Increases CRIT Rate by <4%>. The wearer deals <8%>/<12%> increased CRIT
+      DMG to enemies with at least <2>/<3> debuffs. After the wearer inflicts a
+      debuff on enemy targets, the aforementioned effects increase by <100%>,
+      lasting for <1> turn(s).
+  watchmaker-master-of-dream-machinations:
+    2pc: Increases Break Effect by <16%>.
+    4pc: >-
+      When the wearer uses their Ultimate on an ally, all allies' Break Effect
+      increases by <30%> for <2> turn(s). This effect cannot be stacked.
+  sigonia-the-unclaimed-desolation:
+    2pc: >-
+      Increases the wearer's CRIT Rate by <4%>. When an enemy target gets
+      defeated, the wearer's CRIT DMG increases by <4%>, stacking up to <10>
+      time(s).
+  izumo-gensei-and-takama-divine-realm:
+    2pc: >-
+      Increases the wearer's ATK by <12%>. When entering battle, if at least one
+      other ally follows the same Path as the wearer, then the wearer's CRIT
+      Rate increases by <12%>.
 
 relicPieceNames:
   bands-polarized-sunglasses: Band's Polarized Sunglasses
@@ -1433,3 +1461,17 @@ relicPieceNames:
   taikiyans-arclight-race-track: Taikiyan's Arclight Race Track
   insumousus-whalefall-ship: Insumousu's Whalefall Ship
   insumousus-frayed-hawser: Insumousu's Frayed Hawser
+  pioneers-heatproof-shell: Pioneer's Heatproof Shell
+  pioneers-lacuna-compass: Pioneer's Lacuna Compass
+  pioneers-sealed-lead-apron: Pioneer's Sealed Lead Apron
+  pioneers-starfaring-anchor: Pioneer's Starfaring Anchor
+  watchmakers-telescoping-lens: Watchmaker's Telescoping Lens
+  watchmakers-fortuitous-wristwatch: Watchmaker's Fortuitous Wristwatch
+  watchmakers-illusory-formal-suit: Watchmaker's Illusory Formal Suit
+  watchmakers-dream-concealing-dress-shoes: Watchmaker's Dream-Concealing Dress Shoes
+  sigonias-gaiathra-berth: Sigonia's Gaiathra Berth
+  sigonias-knot-of-cyclicality: Sigonia's Knot of Cyclicality
+  izumos-magatsu-no-morokami: Izumo's Magatsu no Morokami
+  izumos-blades-of-origin-and-end: Izumo's Blades of Origin and End
+
+# eof (replace regex marker)

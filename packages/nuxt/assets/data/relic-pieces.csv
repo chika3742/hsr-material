@@ -63,15 +63,27 @@ guards-cast-iron-helmet,兵士の鉄製ヘルム,guard-of-wuthering-snow,head,�
 guards-shining-gauntlets,兵士の銀鱗ガントレット,guard-of-wuthering-snow,hands,ヘイシノギンリンガントレット
 guards-uniform-of-old,兵士の旧制軍服,guard-of-wuthering-snow,body,ヘイシノキュウセイグンプク
 guards-silver-greaves,兵士の白銀グリーブ,guard-of-wuthering-snow,feet,ヘイシノハクギングリーブ
-disciples-prosthetic-eye,蒔者の光をもたらす義眼,longevous-disciple,head,
-disciples-ingenium-hand,蒔者の機巧義手,longevous-disciple,hands,
-disciples-dewy-feather-garb,蒔者の露払いの羽衣,longevous-disciple,body,
-disciples-celestial-silk-sandals,蒔者の天人絲鞋,longevous-disciple,feet,
-messengers-holovisor,メッセンジャーのホログラフィーゴーグル,messenger-traversing-hackerspace,head,
-messengers-transformative-arm,メッセンジャーの百変義手,messenger-traversing-hackerspace,hands,
-messengers-secret-satchel,メッセンジャーの密書ショルダーバッグ,messenger-traversing-hackerspace,body,
-messengers-par-kool-sneakers,メッセンジャーのパルクールシューズ,messenger-traversing-hackerspace,feet,
-taikiyan-laser-stadium,タイキヤンのレーザー球場,rutilant-arena,planar_sphere,
-taikiyans-arclight-race-track,タイキヤンのアークトラック,rutilant-arena,link_rope,
-insumousus-whalefall-ship,伊須磨州の沈没遺跡,broken-keel,planar_sphere,
-insumousus-frayed-hawser,伊須磨州の千切れたホーサー,broken-keel,link_rope,
+disciples-prosthetic-eye,蒔者の光をもたらす義眼,longevous-disciple,head,ジシャノヒカリヲモタラスギガン
+disciples-ingenium-hand,蒔者の機巧義手,longevous-disciple,hands,ジシャノキコウギシュ
+disciples-dewy-feather-garb,蒔者の露払いの羽衣,longevous-disciple,body,ジシャノキリバライノハゴロモ
+disciples-celestial-silk-sandals,蒔者の天人絲鞋,longevous-disciple,feet,ジシャノテンニンシガイ
+messengers-holovisor,メッセンジャーのホログラフィーゴーグル,messenger-traversing-hackerspace,head,メッセンジャーノホログラフィーゴーグル
+messengers-transformative-arm,メッセンジャーの百変義手,messenger-traversing-hackerspace,hands,メッセンジャーノヒャクヘンギシュ
+messengers-secret-satchel,メッセンジャーの密書ショルダーバッグ,messenger-traversing-hackerspace,body,メッセンジャーノミッショショルダーバッグ
+messengers-par-kool-sneakers,メッセンジャーのパルクールシューズ,messenger-traversing-hackerspace,feet,メッセンジャーノパルクールシューズ
+taikiyan-laser-stadium,タイキヤンのレーザー球場,rutilant-arena,planar_sphere,タイキヤンノレーザーキュウジョウ
+taikiyans-arclight-race-track,タイキヤンのアークトラック,rutilant-arena,link_rope,タイキヤンノアークトラック
+insumousus-whalefall-ship,伊須磨州の沈没遺跡,broken-keel,planar_sphere,イスマシュウノチンボツイセキ
+insumousus-frayed-hawser,伊須磨州の千切れたホーサー,broken-keel,link_rope,イスマシュウノチギレタホーサー
+pioneers-heatproof-shell,先駆者の断熱ヘルメット,pioneer-diver-of-dead-waters,head,センクシャノダンネツヘルメット
+pioneers-lacuna-compass,先駆者の虚極コンパス,pioneer-diver-of-dead-waters,hands,センクシャノキョキョクコンパス
+pioneers-sealed-lead-apron,先駆者の密閉された鉛の潜水服,pioneer-diver-of-dead-waters,body,センクシャノミッペイサレタナマリノセンスイフク
+pioneers-starfaring-anchor,先駆者の星に泊まるアンカー,pioneer-diver-of-dead-waters,feet,センクシャノホシニトマルアンカー
+watchmakers-telescoping-lens,時計屋の望遠レンズ,watchmaker-master-of-dream-machinations,head,トケイヤノボウエンレンズ
+watchmakers-fortuitous-wristwatch,時計屋の運を引き寄せる腕時計,watchmaker-master-of-dream-machinations,hands,
+watchmakers-illusory-formal-suit,時計屋の虚空礼服,watchmaker-master-of-dream-machinations,body,トケイヤノコクウレイフク
+watchmakers-dream-concealing-dress-shoes,時計屋の隠された夢の革靴,watchmaker-master-of-dream-machinations,feet,トケイヤノカクサレタユメノカワグツ
+sigonias-gaiathra-berth,ツガンニヤの地母神の寝台,sigonia-the-unclaimed-desolation,planar_sphere,ツガンニヤノチボシンノシンダイ
+sigonias-knot-of-cyclicality,ツガンニヤの輪廻の結び目,sigonia-the-unclaimed-desolation,link_rope,ツガンニヤノリンネノムスビメ
+izumos-magatsu-no-morokami,出雲の禍津衆神,izumo-gensei-and-takama-divine-realm,planar_sphere,イズモノマガツノモロカミ
+izumos-blades-of-origin-and-end,出雲の終始一刀,izumo-gensei-and-takama-divine-realm,link_rope,イズモノシュウシイットウ
