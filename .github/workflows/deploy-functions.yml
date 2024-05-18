@@ -39,9 +39,6 @@ jobs:
       - name: yarn install
         run: yarn workspace @hsr-material/functions install
 
-      - name: Install Firebase CLI
-        run: yarn global add firebase-tools
-
       - name: 'Authenticate to Google Cloud'
         id: auth
         uses: 'google-github-actions/auth@v2'
