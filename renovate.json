@@ -14,7 +14,7 @@
   "packageRules": [
     {
       "matchFileNames": [
-        "nuxt/package.json"
+        "packages/nuxt/package.json"
       ],
       "matchDepTypes": [
         "dependencies"
@@ -26,7 +26,7 @@
     },
     {
       "matchFileNames": [
-        "nuxt/package.json"
+        "packages/nuxt/package.json"
       ],
       "matchDepTypes": [
         "devDependencies"
@@ -37,7 +37,7 @@
     },
     {
       "matchFileNames": [
-        "firebase/functions/package.json"
+        "packages/firebase/functions/package.json"
       ],
       "labels": [
         "deps:functions"
@@ -45,7 +45,16 @@
     },
     {
       "matchFileNames": [
-        "algolia-sync/package.json"
+        "package.json"
+      ],
+      "labels": [
+        "deps:root"
+      ],
+      "semanticCommitScope": "root"
+    },
+    {
+      "matchFileNames": [
+        "packages/algolia-sync/package.json"
       ],
       "labels": [
         "deps:algolia-sync"
