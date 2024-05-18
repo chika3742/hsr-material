@@ -1,0 +1,1435 @@
+common:
+  appName: "Honkai: Star Rail Material Note"
+  gameName: "Honkai: Star Rail"
+  nonProdWarning: This is an development version, so it may contain bugs or features that will be changed in the future.
+  backToHome: Back to Home
+  ok: OK
+  cancel: Cancel
+  undo: Undo
+  rarity: Rarity
+  filter: Filter
+  expandAll: Expand All
+  collapseAll: Collapse All
+  search: Search characters/items
+  path: Path
+  combatType: Combat Type
+  currentLevel: Current Level
+  targetLevel: Target Level
+  kind: Kind
+  mainStat: Main Stat
+  subStat: Sub Stat | Sub Stats
+  mainStatShort: Main
+  subStatShort: Sub
+  details: Details
+  2pcEffect: 2-Piece Effect
+  4pcEffect: 4-Piece Effect
+  showAllCharacters: Show All Characters
+  skillTypes:
+    basicAttack: Basic Attack
+    skill: Skill
+    ultimate: Ultimate
+    talent: Talent
+  updated: Updated to {version}.
+
+gameSpecific:
+  showcaseTitle: Support Character" or "Starfaring Companions
+
+errors:
+  404: Page not found.
+  500: An error occurred during rendering.
+  noSearchResults: No search results.
+  failedToSearch: Failed to search.
+  bookmark: Failed to bookmark.
+  failedToSync: Failed to sync.
+
+searchRecordTypes:
+  character: Character
+  light-cone: Light Cone
+  material: Material
+  relic-set: Relic Set
+  relic-piece: Relic Piece
+
+pageTitles:
+  home: Home
+  bookmarks: Bookmarks
+  characters: Characters
+  characterDetails: Characters / {characterId}
+  lightCones: Light Cones
+  lightConeDetails: Light Cones / {lightConeId}
+  relics: Relics
+  relicDetails: Relics / {relicId}
+  materials: Materials
+  materialDetails: Materials / {materialId}
+  sync: Sync
+  warps: Warp Pity Counter
+  tpCalc: TP Replenish Calc
+  releaseNotes: Release Notes
+  terms: Terms of Use
+  termsSummarized: Terms of Use (Summarized)
+  privacy: Privacy Policy
+  about: About This App
+  settings: Settings
+
+navDrawer:
+  gameDataSync: Game Data Sync
+  kofi: Buy me a coffee
+
+bookmark:
+  reBookmark: Re-register Bookmarks
+  reBookmarkDesc: Bookmarks again with the current slider range.
+  unBookmark: Un-bookmark
+  unBookmarkDesc: Removes bookmarks for this item.
+  bookmarked: Bookmarked.
+  removed: Removed bookmarks.
+  noBookmarks: No bookmarks. Let's find it in the menu in the upper left corner!
+  completeLeveling: Complete Leveling
+  completeLevelingDesc: Removes all bookmarks above this.
+
+gameDataSync:
+  invalidUidLength: UID must be 9 digits.
+  fetchError: Failed to fetch the player data.
+  importSuccess: Imported.
+  importError: Failed to import.
+
+charactersPage:
+  possessionStatus: Possession Status
+  owned: Owned
+  notOwned: Not Owned
+
+characterDetailsPage:
+  iHave: I have this character.
+  bookmarkLightCone: Bookmark Light Cone
+  bookmarkRelics: Bookmark Relics
+  ascension: Ascension / Character Level Up Materials
+  skills: Skill Leveling Materials
+
+lightConesPage:
+  showSkillDescriptions: Show Skill Descriptions
+
+lightConeDetailsPage:
+  ascension: Light Cone Leveling/Ascension Materials
+  skillDescriptions: Skill Descriptions
+  recommendedCharacters: Recommended Characters
+
+relicsPage:
+  toDetailPage: Go to Detail Page
+
+relicDetailsPage:
+  4pcs: 4 Pcs
+  2pcs: 2 Pcs
+  bookmarkInSets: Bookmark in Set(s)
+  bookmarkPerLocation: Bookmark per Locations
+  recommendedCharacters: "@:lightConeDetailsPage.recommendedCharacters"
+  bookmark: Bookmark
+  bookmark2PcsEach: Bookmark 2+2 Pcs
+  bookmark4Pcs: Bookmark 4 Pcs
+  bookmark2Pcs: Bookmark 2 Pcs
+  chooseRelicSet: Choose the Second Relic Set
+  bookmarkRelicSet: Bookmark Relic Set(s)
+  bookmarkRelicPiece: Bookmark Relic Piece
+  mainStat: Main Stat
+  mainStatBody: "@:common.mainStat (@:{'relicLocations.body'})"
+  mainStatFeet: "@:common.mainStat (@:{'relicLocations.feet'})"
+  mainStatPlanarSphere: "@:common.mainStat (@:{'relicLocations.planar_sphere'})"
+  mainStatLinkRope: "@:common.mainStat (@:{'relicLocations.link_rope'})"
+  unspecified: Unspecified
+  characterToEquip: Character(s) to Equip
+  characterSelectError: Please select a character to equip.
+
+materialDetailsPage:
+  characterUsage: Characters for Which This Material Is Used
+  lightConeUsage: Light Cones for Which This Material Is Used
+
+syncPage:
+  desc: Sync allows you to share bookmarks and warp pity counter history with other devices.
+  loading: Checking sign-in status...
+  fetchingUserInfo: Fetching user info...
+  signIn: Sign Up / Sign In
+  signInSuccess: Signed in.
+  signInError: Failed to sign in. ({code})
+  signInErrorPopupBlocked: Please allow pop-ups to sign in.
+  signInWith:
+    google: Sign in with Google
+    apple: Sign in with Apple
+  schemaMismatchError: Data in the cloud is newer and cannot be synced. Please reload the page.
+  conflictDialogTitle: Conflict Detected
+  conflictDialogMessage: |
+    There is a conflict between data in the cloud and data on the device. Do you want to overwrite the data in the cloud with the data on the device?
+    - If you choose OK, the data in the cloud will be lost.
+    - If you select Cancel, the data in the device will be overwritten.
+  sendingLocalData: Sending data...
+  accountInfo: Account Info
+  signedInWith: Signed in with
+  email: Email
+  signOut: Sign Out
+  signOutConfirm: Do you want to sign out?
+  signOutSuccess: Signed out.
+  signOutError: Failed to sign out. ({code})
+  deleteUser: Delete Account
+  deleteUserConfirm: |
+    Are you sure you want to delete your account? This operation cannot be undone. (The data in the device will remain.)
+    Select OK to proceed to the re-authentication screen and sign in.
+  deleteUserSuccess: Account deleted.
+  deleteUserError: Failed to delete account. ({code})
+
+warpsPage:
+  warp: Warp | Warps
+  warpTypes:
+    11: Character Event Warp
+    12: Light Cone Event Warp
+    1: Standard Warp
+  urlInput: URL Input
+  get: "Get Warps"
+  clear: "Clear Warps"
+  progress: "Fetched {gachaCount} warp(s) ({gachaTypeCount}/{gachaTypeTotal})"
+  preparing: Preparing...
+  invalidUrl: Invalid URL
+  getPityHistory: Show Pity History
+  getPityHistoryDesc: If enabled, all history of the past 6 months will be fetched and you can check the pity count history of ☆4/☆5. However, it takes more to fetch the first time. You need to clear the warp history to change this setting.
+  noNewWarps: No new warp found. If you just pulled, please try again in up to 1 hour.
+  fetched: "Fetched {n} @:{'warpsPage.warp'}"
+  clearDialog: Do you want to clear all warp history?
+  cleared: Cleared warps
+  clearError: Failed to clear warps.
+  pityCountWithStar: "☆{star} Pity Count"
+  pityCount: Pity Count
+  dateTime: Date & Time
+  rarity: Rarity
+  itemName: Item Name
+  pityHistory: Pity History
+  lastPulled: "☆{star} Last Pulled"
+  prob: Prob of Getting ☆5 in the Next 10 Pulls
+  errors:
+    invalidUrl: URL is invalid.
+    authKeyExpired: The URL has expired. Please get a new one from the game.
+    authKeyInvalid: The URL is invalid. Please get a new one from the game.
+    tooManyRequests: Too many requests. Please try again later.
+    internal: An error occurred on the server. Please try again later.
+    failedToSave: Failed to save the warp history.
+    unknown: An unknown error occurred.
+  aboutTitle: About
+  copied: Copied.
+  about: |
+    ## About This Feature
+
+    This feature automatically fetches warp history from the game and displays the pity count. To use this, you need to get the URL below.
+
+    ## About Security
+
+    The URL used in this feature has an access key that allows only fetching warp history.
+    Therefore, it cannot be used to access personal information such as email addresses and usernames,
+    or to log in to the game. Please be assured.
+
+    Also, when data sync is turned on, this URL is synchronized between devices.
+    This URL is never sent to external parties except for the API for history retrieval and the database for sync.
+
+    ## Notes
+
+    - <span class="font-weight-bold">This URL expires in 24 hours. After it expires, you need to get a new one in the same way.</span>
+    - <span class="font-weight-bold">Currently, there is no way to get the URL on Android devices alone.</span>
+  howToGetUrl:
+    windows:
+      title: How to Get URL (Windows)
+      contents: |
+        *Confirmed to work only on Windows 11.
+
+        1. Launch @:{'common.gameName'}, select Warp > View Details > Records.
+        1. Press Windows key + R key to open the Run dialog.
+        1. Copy and paste the following command then press Enter key.
+            <div id="cmd-win" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline}</code></pre></div>
+        1. The URL will be copied, so paste it into this page.
+      cmdline: |
+        {'powershell -Command "iex ""&{$(irm https://gist.githubusercontent.com/chika3742/0542db8a5e329fb15af9e37714e92893/raw/getlink.ps1)} global -lang en-US"""'}
+    ios:
+      title: How to Get URL (iOS)
+      contents: |
+        ### Preparation (required for the first time only)
+        
+        1. Install the [Stream]({streamUrl}) app from the App Store.
+        1. Launch the Stream app, tap "Sniff Now", and when the dialog "Stream is requesting to add VPN configurations" is displayed, tap "Allow". (Enter the passcode when prompted.)
+        1. Return to the Stream app and a dialog with the content "You must install CA" will be displayed, so tap "Install CA" and then tap "Install CA Certificate".
+        1. "This website is trying to download a configuration profile" will be displayed, so tap "Allow".
+        1. Open the device settings, tap General > VPN & Device Management > Stream Generated CA XXXXXXXX > "Install" in the upper right corner > Enter the passcode > "Install" in the upper right corner > Install.
+        1. When you return to the app, "For iOS 10.3+ and iOS 11..." may be displayed, but tap the blue "I've trusted".
+        
+        ### Get URL
+        
+        1. Launch @:{'common.gameName'}, and open "Warp" > "View Details".
+        1. Open the Stream app and tap "Sniff Now".
+        1. Return to @:{'common.gameName'} and tap "Records".
+        1. Return to the Stream app and tap "Stop Sniffing", then tap "Sniff History" on the right.
+        1. Tap the one at the top, tap the one that starts with "GET https://api-os-takumi.mihoyo.com", and tap "Request" at the top, then tap the bottom of "REQUEST LINE" and tap "Copy Url" to copy the URL.
+    macos:
+      title: How to Get URL (macOS with PlayCover)
+      contents: |
+        ### Preparation (required for the first time only)
+        
+        1. Install [Homebrew](https://brew.sh/) and [mitmproxy](https://mitmproxy.org/).
+        1. Run the command below on the terminal. (may be required to enter the password)
+            <div id="cmd-macos-1" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline1}</code></pre></div>
+            (This command installs the certificate required to monitor HTTPS communications with mitmproxy.)
+        
+        ### Getting the URL
+        
+        1. Run the command below on the terminal.
+            <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
+        1. Run @:{'common.gameName'} and open the warp record page (tab).
+        1. URL will be copied and the script exits automatically.
+
+tpCalcPage:
+  baseTime: Base time
+  currentTpCount: Current TP
+  fullReplenishmentTime: Fully replenished by
+  remainingTime: Until full replenishment
+  duration: "{hours} hour(s) {minutes} minute(s)"
+  alreadyReplenished: Already fully replenished.
+  rangeError: Please enter a number between 0 and {max}.
+  reservedTp: Reserved TP
+  show: Show
+  howToUse: |
+    ## How to Use
+    
+    - Enter the current Trailblaze Power count, and the time when it is fully replenished and the time until it is fully replenished will be displayed based on the time when it was entered.
+    - The entered time and TP count will be retained even if you reload the page.
+    - Please note that the base time will be updated when the number is changed.
+
+aboutPage:
+  feedback: |
+    ## Feedback
+    
+    If you have any suggestions for new features, bug reports, typo reports, or questions, please post them in the comments section of the [HoYoLAB article]({hoyolabUrl}) or create an issue on GitHub directly from the footer.
+
+  support: |
+    ## Support
+    
+    I would be grateful if you could support me with a cup of coffee to maintain and improve this app. (You can pay with PayPal or credit card.)
+  supportButton: Support
+
+  developer: |
+    ## Developer
+    
+    2nd year of university (on leave).
+
+releaseNotesPage:
+  legends: Legends
+  color: Color
+  desc: Description
+  orangeDesc: Includes additions and improvements related to features
+  lightBlueDesc: Only data additions of characters, weapons, etc.
+
+settingsPage:
+  bookmarkDisplay: Bookmark Display
+  showFarmingCount: Show farming count for each item
+  equilibriumLevel: Equilibrium Level
+  equilibriumLevelDesc: Farming count is calculated based on the equilibrium level. If you want to change the equilibrium level, please change it here.
+  dropRateTable: Drop Rate Table
+  itemKind: Item Kind
+  dropRate: Drop Rate (per run)
+  itemTypes:
+    characterExp: Character EXP
+    lightConeExp: Light Cone EXP
+    credit: Credit
+  dataSource: Data source
+  others: Others
+  clearCharacterLevels: Clear Leveling Statuses
+  clearCharacterLevelsDesc: Clears the leveling statuses synced using "@:{'navDrawer.gameDataSync'}".
+  clearCharacterLevelsSuccess: Cleared.
+
+paths:
+  abundance: Abundance
+  destruction: Destruction
+  erudition: Erudition
+  harmony: Harmony
+  nihility: Nihility
+  preservation: Preservation
+  the_hunt: The Hunt
+
+combatTypes:
+  fire: Fire
+  ice: Ice
+  imaginary: Imaginary
+  lightning: Lightning
+  physical: Physical
+  wind: Wind
+  quantum: Quantum
+
+relicTypes:
+  cavern: Cavern Relics
+  planar: Planar Ornaments
+
+relicLocations:
+  head: Head
+  hands: Hands
+  body: Body
+  feet: Feet
+  planar_sphere: Planar Sphere
+  link_rope: Link Rope
+
+stats:
+  hp: HP
+  atk: ATK
+  def: DEF
+  hp_percent: HP%
+  atk_percent: ATK%
+  def_percent: DEF%
+  crit_rate: CRIT Rate
+  crit_dmg: CRIT DMG
+  outgoing_healing: Outgoing Healing
+  effect_hit_rate: Effect Hit Rate
+  speed: Speed
+  physical_dmg: Physical DMG Boost
+  fire_dmg: Fire DMG Boost
+  ice_dmg: Ice DMG Boost
+  lightning_dmg: Lightning DMG Boost
+  wind_dmg: Wind DMG Boost
+  quantum_dmg: Quantum DMG Boost
+  imaginary_dmg: Imaginary DMG Boost
+  break_effect: Break Effect
+  energy_regen_rate: Energy Regen Rate
+  effect_res: Effect RES
+
+purposeTypes:
+  ascension: Lv/Ascension Materials
+  basicAttack: "@:{'common.skillTypes.basicAttack'}: {title}"
+  skill: "@:{'common.skillTypes.skill'}: {title}"
+  talent: "@:{'common.skillTypes.talent'}: {title}"
+  ultimate: "@:{'common.skillTypes.ultimate'}: {title}"
+
+characterNames:
+  march-7th: March 7th
+  dan-heng: Dan Heng
+  himeko: Himeko
+  welt: Welt
+  kafka: Kafka
+  silver-wolf: Silver Wolf
+  arlan: Arlan
+  asta: Asta
+  herta: Herta
+  bronya: Bronya
+  seele: Seele
+  serval: Serval
+  gepard: Gepard
+  natasha: Natasha
+  pela: Pela
+  clara: Clara
+  sampo: Sampo
+  hook: Hook
+  qingque: Qingque
+  tingyun: Tingyun
+  luocha: Luocha
+  jing-yuan: Jing Yuan
+  sushang: Sushang
+  yukong: Yukong
+  yanqing: Yanqing
+  bailu: Bailu
+  trailblazer: Trailblazer
+  trailblazer_destruction: Trailblazer (Destruction)
+  trailblazer_preservation: Trailblazer (Preservation)
+  trailblazer_harmony: Trailblazer (Harmony)
+  blade: Blade
+  luka: Luka
+  dan-heng-imbibitor-lunae: Dan Heng・Imbibitor Lunae
+  fu-xuan: Fu Xuan
+  lynx: Lynx
+  jingliu: Jingliu
+  topaz-and-numby: Topaz and Numby
+  guinaifen: Guinaifen
+  huohuo: Huohuo
+  argenti: Argenti
+  hanya: Hanya
+  ruan-mei: Ruan Mei
+  xueyi: Xueyi
+  dr-ratio: Dr. Ratio
+  black-swan: Black Swan
+  misha: Misha
+  acheron: Acheron
+  aventurine: Aventurine
+  gallagher: Gallagher
+  robin: Robin
+  sparkle: Sparkle
+
+materialCategories:
+  exp: EXP Materials
+  character_ascension: Character Ascension Materials
+  light_cone_or_skill_upgrade: Light Cone or Skill Upgrade Materials
+  common: Common Materials
+  advanced_skill_upgrade: Advanced Skill Upgrade Materials
+  others: Others
+
+materialNames:
+  travel-encounters: Travel Encounters
+  adventure-log: Adventure Log
+  travelers-guide: Traveler’s Guide
+  horn-of-snow: Horn of Snow
+  storm-eye: Storm Eye
+  endotherm-chitin: Endotherm Chitin
+  golden-crown-of-the-past-shadow: Golden Crown of the Past Shadow
+  shape-shifters-lightning-staff: Shape Shifter’s Lightning Staff
+  void-cast-iron: Void Cast Iron
+  lightning-crown-of-the-past-shadow: Lightning Crown of the Past Shadow
+  broken-teeth-of-iron-wolf: Broken Teeth of Iron Wolf
+  enigmatic-ectostella: Enigmatic Ectostella
+  thiefs-instinct: Thief’s Instinct
+  usurpers-scheme: Usurper’s Scheme
+  conquerors-will: Conqueror’s Will
+  extinguished-core: Extinguished Core
+  glimmering-core: Glimmering Core
+  squirming-core: Squirming Core
+  silvermane-badge: Silvermane Badge
+  silvermane-insignia: Silvermane Insignia
+  silvermane-medal: Silvermane Medal
+  ancient-part: Ancient Part
+  ancient-spindle: Ancient Spindle
+  ancient-engine: Ancient Engine
+  immortal-scionette: Immortal Scionette
+  immortal-aeroblossom: Immortal Aeroblossom
+  immortal-lumintwig: Immortal Lumintwig
+  artifexs-module: Artifex’s Module
+  artifexs-cogwheel: Artifex’s Cogwheel
+  artifexs-gyreheart: Artifex’s Gyreheart
+  endurance-of-bronze: Endurance of Bronze
+  oath-of-steel: Oath of Steel
+  safeguard-of-amber: Safeguard of Amber
+  arrow-of-the-beast-hunter: Arrow of the Beast Hunter
+  arrow-of-the-demon-slayer: Arrow of the Demon Slayer
+  arrow-of-the-starchaser: Arrow of the Starchaser
+  key-of-inspiration: Key of Inspiration
+  key-of-knowledge: Key of Knowledge
+  key-of-wisdom: Key of Wisdom
+  obsidian-of-dread: Obsidian of Dread
+  obsidian-of-desolation: Obsidian of Desolation
+  obsidian-of-obsession: Obsidian of Obsession
+  shattered-blade: Shattered Blade
+  lifeless-blade: Lifeless Blade
+  worldbreaker-blade: Worldbreaker Blade
+  harmonic-tune: Harmonic Tune
+  ancestral-hymn: Ancestral Hymn
+  stellaris-symphony: Stellaris Symphony
+  seed-of-abundance: Seed of Abundance
+  sprout-of-life: Sprout of Life
+  flower-of-eternity: Flower of Eternity
+  destroyers-final-road: Destroyer’s Final Road
+  guardians-lament: Guardian’s Lament
+  tracks-of-destiny: Tracks of Destiny
+  credit: Credit
+  gelid-chitin: Gelid Chitin
+  sparse-aether: Sparse Aether
+  condensed-aether: Condensed Aether
+  refined-aether: Refined Aether
+  ascendant-debris: Ascendant Debris
+  regret-of-infinite-ochema: Regret of Infinite Ochema
+  suppressing-edict: Suppressing Edict
+  nail-of-the-ape: Nail of the Ape
+  searing-steel-blade: Searing Steel Blade
+  netherworld-token: Netherworld Token
+  past-evils-of-the-borehole-planet-disaster: Past Evils of the Borehole Planet Disaster
+  fiery-spirit: Fiery Spirit
+  borisin-teeth: Borisin Teeth
+  dream-collection-component: Dream Collection Component
+  dream-fridge: Dream Fridge
+  lupitoxin-sawteeth: Lupitoxin Sawteeth
+  moon-madness-fang: Moon Madness Fang
+  dream-flow-valve: Dream Flow Valve
+  dream-making-engine: Dream Making Engine
+  starfire-essence: Starfire Essence
+  heaven-incinerator: Heaven Incinerator
+  firmament-note: Firmament Note
+  celestial-section: Celestial Section
+  heavenly-melody: Heavenly Melody
+  tatters-of-thought: Tatters of Thought
+  fragments-of-impression: Fragments of Impression
+  shards-of-desires: Shards of Desires
+  scattered-stardust: Scattered Stardust
+  crystal-meteorites: Crystal Meteorites
+  divine-amber: Divine Amber
+  alien-tree-seed: Alien Tree Seed
+  nourishing-honey: Nourishing Honey
+  myriad-fruit: Myriad Fruit
+  raging-heart: Raging Heart
+  ipc-work-permit: IPC Work Permit
+  meteoric-bullet: Meteoric Bullet
+  destined-expiration: Destined Expiration
+  countertemporal-shot: Countertemporal Shot
+  dream-flamer: Dream Flamer
+
+skillTitles:
+  trailblazer:
+    destruction:
+      basicAttack: Farewell Hit
+      skill: RIP Home Run
+      ultimate: Stardust Ace
+      talent: Perfect Pickoff
+    preservation:
+      basicAttack: Ice-Breaking Light
+      skill: Ever-Burning Amber
+      ultimate: War-Flaming Lance
+      talent: Treasure of the Architects
+    harmony:
+      basicAttack: Swing Dance Etiquette
+      skill: Halftime to Make It Rain
+      ultimate: All-Out Footlight Parade
+      talent: Full-on Aerial Dance
+  march-7th:
+    basicAttack: Frigid Cold Arrow
+    skill: The Power of Cuteness
+    ultimate: Glacial Cascade
+    talent: Girl Power
+  dan-heng:
+    basicAttack: "Cloudlancer Art: North Wind"
+    skill: "Cloudlancer Art: Torrent"
+    ultimate: Ethereal Dream
+    talent: Superiority of Reach
+  himeko:
+    basicAttack: Sawblade Tuning
+    skill: Molten Detonation
+    ultimate: Heavenly Flare
+    talent: Victory Rush
+  welt:
+    basicAttack: Gravity Suppression
+    skill: Edge of the Void
+    ultimate: Synthetic Black Hole
+    talent: Time Distortion
+  silver-wolf:
+    basicAttack: System Warning
+    skill: Allow Changes?
+    ultimate: User Banned
+    talent: Awaiting System Response...
+  arlan:
+    basicAttack: Lightning Rush
+    skill: Shackle Breaker
+    ultimate: Frenzied Punishment
+    talent: Pain and Anger
+  asta:
+    basicAttack: Spectrum Beam
+    skill: Meteor Storm
+    ultimate: Astral Blessing
+    talent: Astrometry
+  herta:
+    basicAttack: What Are You Looking At?
+    skill: One-Time Offer
+    ultimate: It's Magic, I Added Some Magic
+    talent: Fine, I'll Do It Myself
+  bronya:
+    basicAttack: Windrider Bullet
+    skill: Combat Redeployment
+    ultimate: The Belobog March
+    talent: Leading the Way
+  seele:
+    basicAttack: Thwack
+    skill: Sheathed Blade
+    ultimate: Butterfly Flurry
+    talent: Resurgence
+  serval:
+    basicAttack: Roaring Thunderclap
+    skill: Lightning Flash
+    ultimate: Here Comes the Mechanical Fever
+    talent: Galvanic Chords
+  gepard:
+    basicAttack: Fist of Conviction
+    skill: Daunting Smite
+    ultimate: Enduring Bulwark
+    talent: Unyielding Will
+  natasha:
+    basicAttack: Behind the Kindness
+    skill: Love, Heal, and Choose
+    ultimate: Gift of Rebirth
+    talent: Innervation
+  pela:
+    basicAttack: Frost Shot
+    skill: Frostbite
+    ultimate: Zone Suppression
+    talent: Data Collecting
+  clara:
+    basicAttack: I Want to Help
+    skill: Svarog Watches Over You
+    ultimate: Promise, Not Command
+    talent: Because We're Family
+  sampo:
+    basicAttack: Dazzling Blades
+    skill: Ricochet Love
+    ultimate: Surprise Present
+    talent: Windtorn Dagger
+  hook:
+    basicAttack: Hehe! Don't Get Burned!
+    skill: Hey! Remember Hook?
+    ultimate: Boom! Here Comes the Fire!
+    talent: Ha! Oil to the Flames!
+  qingque:
+    basicAttack: Flower Pick
+    skill: A Scoop of Moon
+    ultimate: A Quartet? Woo-hoo!
+    talent: Celestial Jade
+  tingyun:
+    basicAttack: Dislodged
+    skill: Soothing Melody
+    ultimate: Amidst the Rejoicing Clouds
+    talent: Violet Sparknado
+  jing-yuan:
+    basicAttack: Glistening Light
+    skill: Rifting Zenith
+    ultimate: Lightbringer
+    talent: Prana Extirpated
+  sushang:
+    basicAttack: "Cloudfencer Art: Starshine"
+    skill: "Cloudfencer Art: Mountainfall"
+    ultimate: "Shape of Taixu: Dawn Herald"
+    talent: Dancing Blade
+  yanqing:
+    basicAttack: Frost Thorn
+    skill: Darting Ironthorn
+    ultimate: Amidst the Raining Bliss
+    talent: One With the Sword
+  bailu:
+    basicAttack: Diagnostic Kick
+    skill: Singing Among Clouds
+    ultimate: Felicitous Thunderleap
+    talent: Gourdful of Elixir
+  luocha:
+    basicAttack: Thorns of the Abyss
+    skill: Prayer of Abyss Flower
+    ultimate: Death Wish
+    talent: Cycle of Life
+  yukong:
+    basicAttack: Arrowslinger
+    skill: Emboldening Salvo
+    ultimate: Diving Kestrel
+    talent: Seven Layers, One Arrow
+  blade:
+    basicAttack: Shard Sword
+    skill: Hellscape
+    ultimate: Death Sentence
+    talent: Shuhu's Gift
+  kafka:
+    basicAttack: Midnight Tumult
+    skill: Caressing Moonlight
+    ultimate: Twilight Trill
+    talent: Gentle but Cruel
+  luka:
+    basicAttack: Direct Punch
+    skill: Lacerating Fist
+    ultimate: Coup de Grâce
+    talent: Flying Sparks
+  dan-heng-imbibitor-lunae:
+    basicAttack: Beneficent Lotus
+    skill: Dracore Libre
+    ultimate: Azure's Aqua Ablutes All
+    talent: Righteous Heart
+  fu-xuan:
+    basicAttack: Novaburst
+    skill: Known by Stars, Shown by Hearts
+    ultimate: Woes of Many Morphed to One
+    talent: Bleak Breeds Bliss
+  lynx:
+    basicAttack: Ice Crampon Technique
+    skill: Salted Camping Cans
+    ultimate: Snowfield First Aid
+    talent: Outdoor Survival Experience
+  jingliu:
+    basicAttack: Lucent Moonglow
+    skill: Transcendent Flash
+    ultimate: Florephemeral Dreamflux
+    talent: Crescent Transmigration
+  topaz-and-numby:
+    basicAttack: Deficit...
+    skill: Difficulty Paying?
+    ultimate: Turn a Profit!
+    talent: Trotter Market!?
+  guinaifen:
+    basicAttack: Standing Ovation
+    skill: Blazing Welcome
+    ultimate: Watch This Showstopper
+    talent: PatrAeon Benefits
+  huohuo:
+    basicAttack: "Banner: Stormcaller"
+    skill: "Talisman: Protection"
+    ultimate: "Tail: Spiritual Domination"
+    talent: "Possession: Ethereal Metaflow"
+  argenti:
+    basicAttack: Fleeting Fragrance
+    skill: Justice, Hereby Blooms
+    ultimate: For In This Garden, Supreme Beauty Bestows
+    talent: Sublime Object
+  hanya:
+    basicAttack: Oracle Brush
+    skill: Samsara, Locked
+    ultimate: Ten-Lords' Decree, All Shall Obey
+    talent: Sanction
+  ruan-mei:
+    basicAttack: Threading Fragrance
+    skill: String Sings Slow Swirls
+    ultimate: Petals to Stream, Repose in Dream
+    talent: Somatotypical Helix
+  xueyi:
+    basicAttack: Mara-Sunder Awl
+    skill: Iniquity Obliteration
+    ultimate: Divine Castigation
+    talent: Karmic Perpetuation
+  dr-ratio:
+    basicAttack: Mind is Might
+    skill: Intellectual Midwifery
+    ultimate: Syllogistic Paradox
+    talent: Cogito, Ergo Sum
+  black-swan:
+    basicAttack: Percipience, Silent Dawn
+    skill: Decadence, False Twilight
+    ultimate: Bliss of Otherworld's Embrace
+    talent: Loom of Fate's Caprice
+  misha:
+    basicAttack: E—Excuse Me, Please!
+    skill: R—Room Service
+    ultimate: G—Gonna Be Late!
+    talent: Horological Escapement
+  acheron:
+    basicAttack: Trilateral Wiltcross
+    skill: Octobolt Flash
+    ultimate: Slashed Dream Cries in Red
+    talent: Atop Rainleaf Hangs Oneness
+  aventurine:
+    basicAttack: Straight Bet
+    skill: Cornerstone Deluxe
+    ultimate: Roulette Shark
+    talent: Shot Loaded Right
+  gallagher:
+    basicAttack: Corkage Fee
+    skill: Special Brew
+    ultimate: Champagne Etiquette
+    talent: Tipsy Tussle
+  robin:
+    basicAttack: Wingflip White Noise
+    skill: Pinion's Aria
+    ultimate: Vox Harmonique, Opus Cosmique
+    talent: Tonal Resonance
+  sparkle:
+    basicAttack: Monodrama
+    skill: Dreamdiver
+    ultimate: The Hero with a Thousand Faces
+    talent: Red Herring
+
+lightConeNames:
+  arrows: Arrows
+  cornucopia: Cornucopia
+  collapsing-sky: Collapsing Sky
+  amber: Amber
+  void: Void
+  chorus: Chorus
+  data-bank: Data Bank
+  darting-arrow: Darting Arrow
+  fine-fruit: Fine Fruit
+  shattered-home: Shattered Home
+  defense: Defense
+  loop: Loop
+  meshing-cogs: Meshing Cogs
+  passkey: Passkey
+  adversarial: Adversarial
+  multiplication: Multiplication
+  mutual-demise: Mutual Demise
+  pioneering: Pioneering
+  hidden-shadow: Hidden Shadow
+  mediation: Mediation
+  sagacity: Sagacity
+  post-op-conversation: Post-Op Conversation
+  good-night-and-sleep-well: Good Night and Sleep Well
+  day-one-of-my-new-life: Day One of My New Life
+  only-silence-remains: Only Silence Remains
+  memories-of-the-past: Memories of the Past
+  the-moles-welcome-you: The Moles Welcome You
+  the-birth-of-the-self: The Birth of the Self
+  shared-feeling: Shared Feeling
+  eyes-of-the-prey: Eyes of the Prey
+  landaus-choice: Landau's Choice
+  swordplay: Swordplay
+  planetary-rendezvous: Planetary Rendezvous
+  a-secret-vow: A Secret Vow
+  perfect-timing: Perfect Timing
+  resolution-shines-as-pearls-of-sweat: Resolution Shines As Pearls of Sweat
+  trend-of-the-universal-market: Trend of the Universal Market
+  subscribe-for-more: Subscribe for More!
+  quid-pro-quo: Quid Pro Quo
+  warmth-shortens-cold-nights: Warmth Shortens Cold Nights
+  in-the-night: In the Night
+  but-the-battle-isnt-over: But the Battle Isn't Over
+  in-the-name-of-the-world: In the Name of the World
+  moment-of-victory: Moment of Victory
+  sleep-like-the-dead: Sleep Like the Dead
+  time-waits-for-no-one: Time Waits for No One
+  on-the-fall-of-an-aeon: On the Fall of an Aeon
+  cruising-in-the-stellar-sea: Cruising in the Stellar Sea
+  texture-of-memories: Texture of Memories
+  make-the-world-clamor: Make the World Clamor
+  night-on-the-milky-way: Night on the Milky Way
+  before-dawn: Before Dawn
+  under-the-blue-sky: Under the Blue Sky
+  geniuses-repose: Geniuses' Repose
+  we-are-wildfire: We Are Wildfire
+  river-flows-in-spring: River Flows in Spring
+  fermata: Fermata
+  woof-walk-time: Woof! Walk Time!
+  the-seriousness-of-breakfast: The Seriousness of Breakfast
+  we-will-meet-again: We Will Meet Again
+  this-is-me: This Is Me!
+  return-to-darkness: Return to Darkness
+  carve-the-moon-weave-the-clouds: Carve the Moon, Weave the Clouds
+  nowhere-to-run: Nowhere to Run
+  today-is-another-peaceful-day: Today Is Another Peaceful Day
+  something-irreplaceable: Something Irreplaceable
+  dance-dance-dance: Dance! Dance! Dance!
+  past-and-future: Past and Future
+  before-the-tutorial-mission-starts: Before the Tutorial Mission Starts
+  incessant-rain: Incessant Rain
+  echoes-of-the-coffin: Echoes of the Coffin
+  the-unreachable-side: The Unreachable Side
+  patience-is-all-you-need: Patience Is All You Need
+  brighter-than-the-sun: Brighter Than the Sun
+  solitary-healing: Solitary Healing
+  she-already-shut-her-eyes: She Already Shut Her Eyes
+  i-shall-be-my-own-sword: I Shall Be My Own Sword
+  worrisome-blissful: Worrisome, Blissful
+  hey-over-here: Hey, Over Here
+  night-of-fright: Night of Fright
+  an-instant-before-a-gaze: An Instant Before A Gaze
+  past-self-in-mirror: Past Self in Mirror
+  baptism-of-pure-thought: Baptism of Pure Thought
+  indelible-promise: Indelible Promise
+  reforged-remembrance: Reforged Remembrance
+  what-is-real: What Is Real?
+  dreamville-adventure: Dreamville Adventure
+  final-victor: Final Victor
+  flames-afar: Flames Afar
+  destinys-threads-forewoven: Destiny's Threads Forewoven
+  the-day-the-cosmos-fell: The Day The Cosmos Fell
+  its-showtime: It's Showtime
+  inherently-unjust-destiny: Inherently Unjust Destiny
+  along-the-passing-shore: Along the Passing Shore
+  concert-for-two: Concert for Two
+  flowing-nightglow: Flowing Nightglow
+  boundless-choreo: Boundless Choreo
+  for-tomorrows-journey: For Tomorrow's Journey
+  sailing-towards-a-second-life: Sailing Towards a Second Life
+
+lightConeSkillDescriptions:
+  arrows: >-
+    At the start of the battle, the wearer's CRIT Rate increases by <12%> for 3
+    turn(s).
+  cornucopia: >-
+    When the wearer uses their Skill or Ultimate, their Outgoing Healing
+    increases by <12%>.
+  collapsing-sky: Increases the wearer's Basic ATK and Skill DMG by <20%>.
+  amber: Increases the wearer's DEF by <16%>.
+  void: >-
+    At the start of the battle, the wearer's Effect Hit Rate increases by <20%>
+    for 3 turn(s).
+  chorus: >-
+    After entering battle, increases the ATK of all allies by <8%>. Effects of
+    the same type cannot stack.
+  data-bank: Increases the wearer's Ultimate DMG by <28%>.
+  darting-arrow: When the wearer defeats an enemy, increases ATK by <24%> for 3 turn(s).
+  fine-fruit: >-
+    At the start of the battle, immediately regenerates <6> Energy for all
+    allies.
+  shattered-home: Deals <20%> increased DMG to any enemies whose HP is above 50%.
+  defense: >-
+    When the wearer unleashes their Ultimate, they restore HP by <18%> of their
+    Max HP.
+  loop: Increases DMG dealt from its wearer to Slowed enemies by <24%>.
+  meshing-cogs: >-
+    After the wearer uses attacks or gets hit, additionally regenerates <4>
+    Energy. This effect can only be triggered 1 time per turn.
+  passkey: >-
+    After the wearer uses their Skill, additionally regenerates <8> Energy. This
+    effect can only be triggered 1 time per turn.
+  adversarial: When the wearer defeats an enemy, increases SPD by <10%> for 2 turn(s).
+  multiplication: >-
+    After the wearer uses their Basic ATK, their next action will be Advanced
+    Forward by <12%>.
+  mutual-demise: If the wearer's current HP is lower than 80%, CRIT Rate increases by <12%>.
+  pioneering: >-
+    When the wearer Breaks an enemy's Weakness, the wearer restores HP by <12%>
+    of their Max HP.
+  hidden-shadow: >-
+    After using Skill, the wearer's next Basic ATK deals Additional DMG equal to
+    <60%> of ATK to the target enemy.
+  mediation: >-
+    Upon entering battle, increases SPD of all allies by <12> points for 1
+    turn(s).
+  sagacity: When the wearer uses their Ultimate, increases ATK by <24%> for 2 turn(s).
+  post-op-conversation: Increases the wearer's Energy Regeneration Rate by <12%>.
+  good-night-and-sleep-well: >-
+    For every debuff the target enemy has, the DMG dealt by the wearer increases
+    by <12%>, stacking up to 3 time(s). This effect also applies to DoT.
+  day-one-of-my-new-life: Increases the wearer's DEF by <8%>. Effects of the same type cannot stack.
+  only-silence-remains: Increases the wearer's ATK by <12%>.
+  memories-of-the-past: >-
+    Increases the wearer's Break Effect by <4> Energy. This effect can only be
+    triggered 1 time per turn.
+  the-moles-welcome-you: >-
+    When the wearer uses Basic ATK, Skill, or Ultimate to attack enemies, the
+    wearer gains one stack of Mischievous. Each stack increases the wearer's ATK
+    by <12%>.
+  the-birth-of-the-self: Increases DMG dealt by the wearer's follow-up attacks by <24%>.
+  shared-feeling: Increases the wearer's Outgoing Healing by <2> Energy for all allies.
+  eyes-of-the-prey: Increases the wearer's Effect Hit Rate by <24%>.
+  landaus-choice: The wearer is more likely to be attacked, and DMG taken is reduced by <16%>.
+  swordplay: >-
+    For each time the wearer hits the same target, DMG dealt increases by <8%>,
+    stacking up to 5 time(s). This effect will be dispelled when the wearer
+    changes targets.
+  planetary-rendezvous: >-
+    After entering battle, if an ally deals the same DMG Type as the wearer, DMG
+    dealt increases by <12%>.
+  a-secret-vow: >-
+    Increases DMG dealt by the wearer by <20%> of DMG to enemies whose current
+    HP percentage is equal to or higher than the wearer's current HP percentage.
+  perfect-timing: Increases the wearer's Effect RES by <15%>.
+  resolution-shines-as-pearls-of-sweat: >-
+    When the wearer hits an enemy and if the hit enemy is not already Ensnared,
+    then there is a <12%> for 1 turn(s).
+  trend-of-the-universal-market: Increases the wearer's DEF by <40%> of the wearer's DEF for 2 turn(s).
+  subscribe-for-more: >-
+    Increases the DMG of the wearer's Basic ATK and Skill by <24%> when the
+    wearer's current Energy reaches its max level.
+  quid-pro-quo: >-
+    At the start of the wearer's turn, regenerates <8> Energy for a randomly
+    chosen ally (excluding the wearer) whose current Energy is lower than 50%.
+  warmth-shortens-cold-nights: Increases the wearer's Max HP by <2%> of their respective Max HP.
+  in-the-night: >-
+    Increases the wearer's CRIT Rate by <12%>. This effect can stack up to 6
+    time(s).
+  but-the-battle-isnt-over: >-
+    Increases the wearer's Energy Regeneration Rate by <30%> more DMG for 1
+    turn(s).
+  in-the-name-of-the-world: Increases the wearer's DMG to debuffed enemies by <24%>.
+  moment-of-victory: Increases the wearer's DEF by <24%> until the end of the wearer's turn.
+  sleep-like-the-dead: >-
+    Increases the wearer's CRIT DMG by <36%> for 1 turn(s). This effect can only
+    trigger once every 3 turn(s).
+  time-waits-for-no-one: >-
+    Increases the wearer's Max HP by <36%> of the recorded Outgoing Healing
+    value. This Additional DMG is of the same Type as the wearer's, is not
+    affected by other buffs, and can only occur 1 time per turn.
+  on-the-fall-of-an-aeon: Whenever the wearer attacks, their ATK is increased by <12%> for 2 turn(s).
+  cruising-in-the-stellar-sea: Increases the wearer's CRIT rate by <20%> for 2 turn(s).
+  texture-of-memories: Increases the wearer's Effect RES by <12%>.
+  make-the-world-clamor: The wearer regenerates <32%>.
+  night-on-the-milky-way: >-
+    For every enemy on the field, increases the wearer's ATK by <30%> for 1
+    turn.
+  before-dawn: Increases the wearer's CRIT DMG by <48%>.
+  under-the-blue-sky: Increases the wearer's ATK by <12%> for 3 turn(s).
+  geniuses-repose: Increases the wearer's ATK by <24%> for 3 turn(s).
+  we-are-wildfire: >-
+    At the start of the battle, the DMG dealt to all allies decreases by <30%>
+    of the respective HP difference between the characters' Max HP and current
+    HP.
+  river-flows-in-spring: >-
+    After entering battle, increases the wearer's SPD by <12%>. When the wearer
+    takes DMG, this effect will disappear. This effect will resume after the end
+    of the wearer's next turn.
+  fermata: >-
+    Increases the Break Effect dealt by the wearer by <16%>. This also applies
+    to DoT.
+  woof-walk-time: Increases the wearer's ATK by <16%>. This also applies to DoT.
+  the-seriousness-of-breakfast: Increases the wearer's DMG by <4%>, stacking up to 3 time(s).
+  we-will-meet-again: >-
+    After the wearer uses Basic ATK or Skill, deals Additional DMG equal to
+    <48%> of the wearer's ATK to a random enemy that has been attacked.
+  this-is-me: >-
+    Increases the wearer's DEF by <60%> of the wearer's DEF. This effect only
+    applies 1 time per enemy target during each use of the wearer's Ultimate.
+  return-to-darkness: >-
+    Increases the wearer's CRIT Rate by <16%> fixed chance to dispel 1 buff on
+    the target enemy. This effect can only trigger 1 time per attack.
+  carve-the-moon-weave-the-clouds: >-
+    At the start of the battle and whenever the wearer's turn begins, one of the
+    following effects is applied randomly: All allies' ATK increases by <6%>.
+    The applied effect cannot be identical to the last effect applied, and will
+    replace the previous effect. The applied effect will be removed when the
+    wearer has been knocked down. Effects of the similar type cannot be stacked.
+  nowhere-to-run: Increases the wearer's ATK by <12%> of their ATK.
+  today-is-another-peaceful-day: >-
+    After entering battle, increases the wearer's DMG based on their Max Energy.
+    DMG increases by <0.2%> per point of Energy, up to 160 Energy.
+  something-irreplaceable: >-
+    Increases the wearer's ATK by <24%> until the end of their next turn. This
+    effect cannot stack and can only trigger 1 time per turn.
+  dance-dance-dance: >-
+    When the wearer uses their Ultimate, all allies' actions are Advanced
+    Forward by <16%>.
+  past-and-future: >-
+    When the wearer uses their Skill, the next ally taking action (except the
+    wearer) deals <16%> increased DMG for 1 turn(s).
+  before-the-tutorial-mission-starts: >-
+    Increases the wearer's Effect Hit Rate by <20%>. When the wearer attacks
+    DEF-reduced enemies, regenerates <4> Energy.
+  incessant-rain: >-
+    Increases the wearer's Effect Hit Rate by <24%>. When the wearer deals DMG
+    to an enemy that currently has 3 or more debuffs, increases the wearer's
+    CRIT Rate by <12%>. After the wearer uses their Basic ATK, Skill, or
+    Ultimate, there is a 100% base chance to implant Aether Code on a random hit
+    target that does not yet have it. Targets with Aether Code receive <12%>
+    increased DMG for 1 turn.
+  echoes-of-the-coffin: >-
+    Increases the wearer's ATK by <24%>. After the wearer uses an attack, for
+    each different enemy target the wearer hits, regenerates <3> Energy. Each
+    attack can regenerate Energy up to 3 time(s) this way. After the wearer uses
+    their Ultimate, all allies gain <12> SPD for 1 turn.
+  the-unreachable-side: >-
+    Increases the wearer's CRIT rate by <18%> and increases their Max HP by
+    <18%>. When the wearer is attacked or consumes their own HP, their DMG
+    increases by <24%>. This effect is removed after the wearer uses an attack.
+  patience-is-all-you-need: >-
+    Increases DMG dealt by the wearer by <24%>. After every attack launched by
+    wearer, their SPD increases by <4.8%>, stacking up to 3 times.
+
+    If the wearer hits an enemy target that is not afflicted by Erode, there is
+    a <unbreak>100%</unbreak> base chance to inflict Erode to the target.
+    Enemies afflicted with Erode are also considered to be Shocked and will
+    receive Lightning DoT at the start of each turn equal to <60%> of the
+    wearer's ATK, lasting for 1 turn(s).
+  solitary-healing: >-
+    Increases the wearer's Break Effect by <20%>. When the wearer uses their
+    Ultimate, increases DoT dealt by the wearer by <24%>, lasting for 2 turn(s).
+    When a target enemy suffering from DoT imposed by the wearer is defeated,
+    regenerates <4> Energy for the wearer.
+  brighter-than-the-sun: >-
+    Increases the wearer's CRIT Rate by <18%>. When the wearer uses their Basic
+    ATK, they will gain 1 stack of Dragon's Call, lasting for 2 turns. Each
+    stack of Dragon's Call increases the wearer's ATK by <18%> and Energy
+    Regeneration Rate by <6%>. Dragon's Call can be stacked up to 2 times.
+  she-already-shut-her-eyes: >-
+    Increases the wearer's Max HP by <24%> and Energy Regeneration Rate by
+    <12%>. When the wearer's HP is reduced, all allies' DMG dealt increases by
+    <9%>, lasting for 2 turn(s).\nAt the start of every wave, restores HP to all
+    allies by an amount equal to <80%> of their respective lost HP.
+  i-shall-be-my-own-sword: >-
+    Increases the wearer's CRIT DMG by <20%>. When an ally (excluding the
+    wearer) gets attacked or loses HP, the wearer gains 1 stack of Eclipse, up
+    to a max of 3 stack(s). Each stack of Eclipse increases the DMG of the
+    wearer's next attack by <14%>. When 3 stack(s) are reached, additionally
+    enables that attack to ignore <12%> of the enemy's DEF. This effect will be
+    removed after the wearer uses an attack.
+  worrisome-blissful: >-
+    Increase the wearer's CRIT Rate by <18%> and their follow-up attacks' DMG by
+    <30%>. After the wearer uses a follow-up attack, apply the Tame state to the
+    target, stacking up to 2 stacks. When allies hit enemy targets under the
+    Tame state, every Tame stack increases the CRIT DMG dealt by <12%>.
+  hey-over-here: >-
+    Increases the wearer's Max HP by <8%>. When the wearer uses their Skill,
+    increases Outgoing Healing by <16%>, lasting for 2 turn(s).
+  night-of-fright: >-
+    Increases the wearer's Energy Regeneration Rate by <12%>. When any ally uses
+    their Ultimate, the wearer restores HP for the ally currently with the
+    lowest HP percentage by an amount equal to <10%> of the healed ally's Max
+    HP. When the wearer provides healing for an ally, increases the healed
+    ally's ATK by <2.4%>. This effect can stack up to 5 times and lasts for 2
+    turn(s).
+  an-instant-before-a-gaze: >-
+    Increases the wearer's CRIT DMG by <36%>. When the wearer uses Ultimate,
+    increases the wearer's Ultimate DMG based on their Max Energy. Each point of
+    Energy increases the Ultimate DMG by <0.36%>, up to 180 points of Energy.
+  past-self-in-mirror: >-
+    Increases the wearer's Break Effect by <60%>. When the wearer uses their
+    Ultimate, increases all allies' DMG by <24%>, lasting for 3 turn(s). Should
+    the wearer's Break Effect exceed or equal 150%, 1 Skill Point will be
+    recovered.
+
+    At the start of each wave, all allies regenerate <10> Energy immediately.
+    Effects of the same type cannot stack.
+  baptism-of-pure-thought: >-
+    Increases the wearer's CRIT DMG by <20%>. For every debuff on the enemy
+    target, the wearer's CRIT DMG dealt against this target increases by <8%>,
+    stacking up to 3 times. When using Ultimate to attack the enemy target, the
+    wearer receives the Disputation effect, which increases DMG dealt by <36%>
+    and enables their follow-up attacks to ignore <24%> of the target's DEF.
+    This effect lasts for 2 turns.
+  indelible-promise: >-
+    Increases the wearer's Break Effect by <28%>. When the wearer uses their
+    Ultimate, increases CRIT Rate by <15%>, lasting for 2 turn(s).
+  reforged-remembrance: >-
+    Increases the wearer's Effect Hit Rate by <40%>. When the wearer deals DMG
+    to an enemy inflicted with Wind Shear, Burn, Shock, or Bleed, each
+    respectively grants 1 stack of Prophet, stacking up to 4 time(s). In a
+    single battle, only 1 stack of Prophet can be granted for each type of DoT.
+    Every stack of Prophet increases wearer's ATK by <5%> and enables the DoT
+    dealt to ignore <7.2%> of the target's DEF.
+  what-is-real: >-
+    Increases the wearer's Break Effect by <24%>. After using Basic ATK,
+    restores HP for the wearer by an amount equal to <2%> of Max HP plus 800.
+  dreamville-adventure: >-
+    After the wearer uses a certain type of ability such as Basic ATK, Skill, or
+    Ultimate, all allies gain Childishness, which increases allies' DMG for the
+    same type of ability as used by the wearer by <12%>. Childishness only takes
+    effect for the most recent type of ability the wearer used and cannot be
+    stacked.
+  final-victor: >-
+    Increases the wearer's ATK by <12%>. When the wearer lands a CRIT hit on
+    enemies, gains a stack of Good Fortune, stacking up to 4 time(s). Every
+    stack of Good Fortune the wearer has will increase their CRIT DMG by <8%>.
+    Good Fortune will be removed at the end of the wearer's turn.
+  flames-afar: >-
+    When the cumulative HP loss of the wearer during a single attack exceeds 25%
+    of their Max HP, or if the amount of their own HP they consume at one time
+    is greater than 25% of their Max HP, immediately heals the wearer for 15% of
+    their Max HP, and at the same time, increases the DMG they deal by <25%> for
+    2 turn(s). This effect can only be triggered once every 3 turn(s).
+  destinys-threads-forewoven: >-
+    Increases the wearer's Effect RES by <12%>. For every 100 of DEF the wearer
+    has, increases the wearer's DMG dealt by <0.8%>, up to a maximum DMG
+    increase of <32%>.
+  the-day-the-cosmos-fell: >-
+    Increases the wearer's ATK by <16%>. When the wearer uses an attack and at
+    least 2 attacked enemies have the corresponding Weakness, the wearer's CRIT
+    DMG increases by <20%> for 2 turn(s).
+  its-showtime: >-
+    When the wearer inflicts a debuff on an enemy, gains a stack of Trick. Every
+    stack of Trick increases the wearer's DMG dealt by <6%>, stacking up to 3
+    time(s). This effect lasts for 1 turn(s). When the wearer's Effect Hit Rate
+    is 80% or higher, increases ATK by <20%>.
+  inherently-unjust-destiny: >-
+    Increases the wearer's DEF by <40%>. When the wearer provides a Shield to an
+    ally, the wearer's CRIT DMG increases by <40%>, lasting for 2 turn(s). When
+    the wearer's follow-up attack hits an enemy target, there is a <100%> base
+    chance to increase the DMG taken by the attacked enemy target by <10%>,
+    lasting for 2 turn(s).
+  along-the-passing-shore: >-
+    Increases the wearer's CRIT DMG by <36%>. When the wearer hits an enemy
+    target, inflicts Mirage Fizzle on the enemy, lasting for 1 turn. Each time
+    the wearer attacks, this effect can only trigger 1 time on each target. The
+    wearer deals <24%> increased DMG to targets afflicted with Mirage Fizzle,
+    and the DMG dealt by the wearer's Ultimate additionally increases by <24%>.
+  concert-for-two: >-
+    Increases the wearer's DEF by <16%>. For every on-field character that has a
+    Shield, the DMG dealt by the wearer increases by <4%>.
+  flowing-nightglow: >-
+    Every time an ally attacks, the wearer gains 1 stack of Cantillation. Each
+    stack of Cantillation increases the wearer's Energy Regeneration Rate by
+    <3%>, stacking up to 5 time(s). When the wearer uses their Ultimate, removes
+    Cantillation and gains Cadenza. Cadenza increases the Wearer's ATK by <48%>
+    and increases all allies' DMG dealt by <24%>, lasting for 1 turn(s).
+  boundless-choreo: >-
+    Increase the wearer's CRIT Rate by <8%>. The wearer deals <24%> more CRIT
+    DMG to enemies that are currently Slowed or have reduced DEF.
+  for-tomorrows-journey: >-
+    Increases the wearer's ATK by <16%>. After the wearer uses their Ultimate,
+    increases their DMG dealt by <18%>, lasting for 1 turn(s).
+  sailing-towards-a-second-life: >-
+    Increases the wearer's Break Effect by <60%>. The Break DMG dealt by the
+    wearer ignores <20%> of the target's DEF. When the wearer's Break Effect in
+    battle is at 150% or greater, increases their SPD by <12%>.
+
+relicSetTitles:
+  passerby-of-wandering-cloud: Passerby of Wandering Cloud
+  musketeer-of-wild-wheat: Musketeer of Wild Wheat
+  knight-of-purity-palace: Knight of Purity Palace
+  hunter-of-glacial-forest: Hunter of Glacial Forest
+  champion-of-streetwise-boxing: Champion of Streetwise Boxing
+  guard-of-wuthering-snow: Guard of Wuthering Snow
+  firesmith-of-lava-forging: Firesmith of Lava-Forging
+  genius-of-brilliant-stars: Genius of Brilliant Stars
+  band-of-sizzling-thunder: Band of Sizzling Thunder
+  eagle-of-twilight-line: Eagle of Twilight Line
+  thief-of-shooting-meteor: Thief of Shooting Meteor
+  wastelander-of-banditry-desert: Wastelander of Banditry Desert
+  space-sealing-station: Space Sealing Station
+  fleet-of-the-ageless: Fleet of the Ageless
+  pan-galactic-commercial-enterprise: Pan-Galactic Commercial Enterprise
+  belobog-of-the-architects: Belobog of the Architects
+  celestial-differentiator: Celestial Differentiator
+  inert-salsotto: Inert Salsotto
+  talia-kingdom-of-banditry: 'Talia: Kingdom of Banditry'
+  sprightly-vonwacq: Sprightly Vonwacq
+  longevous-disciple: Longevous Disciple
+  messenger-traversing-hackerspace: Messenger Traversing Hackerspace
+  rutilant-arena: Rutilant Arena
+  broken-keel: Broken Keel
+
+relicSetEffects:
+  passerby-of-wandering-cloud:
+    2pc: Increases Outgoing Healing by <10%>.
+    4pc: At the start of the battle, immediately regenerates 1 Skill Point.
+  musketeer-of-wild-wheat:
+    2pc: ATK increases by <12%>.
+    4pc: The wearer's SPD increases by <6%> and Basic ATK DMG increases by <10%>.
+  knight-of-purity-palace:
+    2pc: Increases DEF by <15%>.
+    4pc: >-
+      Increases the max DMG that can be absorbed by the Shield created by the
+      wearer by <20%>.
+  hunter-of-glacial-forest:
+    2pc: Increases Ice DMG by <10%>.
+    4pc: >-
+      After the wearer uses their Ultimate, their CRIT DMG increases by <25%> for
+      <2> turn(s).
+  champion-of-streetwise-boxing:
+    2pc: Increases Physical DMG by <10%>.
+    4pc: >-
+      After the wearer attacks or is hit, their ATK increases by <5%> for the rest
+      of the battle. This effect can stack up to <5> time(s).
+  guard-of-wuthering-snow:
+    2pc: Reduces DMG taken by <8%>.
+    4pc: >-
+      At the beginning of the turn, if the wearer's HP is equal to or less than
+      <50%>, restores HP equal to <8%> of their Max HP and regenerates <5> Energy.
+  firesmith-of-lava-forging:
+    2pc: Increases Fire DMG by <10%>.
+    4pc: >-
+      Increases the wearer's Skill DMG by <12%>. After unleashing Ultimate,
+      increases the wearer's Fire DMG by <12%> for the next attack.
+  genius-of-brilliant-stars:
+    2pc: Increases Quantum DMG by <10%>.
+    4pc: >-
+      When the wearer deals DMG to the target enemy, ignores <10%> DEF. If the
+      target enemy has Quantum Weakness, the wearer additionally ignores <10%>
+      DEF.
+  band-of-sizzling-thunder:
+    2pc: Increases Lightning DMG by <10%>.
+    4pc: >-
+      When the wearer uses their Skill, increases the wearer's ATK by <20%> for
+      <1> turn(s).
+  eagle-of-twilight-line:
+    2pc: Increases Wind DMG by <10%>.
+    4pc: >-
+      After the wearer uses their Ultimate, their action is Advanced Forward by
+      <25%>.
+  thief-of-shooting-meteor:
+    2pc: Increases Break Effect by <16%>.
+    4pc: >-
+      Increases the wearer's Break Effect by <16%>. When the wearer inflicts
+      Weakness Break on an enemy, regenerates <3> Energy.
+  wastelander-of-banditry-desert:
+    2pc: Increases Imaginary DMG by <10%>.
+    4pc: >-
+      When attacking debuffed enemies, the wearer's CRIT Rate increases by <10%>,
+      and their CRIT DMG increases by <20%> against Imprisoned enemies.
+  space-sealing-station:
+    2pc: >-
+      Increases the wearer's ATK by <12%>. When the wearer's SPD reaches <120> or
+      higher, the wearer's ATK increases by an extra <12%>.
+  fleet-of-the-ageless:
+    2pc: >-
+      Increases the wearer's Max HP by <12%>. When the wearer's SPD reaches <120>
+      or higher, all allies' ATK increases by <8%>.
+  pan-galactic-commercial-enterprise:
+    2pc: >-
+      Increases the wearer's Effect Hit Rate by <10%>. Meanwhile, the wearer's ATK
+      increases by an amount that is equal to <25%> of the current Effect Hit
+      Rate, up to a maximum of <25%>.
+  belobog-of-the-architects:
+    2pc: >-
+      Increases the wearer's DEF by <15%>. When the wearer's Effect Hit Rate is
+      <50%> or higher, the wearer gains an extra <15%> DEF.
+  celestial-differentiator:
+    2pc: >-
+      Increases the wearer's CRIT DMG by <16%>. When the wearer's current CRIT DMG
+      reaches <120%> or higher, after entering battle, the wearer's CRIT Rate
+      increases by <60%> until the end of their first attack.
+  inert-salsotto:
+    2pc: >-
+      Increases the wearer's CRIT Rate by <8%>. When the wearer's current CRIT
+      Rate reaches <50%> or higher, the wearer's Ultimate and follow-up attack DMG
+      increases by <15%>.
+  talia-kingdom-of-banditry:
+    2pc: >-
+      Increases the wearer's Break Effect by <16%>. When the wearer's SPD reaches
+      <145> or higher, the wearer's Break effect increases by an extra <20%>.
+  sprightly-vonwacq:
+    2pc: >-
+      Increases the wearer's Energy Regeneration Rate by <5%>. When the wearer's
+      SPD reaches <120> or higher, the wearer's action is Advanced Forward by
+      <40%> immediately upon entering battle.
+  longevous-disciple:
+    2pc: Increases Max HP by <12%>.
+    4pc: >-
+      When the wearer is hit or has their HP consumed by an ally or themselves,
+      their CRIT Rate increases by <8%> for <2> turn(s) and up to <2> stacks.
+  messenger-traversing-hackerspace:
+    2pc: Increases SPD by <6%>.
+    4pc: >-
+      When the wearer uses their Ultimate on an ally, SPD for all allies increases
+      by <12%> for <1> turn(s). This effect cannot be stacked.
+  rutilant-arena:
+    2pc: >-
+      Increases the wearer's CRIT Rate by <8%>. When the wearer's current CRIT
+      Rate reaches <70%> or higher, the wearer's Basic ATK and Skill DMG increase
+      by <20%>.
+  broken-keel:
+    2pc: >-
+      Increases the wearer's Effect RES by <10%>. When the wearer's Effect RES is
+      at <30%> or higher, all allies' CRIT DMG increases by <10%>.
+
+relicPieceNames:
+  bands-polarized-sunglasses: Band's Polarized Sunglasses
+  bands-touring-bracelet: Band's Touring Bracelet
+  bands-leather-jacket-with-studs: Band's Leather Jacket With Studs
+  bands-ankle-boots-with-rivets: Band's Ankle Boots With Rivets
+  hunters-artaius-hood: Hunter's Artaius Hood
+  hunters-lizard-gloves: Hunter's Lizard Gloves
+  hunters-ice-dragon-cloak: Hunter's Ice Dragon Cloak
+  hunters-soft-elkskin-boots: Hunter's Soft Elkskin Boots
+  wastelanders-breathing-mask: Wastelander's Breathing Mask
+  wastelanders-desert-terminal: Wastelander's Desert Terminal
+  wastelanders-friar-robe: Wastelander's Friar Robe
+  wastelanders-powered-greaves: Wastelander's Powered Greaves
+  musketeers-wild-wheat-felt-hat: Musketeer's Wild Wheat Felt Hat
+  musketeers-coarse-leather-gloves: Musketeer's Coarse Leather Gloves
+  musketeers-wind-hunting-shawl: Musketeer's Wind-Hunting Shawl
+  musketeers-rivets-riding-boots: Musketeer's Rivets Riding Boots
+  salsottos-moving-city: Salsotto's Moving City
+  salsottos-terminator-line: Salsotto's Terminator Line
+  the-xianzhou-luofus-celestial-ark: The Xianzhou Luofu's Celestial Ark
+  the-xianzhou-luofus-ambrosial-arbor-vines: The Xianzhou Luofu's Ambrosial Arbor Vines
+  knights-forgiving-casque: Knight's Forgiving Casque
+  knights-silent-oath-ring: Knight's Silent Oath Ring
+  knights-solemn-breastplate: Knight's Solemn Breastplate
+  knights-iron-boots-of-order: Knight's Iron Boots of Order
+  talias-nailscrap-town: Talia's Nailscrap Town
+  talias-exposed-electric-wire: Talia's Exposed Electric Wire
+  vonwacqs-island-of-birth: Vonwacq's Island of Birth
+  vonwacqs-islandic-coast: Vonwacq's Islandic Coast
+  firesmiths-obsidian-goggles: Firesmith's Obsidian Goggles
+  firesmiths-ring-of-flame-mastery: Firesmith's Ring of Flame-Mastery
+  firesmiths-fireproof-apron: Firesmith's Fireproof Apron
+  firesmiths-alloy-leg: Firesmith's Alloy Leg
+  passerbys-rejuvenated-wooden-hairstick: Passerby's Rejuvenated Wooden Hairstick
+  passerbys-roaming-dragon-bracer: Passerby's Roaming Dragon Bracer
+  passerbys-ragged-embroided-coat: Passerby's Ragged Embroided Coat
+  passerbys-stygian-hiking-boots: Passerby's Stygian Hiking Boots
+  thiefs-myriad-faced-mask: Thief's Myriad-Faced Mask
+  thiefs-gloves-with-prints: Thief's Gloves With Prints
+  thiefs-steel-grappling-hook: Thief's Steel Grappling Hook
+  thiefs-meteor-boots: Thief's Meteor Boots
+  the-ipcs-mega-hq: The IPC's Mega HQ
+  the-ipcs-trade-route: The IPC's Trade Route
+  eagles-beaked-helmet: Eagle's Beaked Helmet
+  eagles-soaring-ring: Eagle's Soaring Ring
+  eagles-winged-suit-harness: Eagle's Winged Suit Harness
+  eagles-quilted-puttees: Eagle's Quilted Puttees
+  geniuss-ultraremote-sensing-visor: Genius's Ultraremote Sensing Visor
+  geniuss-frequency-catcher: Genius's Frequency Catcher
+  geniuss-metafield-suit: Genius's Metafield Suit
+  geniuss-gravity-walker: Genius's Gravity Walker
+  champions-headgear: Champion's Headgear
+  champions-heavy-gloves: Champion's Heavy Gloves
+  champions-chest-guard: Champion's Chest Guard
+  champions-fleetfoot-boots: Champion's Fleetfoot Boots
+  belobogs-fortress-of-preservation: Belobog's Fortress of Preservation
+  belobogs-iron-defense: Belobog's Iron Defense
+  hertas-space-station: Herta's Space Station
+  hertas-wandering-trek: Herta's Wandering Trek
+  planet-screwllums-mechanical-sun: Planet Screwllum's Mechanical Sun
+  planet-screwllums-ring-system: Planet Screwllum's Ring System
+  guards-cast-iron-helmet: Guard's Cast Iron Helmet
+  guards-shining-gauntlets: Guard's Shining Gauntlets
+  guards-uniform-of-old: Guard's Uniform of Old
+  guards-silver-greaves: Guard's Silver Greaves
+  disciples-prosthetic-eye: Disciple's Prosthetic Eye
+  disciples-ingenium-hand: Disciple's Ingenium Hand
+  disciples-dewy-feather-garb: Disciple's Dewy Feather Garb
+  disciples-celestial-silk-sandals: Disciple's Celestial Silk Sandals
+  messengers-holovisor: Messenger's Holovisor
+  messengers-transformative-arm: Messenger's Transformative Arm
+  messengers-secret-satchel: Messenger's Secret Satchel
+  messengers-par-kool-sneakers: Messenger's Par-kool Sneakers
+  taikiyan-laser-stadium: Taikiyan Laser Stadium
+  taikiyans-arclight-race-track: Taikiyan's Arclight Race Track
+  insumousus-whalefall-ship: Insumousu's Whalefall Ship
+  insumousus-frayed-hawser: Insumousu's Frayed Hawser

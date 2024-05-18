@@ -6,7 +6,7 @@ on:
       - main
       - live
     paths:
-      - firebase/**
+      - packages/firebase/**
       - .github/workflows/deploy-functions.yml
   workflow_dispatch:
 
@@ -28,18 +28,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - run: corepack enable
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: yarn
           cache-dependency-path: "**/yarn.lock"
 
-      - name: yarn install
-        working-directory: firebase/functions
-        run: yarn install --frozen-lockfile
-
-      - name: Install Firebase CLI
-        run: yarn global add firebase-tools
+      - run: yarn install
 
       - name: 'Authenticate to Google Cloud'
         id: auth
@@ -51,8 +48,10 @@ jobs:
 
       - name: Deploy to Cloud Functions (dev)
         if: github.ref_name != env.prod_branch_name
-        run: yarn firebase-deploy:dev --debug
+        working-directory: packages/firebase/functions
+        run: yarn deploy:dev --debug
 
       - name: Deploy to Cloud Functions (prod)
         if: github.ref_name == env.prod_branch_name
-        run: yarn firebase-deploy:prod --debug
+        working-directory: packages/firebase/functions
+        run: yarn deploy:prod --debug

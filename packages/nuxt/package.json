@@ -1,0 +1,50 @@
+{
+  "name": "@hsr-material/nuxt",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 3001",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .ts,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@chika3742/mhy-material-components": "^1.0.38",
+    "@mdi/font": "^7.2.96",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/i18n": "^8.3.1",
+    "@pinia-plugin-persistedstate/nuxt": "^1.1.2",
+    "@pinia/nuxt": "^0.5.1",
+    "@rollup/plugin-dsv": "^3.0.4",
+    "@rollup/plugin-yaml": "^4.1.2",
+    "@vueuse/rxjs": "^10.9.0",
+    "algoliasearch": "^4.20.0",
+    "dexie": "^3.2.4",
+    "firebase": "^10.4.0",
+    "json-schema-to-typescript": "^13.1.1",
+    "luxon": "^3.4.4",
+    "marked": "^12.0.2",
+    "nuxt": "^3.11.2",
+    "object-hash": "^3.0.0",
+    "rxjs": "^7.8.1",
+    "sass": "^1.77.2",
+    "sitemap": "^7.1.1",
+    "sortablejs": "^1.15.2",
+    "typescript": "^5.4.5",
+    "workbox-build": "^7.1.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231002.0",
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint": "^0.3.13",
+    "@types/luxon": "^3.4.2",
+    "@types/marked": "^6.0.0",
+    "@types/node": "^20.12.12",
+    "@types/object-hash": "^3.0.6",
+    "@types/sortablejs": "^1.15.8",
+    "@vue/language-server": "^2.0.19",
+    "bootstrap": "^5.3.3"
+  },
+  "packageManager": "yarn@4.2.2"
+}

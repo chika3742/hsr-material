@@ -1,0 +1,1214 @@
+common:
+  appName: 崩壊：スターレイル 素材ノート
+  gameName: 崩壊：スターレイル
+  nonProdWarning: これは開発版であり、不具合や今後変更される機能が含まれる可能性が比較的高いです。
+  backToHome: ホームに戻る
+  ok: OK
+  cancel: キャンセル
+  undo: 元に戻す
+  rarity: レアリティ
+  path: 運命
+  combatType: 属性
+  filter: 絞り込み
+  expandAll: 全て展開
+  collapseAll: 全て折りたたむ
+  search: キャラクター・アイテムを検索
+  currentLevel: 現在のLv
+  targetLevel: 目標のLv
+  2pcEffect: 2セット効果
+  4pcEffect: 4セット効果
+  kind: 種類
+  mainStat: メインステータス
+  subStat: サブステータス
+  mainStatShort: メイン
+  subStatShort: サブ
+  details: 詳細
+  showAllCharacters: 異なる運命のキャラクターを表示
+  skillTypes:
+    basicAttack: 通常攻撃
+    skill: 戦闘スキル
+    ultimate: 必殺技
+    talent: 天賦
+  updated: "{version} に更新されました。"
+
+gameSpecific:
+  showcaseTitle: サポートキャラ」や「星海同伴
+
+errors:
+  404: お探しのページは見つかりませんでした。
+  500: ページの処理中にエラーが発生しました。
+  failedToSearch: 検索に失敗しました。
+  noSearchResults: 検索結果がありません。
+  bookmark: ブックマークの保存に失敗しました。
+  failedToSync: データの同期に失敗しました。
+
+searchRecordTypes:
+  character: キャラクター
+  light-cone: 光円錐
+  material: 素材
+  relic-set: 遺物セット
+  relic-piece: 遺物
+
+pageTitles:
+  home: ホーム
+  bookmarks: ブックマーク一覧
+  characters: キャラクター
+  characterDetails: キャラクター / {characterId}
+  lightCones: 光円錐
+  lightConeDetails: 光円錐 / {lightConeId}
+  relics: 遺物
+  relicDetails: 遺物 / {relicId}
+  materials: 素材一覧(逆引き)
+  materialDetails: 素材 / {materialId}
+  sync: データ同期
+  warps: 跳躍天井カウンター
+  tpCalc: 開拓力回復時刻計算機
+  releaseNotes: 更新履歴
+  terms: 利用規約
+  termsSummarized: 利用規約 (要約)
+  privacy: プライバシーポリシー
+  about: このアプリについて
+  settings: 設定
+
+navDrawer:
+  gameDataSync: ゲームデータ同期
+  kofi: コーヒーを奢る
+
+bookmark:
+  reBookmark: ブックマークを再登録
+  reBookmarkDesc: 現在のスライダー範囲でブックマークし直します。
+  unBookmark: ブックマークを解除
+  unBookmarkDesc: このアイテムのブックマークを解除します。
+  bookmarked: ブックマークしました。
+  removed: ブックマークを解除しました。
+  noBookmarks: ブックマークがありません。左上のメニューから探してみましょう！
+  completeLeveling: 育成完了
+  completeLevelingDesc: これより上のブックマークをすべて解除します。
+
+gameDataSync:
+  invalidUidLength: UIDは9桁で入力してください。
+  fetchError: プレイヤーデータの取得に失敗しました。
+  importSuccess: インポートしました。
+  importError: インポートに失敗しました。
+
+charactersPage:
+  possessionStatus: 所持状況
+  owned: 所持
+  notOwned: 未所持
+
+characterDetailsPage:
+  iHave: 所持
+  bookmarkLightCone: 光円錐をブックマーク
+  bookmarkRelics: 遺物をブックマーク
+  ascension: キャラLvアップ/昇格素材
+  skills: スキルLvアップ素材
+
+lightConesPage:
+  showSkillDescriptions: スキル説明の表示
+
+lightConeDetailsPage:
+  ascension: 光円錐Lvアップ/昇格素材
+  skillDescriptions: スキル説明
+  recommendedCharacters: 装備おすすめキャラクター
+
+relicsPage:
+  toDetailPage: 詳細ページへ
+
+relicDetailsPage:
+  4pcs: 4セット
+  2pcs: 2セット
+  bookmarkInSets: セットでブックマーク
+  bookmarkPerLocation: 部位ごとにブックマーク
+  recommendedCharacters: "@:lightConeDetailsPage.recommendedCharacters"
+  bookmark: ブックマーク
+  bookmark2PcsEach: 2+2セットをブックマーク
+  bookmark4Pcs: 4セットをブックマーク
+  bookmark2Pcs: 2セットをブックマーク
+  chooseRelicSet: 2個目の遺物セットを選択
+  bookmarkRelicSet: 遺物セットをブックマーク
+  bookmarkRelicPiece: 遺物単体をブックマーク
+  mainStat: メインステータス
+  mainStatBody: "@:common.mainStat (@:{'relicLocations.body'})"
+  mainStatFeet: "@:common.mainStat (@:{'relicLocations.feet'})"
+  mainStatPlanarSphere: "@:common.mainStat (@:{'relicLocations.planar_sphere'})"
+  mainStatLinkRope: "@:common.mainStat (@:{'relicLocations.link_rope'})"
+  unspecified: 指定しない
+  characterToEquip: 装備するキャラクター
+  characterSelectError: キャラクターを選択してください
+
+materialDetailsPage:
+  characterUsage: この素材を使用するキャラクター
+  lightConeUsage: この素材を使用する光円錐
+
+syncPage:
+  desc: データを同期すると、他の端末とブックマークや跳躍天井カウンターの履歴を共有できます。
+  loading: サインイン状態を確認しています...
+  fetchingUserInfo: ユーザー情報を取得しています...
+  signIn: 新規登録/サインイン
+  signInSuccess: サインインしました。
+  signInError: サインインに失敗しました。({code})
+  signInErrorPopupBlocked: ポップアップを許可してから再度お試しください。
+  signInWith:
+    google: Googleでサインイン
+    apple: Appleでサインイン
+  schemaMismatchError: クラウド上のデータの方が新しいため、同期できません。ページを再読み込みしてください。
+  conflictDialogTitle: データの競合
+  conflictDialogMessage: |
+    クラウド上のデータと端末内のデータが競合しています。クラウド上のデータを端末内のデータで上書きしますか？
+    ・OKを選択すると、クラウド上のデータは消失します。
+    ・キャンセルを選択すると、端末内のデータが上書きされます。
+  sendingLocalData: データを送信しています...
+  accountInfo: アカウント情報
+  signedInWith: 連携中のアカウント
+  email: メールアドレス
+  signOut: サインアウト
+  signOutConfirm: サインアウトしますか？
+  signOutSuccess: サインアウトしました。
+  signOutError: サインアウトに失敗しました。({code})
+  deleteUser: アカウント削除
+  deleteUserConfirm: |
+    アカウントを削除します。この操作は取り消せません。(端末内のデータは残ります)
+    OKを選択すると再認証画面に進みますので、ログインしてください。
+  deleteUserSuccess: アカウントを削除しました。
+  deleteUserError: アカウントの削除に失敗しました。({code})
+
+warpsPage:
+  warpTypes:
+    11: イベント跳躍・キャラクター
+    12: イベント跳躍・光円錐
+    1: 通常跳躍
+  urlInput: URL入力
+  get: "跳躍を取得"
+  clear: "跳躍をクリア"
+  progress: "取得済みの跳躍数: {gachaCount} ({gachaTypeCount}/{gachaTypeTotal})"
+  preparing: 履歴取得の準備をしています...
+  getPityHistory: 天井カウントの履歴を表示
+  getPityHistoryDesc: オンにすると過去6ヶ月の全ての履歴を取得し、☆4/☆5天井カウントの履歴を確認できますが、初回の取得に時間がかかります。変更するには、跳躍履歴をクリアする必要があります。
+  noNewWarps: 新しい跳躍はありません。引いたばかりの場合は、最長1時間後に再度お試しください。
+  fetched: "{n} 件の跳躍を取得しました。"
+  clearDialog: "跳躍履歴をすべて削除しますか？"
+  cleared: "跳躍履歴をクリアしました"
+  clearError: "跳躍履歴のクリアに失敗しました"
+  pityCountWithStar: "☆{star} 天井カウント"
+  pityCount: 天井カウント
+  dateTime: 日時
+  rarity: レアリティ
+  itemName: アイテム名
+  pityHistory: 天井カウントの履歴
+  lastPulled: "最後に引いた ☆{star}"
+  prob: 次の10連で☆5が出る確率
+  errors:
+    invalidUrl: URLが無効です。
+    authKeyExpired: URLの有効期限が切れています。再度ゲームより取得してください。
+    authKeyInvalid: URLが無効です。再度ゲームより取得してください。
+    tooManyRequests: リクエストが多すぎます。しばらく待ってから再度お試しください。
+    internal: サーバーでエラーが発生しました。しばらく待ってから再度お試しください。
+    failedToSave: 跳躍履歴の保存に失敗しました。
+    unknown: 不明なエラーが発生しました。
+  aboutTitle: 初めての方はこちら
+  copied: コピーしました
+  about: |
+    ## 本機能について
+
+    本機能は、跳躍履歴をゲームより自動的に取得して天井カウントを表示します。これを利用するには、下記の方法で取得したURLが必要になります。
+
+    ## 安全性について
+
+    本機能で使用するURLには、__跳躍履歴の取得のみを許可された__ アクセスキーが付帯しています。
+    そのため、このアクセスキーを使用してメールアドレスやユーザー名など個人情報にアクセスしたり、
+    ゲームにログインしたりすることはできません。ご安心ください。
+
+    また、データ同期をオンにしている際、このURLは端末間で同期されます。
+    履歴取得用のAPIと同期用データベースを除く外部にこのURLが送信されることはありません。
+
+    ## 注意事項
+
+    - <span class="font-weight-bold">このURLは24時間で有効期限が切れます。その場合は再度同じ方法で新しく取得する必要があります。</span>
+    - <span class="font-weight-bold">現在、Android端末単体でURLを取得する方法が存在しません。</span>
+  howToGetUrl:
+    windows:
+      title: URL取得方法 (Windows)
+      contents: |
+        ※Windows 11でのみ動作確認済み。
+        
+        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を選択します。
+        1. WindowsキーとRキーを同時に押し、「ファイル名を指定して実行」を開きます。
+        1. 以下のコマンドをコピー＆ペーストし、Enterキーを押します。
+            <div id="cmd-win" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline}</code></pre></div>
+        1. URLがコピーされるので、本ページに貼り付けてください。
+      cmdline: |
+        {'powershell -Command "iex ""&{$(irm https://gist.githubusercontent.com/chika3742/0542db8a5e329fb15af9e37714e92893/raw/getlink.ps1)} global -lang ja-JP"""'}
+    ios:
+      title: URL取得方法 (iOS)
+      contents: |
+        ### 準備 (初回のみ必要)
+        
+        1. App Storeより[Stream]({streamUrl})アプリをインストールします。 
+        1. Streamアプリを起動し、「Sniff Now」をタップして「"Stream"がVPN構成の追加を求めています」というダイアログが表示されたら「許可」をタップします。(パスコードの入力が要求されるので、入力します。) 
+        1. Streamアプリに戻ると「You must install CA」という内容のダイアログが表示されるので、「Install CA」をタップし、「Install CA Certificate」をタップします。 
+        1. 「このWebサイトは構成プロファイルを・・・」と表示されるので、「許可」をタップします。
+        1. 本体設定を開き、一般 ＞ VPNとデバイス管理 ＞ Stream Generated CA 〜 ＞ 右上の「インストール」＞ パスコード入力 ＞ 右上の「インストール」 ＞ インストール の順にタップします。 
+        1. アプリに戻ると「For iOS 10.3+ and iOS 11・・・」と表示されることがありますが、青の「I've trusted」をタップします。
+        
+        ### URL取得
+        
+        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」を開きます。
+        1. Streamアプリを開き、「Sniff Now」をタップします。
+        1. @:{'common.gameName'}に戻り、「跳躍履歴」をタップします。
+        1. Streamアプリに戻り、「Stop Sniffing」をタップし、右の「Sniff History」をタップします。
+        1. 一番上の時刻のものをタップし、「GET https://api-os-takumi.mihoyo.com」で始まるものを探し、タップします。
+        1. 上部の「Request」をタップし、「REQUEST LINE」の下の部分をタップし、「Copy Url」をタップするとURLをコピーできます。
+    macos:
+      title: URL取得方法 (macOS with PlayCover)
+      contents: |
+        ### 準備 (初回のみ必要)
+        
+        1. [Homebrew](https://brew.sh) と [mitmproxy](https://mitmproxy.org) をインストールしておきます。
+        1. ターミナルで以下のコマンドを実行します。パスワードの入力が要求されるので、入力します。
+            <div id="cmd-macos-1" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline1}</code></pre></div>
+            ※このコマンドは、証明書を信頼することでHTTPS通信を監視できるようにするためのものです。
+        
+        ### URL取得
+        
+        1. ターミナルで以下のコマンドを実行します。
+            <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
+        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を開きます。
+        1. 自動的にURLがコピーされ、自動的にスクリプトが終了します。
+
+tpCalcPage:
+  baseTime: 基準時間
+  currentTpCount: 現在の開拓力
+  fullReplenishmentTime: 全回復時刻
+  remainingTime: 全回復まであと
+  duration: "{hours} 時間 {minutes} 分"
+  alreadyReplenished: すでに全回復しました
+  rangeError: 0以上{max}未満の値を入力してください
+  reservedTp: 予備開拓力に変換された個数
+  show: 表示
+  howToUse: |
+    ## 使い方
+    
+    - 現在の開拓力の数値を入力すると、それを入力した時刻を基準に、開拓力が全回復する時刻と全回復するまでの時間が表示されます。
+    - 入力した時刻と樹脂数はリロードしても保持されます。
+    - 数値を変更すると基準時刻が更新されるためご注意ください。
+
+aboutPage:
+  feedback: |
+    ## フィードバックについて
+    
+    本アプリにおいて、
+    
+    - 新機能の提案
+    - 不具合の報告
+    - 誤植の報告
+    - 質問
+    
+    などがある場合、[HoYoLABの記事]({hoyolabUrl})のコメント欄に投稿するか、フッターの「フィードバック」から直接GitHubでIssueを立てていただけると大変助かります。
+
+  support: |
+    ## 支援について
+    
+    このアプリの維持や改善のため、コーヒー1杯分でもご支援いただけると幸いです。(PayPalもしくはクレジットカードで決済が可能です。)
+
+  supportButton: 支援する
+
+  developer: |
+    ## 開発者について
+    
+    大学2年(休学中)。ごちうさ難民。
+
+releaseNotesPage:
+  legends: 凡例
+  color: カラー
+  desc: 説明
+  orangeDesc: 機能関連の追加や改善を含む
+  lightBlueDesc: キャラ・武器等のデータ追加のみ
+
+settingsPage:
+  bookmarkDisplay: ブックマーク表示設定
+  showFarmingCount: アイテムの周回目安回数を表示する
+  equilibriumLevel: 均衡レベル
+  equilibriumLevelDesc: この設定値に応じて、周回回数の目安が表示されます。
+  dropRateTable: ドロップ率一覧
+  itemKind: 種類
+  dropRate: ドロップ率 (個/回)
+  itemTypes:
+    characterExp: キャラクター経験値
+    lightConeExp: 光円錐経験値
+    credit: 信用ポイント
+  dataSource: データソース
+  others: その他
+  clearCharacterLevels: 同期した育成状況をクリア
+  clearCharacterLevelsDesc: 「@:{'navDrawer.gameDataSync'}」で同期したキャラクターの育成状況(キャラ・スキルのレベル)をクリアします。
+  clearCharacterLevelsSuccess: クリアしました
+
+paths:
+  abundance: 豊穣
+  destruction: 壊滅
+  erudition: 知恵
+  harmony: 調和
+  nihility: 虚無
+  preservation: 存護
+  the_hunt: 巡狩
+
+combatTypes:
+  fire: 炎
+  ice: 氷
+  imaginary: 虚数
+  lightning: 雷
+  physical: 物理
+  wind: 風
+  quantum: 量子
+
+relicTypes:
+  cavern: トンネル遺物
+  planar: 次元界オーナメント
+
+relicLocations:
+  head: 頭部
+  hands: 手部
+  body: 胴体
+  feet: 脚部
+  planar_sphere: 次元界オーブ
+  link_rope: 連結縄
+
+stats:
+  hp: HP
+  atk: 攻撃力
+  def: 防御力
+  hp_percent: HP%
+  atk_percent: 攻撃力%
+  def_percent: 防御力%
+  crit_rate: 会心率
+  crit_dmg: 会心ダメージ
+  outgoing_healing: 治癒量
+  effect_hit_rate: 効果命中
+  speed: 速度
+  physical_dmg: 物理与ダメージ
+  fire_dmg: 炎属性与ダメージ
+  ice_dmg: 氷属性与ダメージ
+  lightning_dmg: 雷属性与ダメージ
+  wind_dmg: 風属性与ダメージ
+  quantum_dmg: 量子属性与ダメージ
+  imaginary_dmg: 虚数属性与ダメージ
+  break_effect: 撃破特攻
+  energy_regen_rate: EP回復効率
+  effect_res: 効果抵抗
+
+purposeTypes:
+  ascension: Lv/昇格素材
+  basicAttack: "@:{'common.skillTypes.basicAttack'}: {title}"
+  skill: "@:{'common.skillTypes.skill'}: {title}"
+  talent: "@:{'common.skillTypes.talent'}: {title}"
+  ultimate: "@:{'common.skillTypes.ultimate'}: {title}"
+
+characterNames:
+  trailblazer: 開拓者
+  trailblazer_destruction: 開拓者 (壊滅)
+  trailblazer_preservation: 開拓者 (存護)
+  trailblazer_harmony: 開拓者 (調和)
+  march-7th: 三月なのか
+  dan-heng: 丹恒
+  himeko: 姫子
+  welt: ヴェルト
+  kafka: カフカ
+  silver-wolf: 銀狼
+  arlan: アーラン
+  asta: アスター
+  herta: ヘルタ
+  bronya: ブローニャ
+  seele: ゼーレ
+  serval: セーバル
+  gepard: ジェパード
+  natasha: ナターシャ
+  pela: ペラ
+  clara: クラーラ
+  sampo: サンポ
+  hook: フック
+  qingque: 青雀
+  tingyun: 停雲
+  luocha: 羅刹
+  jing-yuan: 景元
+  sushang: 素裳
+  yukong: 御空
+  yanqing: 彦卿
+  bailu: 白露
+  blade: 刃
+  luka: ルカ
+  dan-heng-imbibitor-lunae: 丹恒・飲月
+  fu-xuan: 符玄
+  lynx: リンクス
+  jingliu: 鏡流
+  topaz-and-numby: トパーズ&カブ
+  guinaifen: 桂乃芬
+  huohuo: フォフォ
+  argenti: アルジェンティ
+  hanya: 寒鴉
+  ruan-mei: ルアン・メェイ
+  xueyi: 雪衣
+  dr-ratio: Dr.レイシオ
+  black-swan: ブラックスワン
+  misha: ミーシャ
+  acheron: 黄泉
+  aventurine: アベンチュリン
+  gallagher: ギャラガー
+  robin: ロビン
+  sparkle: 花火
+
+materialCategories:
+  exp: 経験値素材
+  character_ascension: キャラクター昇格素材
+  light_cone_or_skill_upgrade: 光円錐・スキル強化素材
+  common: 一般素材
+  advanced_skill_upgrade: 上級スキル強化素材
+  others: その他
+
+materialNames:
+  travel-encounters: 旅の見聞
+  adventure-log: 冒険記録
+  travelers-guide: 漫遊指南
+  horn-of-snow: 吹雪の角
+  storm-eye: 暴風の眼
+  endotherm-chitin: 恒温晶殻
+  golden-crown-of-the-past-shadow: 過去の影の金装飾
+  shape-shifters-lightning-staff: 鍛錬者の雷枝
+  void-cast-iron: 虚幻鋳鉄
+  lightning-crown-of-the-past-shadow: 過去の影の雷冠
+  broken-teeth-of-iron-wolf: 鉄狼の砕けた刃
+  enigmatic-ectostella: 深邃な星外物質
+  thiefs-instinct: 略奪の本能
+  usurpers-scheme: 改ざんの野心
+  conquerors-will: 踏みにじる意志
+  extinguished-core: 消滅した原核
+  glimmering-core: 微かに光る原核
+  squirming-core: 脈動する原核
+  silvermane-badge: シルバーメインの釦
+  silvermane-insignia: シルバーメインの記章
+  silvermane-medal: シルバーメインの勲章
+  ancient-part: 古代パーツ
+  ancient-spindle: 古代シャフト
+  ancient-engine: 古代エンジン
+  immortal-scionette: 永寿の萌芽
+  immortal-aeroblossom: 永寿の天華
+  immortal-lumintwig: 永寿の栄枝
+  artifexs-module: 工造機関
+  artifexs-cogwheel: 工造迴輪
+  artifexs-gyreheart: 工造渾心
+  endurance-of-bronze: 青銅の執着
+  oath-of-steel: 寒鉄の誓い
+  safeguard-of-amber: 琥珀の堅守
+  arrow-of-the-beast-hunter: 狩獣の矢
+  arrow-of-the-demon-slayer: 屠魔の矢
+  arrow-of-the-starchaser: 逐星の矢
+  key-of-inspiration: 着想のカギ
+  key-of-knowledge: 啓発のカギ
+  key-of-wisdom: 叡智のカギ
+  obsidian-of-dread: 黯淡な黒曜
+  obsidian-of-desolation: 虚空の黒曜
+  obsidian-of-obsession: 沈淪せし黒曜
+  shattered-blade: 破砕の刃切
+  lifeless-blade: 無生の刃切
+  worldbreaker-blade: 浄世の刃切
+  harmonic-tune: 調和のハーモニー
+  ancestral-hymn: ファミリー賛歌
+  stellaris-symphony: 群星の楽章
+  seed-of-abundance: 豊穣の種
+  sprout-of-life: 生命の芽
+  flower-of-eternity: 永久の花
+  destroyers-final-road: 壊滅者の末路
+  guardians-lament: 守護者の悲願
+  tracks-of-destiny: 運命の足跡
+  credit: 信用ポイント
+  gelid-chitin: 苦寒晶殻
+  sparse-aether: 希薄なエーテル
+  condensed-aether: 濃縮エーテル
+  refined-aether: 精製エーテル
+  ascendant-debris: 天人の残穢
+  regret-of-infinite-ochema: 無窮なる仮身の遺恨
+  suppressing-edict: 霊鎮めの勅符
+  nail-of-the-ape: 蒼猿の釘
+  searing-steel-blade: 灼熱の鋼刃
+  netherworld-token: 幽府通令
+  past-evils-of-the-borehole-planet-disaster: 星を蝕む古の悪
+  fiery-spirit: 熾烈の霊
+  borisin-teeth: 歩離の犬牙
+  dream-collection-component: ドリームコレクションパーツ
+  dream-fridge: 夢の冷蔵庫
+  lupitoxin-sawteeth: 狼毒の牙
+  moon-madness-fang: 月狂いの凶牙
+  dream-flow-valve: ドリームフローバルブ
+  dream-making-engine: ドリームメイキングモーター
+  starfire-essence: 星火の精
+  heaven-incinerator: 焼天の魔
+  firmament-note: 雲端の音符
+  celestial-section: 空際の小節
+  heavenly-melody: 天外の楽章
+  tatters-of-thought: 思考の粉末
+  fragments-of-impression: 印象の残晶
+  shards-of-desires: 砕けた欲望の鏡
+  scattered-stardust: 散らばった星の砂
+  crystal-meteorites: 流星プリズム
+  divine-amber: 聖なる琥珀
+  alien-tree-seed: 珍木の種
+  nourishing-honey: 育みの蜜
+  myriad-fruit: 森羅の果実
+  raging-heart: 憤怒の心
+  ipc-work-permit: スターピース社員証
+  meteoric-bullet: 隕鉄の弾丸
+  destined-expiration: 定められた死因
+  countertemporal-shot: 時に抗う一撃
+  dream-flamer: 夢を炙るトーチバーナー
+
+skillTitles:
+  trailblazer:
+    destruction:
+      basicAttack: サヨナラ安打
+      skill: 安息ホームラン
+      ultimate: スターダストエース
+      talent: 盗塁牽制
+    preservation:
+      basicAttack: 堅氷を貫く烈火
+      skill: 不滅のアンバー
+      ultimate: 陥陣無帰の炎槍
+      talent: 建創者の失われし宝
+    harmony:
+      basicAttack: 揺らめく礼儀
+      skill: 間奏曲が降らす雨
+      ultimate: 賑やかなパレード
+      talent: エアリアルステップ
+  march-7th:
+    basicAttack: 極寒の弓矢
+    skill: 可愛いは正義
+    ultimate: 氷刻矢雨の時
+    talent: 少女の特権
+  dan-heng:
+    basicAttack: 雲騎槍術・朔風
+    skill: 雲騎槍術・疾雨
+    ultimate: 洞天幻化、長夢一覚
+    talent: 寸長寸強
+  himeko:
+    basicAttack: 武装調律
+    skill: 溶核爆裂
+    ultimate: 天墜の火
+    talent: 乗勝追撃
+  welt:
+    basicAttack: 重力制圧
+    skill: 虚空断界
+    ultimate: 疑似ブラックホール
+    talent: 時空の歪み
+  silver-wolf:
+    basicAttack: "{'|'}システム警告{'|'}"
+    skill: 変更を許可しますか？
+    ultimate: "{'|'}アカウントがBANされた{'|'}"
+    talent: プログラム応答なし…
+  arlan:
+    basicAttack: 疾行する雷の如し
+    skill: 禁錮解除
+    ultimate: 狂者の制裁
+    talent: 痛みと怒りの極み
+  asta:
+    basicAttack: スペクトル光線
+    skill: スターフォール
+    ultimate: 星空祝言
+    talent: 天象学
+  herta:
+    basicAttack: 何見てるの？
+    skill: 一度限りの取引
+    ultimate: 私がかけた魔法だよ
+    talent: やっぱり私がやる
+  bronya:
+    basicAttack: 疾風の弾丸
+    skill: 作戦再展開
+    ultimate: ベロブルグ行進曲
+    talent: 先人一歩
+  seele:
+    basicAttack: 強襲
+    skill: 還刃
+    ultimate: 乱れ蝶
+    talent: 再現
+  serval:
+    basicAttack: 雷鳴音階
+    skill: スパーク
+    ultimate: 機械ブーム登場！
+    talent: 情熱コード
+  gepard:
+    basicAttack: 一意の拳
+    skill: 震撼の一撃
+    ultimate: 永屹の壁
+    talent: 不屈の体躯
+  natasha:
+    basicAttack: 慈心の裏側
+    skill: 愛、救済と選択
+    ultimate: 新生の礼
+    talent: 生命の輝き
+  pela:
+    basicAttack: 氷点狙撃
+    skill: 低温妨害
+    ultimate: 領域制圧
+    talent: データ採取
+  clara:
+    basicAttack: クラーラもお手伝いします
+    skill: スヴァローグが見てる
+    ultimate: 命令じゃなくて約束
+    talent: 家族なんだから
+  sampo:
+    basicAttack: 眩い刃紋
+    skill: 反復横跳びの愛
+    ultimate: サプライズボックス
+    talent: 風を切り裂く匕首
+  hook:
+    basicAttack: おい！火の元に気をつけな
+    skill: おい！フックを覚えてるか？
+    ultimate: ドカン！飛んでけ花火！
+    talent: はっ！火に油を注ぐ
+  qingque:
+    basicAttack: 門前清
+    skill: 海底撈月
+    ultimate: 幺魚暗カン？アガリ！
+    talent: 帝垣美玉
+  tingyun:
+    basicAttack: 逐客令
+    skill: 祥音和韻
+    ultimate: 慶雲光覆儀祷
+    talent: 揺れる紫電
+  jing-yuan:
+    basicAttack: 電光石火
+    skill: 紫霄の雷鳴
+    ultimate: 我が身の輝き
+    talent: 退魔の形神
+  sushang:
+    basicAttack: 雲騎剣経・月虹
+    skill: 雲騎剣経・山傾
+    ultimate: 太虚形蘊・燭夜
+    talent: 游刃若水
+  yanqing:
+    basicAttack: 寒光刺す霜鋒
+    skill: 三尺秋水
+    ultimate: 快雨に戯れる燕
+    talent: 呼影剣
+  bailu:
+    basicAttack: 望・聞・問…蹴！
+    skill: 雲吟乍然、零れる珠露
+    ultimate: 雷鳴率いる躍渊の蛟龍
+    talent: 懸壺済世
+  luocha:
+    basicAttack: 黒淵の棘
+    skill: 白花の祈望
+    ultimate: 帰葬の成就
+    talent: 生命の輪廻
+  yukong:
+    basicAttack: 流鏑
+    skill: 天宮に鳴り響む弦
+    ultimate: 貫雲箭
+    talent: 徹札矢
+  blade:
+    basicAttack: 支離剣
+    skill: 地獄変
+    ultimate: 大辟万死
+    talent: 倏忽の恩賜
+  kafka:
+    basicAttack: 止まない夜の喧騒
+    skill: 月明かりが撫でる連綿
+    ultimate: 悲劇最果ての顫音
+    talent: 優しさもまた残酷
+  luka:
+    basicAttack: 裂地拳
+    skill: 裂創拳
+    ultimate: 勝利の一撃
+    talent: 飛び散る火花
+  dan-heng-imbibitor-lunae:
+    basicAttack: 水華
+    skill: 龍力自在
+    ultimate: 傲睨せし蒼龍、世を濯ぐ劫水
+    talent: 亢心
+  fu-xuan:
+    basicAttack: 始撃歳星
+    skill: 太微の行棋、影示す霊台
+    ultimate: 天律大衍、歴劫帰一
+    talent: 乾坤清夷、一陽来復
+  lynx:
+    basicAttack: アイスクライミングテクニック
+    skill: 塩漬け野営缶詰
+    ultimate: 雪原救急処置
+    talent: 野外サバイバル経験
+  jingliu:
+    basicAttack: 流影穿
+    skill: 無罅の飛光
+    ultimate: 曇華生滅、夢瀉す天河
+    talent: 淡月転魄
+  topaz-and-numby:
+    basicAttack: 赤字…
+    skill: 支払困難？
+    ultimate: 赤字を黒字に！
+    talent: ピッグ・マーケット！？
+  guinaifen:
+    basicAttack: 喝采満場
+    skill: 出だし好調
+    ultimate: 十八番を披露するね
+    talent: 古来、芸人は君子に頼る
+  huohuo:
+    basicAttack: 令旗・風雨招来
+    skill: 霊符・護身
+    ultimate: シッポ・神鬼使役
+    talent: 憑依・真気通天
+  argenti:
+    basicAttack: 刹那の芬芳
+    skill: 公正、ここに咲き誇る
+    ultimate: 花園にて捧げる美の際限
+    talent: 崇高なる客体
+  hanya:
+    basicAttack: 冥兆天筆
+    skill: 生滅捕縛
+    ultimate: 十王の勅令、遍く遵行せよ
+    talent: 懲悪
+  ruan-mei:
+    basicAttack: 幽蘭の調べ
+    skill: 緩く捻りて
+    ultimate: 花に濡れても雫は払わず
+    talent: フラクタルの螺旋
+  xueyi:
+    basicAttack: 破魔錐
+    skill: 諸悪摂伏
+    ultimate: 身を貫く天罰
+    talent: 十王の聖裁、業報は常に在り
+  dr-ratio:
+    basicAttack: 知識は力なり
+    skill: 産婆術
+    ultimate: 三段階のパラドックス
+    talent: 我思う、故に我あり
+  black-swan:
+    basicAttack: 洞察、緘黙の黎明
+    skill: 失墜、偽神の黄昏
+    ultimate: 彼方の抱擁に酔いしれて
+    talent: 果てなき運命の機織り
+  misha:
+    basicAttack: ど…退いてくださーい！
+    skill: ル…ルームサービスです！
+    ultimate: ち…遅刻する！
+    talent: 脱進機
+  acheron:
+    basicAttack: 三途の枯木
+    skill: 八雷渡り
+    ultimate: 残夢染める繚乱の一太刀
+    talent: 紅葉に時雨、万里の空
+  aventurine:
+    basicAttack: ストレートべット
+    skill: 繁栄の基石
+    ultimate: ロード・オブ・ルーレット
+    talent: 銃口の右には…
+  gallagher:
+    basicAttack: 持ち込み料
+    skill: 特製ドリンク
+    ultimate: シャンパン・マナー
+    talent: 飲み比べ
+  robin:
+    basicAttack: 羽ばたくホワイトノイズ
+    skill: 飛翔のアリア
+    ultimate: 千の音で、群星にフーガを
+    talent: 調和の純正律
+  sparkle:
+    basicAttack: 独り芝居
+    skill: 夢を泳ぐ魚
+    ultimate: 一人千役
+    talent: 叙述トリック
+
+lightConeNames:
+  arrows: 矢じり
+  cornucopia: 物穣
+  collapsing-sky: 天傾
+  amber: 琥珀
+  void: 幽邃
+  chorus: 斉頌
+  data-bank: アーカイブ
+  darting-arrow: 離弦
+  fine-fruit: 嘉果
+  shattered-home: 楽壊
+  defense: 防衛
+  loop: 淵環
+  meshing-cogs: 輪契
+  passkey: 霊鍵
+  adversarial: 相抗
+  multiplication: 蕃殖
+  mutual-demise: 倶歿
+  pioneering: 新天地
+  hidden-shadow: 匿影
+  mediation: 同調
+  sagacity: 見識
+  post-op-conversation: 手術後の会話
+  good-night-and-sleep-well: おやすみなさいと寝顔
+  day-one-of-my-new-life: 余生の初日
+  only-silence-remains: 沈黙のみ
+  memories-of-the-past: 記憶の中の姿
+  the-moles-welcome-you: モグラ党へようこそ
+  the-birth-of-the-self: 「私」の誕生
+  shared-feeling: 同じ気持ち
+  eyes-of-the-prey: 獲物の視線
+  landaus-choice: ランドゥーの選択
+  swordplay: 論剣
+  planetary-rendezvous: 惑星との出会い
+  a-secret-vow: 秘密の誓い
+  perfect-timing: 今が丁度
+  resolution-shines-as-pearls-of-sweat: 決意は汗のように輝く
+  trend-of-the-universal-market: 星間市場のトレンド
+  subscribe-for-more: フォローして！
+  quid-pro-quo: 等価交換
+  warmth-shortens-cold-nights: 暖かい夜は長くない
+  in-the-night: 夜の帳の中で
+  but-the-battle-isnt-over: だが戦争は終わらない
+  in-the-name-of-the-world: 世界の名を以て
+  moment-of-victory: 勝利の刹那
+  sleep-like-the-dead: 泥の如き眠り
+  time-waits-for-no-one: 時節は居らず
+  on-the-fall-of-an-aeon: とある星神の殞落を記す
+  cruising-in-the-stellar-sea: 星海巡航
+  texture-of-memories: 記憶の素材
+  make-the-world-clamor: この世界に喧噪を
+  night-on-the-milky-way: 銀河鉄道の夜
+  before-dawn: 夜明け前
+  under-the-blue-sky: 青空の下で
+  geniuses-repose: 天才たちの休息
+  we-are-wildfire: 我ら地炎
+  river-flows-in-spring: 春水に初生する
+  fermata: フェルマータ
+  woof-walk-time: ワン！散歩の時間！
+  the-seriousness-of-breakfast: 朝食の儀式感
+  we-will-meet-again: またお会いしましょう
+  this-is-me: これがウチだよ！
+  return-to-darkness: 幽冥に帰す
+  carve-the-moon-weave-the-clouds: 彫月裁雲の意
+  nowhere-to-run: 逃げ場なし
+  today-is-another-peaceful-day: 今日も平和な一日
+  something-irreplaceable: かけがえのないもの
+  dance-dance-dance: ダンス！ダンス！ダンス！
+  past-and-future: 過去と未来
+  before-the-tutorial-mission-starts: 初めてのクエストの前に
+  incessant-rain: 降りやまぬ雨
+  echoes-of-the-coffin: 棺のこだま
+  the-unreachable-side: 着かない彼岸
+  patience-is-all-you-need: 待つのみ
+  brighter-than-the-sun: 陽光より輝くもの
+  solitary-healing: 孤独の癒やし
+  she-already-shut-her-eyes: 閉ざした瞳
+  i-shall-be-my-own-sword: この身は剣なり
+  worrisome-blissful: 悩んで笑って
+  hey-over-here: よぉ、ここにいるぜ
+  night-of-fright: 驚魂の夜
+  an-instant-before-a-gaze: その一刻、目に焼き付けて
+  past-self-in-mirror: 鏡の中の私
+  baptism-of-pure-thought: 純粋なる思惟の洗礼
+  indelible-promise: 心に刻まれた約束
+  reforged-remembrance: 時間の記憶を再構築して
+  what-is-real: 何が真か
+  dreamville-adventure: ドリームタウンの大冒険
+  final-victor: 最後の勝者
+  flames-afar: 烈火の彼方
+  destinys-threads-forewoven: 運命を紡ぐ糸
+  the-day-the-cosmos-fell: 銀河が陥落した日
+  its-showtime: ショーの始まり
+  inherently-unjust-destiny: 運命は常に不公平
+  along-the-passing-shore: 流れ逝く岸を歩いて
+  concert-for-two: 二人だけのコンサート
+  flowing-nightglow: 光あふれる夜
+  boundless-choreo: 終わりなき舞踏
+  for-tomorrows-journey: 明日のための旅
+  sailing-towards-a-second-life: 二度目の生に向かって
+
+lightConeSkillDescriptions:
+  arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
+  cornucopia: 装備キャラが戦闘スキル、または必殺技を発動した時、治癒量+<12%>。
+  collapsing-sky: 装備キャラの通常攻撃と戦闘スキルの与ダメージ+<20%>。
+  amber: 装備キャラの防御力+<16%>。
+  void: 戦闘開始時、装備キャラの効果命中+<20%>、3ターン継続。
+  chorus: 戦闘に入った後、味方全体の攻撃力+<8%>。同系統のスキルは重ね掛け不可。
+  data-bank: 装備キャラの必殺技の与ダメージ+<28%>。
+  darting-arrow: 装備キャラが敵を倒した後、攻撃力+<24%>、3ターン持続。
+  fine-fruit: 戦闘開始時、味方全体のEPを<6>回復する。
+  shattered-home: 残りHPが50%を超える敵に対する、装備キャラの与ダメージ+<20%>。
+  defense: 装備キャラが必殺技を発動した時、HPを最大HP<18%>分回復する。
+  loop: 減速状態の敵に対する、装備キャラの与ダメージ+<24%>。
+  meshing-cogs: 装備キャラが攻撃を行った後、または攻撃を受けた後、さらにEPを<4>回復する、この効果は1ターンに1回まで発動できる。
+  passkey: 装備キャラが戦闘スキルを発動した後、さらにEPを<8>回復する、この効果は1ターンに1回まで発動できる。
+  adversarial: 装備キャラが敵を倒した後、速度+<10%>、2ターン持続。
+  multiplication: 装備キャラが通常攻撃を行った後、次の行動順が<12%>早まる。
+  mutual-demise: 装備キャラの残りHPが80%未満の場合、会心率+<12%>。
+  pioneering: 装備キャラが敵を弱点撃破した時、HPを最大HP<12%>分回復する。
+  hidden-shadow: 戦闘スキルを発動した後、装備キャラの次の通常攻撃が、敵に自身の攻撃力<60%>分の付加ダメージを与える。
+  mediation: 戦闘に入る時、味方全体の速度+<12>、1ターン継続。
+  sagacity: 装備キャラが必殺技を発動した時、攻撃力+<24%>、2ターン継続。
+  post-op-conversation: 装備キャラのEP回復効率+<12%>。
+  good-night-and-sleep-well: 敵にデバフが1つあるごとに、その敵に対する装備キャラの与ダメージ+<12%>、最大で3層累積できる。この効果は持続ダメージにも有効。
+  day-one-of-my-new-life: 装備キャラの防御力+<8%>。同系統のスキルは重ね掛け不可。
+  only-silence-remains: 装備キャラの攻撃力+<12%>。
+  memories-of-the-past: 装備キャラの撃破特効+<4>回復する、この効果は1ターンに1回まで発動できる。
+  the-moles-welcome-you: >-
+    装備キャラが通常攻撃、戦闘スキルまたは必殺技で敵に攻撃を行った後、それぞれ「わんぱく値」を1層まで獲得できる。1層につき、装備キャラの攻撃力+<12%>。
+  the-birth-of-the-self: 装備キャラの追加攻撃の与ダメージ+<24%>。
+  shared-feeling: 装備キャラの治癒量+<2>回復する。
+  eyes-of-the-prey: 装備キャラの効果命中+<24%>。
+  landaus-choice: 装備キャラが敵の攻撃を受ける確率がアップする、被ダメージ-<16%>。
+  swordplay: 装備キャラの攻撃が連続で同じ敵に命中するたびに、与ダメージ+<8%>、この効果は最大で5層累積できる。ターゲットが変わると、バフはリセットされる。
+  planetary-rendezvous: 戦闘に入った後、味方が装備キャラと同じ属性のダメージを与えた時、与ダメージ+<12%>。
+  a-secret-vow: 装備キャラの与ダメージ+<20%>。
+  perfect-timing: 装備キャラの効果抵抗+<15%>アップできる。
+  resolution-shines-as-pearls-of-sweat: 装備キャラの攻撃が敵に命中した時、その敵が「陥落」状態でない場合、<12%>、1ターン継続。
+  trend-of-the-universal-market: 装備キャラの防御力+<40%>分の持続ダメージを受ける、2ターン継続。
+  subscribe-for-more: 装備キャラの通常攻撃と戦闘スキルの与ダメージ+<24%>。
+  quid-pro-quo: 装備キャラのターンが回って来た時、自身以外のEPが50%未満の味方からランダムに1人選択し、EPを<8>回復させる。
+  warmth-shortens-cold-nights: 装備キャラの最大HP+<2%>分回復する。
+  in-the-night: 装備キャラの会心率+<12%>、最大で6層累積できる。
+  but-the-battle-isnt-over: 装備キャラのEP回復効率+<30%>、1ターン継続。
+  in-the-name-of-the-world: デバフ状態の敵に対して、装備キャラの与ダメージ+<24%>。
+  moment-of-victory: 装備キャラの防御力+<24%>、効果は自身のターンが終了するまで継続。
+  sleep-like-the-dead: 装備キャラの会心ダメージ+<36%>、1ターン継続。この効果は3ターンごとに1回発動できる。
+  time-waits-for-no-one: 装備キャラの最大HP+<36%>分の付加ダメージを与える。このダメージはバフの影響を受けず、ターンが回ってくるたびに1回まで発生する。
+  on-the-fall-of-an-aeon: 装備キャラが攻撃した時、今回の戦闘中、装備キャラの攻撃力+<12%>、2ターン継続。
+  cruising-in-the-stellar-sea: 装備キャラの会心率+<20%>、2ターン継続。
+  texture-of-memories: 装備キャラの効果抵抗+<12%>。
+  make-the-world-clamor: 戦闘に入る時、装備キャラはEPを<32%>。
+  night-on-the-milky-way: フィールド上にいる敵1体につき、装備キャラの攻撃力+<30%>、1ターン継続。
+  before-dawn: 装備キャラの会心ダメージ+<48%>。
+  under-the-blue-sky: 装備キャラの攻撃力+<12%>、3ターン継続。
+  geniuses-repose: 装備キャラの攻撃力+<24%>、3ターン継続。
+  we-are-wildfire: 戦闘開始時、味方全体の被ダメージ-<30%>分回復する。
+  river-flows-in-spring: 戦闘に入った後、装備キャラの速度+<12%>。この効果は装備キャラがダメージを受けた後に失効し、装備キャラの次のターンが終了した時に再度効力を発生する。
+  fermata: 装備キャラの撃破特効+<16%>、この効果は持続ダメージにも有効。
+  woof-walk-time: 装備キャラの攻撃力+<16%>、この効果は持続ダメージにも有効。
+  the-seriousness-of-breakfast: 装備キャラの与ダメージ+<4%>、この効果は最大で3層累積できる。
+  we-will-meet-again: 装備キャラが通常攻撃または戦闘スキルを発動した後、攻撃を受けた敵からランダムに1体選択し、装備キャラの攻撃力<48%>分の付加ダメージを与える。
+  this-is-me: 装備キャラの防御力+<60%>分アップする。この効果は必殺技を発動するたび、1体の敵に対して1回まで発動できる。
+  return-to-darkness: 装備キャラの会心率+<16%>の固定確率で攻撃を受けた敵のバフを1つ解除する、この効果は1回の攻撃で1回まで発動できる。
+  carve-the-moon-weave-the-clouds: >-
+    戦闘開始時、および装備キャラのターンが回ってきた時、ランダムで効果を1つ発動する。この効果が発動されるたび、前回の効果を上書きする。同じ効果は連続で発動されない。効果は以下を含む：味方全体の攻撃力+<6%>。同系統のスキルは累積できず、装備キャラが戦闘不能状態になると効果は解除される。
+  nowhere-to-run: 装備キャラの攻撃力+<12%>分のHPを回復する。
+  today-is-another-peaceful-day: 戦闘に入った後、装備キャラの最大EPに応じて、装備キャラの与ダメージをアップする。1EPにつき+<0.2%>、最大で160までカウントされる。
+  something-irreplaceable: 装備キャラの攻撃力+<24%>、効果は自身の次のターンが終了するまで継続。この効果は累積できず、ターンが回ってくるたびに1回まで発動できる。
+  dance-dance-dance: 装備キャラが必殺技を発動した後、味方全体の行動順が<16%>早まる。
+  past-and-future: 装備キャラが戦闘スキルを発動した後、次に行動する他の味方の与ダメージ+<16%>、1ターン継続。
+  before-the-tutorial-mission-starts: 装備キャラの効果命中+<20%>。装備キャラが、防御力がダウンされた敵に攻撃を行った後、EPを<4>回復する。
+  incessant-rain: >-
+    装備キャラの効果命中+<24%>。デバフが3つ以上ある敵に対して、装備キャラの会心率+<12%>。装備キャラが通常攻撃、戦闘スキル、必殺技を発動した後、100%の基礎確率で攻撃を受けた敵の中から、「エーテルコード」を付与されてないランダムな敵1体に「エーテルコード」を付与する。「エーテルコード」を付与された敵の被ダメージ+<12%>、1ターン継続。
+  echoes-of-the-coffin: >-
+    装備キャラの攻撃力+<24%>。装備キャラが攻撃を行った後、異なる敵に攻撃が命中するごとにEPを<3>回復する。1回の攻撃で、この効果を通して最大で3回EPを回復できる。装備キャラが必殺技を発動した後、味方全体の速度+<12>、1ターン継続。
+  the-unreachable-side: >-
+    装備キャラの会心率+<18%>、最大HP+<18%>。装備キャラが攻撃を受ける、または自身のHPを消費すると、与ダメージ+<24%>、この効果は装備キャラが攻撃を行った後に解除される。
+  patience-is-all-you-need: >-
+    装備キャラの与ダメージ+<24%>。装備キャラが攻撃を行った後、速度+<4.8%>、最大で3層累積できる。
+
+    装備キャラの攻撃が敵に命中した時、その敵が「遊糸」状態でない場合、<100%>の基礎確率で敵を「遊糸」状態にする。敵が「遊糸」状態の時、感電状態と見なされる。「遊糸」状態の敵はターンが回ってくるたびに、装備キャラの攻撃力<60%>分の雷属性持続ダメージを受ける、1ターン継続。
+  brighter-than-the-sun: >-
+    装備キャラの会心率+<18%>。装備キャラが通常攻撃を行った時、「龍吟」を1層獲得する、2ターン継続。「龍吟」1層につき、装備キャラの攻撃力+<18%>、EP回復効率+<6%>。「龍吟」は最大で2層累積できる。
+  solitary-healing: >-
+    装備キャラの撃破特効+<20%>。装備キャラが必殺技を発動した時、装備キャラの持続与ダメージ+<24%>、2ターン継続。装備キャラに持続ダメージ系デバフを付与された敵が倒された時、装備キャラのEPを<4>回復する。
+  she-already-shut-her-eyes: >-
+    装備キャラの最大HP+<24%>、EP回復効率+<12%>。装備キャラのHPが減った時、味方全体の与ダメージ+<9%>、2ターン継続。\n各ウェーブ開始時、味方全体のHPをそれぞれ失ったHPの<80%>分回復する。
+  i-shall-be-my-own-sword: >-
+    装備キャラの会心ダメージ+<20%>。自身以外の味方が攻撃を受ける、またはHPを消費した後、装備キャラは「月蝕」を1層獲得する。この効果は最大で3層累積できる。「月蝕」1層につき、装備キャラの次の攻撃の与ダメージ+<14%>。「月蝕」が上限の3層に累積した時、その回の攻撃は敵の防御力を<12%>無視する。この効果は装備キャラが攻撃を行った後に解除される。
+  worrisome-blissful: >-
+    装備キャラの会心率+<18%>、追加攻撃の与ダメージ+<30%>。装備キャラが追加攻撃を行った後、敵を「従順」状態にする。この効果は最大で2層累積できる。味方の攻撃が「従順」状態の敵に命中した時、「従順」1層につき与える会心ダメージ+<12%>。
+  hey-over-here: 装備キャラの最大HP+<8%>。装備キャラが戦闘スキルを発動した時、治癒量+<16%>、2ターン継続。
+  night-of-fright: >-
+    装備キャラのEP回復効率+<12%>。味方が必殺技を発動した時、装備キャラは残りHP割合が最も低い味方のHPを、その味方の最大HP<10%>分回復する。装備キャラが味方に治癒を行った時、その味方の攻撃力+<2.4%>、この効果は最大で5層累積できる、2ターン継続。
+  an-instant-before-a-gaze: >-
+    装備キャラの会心ダメージ+<36%>。装備キャラが必殺技を発動した時、装備キャラの最大EPに応じて装備キャラの必殺技の与ダメージをアップする、1EPにつき+<0.36%>、最大で180までカウントされる。
+  past-self-in-mirror: >-
+    装備キャラの撃破特効+<60%>。装備キャラが必殺技を発動した後、味方全体の与ダメージ+<24%>、3ターン継続。また、装備キャラの撃破特効が150%以上の場合、SPを1回復。
+
+    各ウェーブ開始時、味方全体のEPを<10>回復する。同系統のスキルは重ね掛け不可。
+  baptism-of-pure-thought: >-
+    装備キャラの会心ダメージ+<20%>。敵にあるデバフ1つにつき、装備キャラがその敵に与える会心ダメージ+<8%>、最大で3層累積できる。必殺技で敵を攻撃する時、装備キャラは「論弁」効果を獲得し、与ダメージ+<36%>、追加攻撃が敵の防御力を<24%>無視する、この効果は2ターン継続する。
+  indelible-promise: 装備キャラの撃破特効+<28%>。装備キャラが必殺技を発動する時、会心率+<15%>、2ターン継続。
+  reforged-remembrance: >-
+    装備キャラの効果命中+<40%>。装備キャラが風化、燃焼、感電、または裂創状態の敵にダメージを与える時、それぞれ「予見」を1層獲得する、最大で4層累積できる。一度の戦闘において、各種類の持続ダメージ系デバフがそれぞれ累積できる「予見」は1層のみ。「予見」1層につき、装備キャラの攻撃力+<5%>、与える持続ダメージが敵の防御力を<7.2%>無視する。
+  what-is-real: 装備キャラの撃破特効+<24%>。通常攻撃を行った後、装備キャラのHPを最大HP<2%>+800回復する。
+  dreamville-adventure: >-
+    装備キャラが通常攻撃、戦闘スキル、必殺技のうち、任意のタイプのスキルを発動した後、味方全体に「童心」を付与する。「童心」を持つ味方の、対応するタイプのスキルの与ダメージ+<12%>。「童心」は装備キャラが最後に発動したタイプのスキルにのみ効果を発揮する。この効果は累積できない。
+  final-victor: >-
+    装備キャラの攻撃力+<12%>。装備キャラが敵に攻撃を行い、会心が発生した後、「好運」を1層獲得する、最大で4層累積できる。「好運」1層につき、装備キャラの会心ダメージ+<8%>。「好運」は装備キャラのターン終了時に解除される。
+  flames-afar: >-
+    装備キャラが1回の攻撃で最大HP25%分を超えるHPを失う、または1回で最大HP25%分を超えるHPを消費した後、装備キャラの最大HP15%分のHPを回復し、与ダメージ+<25%>、2ターン継続。この効果は3ターンごとに1回発動できる。
+  destinys-threads-forewoven: 装備キャラの効果抵抗+<12%>。装備キャラの防御力100につき、与ダメージ+<0.8%>、最大で与ダメージ+<32%>。
+  the-day-the-cosmos-fell: >-
+    装備キャラの攻撃力+<16%>。装備キャラが攻撃を行った後、攻撃を受けた敵の内、攻撃の属性と同じ弱点を持つ敵が2体以上の場合、装備キャラの会心ダメージ+<20%>、2ターン継続。
+  its-showtime: >-
+    装備キャラが敵にデバフを付与した後、「トリック」を1層獲得する。「トリック」1層につき、装備キャラの与ダメージ+<6%>、1ターン継続、最大で3層累積できる。装備キャラの効果命中が80%以上の時、攻撃力+<20%>。
+  inherently-unjust-destiny: >-
+    装備キャラの防御力+<40%>。装備キャラが味方にバリアを付与する時、装備キャラの会心ダメージ+<40%>、2ターン継続。装備キャラの追加攻撃が敵に命中する時、<100%>の基礎確率で攻撃を受ける敵の被ダメージを<10%>アップさせる、2ターン継続。
+  along-the-passing-shore: >-
+    装備キャラの会心ダメージ+<36%>。装備キャラの攻撃が敵に命中する時、敵を「泡影」状態にする、1ターン継続。この効果は装備キャラが攻撃を行うたびに、敵それぞれに1回まで発動できる。「泡影」状態の敵に対する装備キャラの与ダメージ+<24%>、さらに必殺技の与ダメージ+<24%>。
+  concert-for-two: 装備キャラの防御力+<16%>。フィールド上にいるバリアを持つ味方1名につき、装備キャラの与ダメージ+<4%>。
+  flowing-nightglow: >-
+    味方が攻撃を行うたび、装備キャラは「朗唱」を1層獲得する。「朗唱」1層につき、装備キャラのEP回復効率+<3%>、最大で5層累積できる。装備キャラが必殺技を発動する時、「朗唱」を解除し「華彩」を獲得する。「華彩」がある時、装備キャラの攻撃力+<48%>、味方全体の与ダメージ+<24%>、1ターン継続。
+  boundless-choreo: 装備キャラの会心率+<8%>。防御力ダウン状態または減速状態の敵に対する、装備キャラの会心ダメージ+<24%>。
+  for-tomorrows-journey: 装備キャラの攻撃力+<16%>。装備キャラが必殺技を発動した後、与ダメージ+<18%>、1ターン継続。
+  sailing-towards-a-second-life: >-
+    装備キャラの撃破特効+<60%>、与える弱点撃破ダメージが敵の防御力を<20%>無視する。戦闘中、装備キャラの撃破特効が150%以上の場合、速度<+12%>。
+
+relicSetTitles:
+  band-of-sizzling-thunder: 雷鳴轟くバンド
+  hunter-of-glacial-forest: 雪の密林の狩人
+  wastelander-of-banditry-desert: 荒地で盗みを働く廃土客
+  musketeer-of-wild-wheat: 草の穂ガンマン
+  inert-salsotto: 自転が止まったサルソット
+  fleet-of-the-ageless: 老いぬ者の仙舟
+  knight-of-purity-palace: 純庭教会の聖騎士
+  talia-kingdom-of-banditry: 盗賊公国タリア
+  sprightly-vonwacq: 生命のウェンワーク
+  firesmith-of-lava-forging: 溶岩で鍛造する火匠
+  passerby-of-wandering-cloud: 流雲無痕の過客
+  thief-of-shooting-meteor: 流星の跡を追う怪盗
+  pan-galactic-commercial-enterprise: 汎銀河商事会社
+  eagle-of-twilight-line: 昼夜の狭間を翔ける鷹
+  genius-of-brilliant-stars: 星の如く輝く天才
+  champion-of-streetwise-boxing: 成り上がりチャンピオン
+  belobog-of-the-architects: 建創者のベロブルグ
+  space-sealing-station: 宇宙封印ステーション
+  celestial-differentiator: 天体階差機関
+  guard-of-wuthering-snow: 吹雪と対峙する兵士
+  longevous-disciple: 宝命長存の蒔者
+  messenger-traversing-hackerspace: 仮想空間を漫遊するメッセンジャー
+  rutilant-arena: 星々の競技場
+  broken-keel: 折れた竜骨
+
+relicSetEffects:
+  passerby-of-wandering-cloud:
+    2pc: 治癒量+<10%>。
+    4pc: 戦闘開始時、SPを1回復する。
+  musketeer-of-wild-wheat:
+    2pc: 攻撃力+<12%>。
+    4pc: 装備キャラの速度+<6%>、通常攻撃の与ダメージ+<10%>。
+  knight-of-purity-palace:
+    2pc: 防御力+<15%>。
+    4pc: 装備キャラが付与するバリアの耐久値+<20%>。
+  hunter-of-glacial-forest:
+    2pc: 氷属性ダメージ+<10%>。
+    4pc: 装備キャラが必殺技を発動した時、会心ダメージ+<25%>、<2>ターン継続。
+  champion-of-streetwise-boxing:
+    2pc: 物理ダメージ+<10%>。
+    4pc: 装備キャラが攻撃を行う、または攻撃を受けた後、今回の戦闘中の攻撃力+<5%>、最大で<5>層累積できる。
+  guard-of-wuthering-snow:
+    2pc: 被ダメージ-<8%>。
+    4pc: ターンが回ってきた時、装備キャラの残りHPが<50%>以下の場合、HPを最大HP<8%>分回復し、EPを<5>回復する。
+  firesmith-of-lava-forging:
+    2pc: 炎属性ダメージ+<10%>。
+    4pc: 装備キャラの戦闘スキルの与ダメージ+<12%>。必殺技を発動した後、次の攻撃の炎属性与ダメージ+<12%>。
+  genius-of-brilliant-stars:
+    2pc: 量子属性ダメージ+<10%>。
+    4pc: 装備キャラが敵にダメージを与えた時、敵の防御力を<10%>無視する。敵に量子属性の弱点がある場合、さらに防御力を<10%>無視する。
+  band-of-sizzling-thunder:
+    2pc: 雷属性ダメージ+<10%>。
+    4pc: 装備キャラが戦闘スキルを発動した時、装備キャラの攻撃力+<20%>、<1>ターン継続。
+  eagle-of-twilight-line:
+    2pc: 風属性ダメージ+<10%>。
+    4pc: 装備キャラが必殺技を発動した後、行動順が<25%>早まる。
+  thief-of-shooting-meteor:
+    2pc: 撃破特効+<16%>。
+    4pc: 装備キャラの撃破特効+<16%>。装備キャラが敵を弱点撃破した後、EPを<3>回復する。
+  wastelander-of-banditry-desert:
+    2pc: 虚数属性ダメージ+<10%>。
+    4pc: デバフ状態の敵にダメージを与えた時、装備キャラの会心率+<10%>。禁錮状態の敵にダメージを与えた時、会心ダメージ+<20%>。
+  space-sealing-station:
+    2pc: 装備キャラの攻撃力+<12%>。装備キャラの速度が<120>以上の場合、さらに攻撃力+<12%>。
+  fleet-of-the-ageless:
+    2pc: 装備キャラの最大HP+<12%>。装備キャラの速度が<120>以上の場合、味方全体の攻撃力+<8%>。
+  pan-galactic-commercial-enterprise:
+    2pc: 装備キャラの効果命中+<10%>。装備キャラの攻撃力が、現在の効果命中<25%>分アップ、最大で+<25%>。
+  belobog-of-the-architects:
+    2pc: 装備キャラの防御力+<15%>。装備キャラの効果命中が<50%>以上の場合、さらに防御力+<15%>。
+  celestial-differentiator:
+    2pc: >-
+      装備キャラの会心ダメージ+<16%>。装備キャラの会心ダメージが<120%>以上の場合、戦闘に入った後、装備キャラの会心率+<60%>、初回の攻撃が終了するまで継続。
+  inert-salsotto:
+    2pc: 装備キャラの会心率+<8%>。装備キャラの会心率が<50%>以上の場合、必殺技と追加攻撃の与ダメージ+<15%>。
+  talia-kingdom-of-banditry:
+    2pc: 装備キャラの撃破特効+<16%>。装備キャラの速度が<145>以上の場合、さらに撃破特効+<20%>。
+  sprightly-vonwacq:
+    2pc: 装備キャラのEP回復効率+<5%>。装備キャラの速度が<120>以上の場合、戦闘に入る時、行動順が<40%>早まる。
+  longevous-disciple:
+    2pc: 最大HP+<12%>。
+    4pc: 装備キャラが攻撃を受ける、または味方によってHPを消費させられた後、会心率+<8%>、<2>ターン継続。この効果は最大で<2>層累積できる。
+  messenger-traversing-hackerspace:
+    2pc: 速度+<6%>。
+    4pc: 装備キャラが味方に対して必殺技を発動した時、味方全体の速度+<12%>、<1>ターン継続。この効果は累積できない。
+  rutilant-arena:
+    2pc: 装備キャラの会心率+<8%>。装備キャラの会心率が<70%>以上の時、通常攻撃と戦闘スキルの与ダメージ+<20%>。
+  broken-keel:
+    2pc: 装備キャラの効果抵抗+<10%>。装備キャラの効果抵抗が<30%>以上の時、味方全体の会心ダメージ+<10%>。
+
+relicPieceNames:
+  bands-polarized-sunglasses: バンドの偏光サングラス
+  bands-touring-bracelet: バンドのツアーブレスレット
+  bands-leather-jacket-with-studs: バンドのスパイク付き革ジャン
+  bands-ankle-boots-with-rivets: バンドのリベットブーツ
+  hunters-artaius-hood: 狩人の荒ぶる神のフード
+  hunters-lizard-gloves: 狩人のオオトカゲグローブ
+  hunters-ice-dragon-cloak: 狩人の氷竜マント
+  hunters-soft-elkskin-boots: 狩人の鹿革のブーツ
+  wastelanders-breathing-mask: 廃土客の呼吸マスク
+  wastelanders-desert-terminal: 廃土客の荒涼端末
+  wastelanders-friar-robe: 廃土客の修道服
+  wastelanders-powered-greaves: 廃土客の動力腿甲
+  musketeers-wild-wheat-felt-hat: ガンマンの草の穂フェルト帽
+  musketeers-coarse-leather-gloves: ガンマンの荒い革手袋
+  musketeers-wind-hunting-shawl: ガンマンの風狩りポンチョ
+  musketeers-rivets-riding-boots: ガンマンのリベットブーツ
+  salsottos-moving-city: サルソットの移動都市
+  salsottos-terminator-line: サルソットの明暗境界線
+  the-xianzhou-luofus-celestial-ark: 羅浮仙舟の天外楼船
+  the-xianzhou-luofus-ambrosial-arbor-vines: 羅浮仙舟の建木の枝と蔓
+  knights-forgiving-casque: 聖騎士の赦しのヘルム
+  knights-silent-oath-ring: 聖騎士の沈黙の誓いの指輪
+  knights-solemn-breastplate: 聖騎士の厳かな鎧
+  knights-iron-boots-of-order: 聖騎士の秩序の鉄靴
+  talias-nailscrap-town: タリアのネイルシェル
+  talias-exposed-electric-wire: タリアの裸電線
+  vonwacqs-island-of-birth: ウェンワーク誕生の島
+  vonwacqs-islandic-coast: ウェンワークの島巡り海岸
+  firesmiths-obsidian-goggles: 火匠の黒曜レンズ
+  firesmiths-ring-of-flame-mastery: 火匠の操炎の指輪
+  firesmiths-fireproof-apron: 火匠の防炎エプロン
+  firesmiths-alloy-leg: 火匠の合金義肢
+  passerbys-rejuvenated-wooden-hairstick: 過客の迎春かんざし
+  passerbys-roaming-dragon-bracer: 過客の游龍腕甲
+  passerbys-ragged-embroided-coat: 過客の刺繍の解れた外套
+  passerbys-stygian-hiking-boots: 過客の冥途遊歴
+  thiefs-myriad-faced-mask: 怪盗の千人仮面
+  thiefs-gloves-with-prints: 怪盗の紋様手袋
+  thiefs-steel-grappling-hook: 怪盗のワイヤーかぎ爪
+  thiefs-meteor-boots: 怪盗の流星ブーツ
+  the-ipcs-mega-hq: カンパニーの巨構本部
+  the-ipcs-trade-route: カンパニーの貿易航路
+  eagles-beaked-helmet: 空飛ぶ鷹の長嘴ヘルメット
+  eagles-soaring-ring: 空飛ぶ鷹の双翼指輪
+  eagles-winged-suit-harness: 空飛ぶ鷹の翼装ベルト
+  eagles-quilted-puttees: 空飛ぶ鷹の羽毛バンド
+  geniuss-ultraremote-sensing-visor: 天才の超距離センシング
+  geniuss-frequency-catcher: 天才の周波数変動キャッチャー
+  geniuss-metafield-suit: 天才のメタバース深潜
+  geniuss-gravity-walker: 天才の引力漫歩
+  champions-headgear: チャンピオンの王冠ヘッドギア
+  champions-heavy-gloves: チャンピオンの重砲グローブ
+  champions-chest-guard: チャンピオンのチェストガード
+  champions-fleetfoot-boots: チャンピオンの弧歩シューズ
+  belobogs-fortress-of-preservation: ベロブルグの存護の砦
+  belobogs-iron-defense: ベロブルグのシルバーメイン防衛線
+  hertas-space-station: 「ヘルタ」の宇宙ステーション
+  hertas-wandering-trek: 「ヘルタ」の軌跡
+  planet-screwllums-mechanical-sun: スクリュー星の機械太陽
+  planet-screwllums-ring-system: スクリュー星の穿孔惑星リング
+  guards-cast-iron-helmet: 兵士の鉄製ヘルム
+  guards-shining-gauntlets: 兵士の銀鱗ガントレット
+  guards-uniform-of-old: 兵士の旧制軍服
+  guards-silver-greaves: 兵士の白銀グリーブ
+  disciples-prosthetic-eye: 蒔者の光をもたらす義眼
+  disciples-ingenium-hand: 蒔者の機巧義手
+  disciples-dewy-feather-garb: 蒔者の露払いの羽衣
+  disciples-celestial-silk-sandals: 蒔者の天人絲鞋
+  messengers-holovisor: メッセンジャーのホログラフィーゴーグル
+  messengers-transformative-arm: メッセンジャーの百変義手
+  messengers-secret-satchel: メッセンジャーの密書ショルダーバッグ
+  messengers-par-kool-sneakers: メッセンジャーのパルクールシューズ
+  taikiyan-laser-stadium: タイキヤンのレーザー球場
+  taikiyans-arclight-race-track: タイキヤンのアークトラック
+  insumousus-whalefall-ship: 伊須磨州の沈没遺跡
+  insumousus-frayed-hawser: 伊須磨州の千切れたホーサー
+

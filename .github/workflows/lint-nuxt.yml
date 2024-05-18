@@ -15,28 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: yarn
           cache-dependency-path: "**/yarn.lock"
 
-      - uses: oven-sh/setup-bun@v1
+      - run: yarn install
+        env:
+          GITHUB_PACKAGES_TOKEN: ${{ secrets.MMC_PACKAGES_TOKEN }}
 
-      - name: bun/yarn install
-        run: |
-          (cd nuxt && GITHUB_PACKAGES_TOKEN="${{ secrets.MMC_PACKAGES_TOKEN }}" bun install)
-          (cd algolia-sync && bun install --frozen-lockfile)
-          (cd firebase/functions && yarn install --immutable)
-
-      - name: Lint (nuxt)
-        working-directory: nuxt
-        run: bun lint
-
-      - name: Lint (algolia-sync)
-        working-directory: algolia-sync
-        run: bun lint
-
-      - name: Lint (firebase)
-        working-directory: firebase/functions
+      - name: Lint
         run: yarn lint
