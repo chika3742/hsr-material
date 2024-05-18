@@ -43,7 +43,7 @@
     "@types/node": "^20.8.3",
     "@types/object-hash": "^3",
     "@types/sortablejs": "^1.15.3",
-    "@vue/language-server": "^1.8.18",
+    "@vue/language-server": "^2.0.0",
     "bootstrap": "^5.3.2"
   },
   "packageManager": "yarn@4.2.2"
