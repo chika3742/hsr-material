@@ -6,28 +6,24 @@
           v-model="isDrawerOpenOnMobile"
           :drawer-items="drawerItems"
         />
-      </client-only>
 
-      <v-app-bar>
-        <template #prepend>
-          <v-app-bar-nav-icon
-            v-show="$vuetify.display.mobile"
-            @click="isDrawerOpenOnMobile = true"
-          />
-        </template>
+        <v-app-bar>
+          <template #prepend>
+            <v-app-bar-nav-icon
+              v-if="$vuetify.display.mobile"
+              @click="isDrawerOpenOnMobile = true"
+            />
+          </template>
 
-        <v-app-bar-title>{{ title }}</v-app-bar-title>
+          <v-app-bar-title>{{ title }}</v-app-bar-title>
 
-        <template #append>
-          <v-app-bar-nav-icon
-            icon="mdi-magnify"
-            @click="showSearchDialog = true"
-          />
-        </template>
-      </v-app-bar>
-
-      <client-only>
-        <SearchDialog v-model="showSearchDialog" />
+          <template #append>
+            <v-app-bar-nav-icon
+              icon="mdi-magnify"
+              @click="showSearchDialog = true"
+            />
+          </template>
+        </v-app-bar>
       </client-only>
 
       <v-main class="h-100">
@@ -67,54 +63,56 @@
             :repository-url="repositoryUrl"
           />
         </div>
-
-        <client-only>
-          <v-snackbar
-            v-model="snackbar.ref.value.displayed"
-            :color="snackbar.ref.value.color ?? undefined"
-          >
-            <span>{{ snackbar.ref.value.message }}</span>
-
-            <template #actions>
-              <v-btn
-                v-for="(action, i) in snackbar.ref.value.actions"
-                :key="i"
-                :text="action.text"
-                color="primary"
-                style="filter: invert(1)"
-                variant="text"
-                @click="action.onClick(); snackbar.ref.value.displayed = false"
-              />
-            </template>
-          </v-snackbar>
-
-          <v-dialog
-            v-model="dialog.ref.value.displayed"
-            :persistent="dialog.ref.value.persistent"
-            max-width="500px"
-            @close="dialog.ref.value.onCancel"
-          >
-            <v-card :title="dialog.ref.value.title">
-              <template #text>
-                <p class="text-pre-wrap">
-                  {{ dialog.ref.value.content }}
-                </p>
-              </template>
-              <template #actions>
-                <v-spacer />
-                <v-btn @click="dialog.ref.value.onCancel">
-                  {{ $t("common.cancel") }}
-                </v-btn>
-                <v-btn @click="dialog.ref.value.onOk">
-                  {{ $t("common.ok") }}
-                </v-btn>
-              </template>
-            </v-card>
-          </v-dialog>
-        </client-only>
-
-        <GameDataSyncDialogImpl v-model="showGameDataSyncDialog" />
       </v-main>
+
+      <client-only>
+        <v-snackbar
+          v-model="snackbar.ref.value.displayed"
+          :color="snackbar.ref.value.color ?? undefined"
+        >
+          <span>{{ snackbar.ref.value.message }}</span>
+
+          <template #actions>
+            <v-btn
+              v-for="(action, i) in snackbar.ref.value.actions"
+              :key="i"
+              :text="action.text"
+              color="primary"
+              style="filter: invert(1)"
+              variant="text"
+              @click="action.onClick(); snackbar.ref.value.displayed = false"
+            />
+          </template>
+        </v-snackbar>
+
+        <v-dialog
+          v-model="dialog.ref.value.displayed"
+          :persistent="dialog.ref.value.persistent"
+          max-width="500px"
+          @close="dialog.ref.value.onCancel"
+        >
+          <v-card :title="dialog.ref.value.title">
+            <template #text>
+              <p class="text-pre-wrap">
+                {{ dialog.ref.value.content }}
+              </p>
+            </template>
+            <template #actions>
+              <v-spacer />
+              <v-btn @click="dialog.ref.value.onCancel">
+                {{ $t("common.cancel") }}
+              </v-btn>
+              <v-btn @click="dialog.ref.value.onOk">
+                {{ $t("common.ok") }}
+              </v-btn>
+            </template>
+          </v-card>
+        </v-dialog>
+      </client-only>
+
+      <GameDataSyncDialogImpl v-model="showGameDataSyncDialog" />
+
+      <SearchDialog v-model="showSearchDialog" />
 
       <v-fade-transition>
         <div
@@ -241,13 +239,12 @@ const updateCurrentTheme = () => {
 }
 watch(toRefs(config).theme, () => {
   updateCurrentTheme()
-})
+}, { immediate: true })
 
 onMounted(() => {
   mounted.value = true
 
-  // set theme & listen to theme change
-  updateCurrentTheme()
+  // listen to theme change
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
     updateCurrentTheme()
   })

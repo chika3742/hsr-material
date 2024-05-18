@@ -1602,12 +1602,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chika3742/mhy-material-components@npm:^1.0.9":
-  version: 1.0.32
-  resolution: "@chika3742/mhy-material-components@npm:1.0.32::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40chika3742%2Fmhy-material-components%2F1.0.32%2F597e3a4689b69e6ea75f956febf8cc539b0f9d73"
+"@chika3742/mhy-material-components@npm:^1.0.37":
+  version: 1.0.37
+  resolution: "@chika3742/mhy-material-components@npm:1.0.37::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40chika3742%2Fmhy-material-components%2F1.0.37%2F3842ee3b26c184eefbdabae2395063bde098fe71"
   dependencies:
     "@mdi/font": "npm:^7.3.67"
-    "@nuxt/kit": "npm:^3.5.2"
+    "@nuxt/kit": "npm:^3.11.2"
     "@nuxtjs/i18n": "npm:^8.0.0"
     "@rollup/plugin-yaml": "npm:^4.1.2"
     defu: "npm:^6.1.2"
@@ -1615,9 +1615,9 @@ __metadata:
     js-yaml: "npm:^4.1.0"
     lodash-es: "npm:^4.17.21"
     marked: "npm:^11.0.0"
-    sass: "npm:^1.69.5"
-    vuetify: "npm:^3.3.20"
-  checksum: 10c0/12fc3db8a95f3204a0d0bb170124446e07401221db8d889dc10d53cc20fc0e33526cf1165785a507438e78104c583e389101af393c71ed91f6745c537a1061f5
+    sass: "npm:^1.77.2"
+    vuetify: "npm:^3.6.6"
+  checksum: 10c0/83d3fda35968462ddfc19795b0e33a51638737c6500a5778da889e808d4984370831d2e7a88f646603484de8b215dc5098854b121c0e1ab07ae3a60726ba261c
   languageName: node
   linkType: hard
 
@@ -2581,7 +2581,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hsr-material/nuxt@workspace:packages/nuxt"
   dependencies:
-    "@chika3742/mhy-material-components": "npm:^1.0.9"
+    "@chika3742/mhy-material-components": "npm:^1.0.37"
     "@cloudflare/workers-types": "npm:^4.20231002.0"
     "@mdi/font": "npm:^7.2.96"
     "@nuxt/devtools": "npm:latest"
@@ -3240,7 +3240,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.11.2, @nuxt/kit@npm:^3.10.3, @nuxt/kit@npm:^3.11.2, @nuxt/kit@npm:^3.5.0, @nuxt/kit@npm:^3.5.2, @nuxt/kit@npm:^3.8.0":
+"@nuxt/kit@npm:3.11.2, @nuxt/kit@npm:^3.10.3, @nuxt/kit@npm:^3.11.2, @nuxt/kit@npm:^3.5.0, @nuxt/kit@npm:^3.8.0":
   version: 3.11.2
   resolution: "@nuxt/kit@npm:3.11.2"
   dependencies:
@@ -12941,7 +12941,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.69.0, sass@npm:^1.69.5":
+"sass@npm:^1.69.0":
   version: 1.77.1
   resolution: "sass@npm:1.77.1"
   dependencies:
@@ -12951,6 +12951,19 @@ __metadata:
   bin:
     sass: sass.js
   checksum: 10c0/edcfc7d038234b1198c3ddcac5963fcd1e17a9c1ee0f9bd09784ab5353b60ff50b189b4c9154b34f5da9ca0eaab8b189fd3e83a4b43a494151ad4735f8e5f364
+  languageName: node
+  linkType: hard
+
+"sass@npm:^1.77.2":
+  version: 1.77.2
+  resolution: "sass@npm:1.77.2"
+  dependencies:
+    chokidar: "npm:>=3.0.0 <4.0.0"
+    immutable: "npm:^4.0.0"
+    source-map-js: "npm:>=0.6.2 <2.0.0"
+  bin:
+    sass: sass.js
+  checksum: 10c0/0d292339064de3c902e209d41de9c4eb2038cff326476aeebbb5be3eee1d23400d975face2b8e124ae617b10af3e93bec01580f61912f34e4c517fe137a118b6
   languageName: node
   linkType: hard
 
@@ -15163,7 +15176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuetify@npm:^3.3.20":
+"vuetify@npm:^3.6.6":
   version: 3.6.6
   resolution: "vuetify@npm:3.6.6"
   peerDependencies:

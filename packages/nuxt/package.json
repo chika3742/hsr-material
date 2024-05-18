@@ -10,7 +10,7 @@
     "lint": "eslint --ext .ts,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@chika3742/mhy-material-components": "^1.0.9",
+    "@chika3742/mhy-material-components": "^1.0.37",
     "@mdi/font": "^7.2.96",
     "@nuxtjs/google-fonts": "^3.0.2",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
