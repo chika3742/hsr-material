@@ -25,12 +25,10 @@ jobs:
 
       - uses: oven-sh/setup-bun@v1
 
-      - name: bun install
-        working-directory: algolia-sync
-        run: bun install --frozen-lockfile
+      - name: yarn install
+        run: yarn workspace @hsr-material/algolia-sync install
 
       - name: Sync Algolia Search Index
-        working-directory: algolia-sync
-        run: bun start
+        run: yarn workspace @hsr-material/algolia-sync start
         env:
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
