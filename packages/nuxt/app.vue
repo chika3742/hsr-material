@@ -233,7 +233,9 @@ onBeforeMount(() => {
 })
 
 const updateCurrentTheme = () => {
-  theme.global.name.value = config.getCurrentTheme()
+  setTimeout(() => {
+    theme.global.name.value = config.getCurrentTheme()
+  })
 }
 watch(toRefs(config).theme, () => {
   updateCurrentTheme()
