@@ -25,6 +25,8 @@ jobs:
         with:
           node-version: 20
 
+      - uses: oven-sh/setup-bun@v1
+
       - working-directory: packages/algolia-sync
         run: yarn install
 
