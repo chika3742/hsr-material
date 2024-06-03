@@ -575,3 +575,14 @@
     skills: group:lcs010
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
+- id: boothill
+  $nameJA: ブートヒル
+  yomi: ブートヒル
+  rarity: 5
+  path: the_hunt
+  combatType: physical
+  materials:
+    ascension: id:ipc-work-permit
+    skills: group:zzP0
+    skillsAdvanced: id:lost-echo-of-the-shared-wish
+    common: group:com008

@@ -447,6 +447,7 @@ characterNames:
   gallagher: Gallagher
   robin: Robin
   sparkle: Sparkle
+  boothill: Boothill
 
 materialCategories:
   exp: EXP Materials
@@ -551,6 +552,7 @@ materialNames:
   destined-expiration: Destined Expiration
   countertemporal-shot: Countertemporal Shot
   dream-flamer: Dream Flamer
+  lost-echo-of-the-shared-wish: Lost Echo of the Shared Wish
 
 skillTitles:
   trailblazer:
@@ -804,6 +806,11 @@ skillTitles:
     skill: Dreamdiver
     ultimate: The Hero with a Thousand Faces
     talent: Red Herring
+  boothill:
+    basicAttack: Skullcrush Spurs
+    skill: Sizzlin' Tango
+    ultimate: Dust Devil's Sunset Rodeo
+    talent: Five Peas in a Pod
 
 lightConeNames:
   arrows: Arrows
