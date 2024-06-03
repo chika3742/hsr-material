@@ -782,11 +782,11 @@
   materials:
     primary: group:lcs010
     common: group:com007
-# - id: sailing-towards-a-second-life
-#  yomi: ニドメノセイニムカッテ
-#  $nameJA: 二度目の生に向かって
-#  path: the_hunt
-#  rarity: 5
-#  materials:
-#    primary: group:zzP0
-#    common: group:com008
+- id: sailing-towards-a-second-life
+  yomi: ニドメノセイニムカッテ
+  $nameJA: 二度目の生に向かって
+  path: the_hunt
+  rarity: 5
+  materials:
+    primary: group:zzP0
+    common: group:com008

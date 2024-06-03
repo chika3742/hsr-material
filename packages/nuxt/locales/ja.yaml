@@ -454,6 +454,7 @@ characterNames:
   gallagher: ギャラガー
   robin: ロビン
   sparkle: 花火
+  boothill: ブートヒル
 
 materialCategories:
   exp: 経験値素材
@@ -558,6 +559,7 @@ materialNames:
   destined-expiration: 定められた死因
   countertemporal-shot: 時に抗う一撃
   dream-flamer: 夢を炙るトーチバーナー
+  lost-echo-of-the-shared-wish: 同願の遺音
 
 skillTitles:
   trailblazer:
@@ -811,6 +813,11 @@ skillTitles:
     skill: 夢を泳ぐ魚
     ultimate: 一人千役
     talent: 叙述トリック
+  boothill:
+    basicAttack: スパーズ・クラッシュ
+    skill: 熱砂のタンゴ
+    ultimate: ダストデビル・ダンサー
+    talent: 5発の銃弾
 
 lightConeNames:
   arrows: 矢じり
