@@ -790,3 +790,19 @@
   materials:
     primary: group:zzP0
     common: group:com008
+- id: eternal-calculus
+  yomi: タエマナイエンザン
+  $nameJA: 絶え間ない演算
+  path: erudition
+  rarity: 5
+  materials:
+    primary: group:lcs012
+    common: group:com002
+- id: whereabouts-should-dreams-rest
+  yomi: ユメガカエリツクバショ
+  $nameJA: 夢が帰り着く場所
+  path: destruction
+  rarity: 5
+  materials:
+    primary: group:lcs009
+    common: group:com008
