@@ -455,6 +455,7 @@ characterNames:
   robin: ロビン
   sparkle: 花火
   boothill: ブートヒル
+  firefly: ホタル
 
 materialCategories:
   exp: 経験値素材
@@ -560,6 +561,9 @@ materialNames:
   countertemporal-shot: 時に抗う一撃
   dream-flamer: 夢を炙るトーチバーナー
   lost-echo-of-the-shared-wish: 同願の遺音
+  rough-sketch: ラフスケッチ
+  dynamic-outlining: 躍動感のある線画
+  exquisite-colored-draft: 見事なカラー原画
 
 skillTitles:
   trailblazer:
@@ -818,6 +822,11 @@ skillTitles:
     skill: 熱砂のタンゴ
     ultimate: ダストデビル・ダンサー
     talent: 5発の銃弾
+  firefly:
+    basicAttack: コマンド-フラッシュオーバー推進
+    skill: コマンド-天火轟撃
+    ultimate: ファイアフライ-IV-完全燃焼
+    talent: ホタル式源火中枢
 
 lightConeNames:
   arrows: 矢じり
@@ -919,6 +928,8 @@ lightConeNames:
   boundless-choreo: 終わりなき舞踏
   for-tomorrows-journey: 明日のための旅
   sailing-towards-a-second-life: 二度目の生に向かって
+  whereabouts-should-dreams-rest: 夢が帰り着く場所
+  eternal-calculus: 絶え間ない演算
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1049,6 +1060,10 @@ lightConeSkillDescriptions:
   for-tomorrows-journey: 装備キャラの攻撃力+<16%>。装備キャラが必殺技を発動した後、与ダメージ+<18%>、1ターン継続。
   sailing-towards-a-second-life: >-
     装備キャラの撃破特効+<60%>、与える弱点撃破ダメージが敵の防御力を<20%>無視する。戦闘中、装備キャラの撃破特効が150%以上の場合、速度<+12%>。
+  whereabouts-should-dreams-rest: >-
+    装備キャラの撃破特効+<60%>。装備キャラが敵に弱点撃破ダメージを与える時、敵に「敗走」状態を付与する、2ターン継続。「敗走」状態の敵は速度-20%、装備キャラから受ける弱点撃破ダメージ+<24%>。同系統のスキルは累積できない。
+  eternal-calculus: >-
+    装備キャラの攻撃力+<8%>。攻撃を行った後、命中した敵1体につき、さらに攻撃力+<4%>。この効果は最大で5回累積でき、次の攻撃を行った後まで継続。攻撃が3体以上の敵に命中した場合、自身の速度+<8%>、1ターン継続。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
@@ -1079,6 +1094,14 @@ relicSetTitles:
   watchmaker-master-of-dream-machinations: 夢を弄ぶ時計屋
   sigonia-the-unclaimed-desolation: 荒涼の惑星ツガンニヤ
   izumo-gensei-and-takama-divine-realm: 顕世の出雲と高天の神国
+  the-ashblazing-grand-duke: 灰燼を燃やし尽くす大公
+  prisoner-in-deep-confinement: 深い牢獄の囚人
+  firmament-frontline-glamoth: 蒼穹戦線グラモス
+  penacony-land-of-the-dreams: 夢の地ピノコニー
+  iron-cavalry-against-the-scourge: 蝗害を一掃せし鉄騎
+  the-wind-soaring-valorous: 風雲を薙ぎ払う勇烈
+  duran-dynasty-of-running-wolves: 奔狼の都藍王朝
+  forge-of-the-kalpagni-lantern: 劫火と蓮灯の鋳煉宮
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -1155,6 +1178,30 @@ relicSetEffects:
     2pc: 装備キャラの会心率+<4%>。敵が倒された時、装備キャラの会心ダメージ+<4%>、最大で<10>回累積できる。
   izumo-gensei-and-takama-divine-realm:
     2pc: 装備キャラの攻撃力+<12%>。戦闘に入る時、装備キャラと同じ運命のキャラが他に存在する場合、装備キャラの会心率+<12%>。
+  the-ashblazing-grand-duke:
+    2pc: 追加攻撃ダメージ+<20%>。
+    4pc: >-
+      装備キャラが追加攻撃を行った時、追加攻撃のヒット数に応じて、ダメージを与えるたびに装備者の攻撃力+<6%>、最大<8>回まで累積でき、<3>ターン継続。この効果は、装備キャラが次の追加攻撃を行った時に解除される。
+  prisoner-in-deep-confinement:
+    2pc: 攻撃力+<12%>。
+    4pc: >-
+      敵に付与された持続ダメージ系デバフが1つにつき、装備キャラがその敵にダメージを与える時に防御力を<6%>無視する。持続ダメージ系デバフは最大で<3>つまでカウントされる。
+  firmament-frontline-glamoth:
+    2pc: 装備キャラの攻撃力+<12%>。装備キャラの速度が<135>/<160>以上の時、装備キャラの与ダメージ+<12%>/<18%>。
+  penacony-land-of-the-dreams:
+    2pc: 装備キャラのEP回復効率+<5%>。パーティ中の装備キャラと同じ属性の味方の与ダメージ+<10%>。
+  iron-cavalry-against-the-scourge:
+    2pc: 撃破特効+<16%>。
+    4pc: >-
+      装備キャラの撃破特効が<150%>以上の時、敵に与える弱点撃破ダメージが防御力を<10%>無視する。装備キャラの撃破特効が<250%>以上の時、さらに敵に与える超撃破ダメージが防御力を<15%>無視する。
+  the-wind-soaring-valorous:
+    2pc: 攻撃力+<12%>。
+    4pc: 装備キャラの会心率+<6%>。装備キャラが追加攻撃を行う時、必殺技の与ダメージ+<36%>、<1>ターン継続。
+  duran-dynasty-of-running-wolves:
+    2pc: >-
+      味方が追加攻撃を行う時、装備キャラは「勲功」を1層獲得する、最大で<5>層累積できる。「勲功」1層につき、装備キャラの追加攻撃ダメージ+<5%>。「勲功」が<5>層に達する時、さらに装備キャラの会心ダメージ+<25%>。
+  forge-of-the-kalpagni-lantern:
+    2pc: 装備キャラの速度+<6%>。装備キャラの攻撃が炎属性弱点を持つ敵に命中する時、撃破特効+<40%>、<1>ターン継続。
 
 relicPieceNames:
   bands-polarized-sunglasses: バンドの偏光サングラス
@@ -1245,5 +1292,29 @@ relicPieceNames:
   sigonias-knot-of-cyclicality: ツガンニヤの輪廻の結び目
   izumos-magatsu-no-morokami: 出雲の禍津衆神
   izumos-blades-of-origin-and-end: 出雲の終始一刀
+  grand-dukes-crown-of-netherflame: 大公の冥焔の冠
+  grand-dukes-gloves-of-fieryfur: 大公の炎の手袋
+  grand-dukes-robe-of-grace: 大公の恩恵のロングジャケット
+  grand-dukes-ceremonial-boots: 大公の優雅なブーツ
+  prisoners-sealed-muzzle: 囚人の獣面口輪
+  prisoners-leadstone-shackles: 囚人の鉛の手枷
+  prisoners-repressive-straitjacket: 囚人の幽閉拘束衣
+  prisoners-restrictive-fetters: 囚人の歩みを阻む足枷
+  glamoths-iron-cavalry-regiment: グラモスの鉄騎兵団
+  glamoths-silent-tombstone: グラモスの静寂の墓碑
+  penaconys-grand-hotel: ピノコニーのグランドホテル
+  penaconys-dream-seeking-tracks: ピノコニーの夢追い軌道
+  iron-cavalrys-homing-helm: 鉄騎の索敵用ヘルム
+  iron-cavalrys-crushing-wristguard: 鉄騎の粉砕アーム
+  iron-cavalrys-silvery-armor: 鉄騎の銀影アーマー
+  iron-cavalrys-skywalk-greaves: 鉄騎の飛翔グリーブ
+  valorous-mask-of-northern-skies: 勇猛な鋭嘴フェイスガード
+  valorous-bracelet-of-grappling-hooks: 勇猛な鉤爪ガントレット
+  valorous-plate-of-soaring-flight: 勇猛な蒼羽アーマー
+  valorous-greaves-of-pursuing-hunt: 勇猛な狩猟キュイス
+  durans-tent-of-golden-sky: 都藍の黄金ドーム
+  durans-mechabeast-bridle: 都藍の器獣の手綱とくつわ
+  forges-lotus-lantern-wick: 鋳煉宮の蓮花ランプの芯
+  forges-heavenly-flamewheel-silk: 鋳煉宮の焔輪天織
 
 # eof (replace regex marker)

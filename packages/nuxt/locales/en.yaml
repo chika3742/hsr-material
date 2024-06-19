@@ -448,6 +448,7 @@ characterNames:
   robin: Robin
   sparkle: Sparkle
   boothill: Boothill
+  firefly: Firefly
 
 materialCategories:
   exp: EXP Materials
@@ -553,6 +554,9 @@ materialNames:
   countertemporal-shot: Countertemporal Shot
   dream-flamer: Dream Flamer
   lost-echo-of-the-shared-wish: Lost Echo of the Shared Wish
+  rough-sketch: Rough Sketch
+  dynamic-outlining: Dynamic Outlining
+  exquisite-colored-draft: Exquisite Colored Draft
 
 skillTitles:
   trailblazer:
@@ -811,6 +815,11 @@ skillTitles:
     skill: Sizzlin' Tango
     ultimate: Dust Devil's Sunset Rodeo
     talent: Five Peas in a Pod
+  firefly:
+    basicAttack: "Order: Flare Propulsion"
+    skill: "Order: Aerial Bombardment"
+    ultimate: "Fyrefly Type-IV: Complete Combustion"
+    talent: Chrysalid Pyronexus
 
 lightConeNames:
   arrows: Arrows
@@ -912,6 +921,8 @@ lightConeNames:
   boundless-choreo: Boundless Choreo
   for-tomorrows-journey: For Tomorrow's Journey
   sailing-towards-a-second-life: Sailing Towards a Second Life
+  whereabouts-should-dreams-rest: Whereabouts Should Dreams Rest
+  eternal-calculus: Eternal Calculus
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1222,6 +1233,17 @@ lightConeSkillDescriptions:
     Increases the wearer's Break Effect by <60%>. The Break DMG dealt by the
     wearer ignores <20%> of the target's DEF. When the wearer's Break Effect in
     battle is at 150% or greater, increases their SPD by <12%>.
+  whereabouts-should-dreams-rest: >-
+    Increases the wearer's Break Effect by <60%>. When the wearer deals Break
+    DMG to an enemy target, inflicts Routed on the enemy, lasting for 2 turn(s).
+    Targets afflicted with Routed receive <24%> increased Break DMG from the
+    wearer, and their SPD is lowered by 20%. Effects of the similar type cannot
+    be stacked.
+  eternal-calculus: >-
+    Increases the wearer's ATK by <8%>. After using an attack, for each enemy
+    target hit, additionally increases ATK by <4%>. This effect can stack up to
+    5 times and last until the next attack. If there are 3 or more enemy targets
+    hit, this unit's SPD increases by <8%>, lasting for 1 turn(s).
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
@@ -1252,6 +1274,14 @@ relicSetTitles:
   watchmaker-master-of-dream-machinations: Watchmaker, Master of Dream Machinations
   sigonia-the-unclaimed-desolation: Sigonia, the Unclaimed Desolation
   izumo-gensei-and-takama-divine-realm: Izumo Gensei and Takama Divine Realm
+  the-ashblazing-grand-duke: The Ashblazing Grand Duke
+  prisoner-in-deep-confinement: Prisoner in Deep Confinement
+  firmament-frontline-glamoth: "Firmament Frontline: Glamoth"
+  penacony-land-of-the-dreams: Penacony, Land of the Dreams
+  iron-cavalry-against-the-scourge: Iron Cavalry Against the Scourge
+  the-wind-soaring-valorous: The Wind-Soaring Valorous
+  duran-dynasty-of-running-wolves: Duran, Dynasty of Running Wolves
+  forge-of-the-kalpagni-lantern: Forge of the Kalpagni Lantern
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -1390,6 +1420,51 @@ relicSetEffects:
       Increases the wearer's ATK by <12%>. When entering battle, if at least one
       other ally follows the same Path as the wearer, then the wearer's CRIT
       Rate increases by <12%>.
+  the-ashblazing-grand-duke:
+    2pc: Increases the DMG dealt by follow-up attacks by <20%>.
+    4pc: >-
+      When the wearer uses follow-up attacks, increases the wearer's ATK by <6%>
+      for every time the follow-up attack deals DMG. This effect can stack up to
+      <8> time(s) and lasts for <3> turn(s). This effect is removed the next
+      time the wearer uses a follow-up attack.
+  prisoner-in-deep-confinement:
+    2pc: Increases ATK by <12%>.
+    4pc: >-
+      For every DoT the target enemy is afflicted with, the wearer will ignore
+      <6%> of its DEF when dealing DMG to it. This effect is valid for a max of
+      <3> DoTs.
+  firmament-frontline-glamoth:
+    2pc: >-
+      Increases the wearer's ATK by <12%>. When the wearer's SPD is equal to or
+      higher than <135>/<160>, the wearer deals <12%>/<18%> more DMG.
+  penacony-land-of-the-dreams:
+    2pc: >-
+      Increases wearer's Energy Regeneration Rate by <5%>. Increases DMG by
+      <10%> for all other allies that are of the same Type as the wearer.
+  iron-cavalry-against-the-scourge:
+    2pc: Increases Break Effect by <16%>.
+    4pc: >-
+      If the wearer's Break Effect is <150%> or higher, the Break DMG dealt to
+      the enemy target ignores <10%> of their DEF. If the wearer's Break Effect
+      is <250%> or higher, the Super Break DMG dealt to the enemy target
+      additionally ignores <15%> of their DEF.
+  the-wind-soaring-valorous:
+    2pc: Increases ATK by <12%>.
+    4pc: >-
+      Increases the wearer's CRIT Rate by <6%>. After the wearer uses a
+      follow-up attack, increases the DMG dealt by their Ultimate by <36%>,
+      lasting for <1> turn(s).
+  duran-dynasty-of-running-wolves:
+    2pc: >-
+      When allies use follow-up attacks, the wearer gains 1 stack of Merit,
+      stacking up to <5> times. Each stack of Merit increases the DMG dealt by
+      the wearer's follow-up attacks by <5%>. When there are <5> stacks,
+      additionally increases the wearer's CRIT DMG by <25%>.
+  forge-of-the-kalpagni-lantern:
+    2pc: >-
+      Increases the wearer's SPD by <6%>. When the wearer hits an enemy target
+      that has Fire Weakness, the wearer's Break Effect increases by <40%>,
+      lasting for <1> turn(s).
 
 relicPieceNames:
   bands-polarized-sunglasses: Band's Polarized Sunglasses
@@ -1480,5 +1555,29 @@ relicPieceNames:
   sigonias-knot-of-cyclicality: Sigonia's Knot of Cyclicality
   izumos-magatsu-no-morokami: Izumo's Magatsu no Morokami
   izumos-blades-of-origin-and-end: Izumo's Blades of Origin and End
+  grand-dukes-crown-of-netherflame: Grand Duke's Crown of Netherflame
+  grand-dukes-gloves-of-fieryfur: Grand Duke's Gloves of Fieryfur
+  grand-dukes-robe-of-grace: Grand Duke's Robe of Grace
+  grand-dukes-ceremonial-boots: Grand Duke's Ceremonial Boots
+  prisoners-sealed-muzzle: Prisoner's Sealed Muzzle
+  prisoners-leadstone-shackles: Prisoner's Leadstone Shackles
+  prisoners-repressive-straitjacket: Prisoner's Repressive Straitjacket
+  prisoners-restrictive-fetters: Prisoner's Restrictive Fetters
+  glamoths-iron-cavalry-regiment: Glamoth's Iron Cavalry Regiment
+  glamoths-silent-tombstone: Glamoth's Silent Tombstone
+  penaconys-grand-hotel: Penacony's Grand Hotel
+  penaconys-dream-seeking-tracks: Penacony's Dream-Seeking Tracks
+  iron-cavalrys-homing-helm: Iron Cavalry's Homing Helm
+  iron-cavalrys-crushing-wristguard: Iron Cavalry's Crushing Wristguard
+  iron-cavalrys-silvery-armor: Iron Cavalry's Silvery Armor
+  iron-cavalrys-skywalk-greaves: Iron Cavalry's Skywalk Greaves
+  valorous-mask-of-northern-skies: Valorous Mask of Northern Skies
+  valorous-bracelet-of-grappling-hooks: Valorous Bracelet of Grappling Hooks
+  valorous-plate-of-soaring-flight: Valorous Plate of Soaring Flight
+  valorous-greaves-of-pursuing-hunt: Valorous Greaves of Pursuing Hunt
+  durans-tent-of-golden-sky: Duran's Tent of Golden Sky
+  durans-mechabeast-bridle: Duran's Mechabeast Bridle
+  forges-lotus-lantern-wick: Forge's Lotus Lantern Wick
+  forges-heavenly-flamewheel-silk: Forge's Heavenly Flamewheel Silk
 
 # eof (replace regex marker)

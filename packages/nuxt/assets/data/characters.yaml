@@ -586,3 +586,14 @@
     skills: group:zzP0
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com008
+- id: firefly
+  $nameJA: ホタル
+  yomi: ホタル
+  rarity: 5
+  path: destruction
+  combatType: fire
+  materials:
+    ascension: id:raging-heart
+    skills: group:lcs009
+    skillsAdvanced: id:lost-echo-of-the-shared-wish
+    common: group:com008
