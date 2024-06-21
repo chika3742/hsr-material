@@ -221,6 +221,15 @@ useHead({
   titleTemplate: `%s - ${i18n.t("common.appName")}`,
 })
 
+useSeoMeta({
+  ogImage: "https://hsr.matnote.app/favicon.webp",
+  ogTitle: "崩壊：スターレイル 素材ノート",
+  ogSiteName: "崩壊：スターレイル 素材ノート",
+  ogType: "website",
+  twitterCard: "summary",
+  twitterSite: "@chikavoid",
+})
+
 let unsubscribeAuthListener: Unsubscribe | null = null
 
 onBeforeMount(() => {
