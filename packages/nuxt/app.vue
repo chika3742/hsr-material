@@ -225,6 +225,7 @@ useSeoMeta({
   ogImage: "https://hsr.matnote.app/favicon.webp",
   ogTitle: "崩壊：スターレイル 素材ノート",
   ogSiteName: "崩壊：スターレイル 素材ノート",
+  ogDescription: "スターレイルの素材集めを手助けするWebアプリ。",
   ogType: "website",
   twitterCard: "summary",
   twitterSite: "@chikavoid",
