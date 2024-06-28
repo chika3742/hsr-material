@@ -22,7 +22,7 @@
     "algoliasearch": "^4.20.0",
     "dexie": "^3.2.4",
     "firebase": "^10.4.0",
-    "json-schema-to-typescript": "^13.1.1",
+    "json-schema-to-typescript": "^14.0.0",
     "luxon": "^3.4.4",
     "marked": "^12.0.2",
     "nuxt": "^3.11.2",
