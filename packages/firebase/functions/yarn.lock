@@ -1203,17 +1203,17 @@ __metadata:
   linkType: hard
 
 "firebase-functions-test@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "firebase-functions-test@npm:3.1.0"
+  version: 3.3.0
+  resolution: "firebase-functions-test@npm:3.3.0"
   dependencies:
     "@types/lodash": "npm:^4.14.104"
     lodash: "npm:^4.17.5"
     ts-deepmerge: "npm:^2.0.1"
   peerDependencies:
-    firebase-admin: ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
-    firebase-functions: ">=4.3.0"
+    firebase-admin: ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0
+    firebase-functions: ">=4.9.0"
     jest: ">=28.0.0"
-  checksum: 10c0/e6cb650523d3b4a4a8ff11ced0b42eed8b4f260b21dfede7bc37ec9a88eabe42e5626593b3c372b0f1cf601c433f75a5c0eeb66bc620be56e53bb84da3eeed75
+  checksum: 10c0/4c38a73a913540b091464b3ff365cb432b65a853b101e543189ce24c89dc17978142d5f7b3c45c4d5899ee177a2769f14f19121a2f299f6b212ca554828657e5
   languageName: node
   linkType: hard
 
