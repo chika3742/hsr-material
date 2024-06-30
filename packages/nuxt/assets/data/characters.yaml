@@ -29,13 +29,14 @@
   $nameJA: 三月なのか
   yomi: ミツキナノカ
   rarity: 4
-  path: preservation
-  combatType: ice
-  materials:
-    common: group:com001
-    ascension: id:horn-of-snow
-    skills: group:lcs001
-    skillsAdvanced: id:destroyers-final-road
+  variants:
+    - path: preservation
+      combatType: ice
+      materials:
+        common: group:com001
+        ascension: id:horn-of-snow
+        skills: group:lcs001
+        skillsAdvanced: id:destroyers-final-road
 
 - id: dan-heng
   $nameJA: 丹恒
