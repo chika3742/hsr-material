@@ -34,5 +34,15 @@ export const migrate = (data: { [table: string]: any }, oldVersion: number, newV
     oldVersion++
   }
 
+  if (oldVersion === 3) {
+    for (const bookmark of data.bookmarks) {
+      if (!["character_material", "character_exp"].includes(bookmark.type) || bookmark.characterId !== "march-7th") {
+        continue
+      }
+      bookmark.characterId = "march-7th_preservation"
+      bookmark.hash = hash(_.omit(bookmark, ["id", "bookmarkedAt", "selectedItem", "hash"]))
+    }
+  }
+
   return data as SyncedUserData
 }

@@ -397,6 +397,8 @@ purposeTypes:
 
 characterNames:
   march-7th: March 7th
+  march-7th_preservation: "@:{'characterNames.march-7th'} (Preservation)"
+  march-7th_the_hunt: "@:{'characterNames.march-7th'} (The Hunt)"
   dan-heng: Dan Heng
   himeko: Himeko
   welt: Welt
@@ -423,9 +425,9 @@ characterNames:
   yanqing: Yanqing
   bailu: Bailu
   trailblazer: Trailblazer
-  trailblazer_destruction: Trailblazer (Destruction)
-  trailblazer_preservation: Trailblazer (Preservation)
-  trailblazer_harmony: Trailblazer (Harmony)
+  trailblazer_destruction: "@:{'characterNames.trailblazer'} (Destruction)"
+  trailblazer_preservation: "@:{'characterNames.trailblazer'} (Preservation)"
+  trailblazer_harmony: "@:{'characterNames.trailblazer'} (Harmony)"
   blade: Blade
   luka: Luka
   dan-heng-imbibitor-lunae: Dan Heng・Imbibitor Lunae
@@ -576,10 +578,11 @@ skillTitles:
       ultimate: All-Out Footlight Parade
       talent: Full-on Aerial Dance
   march-7th:
-    basicAttack: Frigid Cold Arrow
-    skill: The Power of Cuteness
-    ultimate: Glacial Cascade
-    talent: Girl Power
+    preservation:
+      basicAttack: Frigid Cold Arrow
+      skill: The Power of Cuteness
+      ultimate: Glacial Cascade
+      talent: Girl Power
   dan-heng:
     basicAttack: "Cloudlancer Art: North Wind"
     skill: "Cloudlancer Art: Torrent"

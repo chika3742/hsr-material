@@ -404,10 +404,12 @@ purposeTypes:
 
 characterNames:
   trailblazer: 開拓者
-  trailblazer_destruction: 開拓者 (壊滅)
-  trailblazer_preservation: 開拓者 (存護)
-  trailblazer_harmony: 開拓者 (調和)
+  trailblazer_destruction: "@:{'characterNames.trailblazer'} (壊滅)"
+  trailblazer_preservation: "@:{'characterNames.trailblazer'} (存護)"
+  trailblazer_harmony: "@:{'characterNames.trailblazer'} (調和)"
   march-7th: 三月なのか
+  march-7th_preservation: "@:{'characterNames.march-7th'} (存護)"
+  march-7th_the_hunt: "@:{'characterNames.march-7th'} (巡狩)"
   dan-heng: 丹恒
   himeko: 姫子
   welt: ヴェルト
@@ -583,10 +585,11 @@ skillTitles:
       ultimate: 賑やかなパレード
       talent: エアリアルステップ
   march-7th:
-    basicAttack: 極寒の弓矢
-    skill: 可愛いは正義
-    ultimate: 氷刻矢雨の時
-    talent: 少女の特権
+    preservation:
+      basicAttack: 極寒の弓矢
+      skill: 可愛いは正義
+      ultimate: 氷刻矢雨の時
+      talent: 少女の特権
   dan-heng:
     basicAttack: 雲騎槍術・朔風
     skill: 雲騎槍術・疾雨
