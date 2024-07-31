@@ -37,6 +37,13 @@
         ascension: id:horn-of-snow
         skills: group:lcs001
         skillsAdvanced: id:destroyers-final-road
+    - path: the_hunt
+      combatType: imaginary
+      materials:
+        ascension: id:horn-of-snow
+        skills: group:zzP0
+        skillsAdvanced: id:destroyers-final-road
+        common: group:com001
 
 - id: dan-heng
   $nameJA: 丹恒
@@ -598,3 +605,14 @@
     skills: group:lcs009
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com008
+- id: yunli
+  $nameJA: 雲璃
+  yomi: ウンリ
+  rarity: 5
+  path: destruction
+  combatType: physical
+  materials:
+    ascension: id:ipc-work-permit
+    skills: group:lcs009
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com006

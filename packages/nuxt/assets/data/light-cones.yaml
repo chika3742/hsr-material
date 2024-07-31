@@ -806,3 +806,11 @@
   materials:
     primary: group:lcs009
     common: group:com008
+- id: dance-at-sunset
+  yomi: ユウヒニマウ
+  $nameJA: 夕日に舞う
+  path: destruction
+  rarity: 5
+  materials:
+    primary: group:lcs009
+    common: group:com006
