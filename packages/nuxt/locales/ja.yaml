@@ -458,6 +458,7 @@ characterNames:
   sparkle: 花火
   boothill: ブートヒル
   firefly: ホタル
+  yunli: 雲璃
 
 materialCategories:
   exp: 経験値素材
@@ -590,6 +591,11 @@ skillTitles:
       skill: 可愛いは正義
       ultimate: 氷刻矢雨の時
       talent: 少女の特権
+    the_hunt:
+      basicAttack: 妖魔を祓う瑠璃剣
+      skill: 師匠、お茶をどうぞ！
+      ultimate: 蓋世の傑物、三月なのか
+      talent: 師匠、わかりました！
   dan-heng:
     basicAttack: 雲騎槍術・朔風
     skill: 雲騎槍術・疾雨
@@ -830,6 +836,11 @@ skillTitles:
     skill: コマンド-天火轟撃
     ultimate: ファイアフライ-IV-完全燃焼
     talent: ホタル式源火中枢
+  yunli:
+    basicAttack: 震天動地
+    skill: 天威煌々
+    ultimate: 天を揺るがす大地の剣
+    talent: 閃熔
 
 lightConeNames:
   arrows: 矢じり
@@ -933,6 +944,7 @@ lightConeNames:
   sailing-towards-a-second-life: 二度目の生に向かって
   whereabouts-should-dreams-rest: 夢が帰り着く場所
   eternal-calculus: 絶え間ない演算
+  dance-at-sunset: 夕日に舞う
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1067,6 +1079,8 @@ lightConeSkillDescriptions:
     装備キャラの撃破特効+<60%>。装備キャラが敵に弱点撃破ダメージを与える時、敵に「敗走」状態を付与する、2ターン継続。「敗走」状態の敵は速度-20%、装備キャラから受ける弱点撃破ダメージ+<24%>。同系統のスキルは累積できない。
   eternal-calculus: >-
     装備キャラの攻撃力+<8%>。攻撃を行った後、命中した敵1体につき、さらに攻撃力+<4%>。この効果は最大で5回累積でき、次の攻撃を行った後まで継続。攻撃が3体以上の敵に命中した場合、自身の速度+<8%>、1ターン継続。
+  dance-at-sunset: >-
+    装備キャラの攻撃を受ける確率が大アップし、会心ダメージ+<36%>。装備キャラが必殺技を発動した後、「炎舞」を1層獲得する、2ターン継続、最大で2層累積できる。「炎舞」1層につき、装備キャラの追加攻撃ダメージ+<36%>。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

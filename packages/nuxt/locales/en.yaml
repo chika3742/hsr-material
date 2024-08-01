@@ -451,6 +451,7 @@ characterNames:
   sparkle: Sparkle
   boothill: Boothill
   firefly: Firefly
+  yunli: Yunli
 
 materialCategories:
   exp: EXP Materials
@@ -583,6 +584,11 @@ skillTitles:
       skill: The Power of Cuteness
       ultimate: Glacial Cascade
       talent: Girl Power
+    the_hunt:
+      basicAttack: My Sword Zaps Demons
+      skill: Master, It's Tea Time!
+      ultimate: March 7th, the Apex Heroine
+      talent: Master, I've Ascended!
   dan-heng:
     basicAttack: "Cloudlancer Art: North Wind"
     skill: "Cloudlancer Art: Torrent"
@@ -823,6 +829,11 @@ skillTitles:
     skill: "Order: Aerial Bombardment"
     ultimate: "Fyrefly Type-IV: Complete Combustion"
     talent: Chrysalid Pyronexus
+  yunli:
+    basicAttack: Galespin Summersault
+    skill: Bladeborne Quake
+    ultimate: Earthbind, Etherbreak
+    talent: Flashforge
 
 lightConeNames:
   arrows: Arrows
@@ -926,6 +937,7 @@ lightConeNames:
   sailing-towards-a-second-life: Sailing Towards a Second Life
   whereabouts-should-dreams-rest: Whereabouts Should Dreams Rest
   eternal-calculus: Eternal Calculus
+  dance-at-sunset: Dance at Sunset
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1247,6 +1259,11 @@ lightConeSkillDescriptions:
     target hit, additionally increases ATK by <4%>. This effect can stack up to
     5 times and last until the next attack. If there are 3 or more enemy targets
     hit, this unit's SPD increases by <8%>, lasting for 1 turn(s).
+  dance-at-sunset: >-
+    Greatly increases the wearer's chance of getting attacked and increases CRIT
+    DMG by <36%>. After the wearer uses Ultimate, receives 1 stack of Firedance,
+    lasting for 2 turns and stacking up to 2 time(s). Each stack of Firedance
+    increases the DMG dealt by the wearer's follow-up attack by <36%>.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
