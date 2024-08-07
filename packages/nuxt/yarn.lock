@@ -2531,7 +2531,7 @@ __metadata:
     "@vueuse/rxjs": "npm:^10.9.0"
     algoliasearch: "npm:^4.20.0"
     bootstrap: "npm:^5.3.3"
-    dexie: "npm:^3.2.4"
+    dexie: "npm:^4.0.0"
     firebase: "npm:^10.4.0"
     json-schema-to-typescript: "npm:^13.1.1"
     luxon: "npm:^3.4.4"
@@ -6653,10 +6653,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dexie@npm:^3.2.4":
-  version: 3.2.7
-  resolution: "dexie@npm:3.2.7"
-  checksum: 10c0/5d7dad9deb3a24b676f8c630a2517ec0e243906fbcbd3cc7946798ee4ff05766eae7b6dd29deb0f090151552f136ac70a2c0bf0a8a8dbd840e643710efb80347
+"dexie@npm:^4.0.0":
+  version: 4.0.8
+  resolution: "dexie@npm:4.0.8"
+  checksum: 10c0/d35a817d986c334a2de5f1a0d5ef373b3d9464de7b520f9af50c00ea2f974386632a3f949add83ba1fce9e929908d96db19726377f641f4768c137a554969a2d
   languageName: node
   linkType: hard
 
