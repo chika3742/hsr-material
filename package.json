@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "postinstall": "(cd packages/nuxt; yarn install); (cd packages/firebase/functions; yarn install); (cd packages/algolia-sync; yarn install)",
+    "postinstall": "(cd packages/nuxt; yarn install; yarn postinstall); (cd packages/firebase/functions; yarn install); (cd packages/algolia-sync; yarn install)",
     "lint": "eslint '**/*.{ts,vue}'"
   },
-  "packageManager": "yarn@4.2.2",
+  "packageManager": "yarn@4.4.0",
   "devDependencies": {
     "eslint": "^9.2.0"
   }
