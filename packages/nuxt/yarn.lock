@@ -1627,11 +1627,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chika3742/mhy-material-components@npm:^1.0.38":
-  version: 1.0.38
-  resolution: "@chika3742/mhy-material-components@npm:1.0.38::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40chika3742%2Fmhy-material-components%2F1.0.38%2Fa13584207aee328085c48dfdc446487675c9c959"
+"@chika3742/mhy-material-components@npm:^1.0.41":
+  version: 1.0.41
+  resolution: "@chika3742/mhy-material-components@npm:1.0.41::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40chika3742%2Fmhy-material-components%2F1.0.41%2Fcc1561e95f070ebd3f1ea6a24db9dbe67bf32732"
   dependencies:
     "@mdi/font": "npm:^7.3.67"
+    "@nuxt/eslint": "npm:^0.3.13"
     "@nuxt/kit": "npm:^3.11.2"
     "@nuxtjs/i18n": "npm:^8.3.1"
     "@rollup/plugin-yaml": "npm:^4.1.2"
@@ -1642,7 +1643,7 @@ __metadata:
     marked: "npm:^11.0.0"
     sass: "npm:^1.77.2"
     vuetify: "npm:^3.6.6"
-  checksum: 10c0/426d1f77ff5a4fd252b0b90daebc4855599a9294fe96e995262b3e30e9924d24bf93c5bfd2113e1b32f59c6404d1a6603329f1226c6ffd9c21624acaf96e225f
+  checksum: 10c0/46b06848880cb91e334571b2c3b85cdaa106ade0defd3e0cc49ed6bdcc0222fa7f0a57d0af24690fff6cf2278dcf6cee0c6ce6a7bdf5b9f752fc41ebd4fa12a4
   languageName: node
   linkType: hard
 
@@ -2510,7 +2511,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hsr-material/nuxt@workspace:."
   dependencies:
-    "@chika3742/mhy-material-components": "npm:^1.0.38"
+    "@chika3742/mhy-material-components": "npm:^1.0.41"
     "@cloudflare/workers-types": "npm:^4.20231002.0"
     "@mdi/font": "npm:^7.2.96"
     "@nuxt/devtools": "npm:latest"

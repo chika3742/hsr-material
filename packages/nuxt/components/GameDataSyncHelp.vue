@@ -18,10 +18,10 @@ import img04 from "~/assets/img/gds_guide02.webp"
 
     <h3>注意事項</h3>
     <ul>
-      <li>キャラの状態が変わったり、「サポートキャラ」もしくは「星海同伴」のキャラクターを変えたりしてから約５分、反映に時間がかかります。</li>
+      <li>キャラの状態が変わったり、「サポートキャラ」もしくは「星海同伴」のキャラクターを変えたりしてから約<span class="font-weight-bold text-red">5分</span>、反映に時間がかかります。</li>
       <li>
         私のサーバーでは、送信されたUID等は一切記録しておりません。内部的には<a
-          href="https://march7th.xiaohei.moe/en/resource/mihomo_api.html"
+          href="https://march7th.xyz/en/api/#request-method"
           target="_blank"
         >MiHoMo API</a>を利用しています。
       </li>
@@ -30,7 +30,7 @@ import img04 from "~/assets/img/gds_guide02.webp"
     <h3>同期方法</h3>
     <ol>
       <li>
-        「巡星ビザ」より、「サポートキャラ」もしくは「星海同伴」にキャラクターを登録します（これら最大4キャラを同時に登録できます）。
+        「巡星ビザ」より、「サポートキャラ」もしくは「星海同伴」にキャラクターを登録します（これら最大<span class="font-weight-bold">8キャラ</span>を同時に登録できます）。
         <v-img :src="img03" />
         <v-img :src="img04" />
       </li>

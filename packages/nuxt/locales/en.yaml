@@ -233,7 +233,7 @@ warpsPage:
       contents: |
         *Confirmed to work only on Windows 11.
 
-        1. Launch @:{'common.gameName'}, select Warp > View Details > Records.
+        1. Launch @:{'common.gameName'}, select Warp > View Details.
         1. Press Windows key + R key to open the Run dialog.
         1. Copy and paste the following command then press Enter key.
             <div id="cmd-win" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline}</code></pre></div>
@@ -246,19 +246,21 @@ warpsPage:
         ### Preparation (required for the first time only)
         
         1. Install the [Stream]({streamUrl}) app from the App Store.
-        1. Launch the Stream app, tap "Sniff Now", and when the dialog "Stream is requesting to add VPN configurations" is displayed, tap "Allow". (Enter the passcode when prompted.)
-        1. Return to the Stream app and a dialog with the content "You must install CA" will be displayed, so tap "Install CA" and then tap "Install CA Certificate".
-        1. "This website is trying to download a configuration profile" will be displayed, so tap "Allow".
-        1. Open the device settings, tap General > VPN & Device Management > Stream Generated CA XXXXXXXX > "Install" in the upper right corner > Enter the passcode > "Install" in the upper right corner > Install.
-        1. When you return to the app, "For iOS 10.3+ and iOS 11..." may be displayed, but tap the blue "I've trusted".
+        1. Launch the Stream app, tap **Sniff Now**. When the dialog "Stream is requesting to add VPN configurations" is displayed, tap **Allow**. (Enter the passcode when prompted.)
+        1. Return to the Stream app and a dialog with the content **You must install CA** will be displayed, so tap **Install CA** and then tap **Install CA Certificate**.
+        1. A dialog "This website is trying to download a configuration profile" will be displayed, so tap **Allow**.
+        1. Open the device settings, tap **General > VPN & Device Management > Stream Generated CA XXXXXXXX > _Install_ in the upper right corner > Enter passcode > _Install_ in the upper right corner > _Install_**.
+        1. When you return to the app, a dialog "For iOS 10.3+ and iOS 11..." may be displayed, but tap the blue **I've trusted**.
+        1. Tap the green **Sniff Mode** button at the bottom of the app's top screen.
+        1. Turn on **Switch to Whitelist Mode** and tap **Whitelist Settings**.
+        1. Add "_public-operation-hkrpg-sg.hoyoverse.com_" to whitelist and tap **Apply** at the top right.
         
         ### Get URL
         
-        1. Launch @:{'common.gameName'}, and open "Warp" > "View Details".
-        1. Open the Stream app and tap "Sniff Now".
-        1. Return to @:{'common.gameName'} and tap "Records".
-        1. Return to the Stream app and tap "Stop Sniffing", then tap "Sniff History" on the right.
-        1. Tap the one at the top, tap the one that starts with "GET https://api-os-takumi.mihoyo.com", and tap "Request" at the top, then tap the bottom of "REQUEST LINE" and tap "Copy Url" to copy the URL.
+        1. Open the Stream app and tap **Sniff Now**.
+        1. Launch @:{'common.gameName'}, and open **Warp > View Details > Records**.
+        1. Return to the Stream app and tap **Stop Sniffing**, then tap **Sniff History** on the right.
+        1. Tap the top time in the list, then tap the top item in the list, and tap **Request** at the top, then tap the bottom of **REQUEST LINE** and tap **Copy Url** to copy the URL.
     macos:
       title: How to Get URL (macOS with PlayCover)
       contents: |
@@ -273,7 +275,7 @@ warpsPage:
         
         1. Run the command below on the terminal.
             <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
-        1. Run @:{'common.gameName'} and open the warp record page (tab).
+        1. Run @:{'common.gameName'} and open **Warp** > **View Details**.
         1. URL will be copied and the script exits automatically.
 
 tpCalcPage:
@@ -452,6 +454,7 @@ characterNames:
   boothill: Boothill
   firefly: Firefly
   yunli: Yunli
+  jade: Jade
 
 materialCategories:
   exp: EXP Materials
@@ -834,6 +837,11 @@ skillTitles:
     skill: Bladeborne Quake
     ultimate: Earthbind, Etherbreak
     talent: Flashforge
+  jade:
+    basicAttack: Lash of Riches
+    skill: Acquisition Surety
+    ultimate: Vow of the Deep
+    talent: Fang of Flare Flaying
 
 lightConeNames:
   arrows: Arrows
@@ -938,6 +946,8 @@ lightConeNames:
   whereabouts-should-dreams-rest: Whereabouts Should Dreams Rest
   eternal-calculus: Eternal Calculus
   dance-at-sunset: Dance at Sunset
+  yet-hope-is-priceless: Yet Hope Is Priceless
+  after-the-charmony-fall: After the Charmony Fall
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1264,6 +1274,16 @@ lightConeSkillDescriptions:
     DMG by <36%>. After the wearer uses Ultimate, receives 1 stack of Firedance,
     lasting for 2 turns and stacking up to 2 time(s). Each stack of Firedance
     increases the DMG dealt by the wearer's follow-up attack by <36%>.
+  yet-hope-is-priceless: >-
+    Increases the wearer's CRIT Rate by <16%>. While the wearer is in battle,
+    for every 20% CRIT DMG that exceeds 120%, the DMG dealt by follow-up attack
+    increases by <12%>. This effect can stack up to 4 time(s). When the battle
+    starts or after the wearer uses their Basic ATK, enables the DMG dealt by
+    Ultimate or follow-up attack to ignore <20%> of the target's DEF, lasting
+    for 2 turn(s).
+  after-the-charmony-fall: >-
+    Increases the wearer's Break Effect by <28%>. After the wearer uses
+    Ultimate, increases SPD by <8%>, lasting for 2 turn(s).
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
