@@ -81,7 +81,7 @@ export class GachaLogRequest {
   }
 
   private async sendGachaLogRequest(warpType: string, lastId: string | null): Promise<Warp[]> {
-    const endpoint = "https://api-os-takumi.mihoyo.com/common/gacha_record/api/getGachaLog"
+    const endpoint = "https://public-operation-hkrpg-sg.hoyoverse.com/common/gacha_record/api/getGachaLog"
     const params = {
       authkey_ver: "1",
       sign_type: "2",
