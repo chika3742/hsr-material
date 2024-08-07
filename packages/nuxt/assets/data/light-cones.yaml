@@ -814,3 +814,19 @@
   materials:
     primary: group:lcs009
     common: group:com006
+- id: yet-hope-is-priceless
+  yomi: サレドキボウノメイハムカ
+  $nameJA: されど希望の銘は無価
+  path: erudition
+  rarity: 5
+  materials:
+    primary: group:lcs012
+    common: group:com007
+- id: after-the-charmony-fall
+  yomi: チョウワガチンモクシタアト
+  $nameJA: 調和が沈黙した後
+  path: erudition
+  rarity: 4
+  materials:
+    primary: group:lcs012
+    common: group:com008

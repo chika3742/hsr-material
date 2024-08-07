@@ -459,6 +459,7 @@ characterNames:
   boothill: ブートヒル
   firefly: ホタル
   yunli: 雲璃
+  jade: ジェイド
 
 materialCategories:
   exp: 経験値素材
@@ -841,6 +842,11 @@ skillTitles:
     skill: 天威煌々
     ultimate: 天を揺るがす大地の剣
     talent: 閃熔
+  jade:
+    basicAttack: むしり取る鞭打ち
+    skill: ほしいままに呑み込む買収
+    ultimate: 欲望の淵での地獄の契り
+    talent: 富を削ぐ毒牙
 
 lightConeNames:
   arrows: 矢じり
@@ -945,6 +951,8 @@ lightConeNames:
   whereabouts-should-dreams-rest: 夢が帰り着く場所
   eternal-calculus: 絶え間ない演算
   dance-at-sunset: 夕日に舞う
+  yet-hope-is-priceless: されど希望の銘は無価
+  after-the-charmony-fall: 調和が沈黙した後
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1081,6 +1089,9 @@ lightConeSkillDescriptions:
     装備キャラの攻撃力+<8%>。攻撃を行った後、命中した敵1体につき、さらに攻撃力+<4%>。この効果は最大で5回累積でき、次の攻撃を行った後まで継続。攻撃が3体以上の敵に命中した場合、自身の速度+<8%>、1ターン継続。
   dance-at-sunset: >-
     装備キャラの攻撃を受ける確率が大アップし、会心ダメージ+<36%>。装備キャラが必殺技を発動した後、「炎舞」を1層獲得する、2ターン継続、最大で2層累積できる。「炎舞」1層につき、装備キャラの追加攻撃ダメージ+<36%>。
+  yet-hope-is-priceless: >-
+    装備キャラの会心率+<16%>。戦闘中、装備キャラの会心ダメージが120%を超えた時、超過した会心ダメージ20%につき、追加攻撃ダメージ+<12%>。この効果は最大で4層累積できる。戦闘開始時および装備キャラが通常攻撃を行った後、追加攻撃ダメージと必殺技によるダメージがターゲットの防御力を<20%>無視する、2ターン継続。
+  after-the-charmony-fall: 装備キャラの撃破特効+<28%>。装備キャラが必殺技を発動した後、速度+<8%>、2ターン継続。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

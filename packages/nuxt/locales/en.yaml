@@ -452,6 +452,7 @@ characterNames:
   boothill: Boothill
   firefly: Firefly
   yunli: Yunli
+  jade: Jade
 
 materialCategories:
   exp: EXP Materials
@@ -834,6 +835,11 @@ skillTitles:
     skill: Bladeborne Quake
     ultimate: Earthbind, Etherbreak
     talent: Flashforge
+  jade:
+    basicAttack: Lash of Riches
+    skill: Acquisition Surety
+    ultimate: Vow of the Deep
+    talent: Fang of Flare Flaying
 
 lightConeNames:
   arrows: Arrows
@@ -938,6 +944,8 @@ lightConeNames:
   whereabouts-should-dreams-rest: Whereabouts Should Dreams Rest
   eternal-calculus: Eternal Calculus
   dance-at-sunset: Dance at Sunset
+  yet-hope-is-priceless: Yet Hope Is Priceless
+  after-the-charmony-fall: After the Charmony Fall
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1264,6 +1272,16 @@ lightConeSkillDescriptions:
     DMG by <36%>. After the wearer uses Ultimate, receives 1 stack of Firedance,
     lasting for 2 turns and stacking up to 2 time(s). Each stack of Firedance
     increases the DMG dealt by the wearer's follow-up attack by <36%>.
+  yet-hope-is-priceless: >-
+    Increases the wearer's CRIT Rate by <16%>. While the wearer is in battle,
+    for every 20% CRIT DMG that exceeds 120%, the DMG dealt by follow-up attack
+    increases by <12%>. This effect can stack up to 4 time(s). When the battle
+    starts or after the wearer uses their Basic ATK, enables the DMG dealt by
+    Ultimate or follow-up attack to ignore <20%> of the target's DEF, lasting
+    for 2 turn(s).
+  after-the-charmony-fall: >-
+    Increases the wearer's Break Effect by <28%>. After the wearer uses
+    Ultimate, increases SPD by <8%>, lasting for 2 turn(s).
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

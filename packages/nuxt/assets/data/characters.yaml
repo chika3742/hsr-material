@@ -605,6 +605,17 @@
     skills: group:lcs009
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com008
+- id: jade
+  $nameJA: ジェイド
+  yomi: ジェイド
+  rarity: 5
+  path: erudition
+  combatType: quantum
+  materials:
+    ascension: id:dream-flamer
+    skills: group:lcs012
+    skillsAdvanced: id:lost-echo-of-the-shared-wish
+    common: group:com007
 - id: yunli
   $nameJA: 雲璃
   yomi: ウンリ
