@@ -231,7 +231,7 @@ warpsPage:
       contents: |
         ※Windows 11でのみ動作確認済み。
         
-        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を選択します。
+        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」を選択します。
         1. WindowsキーとRキーを同時に押し、「ファイル名を指定して実行」を開きます。
         1. 以下のコマンドをコピー＆ペーストし、Enterキーを押します。
             <div id="cmd-win" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline}</code></pre></div>
@@ -249,15 +249,17 @@ warpsPage:
         1. 「このWebサイトは構成プロファイルを・・・」と表示されるので、「許可」をタップします。
         1. 本体設定を開き、一般 ＞ VPNとデバイス管理 ＞ Stream Generated CA 〜 ＞ 右上の「インストール」＞ パスコード入力 ＞ 右上の「インストール」 ＞ インストール の順にタップします。 
         1. アプリに戻ると「For iOS 10.3+ and iOS 11・・・」と表示されることがありますが、青の「I've trusted」をタップします。
+        1. アプリトップ画面下部にある緑色の「Sniff Mode」をタップします。
+        1. 「Switch to Whitelist Mode」のスイッチをオンにし、「Whitelist Settings」をタップします。
+        1. 「Input domain to enable sniffing」と書かれたテキストボックスに「public-operation-hkrpg-sg.hoyoverse.com」と入力（コピペ）し、右上の「Apply」をタップします。
         
         ### URL取得
         
-        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」を開きます。
         1. Streamアプリを開き、「Sniff Now」をタップします。
-        1. @:{'common.gameName'}に戻り、「跳躍履歴」をタップします。
+        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を開きます。（「跳躍履歴」をタップした地点でSniffが開始されていれば構いません）
         1. Streamアプリに戻り、「Stop Sniffing」をタップし、右の「Sniff History」をタップします。
-        1. 一番上の時刻のものをタップし、「GET https://api-os-takumi.mihoyo.com」で始まるものを探し、タップします。
-        1. 上部の「Request」をタップし、「REQUEST LINE」の下の部分をタップし、「Copy Url」をタップするとURLをコピーできます。
+        1. 一番上の時間をタップし、その中で一番上の項目をタップします。
+        1. 上部の「Request」タブをタップし、「REQUEST LINE」の下の部分をタップし、「Copy Url」をタップするとURLをコピーできます。
     macos:
       title: URL取得方法 (macOS with PlayCover)
       contents: |
@@ -272,8 +274,8 @@ warpsPage:
         
         1. ターミナルで以下のコマンドを実行します。
             <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
-        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を開きます。
-        1. 自動的にURLがコピーされ、自動的にスクリプトが終了します。
+        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」を開きます。
+        1. 自動的にURLがコピーされ、スクリプトが終了します。
 
 tpCalcPage:
   baseTime: 基準時間
