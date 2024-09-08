@@ -13,7 +13,7 @@ export const onRequest: PagesFunction = async (context) => {
     })
   }
 
-  const endpoint = "https://api-os-takumi.mihoyo.com/common/gacha_record/api/getGachaLog"
+  const endpoint = "https://public-operation-hkrpg-sg.hoyoverse.com/common/gacha_record/api/getGachaLog"
   const params = {
     authkey_ver: "1",
     sign_type: "2",
