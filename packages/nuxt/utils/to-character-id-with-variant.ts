@@ -19,6 +19,6 @@ export const toCharacterId = (characterIdWithVariant: CharacterIdWithVariant): s
  * Extracts variant from characterIdWithVariant. Returns null if no variant.
  */
 export const toVariant = (characterIdWithVariant: CharacterIdWithVariant): Path | null => {
-  const variant = characterIdWithVariant.split("_")[1]
+  const variant = characterIdWithVariant.split("_").slice(1).join("_")
   return variant ? variant as Path : null
 }

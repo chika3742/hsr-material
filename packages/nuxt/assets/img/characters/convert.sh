@@ -1,5 +1,5 @@
 for file in *_small.png; do
-    convert "$file" -crop 175x175+0+0 "$file"
+    magick convert "$file" -crop 175x175+0+0 "$file"
 done
 
 for file in *.png; do
