@@ -830,3 +830,19 @@
   materials:
     primary: group:lcs012
     common: group:com008
+- id: poised-to-bloom
+  yomi: ウツクシキハナヨイマサカン
+  $nameJA: 美しき華よ今咲かん
+  path: harmony
+  rarity: 4
+  materials:
+    primary: group:lcs010
+    common: group:com007
+- id: those-many-springs
+  yomi: イクドメカノハル
+  $nameJA: 幾度目かの春
+  path: nihility
+  rarity: 5
+  materials:
+    primary: group:lcs008
+    common: group:com005

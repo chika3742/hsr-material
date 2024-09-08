@@ -627,3 +627,14 @@
     skills: group:lcs009
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
+- id: jiaoqiu
+  $nameJA: 椒丘
+  yomi: ショウキュウ
+  rarity: 5
+  path: nihility
+  combatType: fire
+  materials:
+    ascension: id:raging-heart
+    skills: group:lcs008
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com005
