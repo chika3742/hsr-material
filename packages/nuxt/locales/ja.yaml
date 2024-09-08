@@ -462,6 +462,7 @@ characterNames:
   firefly: ホタル
   yunli: 雲璃
   jade: ジェイド
+  jiaoqiu: 椒丘
 
 materialCategories:
   exp: 経験値素材
@@ -849,6 +850,11 @@ skillTitles:
     skill: ほしいままに呑み込む買収
     ultimate: 欲望の淵での地獄の契り
     talent: 富を削ぐ毒牙
+  jiaoqiu:
+    basicAttack: 心火計
+    skill: 燎原奔襲
+    ultimate: 炊陣妙法、詭正相生
+    talent: 詭正転変、至微精妙
 
 lightConeNames:
   arrows: 矢じり
@@ -955,6 +961,8 @@ lightConeNames:
   dance-at-sunset: 夕日に舞う
   yet-hope-is-priceless: されど希望の銘は無価
   after-the-charmony-fall: 調和が沈黙した後
+  poised-to-bloom: 美しき華よ今咲かん
+  those-many-springs: 幾度目かの春
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1094,6 +1102,14 @@ lightConeSkillDescriptions:
   yet-hope-is-priceless: >-
     装備キャラの会心率+<16%>。戦闘中、装備キャラの会心ダメージが120%を超えた時、超過した会心ダメージ20%につき、追加攻撃ダメージ+<12%>。この効果は最大で4層累積できる。戦闘開始時および装備キャラが通常攻撃を行った後、追加攻撃ダメージと必殺技によるダメージがターゲットの防御力を<20%>無視する、2ターン継続。
   after-the-charmony-fall: 装備キャラの撃破特効+<28%>。装備キャラが必殺技を発動した後、速度+<8%>、2ターン継続。
+  poised-to-bloom: >-
+    装備キャラの攻撃力+<16%>。戦闘に入る時、パーティに同じ運命の味方が2名以上いる場合、それらの味方の会心ダメージ+<16%>。同系統のスキルは重ね掛け不可。
+  those-many-springs: >-
+    装備キャラの効果命中+<60%>。装備キャラが通常攻撃、戦闘スキル、または必殺技を発動して敵に攻撃した後、60%の基礎確率で敵を「甲卸」状態にする。
+
+    「甲卸」状態の敵の受けるダメージ+<10%>、2ターン継続。ターゲットが装備キャラによって持続ダメージ系デバフを付与されている場合、60%の基礎確率で装備キャラが付与した「甲卸」状態を「窮寇」状態に強化し、さらに敵の受けるダメージ+<14%>、2ターン継続。
+
+    敵に「窮寇」状態がある時、装備キャラはその敵に「甲卸」状態を付与できない。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
