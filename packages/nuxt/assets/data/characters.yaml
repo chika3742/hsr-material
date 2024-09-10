@@ -638,3 +638,25 @@
     skills: group:lcs008
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
+- id: feixiao
+  $nameJA: 飛霄
+  yomi: ヒショウ
+  rarity: 5
+  path: the_hunt
+  combatType: wind
+  materials:
+    ascension: id:a-glass-of-the-besotted-era
+    skills: group:zzP0
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com006
+- id: moze
+  $nameJA: モゼ
+  yomi: モゼ
+  rarity: 4
+  path: the_hunt
+  combatType: lightning
+  materials:
+    ascension: id:nail-of-the-beast-coffin
+    skills: group:zzP0
+    skillsAdvanced: id:auspice-sliver
+    common: group:com006

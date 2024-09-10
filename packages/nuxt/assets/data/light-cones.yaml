@@ -846,3 +846,11 @@
   materials:
     primary: group:lcs008
     common: group:com005
+- id: i-venture-forth-to-hunt
+  yomi: ワレガユクジュンシュノミチ
+  $nameJA: 我が征く巡狩の道
+  path: the_hunt
+  rarity: 5
+  materials:
+    primary: group:zzP0
+    common: group:com006

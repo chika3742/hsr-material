@@ -463,6 +463,8 @@ characterNames:
   yunli: 雲璃
   jade: ジェイド
   jiaoqiu: 椒丘
+  feixiao: 飛霄
+  moze: モゼ
 
 materialCategories:
   exp: 経験値素材
@@ -571,6 +573,9 @@ materialNames:
   rough-sketch: ラフスケッチ
   dynamic-outlining: 躍動感のある線画
   exquisite-colored-draft: 見事なカラー原画
+  a-glass-of-the-besotted-era: 酩酊する時代の一杯
+  nail-of-the-beast-coffin: 獣棺の釘
+  auspice-sliver: 吉光の羽
 
 skillTitles:
   trailblazer:
@@ -855,6 +860,16 @@ skillTitles:
     skill: 燎原奔襲
     ultimate: 炊陣妙法、詭正相生
     talent: 詭正転変、至微精妙
+  feixiao:
+    basicAttack: 閃裂
+    skill: 斧貫
+    ultimate: 大荒滅破砕
+    talent: 雷狩
+  moze:
+    basicAttack: 暗器
+    skill: 急襲する迅羽
+    ultimate: 潜む刃、鋭い影
+    talent: 翼を折りて鋒鋩とす
 
 lightConeNames:
   arrows: 矢じり
@@ -963,6 +978,7 @@ lightConeNames:
   after-the-charmony-fall: 調和が沈黙した後
   poised-to-bloom: 美しき華よ今咲かん
   those-many-springs: 幾度目かの春
+  i-venture-forth-to-hunt: 我が征く巡狩の道
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1110,6 +1126,8 @@ lightConeSkillDescriptions:
     「甲卸」状態の敵の受けるダメージ+<10%>、2ターン継続。ターゲットが装備キャラによって持続ダメージ系デバフを付与されている場合、60%の基礎確率で装備キャラが付与した「甲卸」状態を「窮寇」状態に強化し、さらに敵の受けるダメージ+<14%>、2ターン継続。
 
     敵に「窮寇」状態がある時、装備キャラはその敵に「甲卸」状態を付与できない。
+  i-venture-forth-to-hunt: >-
+    装備キャラの会心率+<15%>。装備キャラが追加攻撃を行う時、「流光」を1層獲得する。「流光」は最大で2層累積できる。「流光」が1層あるごとに、装備キャラの与える必殺技ダメージが敵の防御力を<27%>無視する。装備キャラのターン終了時、「流光」が1層解除される。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
@@ -1148,6 +1166,8 @@ relicSetTitles:
   the-wind-soaring-valorous: 風雲を薙ぎ払う勇烈
   duran-dynasty-of-running-wolves: 奔狼の都藍王朝
   forge-of-the-kalpagni-lantern: 劫火と蓮灯の鋳煉宮
+  lushaka-the-sunken-seas: 海に沈んだルサカ
+  the-wondrous-bananamusement-park: 奇想天外のバナダイス
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -1248,6 +1268,10 @@ relicSetEffects:
       味方が追加攻撃を行う時、装備キャラは「勲功」を1層獲得する、最大で<5>層累積できる。「勲功」1層につき、装備キャラの追加攻撃ダメージ+<5%>。「勲功」が<5>層に達する時、さらに装備キャラの会心ダメージ+<25%>。
   forge-of-the-kalpagni-lantern:
     2pc: 装備キャラの速度+<6%>。装備キャラの攻撃が炎属性弱点を持つ敵に命中する時、撃破特効+<40%>、<1>ターン継続。
+  lushaka-the-sunken-seas:
+    2pc: 装備キャラのEP回復効率+<5%>。装備キャラがパーティの1枠目のキャラでない場合、1枠目のキャラの攻撃力+<12%>。
+  the-wondrous-bananamusement-park:
+    2pc: 装備キャラの会心ダメージ+<16%>。装備キャラが召喚したターゲットがフィールド上にいる場合、さらに会心ダメージ+<32%>。
 
 relicPieceNames:
   bands-polarized-sunglasses: バンドの偏光サングラス
@@ -1362,5 +1386,9 @@ relicPieceNames:
   durans-mechabeast-bridle: 都藍の器獣の手綱とくつわ
   forges-lotus-lantern-wick: 鋳煉宮の蓮花ランプの芯
   forges-heavenly-flamewheel-silk: 鋳煉宮の焔輪天織
+  lushakas-waterscape: ルサカの水に朽ちた蒼都
+  lushakas-twinlanes: ルサカの双生航路
+  bananamusement-parks-bananaxis-plaza: バナダイスの中央広場
+  bananamusement-parks-memetic-cables: バナダイスのミームケーブル
 
 # eof (replace regex marker)
