@@ -456,6 +456,8 @@ characterNames:
   yunli: Yunli
   jade: Jade
   jiaoqiu: Jiaoqiu
+  feixiao: Feixiao
+  moze: Moze
 
 materialCategories:
   exp: EXP Materials
@@ -564,6 +566,9 @@ materialNames:
   rough-sketch: Rough Sketch
   dynamic-outlining: Dynamic Outlining
   exquisite-colored-draft: Exquisite Colored Draft
+  a-glass-of-the-besotted-era: A Glass of the Besotted Era
+  nail-of-the-beast-coffin: Nail of the Beast Coffin
+  auspice-sliver: Auspice Sliver
 
 skillTitles:
   trailblazer:
@@ -848,6 +853,16 @@ skillTitles:
     skill: Scorch Onslaught
     ultimate: Pyrograph Arcanum
     talent: Quartet Finesse, Octave Finery
+  feixiao:
+    basicAttack: Boltsunder
+    skill: Waraxe
+    ultimate: Terrasplit
+    talent: Thunderhunt
+  moze:
+    basicAttack: Hurlthorn
+    skill: Fleetwinged Raid
+    ultimate: Dash In, Gash Out
+    talent: Cascading Featherblade
 
 lightConeNames:
   arrows: Arrows
@@ -956,6 +971,7 @@ lightConeNames:
   after-the-charmony-fall: After the Charmony Fall
   poised-to-bloom: Poised to Bloom
   those-many-springs: Those Many Springs
+  i-venture-forth-to-hunt: I Venture Forth to Hunt
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1306,6 +1322,12 @@ lightConeSkillDescriptions:
     "Cornered" state, which additionally increases the DMG the enemy target
     receives by <14%>, lasting for 2 turn(s). During this period, the wearer
     cannot inflict "Unarmored" on the target.
+  i-venture-forth-to-hunt: >-
+    Increases the wearer's CRIT Rate by <15%>. When the wearer launches a
+    follow-up attack, gains 1 stack of "Luminflux," stacking up to 2 time(s).
+    Each stack of "Luminflux" enables the Ultimate DMG dealt by the wearer to
+    ignore <27%> of the target's DEF. When the wearer's turn ends, removes 1
+    stack of "Luminflux."
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
@@ -1344,6 +1366,8 @@ relicSetTitles:
   the-wind-soaring-valorous: The Wind-Soaring Valorous
   duran-dynasty-of-running-wolves: Duran, Dynasty of Running Wolves
   forge-of-the-kalpagni-lantern: Forge of the Kalpagni Lantern
+  lushaka-the-sunken-seas: Lushaka, the Sunken Seas
+  the-wondrous-bananamusement-park: The Wondrous BananAmusement Park
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -1527,6 +1551,15 @@ relicSetEffects:
       Increases the wearer's SPD by <6%>. When the wearer hits an enemy target
       that has Fire Weakness, the wearer's Break Effect increases by <40%>,
       lasting for <1> turn(s).
+  lushaka-the-sunken-seas:
+    2pc: >-
+      Increases the wearer's Energy Regeneration Rate by <5%>. If the wearer is
+      not the first character in the team lineup, then increases the ATK of the
+      first character in the team lineup by <12%>.
+  the-wondrous-bananamusement-park:
+    2pc: >-
+      Increases the wearer's CRIT DMG by <16%>. When a target summoned by the
+      wearer is on the field, CRIT DMG additionally increases by <32%>.
 
 relicPieceNames:
   bands-polarized-sunglasses: Band's Polarized Sunglasses
@@ -1641,5 +1674,9 @@ relicPieceNames:
   durans-mechabeast-bridle: Duran's Mechabeast Bridle
   forges-lotus-lantern-wick: Forge's Lotus Lantern Wick
   forges-heavenly-flamewheel-silk: Forge's Heavenly Flamewheel Silk
+  lushakas-waterscape: Lushaka's Waterscape
+  lushakas-twinlanes: Lushaka's Twinlanes
+  bananamusement-parks-bananaxis-plaza: BananAmusement Park's BananAxis Plaza
+  bananamusement-parks-memetic-cables: BananAmusement Park's Memetic Cables
 
 # eof (replace regex marker)
