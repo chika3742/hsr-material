@@ -458,6 +458,7 @@ characterNames:
   jiaoqiu: Jiaoqiu
   feixiao: Feixiao
   moze: Moze
+  lingsha: Lingsha
 
 materialCategories:
   exp: EXP Materials
@@ -863,6 +864,11 @@ skillTitles:
     skill: Fleetwinged Raid
     ultimate: Dash In, Gash Out
     talent: Cascading Featherblade
+  lingsha:
+    basicAttack: Votive Incense
+    skill: Smoke and Splendor
+    ultimate: Dripping Mistscape
+    talent: Mistdance Manifest
 
 lightConeNames:
   arrows: Arrows
@@ -972,6 +978,7 @@ lightConeNames:
   poised-to-bloom: Poised to Bloom
   those-many-springs: Those Many Springs
   i-venture-forth-to-hunt: I Venture Forth to Hunt
+  scent-alone-stays-true: Scent Alone Stays True
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1328,6 +1335,12 @@ lightConeSkillDescriptions:
     Each stack of "Luminflux" enables the Ultimate DMG dealt by the wearer to
     ignore <27%> of the target's DEF. When the wearer's turn ends, removes 1
     stack of "Luminflux."
+  scent-alone-stays-true: >-
+    Increases the wearer's Break Effect by <60%>. After the wearer uses Ultimate
+    to attack enemy targets, inflicts the targets with the "Woefree" state,
+    lasting for 2 turn(s). While in "Woefree," enemy targets take <10%>
+    increased DMG. The effect of increasing DMG taken is additionally boosted by
+    <8%> if the wearer's current Break Effect is 150% or higher.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
