@@ -465,6 +465,7 @@ characterNames:
   jiaoqiu: 椒丘
   feixiao: 飛霄
   moze: モゼ
+  lingsha: 霊砂
 
 materialCategories:
   exp: 経験値素材
@@ -870,6 +871,11 @@ skillTitles:
     skill: 急襲する迅羽
     ultimate: 潜む刃、鋭い影
     talent: 翼を折りて鋒鋩とす
+  lingsha:
+    basicAttack: 供香
+    skill: 彩煙
+    ultimate: 彩雲の如く巡る霞
+    talent: 紅霧より出づる煙獣
 
 lightConeNames:
   arrows: 矢じり
@@ -979,6 +985,7 @@ lightConeNames:
   poised-to-bloom: 美しき華よ今咲かん
   those-many-springs: 幾度目かの春
   i-venture-forth-to-hunt: 我が征く巡狩の道
+  scent-alone-stays-true: 昔日の香りは今も猶
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1128,6 +1135,8 @@ lightConeSkillDescriptions:
     敵に「窮寇」状態がある時、装備キャラはその敵に「甲卸」状態を付与できない。
   i-venture-forth-to-hunt: >-
     装備キャラの会心率+<15%>。装備キャラが追加攻撃を行う時、「流光」を1層獲得する。「流光」は最大で2層累積できる。「流光」が1層あるごとに、装備キャラの与える必殺技ダメージが敵の防御力を<27%>無視する。装備キャラのターン終了時、「流光」が1層解除される。
+  scent-alone-stays-true: >-
+    装備キャラの撃破特効+<60%>。装備キャラが必殺技を発動して敵を攻撃した後、その敵を「忘憂」状態にする、2ターン継続。「忘憂」状態の敵が受けるダメージ+<10%>。装備キャラの撃破特効が150%以上の場合、敵の受けるダメージアップ効果がさらに+<8%>。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド

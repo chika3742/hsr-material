@@ -854,3 +854,11 @@
   materials:
     primary: group:zzP0
     common: group:com006
+- id: scent-alone-stays-true
+  yomi: セキジツノカオリハイマモナオ
+  $nameJA: 昔日の香りは今も猶
+  path: abundance
+  rarity: 5
+  materials:
+    primary: group:tree-seeds
+    common: group:com005

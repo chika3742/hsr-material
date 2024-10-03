@@ -660,3 +660,14 @@
     skills: group:zzP0
     skillsAdvanced: id:auspice-sliver
     common: group:com006
+- id: lingsha
+  $nameJA: 霊砂
+  yomi: レイサ
+  rarity: 5
+  path: abundance
+  combatType: fire
+  materials:
+    ascension: id:raging-heart
+    skills: group:tree-seeds
+    skillsAdvanced: id:auspice-sliver
+    common: group:com005
