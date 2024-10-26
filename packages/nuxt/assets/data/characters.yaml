@@ -671,3 +671,14 @@
     skills: group:tree-seeds
     skillsAdvanced: id:auspice-sliver
     common: group:com005
+- id: rappa
+  $nameJA: 乱破
+  yomi: ランハ
+  rarity: 5
+  path: erudition
+  combatType: imaginary
+  materials:
+    ascension: id:chordal-mirage
+    skills: group:lcs012
+    skillsAdvanced: id:lost-echo-of-the-shared-wish
+    common: group:com007

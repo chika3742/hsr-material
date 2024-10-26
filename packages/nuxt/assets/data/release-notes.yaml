@@ -1,5 +1,14 @@
 # コピー用改行
 
+- date: 2024/10/26
+  funcVersion: 1.3.6
+  dataVersion: 2.6.0
+  isMajor: false
+  content: |
+    ### データ追加
+    - 乱破
+    - 光円錐「忍法帖・繚乱破魔」
+
 - date: 2024/10/16
   funcVersion: 1.3.6
   dataVersion: 2.5.2

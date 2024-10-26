@@ -862,3 +862,11 @@
   materials:
     primary: group:tree-seeds
     common: group:com005
+- id: ninjutsu-inscription-dazzling-evilbreaker
+  yomi: ニンポウチョウリョウランハマ
+  $nameJA: 忍法帖・繚乱破魔
+  path: erudition
+  rarity: 5
+  materials:
+    primary: group:lcs012
+    common: group:com007

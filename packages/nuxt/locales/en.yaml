@@ -459,6 +459,7 @@ characterNames:
   feixiao: Feixiao
   moze: Moze
   lingsha: Lingsha
+  rappa: Rappa
 
 materialCategories:
   exp: EXP Materials
@@ -570,6 +571,7 @@ materialNames:
   a-glass-of-the-besotted-era: A Glass of the Besotted Era
   nail-of-the-beast-coffin: Nail of the Beast Coffin
   auspice-sliver: Auspice Sliver
+  chordal-mirage: Chordal Mirage
 
 skillTitles:
   trailblazer:
@@ -869,6 +871,11 @@ skillTitles:
     skill: Smoke and Splendor
     ultimate: Dripping Mistscape
     talent: Mistdance Manifest
+  rappa:
+    basicAttack: "Ninjutsu: Rise Above Tumbles"
+    skill: "Ninja Strike: Rooted Resolute"
+    ultimate: "Nindō Supreme: Aishiteru"
+    talent: "Ninja Tech: Endurance Gauge"
 
 lightConeNames:
   arrows: Arrows
@@ -979,6 +986,7 @@ lightConeNames:
   those-many-springs: Those Many Springs
   i-venture-forth-to-hunt: I Venture Forth to Hunt
   scent-alone-stays-true: Scent Alone Stays True
+  ninjutsu-inscription-dazzling-evilbreaker: "Ninjutsu Inscription: Dazzling Evilbreaker"
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1341,6 +1349,11 @@ lightConeSkillDescriptions:
     lasting for 2 turn(s). While in "Woefree," enemy targets take <10%>
     increased DMG. The effect of increasing DMG taken is additionally boosted by
     <8%> if the wearer's current Break Effect is 150% or higher.
+  ninjutsu-inscription-dazzling-evilbreaker: >-
+    Increases the wearer's Break Effect by <60%>. When entering battle,
+    immediately regenerates <30> Energy. After the wearer uses Ultimate, obtains
+    "Raiton." After using 2 Basic ATKs, advances the wearer's action by <50%>
+    and removes "Raiton." After the wearer uses Ultimate, resets "Raiton."
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
