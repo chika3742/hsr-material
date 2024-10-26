@@ -466,6 +466,7 @@ characterNames:
   feixiao: 飛霄
   moze: モゼ
   lingsha: 霊砂
+  rappa: 乱破
 
 materialCategories:
   exp: 経験値素材
@@ -577,6 +578,7 @@ materialNames:
   a-glass-of-the-besotted-era: 酩酊する時代の一杯
   nail-of-the-beast-coffin: 獣棺の釘
   auspice-sliver: 吉光の羽
+  chordal-mirage: 響き合う幻景
 
 skillTitles:
   trailblazer:
@@ -876,6 +878,11 @@ skillTitles:
     skill: 彩煙
     ultimate: 彩雲の如く巡る霞
     talent: 紅霧より出づる煙獣
+  rappa:
+    basicAttack: 忍法・七転八起
+    skill: 忍切・初志貫徹
+    ultimate: 忍道・極・愛死天流
+    talent: シノビ・サイエンス・堪忍袋
 
 lightConeNames:
   arrows: 矢じり
@@ -986,6 +993,7 @@ lightConeNames:
   those-many-springs: 幾度目かの春
   i-venture-forth-to-hunt: 我が征く巡狩の道
   scent-alone-stays-true: 昔日の香りは今も猶
+  ninjutsu-inscription-dazzling-evilbreaker: 忍法帖・繚乱破魔
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1137,6 +1145,8 @@ lightConeSkillDescriptions:
     装備キャラの会心率+<15%>。装備キャラが追加攻撃を行う時、「流光」を1層獲得する。「流光」は最大で2層累積できる。「流光」が1層あるごとに、装備キャラの与える必殺技ダメージが敵の防御力を<27%>無視する。装備キャラのターン終了時、「流光」が1層解除される。
   scent-alone-stays-true: >-
     装備キャラの撃破特効+<60%>。装備キャラが必殺技を発動して敵を攻撃した後、その敵を「忘憂」状態にする、2ターン継続。「忘憂」状態の敵が受けるダメージ+<10%>。装備キャラの撃破特効が150%以上の場合、敵の受けるダメージアップ効果がさらに+<8%>。
+  ninjutsu-inscription-dazzling-evilbreaker: >-
+    装備キャラの撃破特効+<60%>。戦闘に入る時EPを<30>回復し、装備キャラが必殺技を発動した後「雷遁」を獲得する。通常攻撃を2回行った後、「雷遁」の効果を解除し、装備キャラの行動順を<50%>早める。なお、装備キャラが必殺技を発動すると「雷遁」はリセットされる。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
