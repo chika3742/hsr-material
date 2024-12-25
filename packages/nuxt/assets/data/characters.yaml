@@ -682,3 +682,25 @@
     skills: group:lcs012
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com007
+- id: sunday
+  $nameJA: サンデー
+  yomi: サンデー
+  rarity: 5
+  path: harmony
+  combatType: imaginary
+  materials:
+    ascension: id:chordal-mirage
+    skills: group:lcs010
+    skillsAdvanced: id:lost-echo-of-the-shared-wish
+    common: group:com008
+- id: fugue
+  $nameJA: 帰忘の流離人
+  yomi: キボウノサスライビト
+  rarity: 5
+  path: nihility
+  combatType: fire
+  materials:
+    ascension: id:searing-steel-blade
+    skills: group:lcs008
+    skillsAdvanced: id:regret-of-infinite-ochema
+    common: group:com005
