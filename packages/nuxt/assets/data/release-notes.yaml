@@ -1,5 +1,15 @@
 # コピー用改行
 
+- date: 2024/12/25
+  funcVersion: 1.3.6
+  dataVersion: 2.7.0
+  isMajor: false
+  content: |
+    ### データ追加
+    - サンデー
+    - 帰忘の流離人
+    - 光円錐「大地より天を目指して」「長途はやがて帰途へと続く」
+
 - date: 2024/10/26
   funcVersion: 1.3.6
   dataVersion: 2.6.0
