@@ -870,3 +870,19 @@
   materials:
     primary: group:lcs012
     common: group:com007
+- id: a-grounded-ascent
+  yomi: ダイチヨリテンヲメザシテ
+  $nameJA: 大地より天を目指して
+  path: harmony
+  rarity: 5
+  materials:
+    primary: group:lcs010
+    common: group:com008
+- id: long-road-leads-home
+  yomi: チョウトハヤガテキトヘトツヅク
+  $nameJA: 長途はやがて帰途へと続く
+  path: nihility
+  rarity: 5
+  materials:
+    primary: group:lcs008
+    common: group:com005

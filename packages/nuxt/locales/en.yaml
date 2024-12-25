@@ -460,6 +460,8 @@ characterNames:
   moze: Moze
   lingsha: Lingsha
   rappa: Rappa
+  sunday: Sunday
+  fugue: Fugue
 
 materialCategories:
   exp: EXP Materials
@@ -876,6 +878,16 @@ skillTitles:
     skill: "Ninja Strike: Rooted Resolute"
     ultimate: "Nindō Supreme: Aishiteru"
     talent: "Ninja Tech: Endurance Gauge"
+  sunday:
+    basicAttack: Gleaming Admonition
+    skill: Benison of Paper and Rites
+    ultimate: Ode to Caress and Cicatrix
+    talent: The Sorrowing Body
+  fugue:
+    basicAttack: Radiant Streak
+    skill: Virtue Beckons Bliss
+    ultimate: Solar Splendor Shines Upon All
+    talent: Fortune Follows Where Virtue Spreads
 
 lightConeNames:
   arrows: Arrows
@@ -987,6 +999,8 @@ lightConeNames:
   i-venture-forth-to-hunt: I Venture Forth to Hunt
   scent-alone-stays-true: Scent Alone Stays True
   ninjutsu-inscription-dazzling-evilbreaker: "Ninjutsu Inscription: Dazzling Evilbreaker"
+  a-grounded-ascent: A Grounded Ascent
+  long-road-leads-home: Long Road Leads Home
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1354,6 +1368,17 @@ lightConeSkillDescriptions:
     immediately regenerates <30> Energy. After the wearer uses Ultimate, obtains
     "Raiton." After using 2 Basic ATKs, advances the wearer's action by <50%>
     and removes "Raiton." After the wearer uses Ultimate, resets "Raiton."
+  a-grounded-ascent: >-
+    After the wearer uses Skill or Ultimate on one ally character, the wearer
+    regenerates <6> Energy and the ability's target receives 1 stack of "Hymn"
+    for 3 turn(s), stacking up to 3 time(s). Each stack of "Hymn" increases its
+    holder's DMG dealt by <15%>. After every 2 instance(s) of Skill or Ultimate
+    the wearer uses on one ally character, recovers 1 Skill Point.
+  long-road-leads-home: >-
+    Increases the wearer's Break Effect by <60%>. When an enemy target's
+    Weakness gets broken, there is a 100% base chance to inflict the "Charring"
+    state on it, which increases its Break DMG taken by <18%>, lasting for 2
+    turn(s). This effect can stack 2 time(s).
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
