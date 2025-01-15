@@ -886,3 +886,11 @@
   materials:
     primary: group:lcs008
     common: group:com005
+- id: into-the-unreachable-veil
+  yomi: フレテハナラヌリョウイキヘ
+  $nameJA: 触れてはならぬ領域へ
+  path: erudition
+  rarity: 5
+  materials:
+    primary: group:lcs012
+    common: group:com002

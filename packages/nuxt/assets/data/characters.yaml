@@ -704,3 +704,14 @@
     skills: group:lcs008
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
+- id: the-herta
+  $nameJA: マダム・ヘルタ
+  yomi: マダムヘルタ
+  rarity: 5
+  path: erudition
+  combatType: ice
+  materials:
+    ascension: id:dream-fridge
+    skills: group:lcs012
+    skillsAdvanced: id:auspice-sliver
+    common: group:com002
