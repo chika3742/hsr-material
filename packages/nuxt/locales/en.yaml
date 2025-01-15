@@ -462,6 +462,7 @@ characterNames:
   rappa: Rappa
   sunday: Sunday
   fugue: Fugue
+  the-herta: The Herta
 
 materialCategories:
   exp: EXP Materials
@@ -888,6 +889,11 @@ skillTitles:
     skill: Virtue Beckons Bliss
     ultimate: Solar Splendor Shines Upon All
     talent: Fortune Follows Where Virtue Spreads
+  the-herta:
+    basicAttack: Did You Get It
+    skill: Big Brain Energy
+    ultimate: Told Ya! Magic Happens
+    talent: Hand Them Over
 
 lightConeNames:
   arrows: Arrows
@@ -1001,6 +1007,7 @@ lightConeNames:
   ninjutsu-inscription-dazzling-evilbreaker: "Ninjutsu Inscription: Dazzling Evilbreaker"
   a-grounded-ascent: A Grounded Ascent
   long-road-leads-home: Long Road Leads Home
+  into-the-unreachable-veil: Into the Unreachable Veil
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1379,6 +1386,11 @@ lightConeSkillDescriptions:
     Weakness gets broken, there is a 100% base chance to inflict the "Charring"
     state on it, which increases its Break DMG taken by <18%>, lasting for 2
     turn(s). This effect can stack 2 time(s).
+  into-the-unreachable-veil: >-
+    Increases the wearer's CRIT Rate by <12%>. When the wearer uses Ultimate,
+    increases the Skill and Ultimate DMG dealt by the wearer by <60%>, lasting
+    for 3 turn(s). After the wearer uses Ultimate, if this instance of Ultimate
+    consumed 140 or more Energy, recovers 1 Skill Point.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

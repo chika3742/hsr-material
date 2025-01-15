@@ -469,6 +469,7 @@ characterNames:
   rappa: 乱破
   sunday: サンデー
   fugue: 帰忘の流離人
+  the-herta: マダム・ヘルタ
 
 materialCategories:
   exp: 経験値素材
@@ -895,6 +896,11 @@ skillTitles:
     skill: 義を有せば吉兆を招く
     ultimate: 極陽は遍く世を照らす
     talent: 善満ちる所福来たる
+  the-herta:
+    basicAttack: これでわかった？
+    skill: 視野が狭いよ
+    ultimate: 魔法だって言ったでしょ
+    talent: 私がもらうね
 
 lightConeNames:
   arrows: 矢じり
@@ -1008,6 +1014,7 @@ lightConeNames:
   ninjutsu-inscription-dazzling-evilbreaker: 忍法帖・繚乱破魔
   a-grounded-ascent: 大地より天を目指して
   long-road-leads-home: 長途はやがて帰途へと続く
+  into-the-unreachable-veil: 触れてはならぬ領域へ
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1165,6 +1172,8 @@ lightConeSkillDescriptions:
     装備キャラが味方キャラ単体に戦闘スキル、または必殺技を発動すると、装備キャラはEPを<6>回復し、スキルターゲットは「聖なる詠唱」を1層獲得する、3ターン継続。最大で3層累積できる。「聖なる詠唱」1層につき、所持者の与ダメージ+<15%>。装備キャラが味方キャラ単体に戦闘スキル、または必殺技を2回発動するたびに、SPを1回復する。
   long-road-leads-home: >-
     装備キャラの撃破特効+<60%>。敵が弱点撃破される時、100%の基礎確率で「着火」状態を付与し、敵が受ける弱点撃破ダメージ+<18%>。2ターン継続、最大2層累積できる。
+  into-the-unreachable-veil: >-
+    装備キャラの会心率+<12%>。装備キャラが必殺技を発動する時、装備キャラの戦闘スキルおよび必殺技ダメージ+<60%>、3ターン継続。装備キャラが必殺技を発動した後、その回の必殺技で消費したEPが140以上の場合、SPを1回復する。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
