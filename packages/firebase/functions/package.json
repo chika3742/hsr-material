@@ -22,9 +22,8 @@
     "firebase-functions": "^5.0.0"
   },
   "devDependencies": {
-    "firebase-functions-test": "^3.0.0",
     "typescript": "^5.2.2"
   },
   "private": true,
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "bun@1"
 }
