@@ -2,14 +2,14 @@
   "name": "@hsr-material/functions",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "build:watch": "yarn build --watch",
+    "build": "bun build ./src/index.ts --outfile=./bundle/index.js --target=node --minify",
+    "build:watch": "bun run build --watch",
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
-    "deploy:dev": "yarn dlx firebase-tools deploy -P dev",
-    "deploy:prod": "yarn dlx firebase-tools deploy -P prod",
-    "emulators": "yarn dlx firebase-tools emulators:start --import ./emulators-data --export-on-exit",
+    "deploy:dev": "bunx firebase-tools deploy -P dev",
+    "deploy:prod": "bunx firebase-tools deploy -P prod",
+    "emulators": "bunx firebase-tools emulators:start --import ./emulators-data --export-on-exit",
     "logs": "firebase functions:log"
   },
   "engines": {
@@ -18,8 +18,8 @@
   "main": "lib/index.js",
   "dependencies": {
     "axios": "^1.5.1",
-    "firebase-admin": "^12.0.0",
-    "firebase-functions": "^5.0.0"
+    "firebase-admin": "^13.0.2",
+    "firebase-functions": "^6.2.0"
   },
   "devDependencies": {
     "typescript": "^5.2.2"

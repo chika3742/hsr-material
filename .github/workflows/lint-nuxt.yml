@@ -15,18 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: yarn
-          cache-dependency-path: "**/yarn.lock"
 
-      - run: yarn install
-        env:
-          GITHUB_PACKAGES_TOKEN: ${{ secrets.MMC_PACKAGES_TOKEN }}
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install
 
       - name: Lint
-        run: yarn lint
+        run: bun lint

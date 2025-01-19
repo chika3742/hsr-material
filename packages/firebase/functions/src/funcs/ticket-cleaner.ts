@@ -1,4 +1,4 @@
-import functions, { logger } from "firebase-functions"
+import functions, { logger } from "firebase-functions/v1"
 import { firestoreCollections } from "../lib/firestore-collections.js"
 
 const expiresIn = 1000 * 60 * 30 // 30 minutes

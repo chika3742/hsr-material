@@ -1,4 +1,4 @@
-import functions from "firebase-functions"
+import functions from "firebase-functions/v1"
 import admin from "firebase-admin"
 
 export const onUserDelete = functions.region("asia-northeast1")

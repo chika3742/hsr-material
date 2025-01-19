@@ -1,5 +1,4 @@
 import { HttpsError, onCall } from "firebase-functions/v2/https"
-import { defineInt } from "firebase-functions/params"
 import { getFunctions } from "firebase-admin/functions"
 import { firestoreCollections } from "../lib/firestore-collections.js"
 import type {
@@ -10,11 +9,9 @@ import type { GetWarpHistoryParams } from "../types/get-warp-history-params"
 import { warpHistoryTicketConverter } from "../utils/warp-history-ticket-converter.js"
 import { GachaLogRequest } from "../lib/gacha-log-request.js"
 
-const minInstancesConfig = defineInt("MIN_INSTANCES", { default: 0 })
-
 export const dispatchGetWarpHistory = onCall<DispatchGetWarpHistoryParams, Promise<DispatchGetWarpHistoryResult>>({
   region: "asia-northeast1",
-  minInstances: minInstancesConfig,
+  minInstances: 0,
 }, async ({ app, data }) => {
   if (!app) {
     throw new HttpsError("failed-precondition", "Invalid App Check token.")
