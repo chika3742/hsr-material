@@ -53,6 +53,7 @@ const commonRules = {
   "@typescript-eslint/no-unsafe-member-access": "off",
   "@typescript-eslint/no-explicit-any": "off",
   "@typescript-eslint/no-namespace": "off",
+  "@typescript-eslint/unified-signatures": "off", // for emits in vue components
 }
 
 export default withNuxt(
@@ -68,6 +69,8 @@ export default withNuxt(
       "packages/nuxt/**/generated/**",
       "packages/nuxt/py/**",
       "packages/nuxt/public/**",
+      "**/dist/**",
+      "packages/firebase/functions/bundle/**",
     ],
   },
 ).overrideRules(commonRules)

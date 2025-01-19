@@ -1,11 +1,18 @@
 {
   "private": true,
+  "workspaces": [
+    "packages/nuxt",
+    "packages/firebase/functions",
+    "packages/algolia-sync",
+    "packages/mhy-material-components",
+    "packages/mhy-material-components/playground"
+  ],
   "scripts": {
-    "postinstall": "(cd packages/nuxt; yarn install; yarn postinstall); (cd packages/firebase/functions; yarn install); (cd packages/algolia-sync; yarn install)",
-    "lint": "eslint '**/*.{ts,vue}'"
+    "lint": "eslint .",
+    "build:nuxt": "bun --filter @hsr-material/nuxt generate"
   },
-  "packageManager": "yarn@4.4.0",
   "devDependencies": {
     "eslint": "^9.2.0"
-  }
+  },
+  "packageManager": "bun@1"
 }

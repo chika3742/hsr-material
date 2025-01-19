@@ -28,19 +28,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: corepack enable
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: yarn
-          cache-dependency-path: "**/yarn.lock"
 
-      - run: yarn install
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install
 
       - name: 'Authenticate to Google Cloud'
         id: auth
-        uses: 'google-github-actions/auth@v2'
+        uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: ${{ github.ref_name == env.prod_branch_name && env.wi_provider_prod || env.wi_provider_dev }}
           service_account: ${{ github.ref_name == env.prod_branch_name && env.service_account_prod || env.service_account_dev }}

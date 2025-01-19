@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "mhy-material-components-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev --port 3000",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "devDependencies": {
+    "@nuxtjs/i18n": "^8.3.1",
+    "nuxt": "^3.11.2"
+  },
+  "packageManager": "bun@1"
+}

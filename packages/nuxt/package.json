@@ -6,11 +6,10 @@
     "dev": "nuxt dev --port 3001",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "eslint --ext .ts,.vue --ignore-path .gitignore ."
+    "postinstall": "bun run --filter mhy-material-components prepack && nuxt prepare"
   },
   "dependencies": {
-    "@chika3742/mhy-material-components": "^1.0.41",
+    "mhy-material-components": "workspace:*",
     "@mdi/font": "^7.2.96",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/i18n": "^8.3.1",
@@ -46,5 +45,5 @@
     "@vue/language-server": "^2.0.19",
     "bootstrap": "^5.3.3"
   },
-  "packageManager": "yarn@4.4.0"
+  "packageManager": "bun@1"
 }
