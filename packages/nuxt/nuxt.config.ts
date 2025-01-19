@@ -26,6 +26,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+
   app: {
     pageTransition: {
       name: "scroll-y-reverse-transition",
@@ -51,18 +52,22 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   build: {
     transpile: ["vuetify"],
   },
+
   css: ["assets/styles/global.sass"],
+
   modules: [
-    "@chika3742/mhy-material-components",
+    "mhy-material-components",
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
     "@nuxt/eslint",
   ],
+
   vite: {
     build: {
       assetsInlineLimit: 0,
@@ -86,6 +91,7 @@ export default defineNuxtConfig({
       }),
     ],
   },
+
   nitro: {
     preset: "cloudflare-pages-static",
     hooks: {
@@ -111,15 +117,18 @@ export default defineNuxtConfig({
       },
     },
   },
+
   alias: {
     // TODO: https://github.com/nuxt/nuxt/issues/22994
     "#shared": "../../firebase/functions/src/types/shared",
   },
+
   typescript: {
     tsConfig: {
       exclude: ["functions"],
     },
   },
+
   hooks: {
     async "build:before"() {
       await generateSchemas()
@@ -144,9 +153,11 @@ export default defineNuxtConfig({
       }
     },
   },
+
   experimental: {
     payloadExtraction: false,
   },
+
   runtimeConfig: {
     public: {
       isProdBranch: process.env.CF_PAGES_BRANCH === prodBranch,
@@ -209,4 +220,6 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
+
+  compatibilityDate: "2025-01-19",
 })

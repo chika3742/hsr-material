@@ -4,13 +4,15 @@
     "packages/nuxt",
     "packages/firebase/functions",
     "packages/algolia-sync",
-    "packages/"
+    "packages/mhy-material-components",
+    "packages/mhy-material-components/playground"
   ],
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build:nuxt": "bun --filter @hsr-material/nuxt generate"
   },
   "devDependencies": {
     "eslint": "^9.2.0"
   },
-  "packageManager": "bun@1",
+  "packageManager": "bun@1"
 }

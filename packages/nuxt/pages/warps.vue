@@ -134,8 +134,8 @@ const warpTypes: {
 
 const warps = import.meta.client
   ? useObservable<Warp[], Warp[]>(from(liveQuery(() => _db.warps.toArray())), {
-    initialValue: [],
-  })
+      initialValue: [],
+    })
   : ref([])
 
 const groupedWarps = computed(() => {

@@ -1,0 +1,46 @@
+pityCounter:
+  title: 天井カウンター
+
+bookmark:
+  reBookmark: ブックマークを再登録
+  reBookmarkDesc: 現在のスライダー範囲でブックマークし直します。
+  unBookmark: ブックマークを解除
+  unBookmarkDesc: このアイテムのブックマークを解除します。
+
+footer:
+  disclaimer: このサイトは非公式です。
+  feedback: フィードバック
+  feedbackMenuItems:
+    comment: コメントページ
+    commentDesc: アカウント作成不要で送信できます。
+    hoyolab: HoYoLAB
+    hoyolabDesc: 記事へのコメントでフィードバックできます。
+    github: GitHub
+    githubDesc: 知識のある方は、直接Issueを立てることもできます。
+  theme: テーマ
+  themeOptions:
+    auto: システム設定に従う
+    light: ライト
+    dark: ダーク
+
+characterFilterMenu:
+  possessionStatus: 所持状況
+  owned: 所持
+  notOwned: 未所持
+  rarity: レアリティ
+
+releaseNotesPage:
+  legends: 凡例
+  color: 色
+  desc: 説明
+  orangeDesc: 機能関連の追加や改善を含む
+  lightBlueDesc: キャラ・武器等のデータ追加のみ
+
+gameDataSync:
+  title: ゲームデータ同期
+  subtitle: ゲーム内での育成状況を反映します。
+  desc: ゲーム内の「@:{'gameSpecific.showcaseTitle'}」に登録したキャラクターの育成状況を、UIDだけで本アプリに反映させることができます。
+  invalidUid: 数字で入力してください。
+  next: 次へ
+  import: インポート
+  help: ヘルプ
