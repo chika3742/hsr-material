@@ -47,9 +47,9 @@ jobs:
       - name: Deploy to Cloud Functions (dev)
         if: github.ref_name != env.prod_branch_name
         working-directory: packages/firebase/functions
-        run: yarn deploy:dev --debug
+        run: bun deploy:dev --debug
 
       - name: Deploy to Cloud Functions (prod)
         if: github.ref_name == env.prod_branch_name
         working-directory: packages/firebase/functions
-        run: yarn deploy:prod --debug
+        run: bun deploy:prod --debug
