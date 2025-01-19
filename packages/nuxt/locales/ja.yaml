@@ -282,7 +282,10 @@ tpCalcPage:
   currentTpCount: 現在の開拓力
   fullReplenishmentTime: 全回復時刻
   remainingTime: 全回復まであと
-  duration: "{hours} 時間 {minutes} 分"
+  duration:
+    days: "{n}日"
+    hours: "{n}時間"
+    minutes: "{n}分"
   alreadyReplenished: すでに全回復しました
   rangeError: 0以上{max}未満の値を入力してください
   reservedTp: 予備開拓力に変換された個数
