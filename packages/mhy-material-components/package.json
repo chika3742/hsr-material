@@ -47,7 +47,7 @@
     "@vue/language-server": "^2.0.0",
     "nuxt": "^3.11.2",
     "typescript": "^5.4.5",
-    "vitest": "^0.34.6"
+    "vitest": "^3.0.0"
   },
   "packageManager": "bun@1"
 }
