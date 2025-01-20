@@ -26,10 +26,10 @@ defineEmits<Emits>()
 
 const bookmarkedItemCount = import.meta.client
   ? useObservable(from(liveQuery(() => {
-    return db.bookmarks.bookmarks.where("id").anyOf(_.flatMap(props.items, e => e.id!)).count()
-  })), {
-    initialValue: 1,
-  })
+      return db.bookmarks.bookmarks.where("id").anyOf(_.flatMap(props.items, e => e.id!)).count()
+    })), {
+      initialValue: 1,
+    })
   : ref(1)
 </script>
 

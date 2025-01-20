@@ -283,7 +283,10 @@ tpCalcPage:
   currentTpCount: Current TP
   fullReplenishmentTime: Fully replenished by
   remainingTime: Until full replenishment
-  duration: "{hours} hour(s) {minutes} minute(s)"
+  duration:
+    days: "1 day | {n} days"
+    hours: "1 hour | {n} hours"
+    minutes: "1 minute | {n} minutes"
   alreadyReplenished: Already fully replenished.
   rangeError: Please enter a number between 0 and {max}.
   reservedTp: Reserved TP

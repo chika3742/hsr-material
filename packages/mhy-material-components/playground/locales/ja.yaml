@@ -1,0 +1,25 @@
+common:
+  cancel: キャンセル
+  ok: OK
+
+gameSpecific:
+  showcaseTitle: キャラクターラインナップ
+
+pityCounter:
+  title: Pity Counter
+
+characterNames:
+  test: Test Chara
+  test_variant: Test Chara (variant)
+
+materialNames:
+  test: Test Material
+  expItem1: Test EXP Item 1
+  expItem2: Test EXP Item 2
+  expItem3: Test EXP Item 3
+
+pageTitles:
+  MaterialCard: Material Card
+
+title: Test Title
+text: Test Text

@@ -19,6 +19,15 @@ const hostname = "https://hsr.matnote.app"
 const routes: string[] = []
 
 export default defineNuxtConfig({
+
+  modules: [
+    "@hsr-material/mhy-material-components",
+    "@nuxtjs/i18n",
+    "@nuxtjs/google-fonts",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+    "@nuxt/eslint",
+  ],
   devtools: {
     enabled: true,
 
@@ -26,6 +35,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+
   app: {
     pageTransition: {
       name: "scroll-y-reverse-transition",
@@ -51,41 +61,40 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  css: ["assets/styles/global.sass"],
+
+  runtimeConfig: {
+    public: {
+      isProdBranch: process.env.CF_PAGES_BRANCH === prodBranch,
+      useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
+      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG ?? "{}") as FirebaseOptions,
+      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
+      algolia: {
+        appId: algoliaConfig.appId,
+        apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+        indexName: algoliaConfig.indexName,
+      },
+      pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
+      builtAt: DateTime.now().toISO(),
+    },
+  },
+
+  alias: {
+    // TODO: https://github.com/nuxt/nuxt/issues/22994
+    "#shared": "../../firebase/functions/src/types/shared",
+  },
+
   build: {
     transpile: ["vuetify"],
   },
-  css: ["assets/styles/global.sass"],
-  modules: [
-    "@chika3742/mhy-material-components",
-    "@nuxtjs/i18n",
-    "@nuxtjs/google-fonts",
-    "@pinia/nuxt",
-    "@pinia-plugin-persistedstate/nuxt",
-    "@nuxt/eslint",
-  ],
-  vite: {
-    build: {
-      assetsInlineLimit: 0,
-    },
-    plugins: [
-      yaml({
-        exclude: "**/locales/**",
-      }),
-      dsv({
-        processRow(row) {
-          const result: Record<string, unknown> = {}
-          for (const key of Object.keys(row)) {
-            const value = row[key]
-            if (value !== "") {
-              result[key] = isNaN(+value) ? value : +value
-            }
-          }
 
-          return result
-        },
-      }),
-    ],
+  experimental: {
+    payloadExtraction: false,
   },
+
+  compatibilityDate: "2025-01-19",
+
   nitro: {
     preset: "cloudflare-pages-static",
     hooks: {
@@ -111,15 +120,37 @@ export default defineNuxtConfig({
       },
     },
   },
-  alias: {
-    // TODO: https://github.com/nuxt/nuxt/issues/22994
-    "#shared": "../../firebase/functions/src/types/shared",
+
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
+    plugins: [
+      yaml({
+        exclude: "**/locales/**",
+      }),
+      dsv({
+        processRow(row) {
+          const result: Record<string, unknown> = {}
+          for (const key of Object.keys(row)) {
+            const value = row[key]
+            if (value !== "") {
+              result[key] = isNaN(+value) ? value : +value
+            }
+          }
+
+          return result
+        },
+      }),
+    ],
   },
+
   typescript: {
     tsConfig: {
       exclude: ["functions"],
     },
   },
+
   hooks: {
     async "build:before"() {
       await generateSchemas()
@@ -144,42 +175,10 @@ export default defineNuxtConfig({
       }
     },
   },
-  experimental: {
-    payloadExtraction: false,
-  },
-  runtimeConfig: {
-    public: {
-      isProdBranch: process.env.CF_PAGES_BRANCH === prodBranch,
-      useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
-      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG ?? "{}") as FirebaseOptions,
-      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
-      algolia: {
-        appId: algoliaConfig.appId,
-        apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
-        indexName: algoliaConfig.indexName,
-      },
-      pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
-      builtAt: DateTime.now().toISO(),
-    },
-  },
 
-  i18n: {
-    locales: [
-      {
-        code: "ja",
-        iso: "ja-JP",
-        file: "ja.yaml",
-      },
-      {
-        code: "en",
-        iso: "en-US",
-        file: "en.yaml",
-      },
-    ],
-    langDir: "./locales/",
-    defaultLocale: "ja",
-    compilation: {
-      strictMessage: false,
+  eslint: {
+    config: {
+      stylistic: true,
     },
   },
 
@@ -194,8 +193,24 @@ export default defineNuxtConfig({
     },
   },
 
-  piniaPersistedstate: {
-    storage: "localStorage",
+  i18n: {
+    locales: [
+      {
+        code: "ja",
+        language: "ja-JP",
+        file: "ja.yaml",
+      },
+      {
+        code: "en",
+        language: "en-US",
+        file: "en.yaml",
+      },
+    ],
+    langDir: "./locales/",
+    defaultLocale: "ja",
+    compilation: {
+      strictMessage: false,
+    },
   },
 
   mhyMaterialComponents: {
@@ -204,9 +219,7 @@ export default defineNuxtConfig({
     },
   },
 
-  eslint: {
-    config: {
-      stylistic: true,
-    },
+  piniaPersistedstate: {
+    storage: "localStorage",
   },
 })

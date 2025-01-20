@@ -19,19 +19,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: corepack enable
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - uses: oven-sh/setup-bun@v1
+      - uses: oven-sh/setup-bun@v2
 
-      - working-directory: packages/algolia-sync
-        run: yarn install
+      - uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+
+      - run: bun install
 
       - name: Sync Algolia Search Index
         working-directory: packages/algolia-sync
-        run: yarn start
+        run: bun start
         env:
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}

@@ -50,7 +50,14 @@ const remainingTime = computed(() => {
   if (_remainingTime === null) {
     return "-"
   }
-  return i18n.t("tpCalcPage.duration", _remainingTime.shiftToAll().toObject() as Record<string, number>)
+  const units = _remainingTime.shiftToAll().toObject() as Record<string, number>
+  const parts: string[] = []
+  for (const unit of ["days", "hours", "minutes"]) {
+    if (units[unit] > 0) {
+      parts.push(i18n.t(`tpCalcPage.duration.${unit}`, units[unit]))
+    }
+  }
+  return parts.join(" ")
 })
 
 interface TableDataItem {

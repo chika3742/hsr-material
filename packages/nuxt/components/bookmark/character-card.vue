@@ -17,8 +17,8 @@ const props = defineProps<Props>()
 
 const bookmarks = import.meta.client
   ? useObservable(from(liveQuery(() => db.bookmarks.getByCharacter(props.character))), {
-    initialValue: [] as Bookmark[],
-  })
+      initialValue: [] as Bookmark[],
+    })
   : ref([])
 
 interface BookmarkGroups {

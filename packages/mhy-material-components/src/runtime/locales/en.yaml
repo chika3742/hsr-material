@@ -1,0 +1,46 @@
+pityCounter:
+  title: Pity Counter
+
+bookmark:
+  reBookmark: Re-bookmark
+  reBookmarkDesc: Re-bookmark with current slider range.
+  unBookmark: Un-bookmark
+  unBookmarkDesc: Un-bookmark this item.
+
+footer:
+  disclaimer: This site is unofficial. Translation errors may occur.
+  feedback: Feedback
+  feedbackMenuItems:
+    comment: Special Page
+    commentDesc: You can submit feedback in the comments section without creating an account.
+    hoyolab: HoYoLAB
+    hoyolabDesc: You can post comments on HoYoLAB article.
+    github: GitHub
+    githubDesc: You can create an issue on GitHub (advanced).
+  theme: Theme
+  themeOptions:
+    auto: Auto (System)
+    light: Light
+    dark: Dark
+
+characterFilterMenu:
+  possessionStatus: Possession Status
+  owned: Owned
+  notOwned: Not Owned
+  rarity: Rarity
+
+releaseNotesPage:
+  legends: Legends
+  color: Color
+  desc: Description
+  orangeDesc: Includes additions and improvements related to features
+  lightBlueDesc: Only data additions of characters, weapons, etc.
+
+gameDataSync:
+  title: Game Data Sync
+  subtitle: Reflects in-game training status
+  desc: The leveling status of characters registered in the in-game "@:{'gameSpecific.showcaseTitle'}" can be reflected in this application using only UID.
+  invalidUid: Please enter in numbers.
+  next: Next
+  import: Import
+  help: Help

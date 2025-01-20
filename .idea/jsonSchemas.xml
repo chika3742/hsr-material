@@ -8,33 +8,33 @@
             <SchemaInfo>
               <option name="name" value="JSON Schema version 7" />
               <option name="relativePathToSchema" value="http://json-schema.org/draft-07/schema" />
-              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="schemaVersion" value="JSON Schema 7" />
               <option name="applicationDefined" value="true" />
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="nuxt/schemas/release-notes.yaml" />
+                    <option name="path" value="nuxt/schemas/character-ingredients.yaml" />
                   </Item>
                   <Item>
                     <option name="path" value="nuxt/schemas/characters.yaml" />
                   </Item>
                   <Item>
-                    <option name="path" value="nuxt/schemas/materials.yaml" />
-                  </Item>
-                  <Item>
-                    <option name="path" value="nuxt/schemas/character-ingredients.yaml" />
-                  </Item>
-                  <Item>
-                    <option name="path" value="nuxt/schemas/light-cones.yaml" />
+                    <option name="path" value="nuxt/schemas/drop-rates.yaml" />
                   </Item>
                   <Item>
                     <option name="path" value="nuxt/schemas/light-cone-ingredients.yaml" />
                   </Item>
                   <Item>
-                    <option name="path" value="nuxt/schemas/relic-stats.yaml" />
+                    <option name="path" value="nuxt/schemas/light-cones.yaml" />
                   </Item>
                   <Item>
-                    <option name="path" value="nuxt/schemas/drop-rates.yaml" />
+                    <option name="path" value="nuxt/schemas/materials.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/release-notes.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/relic-stats.yaml" />
                   </Item>
                 </list>
               </option>
@@ -47,7 +47,7 @@
               <option name="generatedName" value="New Schema" />
               <option name="name" value="character-ingredients" />
               <option name="relativePathToSchema" value="nuxt/schemas/character-ingredients.yaml" />
-              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
                   <Item>
@@ -64,7 +64,7 @@
               <option name="generatedName" value="New Schema" />
               <option name="name" value="characters" />
               <option name="relativePathToSchema" value="nuxt/schemas/characters.yaml" />
-              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
                   <Item>
@@ -81,7 +81,7 @@
               <option name="generatedName" value="New Schema" />
               <option name="name" value="drop-rates" />
               <option name="relativePathToSchema" value="nuxt/schemas/drop-rates.yaml" />
-              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
                   <Item>
@@ -97,8 +97,8 @@
             <SchemaInfo>
               <option name="generatedName" value="New Schema" />
               <option name="name" value="light-cone-ingredients" />
-              <option name="relativePathToSchema" value="nuxt/schemas/light-cone-ingredients.yaml" />
-              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="relativePathToSchema" value="packages/nuxt/schemas/light-cone-ingredients.yaml" />
+              <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
                   <Item>
@@ -115,7 +115,7 @@
               <option name="generatedName" value="New Schema" />
               <option name="name" value="light-cones" />
               <option name="relativePathToSchema" value="nuxt/schemas/light-cones.yaml" />
-              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
                   <Item>
@@ -132,7 +132,7 @@
               <option name="generatedName" value="New Schema" />
               <option name="name" value="materials" />
               <option name="relativePathToSchema" value="nuxt/schemas/materials.yaml" />
-              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
                   <Item>
@@ -146,13 +146,45 @@
             </SchemaInfo>
           </value>
         </entry>
+        <entry key="package">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="package" />
+              <option name="relativePathToSchema" value="http://json.schemastore.org/package" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="packages/algolia-sync/package.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="package.json">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="package.json" />
+              <option name="relativePathToSchema" value="https://json.schemastore.org/package.json" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="package.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
         <entry key="release-notes">
           <value>
             <SchemaInfo>
               <option name="generatedName" value="New Schema" />
               <option name="name" value="release-notes" />
-              <option name="relativePathToSchema" value="nuxt/schemas/release-notes.yaml" />
-              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="relativePathToSchema" value="packages/nuxt/schemas/release-notes.yaml" />
+              <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
                   <Item>
@@ -169,7 +201,7 @@
               <option name="generatedName" value="New Schema" />
               <option name="name" value="relic-stats" />
               <option name="relativePathToSchema" value="nuxt/schemas/relic-stats.yaml" />
-              <option name="schemaVersion" value="JSON Schema version 7" />
+              <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
                   <Item>

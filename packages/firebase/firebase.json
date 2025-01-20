@@ -1,7 +1,7 @@
 {
   "functions": [
     {
-      "source": "functions",
+      "source": "functions/bundle",
       "codebase": "default",
       "ignore": [
         "node_modules",
@@ -10,7 +10,7 @@
         "firebase-debug.*.log"
       ],
       "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run build"
+        "bun run --cwd \"$RESOURCE_DIR/..\" build"
       ]
     }
   ],

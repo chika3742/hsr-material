@@ -15,7 +15,7 @@ export class WarpsApi {
     let url: URL
     try {
       url = new URL(this.url)
-    } catch (e) {
+    } catch {
       return {
         valid: false,
         errorCode: "invalidUrl",
