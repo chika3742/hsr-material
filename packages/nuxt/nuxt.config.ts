@@ -19,6 +19,15 @@ const hostname = "https://hsr.matnote.app"
 const routes: string[] = []
 
 export default defineNuxtConfig({
+
+  modules: [
+    "@hsr-material/mhy-material-components",
+    "@nuxtjs/i18n",
+    "@nuxtjs/google-fonts",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+    "@nuxt/eslint",
+  ],
   devtools: {
     enabled: true,
 
@@ -53,44 +62,38 @@ export default defineNuxtConfig({
     },
   },
 
+  css: ["assets/styles/global.sass"],
+
+  runtimeConfig: {
+    public: {
+      isProdBranch: process.env.CF_PAGES_BRANCH === prodBranch,
+      useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
+      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG ?? "{}") as FirebaseOptions,
+      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
+      algolia: {
+        appId: algoliaConfig.appId,
+        apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+        indexName: algoliaConfig.indexName,
+      },
+      pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
+      builtAt: DateTime.now().toISO(),
+    },
+  },
+
+  alias: {
+    // TODO: https://github.com/nuxt/nuxt/issues/22994
+    "#shared": "../../firebase/functions/src/types/shared",
+  },
+
   build: {
     transpile: ["vuetify"],
   },
 
-  css: ["assets/styles/global.sass"],
-
-  modules: [
-    "mhy-material-components",
-    "@nuxtjs/i18n",
-    "@nuxtjs/google-fonts",
-    "@pinia/nuxt",
-    "@pinia-plugin-persistedstate/nuxt",
-    "@nuxt/eslint",
-  ],
-
-  vite: {
-    build: {
-      assetsInlineLimit: 0,
-    },
-    plugins: [
-      yaml({
-        exclude: "**/locales/**",
-      }),
-      dsv({
-        processRow(row) {
-          const result: Record<string, unknown> = {}
-          for (const key of Object.keys(row)) {
-            const value = row[key]
-            if (value !== "") {
-              result[key] = isNaN(+value) ? value : +value
-            }
-          }
-
-          return result
-        },
-      }),
-    ],
+  experimental: {
+    payloadExtraction: false,
   },
+
+  compatibilityDate: "2025-01-19",
 
   nitro: {
     preset: "cloudflare-pages-static",
@@ -118,9 +121,28 @@ export default defineNuxtConfig({
     },
   },
 
-  alias: {
-    // TODO: https://github.com/nuxt/nuxt/issues/22994
-    "#shared": "../../firebase/functions/src/types/shared",
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
+    plugins: [
+      yaml({
+        exclude: "**/locales/**",
+      }),
+      dsv({
+        processRow(row) {
+          const result: Record<string, unknown> = {}
+          for (const key of Object.keys(row)) {
+            const value = row[key]
+            if (value !== "") {
+              result[key] = isNaN(+value) ? value : +value
+            }
+          }
+
+          return result
+        },
+      }),
+    ],
   },
 
   typescript: {
@@ -154,23 +176,20 @@ export default defineNuxtConfig({
     },
   },
 
-  experimental: {
-    payloadExtraction: false,
+  eslint: {
+    config: {
+      stylistic: true,
+    },
   },
 
-  runtimeConfig: {
-    public: {
-      isProdBranch: process.env.CF_PAGES_BRANCH === prodBranch,
-      useFirebaseEmulator: process.env.USE_FIREBASE_EMULATOR === "true",
-      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG ?? "{}") as FirebaseOptions,
-      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
-      algolia: {
-        appId: algoliaConfig.appId,
-        apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
-        indexName: algoliaConfig.indexName,
-      },
-      pagesCommitSha: process.env.CF_PAGES_COMMIT_SHA ?? execSync("git rev-parse HEAD").toString().trim(),
-      builtAt: DateTime.now().toISO(),
+  googleFonts: {
+    download: false,
+    families: {
+      "M PLUS 2": [500, 700],
+      "Kaisei Opti": [700],
+      "Cairo": [700],
+      "Kiwi Maru": [500],
+      "Material Symbols Outlined": true,
     },
   },
 
@@ -194,32 +213,13 @@ export default defineNuxtConfig({
     },
   },
 
-  googleFonts: {
-    download: false,
-    families: {
-      "M PLUS 2": [500, 700],
-      "Kaisei Opti": [700],
-      "Cairo": [700],
-      "Kiwi Maru": [500],
-      "Material Symbols Outlined": true,
-    },
-  },
-
-  piniaPersistedstate: {
-    storage: "localStorage",
-  },
-
   mhyMaterialComponents: {
     i18nKeys: {
       equipment: "lightConeNames",
     },
   },
 
-  eslint: {
-    config: {
-      stylistic: true,
-    },
+  piniaPersistedstate: {
+    storage: "localStorage",
   },
-
-  compatibilityDate: "2025-01-19",
 })
