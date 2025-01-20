@@ -95,12 +95,12 @@ export default defineNuxtModule<ModuleOptions>({
         locales: [
           {
             code: "ja",
-            iso: "ja-JP",
+            language: "ja-JP",
             file: "ja.yaml",
           },
           {
             code: "en",
-            iso: "en-US",
+            language: "en-US",
             file: "en.yaml",
           },
         ],
