@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "dev": "nuxi dev playground",
-    "build": "nuxi prepare playground && nuxt-module-build",
+    "build": "nuxi prepare playground && nuxt-module-build build",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "prepack": "npm run build"
