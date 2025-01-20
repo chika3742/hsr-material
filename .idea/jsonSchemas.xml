@@ -13,28 +13,28 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="nuxt/schemas/release-notes.yaml" />
+                    <option name="path" value="nuxt/schemas/character-ingredients.yaml" />
                   </Item>
                   <Item>
                     <option name="path" value="nuxt/schemas/characters.yaml" />
                   </Item>
                   <Item>
-                    <option name="path" value="nuxt/schemas/materials.yaml" />
-                  </Item>
-                  <Item>
-                    <option name="path" value="nuxt/schemas/character-ingredients.yaml" />
-                  </Item>
-                  <Item>
-                    <option name="path" value="nuxt/schemas/light-cones.yaml" />
+                    <option name="path" value="nuxt/schemas/drop-rates.yaml" />
                   </Item>
                   <Item>
                     <option name="path" value="nuxt/schemas/light-cone-ingredients.yaml" />
                   </Item>
                   <Item>
-                    <option name="path" value="nuxt/schemas/relic-stats.yaml" />
+                    <option name="path" value="nuxt/schemas/light-cones.yaml" />
                   </Item>
                   <Item>
-                    <option name="path" value="nuxt/schemas/drop-rates.yaml" />
+                    <option name="path" value="nuxt/schemas/materials.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/release-notes.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="nuxt/schemas/relic-stats.yaml" />
                   </Item>
                 </list>
               </option>
@@ -97,7 +97,7 @@
             <SchemaInfo>
               <option name="generatedName" value="New Schema" />
               <option name="name" value="light-cone-ingredients" />
-              <option name="relativePathToSchema" value="nuxt/schemas/light-cone-ingredients.yaml" />
+              <option name="relativePathToSchema" value="packages/nuxt/schemas/light-cone-ingredients.yaml" />
               <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
@@ -183,7 +183,7 @@
             <SchemaInfo>
               <option name="generatedName" value="New Schema" />
               <option name="name" value="release-notes" />
-              <option name="relativePathToSchema" value="nuxt/schemas/release-notes.yaml" />
+              <option name="relativePathToSchema" value="packages/nuxt/schemas/release-notes.yaml" />
               <option name="schemaVersion" value="JSON Schema 7" />
               <option name="patterns">
                 <list>
