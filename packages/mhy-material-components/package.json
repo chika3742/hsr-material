@@ -20,7 +20,7 @@
     "build": "nuxi prepare playground && nuxt-module-build",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "postinstall": "npm run build"
+    "prepack": "npm run build"
   },
   "dependencies": {
     "@mdi/font": "7.4.47",

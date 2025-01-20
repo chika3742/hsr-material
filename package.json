@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "eslint .",
     "build:nuxt": "bun --filter ./packages/nuxt generate",
-    "postinstall": "bun --filter ./packages/mhy-material-components postinstall && bun --filter ./packages/nuxt postinstall"
+    "postinstall": "bun --filter ./packages/mhy-material-components prepack && bun --filter ./packages/nuxt prepack"
   },
   "devDependencies": {
     "eslint": "9.18.0"
