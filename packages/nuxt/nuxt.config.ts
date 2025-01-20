@@ -1,7 +1,7 @@
 import { relative, resolve } from "path"
 import { execSync } from "child_process"
 import { Readable } from "stream"
-import fs from "fs"
+import fs from "node:fs/promises"
 import yaml from "@rollup/plugin-yaml"
 import { DateTime } from "luxon"
 import dsv from "@rollup/plugin-dsv"
@@ -101,7 +101,8 @@ export default defineNuxtConfig({
       "prerender:route"(route) {
         routes.push(route.route)
       },
-      close() {
+      async close() {
+        // create sitemap
         if (routes.length > 0) {
           const links: SitemapItemLoose[] = routes.map(route => ({
             url: route,
@@ -111,12 +112,12 @@ export default defineNuxtConfig({
           const stream = new SitemapStream({
             hostname,
           })
-
-          return streamToPromise(Readable.from(links).pipe(stream))
-            .then((sm) => {
-              return fs.writeFileSync("dist/sitemap.xml", sm.toString())
-            })
+          const sitemap = await streamToPromise(Readable.from(links).pipe(stream))
+          await fs.writeFile("dist/sitemap.xml", sitemap.toString())
         }
+
+        // copy Cloudflare Pages Functions
+        await fs.cp("functions", "../../functions", { recursive: true })
       },
     },
   },
