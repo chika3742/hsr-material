@@ -13,7 +13,7 @@
     "postinstall": "bun --filter '*' postinstall"
   },
   "devDependencies": {
-    "eslint": "^9.2.0"
+    "eslint": "9.18.0"
   },
   "packageManager": "bun@1"
 }
