@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "#imports"
 
-interface Props {
-}
-
-defineProps<Props>()
-
 const i18n = useI18n()
 
 const locs = {
