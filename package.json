@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "build:nuxt": "bun --filter @hsr-material/nuxt generate",
-    "postinstall": "bun --filter '*' postinstall"
+    "build:nuxt": "bun --filter ./packages/nuxt generate",
+    "postinstall": "bun --filter ./packages/mhy-material-components postinstall && bun --filter ./packages/nuxt postinstall"
   },
   "devDependencies": {
     "eslint": "9.18.0"
