@@ -6,10 +6,10 @@
     "dev": "nuxt dev --port 3001",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "bun run --filter mhy-material-components prepack && nuxt prepare"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "mhy-material-components": "workspace:*",
+    "@hsr-material/mhy-material-components": "workspace:*",
     "@mdi/font": "^7.2.96",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/i18n": "^8.3.1",
