@@ -1,4 +1,4 @@
-import { relative, resolve, join } from "path"
+import { relative, resolve } from "path"
 import { execSync } from "child_process"
 import { Readable } from "stream"
 import fs from "node:fs/promises"
