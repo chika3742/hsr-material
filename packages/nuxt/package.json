@@ -12,7 +12,7 @@
     "@hsr-material/mhy-material-components": "workspace:*",
     "@mdi/font": "7.4.47",
     "@nuxtjs/google-fonts": "3.2.0",
-    "@nuxtjs/i18n": "8.5.6",
+    "@nuxtjs/i18n": "9.1.5",
     "@pinia-plugin-persistedstate/nuxt": "1.2.1",
     "@pinia/nuxt": "0.5.5",
     "@rollup/plugin-dsv": "3.0.5",
