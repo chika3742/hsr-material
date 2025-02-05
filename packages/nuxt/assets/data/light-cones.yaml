@@ -894,3 +894,35 @@
   materials:
     primary: group:lcs012
     common: group:com002
+- id: victory-in-a-blink
+  yomi: ショウコクノショウキ
+  $nameJA: 瞬刻の勝機
+  path: remembrance
+  rarity: 4
+  materials:
+    primary: group:lcs013
+    common: group:com001
+- id: geniuses-greetings
+  yomi: テンサイタチノアイサツ
+  $nameJA: 天才たちの「挨拶」
+  path: remembrance
+  rarity: 4
+  materials:
+    primary: group:lcs013
+    common: group:com009
+- id: sweat-now-cry-less
+  yomi: ナガスナラナミダヨリアセ
+  $nameJA: 流すなら涙より汗
+  path: remembrance
+  rarity: 4
+  materials:
+    primary: group:lcs013
+    common: group:com009
+- id: time-woven-into-gold
+  yomi: コウインヲオリオウゴントナス
+  $nameJA: 光陰を織り黄金と成す
+  path: remembrance
+  rarity: 5
+  materials:
+    primary: group:lcs013
+    common: group:com009
