@@ -80,7 +80,7 @@ const detailsDialog = reactive({
         >
           <template #prepend>
             <v-img
-              :src="getCharacterImage(toCharacterId(character), 'small')"
+              :src="getCharacterImage(character, 'small')"
               aspect-ratio="1"
               class="mr-2"
               width="50px"

@@ -67,7 +67,7 @@ onActivated(() => {
     >
       <!-- character image -->
       <v-img
-        :src="getCharacterImage(character.id, 'small')"
+        :src="getCharacterImage(toCharacterIdWithVariant(character.id, character.variants && currentVariant.path), 'small')"
         aspect-ratio="1"
         max-width="80px"
         width="80px"
@@ -105,6 +105,7 @@ onActivated(() => {
           <v-img
             :src="getCombatTypeImage(currentVariant.combatType)"
             class="ml-3"
+            aspect-ratio="1"
             max-width="22px"
             width="22px"
           />
