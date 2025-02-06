@@ -3,7 +3,7 @@ import _ from "lodash"
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
 import type { Bookmark, LevelingBookmark } from "~/types/bookmark/bookmark"
-import type { CharacterIdWithVariant } from "~/types/strings"
+import { type CharacterIdWithVariant, purposeTypeList } from "~/types/strings"
 import { reactive } from "#imports"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
 import { db } from "~/libs/db/providers"
@@ -100,7 +100,7 @@ const detailsDialog = reactive({
               :key="mId"
               :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
               :items="materials"
-              :purpose-types="['ascension', 'basicAttack', 'skill', 'talent', 'ultimate']"
+              :purpose-types="purposeTypeList"
               :show-farming-count="showFarmingCount"
             />
             <v-btn
