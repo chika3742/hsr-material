@@ -414,12 +414,13 @@ purposeTypes:
 
 characterNames:
   trailblazer: 開拓者
-  trailblazer_destruction: "@:{'characterNames.trailblazer'} (壊滅)"
-  trailblazer_preservation: "@:{'characterNames.trailblazer'} (存護)"
-  trailblazer_harmony: "@:{'characterNames.trailblazer'} (調和)"
+  trailblazer_destruction: "@:{'characterNames.trailblazer'} (@:{'paths.destruction'})"
+  trailblazer_preservation: "@:{'characterNames.trailblazer'} (@:{'paths.preservation'})"
+  trailblazer_harmony: "@:{'characterNames.trailblazer'} (@:{'paths.harmony'})"
+  trailblazer_remembrance: "@:{'characterNames.trailblazer'} (@:{'paths.remembrance'})"
   march-7th: 三月なのか
-  march-7th_preservation: "@:{'characterNames.march-7th'} (存護)"
-  march-7th_the_hunt: "@:{'characterNames.march-7th'} (巡狩)"
+  march-7th_preservation: "@:{'characterNames.march-7th'} (@:{'paths.preservation'})"
+  march-7th_the_hunt: "@:{'characterNames.march-7th'} (@:{'paths.the_hunt'})"
   dan-heng: 丹恒
   himeko: 姫子
   welt: ヴェルト

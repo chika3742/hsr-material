@@ -435,10 +435,10 @@ characterNames:
   yanqing: Yanqing
   bailu: Bailu
   trailblazer: Trailblazer
-  trailblazer_destruction: "@:{'characterNames.trailblazer'} (Destruction)"
-  trailblazer_preservation: "@:{'characterNames.trailblazer'} (Preservation)"
-  trailblazer_harmony: "@:{'characterNames.trailblazer'} (Harmony)"
-  trailblazer_remembrance: "@:{'characterNames.trailblazer'} (Remembrance)"
+  trailblazer_destruction: "@:{'characterNames.trailblazer'} (@:{'paths.destruction'})"
+  trailblazer_preservation: "@:{'characterNames.trailblazer'} (@:{'paths.preservation'})"
+  trailblazer_harmony: "@:{'characterNames.trailblazer'} (@:{'paths.harmony'})"
+  trailblazer_remembrance: "@:{'characterNames.trailblazer'} (@:{'paths.remembrance'})"
   blade: Blade
   luka: Luka
   dan-heng-imbibitor-lunae: Dan Heng・Imbibitor Lunae
