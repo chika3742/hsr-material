@@ -414,12 +414,13 @@ purposeTypes:
 
 characterNames:
   trailblazer: 開拓者
-  trailblazer_destruction: "@:{'characterNames.trailblazer'} (壊滅)"
-  trailblazer_preservation: "@:{'characterNames.trailblazer'} (存護)"
-  trailblazer_harmony: "@:{'characterNames.trailblazer'} (調和)"
+  trailblazer_destruction: "@:{'characterNames.trailblazer'} (@:{'paths.destruction'})"
+  trailblazer_preservation: "@:{'characterNames.trailblazer'} (@:{'paths.preservation'})"
+  trailblazer_harmony: "@:{'characterNames.trailblazer'} (@:{'paths.harmony'})"
+  trailblazer_remembrance: "@:{'characterNames.trailblazer'} (@:{'paths.remembrance'})"
   march-7th: 三月なのか
-  march-7th_preservation: "@:{'characterNames.march-7th'} (存護)"
-  march-7th_the_hunt: "@:{'characterNames.march-7th'} (巡狩)"
+  march-7th_preservation: "@:{'characterNames.march-7th'} (@:{'paths.preservation'})"
+  march-7th_the_hunt: "@:{'characterNames.march-7th'} (@:{'paths.the_hunt'})"
   dan-heng: 丹恒
   himeko: 姫子
   welt: ヴェルト
@@ -478,6 +479,7 @@ characterNames:
   sunday: サンデー
   fugue: 帰忘の流離人
   the-herta: マダム・ヘルタ
+  aglaea: アグライア
 
 materialCategories:
   exp: 経験値素材
@@ -590,6 +592,12 @@ materialNames:
   nail-of-the-beast-coffin: 獣棺の釘
   auspice-sliver: 吉光の羽
   chordal-mirage: 響き合う幻景
+  bija-of-consciousness: イの種
+  seedling-of-manas: マナの苗
+  flower-of-alaya: アラヤの花
+  fear-stomped-flesh: 恐怖は血肉を踏み潰す
+  courage-torn-chest: 勇気は胸を切り裂く
+  glory-aspersed-torso: 栄光は身体を洗礼する
 
 skillTitles:
   trailblazer:
@@ -608,6 +616,13 @@ skillTitles:
       skill: 間奏曲が降らす雨
       ultimate: 賑やかなパレード
       talent: エアリアルステップ
+    remembrance:
+      basicAttack: お任せあれ！
+      skill: ミュリオンに決めた！
+      ultimate: やっちゃえミュリオン！
+      talent: なんでもできる仲間
+      memospriteSkill: 厄介な悪者さん！
+      memospriteTalent: 仲間と一緒に！
   march-7th:
     preservation:
       basicAttack: 極寒の弓矢
@@ -909,6 +924,13 @@ skillTitles:
     skill: 視野が狭いよ
     ultimate: 魔法だって言ったでしょ
     talent: 私がもらうね
+  aglaea:
+    basicAttack: サイフォスの蜜
+    skill: 掲げよ、昇華せし名を
+    ultimate: 共に舞え、運命のラフトラ
+    talent: 薔薇色の指先
+    memospriteSkill: サイフォスの罠
+    memospriteTalent: 涙で鍛えし匠の躯
 
 lightConeNames:
   arrows: 矢じり
@@ -1023,6 +1045,11 @@ lightConeNames:
   a-grounded-ascent: 大地より天を目指して
   long-road-leads-home: 長途はやがて帰途へと続く
   into-the-unreachable-veil: 触れてはならぬ領域へ
+  victory-in-a-blink: 瞬刻の勝機
+  geniuses-greetings: 天才たちの「挨拶」
+  sweat-now-cry-less: 流すなら涙より汗
+  time-woven-into-gold: 光陰を織り黄金と成す
+  shadowed-by-night: 夜は影のように付き纏う
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1182,6 +1209,13 @@ lightConeSkillDescriptions:
     装備キャラの撃破特効+<60%>。敵が弱点撃破される時、100%の基礎確率で「着火」状態を付与し、敵が受ける弱点撃破ダメージ+<18%>。2ターン継続、最大2層累積できる。
   into-the-unreachable-veil: >-
     装備キャラの会心率+<12%>。装備キャラが必殺技を発動する時、装備キャラの戦闘スキルおよび必殺技ダメージ+<60%>、3ターン継続。装備キャラが必殺技を発動した後、その回の必殺技で消費したEPが140以上の場合、SPを1回復する。
+  victory-in-a-blink: 装備キャラの会心ダメージ+<12%>。装備キャラの記憶の精霊が味方にスキルを発動する時、味方全体の与ダメージ+<8%>、3ターン継続。
+  geniuses-greetings: 装備キャラの攻撃力+<16%>。装備キャラが必殺技を発動した後、装備キャラおよびその記憶の精霊の通常攻撃ダメージ+<20%>、3ターン継続。
+  sweat-now-cry-less: 装備キャラの会心率+<12%>。装備キャラの記憶の精霊がフィールド上にいる時、装備キャラおよびその記憶の精霊の与ダメージ+<24%>。
+  time-woven-into-gold: >-
+    装備キャラの基礎速度+<12>。装備キャラまたはその記憶の精霊が攻撃を行った後、装備キャラに「錦を織って」を1層付与する。「錦を織って」1層につき、装備キャラおよびその記憶の精霊の会心ダメージ+<9%>、最大で6層累積できる。「錦を織って」の層数が上限に達すると、1層につき、追加で通常攻撃ダメージ+<9%>。
+  shadowed-by-night: >-
+    装備キャラの撃破特効+<28%>、戦闘に入った時または弱点撃破ダメージを与えた後、速度+<8%>、2ターン継続。この効果はターンが回ってくるたびに1回まで発動できる。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
@@ -1222,6 +1256,8 @@ relicSetTitles:
   forge-of-the-kalpagni-lantern: 劫火と蓮灯の鋳煉宮
   lushaka-the-sunken-seas: 海に沈んだルサカ
   the-wondrous-bananamusement-park: 奇想天外のバナダイス
+  hero-of-triumphant-song: 凱歌を揚げる英雄
+  poet-of-mourning-collapse: 亡国の悲哀を詠う詩人
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -1326,6 +1362,14 @@ relicSetEffects:
     2pc: 装備キャラのEP回復効率+<5%>。装備キャラがパーティの1枠目のキャラでない場合、1枠目のキャラの攻撃力+<12%>。
   the-wondrous-bananamusement-park:
     2pc: 装備キャラの会心ダメージ+<16%>。装備キャラが召喚したターゲットがフィールド上にいる場合、さらに会心ダメージ+<32%>。
+  hero-of-triumphant-song:
+    2pc: 攻撃力+<12%>。
+    4pc: >-
+      装備キャラの記憶の精霊がフィールドにいる時、装備キャラの速度+<6%>。装備キャラの記憶の精霊が攻撃を行う時、装備キャラおよびその記憶の精霊の会心ダメージ+<30%>、<2>ターン継続。
+  poet-of-mourning-collapse:
+    2pc: 量子属性ダメージ+<10%>。
+    4pc: >-
+      装備キャラの速度‑<8%>。戦闘に入る前、装備キャラの速度が<110>/<95>を下回る時、装備キャラの会心率+<20%>/<32%>。この効果は装備キャラの記憶の精霊にも有効。
 
 relicPieceNames:
   bands-polarized-sunglasses: バンドの偏光サングラス
@@ -1444,5 +1488,13 @@ relicPieceNames:
   lushakas-twinlanes: ルサカの双生航路
   bananamusement-parks-bananaxis-plaza: バナダイスの中央広場
   bananamusement-parks-memetic-cables: バナダイスのミームケーブル
+  heros-wreath-of-championship: 英雄の月桂冠
+  heros-gilded-bracers: 英雄の黄金手甲
+  heros-gallant-golden-armor: 英雄の勇戦金鎧
+  heros-firechasing-shinguard: 英雄の炎行脛当
+  poets-dill-wreath: 詩人の花をあしらった冠
+  poets-gilded-bracelet: 詩人の黄金を用いた腕輪
+  poets-star-studded-skirt: 詩人の星降るドレス
+  poets-silver-studded-shoes: 詩人の銀鋲を添えたサンダル
 
 # eof (replace regex marker)
