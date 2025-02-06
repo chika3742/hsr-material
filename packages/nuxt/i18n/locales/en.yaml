@@ -1042,6 +1042,7 @@ lightConeNames:
   geniuses-greetings: Geniuses' Greetings
   sweat-now-cry-less: Sweat Now, Cry Less
   time-woven-into-gold: Time Woven Into Gold
+  shadowed-by-night: Shadowed by Night
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1443,6 +1444,10 @@ lightConeSkillDescriptions:
     "Brocade" increases the wearer's and their memosprite's CRIT DMG by <9%>,
     stacking up to 6 time(s). When reaching maximum stacks, each "Brocade" stack
     additionally increases Basic ATK DMG dealt by <9%>.
+  shadowed-by-night: >-
+    Increases the wearer's Break Effect by <28%>. When entering battle or after
+    dealing Break DMG, increases SPD by <8%>, lasting for 2 turn(s). This effect
+    can only trigger once per turn.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

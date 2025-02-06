@@ -926,3 +926,11 @@
   materials:
     primary: group:lcs013
     common: group:com009
+- id: shadowed-by-night
+  yomi: ヨルハカゲノヨウニツキマトウ
+  $nameJA: 夜は影のように付き纏う
+  path: the_hunt
+  rarity: 4
+  materials:
+    primary: group:zzP0
+    common: group:com006

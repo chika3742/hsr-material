@@ -1048,6 +1048,7 @@ lightConeNames:
   geniuses-greetings: 天才たちの「挨拶」
   sweat-now-cry-less: 流すなら涙より汗
   time-woven-into-gold: 光陰を織り黄金と成す
+  shadowed-by-night: 夜は影のように付き纏う
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1212,6 +1213,8 @@ lightConeSkillDescriptions:
   sweat-now-cry-less: 装備キャラの会心率+<12%>。装備キャラの記憶の精霊がフィールド上にいる時、装備キャラおよびその記憶の精霊の与ダメージ+<24%>。
   time-woven-into-gold: >-
     装備キャラの基礎速度+<12>。装備キャラまたはその記憶の精霊が攻撃を行った後、装備キャラに「錦を織って」を1層付与する。「錦を織って」1層につき、装備キャラおよびその記憶の精霊の会心ダメージ+<9%>、最大で6層累積できる。「錦を織って」の層数が上限に達すると、1層につき、追加で通常攻撃ダメージ+<9%>。
+  shadowed-by-night: >-
+    装備キャラの撃破特効+<28%>、戦闘に入った時または弱点撃破ダメージを与えた後、速度+<8%>、2ターン継続。この効果はターンが回ってくるたびに1回まで発動できる。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
