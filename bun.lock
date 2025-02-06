@@ -91,7 +91,7 @@
         "object-hash": "3.0.0",
         "rxjs": "7.8.1",
         "sass": "1.83.4",
-        "sitemap": "7.1.2",
+        "sitemap": "8.0.0",
         "sortablejs": "1.15.6",
         "typescript": "5.7.3",
         "workbox-build": "7.3.0",
@@ -547,7 +547,7 @@
 
     "@hsr-material/mhy-material-components": ["@hsr-material/mhy-material-components@workspace:packages/mhy-material-components", { "dependencies": { "@mdi/font": "7.4.47", "@nuxt/kit": "3.15.2", "@nuxtjs/i18n": "9.1.5", "@rollup/plugin-yaml": "4.1.2", "defu": "6.1.4", "invert-color": "2.0.0", "js-yaml": "4.1.0", "lodash-es": "4.17.21", "marked": "15.0.6", "sass": "1.83.4", "vuetify": "3.7.7" }, "devDependencies": { "@nuxt/devtools": "1.7.0", "@nuxt/module-builder": "0.8.4", "@nuxt/schema": "3.15.2", "@nuxt/test-utils": "3.15.4", "@types/js-yaml": "4.0.9", "@types/lodash-es": "4.17.12", "@types/marked": "6.0.0", "@types/node": "20.17.14", "@vue/language-server": "2.2.0", "nuxt": "3.15.2", "typescript": "5.7.3", "vitest": "3.0.2" } }],
 
-    "@hsr-material/nuxt": ["@hsr-material/nuxt@workspace:packages/nuxt", { "dependencies": { "@hsr-material/mhy-material-components": "packages/mhy-material-components", "@mdi/font": "7.4.47", "@nuxtjs/google-fonts": "3.2.0", "@nuxtjs/i18n": "9.1.5", "@pinia-plugin-persistedstate/nuxt": "1.2.1", "@pinia/nuxt": "0.9.0", "@rollup/plugin-dsv": "3.0.5", "@rollup/plugin-yaml": "4.1.2", "@vueuse/rxjs": "10.11.1", "algoliasearch": "4.24.0", "dexie": "3.2.7", "firebase": "11.2.0", "json-schema-to-typescript": "13.1.2", "luxon": "3.5.0", "marked": "12.0.2", "nuxt": "3.15.2", "object-hash": "3.0.0", "rxjs": "7.8.1", "sass": "1.83.4", "sitemap": "7.1.2", "sortablejs": "1.15.6", "typescript": "5.7.3", "workbox-build": "7.3.0" }, "devDependencies": { "@cloudflare/workers-types": "4.20250109.0", "@nuxt/devtools": "latest", "@nuxt/eslint": "0.7.5", "@types/luxon": "3.4.2", "@types/marked": "6.0.0", "@types/node": "20.17.14", "@types/object-hash": "3.0.6", "@types/sortablejs": "1.15.8", "@vue/language-server": "2.2.0", "bootstrap": "5.3.3" } }],
+    "@hsr-material/nuxt": ["@hsr-material/nuxt@workspace:packages/nuxt", { "dependencies": { "@hsr-material/mhy-material-components": "packages/mhy-material-components", "@mdi/font": "7.4.47", "@nuxtjs/google-fonts": "3.2.0", "@nuxtjs/i18n": "9.1.5", "@pinia-plugin-persistedstate/nuxt": "1.2.1", "@pinia/nuxt": "0.9.0", "@rollup/plugin-dsv": "3.0.5", "@rollup/plugin-yaml": "4.1.2", "@vueuse/rxjs": "10.11.1", "algoliasearch": "4.24.0", "dexie": "3.2.7", "firebase": "11.2.0", "json-schema-to-typescript": "13.1.2", "luxon": "3.5.0", "marked": "12.0.2", "nuxt": "3.15.2", "object-hash": "3.0.0", "rxjs": "7.8.1", "sass": "1.83.4", "sitemap": "8.0.0", "sortablejs": "1.15.6", "typescript": "5.7.3", "workbox-build": "7.3.0" }, "devDependencies": { "@cloudflare/workers-types": "4.20250109.0", "@nuxt/devtools": "latest", "@nuxt/eslint": "0.7.5", "@types/luxon": "3.4.2", "@types/marked": "6.0.0", "@types/node": "20.17.14", "@types/object-hash": "3.0.6", "@types/sortablejs": "1.15.8", "@vue/language-server": "2.2.0", "bootstrap": "5.3.3" } }],
 
     "@humanfs/core": ["@humanfs/core@0.19.1", "", {}, "sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA=="],
 
@@ -2329,7 +2329,7 @@
 
     "sisteransi": ["sisteransi@1.0.5", "", {}, "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg=="],
 
-    "sitemap": ["sitemap@7.1.2", "", { "dependencies": { "@types/node": "^17.0.5", "@types/sax": "^1.2.1", "arg": "^5.0.0", "sax": "^1.2.4" }, "bin": { "sitemap": "dist/cli.js" } }, "sha512-ARCqzHJ0p4gWt+j7NlU5eDlIO9+Rkr/JhPFZKKQ1l5GCus7rJH4UdrlVAh0xC/gDS/Qir2UMxqYNHtsKr2rpCw=="],
+    "sitemap": ["sitemap@8.0.0", "", { "dependencies": { "@types/node": "^17.0.5", "@types/sax": "^1.2.1", "arg": "^5.0.0", "sax": "^1.2.4" }, "bin": { "sitemap": "dist/cli.js" } }, "sha512-+AbdxhM9kJsHtruUF39bwS/B0Fytw6Fr1o4ZAIAEqA6cke2xcoO2GleBw9Zw7nRzILVEgz7zBM5GiTJjie1G9A=="],
 
     "slash": ["slash@5.1.0", "", {}, "sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg=="],
 
