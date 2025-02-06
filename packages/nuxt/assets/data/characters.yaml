@@ -729,6 +729,7 @@
   rarity: 5
   path: remembrance
   combatType: lightning
+  levelingItemTable: r5Remembrance
   materials:
     ascension: id:nail-of-the-beast-coffin
     skills: group:lcs013
