@@ -129,7 +129,7 @@ onActivated(() => {
           color="primary"
           prepend-icon="mdi-cone"
           variant="outlined"
-          @click="$router.push(localePath({
+          @click="$router.push($localePath({
             path: '/light-cones',
             query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
           }))"
@@ -140,7 +140,7 @@ onActivated(() => {
           color="primary"
           prepend-icon="mdi-star-david"
           variant="outlined"
-          @click="$router.push(localePath({
+          @click="$router.push($localePath({
             path: '/relics',
             query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
           }))"

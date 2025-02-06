@@ -15,7 +15,7 @@ withDefaults(defineProps<{
 <template>
   <v-list-item
     :lines="lines"
-    :to="localePath({
+    :to="$localePath({
       path: `${linkBasePath}/${itemId}`,
       query: preserveQuery ? $route.query : {},
     })"

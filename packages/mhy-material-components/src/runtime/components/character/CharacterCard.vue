@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <v-card
-    :to="localePath(`/characters/${characterId}`)"
+    :to="$localePath(`/characters/${characterId}`)"
     :v-slot:loader="false"
     class="character-card"
   >

@@ -75,7 +75,7 @@ const detailsDialog = reactive({
 
         <v-list-item
           :title="tx(`characterNames.${character}`)"
-          :to="localePath({ path: `/characters/${toCharacterId(character)}`, query: { variant: toVariant(character) ?? undefined } })"
+          :to="$localePath({ path: `/characters/${toCharacterId(character)}`, query: { variant: toVariant(character) ?? undefined } })"
           class="d-flex flex-grow-1 pl-0"
         >
           <template #prepend>
@@ -126,7 +126,7 @@ const detailsDialog = reactive({
                 :prepend-avatar="getLightConeImage(lcId)"
                 :subtitle="tx('searchRecordTypes.light-cone')"
                 :title="tx(`lightConeNames.${lcId}`)"
-                :to="localePath({ path: `/light-cones/${lcId}`, query: { character } })"
+                :to="$localePath({ path: `/light-cones/${lcId}`, query: { character } })"
                 density="compact"
                 lines="two"
                 rounded

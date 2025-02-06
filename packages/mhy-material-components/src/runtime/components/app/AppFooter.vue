@@ -46,7 +46,7 @@
           </v-btn>
         </client-only>
         <v-btn
-          :to="localePath('/release-notes')"
+          :to="$localePath('/release-notes')"
           color="primary"
           variant="text"
           density="comfortable"
@@ -54,14 +54,14 @@
           {{ $t('pageTitles.releaseNotes') }}
         </v-btn>
         <v-btn
-          :to="localePath('/terms')"
+          :to="$localePath('/terms')"
           variant="text"
           density="comfortable"
         >
           {{ $t('pageTitles.terms') }}
         </v-btn>
         <v-btn
-          :to="localePath('/privacy')"
+          :to="$localePath('/privacy')"
           variant="text"
           density="comfortable"
         >

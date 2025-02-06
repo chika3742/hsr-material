@@ -146,7 +146,7 @@ const farmingCount = computed(() => {
         class="flex-shrink-1 h-100 px-2"
         :rounded="0"
         style="gap: 4px"
-        :to="localePath(`/materials/${_materialId}`)"
+        :to="$localePath(`/materials/${_materialId}`)"
       >
         <div class="d-flex align-center">
           <v-img
