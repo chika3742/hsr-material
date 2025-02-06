@@ -16,44 +16,30 @@
 </template>
 
 <script lang="ts" setup>
-import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { CharacterMaterialDefinitions, Path } from "~/types/generated/characters.g"
 import type { LightConeMaterialDefinitions } from "~/types/generated/light-cones.g"
-import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
-import characters from "~/assets/data/characters.yaml"
-import lightCones from "~/assets/data/light-cones.yaml"
 import type { LevelIngredients } from "~/types/level-ingredients"
 import type { Usage } from "~/types/bookmark/usage"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
+import type { LevelsObject } from "~/types/generated/character-ingredients.g"
 
 const props = defineProps<{
   title: string
   characterId: string
   lightConeId?: string
+  levels: LevelsObject
   variant: Path | null
   materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
 }>()
 
 const config = useConfigStore()
 
-const rarity = (() => {
-  if (props.lightConeId) {
-    return lightCones.find(e => e.id === props.lightConeId)!.rarity
-  } else {
-    return characters.find(e => e.id === props.characterId)!.rarity
-  }
-})()
+const levelIngredients = computed(() => {
+  return levelsToLevelIngredients(props.levels.levels)
+})
 
-const levelIngredients = (() => {
-  if (props.lightConeId) {
-    return levelsToLevelIngredients(lightConeIngredients.levels)
-  } else {
-    return levelsToLevelIngredients(characterIngredients.purposeTypes.ascension.levels)
-  }
-})()
-
-const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredients))
+const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredients.value))
 
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
 const setInitialRangeBasedOnBookmarks = async () => {
@@ -84,7 +70,7 @@ watch([toRefs(props).characterId, toRefs(props).variant], () => {
 }, { immediate: true })
 
 const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
-  return levelIngredients.filter(e => range.value[0] < e.level && e.level <= range.value[1])
+  return levelIngredients.value.filter(e => range.value[0] < e.level && e.level <= range.value[1])
 })
 
 const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): BookmarkableIngredient[] => {
@@ -116,7 +102,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
       const result: BookmarkableExp = {
         type: props.lightConeId ? "light_cone_exp" : "character_exp",
         characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-        exp: f.exp!.rarities[rarity.toString()],
+        exp: f.exp!,
         usage,
       }
       return result
@@ -131,7 +117,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
           type: "character_material",
           characterId: toCharacterIdWithVariant(props.characterId, props.variant),
           materialId: getMaterialIdFromIngredient(f, props.materialDefs),
-          quantity: f.quantity.rarities[rarity.toString()],
+          quantity: f.quantity,
           usage,
         }
       } else {
@@ -139,7 +125,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
           type: "light_cone_material",
           characterId: toCharacterIdWithVariant(props.characterId, props.variant),
           materialId: getMaterialIdFromIngredient(f, props.materialDefs),
-          quantity: f.quantity.rarities[rarity.toString()],
+          quantity: f.quantity,
           usage,
         }
       }

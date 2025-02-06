@@ -127,9 +127,11 @@ export default defineNuxtConfig({
       assetsInlineLimit: 0,
     },
     plugins: [
+      // @ts-ignore
       yaml({
         exclude: "**/locales/**",
       }),
+      // @ts-ignore
       dsv({
         processRow(row) {
           const result: Record<string, unknown> = {}

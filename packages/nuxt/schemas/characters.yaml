@@ -36,6 +36,8 @@ definitions:
         $ref: "#/definitions/path"
       combatType:
         $ref: "#/definitions/combatType"
+      levelingItemTable:
+        type: string
       materials:
         $ref: "#/definitions/characterMaterialDefinitions"
       variants:
@@ -55,6 +57,8 @@ definitions:
         $ref: "#/definitions/path"
       combatType:
         $ref: "#/definitions/combatType"
+      levelingItemTable:
+        type: string
       materials:
         $ref: "#/definitions/characterMaterialDefinitions"
 
@@ -68,6 +72,7 @@ definitions:
       - nihility
       - preservation
       - abundance
+      - remembrance
 
   combatType:
     type: string

@@ -3,6 +3,7 @@ import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
 import type { CharacterIdWithVariant } from "~/types/strings"
 import characters from "~/assets/data/characters.yaml"
+import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 
 definePageMeta({
   title: "lightConeDetails",
@@ -16,6 +17,18 @@ if (!lightCones.some(e => e.id === route.params.lightConeId)) {
 }
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
+const levels = lightConeIngredients.levelingItemTables[(() => {
+  switch (lightCone.rarity) {
+    case 3:
+      return "r3Base"
+    case 4:
+      return "r4Base"
+    case 5:
+      return "r5Base"
+    default:
+      throw new Error("Invalid rarity")
+  }
+})()]
 
 const selectedCharacter = ref<CharacterIdWithVariant>()
 
@@ -93,6 +106,7 @@ const characterSelectFilter = (id: string): boolean => {
       <SingleSliderPanel
         v-if="selectedCharacter"
         :material-defs="lightCone.materials"
+        :levels="levels"
         :title="tx('lightConeDetailsPage.ascension')"
         :light-cone-id="lightCone.id"
         :character-id="toCharacterId(selectedCharacter)"

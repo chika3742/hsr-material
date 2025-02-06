@@ -29,6 +29,8 @@ common:
     skill: Skill
     ultimate: Ultimate
     talent: Talent
+    memospriteSkill: Memosprite Skill
+    memospriteTalent: Memosprite Talent
   updated: Updated to {version}.
 
 gameSpecific:
@@ -348,6 +350,7 @@ paths:
   nihility: Nihility
   preservation: Preservation
   the_hunt: The Hunt
+  remembrance: Remembrance
 
 combatTypes:
   fire: Fire
@@ -399,6 +402,8 @@ purposeTypes:
   skill: "@:{'common.skillTypes.skill'}: {title}"
   talent: "@:{'common.skillTypes.talent'}: {title}"
   ultimate: "@:{'common.skillTypes.ultimate'}: {title}"
+  memospriteSkill: "@:{'common.skillTypes.memospriteSkill'}: {title}"
+  memospriteTalent: "@:{'common.skillTypes.memospriteTalent'}: {title}"
 
 characterNames:
   march-7th: March 7th

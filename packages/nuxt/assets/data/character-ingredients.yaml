@@ -6,393 +6,519 @@ expItems:
   - itemId: travel-encounters
     expPerItem: 1000
 
-purposeTypes:
-  ascension:
-    levels:
-      '20':
-        - exp:
-            rarities:
-              '4': 113000
-              '5': 113000
-      '30':
-        - exp:
-            rarities:
-              '4': 178000
-              '5': 178000
-        - type: common
-          craftLevel: 1
-          quantity:
-            rarities:
-              '4': 4
-              '5': 5
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 3200
-              '5': 4000
-      '40':
-        - exp:
-            rarities:
-              '4': 207000
-              '5': 207000
-        - type: common
-          craftLevel: 1
-          quantity:
-            rarities:
-              '4': 8
-              '5': 10
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 6400
-              '5': 8000
-      '50':
-        - exp:
-            rarities:
-              '4': 390000
-              '5': 390000
-        - type: ascension
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - type: common
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 5
-              '5': 6
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 12800
-              '5': 16000
-      '60':
-        - exp:
-            rarities:
-              '4': 823000
-              '5': 823000
-        - type: ascension
-          quantity:
-            rarities:
-              '4': 5
-              '5': 7
-        - type: common
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 8
-              '5': 9
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 32000
-              '5': 40000
-      '70':
-        - exp:
-            rarities:
-              '4': 1327000
-              '5': 1327000
-        - type: ascension
-          quantity:
-            rarities:
-              '4': 15
-              '5': 20
-        - type: common
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 5
-              '5': 6
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 64000
-              '5': 80000
-      '80':
-        - exp:
-            rarities:
-              '4': 2763000
-              '5': 2763000
-        - type: ascension
-          quantity:
-            rarities:
-              '4': 28
-              '5': 35
-        - type: common
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 7
-              '5': 9
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 128000
-              '5': 160000
-  basicAttack:
-    levels:
-      '2':
-        - type: skills
-          craftLevel: 1
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - type: common
-          craftLevel: 1
-          quantity:
-            rarities:
-              '4': 4
-              '5': 6
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 4000
-              '5': 5000
-      '3':
-        - type: skills
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - type: common
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 8000
-              '5': 10000
-      '4':
-        - type: skills
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 4
-              '5': 5
-        - type: common
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 3
-              '5': 4
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 16000
-              '5': 20000
-      '5':
-        - type: skills
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - type: common
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 36000
-              '5': 45000
-      '6':
-        - type: skills
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 6
-              '5': 8
-        - type: common
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 3
-              '5': 4
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 128000
-              '5': 160000
-  skill: &skill
-    levels:
-      '2':
-        - type: common
-          craftLevel: 1
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 2000
-              '5': 2500
-      '3':
-        - type: skills
-          craftLevel: 1
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - type: common
-          craftLevel: 1
-          quantity:
-            rarities:
-              '4': 4
-              '5': 6
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 4000
-              '5': 5000
-      '4':
-        - type: skills
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - type: common
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 8000
-              '5': 10000
-      '5':
-        - type: skills
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 4
-              '5': 5
-        - type: common
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 3
-              '5': 4
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 16000
-              '5': 20000
-      '6':
-        - type: skills
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 6
-              '5': 7
-        - type: common
-          craftLevel: 2
-          quantity:
-            rarities:
-              '4': 5
-              '5': 6
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 24000
-              '5': 30000
-      '7':
-        - type: skills
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - type: common
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 2
-              '5': 3
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 36000
-              '5': 45000
-      '8':
-        - type: skills
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 4
-              '5': 5
-        - type: common
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 3
-              '5': 4
-        - type: skillsAdvanced
-          quantity:
-            rarities:
-              '4': 1
-              '5': 1
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 64000
-              '5': 80000
-      '9':
-        - type: skills
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 6
-              '5': 8
-        - type: skillsAdvanced
-          quantity:
-            rarities:
-              '4': 1
-              '5': 1
-        - fixedId: tracks-of-destiny
-          quantity:
-            rarities:
-              '4': 0
-              '5': 1
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 128000
-              '5': 160000
-      '10':
-        - type: skills
-          craftLevel: 3
-          quantity:
-            rarities:
-              '4': 11
-              '5': 14
-        - type: skillsAdvanced
-          quantity:
-            rarities:
-              '4': 1
-              '5': 1
-        - fixedId: tracks-of-destiny
-          quantity:
-            rarities:
-              '4': 1
-              '5': 1
-        - fixedId: credit
-          quantity:
-            rarities:
-              '4': 240000
-              '5': 300000
+levelingItemTables:
+  r4Base:
+    purposeTypes:
+      ascension:
+        levels:
+          '20':
+            - exp: 113000
+          '30':
+            - exp: 178000
+            - type: common
+              craftLevel: 1
+              quantity: 4
+            - fixedId: credit
+              quantity: 3200
+          '40':
+            - exp: 207000
+            - type: common
+              craftLevel: 1
+              quantity: 8
+            - fixedId: credit
+              quantity: 6400
+          '50':
+            - exp: 390000
+            - type: ascension
+              quantity: 2
+            - type: common
+              craftLevel: 2
+              quantity: 5
+            - fixedId: credit
+              quantity: 12800
+          '60':
+            - exp: 823000
+            - type: ascension
+              quantity: 5
+            - type: common
+              craftLevel: 2
+              quantity: 8
+            - fixedId: credit
+              quantity: 32000
+          '70':
+            - exp: 1327000
+            - type: ascension
+              quantity: 15
+            - type: common
+              craftLevel: 3
+              quantity: 5
+            - fixedId: credit
+              quantity: 64000
+          '80':
+            - exp: 2763000
+            - type: ascension
+              quantity: 28
+            - type: common
+              craftLevel: 3
+              quantity: 7
+            - fixedId: credit
+              quantity: 128000
+      basicAttack:
+        levels:
+          '2':
+            - type: skills
+              craftLevel: 1
+              quantity: 2
+            - type: common
+              craftLevel: 1
+              quantity: 4
+            - fixedId: credit
+              quantity: 4000
+          '3':
+            - type: skills
+              craftLevel: 2
+              quantity: 2
+            - type: common
+              craftLevel: 2
+              quantity: 2
+            - fixedId: credit
+              quantity: 8000
+          '4':
+            - type: skills
+              craftLevel: 2
+              quantity: 4
+            - type: common
+              craftLevel: 2
+              quantity: 3
+            - fixedId: credit
+              quantity: 16000
+          '5':
+            - type: skills
+              craftLevel: 3
+              quantity: 2
+            - type: common
+              craftLevel: 3
+              quantity: 2
+            - fixedId: credit
+              quantity: 36000
+          '6':
+            - type: skills
+              craftLevel: 3
+              quantity: 6
+            - type: common
+              craftLevel: 3
+              quantity: 3
+            - fixedId: credit
+              quantity: 128000
+      skill: &r4Skill
+        levels:
+          '2':
+            - type: common
+              craftLevel: 1
+              quantity: 2
+            - fixedId: credit
+              quantity: 2000
+          '3':
+            - type: skills
+              craftLevel: 1
+              quantity: 2
+            - type: common
+              craftLevel: 1
+              quantity: 4
+            - fixedId: credit
+              quantity: 4000
+          '4':
+            - type: skills
+              craftLevel: 2
+              quantity: 2
+            - type: common
+              craftLevel: 2
+              quantity: 2
+            - fixedId: credit
+              quantity: 8000
+          '5':
+            - type: skills
+              craftLevel: 2
+              quantity: 4
+            - type: common
+              craftLevel: 2
+              quantity: 3
+            - fixedId: credit
+              quantity: 16000
+          '6':
+            - type: skills
+              craftLevel: 2
+              quantity: 6
+            - type: common
+              craftLevel: 2
+              quantity: 5
+            - fixedId: credit
+              quantity: 24000
+          '7':
+            - type: skills
+              craftLevel: 3
+              quantity: 2
+            - type: common
+              craftLevel: 3
+              quantity: 2
+            - fixedId: credit
+              quantity: 36000
+          '8':
+            - type: skills
+              craftLevel: 3
+              quantity: 4
+            - type: common
+              craftLevel: 3
+              quantity: 3
+            - type: skillsAdvanced
+              quantity: 1
+            - fixedId: credit
+              quantity: 64000
+          '9':
+            - type: skills
+              craftLevel: 3
+              quantity: 6
+            - type: skillsAdvanced
+              quantity: 1
+            - fixedId: tracks-of-destiny
+              quantity: 1
+            - fixedId: credit
+              quantity: 128000
+          '10':
+            - type: skills
+              craftLevel: 3
+              quantity: 11
+            - type: skillsAdvanced
+              quantity: 1
+            - fixedId: tracks-of-destiny
+              quantity: 1
+            - fixedId: credit
+              quantity: 240000
+      ultimate: *r4Skill
+      talent: *r4Skill
 
-  ultimate: *skill
-  talent: *skill
+  r5Base:
+    purposeTypes:
+      ascension: &r5Ascension
+        levels:
+          '20':
+            - exp: 113000
+          '30':
+            - exp: 178000
+            - type: common
+              craftLevel: 1
+              quantity: 5
+            - fixedId: credit
+              quantity: 4000
+          '40':
+            - exp: 207000
+            - type: common
+              craftLevel: 1
+              quantity: 10
+            - fixedId: credit
+              quantity: 8000
+          '50':
+            - exp: 390000
+            - type: ascension
+              quantity: 3
+            - type: common
+              craftLevel: 2
+              quantity: 6
+            - fixedId: credit
+              quantity: 16000
+          '60':
+            - exp: 823000
+            - type: ascension
+              quantity: 7
+            - type: common
+              craftLevel: 2
+              quantity: 9
+            - fixedId: credit
+              quantity: 40000
+          '70':
+            - exp: 1327000
+            - type: ascension
+              quantity: 20
+            - type: common
+              craftLevel: 3
+              quantity: 6
+            - fixedId: credit
+              quantity: 80000
+          '80':
+            - exp: 2763000
+            - type: ascension
+              quantity: 35
+            - type: common
+              craftLevel: 3
+              quantity: 9
+            - fixedId: credit
+              quantity: 160000
+      basicAttack:
+        levels:
+          '2':
+            - type: skills
+              craftLevel: 1
+              quantity: 3
+            - type: common
+              craftLevel: 1
+              quantity: 6
+            - fixedId: credit
+              quantity: 5000
+          '3':
+            - type: skills
+              craftLevel: 2
+              quantity: 3
+            - type: common
+              craftLevel: 2
+              quantity: 3
+            - fixedId: credit
+              quantity: 10000
+          '4':
+            - type: skills
+              craftLevel: 2
+              quantity: 5
+            - type: common
+              craftLevel: 2
+              quantity: 4
+            - fixedId: credit
+              quantity: 20000
+          '5':
+            - type: skills
+              craftLevel: 3
+              quantity: 3
+            - type: common
+              craftLevel: 3
+              quantity: 3
+            - fixedId: credit
+              quantity: 45000
+          '6':
+            - type: skills
+              craftLevel: 3
+              quantity: 8
+            - type: common
+              craftLevel: 3
+              quantity: 4
+            - fixedId: credit
+              quantity: 160000
+      skill: &r5Skill
+        levels:
+          '2':
+            - type: common
+              craftLevel: 1
+              quantity: 3
+            - fixedId: credit
+              quantity: 2500
+          '3':
+            - type: skills
+              craftLevel: 1
+              quantity: 3
+            - type: common
+              craftLevel: 1
+              quantity: 6
+            - fixedId: credit
+              quantity: 5000
+          '4':
+            - type: skills
+              craftLevel: 2
+              quantity: 3
+            - type: common
+              craftLevel: 2
+              quantity: 3
+            - fixedId: credit
+              quantity: 10000
+          '5':
+            - type: skills
+              craftLevel: 2
+              quantity: 5
+            - type: common
+              craftLevel: 2
+              quantity: 4
+            - fixedId: credit
+              quantity: 20000
+          '6':
+            - type: skills
+              craftLevel: 2
+              quantity: 7
+            - type: common
+              craftLevel: 2
+              quantity: 5
+            - fixedId: credit
+              quantity: 24000
+          '7':
+            - type: skills
+              craftLevel: 3
+              quantity: 3
+            - type: common
+              craftLevel: 3
+              quantity: 3
+            - fixedId: credit
+              quantity: 36000
+          '8':
+            - type: skills
+              craftLevel: 3
+              quantity: 5
+            - type: common
+              craftLevel: 3
+              quantity: 4
+            - type: skillsAdvanced
+              quantity: 1
+            - fixedId: credit
+              quantity: 64000
+          '9':
+            - type: skills
+              craftLevel: 3
+              quantity: 8
+            - type: skillsAdvanced
+              quantity: 1
+            - fixedId: tracks-of-destiny
+              quantity: 1
+            - fixedId: credit
+              quantity: 128000
+          '10':
+            - type: skills
+              craftLevel: 3
+              quantity: 14
+            - type: skillsAdvanced
+              quantity: 1
+            - fixedId: tracks-of-destiny
+              quantity: 1
+            - fixedId: credit
+              quantity: 240000
+      ultimate: *r5Skill
+      talent: *r5Skill
+  r5Remembrance:
+    purposeTypes:
+      ascension: *r5Ascension
+      basicAttack: &r5RemembranceBasicAttack
+        levels:
+          '2':
+            - type: skills
+              craftLevel: 1
+              quantity: 1
+            - type: common
+              craftLevel: 1
+              quantity: 3
+            - fixedId: credit
+              quantity: 2800
+          '3':
+            - type: skills
+              craftLevel: 2
+              quantity: 1
+            - type: common
+              craftLevel: 2
+              quantity: 1
+            - fixedId: credit
+              quantity: 5600
+          '4':
+            - type: skills
+              craftLevel: 2
+              quantity: 3
+            - type: common
+              craftLevel: 2
+              quantity: 2
+            - fixedId: credit
+              quantity: 12800
+          '5':
+            - type: skills
+              craftLevel: 3
+              quantity: 2
+            - type: common
+              craftLevel: 3
+              quantity: 2
+            - fixedId: credit
+              quantity: 28000
+          '6':
+            - type: skills
+              craftLevel: 3
+              quantity: 5
+            - type: common
+              craftLevel: 3
+              quantity: 2
+            - fixedId: credit
+              quantity: 112000
+      skill: &r5RemembranceSkill
+        levels:
+          '2':
+            - type: common
+              craftLevel: 1
+              quantity: 2
+            - fixedId: credit
+              quantity: 2000
+          '3':
+            - type: skills
+              craftLevel: 1
+              quantity: 1
+            - type: common
+              craftLevel: 1
+              quantity: 3
+            - fixedId: credit
+              quantity: 2800
+          '4':
+            - type: skills
+              craftLevel: 2
+              quantity: 1
+            - type: common
+              craftLevel: 2
+              quantity: 1
+            - fixedId: credit
+              quantity: 5600
+          '5':
+            - type: skills
+              craftLevel: 2
+              quantity: 3
+            - type: common
+              craftLevel: 2
+              quantity: 2
+            - fixedId: credit
+              quantity: 12800
+          '6':
+            - type: skills
+              craftLevel: 2
+              quantity: 5
+            - type: common
+              craftLevel: 2
+              quantity: 5
+            - fixedId: credit
+              quantity: 20000
+          '7':
+            - type: skills
+              craftLevel: 3
+              quantity: 2
+            - type: common
+              craftLevel: 3
+              quantity: 2
+            - fixedId: credit
+              quantity: 28000
+          '8':
+            - type: skills
+              craftLevel: 3
+              quantity: 3
+            - type: skillsAdvanced
+              quantity: 1
+            - type: common
+              craftLevel: 3
+              quantity: 2
+            - fixedId: credit
+              quantity: 56000
+          '9':
+            - type: skills
+              craftLevel: 3
+              quantity: 5
+            - type: skillsAdvanced
+              quantity: 1
+            - fixedId: credit
+              quantity: 112000
+          '10':
+            - type: skills
+              craftLevel: 3
+              quantity: 9
+            - type: skillsAdvanced
+              quantity: 1
+            - fixedId: tracks-of-destiny
+              quantity: 1
+            - fixedId: credit
+              quantity: 192000
+      ultimate: *r5RemembranceSkill
+      talent: *r5RemembranceSkill
+      memospriteSkill: *r5RemembranceBasicAttack
+      memospriteTalent: *r5RemembranceBasicAttack
