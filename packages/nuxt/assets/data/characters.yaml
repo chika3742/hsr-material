@@ -24,6 +24,14 @@
         ascension: id:enigmatic-ectostella
         skills: group:lcs010
         skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
+    - path: remembrance
+      combatType: ice
+      levelingItemTable: r5Remembrance
+      materials:
+        common: group:com001
+        ascension: id:enigmatic-ectostella
+        skills: group:lcs013
+        skillsAdvanced: id:auspice-sliver
 
 - id: march-7th
   $nameJA: 三月なのか
@@ -715,3 +723,15 @@
     skills: group:lcs012
     skillsAdvanced: id:auspice-sliver
     common: group:com002
+- id: aglaea
+  $nameJA: アグライア
+  yomi: アグライア
+  rarity: 5
+  path: remembrance
+  combatType: lightning
+  levelingItemTable: r5Remembrance
+  materials:
+    ascension: id:nail-of-the-beast-coffin
+    skills: group:lcs013
+    skillsAdvanced: id:auspice-sliver
+    common: group:com009

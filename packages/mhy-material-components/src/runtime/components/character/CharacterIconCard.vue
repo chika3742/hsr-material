@@ -17,7 +17,7 @@ const characterName = computed(() => {
 
 <template>
   <v-card
-    :to="localePath({
+    :to="$localePath({
       path: `/characters/${toCharacterId(characterIdWithVariant)}`,
       query: { variant: toVariant(characterIdWithVariant) ?? undefined },
     })"

@@ -4,7 +4,7 @@ type: object
 additionalProperties: false
 required:
   - expItems
-  - levels
+  - levelingItemTables
 
 properties:
   expItems:
@@ -20,9 +20,16 @@ properties:
           type: string
         expPerItem:
           type: integer
-  levels:
-    type: object
+  levelingItemTables:
     additionalProperties:
-      type: array
-      items:
-        $ref: "./character-ingredients.yaml#/definitions/ingredient"
+      type: object
+      additionalProperties: false
+      required:
+        - levels
+      properties:
+        levels:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: "./character-ingredients.yaml#/definitions/ingredient"

@@ -1,7 +1,7 @@
 <template>
   <div class="doc-container">
     <v-btn
-      :to="localePath('/terms-summarized')"
+      :to="$localePath('/terms-summarized')"
       class="mb-4"
     >
       要約版はこちら

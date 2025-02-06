@@ -7,8 +7,8 @@ type LocObject = { [key: string]: string | LocObject }
 export const generateLocType = () => {
   const outputDir = "./types/generated"
 
-  const locJa = parse(fs.readFileSync(path.resolve("./locales/ja.yaml")).toString()) as LocObject
-  const locEn = parse(fs.readFileSync(path.resolve("./locales/en.yaml")).toString()) as LocObject
+  const locJa = parse(fs.readFileSync(path.resolve("./i18n/locales/ja.yaml")).toString()) as LocObject
+  const locEn = parse(fs.readFileSync(path.resolve("./i18n/locales/en.yaml")).toString()) as LocObject
   const missingKeys: string[] = []
   let locTs = "export type Loc =\n"
 

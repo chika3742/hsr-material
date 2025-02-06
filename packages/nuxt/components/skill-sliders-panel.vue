@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { PurposeType } from "~/types/strings"
 import type { CharacterMaterialDefinitions, Path } from "~/types/generated/characters.g"
-import type { LevelIngredients } from "~/types/level-ingredients"
-import characters from "~/assets/data/characters.yaml"
+import type { LevelIngredients, LevelsForPurposeTypes } from "~/types/level-ingredients"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
 
@@ -17,43 +15,34 @@ const props = defineProps<{
   characterId: string
   variant: Path | null
   materialDefs: CharacterMaterialDefinitions
+  purposeTypes: Omit<LevelsForPurposeTypes, "ascension">
 }>()
 
 const config = useConfigStore()
 
 const skillI18nKeyBase = computed(() => `skillTitles.${props.characterId + (props.variant ? `.${props.variant}` : "")}`)
 
-const sliders: Slider[] = [
-  {
-    type: "basicAttack",
-    levelIngredients: levelsToLevelIngredients(characterIngredients.purposeTypes.basicAttack.levels),
-  },
-  {
-    type: "skill",
-    levelIngredients: levelsToLevelIngredients(characterIngredients.purposeTypes.skill.levels),
-  },
-  {
-    type: "ultimate",
-    levelIngredients: levelsToLevelIngredients(characterIngredients.purposeTypes.ultimate.levels),
-  },
-  {
-    type: "talent",
-    levelIngredients: levelsToLevelIngredients(characterIngredients.purposeTypes.talent.levels),
-  },
-]
+const sliders = computed<Slider[]>(() => Object.entries(props.purposeTypes).map(([type, e]) => ({
+  type: type as PurposeType,
+  levelIngredients: levelsToLevelIngredients(e.levels),
+})))
 
-const characterRarity = characters.find(e => e.id === props.characterId)!.rarity
-
-const ranges = ref(sliders.map((e) => {
+const ranges = ref(sliders.value.map((e) => {
   const sliderTicks = levelIngredientsToSliderTicks(e.levelIngredients)
   return [sliderTicks[0], sliderTicks.slice(-1)[0]]
 }))
-const checkedList = ref(sliders.map(() => true))
+const checkedList = ref(sliders.value.map(() => true))
 const setInitialRangeBasedOnBookmarks = async () => {
-  const checkedListTmp = sliders.map(() => false)
+  // reinit ranges without considering bookmarks
+  ranges.value = sliders.value.map((e) => {
+    const sliderTicks = levelIngredientsToSliderTicks(e.levelIngredients)
+    return [sliderTicks[0], sliderTicks.slice(-1)[0]]
+  })
 
-  for (let index = 0; index < sliders.length; index++) {
-    const slider = sliders[index]
+  const checkedListTmp = sliders.value.map(() => false)
+
+  for (let index = 0; index < sliders.value.length; index++) {
+    const slider = sliders.value[index]
 
     const bookmarks = await db.bookmarks.getByPurpose(
       props.characterId,
@@ -80,7 +69,7 @@ const setInitialRangeBasedOnBookmarks = async () => {
   }
 
   if (checkedListTmp.every(e => !e)) {
-    checkedList.value = sliders.map(() => true)
+    checkedList.value = sliders.value.map(() => true)
   } else {
     checkedList.value = checkedListTmp
   }
@@ -93,7 +82,7 @@ watch(toRefs(props).variant, () => {
 })
 
 const ingredients = computed<BookmarkableMaterial[]>(() => {
-  return sliders.map((e, i) => {
+  return sliders.value.map((e, i) => {
     if (!checkedList.value[i]) {
       return []
     }
@@ -102,7 +91,7 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
         type: "character_material",
         characterId: toCharacterIdWithVariant(props.characterId, props.variant),
         materialId: getMaterialIdFromIngredient(g, props.materialDefs),
-        quantity: g.quantity!.rarities[characterRarity.toString()],
+        quantity: g.quantity!,
         usage: {
           type: "character",
           upperLevel: f.level,

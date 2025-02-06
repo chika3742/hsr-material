@@ -3,7 +3,7 @@ import _ from "lodash"
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
 import type { Bookmark, LevelingBookmark } from "~/types/bookmark/bookmark"
-import type { CharacterIdWithVariant } from "~/types/strings"
+import { type CharacterIdWithVariant, purposeTypeList } from "~/types/strings"
 import { reactive } from "#imports"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
 import { db } from "~/libs/db/providers"
@@ -75,12 +75,12 @@ const detailsDialog = reactive({
 
         <v-list-item
           :title="tx(`characterNames.${character}`)"
-          :to="localePath({ path: `/characters/${toCharacterId(character)}`, query: { variant: toVariant(character) ?? undefined } })"
+          :to="$localePath({ path: `/characters/${toCharacterId(character)}`, query: { variant: toVariant(character) ?? undefined } })"
           class="d-flex flex-grow-1 pl-0"
         >
           <template #prepend>
             <v-img
-              :src="getCharacterImage(toCharacterId(character), 'small')"
+              :src="getCharacterImage(character, 'small')"
               aspect-ratio="1"
               class="mr-2"
               width="50px"
@@ -100,7 +100,7 @@ const detailsDialog = reactive({
               :key="mId"
               :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
               :items="materials"
-              :purpose-types="['ascension', 'basicAttack', 'skill', 'talent', 'ultimate']"
+              :purpose-types="purposeTypeList"
               :show-farming-count="showFarmingCount"
             />
             <v-btn
@@ -126,7 +126,7 @@ const detailsDialog = reactive({
                 :prepend-avatar="getLightConeImage(lcId)"
                 :subtitle="tx('searchRecordTypes.light-cone')"
                 :title="tx(`lightConeNames.${lcId}`)"
-                :to="localePath({ path: `/light-cones/${lcId}`, query: { character } })"
+                :to="$localePath({ path: `/light-cones/${lcId}`, query: { character } })"
                 density="compact"
                 lines="two"
                 rounded

@@ -9,7 +9,7 @@
         :key="entry.path"
         :prepend-icon="entry.icon"
         :title="getPageTitle(entry.path)"
-        :to="localePath(entry.path)"
+        :to="$localePath(entry.path)"
       />
     </v-list>
   </div>

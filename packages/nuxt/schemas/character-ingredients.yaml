@@ -4,7 +4,7 @@ type: object
 additionalProperties: false
 required:
   - expItems
-  - purposeTypes
+  - levelingItemTables
 
 properties:
   expItems:
@@ -21,26 +21,38 @@ properties:
         expPerItem:
           type: integer
 
-  purposeTypes:
+  levelingItemTables:
     type: object
-    additionalProperties: false
-    required:
-      - ascension
-      - basicAttack
-      - skill
-      - ultimate
-      - talent
-    properties:
-      ascension:
-        $ref: "#/definitions/levelsObject"
-      basicAttack:
-        $ref: "#/definitions/levelsObject"
-      skill:
-        $ref: "#/definitions/levelsObject"
-      ultimate:
-        $ref: "#/definitions/levelsObject"
-      talent:
-        $ref: "#/definitions/levelsObject"
+    additionalProperties:
+      type: object
+      additionalProperties: false
+      required:
+        - purposeTypes
+      properties:
+        purposeTypes:
+          type: object
+          additionalProperties: false
+          required:
+            - ascension
+            - basicAttack
+            - skill
+            - ultimate
+            - talent
+          properties:
+            ascension:
+              $ref: "#/definitions/levelsObject"
+            basicAttack:
+              $ref: "#/definitions/levelsObject"
+            skill:
+              $ref: "#/definitions/levelsObject"
+            ultimate:
+              $ref: "#/definitions/levelsObject"
+            talent:
+              $ref: "#/definitions/levelsObject"
+            memospriteSkill:
+              $ref: "#/definitions/levelsObject"
+            memospriteTalent:
+              $ref: "#/definitions/levelsObject"
 
 definitions:
   levelsObject:
@@ -74,19 +86,8 @@ definitions:
           - skills
           - skillsAdvanced
       quantity:
-        $ref: "#/definitions/quantityWithRarity"
+        type: integer
       exp:
-        $ref: "#/definitions/quantityWithRarity"
+        type: integer
       craftLevel:
         type: integer
-
-  quantityWithRarity:
-    type: object
-    additionalProperties: false
-    required:
-      - rarities
-    properties:
-      rarities:
-        type: object
-        additionalProperties:
-          type: integer

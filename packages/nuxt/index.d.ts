@@ -25,8 +25,8 @@ declare module "@vue/runtime-core" {
   interface ComponentCustomProperties {
     readonly $isTouchDevice: boolean
     // shim for volar
-    localePath: (route: RawLocation | RouteLocation, locale?: Locale) => string
-    switchLocalePath: (locale?: Locale) => string
+    $localePath: (route: RawLocation | RouteLocation, locale?: Locale) => string
+    $switchLocalePath: (locale?: Locale) => string
   }
 }
 

@@ -169,14 +169,14 @@ const urlToRouteLocation = (url: string): RawLocation => {
           v-if="results"
           style="overflow: auto !important"
         >
-          <!-- :to="localePath(item.url)" https://github.com/nuxt-modules/i18n/issues/2020 -->
+          <!-- :to="$localePath(item.url)" https://github.com/nuxt-modules/i18n/issues/2020 -->
           <v-list-item
             v-for="item in results"
             :key="item.objectID"
             :prepend-avatar="getItemImage(item)"
             :subtitle="tx(`searchRecordTypes.${item.recordType}`)"
             :title="tx(item.i18nKey)"
-            :to="localePath(urlToRouteLocation(item.url))"
+            :to="$localePath(urlToRouteLocation(item.url))"
             @click="clearQuery(); closeDialog()"
           />
           <div style="height: env(safe-area-inset-bottom)" />

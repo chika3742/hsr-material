@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
 import type { CharacterVariant } from "~/types/generated/characters.g"
+import characterIngredients from "~/assets/data/character-ingredients.yaml"
+import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
 
 definePageMeta({
   title: "characterDetails",
@@ -21,6 +23,28 @@ const currentVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
   path: character.path!,
   combatType: character.combatType!,
   materials: character.materials!,
+  levelingItemTable: character.levelingItemTable,
+})
+
+const purposeTypes = computed<LevelsForPurposeTypes>(() => {
+  const getDefaultLitForRarity = () => {
+    switch (character.rarity) {
+      case 4:
+        return "r4Base"
+      case 5:
+        return "r5Base"
+      default:
+        throw new Error("Invalid rarity")
+    }
+  }
+
+  return characterIngredients.levelingItemTables[currentVariant.value.levelingItemTable ?? getDefaultLitForRarity()].purposeTypes
+})
+
+const purposeTypesOmitted = computed<Omit<LevelsForPurposeTypes, "ascension">>(() => {
+  const result = { ...purposeTypes.value } as any
+  delete result.ascension
+  return result
 })
 
 watch(currentVariant, (value) => {
@@ -43,7 +67,7 @@ onActivated(() => {
     >
       <!-- character image -->
       <v-img
-        :src="getCharacterImage(character.id, 'small')"
+        :src="getCharacterImage(toCharacterIdWithVariant(character.id, character.variants && currentVariant.path), 'small')"
         aspect-ratio="1"
         max-width="80px"
         width="80px"
@@ -81,6 +105,7 @@ onActivated(() => {
           <v-img
             :src="getCombatTypeImage(currentVariant.combatType)"
             class="ml-3"
+            aspect-ratio="1"
             max-width="22px"
             width="22px"
           />
@@ -104,7 +129,7 @@ onActivated(() => {
           color="primary"
           prepend-icon="mdi-cone"
           variant="outlined"
-          @click="$router.push(localePath({
+          @click="$router.push($localePath({
             path: '/light-cones',
             query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
           }))"
@@ -115,7 +140,7 @@ onActivated(() => {
           color="primary"
           prepend-icon="mdi-star-david"
           variant="outlined"
-          @click="$router.push(localePath({
+          @click="$router.push($localePath({
             path: '/relics',
             query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
           }))"
@@ -143,12 +168,14 @@ onActivated(() => {
         :material-defs="currentVariant.materials"
         :character-id="character.id"
         :variant="character.variants ? currentVariant.path : null"
+        :levels="purposeTypes.ascension"
         :title="tx('characterDetailsPage.ascension')"
       />
       <SkillSlidersPanel
         :character-id="character.id"
         :material-defs="currentVariant.materials"
         :title="tx('characterDetailsPage.skills')"
+        :purpose-types="purposeTypesOmitted"
         :variant="character.variants ? currentVariant.path : null"
       />
     </v-expansion-panels>

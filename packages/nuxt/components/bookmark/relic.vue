@@ -80,7 +80,7 @@ const removeBookmark = async (id: number) => {
   <div>
     <v-list-item
       :subtitle="subtitle"
-      :to="setIds.length === 1 ? localePath({
+      :to="setIds.length === 1 ? $localePath({
         path: `/relics/${setIds[0]}`,
         query: { expansion_index: item.type === 'relic_piece' ? '1' : undefined },
       }) : undefined"
@@ -130,7 +130,7 @@ const removeBookmark = async (id: number) => {
             :key="id"
             :prepend-avatar="getRelicSetImage(id)"
             :title="tx(`relicSetTitles.${id}`)"
-            :to="localePath(`/relics/${id}`)"
+            :to="$localePath(`/relics/${id}`)"
           />
         </v-list>
       </v-menu>

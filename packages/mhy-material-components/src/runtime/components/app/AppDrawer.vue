@@ -37,7 +37,7 @@ onMounted(() => {
             :prepend-icon="item.icon"
             :target="item.target"
             :title="item.title ? $t(`navDrawer.${item.title}`) : $getPageTitle(item.to!)"
-            :to="item.to ? localePath(item.to) : undefined"
+            :to="item.to ? $localePath(item.to) : undefined"
             density="comfortable"
             @click="item.onClick?.(); isOpen = false"
           />
