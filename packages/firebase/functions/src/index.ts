@@ -1,5 +1,4 @@
 import admin from "firebase-admin"
-import "source-map-support/register"
 import { initializeFirestore } from "firebase-admin/firestore";
 
 const app = admin.initializeApp()
