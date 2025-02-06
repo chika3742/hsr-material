@@ -64,7 +64,7 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
             v-for="character in characterUsage"
             :key="character.id"
             :character-id-with-variant="toCharacterIdWithVariant(character.id, character.variant ?? null)"
-            :image-url="getCharacterImage(character.id, 'small')"
+            :image-url="getCharacterImage(toCharacterIdWithVariant(character.id, character.variant ?? null), 'small')"
           />
         </v-row>
       </v-card-text>

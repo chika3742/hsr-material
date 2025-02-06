@@ -8,7 +8,7 @@ export default defineNuxtPlugin(() => {
       for (const variant of character.variants) {
         characterSelectItems.push({
           id: toCharacterIdWithVariant(character.id, variant.path),
-          image: getCharacterImage(character.id, "small"),
+          image: getCharacterImage(toCharacterIdWithVariant(character.id, variant.path), "small"),
         })
       }
     } else {
