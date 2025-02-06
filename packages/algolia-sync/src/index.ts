@@ -5,7 +5,7 @@ import type { Characters } from "../../nuxt/types/generated/characters.g"
 import type { Materials } from "../../nuxt/types/data/materials"
 import type { LightCones } from "../../nuxt/types/generated/light-cones.g"
 import type { AlgoliaRecord } from "../../nuxt/types/algolia-record"
-import algoliaConfig from "../../nuxt/algolia.json" assert {type: "json"}
+import algoliaConfig from "../../nuxt/algolia.json" assert { type: "json" }
 import type { RelicPiece, RelicSet } from "../../nuxt/types/data/relics"
 import { loadCsvSync, loadYamlSync } from "./utils.js"
 
@@ -29,7 +29,7 @@ const kataToHira = (input: string) => {
 }
 
 const dataDir = "../nuxt/assets/data"
-const localeDir = "../nuxt/locales"
+const localeDir = "../nuxt/i18n/locales"
 
 const syncObjects = async () => {
   if (process.env.ALGOLIA_API_KEY === undefined) {
