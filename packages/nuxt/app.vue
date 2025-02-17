@@ -53,6 +53,15 @@
             <span>{{ tx("common.nonProdWarning") }}</span>
           </div>
 
+          <div
+            class="warning-overlay-banner"
+          >
+            <a
+              href="https://www.chikach.net/category/info/sunset-of-material-notebooks"
+              target="_blank"
+            >【重要】サービス終了について</a>
+          </div>
+
           <AppFooter
             v-model:theme-setting="config.theme"
             :current-version="getCurrentVersionText()"
@@ -340,4 +349,8 @@ router.afterEach(() => {
   background: rgba(var(--v-theme-warning), 0.6)
   font-weight: bold
   backdrop-filter: blur(8px)
+
+  a
+    color: #1f8bff
+    font-weight: bold
 </style>
