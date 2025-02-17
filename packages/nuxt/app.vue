@@ -59,6 +59,7 @@
             <a
               href="https://www.chikach.net/category/info/sunset-of-material-notebooks"
               target="_blank"
+              class="link"
             >【重要】サービス終了について</a>
           </div>
 
@@ -351,6 +352,5 @@ router.afterEach(() => {
   backdrop-filter: blur(8px)
 
   a
-    color: #1f8bff
     font-weight: bold
 </style>
