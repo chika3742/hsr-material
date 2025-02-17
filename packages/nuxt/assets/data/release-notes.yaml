@@ -1,5 +1,13 @@
 # コピー用改行
 
+- date: 2025/02/17
+  funcVersion: 1.4.1
+  dataVersion: 3.0.1
+  isMajor: false
+  content: |
+    ### 追加
+    - サービス終了に関するバナー追加
+
 - date: 2025/02/06
   funcVersion: 1.4.0
   dataVersion: 3.0.1
