@@ -71,6 +71,17 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
  * @returns Light cone ID list
  */
 export const getMaterialUsageLightCone = (materialId: string): LightCone[] => {
+  const pathOrderMap: Record<Path, number> = {
+    destruction: 1,
+    the_hunt: 2,
+    erudition: 3,
+    harmony: 4,
+    nihility: 5,
+    preservation: 6,
+    abundance: 7,
+    remembrance: 8,
+  }
+
   return lightCones.filter((lightCone) => {
     for (const defExpr of Object.values(lightCone.materials) as string[]) {
       const [defType, id] = defExpr.split(":")
@@ -87,4 +98,6 @@ export const getMaterialUsageLightCone = (materialId: string): LightCone[] => {
 
     return false
   })
+    .sort((a, b) => b.rarity - a.rarity)
+    .sort((a, b) => pathOrderMap[a.path] - pathOrderMap[b.path])
 }

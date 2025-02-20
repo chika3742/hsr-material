@@ -102,7 +102,7 @@ const characterSelectFilter = (id: string): boolean => {
       max-width="300px"
     />
 
-    <v-expansion-panels mandatory="force">
+    <v-expansion-panels :model-value="[0]">
       <SingleSliderPanel
         v-if="selectedCharacter"
         :material-defs="lightCone.materials"
@@ -111,11 +111,6 @@ const characterSelectFilter = (id: string): boolean => {
         :light-cone-id="lightCone.id"
         :character-id="toCharacterId(selectedCharacter)"
         :variant="toVariant(selectedCharacter)"
-      />
-
-      <v-expansion-panel
-        :title="tx('lightConeDetailsPage.recommendedCharacters')"
-        text="Coming soon..."
       />
     </v-expansion-panels>
   </div>
