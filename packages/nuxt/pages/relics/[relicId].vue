@@ -133,10 +133,6 @@ const bookmarkPiece = (piece: RelicPiece) => {
           </v-list>
         </template>
       </v-expansion-panel>
-      <v-expansion-panel
-        :title="tx('relicDetailsPage.recommendedCharacters')"
-        text="Coming soon..."
-      />
     </v-expansion-panels>
 
     <RelicSetChooseDialog
