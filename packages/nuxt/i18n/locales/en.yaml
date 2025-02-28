@@ -1520,6 +1520,8 @@ relicSetTitles:
   the-wondrous-bananamusement-park: The Wondrous BananAmusement Park
   hero-of-triumphant-song: Hero of Triumphant Song
   poet-of-mourning-collapse: Poet of Mourning Collapse
+  giant-tree-of-rapt-brooding: Giant Tree of Rapt Brooding
+  bone-collections-serene-demesne: Bone Collection's Serene Demesne
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -1725,6 +1727,16 @@ relicSetEffects:
       wearer's SPD is lower than <110>/<95>, increases the wearer's CRIT Rate by
       <20%>/<32%>. This effect applies to the wearer's memosprite at the same
       time.
+  giant-tree-of-rapt-brooding:
+    2pc: >-
+      Increases the wearer's SPD by <6%>. When the wearer's SPD is <135>/<180>
+      or higher, the wearer and their memosprite's Outgoing Healing increases by
+      <12%>/<20%>.
+  bone-collections-serene-demesne:
+    2pc: >-
+      Increases the wearer's Max HP by <12%>. When the wearer's Max HP is <5000>
+      or higher, increases the wearer's and their memosprite's CRIT DMG by
+      <28%>.
 
 relicPieceNames:
   bands-polarized-sunglasses: Band's Polarized Sunglasses
@@ -1851,5 +1863,9 @@ relicPieceNames:
   poets-gilded-bracelet: Poet's Gilded Bracelet
   poets-star-studded-skirt: Poet's Star-Studded Skirt
   poets-silver-studded-shoes: Poet's Silver-Studded Shoes
+  grove-of-epiphanys-pondering-colossus: Grove of Epiphany's Pondering Colossus
+  grove-of-epiphanys-interwoven-veins: Grove of Epiphany's Interwoven Veins
+  aidonias-deceased-gravestones: Aidonia's Deceased Gravestones
+  aidonias-deathward-bone-chains: Aidonia's Deathward Bone Chains
 
 # eof (replace regex marker)

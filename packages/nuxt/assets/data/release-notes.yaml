@@ -2,6 +2,14 @@
 
 - date: 2025/02/28
   funcVersion: 1.4.2
+  dataVersion: 3.1.1
+  isMajor: false
+  content: |
+    ### データ追加
+    - 遺物セット「深慮に浸る巨樹」「静謐な拾骨地」
+
+- date: 2025/02/28
+  funcVersion: 1.4.2
   dataVersion: 3.1.0
   isMajor: false
   content: |
