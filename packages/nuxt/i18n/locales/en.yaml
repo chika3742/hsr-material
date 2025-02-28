@@ -473,6 +473,8 @@ characterNames:
   fugue: Fugue
   the-herta: The Herta
   aglaea: Aglaea
+  tribbie: Tribbie
+  mydei: Mydei
 
 materialCategories:
   exp: EXP Materials
@@ -591,6 +593,8 @@ materialNames:
   fear-stomped-flesh: Fear-Stomped Flesh
   courage-torn-chest: Courage-Torn Chest
   glory-aspersed-torso: Glory-Aspersed Torso
+  darkveil-moonlight: Darkveil Moonlight
+  harbinger-of-strife: Harbinger of Strife
 
 skillTitles:
   trailblazer:
@@ -924,6 +928,16 @@ skillTitles:
     talent: Rosy-Fingered
     memospriteSkill: Thorned Snare
     memospriteTalent: A Body Brewed by Tears
+  tribbie:
+    basicAttack: Hundred Rockets
+    skill: Where'd the Gifts Go
+    ultimate: Guess Who Lives Here
+    talent: Busy as Tribbie
+  mydei:
+    basicAttack: Vow of Voyage
+    skill: Deaths are Legion, Regrets are None
+    ultimate: Throne of Bones
+    talent: Blood for Blood
 
 lightConeNames:
   arrows: Arrows

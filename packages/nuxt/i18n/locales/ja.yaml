@@ -480,6 +480,8 @@ characterNames:
   fugue: 帰忘の流離人
   the-herta: マダム・ヘルタ
   aglaea: アグライア
+  tribbie: トリビー
+  mydei: モーディス
 
 materialCategories:
   exp: 経験値素材
@@ -598,6 +600,8 @@ materialNames:
   fear-stomped-flesh: 恐怖は血肉を踏み潰す
   courage-torn-chest: 勇気は胸を切り裂く
   glory-aspersed-torso: 栄光は身体を洗礼する
+  darkveil-moonlight: 夜の帳に輝く月華
+  harbinger-of-strife: 紛争の兆し
 
 skillTitles:
   trailblazer:
@@ -931,6 +935,16 @@ skillTitles:
     talent: 薔薇色の指先
     memospriteSkill: サイフォスの罠
     memospriteTalent: 涙で鍛えし匠の躯
+  tribbie:
+    basicAttack: 百発分のピラヴロス
+    skill: プレゼントはどこ？
+    ultimate: ここに住んでるのは誰でしょう！
+    talent: どたばたトリビー
+  mydei:
+    basicAttack: 征途踏破の誓い
+    skill: 万死に悔いなし
+    ultimate: 天を滅す炎骨の王座
+    talent: 血を以って血を制す
 
 lightConeNames:
   arrows: 矢じり
