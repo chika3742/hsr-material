@@ -735,3 +735,25 @@
     skills: group:lcs013
     skillsAdvanced: id:auspice-sliver
     common: group:com009
+- id: tribbie
+  $nameJA: トリビー
+  yomi: トリビー
+  rarity: 5
+  path: harmony
+  combatType: quantum
+  materials:
+    ascension: id:darkveil-moonlight
+    skills: group:lcs010
+    skillsAdvanced: id:lost-echo-of-the-shared-wish
+    common: group:com009
+- id: mydei
+  $nameJA: モーディス
+  yomi: モーディス
+  rarity: 5
+  path: destruction
+  combatType: imaginary
+  materials:
+    ascension: id:harbinger-of-strife
+    skills: group:lcs009
+    skillsAdvanced: id:auspice-sliver
+    common: group:com009
