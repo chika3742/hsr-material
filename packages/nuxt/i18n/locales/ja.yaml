@@ -1280,6 +1280,8 @@ relicSetTitles:
   the-wondrous-bananamusement-park: 奇想天外のバナダイス
   hero-of-triumphant-song: 凱歌を揚げる英雄
   poet-of-mourning-collapse: 亡国の悲哀を詠う詩人
+  giant-tree-of-rapt-brooding: 深慮に浸る巨樹
+  bone-collections-serene-demesne: 静謐な拾骨地
 
 relicSetEffects:
   passerby-of-wandering-cloud:
@@ -1392,6 +1394,10 @@ relicSetEffects:
     2pc: 量子属性ダメージ+<10%>。
     4pc: >-
       装備キャラの速度-<8%>。戦闘に入る前、装備キャラの速度が<110>/<95>を下回る時、装備キャラの会心率+<20%>/<32%>。この効果は装備キャラの記憶の精霊にも有効。
+  giant-tree-of-rapt-brooding:
+    2pc: 装備キャラの速度+<6%>。装備キャラの速度が<135>/<180>以上の時、装備キャラ及びその記憶の精霊の治癒量+<12%>/<20%>。
+  bone-collections-serene-demesne:
+    2pc: 装備キャラの最大HP+<12%>。装備キャラの最大HPが<5000>以上の時、装備キャラおよびその記憶の精霊の会心ダメージ+<28%>。
 
 relicPieceNames:
   bands-polarized-sunglasses: バンドの偏光サングラス
@@ -1518,5 +1524,9 @@ relicPieceNames:
   poets-gilded-bracelet: 詩人の黄金を用いた腕輪
   poets-star-studded-skirt: 詩人の星降るドレス
   poets-silver-studded-shoes: 詩人の銀鋲を添えたサンダル
+  grove-of-epiphanys-pondering-colossus: 神悟の樹庭の熟慮する根系
+  grove-of-epiphanys-interwoven-veins: 神悟の樹庭の知を繋ぐ樹路
+  aidonias-deceased-gravestones: エイジリアの慰霊祭碑
+  aidonias-deathward-bone-chains: エイジリアの冥河の骨連環
 
 # eof (replace regex marker)
