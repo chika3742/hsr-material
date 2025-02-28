@@ -480,6 +480,8 @@ characterNames:
   fugue: 帰忘の流離人
   the-herta: マダム・ヘルタ
   aglaea: アグライア
+  tribbie: トリビー
+  mydei: モーディス
 
 materialCategories:
   exp: 経験値素材
@@ -598,6 +600,8 @@ materialNames:
   fear-stomped-flesh: 恐怖は血肉を踏み潰す
   courage-torn-chest: 勇気は胸を切り裂く
   glory-aspersed-torso: 栄光は身体を洗礼する
+  darkveil-moonlight: 夜の帳に輝く月華
+  harbinger-of-strife: 紛争の兆し
 
 skillTitles:
   trailblazer:
@@ -931,6 +935,16 @@ skillTitles:
     talent: 薔薇色の指先
     memospriteSkill: サイフォスの罠
     memospriteTalent: 涙で鍛えし匠の躯
+  tribbie:
+    basicAttack: 百発分のピラヴロス
+    skill: プレゼントはどこ？
+    ultimate: ここに住んでるのは誰でしょう！
+    talent: どたばたトリビー
+  mydei:
+    basicAttack: 征途踏破の誓い
+    skill: 万死に悔いなし
+    ultimate: 天を滅す炎骨の王座
+    talent: 血を以って血を制す
 
 lightConeNames:
   arrows: 矢じり
@@ -1050,6 +1064,8 @@ lightConeNames:
   sweat-now-cry-less: 流すなら涙より汗
   time-woven-into-gold: 光陰を織り黄金と成す
   shadowed-by-night: 夜は影のように付き纏う
+  if-time-were-a-flower: もしも時が花だったら
+  flame-of-blood-blaze-my-path: 前途燃やす血の如き炎
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1216,6 +1232,12 @@ lightConeSkillDescriptions:
     装備キャラの基礎速度+<12>。装備キャラまたはその記憶の精霊が攻撃を行った後、装備キャラに「錦を織って」を1層付与する。「錦を織って」1層につき、装備キャラおよびその記憶の精霊の会心ダメージ+<9%>、最大で6層累積できる。「錦を織って」の層数が上限に達すると、1層につき、追加で通常攻撃ダメージ+<9%>。
   shadowed-by-night: >-
     装備キャラの撃破特効+<28%>、戦闘に入った時または弱点撃破ダメージを与えた後、速度+<8%>、2ターン継続。この効果はターンが回ってくるたびに1回まで発動できる。
+  if-time-were-a-flower: >-
+    装備キャラの会心ダメージ+<36%>。装備キャラが追加攻撃を行った後、さらにEPを12回復し、「啓示」を獲得する、2ターン継続。装備キャラが「啓示」を所持している場合、味方全体の会心ダメージ+<48%>。戦闘に入る時、装備キャラのEPが21回復し、「啓示」を獲得する、2ターン継続。
+  flame-of-blood-blaze-my-path: >-
+    装備キャラの最大HP+<18%>、受ける治癒量+<20%>。戦闘スキルまたは必殺技を発動する時、自身の最大HP<6%>分のHPを消費し、その回の攻撃の与ダメージ+<30%>。この効果で消費したHPが500を超えると、さらに与ダメージ+<30%>。
+
+    残りHPが足りない場合、この効果で装備キャラの残りHPが1になる。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
@@ -1369,7 +1391,7 @@ relicSetEffects:
   poet-of-mourning-collapse:
     2pc: 量子属性ダメージ+<10%>。
     4pc: >-
-      装備キャラの速度‑<8%>。戦闘に入る前、装備キャラの速度が<110>/<95>を下回る時、装備キャラの会心率+<20%>/<32%>。この効果は装備キャラの記憶の精霊にも有効。
+      装備キャラの速度-<8%>。戦闘に入る前、装備キャラの速度が<110>/<95>を下回る時、装備キャラの会心率+<20%>/<32%>。この効果は装備キャラの記憶の精霊にも有効。
 
 relicPieceNames:
   bands-polarized-sunglasses: バンドの偏光サングラス
