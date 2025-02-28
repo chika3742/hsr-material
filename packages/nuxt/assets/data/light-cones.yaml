@@ -934,3 +934,19 @@
   materials:
     primary: group:zzP0
     common: group:com006
+- id: if-time-were-a-flower
+  yomi: モシモトキガハナダッタラ
+  $nameJA: もしも時が花だったら
+  path: harmony
+  rarity: 5
+  materials:
+    primary: group:lcs010
+    common: group:com009
+- id: flame-of-blood-blaze-my-path
+  yomi: ゼントモヤスチノゴトキホノオ
+  $nameJA: 前途燃やす血の如き炎
+  path: destruction
+  rarity: 5
+  materials:
+    primary: group:lcs009
+    common: group:com009

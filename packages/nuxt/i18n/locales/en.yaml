@@ -1057,6 +1057,8 @@ lightConeNames:
   sweat-now-cry-less: Sweat Now, Cry Less
   time-woven-into-gold: Time Woven Into Gold
   shadowed-by-night: Shadowed by Night
+  if-time-were-a-flower: If Time Were a Flower
+  flame-of-blood-blaze-my-path: Flame of Blood, Blaze My Path
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1462,6 +1464,20 @@ lightConeSkillDescriptions:
     Increases the wearer's Break Effect by <28%>. When entering battle or after
     dealing Break DMG, increases SPD by <8%>, lasting for 2 turn(s). This effect
     can only trigger once per turn.
+  if-time-were-a-flower: >-
+    Increases the wearer's CRIT DMG by <36%>. After the wearer launches
+    Follow-up ATK, additionally regenerates 12 Energy and gains "Presage,"
+    lasting for 2 turn(s). While the wearer has "Presage," all ally targets'
+    CRIT DMG increases by <48%>. When entering battle, the wearer regenerates 21
+    Energy and gains "Presage," lasting for 2 turn(s).
+  flame-of-blood-blaze-my-path: >-
+    Increases the wearer's Max HP by <18%> and Incoming Healing by <20%>. When
+    using Skill or Ultimate, consumes HP equal to <6%> of the wearer's Max HP
+    and increases the DMG dealt by this attack by <30%>. If this effect's
+    consumed HP is greater than 500, the DMG additionally increases by <30%>.
+
+    If the current HP is not sufficient, this effect reduces the wearer's
+    current HP down to 1.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud
