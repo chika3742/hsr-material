@@ -1066,6 +1066,8 @@ lightConeNames:
   shadowed-by-night: 夜は影のように付き纏う
   if-time-were-a-flower: もしも時が花だったら
   flame-of-blood-blaze-my-path: 前途燃やす血の如き炎
+  dreams-montage: 夢のモンタージュ
+  ninja-record-sound-hunt: 忍事録・音律狩猟
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1238,6 +1240,9 @@ lightConeSkillDescriptions:
     装備キャラの最大HP+<18%>、受ける治癒量+<20%>。戦闘スキルまたは必殺技を発動する時、自身の最大HP<6%>分のHPを消費し、その回の攻撃の与ダメージ+<30%>。この効果で消費したHPが500を超えると、さらに与ダメージ+<30%>。
 
     残りHPが足りない場合、この効果で装備キャラの残りHPが1になる。
+  dreams-montage: 装備キャラの速度+<8%>、弱点撃破状態の敵を攻撃した後、EPを<3>回復する。この効果はターンが回ってくるたびに2回まで発動できる。
+  ninja-record-sound-hunt: >-
+    装備キャラの最大HP+<12%>。HPを失う、または回復した後、会心ダメージ+<18%>、2ターン継続。この効果はターンが回ってくるたびに1回まで発動できる。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
