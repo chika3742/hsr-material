@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --port 3001",
-    "dev:local-server": "USE_FIREBASE_EMULATOR=true bunx wrangler pages dev -- nuxt dev --port 3001",
+    "dev": "nuxt dev",
+    "dev:local-server": "USE_FIREBASE_EMULATOR=true bunx wrangler pages dev --port 3000 -- nuxt dev --port 3001",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "prepack": "nuxt prepare"

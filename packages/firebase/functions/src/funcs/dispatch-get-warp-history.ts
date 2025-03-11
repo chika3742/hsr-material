@@ -13,7 +13,7 @@ export const dispatchGetWarpHistory = onCall<DispatchGetWarpHistoryParams, Promi
   region: "asia-northeast1",
   minInstances: 0,
 }, async ({ app, data }) => {
-  if (!app) {
+  if (process.env.NODE_ENV !== "development" && !app) {
     throw new HttpsError("failed-precondition", "Invalid App Check token.")
   }
 
