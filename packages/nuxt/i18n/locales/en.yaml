@@ -1059,6 +1059,8 @@ lightConeNames:
   shadowed-by-night: Shadowed by Night
   if-time-were-a-flower: If Time Were a Flower
   flame-of-blood-blaze-my-path: Flame of Blood, Blaze My Path
+  dreams-montage: Dream's Montage
+  ninja-record-sound-hunt: "Ninja Record: Sound Hunt"
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1478,6 +1480,14 @@ lightConeSkillDescriptions:
 
     If the current HP is not sufficient, this effect reduces the wearer's
     current HP down to 1.
+  dreams-montage: >-
+    Increases the wearer's SPD by <8%>. After attacking enemy targets that are
+    Weakness Broken, regenerates <3> Energy. This effect can trigger up to 2
+    time(s) per turn.
+  ninja-record-sound-hunt: >-
+    Increases the wearer's Max HP by <12%>. When losing or restoring this unit's
+    HP, increases CRIT DMG by <18%>, lasting for 2 turn(s). This effect can only
+    trigger once per turn.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

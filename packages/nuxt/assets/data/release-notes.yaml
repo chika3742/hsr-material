@@ -1,5 +1,13 @@
 # コピー用改行
 
+- date: 2025/03/11
+  funcVersion: 1.4.2
+  dataVersion: 3.1.2
+  isMajor: false
+  content: |
+    ### データ追加
+    - 光円錐「夢のモンタージュ」「忍事録・音律狩猟」（v2.6追加分の追加漏れ）
+
 - date: 2025/02/28
   funcVersion: 1.4.2
   dataVersion: 3.1.1

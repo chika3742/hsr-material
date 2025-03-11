@@ -950,3 +950,19 @@
   materials:
     primary: group:lcs009
     common: group:com009
+- id: dreams-montage
+  yomi: ユメノモンタージュ
+  $nameJA: 夢のモンタージュ
+  path: abundance
+  rarity: 4
+  materials:
+    primary: group:tree-seeds
+    common: group:com007
+- id: ninja-record-sound-hunt
+  yomi: ニンジロクオンリツシュリョウ
+  $nameJA: 忍事録・音律狩猟
+  path: destruction
+  rarity: 4
+  materials:
+    primary: group:lcs009
+    common: group:com008
