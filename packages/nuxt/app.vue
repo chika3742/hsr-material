@@ -53,15 +53,15 @@
             <span>{{ tx("common.nonProdWarning") }}</span>
           </div>
 
-          <div
-            class="warning-overlay-banner"
-          >
-            <a
-              href="https://www.chikach.net/category/info/sunset-of-material-notebooks"
-              target="_blank"
-              class="link"
-            >【重要】サービス終了について</a>
-          </div>
+          <!--          <div -->
+          <!--            class="warning-overlay-banner" -->
+          <!--          > -->
+          <!--            <a -->
+          <!--              href="https://www.chikach.net/category/info/sunset-of-material-notebooks" -->
+          <!--              target="_blank" -->
+          <!--              class="link" -->
+          <!--            >【重要】サービス終了について</a> -->
+          <!--          </div> -->
 
           <AppFooter
             v-model:theme-setting="config.theme"

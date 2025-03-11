@@ -68,7 +68,32 @@
       <v-expansion-panel>
         <v-expansion-panel-title>{{ $t("warpsPage.pityHistory") }}</v-expansion-panel-title>
         <v-expansion-panel-text class="pity-history-container">
-          <v-table>
+          <v-chip-group
+            v-model="filter"
+            class="mx-2"
+            column
+            multiple
+            filter
+            mandatory
+            color="primary"
+          >
+            <v-chip
+              text="☆3"
+              value="3"
+            />
+            <v-chip
+              text="☆4"
+              value="4"
+            />
+            <v-chip
+              text="☆5"
+              value="5"
+            />
+          </v-chip-group>
+          <p class="my-0 opacity-70 text-caption text-center d-md-none">
+            左右にスクロールできます
+          </p>
+          <v-table style="white-space: nowrap">
             <thead>
               <tr>
                 <th>{{ $t("warpsPage.rarity") }}</th>
@@ -82,9 +107,9 @@
                 v-for="(item, i) in pityCountList"
                 :key="i"
               >
-                <td style="width: 70px">
+                <td>
                   <v-row
-                    :class="{ 'text-orange': item.rank === '4', 'text-red': item.rank === '5', 'flex-nowrap': true }"
+                    :class="{ 'text-blue': item.rank === '3', 'text-orange': item.rank === '4', 'text-red': item.rank === '5', 'flex-nowrap': true }"
                     align="center"
                     no-gutters
                   >
@@ -94,15 +119,26 @@
                     <span>{{ item.rank }}</span>
                   </v-row>
                 </td>
-                <td style="white-space: nowrap; min-width: 150px">
-                  <v-icon>{{ item.type === "キャラクター" ? "mdi-account" : "mdi-sword" }}</v-icon>
-                  <span style="white-space: normal">{{ item.name }}</span>
+                <td style="min-width: 150px">
+                  <v-row
+                    no-gutters
+                    align="center"
+                    class="flex-nowrap"
+                  >
+                    <v-icon>{{ item.type === "キャラクター" ? "mdi-account" : "mdi-sword" }}</v-icon>
+                    <span class="ml-1">{{ item.name }}</span>
+                    <v-icon
+                      v-if="item.offBanner"
+                      class="ml-1"
+                    >
+                      mdi-emoticon-sad
+                    </v-icon>
+                  </v-row>
                 </td>
                 <td
                   :class="getTableNumberColorClass(item)"
-                  style="text-align: end; width: 50px"
                 >
-                  {{ item.count }}
+                  {{ item.count ?? "-" }}
                 </td>
                 <td>
                   {{ item.dateTime.toFormat("yyyy/MM/dd HH:mm") }}
@@ -135,13 +171,32 @@ interface PityCountListItem {
   rank: string
   type: string
   name: string
-  count: number
+  count: number | null
+  offBanner?: boolean
   dateTime: DateTime
 }
 
 const i18n = useI18n()
 
+const filter = ref<string[]>(["4", "5"])
+
 const star4Pity = 10
+const offBannerItems = [
+  "姫子",
+  "ヴェルト",
+  "ブローニャ",
+  "ジェパード",
+  "クラーラ",
+  "彦卿",
+  "白露",
+  "かけがえのないもの",
+  "泥の如き眠り",
+  "銀河鉄道の夜",
+  "だが戦争は終わらない",
+  "世界の名を以て",
+  "勝利の刹那",
+  "時節は居らず",
+]
 
 const pityInfo = computed<Record<number, { count: number, lastPulled: string }>>(() => {
   const pityInfo: Record<number, { count: number, lastPulled: string }> = {
@@ -181,20 +236,22 @@ const pityInfo = computed<Record<number, { count: number, lastPulled: string }>>
 const pityCountList = computed(() => {
   const result: PityCountListItem[] = []
 
-  const pityCount: Record<number, number> = {
-    4: 0,
-    5: 0,
+  const pityCount: Record<string, number> = {}
+  for (const rank of filter.value) {
+    pityCount[rank] = 0
   }
 
   for (const warp of props.warps) {
-    pityCount[4]++
-    pityCount[5]++
+    for (const key of Object.keys(pityCount)) {
+      pityCount[key]++
+    }
 
-    if (warp.rankType === "4" || warp.rankType === "5") {
+    if (Object.keys(pityCount).includes(warp.rankType)) {
       result.push({
         name: i18n.t(getItemNameI18nKey(warp)),
         type: warp.itemType,
-        count: pityCount[warp.rankType],
+        count: warp.rankType !== "3" ? pityCount[warp.rankType] : null,
+        offBanner: warp.gachaType !== "1" && offBannerItems.includes(warp.name),
         dateTime: DateTime.fromFormat(warp.time, "yyyy-MM-dd HH:mm:ss"),
         rank: warp.rankType,
       })
@@ -207,14 +264,28 @@ const pityCountList = computed(() => {
 
 const getItemNameI18nKey = (warp: Warp) => {
   switch (warp.itemType) {
-    case "キャラクター":
-      return `characterNames.${characters.find(e => e.$nameJA === warp.name)?.id}`
-    case "光円錐":
-      return `lightConeNames.${lightCones.find(e => e.$nameJA === warp.name)?.id}`
+    case "キャラクター": {
+      const found = characters.find(e => e.$nameJA === warp.name)
+      if (!found) {
+        console.error(`Character not found: ${warp.name}`)
+      }
+      return `characterNames.${found?.id}`
+    }
+    case "光円錐": {
+      const found = lightCones.find(e => e.$nameJA === warp.name)
+      if (!found) {
+        console.error(`Light cone not found: ${warp.name}`)
+      }
+      return `lightConeNames.${found?.id}`
+    }
   }
 }
 
 const getTableNumberColorClass = (item: PityCountListItem) => {
+  if (!item.count) {
+    return ""
+  }
+
   if (item.rank === "4") {
     if (item.count >= 10) {
       return "text-red"

@@ -17,9 +17,11 @@ export default defineNuxtPlugin(({ $config }) => {
     self.FIREBASE_APPCHECK_DEBUG_TOKEN = true
   }
 
-  initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider($config.public.recaptchaSiteKey),
-  })
+  if (!import.meta.dev || !$config.public.useFirebaseEmulator) {
+    initializeAppCheck(app, {
+      provider: new ReCaptchaV3Provider($config.public.recaptchaSiteKey),
+    })
+  }
 
   const auth = getAuth(app)
   const functions = getFunctions(app, "asia-northeast1")
