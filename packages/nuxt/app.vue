@@ -270,15 +270,17 @@ onMounted(() => {
   })
 
   // init firestore snapshot listener
-  unsubscribeAuthListener = $auth.onAuthStateChanged((user) => {
-    if (user) {
-      FirestoreProvider.instance = new FirestoreProvider($auth.currentUser!, $firestore, _db)
-      FirestoreProvider.instance.listen()
-    } else {
-      FirestoreProvider.instance?.unListen()
-      FirestoreProvider.instance = null
-    }
-  })
+  if ($auth) {
+    unsubscribeAuthListener = $auth.onAuthStateChanged((user) => {
+      if (user) {
+        FirestoreProvider.instance = new FirestoreProvider($auth.currentUser!, $firestore, _db)
+        FirestoreProvider.instance.listen()
+      } else {
+        FirestoreProvider.instance?.unListen()
+        FirestoreProvider.instance = null
+      }
+    })
+  }
 
   // show update snackbar
   if (rConfig.public.isProdBranch && config.previousVersion !== getCurrentVersionText()) {

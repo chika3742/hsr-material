@@ -7,6 +7,10 @@ import { connectFirestoreEmulator, initializeFirestore, persistentLocalCache } f
 import { getAnalytics } from "@firebase/analytics"
 
 export default defineNuxtPlugin(({ $config }) => {
+  if (!$config.public.firebaseConfig) {
+    return
+  }
+
   const app = initializeApp($config.public.firebaseConfig as FirebaseOptions)
 
   if (import.meta.dev) {

@@ -45,10 +45,15 @@ let unsubscribe: (() => void) | undefined
 
 onMounted(() => {
   // init current user
-  unsubscribe = $auth.onAuthStateChanged((user) => {
-    currentUser.value = user
+  if ($auth) {
+    unsubscribe = $auth.onAuthStateChanged((user) => {
+      currentUser.value = user
+      loadingCurrentUser.value = false
+    })
+  } else {
     loadingCurrentUser.value = false
-  })
+    console.error("Firebase configs must be provided in nuxt.config.ts.")
+  }
 })
 onUnmounted(() => {
   unsubscribe?.()
