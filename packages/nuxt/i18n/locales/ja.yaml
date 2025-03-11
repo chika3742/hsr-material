@@ -194,7 +194,7 @@ warpsPage:
   pityCountWithStar: "☆{star} 天井カウント"
   pityCount: 天井カウント
   dateTime: 日時
-  rarity: レアリティ
+  rarity: レア度
   itemName: アイテム名
   pityHistory: 天井カウントの履歴
   lastPulled: "最後に引いた ☆{star}"
