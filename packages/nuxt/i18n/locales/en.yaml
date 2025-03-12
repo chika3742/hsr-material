@@ -1061,6 +1061,8 @@ lightConeNames:
   flame-of-blood-blaze-my-path: Flame of Blood, Blaze My Path
   dreams-montage: Dream's Montage
   ninja-record-sound-hunt: "Ninja Record: Sound Hunt"
+  reminiscence: Reminiscence
+  shadowburn: Shadowburn
 
 lightConeSkillDescriptions:
   arrows: >-
@@ -1488,6 +1490,14 @@ lightConeSkillDescriptions:
     Increases the wearer's Max HP by <12%>. When losing or restoring this unit's
     HP, increases CRIT DMG by <18%>, lasting for 2 turn(s). This effect can only
     trigger once per turn.
+  reminiscence: >-
+    When memosprite's turn starts, the wearer and memosprite each gain 1 stack
+    of "Commemoration." Each stack increases DMG dealt by <8%>, stacking up to 4
+    time(s). When memosprite disappears, removes "Commemoration" from the wearer
+    and memosprite.
+  shadowburn: >-
+    When the wearer summons memosprite for the first time, recovers 1 Skill
+    Point(s) and regenerates <12> Energy for this unit.
 
 relicSetTitles:
   passerby-of-wandering-cloud: Passerby of Wandering Cloud

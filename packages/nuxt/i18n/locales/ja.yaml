@@ -1068,6 +1068,8 @@ lightConeNames:
   flame-of-blood-blaze-my-path: 前途燃やす血の如き炎
   dreams-montage: 夢のモンタージュ
   ninja-record-sound-hunt: 忍事録・音律狩猟
+  reminiscence: 辿る記憶
+  shadowburn: 燃ゆる影
 
 lightConeSkillDescriptions:
   arrows: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
@@ -1243,6 +1245,9 @@ lightConeSkillDescriptions:
   dreams-montage: 装備キャラの速度+<8%>、弱点撃破状態の敵を攻撃した後、EPを<3>回復する。この効果はターンが回ってくるたびに2回まで発動できる。
   ninja-record-sound-hunt: >-
     装備キャラの最大HP+<12%>。HPを失う、または回復した後、会心ダメージ+<18%>、2ターン継続。この効果はターンが回ってくるたびに1回まで発動できる。
+  reminiscence: >-
+    記憶の精霊のターンが回ってきた時、装備キャラおよびその記憶の精霊それぞれに「追懐」を1層付与する。「追懐」1層につき与ダメージ+<8%>、最大で4層累積できる。記憶の精霊が消える時、装備キャラおよびその記憶の精霊の「追懐」は解除される。
+  shadowburn: 装備キャラが戦闘中に初めて記憶の精霊を召喚する時、SPを1回復し、自身のEPを<12>回復する。
 
 relicSetTitles:
   band-of-sizzling-thunder: 雷鳴轟くバンド
