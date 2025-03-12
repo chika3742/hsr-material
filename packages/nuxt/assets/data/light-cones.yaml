@@ -966,3 +966,19 @@
   materials:
     primary: group:lcs009
     common: group:com008
+- id: reminiscence
+  yomi: タドルキオク
+  $nameJA: 辿る記憶
+  path: remembrance
+  rarity: 3
+  materials:
+    primary: group:lcs013
+    common: group:com009
+- id: shadowburn
+  yomi: モユルカゲ
+  $nameJA: 燃ゆる影
+  path: remembrance
+  rarity: 3
+  materials:
+    primary: group:lcs013
+    common: group:com002
