@@ -482,6 +482,8 @@ characterNames:
   aglaea: アグライア
   tribbie: トリビー
   mydei: モーディス
+  castorice: キャストリス
+  anaxa: アナイクス
 
 materialCategories:
   exp: 経験値素材
@@ -602,6 +604,9 @@ materialNames:
   glory-aspersed-torso: 栄光は身体を洗礼する
   darkveil-moonlight: 夜の帳に輝く月華
   harbinger-of-strife: 紛争の兆し
+  ethereal-omen: あるようでない予兆
+  echoing-wail: 遠くから近づく悲鳴
+  eternal-lament: 果てしなく続く悲嘆
 
 skillTitles:
   trailblazer:
@@ -945,6 +950,18 @@ skillTitles:
     skill: 万死に悔いなし
     ultimate: 天を滅す炎骨の王座
     talent: 血を以って血を制す
+  castorice:
+    basicAttack: ""
+    skill: ""
+    ultimate: ""
+    talent: ""
+    memospriteSkill: ""
+    memospriteTalent: ""
+  anaxa:
+    basicAttack: ""
+    skill: ""
+    ultimate: ""
+    talent: ""
 
 lightConeNames:
   arrows: 矢じり
