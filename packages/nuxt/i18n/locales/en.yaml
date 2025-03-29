@@ -475,6 +475,8 @@ characterNames:
   aglaea: Aglaea
   tribbie: Tribbie
   mydei: Mydei
+  castorice: Castorice
+  anaxa: Anaxa
 
 materialCategories:
   exp: EXP Materials
@@ -595,6 +597,9 @@ materialNames:
   glory-aspersed-torso: Glory-Aspersed Torso
   darkveil-moonlight: Darkveil Moonlight
   harbinger-of-strife: Harbinger of Strife
+  ethereal-omen: Ethereal Omen
+  echoing-wail: Echoing Wail
+  eternal-lament: Eternal Lament
 
 skillTitles:
   trailblazer:
@@ -938,6 +943,18 @@ skillTitles:
     skill: Deaths are Legion, Regrets are None
     ultimate: Throne of Bones
     talent: Blood for Blood
+  castorice:
+    basicAttack: ""
+    skill: ""
+    ultimate: ""
+    talent: ""
+    memospriteSkill: ""
+    memospriteTalent: ""
+  anaxa:
+    basicAttack: ""
+    skill: ""
+    ultimate: ""
+    talent: ""
 
 lightConeNames:
   arrows: Arrows
