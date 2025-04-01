@@ -19,7 +19,7 @@
     "@rollup/plugin-dsv": "3.0.5",
     "@rollup/plugin-yaml": "4.1.2",
     "@vueuse/rxjs": "10.11.1",
-    "algoliasearch": "4.24.0",
+    "algoliasearch": "5.23.1",
     "dexie": "3.2.7",
     "firebase": "11.2.0",
     "json-schema-to-typescript": "15.0.4",
