@@ -1,9 +1,10 @@
-import algoliasearch from "algoliasearch/lite"
+import type { SearchClient } from "@algolia/client-search"
+import { searchClient } from "@algolia/client-search"
 
 export default defineNuxtPlugin(({ $config }) => {
   return {
     provide: {
-      algoliaClient: algoliasearch($config.public.algolia.appId, $config.public.algolia.apiKey).initIndex($config.public.algolia.indexName),
+      algoliaClient: searchClient($config.public.algolia.appId, $config.public.algolia.apiKey) as SearchClient,
     },
   }
 })
