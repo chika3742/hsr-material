@@ -40,7 +40,7 @@
     "@nuxt/eslint": "0.7.5",
     "@types/luxon": "3.4.2",
     "@types/marked": "6.0.0",
-    "@types/node": "20.17.14",
+    "@types/node": "20.17.29",
     "@types/object-hash": "3.0.6",
     "@types/sortablejs": "1.15.8",
     "@vue/language-server": "2.2.0",
