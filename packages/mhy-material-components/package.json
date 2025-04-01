@@ -44,7 +44,7 @@
     "@types/lodash-es": "4.17.12",
     "@types/marked": "6.0.0",
     "@types/node": "20.17.29",
-    "@vue/language-server": "2.2.0",
+    "@vue/language-server": "2.2.8",
     "nuxt": "3.15.2",
     "typescript": "5.7.3",
     "vitest": "3.0.2"
