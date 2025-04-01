@@ -4,6 +4,7 @@ import type { Auth } from "@firebase/auth"
 import type { Firestore } from "@firebase/firestore"
 import type { Functions } from "@firebase/functions"
 import type { Analytics } from "@firebase/analytics"
+import type { LiteClient } from "algoliasearch/lite"
 
 declare module "nuxt/dist/pages/runtime/composables" {
   interface PageMeta {
@@ -18,6 +19,7 @@ declare module "#app" {
     $firestore: Firestore
     $functions: Functions
     $analytics: Analytics
+    $algoliaClient: LiteClient
   }
 }
 
