@@ -37,7 +37,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250109.0",
     "@nuxt/devtools": "latest",
-    "@nuxt/eslint": "0.7.5",
+    "@nuxt/eslint": "0.7.6",
     "@types/luxon": "3.4.2",
     "@types/marked": "6.0.0",
     "@types/node": "20.17.29",
