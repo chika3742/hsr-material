@@ -13,7 +13,7 @@
     "postinstall": "bun --filter ./packages/mhy-material-components prepack && bun --filter ./packages/nuxt prepack"
   },
   "devDependencies": {
-    "eslint": "9.18.0"
+    "eslint": "9.23.0"
   },
   "packageManager": "bun@1"
 }
