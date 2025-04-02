@@ -16,7 +16,7 @@
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/i18n": "9.4.0",
     "@pinia-plugin-persistedstate/nuxt": "1.2.1",
-    "@pinia/nuxt": "0.9.0",
+    "@pinia/nuxt": "0.10.1",
     "@rollup/plugin-dsv": "3.0.5",
     "@rollup/plugin-yaml": "4.1.2",
     "@vueuse/rxjs": "10.11.1",
