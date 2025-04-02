@@ -5,10 +5,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production bun src/index.ts",
-    "dev": "NODE_ENV=development bun src/index.ts",
+    "start": "NODE_ENV=production bun index.ts",
+    "dev": "NODE_ENV=development bun index.ts",
     "lint": "eslint --ext .ts src"
   },
+  "main": "index.ts",
   "devDependencies": {
     "@types/dotenv": "8.2.3",
     "@types/js-yaml": "4.0.9",

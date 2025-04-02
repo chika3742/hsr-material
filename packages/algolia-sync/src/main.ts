@@ -31,7 +31,7 @@ const kataToHira = (input: string) => {
 const dataDir = "../nuxt/assets/data"
 const localeDir = "../nuxt/i18n/locales"
 
-const syncObjects = async () => {
+export const syncObjects = async () => {
   if (process.env.ALGOLIA_API_KEY === undefined) {
     throw new Error("Environment variable ALGOLIA_API_KEY is not defined")
   }
@@ -105,5 +105,3 @@ const syncObjects = async () => {
     objects,
   }))
 }
-
-await syncObjects()
