@@ -1,6 +1,6 @@
 import * as path from "path"
 import * as dotenv from "dotenv"
-import algoliasearch from "algoliasearch"
+import { searchClient } from "@algolia/client-search"
 import type { Characters } from "../../nuxt/types/generated/characters.g"
 import type { Materials } from "../../nuxt/types/data/materials"
 import type { LightCones } from "../../nuxt/types/generated/light-cones.g"
@@ -36,8 +36,7 @@ const syncObjects = async () => {
     throw new Error("Environment variable ALGOLIA_API_KEY is not defined")
   }
 
-  const index = algoliasearch(algoliaConfig.appId, process.env.ALGOLIA_API_KEY)
-    .initIndex(algoliaConfig.indexName)
+  const index = searchClient(algoliaConfig.appId, process.env.ALGOLIA_API_KEY)
 
   const localeJa = loadYamlSync<LocaleObject>(path.resolve(localeDir, "ja.yaml"))
   const localeEn = loadYamlSync<LocaleObject>(path.resolve(localeDir, "en.yaml"))
@@ -101,7 +100,10 @@ const syncObjects = async () => {
     })),
   ]
 
-  console.log(await index.saveObjects(objects))
+  console.log(await index.saveObjects({
+    indexName: algoliaConfig.indexName,
+    objects,
+  }))
 }
 
 await syncObjects()
