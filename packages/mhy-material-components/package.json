@@ -46,7 +46,7 @@
     "@types/node": "20.17.29",
     "@vue/language-server": "2.2.8",
     "nuxt": "3.16.2",
-    "typescript": "5.7.3",
+    "typescript": "5.8.2",
     "vitest": "3.1.1"
   },
   "packageManager": "bun@1"
