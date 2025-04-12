@@ -951,17 +951,17 @@ skillTitles:
     ultimate: 天を滅す炎骨の王座
     talent: 血を以って血を制す
   castorice:
-    basicAttack: ""
-    skill: ""
-    ultimate: ""
-    talent: ""
-    memospriteSkill: ""
-    memospriteTalent: ""
+    basicAttack: 哀悼、死海の小波
+    skill: 沈黙、幽蝶の慈しみ
+    ultimate: 亡者の怒哮、蘇生の鐘
+    talent: 手のひらを伝う衰亡
+    memospriteSkill: 冥茫裂く爪痕
+    memospriteTalent: 月の繭が覆う身躰
   anaxa:
-    basicAttack: ""
-    skill: ""
-    ultimate: ""
-    talent: ""
+    basicAttack: 苦痛、認識の造成
+    skill: 分形、誤謬の駆逐
+    ultimate: 化育、世界の創造
+    talent: 四智、三重の無上
 
 lightConeNames:
   arrows: 矢じり

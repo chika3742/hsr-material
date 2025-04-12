@@ -944,17 +944,17 @@ skillTitles:
     ultimate: Throne of Bones
     talent: Blood for Blood
   castorice:
-    basicAttack: ""
-    skill: ""
-    ultimate: ""
-    talent: ""
-    memospriteSkill: ""
-    memospriteTalent: ""
+    basicAttack: Lament, Nethersea's Ripple
+    skill: Silence, Wraithfly's Caress
+    ultimate: Doomshriek, Dawn's Chime
+    talent: Desolation Across Palms
+    memospriteSkill: Claw Splits the Veil
+    memospriteTalent: Mooncocoon Shrouds the Form
   anaxa:
-    basicAttack: ""
-    skill: ""
-    ultimate: ""
-    talent: ""
+    basicAttack: Pain, Brews Truth
+    skill: Fractal, Exiles Fallacy
+    ultimate: Sprouting Life Sculpts Earth
+    talent: Tetrad Wisdom Reigns Thrice
 
 lightConeNames:
   arrows: Arrows
