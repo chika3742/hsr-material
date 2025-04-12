@@ -1,12 +1,12 @@
 # コピー用改行
 
-- date: 2025/03/29
+- date: 2025/04/12
   funcVersion: 1.5.0
-  dataVersion: 3.2.0-pre
+  dataVersion: 3.2.0
   isMajor: false
   content: |
     ### データ追加
-    - キャラクター「キャストリス」「アナイクス」の仮追加
+    - キャラクター「キャストリス」「アナイクス」の追加
 
 - date: 2025/03/12
   funcVersion: 1.5.0

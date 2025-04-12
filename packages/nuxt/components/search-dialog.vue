@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import type { RawLocation } from "@intlify/vue-router-bridge"
+import type { SearchClient } from "@algolia/client-search"
+import type { RouteLocation } from "vue-router"
 import type { AlgoliaRecord } from "~/types/algolia-record"
 
 const props = defineProps<{
@@ -19,8 +20,11 @@ const isOpen = computed({
   },
 })
 
-const { $algoliaClient } = useNuxtApp()
+const { $algoliaClient: a } = useNuxtApp()
+const $algoliaClient = a as SearchClient
 const i18n = useI18n()
+const config = useRuntimeConfig()
+const indexName = config.public.algolia.indexName
 
 const loading = ref(false)
 const query = ref("")
@@ -41,7 +45,10 @@ const executeQuery = async (_query: string) => {
   loading.value = true
 
   try {
-    const result = await $algoliaClient.search<AlgoliaRecord>(_query)
+    const result = await $algoliaClient.searchSingleIndex<AlgoliaRecord>({
+      indexName,
+      searchParams: { query: _query },
+    })
     results.value = result.hits
     cachedResults.value[_query] = result.hits
   } catch (e) {
@@ -97,7 +104,7 @@ const getItemImage = (item: AlgoliaRecord): string => {
   }
 }
 
-const urlToRouteLocation = (url: string): RawLocation => {
+const urlToRouteLocation = (url: string): Partial<RouteLocation> => {
   let query = {}
   if (url.split("?").length > 1) {
     query = Object.fromEntries(new URLSearchParams(url.split("?")[1]))

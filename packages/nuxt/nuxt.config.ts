@@ -19,7 +19,6 @@ const hostname = "https://hsr.matnote.app"
 const routes: string[] = []
 
 export default defineNuxtConfig({
-
   modules: [
     "@hsr-material/mhy-material-components",
     "@nuxtjs/i18n",
@@ -214,6 +213,9 @@ export default defineNuxtConfig({
     defaultLocale: "ja",
     compilation: {
       strictMessage: false,
+    },
+    bundle: {
+      optimizeTranslationDirective: false,
     },
   },
 

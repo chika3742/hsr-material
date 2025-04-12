@@ -1,4 +1,4 @@
-export interface AlgoliaRecord {
+export interface AlgoliaRecord extends Record<string, unknown> {
   objectID: string
   itemId: string
   name_ja: string

@@ -19,7 +19,7 @@ export const tx: Tx = (arg1: Loc | Composer, arg2?: Record<string, unknown> | Lo
   if (typeof arg1 === "string") {
     i18n = useI18n()
     key = arg1
-    named = (arg2 ?? {}) as Record<string, unknown>
+    named = (arg2 as Record<string, unknown> | undefined) ?? {}
   } else {
     i18n = arg1
     key = arg2 as string
