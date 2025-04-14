@@ -162,7 +162,7 @@ export default defineNuxtConfig({
     async "builder:watch"(_, _path) {
       const nuxt = useNuxt()
       _path = relative(nuxt.options.srcDir, resolve(nuxt.options.srcDir, _path))
-      if (_path.startsWith("schemas/")) {
+      if (_path.startsWith("types/data/")) {
         await generateSchemas()
       }
       if (_path.startsWith("locales/")) {

@@ -1,0 +1,25 @@
+{
+  "yaml.schemas": {
+    "./packages/nuxt/schemas/characters.g.json": [
+      "/packages/nuxt/assets/data/characters.yaml"
+    ],
+    "./packages/nuxt/schemas/character-ingredients.g.json": [
+      "/packages/nuxt/assets/data/character-ingredients.yaml",
+    ],
+    "./packages/nuxt/schemas/equipment-ingredients.g.json": [
+      "/packages/nuxt/assets/data/light-cone-ingredients.yaml",
+    ],
+    "./packages/nuxt/schemas/equipments.g.json": [
+      "/packages/nuxt/assets/data/light-cones.yaml"
+    ],
+    "./packages/nuxt/schemas/drop-rates.g.json": [
+      "/packages/nuxt/assets/data/drop-rates.yaml"
+    ],
+    "./packages/nuxt/schemas/release-notes.g.json": [
+      "/packages/nuxt/assets/data/release-notes.yaml"
+    ],
+    "./packages/nuxt/schemas/decoration-stats.g.json": [
+      "/packages/nuxt/assets/data/relic-stats.yaml"
+    ],
+  }
+}
