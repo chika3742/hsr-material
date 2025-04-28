@@ -1,6 +1,6 @@
-import type { EachLevels, EachPurposeTypes, Ingredient } from "../ingredients"
+import type { EachPurposeTypes, EachLevels, Ingredient } from "../ingredient"
 
-export interface CharacterIngredients {
+export interface Ingredients {
   expItems: {
     itemId: string
     expPerItem: number

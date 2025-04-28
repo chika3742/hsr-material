@@ -4,6 +4,7 @@ import EmphasizedText from "~/components/emphasized-text.vue"
 import type { CharacterIdWithVariant } from "~/types/strings"
 import characters from "~/assets/data/characters.yaml"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
+import type { HsrCharacterWoV } from "~/types/data/src/characters"
 
 definePageMeta({
   title: "lightConeDetails",
@@ -28,7 +29,7 @@ const levels = lightConeIngredients.levelingItemTables[(() => {
     default:
       throw new Error("Invalid rarity")
   }
-})()]
+})()].purposeTypes.ascension!
 
 const selectedCharacter = ref<CharacterIdWithVariant>()
 
@@ -37,7 +38,7 @@ const characterSelectFilter = (id: string): boolean => {
   if (variant !== null) {
     return variant === lightCone.path
   } else {
-    return characters.find(e => e.id === id)!.path === lightCone.path
+    return (characters.find(e => e.id === id) as HsrCharacterWoV).path === lightCone.path
   }
 }
 </script>

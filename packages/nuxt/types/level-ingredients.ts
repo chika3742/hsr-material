@@ -1,8 +1,9 @@
-import type { CharacterIngredients, Ingredient } from "~/types/generated/character-ingredients.g"
+import type { Ingredient } from "./data/ingredient"
+import type { Ingredients } from "./data/src/ingredients"
 
 export interface LevelIngredients {
   level: number
   ingredients: Ingredient[]
 }
 
-export type LevelsForPurposeTypes = CharacterIngredients["levelingItemTables"][string]["purposeTypes"]
+export type LevelsForPurposeTypes = Ingredients["levelingItemTables"][string]["purposeTypes"]

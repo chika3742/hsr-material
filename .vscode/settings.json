@@ -3,10 +3,8 @@
     "./packages/nuxt/schemas/characters.g.json": [
       "/packages/nuxt/assets/data/characters.yaml"
     ],
-    "./packages/nuxt/schemas/character-ingredients.g.json": [
+    "./packages/nuxt/schemas/ingredients.g.json": [
       "/packages/nuxt/assets/data/character-ingredients.yaml",
-    ],
-    "./packages/nuxt/schemas/equipment-ingredients.g.json": [
       "/packages/nuxt/assets/data/light-cone-ingredients.yaml",
     ],
     "./packages/nuxt/schemas/equipments.g.json": [

@@ -1,35 +1,33 @@
 declare module "~/assets/data/release-notes.yaml" {
-  import type { ReleaseNotes } from "~/types/generated/release-notes.g"
-
   const releaseNotes: ReleaseNotes
   export default releaseNotes
 }
 
 declare module "~/assets/data/characters.yaml" {
-  import type { Characters } from "~/types/generated/characters.g"
+  import type { Characters } from "~/types/data/src/characters"
 
   const characters: Characters
   export default characters
 }
 
 declare module "~/assets/data/character-ingredients.yaml" {
-  import type { CharacterIngredients } from "~/types/generated/character-ingredients.g"
+  import type { Ingredients } from "~/types/data/src/ingredients"
 
-  const characterIngredients: CharacterIngredients
+  const characterIngredients: Ingredients
   export default characterIngredients
 }
 
 declare module "~/assets/data/light-cones.yaml" {
-  import type { LightCone } from "~/types/generated/light-cones.g"
+  import type { Equipments } from "~/types/data/src/equipments"
 
-  const lightCones: (LightCone & Record<string, unknown>)[]
+  const lightCones: Equipments
   export default lightCones
 }
 
 declare module "~/assets/data/light-cone-ingredients.yaml" {
-  import type { LightConeIngredients } from "~/types/generated/light-cone-ingredients.g"
+  import type { Ingredients } from "~/types/data/src/ingredients"
 
-  const lightConeIngredients: LightConeIngredients
+  const lightConeIngredients: Ingredients
   export default lightConeIngredients
 }
 
@@ -55,14 +53,14 @@ declare module "assets/data/relic-pieces.csv" {
 }
 
 declare module "assets/data/relic-stats.yaml" {
-  import type { RelicStats } from "~/types/generated/relic-stats.g"
+  import type { DecorationStats } from "~/types/data/src/decoration-stats"
 
-  const relicStats: RelicStats
+  const relicStats: DecorationStats
   export default relicStats
 }
 
 declare module "assets/data/drop-rates.yaml" {
-  import type { DropRates } from "~/types/generated/drop-rates.g"
+  import type { DropRates } from "~/types/data/src/drop-rates"
 
   const dropRates: DropRates
   export default dropRates
