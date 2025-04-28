@@ -41,7 +41,7 @@ watch(toRefs(props).modelValue, (value) => {
   }
 })
 
-const executeQuery = async (_query: string) => {
+const executeQuery = async(_query: string) => {
   loading.value = true
 
   try {
@@ -101,18 +101,6 @@ const getItemImage = (item: AlgoliaRecord): string => {
       return getRelicSetImage(item.itemId)
     case "relic-piece":
       return getRelicPieceImage(item.itemId)
-  }
-}
-
-const urlToRouteLocation = (url: string): Partial<RouteLocation> => {
-  let query = {}
-  if (url.split("?").length > 1) {
-    query = Object.fromEntries(new URLSearchParams(url.split("?")[1]))
-  }
-
-  return {
-    path: url.split("?")[0],
-    query,
   }
 }
 </script>
@@ -183,7 +171,7 @@ const urlToRouteLocation = (url: string): Partial<RouteLocation> => {
             :prepend-avatar="getItemImage(item)"
             :subtitle="tx(`searchRecordTypes.${item.recordType}`)"
             :title="tx(item.i18nKey)"
-            :to="$localePath(urlToRouteLocation(item.url))"
+            :to="$localePath(item.url)"
             @click="clearQuery(); closeDialog()"
           />
           <div style="height: env(safe-area-inset-bottom)" />
