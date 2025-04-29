@@ -2,6 +2,7 @@
 import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 import { db } from "~/libs/db/providers"
+import { isCharacterGroup } from "~/types/data/src/characters"
 
 interface Props {
   modelValue: boolean
@@ -28,16 +29,20 @@ const showcaseUser = ref<UserInfoResponse>()
 const loadingShowcaseUser = ref(false)
 const getters: DataSyncMapGetters = {
   getCharacterId: (character: ShowcaseCharacter) => {
-    if (character.nameJP === "開拓者") {
-      const variant = characters.find(e => e.id === "trailblazer")!.variants!
-        .find(e => e.combatType === character.variant)
+    const foundCharacter = characters.find(e => e.$nameJA === character.nameJP)
+    if (!foundCharacter) {
+      return ""
+    }
+
+    if (isCharacterGroup(foundCharacter)) {
+      const variant = foundCharacter.variants.find(e => e.combatType === character.variant)
       if (!variant) {
         return ""
       }
 
-      return toCharacterIdWithVariant("trailblazer", variant.path)
+      return toCharacterIdWithVariant(foundCharacter.id, variant.path)
     } else {
-      return characters.find(e => e.$nameJA === character.nameJP)?.id ?? ""
+      return foundCharacter.id
     }
   },
   getCharacterImage: (character: ShowcaseCharacter) =>

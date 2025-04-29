@@ -8,11 +8,13 @@ interface CharacterBase {
   rarity: number
 }
 
+type CharacterVariant<T> = (T & {
+  materials: Record<string, MaterialExpr>
+  levelingItemTable?: string
+})
+
 interface CharacterWithVariantsBase<T> extends CharacterBase {
-  variants: (T & {
-    materials: Record<string, MaterialExpr>
-    levelingItemTable?: string
-  })[]
+  variants: CharacterVariant<T>[]
 }
 
 interface CharacterWithoutVariantsBase extends CharacterBase {
@@ -27,8 +29,14 @@ interface HsrCharacterMixin {
 
 /** Character for HSR w/ variants */
 export type HsrCharacterWV = CharacterWithVariantsBase<HsrCharacterMixin>
+export type HsrCharacterVariant = CharacterVariant<HsrCharacterMixin>
 /** Character for HSR w/o variants */
 export type HsrCharacterWoV = (CharacterWithoutVariantsBase & HsrCharacterMixin)
 export type HsrCharacter = HsrCharacterWV | HsrCharacterWoV
 
 export type Characters = HsrCharacter[]
+
+/** `character` is a character group = `character` has variants */
+export const isCharacterGroup = <T>(x: CharacterWithVariantsBase<T> | CharacterWithoutVariantsBase): x is CharacterWithVariantsBase<T> => {
+  return "variants" in x
+}
