@@ -16,21 +16,20 @@
 </template>
 
 <script lang="ts" setup>
-import type { CharacterMaterialDefinitions, Path } from "~/types/generated/characters.g"
-import type { LightConeMaterialDefinitions } from "~/types/generated/light-cones.g"
 import type { LevelIngredients } from "~/types/level-ingredients"
 import type { Usage } from "~/types/bookmark/usage"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
-import type { LevelsObject } from "~/types/generated/character-ingredients.g"
+import type { EachLevels, Ingredient, MaterialExpr } from "~/types/data/ingredient"
+import type { HsrPath } from "~/types/data/enums"
 
 const props = defineProps<{
   title: string
   characterId: string
   lightConeId?: string
-  levels: LevelsObject
-  variant: Path | null
-  materialDefs: CharacterMaterialDefinitions | LightConeMaterialDefinitions
+  levels: EachLevels<Ingredient[]>
+  variant: HsrPath | null
+  materialDefs: Record<string, MaterialExpr>
 }>()
 
 const config = useConfigStore()
@@ -42,7 +41,7 @@ const levelIngredients = computed(() => {
 const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredients.value))
 
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
-const setInitialRangeBasedOnBookmarks = async () => {
+const setInitialRangeBasedOnBookmarks = async() => {
   if (import.meta.server) {
     return
   }
@@ -76,7 +75,8 @@ const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
 const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): BookmarkableIngredient[] => {
   return ingredients.map(e => e.ingredients.map<BookmarkableIngredient>((f) => {
     let usage: Usage
-    if (f.exp) {
+    // TODO: reformat conditional branching
+    if ("exp" in f) {
       usage = {
         type: "exp",
         lightConeId: props.lightConeId ?? null,
@@ -98,12 +98,12 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
       }
     }
 
-    if (usage.type === "exp") {
+    if ("exp" in f) {
       const result: BookmarkableExp = {
         type: props.lightConeId ? "light_cone_exp" : "character_exp",
         characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-        exp: f.exp!,
-        usage,
+        exp: f.exp,
+        usage: usage as Usage.Exp,
       }
       return result
     } else {
@@ -126,7 +126,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
           characterId: toCharacterIdWithVariant(props.characterId, props.variant),
           materialId: getMaterialIdFromIngredient(f, props.materialDefs),
           quantity: f.quantity,
-          usage,
+          usage: usage as Usage.LightCone,
         }
       }
 

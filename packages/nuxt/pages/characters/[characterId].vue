@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
-import type { CharacterVariant } from "~/types/generated/characters.g"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
+import { isCharacterGroup, type HsrCharacterVariant } from "~/types/data/src/characters"
 
 definePageMeta({
   title: "characterDetails",
@@ -19,12 +19,16 @@ if (!characters.some(e => e.id === route.params.characterId)) {
 
 const character = characters.find(e => e.id === route.params.characterId)!
 
-const currentVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
-  path: character.path!,
-  combatType: character.combatType!,
-  materials: character.materials!,
-  levelingItemTable: character.levelingItemTable,
-})
+const currentVariant = ref<HsrCharacterVariant>(isCharacterGroup(character)
+  ? character.variants[0]!
+  : {
+      path: character.path,
+      combatType: character.combatType,
+      materials: character.materials,
+      levelingItemTable: character.levelingItemTable,
+    })
+
+const currentVariantId = computed(() => isCharacterGroup(character) ? currentVariant.value.path : null)
 
 const purposeTypes = computed<LevelsForPurposeTypes>(() => {
   const getDefaultLitForRarity = () => {
@@ -52,7 +56,7 @@ watch(currentVariant, (value) => {
 })
 
 onActivated(() => {
-  if (character.variants && route.query.variant) {
+  if (isCharacterGroup(character) && route.query.variant) {
     currentVariant.value = character.variants.find(e => e.path === route.query.variant) ?? currentVariant.value
   }
 })
@@ -67,7 +71,7 @@ onActivated(() => {
     >
       <!-- character image -->
       <v-img
-        :src="getCharacterImage(toCharacterIdWithVariant(character.id, character.variants && currentVariant.path), 'small')"
+        :src="getCharacterImage(toCharacterIdWithVariant(character.id, currentVariantId), 'small')"
         aspect-ratio="1"
         max-width="80px"
         width="80px"
@@ -131,7 +135,7 @@ onActivated(() => {
           variant="outlined"
           @click="$router.push($localePath({
             path: '/light-cones',
-            query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
+            query: { character: toCharacterIdWithVariant(character.id, currentVariantId) },
           }))"
         />
 
@@ -142,7 +146,7 @@ onActivated(() => {
           variant="outlined"
           @click="$router.push($localePath({
             path: '/relics',
-            query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
+            query: { character: toCharacterIdWithVariant(character.id, currentVariantId) },
           }))"
         />
       </div>
@@ -150,7 +154,7 @@ onActivated(() => {
 
     <client-only>
       <v-select
-        v-if="character.variants"
+        v-if="isCharacterGroup(character)"
         v-model="currentVariant"
         :items="character.variants.map(e => ({ title: tx(`paths.${e.path}` as const), value: e }))"
         :label="tx('common.path')"
@@ -167,8 +171,8 @@ onActivated(() => {
       <SingleSliderPanel
         :material-defs="currentVariant.materials"
         :character-id="character.id"
-        :variant="character.variants ? currentVariant.path : null"
-        :levels="purposeTypes.ascension"
+        :variant="currentVariantId"
+        :levels="purposeTypes.ascension!"
         :title="tx('characterDetailsPage.ascension')"
       />
       <SkillSlidersPanel
@@ -176,7 +180,7 @@ onActivated(() => {
         :material-defs="currentVariant.materials"
         :title="tx('characterDetailsPage.skills')"
         :purpose-types="purposeTypesOmitted"
-        :variant="character.variants ? currentVariant.path : null"
+        :variant="currentVariantId"
       />
     </v-expansion-panels>
   </div>

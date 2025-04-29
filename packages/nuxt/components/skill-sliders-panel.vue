@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import type { PurposeType } from "~/types/strings"
-import type { CharacterMaterialDefinitions, Path } from "~/types/generated/characters.g"
 import type { LevelIngredients, LevelsForPurposeTypes } from "~/types/level-ingredients"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
+import type { HsrPath } from "~/types/data/enums"
+import type { MaterialExpr } from "~/types/data/ingredient"
 
 interface Slider {
   type: PurposeType
@@ -13,8 +14,8 @@ interface Slider {
 const props = defineProps<{
   title: string
   characterId: string
-  variant: Path | null
-  materialDefs: CharacterMaterialDefinitions
+  variant: HsrPath | null
+  materialDefs: Record<string, MaterialExpr>
   purposeTypes: Omit<LevelsForPurposeTypes, "ascension">
 }>()
 
@@ -87,17 +88,23 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
       return []
     }
     return e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
-      .map(f => f.ingredients.map<BookmarkableMaterial>(g => ({
-        type: "character_material",
-        characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-        materialId: getMaterialIdFromIngredient(g, props.materialDefs),
-        quantity: g.quantity!,
-        usage: {
-          type: "character",
-          upperLevel: f.level,
-          purposeType: e.type,
-        },
-      }))).flat()
+      .map(f => f.ingredients.map<BookmarkableMaterial>((g) => {
+        if ("exp" in g) {
+          throw new Error("Exp ingredients are not supported.")
+        }
+
+        return {
+          type: "character_material",
+          characterId: toCharacterIdWithVariant(props.characterId, props.variant),
+          materialId: getMaterialIdFromIngredient(g, props.materialDefs),
+          quantity: g.quantity!,
+          usage: {
+            type: "character",
+            upperLevel: f.level,
+            purposeType: e.type,
+          },
+        }
+      })).flat()
   }).flat()
 })
 </script>

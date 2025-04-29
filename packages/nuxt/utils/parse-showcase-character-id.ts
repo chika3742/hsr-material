@@ -1,8 +1,8 @@
 import characters from "~/assets/data/characters.yaml"
-import type { CombatType, Path } from "~/types/generated/characters.g"
+import type { HsrCombatType, HsrPath } from "~/types/data/enums"
 
-const trailblazerCombatTypeToPath = (combatType: string): Path => {
-  switch (combatType as CombatType) {
+const trailblazerCombatTypeToPath = (combatType: string): HsrPath => {
+  switch (combatType as HsrCombatType) {
     case "physical":
       return "destruction"
     case "fire":

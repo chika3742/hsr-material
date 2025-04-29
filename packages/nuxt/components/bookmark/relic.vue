@@ -52,7 +52,7 @@ const subtitle = (() => {
   }
 })()
 
-const mainStats = (() => {
+const mainStats = ((): [string, string | null][] => {
   switch (props.item.type) {
     case "relic_set":
       return Object.entries(props.item.mainStats)

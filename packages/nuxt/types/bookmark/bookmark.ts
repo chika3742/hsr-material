@@ -1,4 +1,4 @@
-import type { Stat } from "~/types/generated/relic-stats.g"
+import type { HsrRelicPosition, HsrStat } from "../data/enums"
 import type { Usage } from "~/types/bookmark/usage"
 import type { CharacterIdWithVariant } from "~/types/strings"
 
@@ -53,8 +53,8 @@ export namespace Bookmark {
     bookmarkedAt: Date
     characterId: CharacterIdWithVariant
     relicSetIds: string[]
-    mainStats: Record<string, Stat | null>
-    subStats: Stat[]
+    mainStats: Partial<Record<HsrRelicPosition, HsrStat | null>>
+    subStats: HsrStat[]
   }
 
   export interface RelicPiece {
@@ -63,7 +63,7 @@ export namespace Bookmark {
     bookmarkedAt: Date
     characterId: CharacterIdWithVariant
     relicPieceId: string
-    mainStat: Stat | null
-    subStats: Stat[]
+    mainStat: HsrStat | null
+    subStats: HsrStat[]
   }
 }

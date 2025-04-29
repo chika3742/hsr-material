@@ -150,7 +150,9 @@ export default defineNuxtConfig({
 
   typescript: {
     tsConfig: {
-      exclude: ["functions"],
+      exclude: [
+        "../functions",
+      ],
     },
   },
 

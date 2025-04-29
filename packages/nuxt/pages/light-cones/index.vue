@@ -3,6 +3,7 @@ import GroupedList from "~/components/grouped-list.vue"
 import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
 import characters from "~/assets/data/characters.yaml"
+import { isCharacterGroup } from "~/types/data/src/characters"
 
 definePageMeta({
   title: "lightCones",
@@ -22,14 +23,26 @@ const spiltByRarity = splitByField(lightCones, "rarity")
 const spiltByPath = splitByField(lightCones, "path")
 
 onActivated(() => {
-  if (route.query.character) {
-    if (toVariant(route.query.character as string)) {
-      expanded.value = [spiltByPath.findIndex(e => e[0].path === toVariant(route.query.character as string))]
-    } else {
-      const queryCharacter = characters.find(e => e.id === route.query.character)
-      if (typeof queryCharacter !== "undefined") {
-        expanded.value = [spiltByPath.findIndex(e => e[0].path === queryCharacter.path)]
+  const specifiedCharaId = route.query.character
+  if (typeof specifiedCharaId === "string") { // not undefined and valid
+    const queryCharacter = characters.find(e => e.id === toCharacterId(specifiedCharaId))
+    if (typeof queryCharacter === "undefined") {
+      return
+    }
+
+    const variant = (() => {
+      if (isCharacterGroup(queryCharacter)) {
+        if (!queryCharacter.variants.some(e => e.path === toVariant(specifiedCharaId))) {
+          return null
+        }
+        return toVariant(specifiedCharaId)
+      } else {
+        return queryCharacter.path
       }
+    })()
+    const index = spiltByPath.findIndex(e => e[0].path === variant)
+    if (index !== -1) {
+      expanded.value = [index]
     }
   }
 })

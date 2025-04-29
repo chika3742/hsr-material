@@ -1,9 +1,7 @@
 import materials from "~/assets/data/materials.csv"
-import type { Ingredient } from "~/types/generated/character-ingredients.g"
-import type { CharacterMaterialDefinitions } from "~/types/generated/characters.g"
-import type { LightConeMaterialDefinitions } from "~/types/generated/light-cones.g"
+import { isCraftableIngredient, isExpIngredient, isFixedIdIngredient, type Ingredient } from "~/types/data/ingredient"
 
-type MaterialDefinitions = Partial<Record<keyof CharacterMaterialDefinitions | keyof LightConeMaterialDefinitions, string>>
+type MaterialDefinitions = Partial<Record<string, string>>
 
 /**
  * Gets material corresponds to {@link Ingredient} and {@link MaterialDefinitions}.
@@ -15,7 +13,11 @@ type MaterialDefinitions = Partial<Record<keyof CharacterMaterialDefinitions | k
  * @returns material ID
  */
 export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs: MaterialDefinitions): string {
-  if (ingredient.fixedId) {
+  if (isExpIngredient(ingredient)) {
+    throw new Error("ExpIngredient is unsupported in this function")
+  }
+
+  if (isFixedIdIngredient(ingredient)) {
     return ingredient.fixedId
   }
 
@@ -27,7 +29,7 @@ export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs
   const [defType, id] = defString.split(":")
   if (defType === "id") {
     return id
-  } else if (defType === "group") {
+  } else if (defType === "group" && isCraftableIngredient(ingredient)) {
     const material = materials.find(e => e.groupId === id && e.craftLevel === ingredient.craftLevel)
     if (!material) {
       throw new Error(`Material not found for group ${id} and craft level ${ingredient.craftLevel}`)

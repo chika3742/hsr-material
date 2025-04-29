@@ -1,7 +1,7 @@
 import type { HsrPath } from "../enums"
 import type { MaterialExpr } from "../ingredient"
 
-interface EquipmentBase {
+interface EquipmentBase extends Record<string, unknown> {
   id: string
   $nameJA: string
   yomi: string

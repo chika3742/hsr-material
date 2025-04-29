@@ -1,12 +1,14 @@
 import characters from "~/assets/data/characters.yaml"
 import materials from "~/assets/data/materials.csv"
 import lightCones from "~/assets/data/light-cones.yaml"
-import type { LightCone } from "~/types/generated/light-cones.g"
-import type { CharacterMaterialDefinitions, Path } from "~/types/generated/characters.g"
+import type { MaterialExpr } from "~/types/data/ingredient"
+import { isCharacterGroup } from "~/types/data/src/characters"
+import type { LightCone } from "~/types/data/src/equipments"
+import type { HsrPath } from "~/types/data/enums"
 
 interface UsageCharacter {
   id: string
-  variant?: Path
+  variant?: HsrPath
 }
 
 /**
@@ -20,11 +22,11 @@ interface UsageCharacter {
  * Returns `true` if any of the properties match.
  *
  * @param materialId Material ID
- * @param defs {@link CharacterMaterialDefinitions}
+ * @param defs Record of purpose type id and {@link MaterialExpr}
  * @returns `true` if the material is used.
  */
-const getIsMaterialUsedByCharacter = (materialId: string, defs: CharacterMaterialDefinitions): boolean => {
-  for (const defExpr of Object.values(defs) as string[]) {
+const getIsMaterialUsedByCharacter = (materialId: string, defs: Record<string, MaterialExpr>): boolean => {
+  for (const defExpr of Object.values(defs)) {
     const [defType, id] = defExpr.split(":")
 
     if (defType === "id" && id === materialId) {
@@ -50,7 +52,7 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
   const result: UsageCharacter[] = []
 
   for (const character of characters) {
-    if (character.variants) {
+    if (isCharacterGroup(character)) {
       for (const variant of character.variants) {
         if (getIsMaterialUsedByCharacter(materialId, variant.materials)) {
           result.push({ id: character.id, variant: variant.path })
@@ -71,7 +73,7 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
  * @returns Light cone ID list
  */
 export const getMaterialUsageLightCone = (materialId: string): LightCone[] => {
-  const pathOrderMap: Record<Path, number> = {
+  const pathOrderMap: Record<HsrPath, number> = {
     destruction: 1,
     the_hunt: 2,
     erudition: 3,

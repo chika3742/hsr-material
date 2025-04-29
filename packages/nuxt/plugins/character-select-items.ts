@@ -1,10 +1,11 @@
 import characters from "~/assets/data/characters.yaml"
+import { isCharacterGroup } from "~/types/data/src/characters"
 
 export default defineNuxtPlugin(() => {
   const characterSelectItems: { id: string, image: string }[] = []
 
   for (const character of characters) {
-    if (character.variants) {
+    if (isCharacterGroup(character)) {
       for (const variant of character.variants) {
         characterSelectItems.push({
           id: toCharacterIdWithVariant(character.id, variant.path),

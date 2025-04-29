@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
-import type { CombatType, Path } from "~/types/generated/characters.g"
 import { reactive } from "#imports"
+import { hsrCombatTypes, hsrPaths, type HsrCombatType, type HsrPath } from "~/types/data/enums"
+import { isCharacterGroup } from "~/types/data/src/characters"
 
 definePageMeta({
   title: "characters",
@@ -9,21 +10,24 @@ definePageMeta({
 
 const config = useConfigStore()
 
-const paths = new Set(characters.map(e => e.path ?? "destruction"))
-const combatTypes = new Set(characters.map(e => e.combatType ?? "physical"))
-
 const filter = reactive({
   rarity: [] as number[],
-  path: [] as Path[],
-  combatType: [] as CombatType[],
+  path: [] as HsrPath[],
+  combatType: [] as HsrCombatType[],
   possessionStatus: [] as ("owned" | "not-owned")[],
 })
 
 const filteredCharacters = computed(() => {
   return characters.filter((character) => {
-    if (filter.path.length > 0 && (!character.path || !filter.path.includes(character.path))) {
+    if (filter.path.length > 0
+      && (isCharacterGroup(character)
+        ? character.variants.every(e => !filter.path.includes(e.path))
+        : !filter.path.includes(character.path))) {
       return false
-    } else if (filter.combatType.length > 0 && (!character.combatType || !filter.combatType.includes(character.combatType))) {
+    } else if (filter.combatType.length > 0
+      && (isCharacterGroup(character)
+        ? character.variants.every(e => !filter.combatType.includes(e.combatType))
+        : !filter.combatType.includes(character.combatType))) {
       return false
     } else if (filter.rarity.length > 0 && !filter.rarity.includes(character.rarity)) {
       return false
@@ -109,7 +113,7 @@ const filteredCharacters = computed(() => {
                 <v-list v-model:selected="filter.path">
                   <v-row no-gutters>
                     <v-list-item
-                      v-for="path in paths"
+                      v-for="path in hsrPaths"
                       :key="path"
                       class="flex-grow-1"
                       :title="tx(`paths.${path}` as const)"
@@ -136,7 +140,7 @@ const filteredCharacters = computed(() => {
                 <v-list v-model:selected="filter.combatType">
                   <v-row no-gutters>
                     <v-list-item
-                      v-for="type in combatTypes"
+                      v-for="type in hsrCombatTypes"
                       :key="type"
                       class="flex-grow-1"
                       :title="tx(`combatTypes.${type}` as const)"
@@ -169,8 +173,8 @@ const filteredCharacters = computed(() => {
         v-for="character in filteredCharacters"
         :key="character.id"
         :attribute-images="[
-          ...character.combatType ? [getCombatTypeImage(character.combatType)] : [],
-          ...character.path ? [getPathImage(character.path)] : [],
+          ...!isCharacterGroup(character) ? [getCombatTypeImage(character.combatType)] : [],
+          ...!isCharacterGroup(character) ? [getPathImage(character.path)] : [],
         ]"
         :character-id="character.id"
         :image="getCharacterImage(character.id, 'full')"

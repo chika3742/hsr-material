@@ -53,9 +53,9 @@ declare module "assets/data/relic-pieces.csv" {
 }
 
 declare module "assets/data/relic-stats.yaml" {
-  import type { DecorationStats } from "~/types/data/src/decoration-stats"
+  import type { HsrRelicStats } from "~/types/data/src/decoration-stats"
 
-  const relicStats: DecorationStats
+  const relicStats: HsrRelicStats
   export default relicStats
 }
 

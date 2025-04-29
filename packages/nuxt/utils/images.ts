@@ -1,4 +1,4 @@
-import type { CombatType, Path } from "~/types/generated/characters.g"
+import type { HsrCombatType, HsrPath } from "~/types/data/enums"
 
 /**
  * Gets character image URL.
@@ -31,7 +31,7 @@ export const getLightConeImage = (lightConeId: string) => {
  * @param type Combat type
  * @returns Image URL
  */
-export const getCombatTypeImage = (type: CombatType) => {
+export const getCombatTypeImage = (type: HsrCombatType) => {
   return new URL(`../assets/img/combat-types/${type}.webp`, import.meta.url).toString()
 }
 
@@ -41,7 +41,7 @@ export const getCombatTypeImage = (type: CombatType) => {
  * @param path Path
  * @returns Image URL
  */
-export const getPathImage = (path: Path) => {
+export const getPathImage = (path: HsrPath) => {
   return new URL(`../assets/img/paths/${path}.webp`, import.meta.url).toString()
 }
 

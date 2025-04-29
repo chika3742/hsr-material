@@ -31,3 +31,38 @@ export const hsrPurposeTypes = [
   "memospriteTalent",
 ] as const
 export type HsrPurposeType = (typeof hsrPurposeTypes)[number]
+
+export const hsrStats = [
+  "hp",
+  "atk",
+  "def",
+  "hp_percent",
+  "atk_percent",
+  "def_percent",
+  "crit_rate",
+  "crit_dmg",
+  "outgoing_healing",
+  "effect_hit_rate",
+  "speed",
+  "physical_dmg",
+  "fire_dmg",
+  "ice_dmg",
+  "lightning_dmg",
+  "wind_dmg",
+  "quantum_dmg",
+  "imaginary_dmg",
+  "break_effect",
+  "energy_regen_rate",
+  "effect_res",
+] as const
+export type HsrStat = (typeof hsrStats)[number]
+
+export const hsrRelicPositions = [
+  "head",
+  "hands",
+  "body",
+  "feet",
+  "planar_sphere",
+  "link_rope",
+] as const
+export type HsrRelicPosition = (typeof hsrRelicPositions)[number]
