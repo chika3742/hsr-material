@@ -4,7 +4,7 @@ import type { LevelIngredients, LevelsForPurposeTypes } from "~/types/level-ingr
 import { db } from "~/libs/db/providers"
 import type { BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
 import type { HsrPath } from "~/types/data/enums"
-import type { MaterialExpr } from "~/types/data/ingredient"
+import { isExpIngredient, type MaterialExpr } from "~/types/data/ingredient"
 
 interface Slider {
   type: PurposeType
@@ -87,24 +87,36 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
     if (!checkedList.value[i]) {
       return []
     }
-    return e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
-      .map(f => f.ingredients.map<BookmarkableMaterial>((g) => {
-        if ("exp" in g) {
+    const filtered = e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
+    const characterIdWithVariant = toCharacterIdWithVariant(props.characterId, props.variant)
+    const result: BookmarkableMaterial[] = []
+
+    for (const lv of filtered) {
+      for (const item of lv.ingredients) {
+        if (isExpIngredient(item)) {
           throw new Error("Exp ingredients are not supported.")
         }
 
-        return {
+        const materialId = getMaterialIdFromIngredient(item, props.materialDefs, characterIdWithVariant)
+        if (materialId === null) {
+          continue // qty is zero
+        }
+
+        result.push({
           type: "character_material",
-          characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-          materialId: getMaterialIdFromIngredient(g, props.materialDefs),
-          quantity: g.quantity!,
+          characterId: characterIdWithVariant,
+          materialId,
+          quantity: item.quantity!,
           usage: {
             type: "character",
-            upperLevel: f.level,
+            upperLevel: lv.level,
             purposeType: e.type,
           },
-        }
-      })).flat()
+        })
+      }
+    }
+
+    return result
   }).flat()
 })
 </script>

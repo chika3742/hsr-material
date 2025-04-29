@@ -1,5 +1,5 @@
 import materials from "~/assets/data/materials.csv"
-import { isCraftableIngredient, isExpIngredient, isFixedIdIngredient, type Ingredient } from "~/types/data/ingredient"
+import { type Ingredient, isCraftableIngredient, isExpIngredient, isFixedIdIngredient } from "~/types/data/ingredient"
 
 type MaterialDefinitions = Partial<Record<string, string>>
 
@@ -10,9 +10,9 @@ type MaterialDefinitions = Partial<Record<string, string>>
  *
  * @param ingredient {@link Ingredient}
  * @param materialDefs {@link CharacterMaterialDefinitions} or {@link LightConeMaterialDefinitions}
- * @returns material ID
+ * @returns Material ID or `null`. If null, the quantity of this ingredient is zero.
  */
-export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs: MaterialDefinitions): string {
+export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs: MaterialDefinitions, characterId: string): string | null {
   if (isExpIngredient(ingredient)) {
     throw new Error("ExpIngredient is unsupported in this function")
   }
@@ -21,9 +21,13 @@ export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs
     return ingredient.fixedId
   }
 
+  if (ingredient.overrides?.[characterId]) {
+    return ingredient.overrides?.[characterId]
+  }
+
   const defString = materialDefs[ingredient.type!]
   if (!defString) {
-    throw new Error(`Material definition not found for ${ingredient.type}`)
+    return null
   }
 
   const [defType, id] = defString.split(":")

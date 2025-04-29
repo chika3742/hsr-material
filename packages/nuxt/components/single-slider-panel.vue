@@ -17,10 +17,9 @@
 
 <script lang="ts" setup>
 import type { LevelIngredients } from "~/types/level-ingredients"
-import type { Usage } from "~/types/bookmark/usage"
 import { db } from "~/libs/db/providers"
-import type { BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
-import type { EachLevels, Ingredient, MaterialExpr } from "~/types/data/ingredient"
+import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
+import { type EachLevels, type Ingredient, isExpIngredient, type MaterialExpr } from "~/types/data/ingredient"
 import type { HsrPath } from "~/types/data/enums"
 
 const props = defineProps<{
@@ -41,7 +40,7 @@ const levelIngredients = computed(() => {
 const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredients.value))
 
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
-const setInitialRangeBasedOnBookmarks = async() => {
+const setInitialRangeBasedOnBookmarks = async () => {
   if (import.meta.server) {
     return
   }
@@ -73,66 +72,61 @@ const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
 })
 
 const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): BookmarkableIngredient[] => {
-  return ingredients.map(e => e.ingredients.map<BookmarkableIngredient>((f) => {
-    let usage: Usage
-    // TODO: reformat conditional branching
-    if ("exp" in f) {
-      usage = {
-        type: "exp",
-        lightConeId: props.lightConeId ?? null,
-        purposeType: "ascension",
-        upperLevel: e.level,
-      }
-    } else if (props.lightConeId) {
-      usage = {
-        type: "light_cone",
-        lightConeId: props.lightConeId,
-        purposeType: "ascension",
-        upperLevel: e.level,
-      }
-    } else {
-      usage = {
-        type: "character",
-        purposeType: "ascension",
-        upperLevel: e.level,
-      }
-    }
+  const characterIdWithVariant = toCharacterIdWithVariant(props.characterId, props.variant)
+  const result: BookmarkableIngredient[] = []
 
-    if ("exp" in f) {
-      const result: BookmarkableExp = {
-        type: props.lightConeId ? "light_cone_exp" : "character_exp",
-        characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-        exp: f.exp,
-        usage: usage as Usage.Exp,
-      }
-      return result
-    } else {
-      if (!f.quantity) {
-        throw new Error("Invalid ingredient markup")
+  for (const lv of ingredients) {
+    for (const e of lv.ingredients) {
+      if (isExpIngredient(e)) {
+        result.push({
+          type: props.lightConeId ? "light_cone_exp" : "character_exp",
+          characterId: characterIdWithVariant,
+          exp: e.exp,
+          usage: {
+            type: "exp",
+            lightConeId: props.lightConeId ?? null,
+            purposeType: "ascension",
+            upperLevel: lv.level,
+          },
+        })
+        continue
       }
 
-      let result: BookmarkableMaterial
-      if (usage.type === "character") {
-        result = {
+      const materialId = getMaterialIdFromIngredient(e, props.materialDefs, characterIdWithVariant)
+      if (materialId === null) {
+        continue // qty is zero
+      }
+
+      if (!props.lightConeId) { // character bookmark
+        result.push({
           type: "character_material",
-          characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-          materialId: getMaterialIdFromIngredient(f, props.materialDefs),
-          quantity: f.quantity,
-          usage,
-        }
-      } else {
-        result = {
+          characterId: characterIdWithVariant,
+          materialId,
+          quantity: e.quantity,
+          usage: {
+            type: "character",
+            purposeType: "ascension",
+            upperLevel: lv.level,
+          },
+        })
+      } else { // light cone bookmark
+        result.push({
           type: "light_cone_material",
-          characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-          materialId: getMaterialIdFromIngredient(f, props.materialDefs),
-          quantity: f.quantity,
-          usage: usage as Usage.LightCone,
-        }
+          characterId: characterIdWithVariant,
+          materialId,
+          quantity: e.quantity,
+          usage: {
+            type: "light_cone",
+            lightConeId: props.lightConeId,
+            purposeType: "ascension",
+            upperLevel: lv.level,
+          },
+        })
       }
-
-      return result
     }
-  })).flat()
+  }
+
+  return result
 }
 
 const items = computed<BookmarkableIngredient[]>(() => {
