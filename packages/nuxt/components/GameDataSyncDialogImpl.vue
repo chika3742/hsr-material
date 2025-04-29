@@ -46,7 +46,7 @@ const getters: DataSyncMapGetters = {
     }
   },
   getCharacterImage: (character: ShowcaseCharacter) =>
-    getCharacterImage(characters.find(e => e.$nameJA === character.nameJP)?.id ?? "", "small"),
+    getCharacterImage(getters.getCharacterId(character), "small"),
   getEquipmentId: (lightConeName: string) =>
     lightCones.find(e => e.$nameJA === lightConeName)?.id ?? "",
   getEquipmentImage: (lightConeId: string) => getLightConeImage(lightConeId),
