@@ -1,11 +1,11 @@
-import type { EachPurposeTypes, EachLevels, Ingredient } from "../ingredient"
+import type { EachLevels, EachPurposeTypes, Ingredient } from "../ingredient"
 
 export interface Ingredients {
   expItems: {
     itemId: string
     expPerItem: number
   }[]
-  levelingItemTables: Record<string, IngredientTable>
+  ingredientsTables: Record<string, IngredientsTable>
 }
 
-type IngredientTable = EachPurposeTypes<EachLevels<Ingredient[]>>
+type IngredientsTable = EachPurposeTypes<EachLevels<Ingredient[]>>

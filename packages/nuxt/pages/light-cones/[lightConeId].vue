@@ -18,7 +18,7 @@ if (!lightCones.some(e => e.id === route.params.lightConeId)) {
 }
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
-const levels = lightConeIngredients.levelingItemTables[(() => {
+const levels = lightConeIngredients.ingredientsTables[(() => {
   switch (lightCone.rarity) {
     case 3:
       return "r3Base"

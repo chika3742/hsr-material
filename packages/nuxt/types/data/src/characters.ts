@@ -31,7 +31,7 @@ interface HsrCharacterMixin {
 export type HsrCharacterWV = CharacterWithVariantsBase<HsrCharacterMixin>
 export type HsrCharacterVariant = CharacterVariant<HsrCharacterMixin>
 /** Character for HSR w/o variants */
-export type HsrCharacterWoV = (CharacterWithoutVariantsBase & HsrCharacterMixin)
+export type HsrCharacterWoV = CharacterWithoutVariantsBase & HsrCharacterMixin
 export type HsrCharacter = HsrCharacterWV | HsrCharacterWoV
 
 export type Characters = HsrCharacter[]

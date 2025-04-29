@@ -2,7 +2,7 @@
 import characters from "~/assets/data/characters.yaml"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
-import { isCharacterGroup, type HsrCharacterVariant } from "~/types/data/src/characters"
+import { type HsrCharacterVariant, isCharacterGroup } from "~/types/data/src/characters"
 
 definePageMeta({
   title: "characterDetails",
@@ -42,7 +42,7 @@ const purposeTypes = computed<LevelsForPurposeTypes>(() => {
     }
   }
 
-  return characterIngredients.levelingItemTables[currentVariant.value.levelingItemTable ?? getDefaultLitForRarity()].purposeTypes
+  return characterIngredients.ingredientsTables[currentVariant.value.levelingItemTable ?? getDefaultLitForRarity()].purposeTypes
 })
 
 const purposeTypesOmitted = computed<Omit<LevelsForPurposeTypes, "ascension">>(() => {

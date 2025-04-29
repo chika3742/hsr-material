@@ -6,4 +6,4 @@ export interface LevelIngredients {
   ingredients: Ingredient[]
 }
 
-export type LevelsForPurposeTypes = Ingredients["levelingItemTables"][string]["purposeTypes"]
+export type LevelsForPurposeTypes = Ingredients["ingredientsTables"][string]["purposeTypes"]

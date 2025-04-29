@@ -6,7 +6,7 @@ expItems:
   - itemId: sparse-aether
     expPerItem: 500
 
-levelingItemTables:
+ingredientsTables:
   r3Base:
     purposeTypes:
       ascension:
