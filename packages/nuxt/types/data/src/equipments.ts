@@ -1,9 +1,10 @@
 import type { HsrPath } from "../enums"
 import type { MaterialExpr } from "../ingredient"
+import type { LocalizedText } from "../locales"
 
 interface EquipmentBase extends Record<string, unknown> {
   id: string
-  $nameJA: string
+  name: LocalizedText
   yomi: string
   rarity: number
   materials: Record<string, MaterialExpr>

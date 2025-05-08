@@ -1,5 +1,8 @@
 - id: collapsing-sky
-  $nameJA: 天傾
+  name:
+    locales:
+      ja: "天傾"
+      en: "Collapsing Sky"
   yomi: テンケイ
   rarity: 3
   path: destruction
@@ -7,7 +10,10 @@
     primary: group:lcs005
     common: group:com001
 - id: shattered-home
-  $nameJA: 楽壊
+  name:
+    locales:
+      ja: "楽壊"
+      en: "Shattered Home"
   yomi: ラクカイ
   rarity: 3
   path: destruction
@@ -15,7 +21,10 @@
     primary: group:lcs005
     common: group:com002
 - id: mutual-demise
-  $nameJA: 倶歿
+  name:
+    locales:
+      ja: "倶歿"
+      en: "Mutual Demise"
   yomi: グボツ
   rarity: 3
   path: destruction
@@ -23,7 +32,10 @@
     primary: group:lcs005
     common: group:com003
 - id: the-moles-welcome-you
-  $nameJA: モグラ党へようこそ
+  name:
+    locales:
+      ja: "モグラ党へようこそ"
+      en: "The Moles Welcome You"
   yomi: モグラトウヘヨウコソ
   rarity: 4
   path: destruction
@@ -31,7 +43,10 @@
     primary: group:lcs005
     common: group:com001
 - id: a-secret-vow
-  $nameJA: 秘密の誓い
+  name:
+    locales:
+      ja: "秘密の誓い"
+      en: "A Secret Vow"
   yomi: ヒミツノチカイ
   rarity: 4
   path: destruction
@@ -39,7 +54,10 @@
     primary: group:lcs005
     common: group:com003
 - id: on-the-fall-of-an-aeon
-  $nameJA: とある星神の殞落を記す
+  name:
+    locales:
+      ja: "とある星神の殞落を記す"
+      en: "On the Fall of an Aeon"
   yomi: トアルアイオーンノウンラクヲシルス
   rarity: 5
   path: destruction
@@ -47,7 +65,10 @@
     primary: group:lcs005
     common: group:com002
 - id: under-the-blue-sky
-  $nameJA: 青空の下で
+  name:
+    locales:
+      ja: "青空の下で"
+      en: "Under the Blue Sky"
   yomi: アオゾラノシタデ
   rarity: 4
   path: destruction
@@ -55,7 +76,10 @@
     primary: group:lcs005
     common: group:com005
 - id: woof-walk-time
-  $nameJA: ワン！散歩の時間！
+  name:
+    locales:
+      ja: "ワン！散歩の時間！"
+      en: "Woof! Walk Time!"
   yomi: ワンサンポノジカン
   rarity: 4
   path: destruction
@@ -63,7 +87,10 @@
     primary: group:lcs005
     common: group:com002
 - id: nowhere-to-run
-  $nameJA: 逃げ場なし
+  name:
+    locales:
+      ja: "逃げ場なし"
+      en: "Nowhere to Run"
   yomi: ニゲバナシ
   rarity: 4
   path: destruction
@@ -71,7 +98,10 @@
     primary: group:lcs005
     common: group:com003
 - id: something-irreplaceable
-  $nameJA: かけがえのないもの
+  name:
+    locales:
+      ja: "かけがえのないもの"
+      en: "Something Irreplaceable"
   yomi: カケガエノナイモノ
   rarity: 5
   path: destruction
@@ -79,7 +109,10 @@
     primary: group:lcs005
     common: group:com004
 - id: arrows
-  $nameJA: 矢じり
+  name:
+    locales:
+      ja: "矢じり"
+      en: "Arrows"
   yomi: ヤジリ
   rarity: 3
   path: the_hunt
@@ -87,7 +120,10 @@
     primary: group:lcs002
     common: group:com001
 - id: darting-arrow
-  $nameJA: 離弦
+  name:
+    locales:
+      ja: "離弦"
+      en: "Darting Arrow"
   yomi: リゲン
   rarity: 3
   path: the_hunt
@@ -95,7 +131,10 @@
     primary: group:lcs002
     common: group:com003
 - id: adversarial
-  $nameJA: 相抗
+  name:
+    locales:
+      ja: "相抗"
+      en: "Adversarial"
   yomi: ソウコウ
   rarity: 3
   path: the_hunt
@@ -103,7 +142,10 @@
     primary: group:lcs002
     common: group:com004
 - id: only-silence-remains
-  $nameJA: 沈黙のみ
+  name:
+    locales:
+      ja: "沈黙のみ"
+      en: "Only Silence Remains"
   yomi: チンモクノミ
   rarity: 4
   path: the_hunt
@@ -111,7 +153,10 @@
     primary: group:lcs002
     common: group:com003
 - id: swordplay
-  $nameJA: 論剣
+  name:
+    locales:
+      ja: "論剣"
+      en: "Swordplay"
   yomi: ロンケン
   rarity: 4
   path: the_hunt
@@ -119,7 +164,10 @@
     primary: group:lcs002
     common: group:com002
 - id: subscribe-for-more
-  $nameJA: フォローして！
+  name:
+    locales:
+      ja: "フォローして！"
+      en: "Subscribe for More!"
   yomi: フォローシテ
   rarity: 4
   path: the_hunt
@@ -127,7 +175,10 @@
     primary: group:lcs002
     common: group:com006
 - id: in-the-night
-  $nameJA: 夜の帳の中で
+  name:
+    locales:
+      ja: "夜の帳の中で"
+      en: "In the Night"
   yomi: ヨルノトバリノナカデ
   rarity: 5
   path: the_hunt
@@ -135,7 +186,10 @@
     primary: group:lcs002
     common: group:com001
 - id: sleep-like-the-dead
-  $nameJA: 泥の如き眠り
+  name:
+    locales:
+      ja: "泥の如き眠り"
+      en: "Sleep Like the Dead"
   yomi: ドロノゴトキネムリ
   rarity: 5
   path: the_hunt
@@ -143,7 +197,10 @@
     primary: group:lcs002
     common: group:com001
 - id: cruising-in-the-stellar-sea
-  $nameJA: 星海巡航
+  name:
+    locales:
+      ja: "星海巡航"
+      en: "Cruising in the Stellar Sea"
   yomi: セイカイジュンコウ
   rarity: 5
   path: the_hunt
@@ -151,7 +208,10 @@
     primary: group:lcs002
     common: group:com002
 - id: river-flows-in-spring
-  $nameJA: 春水に初生する
+  name:
+    locales:
+      ja: "春水に初生する"
+      en: "River Flows in Spring"
   yomi: シュンスイニショセイスル
   rarity: 4
   path: the_hunt
@@ -159,7 +219,10 @@
     primary: group:lcs002
     common: group:com004
 - id: return-to-darkness
-  $nameJA: 幽冥に帰す
+  name:
+    locales:
+      ja: "幽冥に帰す"
+      en: "Return to Darkness"
   yomi: ユウメイニキス
   rarity: 4
   path: the_hunt
@@ -167,7 +230,10 @@
     primary: group:lcs002
     common: group:com005
 - id: data-bank
-  $nameJA: アーカイブ
+  name:
+    locales:
+      ja: "アーカイブ"
+      en: "Data Bank"
   yomi: アーカイブ
   rarity: 3
   path: erudition
@@ -175,7 +241,10 @@
     primary: group:lcs003
     common: group:com002
 - id: passkey
-  $nameJA: 霊鍵
+  name:
+    locales:
+      ja: "霊鍵"
+      en: "Passkey"
   yomi: レイケン
   rarity: 3
   path: erudition
@@ -183,7 +252,10 @@
     primary: group:lcs003
     common: group:com002
 - id: sagacity
-  $nameJA: 見識
+  name:
+    locales:
+      ja: "見識"
+      en: "Sagacity"
   yomi: ケンシキ
   rarity: 3
   path: erudition
@@ -191,7 +263,10 @@
     primary: group:lcs003
     common: group:com001
 - id: the-birth-of-the-self
-  $nameJA: 「私」の誕生
+  name:
+    locales:
+      ja: "「私」の誕生"
+      en: "The Birth of the Self"
   yomi: ワタシノタンジョウ
   rarity: 4
   path: erudition
@@ -199,7 +274,10 @@
     primary: group:lcs003
     common: group:com004
 - id: make-the-world-clamor
-  $nameJA: この世界に喧噪を
+  name:
+    locales:
+      ja: "この世界に喧噪を"
+      en: "Make the World Clamor"
   yomi: コノセカイニケンソウヲ
   rarity: 4
   path: erudition
@@ -207,7 +285,10 @@
     primary: group:lcs003
     common: group:com004
 - id: night-on-the-milky-way
-  $nameJA: 銀河鉄道の夜
+  name:
+    locales:
+      ja: "銀河鉄道の夜"
+      en: "Night on the Milky Way"
   yomi: ギンガテツドウノヨル
   rarity: 5
   path: erudition
@@ -215,7 +296,10 @@
     primary: group:lcs003
     common: group:com002
 - id: before-dawn
-  $nameJA: 夜明け前
+  name:
+    locales:
+      ja: "夜明け前"
+      en: "Before Dawn"
   yomi: ヨアケマエ
   rarity: 5
   path: erudition
@@ -223,7 +307,10 @@
     primary: group:lcs003
     common: group:com005
 - id: geniuses-repose
-  $nameJA: 天才たちの休息
+  name:
+    locales:
+      ja: "天才たちの休息"
+      en: "Geniuses' Repose"
   yomi: テンサイタチノキュウソク
   rarity: 4
   path: erudition
@@ -231,7 +318,10 @@
     primary: group:lcs003
     common: group:com005
 - id: the-seriousness-of-breakfast
-  $nameJA: 朝食の儀式感
+  name:
+    locales:
+      ja: "朝食の儀式感"
+      en: "The Seriousness of Breakfast"
   yomi: チョウショクノギシキカン
   rarity: 4
   path: erudition
@@ -239,7 +329,10 @@
     primary: group:lcs003
     common: group:com002
 - id: today-is-another-peaceful-day
-  $nameJA: 今日も平和な一日
+  name:
+    locales:
+      ja: "今日も平和な一日"
+      en: "Today Is Another Peaceful Day"
   yomi: キョウモヘイワナイチニチ
   rarity: 4
   path: erudition
@@ -247,7 +340,10 @@
     primary: group:lcs003
     common: group:com005
 - id: chorus
-  $nameJA: 斉頌
+  name:
+    locales:
+      ja: "斉頌"
+      en: "Chorus"
   yomi: セイショウ
   rarity: 3
   path: harmony
@@ -255,7 +351,10 @@
     primary: group:lcs006
     common: group:com003
 - id: meshing-cogs
-  $nameJA: 輪契
+  name:
+    locales:
+      ja: "輪契"
+      en: "Meshing Cogs"
   yomi: リンケイ
   rarity: 3
   path: harmony
@@ -263,7 +362,10 @@
     primary: group:lcs006
     common: group:com003
 - id: mediation
-  $nameJA: 同調
+  name:
+    locales:
+      ja: "同調"
+      en: "Mediation"
   yomi: ドウチョウ
   rarity: 3
   path: harmony
@@ -271,7 +373,10 @@
     primary: group:lcs006
     common: group:com002
 - id: memories-of-the-past
-  $nameJA: 記憶の中の姿
+  name:
+    locales:
+      ja: "記憶の中の姿"
+      en: "Memories of the Past"
   yomi: キオクノナカノスガタ
   rarity: 4
   path: harmony
@@ -279,7 +384,10 @@
     primary: group:lcs006
     common: group:com003
 - id: planetary-rendezvous
-  $nameJA: 惑星との出会い
+  name:
+    locales:
+      ja: "惑星との出会い"
+      en: "Planetary Rendezvous"
   yomi: ワクセイトノデアイ
   rarity: 4
   path: harmony
@@ -287,7 +395,10 @@
     primary: group:lcs006
     common: group:com001
 - id: but-the-battle-isnt-over
-  $nameJA: だが戦争は終わらない
+  name:
+    locales:
+      ja: "だが戦争は終わらない"
+      en: "But the Battle Isn't Over"
   yomi: ダガセンソウハオワラナイ
   rarity: 5
   path: harmony
@@ -295,7 +406,10 @@
     primary: group:lcs006
     common: group:com003
 - id: carve-the-moon-weave-the-clouds
-  $nameJA: 彫月裁雲の意
+  name:
+    locales:
+      ja: "彫月裁雲の意"
+      en: "Carve the Moon, Weave the Clouds"
   yomi: チョウゲツサイウンノイ
   rarity: 4
   path: harmony
@@ -303,7 +417,10 @@
     primary: group:lcs006
     common: group:com001
 - id: dance-dance-dance
-  $nameJA: ダンス！ダンス！ダンス！
+  name:
+    locales:
+      ja: "ダンス！ダンス！ダンス！"
+      en: "Dance! Dance! Dance!"
   yomi: ダンスダンスダンス
   rarity: 4
   path: harmony
@@ -311,7 +428,10 @@
     primary: group:lcs006
     common: group:com006
 - id: past-and-future
-  $nameJA: 過去と未来
+  name:
+    locales:
+      ja: "過去と未来"
+      en: "Past and Future"
   yomi: カコトミライ
   rarity: 4
   path: harmony
@@ -319,7 +439,10 @@
     primary: group:lcs006
     common: group:com002
 - id: void
-  $nameJA: 幽邃
+  name:
+    locales:
+      ja: "幽邃"
+      en: "Void"
   yomi: ユウスイ
   rarity: 3
   path: nihility
@@ -327,7 +450,10 @@
     primary: group:lcs004
     common: group:com004
 - id: loop
-  $nameJA: 淵環
+  name:
+    locales:
+      ja: "淵環"
+      en: "Loop"
   yomi: エンカン
   rarity: 3
   path: nihility
@@ -335,7 +461,10 @@
     primary: group:lcs004
     common: group:com004
 - id: hidden-shadow
-  $nameJA: 匿影
+  name:
+    locales:
+      ja: "匿影"
+      en: "Hidden Shadow"
   yomi: トクエイ
   rarity: 3
   path: nihility
@@ -343,7 +472,10 @@
     primary: group:lcs004
     common: group:com006
 - id: good-night-and-sleep-well
-  $nameJA: おやすみなさいと寝顔
+  name:
+    locales:
+      ja: "おやすみなさいと寝顔"
+      en: "Good Night and Sleep Well"
   yomi: オヤスミナサイトネガオ
   rarity: 4
   path: nihility
@@ -351,7 +483,10 @@
     primary: group:lcs004
     common: group:com003
 - id: eyes-of-the-prey
-  $nameJA: 獲物の視線
+  name:
+    locales:
+      ja: "獲物の視線"
+      en: "Eyes of the Prey"
   yomi: エモノノシセン
   rarity: 4
   path: nihility
@@ -359,7 +494,10 @@
     primary: group:lcs004
     common: group:com004
 - id: resolution-shines-as-pearls-of-sweat
-  $nameJA: 決意は汗のように輝く
+  name:
+    locales:
+      ja: "決意は汗のように輝く"
+      en: "Resolution Shines As Pearls of Sweat"
   yomi: ケツイハアセノヨウニカガヤク
   rarity: 4
   path: nihility
@@ -367,7 +505,10 @@
     primary: group:lcs004
     common: group:com006
 - id: in-the-name-of-the-world
-  $nameJA: 世界の名を以て
+  name:
+    locales:
+      ja: "世界の名を以て"
+      en: "In the Name of the World"
   yomi: セカイノナヲモッテ
   rarity: 5
   path: nihility
@@ -375,7 +516,10 @@
     primary: group:lcs004
     common: group:com003
 - id: fermata
-  $nameJA: フェルマータ
+  name:
+    locales:
+      ja: "フェルマータ"
+      en: "Fermata"
   yomi: フェルマータ
   rarity: 4
   path: nihility
@@ -383,7 +527,10 @@
     primary: group:lcs004
     common: group:com003
 - id: we-will-meet-again
-  $nameJA: またお会いしましょう
+  name:
+    locales:
+      ja: "またお会いしましょう"
+      en: "We Will Meet Again"
   yomi: マタオアイシマショウ
   rarity: 4
   path: nihility
@@ -391,7 +538,10 @@
     primary: group:lcs004
     common: group:com004
 - id: amber
-  $nameJA: 琥珀
+  name:
+    locales:
+      ja: "琥珀"
+      en: "Amber"
   yomi: コハク
   rarity: 3
   path: preservation
@@ -399,7 +549,10 @@
     primary: group:lcs001
     common: group:com002
 - id: defense
-  $nameJA: 防衛
+  name:
+    locales:
+      ja: "防衛"
+      en: "Defense"
   yomi: ボウエイ
   rarity: 3
   path: preservation
@@ -407,7 +560,10 @@
     primary: group:lcs001
     common: group:com001
 - id: pioneering
-  $nameJA: 新天地
+  name:
+    locales:
+      ja: "新天地"
+      en: "Pioneering"
   yomi: シンテンチ
   rarity: 3
   path: preservation
@@ -415,7 +571,10 @@
     primary: group:lcs001
     common: group:com002
 - id: day-one-of-my-new-life
-  $nameJA: 余生の初日
+  name:
+    locales:
+      ja: "余生の初日"
+      en: "Day One of My New Life"
   yomi: ヨセイノショニチ
   rarity: 4
   path: preservation
@@ -423,7 +582,10 @@
     primary: group:lcs001
     common: group:com002
 - id: landaus-choice
-  $nameJA: ランドゥーの選択
+  name:
+    locales:
+      ja: "ランドゥーの選択"
+      en: "Landau's Choice"
   yomi: ランドゥーノセンタク
   rarity: 4
   path: preservation
@@ -431,7 +593,10 @@
     primary: group:lcs001
     common: group:com002
 - id: trend-of-the-universal-market
-  $nameJA: 星間市場のトレンド
+  name:
+    locales:
+      ja: "星間市場のトレンド"
+      en: "Trend of the Universal Market"
   yomi: セイカンシジョウノトレンド
   rarity: 4
   path: preservation
@@ -439,7 +604,10 @@
     primary: group:lcs001
     common: group:com005
 - id: moment-of-victory
-  $nameJA: 勝利の刹那
+  name:
+    locales:
+      ja: "勝利の刹那"
+      en: "Moment of Victory"
   yomi: ショウリノセツナ
   rarity: 5
   path: preservation
@@ -447,7 +615,10 @@
     primary: group:lcs001
     common: group:com003
 - id: texture-of-memories
-  $nameJA: 記憶の素材
+  name:
+    locales:
+      ja: "記憶の素材"
+      en: "Texture of Memories"
   yomi: キオクノソザイ
   rarity: 5
   path: preservation
@@ -455,7 +626,10 @@
     primary: group:lcs001
     common: group:com002
 - id: we-are-wildfire
-  $nameJA: 我ら地炎
+  name:
+    locales:
+      ja: "我ら地炎"
+      en: "We Are Wildfire"
   yomi: ワレラチエン
   rarity: 4
   path: preservation
@@ -463,7 +637,10 @@
     primary: group:lcs001
     common: group:com004
 - id: this-is-me
-  $nameJA: これがウチだよ！
+  name:
+    locales:
+      ja: "これがウチだよ！"
+      en: "This Is Me!"
   yomi: コレガウチダヨ
   rarity: 4
   path: preservation
@@ -471,7 +648,10 @@
     primary: group:lcs001
     common: group:com001
 - id: cornucopia
-  $nameJA: 物穣
+  name:
+    locales:
+      ja: "物穣"
+      en: "Cornucopia"
   yomi: ブツジョウ
   rarity: 3
   path: abundance
@@ -479,7 +659,10 @@
     primary: group:lcs007
     common: group:com003
 - id: fine-fruit
-  $nameJA: 嘉果
+  name:
+    locales:
+      ja: "嘉果"
+      en: "Fine Fruit"
   yomi: カカ
   rarity: 3
   path: abundance
@@ -487,7 +670,10 @@
     primary: group:lcs007
     common: group:com002
 - id: multiplication
-  $nameJA: 蕃殖
+  name:
+    locales:
+      ja: "蕃殖"
+      en: "Multiplication"
   yomi: ハンショク
   rarity: 3
   path: abundance
@@ -495,7 +681,10 @@
     primary: group:lcs007
     common: group:com005
 - id: post-op-conversation
-  $nameJA: 手術後の会話
+  name:
+    locales:
+      ja: "手術後の会話"
+      en: "Post-Op Conversation"
   yomi: シュジュツゴノカイワ
   rarity: 4
   path: abundance
@@ -503,7 +692,10 @@
     primary: group:lcs007
     common: group:com002
 - id: shared-feeling
-  $nameJA: 同じ気持ち
+  name:
+    locales:
+      ja: "同じ気持ち"
+      en: "Shared Feeling"
   yomi: オナジキモチ
   rarity: 4
   path: abundance
@@ -511,7 +703,10 @@
     primary: group:lcs007
     common: group:com006
 - id: perfect-timing
-  $nameJA: 今が丁度
+  name:
+    locales:
+      ja: "今が丁度"
+      en: "Perfect Timing"
   yomi: イマガチョウド
   rarity: 4
   path: abundance
@@ -519,7 +714,10 @@
     primary: group:lcs007
     common: group:com006
 - id: quid-pro-quo
-  $nameJA: 等価交換
+  name:
+    locales:
+      ja: "等価交換"
+      en: "Quid Pro Quo"
   yomi: トウカコウカン
   rarity: 4
   path: abundance
@@ -527,7 +725,10 @@
     primary: group:lcs007
     common: group:com003
 - id: warmth-shortens-cold-nights
-  $nameJA: 暖かい夜は長くない
+  name:
+    locales:
+      ja: "暖かい夜は長くない"
+      en: "Warmth Shortens Cold Nights"
   yomi: アタタカイヨルハナガクナイ
   rarity: 4
   path: abundance
@@ -535,7 +736,10 @@
     primary: group:lcs007
     common: group:com002
 - id: time-waits-for-no-one
-  $nameJA: 時節は居らず
+  name:
+    locales:
+      ja: "時節は居らず"
+      en: "Time Waits for No One"
   yomi: ジセツハオラズ
   rarity: 5
   path: abundance
@@ -543,7 +747,10 @@
     primary: group:lcs007
     common: group:com002
 - id: before-the-tutorial-mission-starts
-  $nameJA: 初めてのクエストの前に
+  name:
+    locales:
+      ja: "初めてのクエストの前に"
+      en: "Before the Tutorial Mission Starts"
   yomi: ハジメテノクエストノマエニ
   rarity: 4
   path: nihility
@@ -551,7 +758,10 @@
     primary: group:lcs004
     common: group:com002
 - id: incessant-rain
-  $nameJA: 降りやまぬ雨
+  name:
+    locales:
+      ja: "降りやまぬ雨"
+      en: "Incessant Rain"
   yomi: フリヤマヌアメ
   rarity: 5
   path: nihility
@@ -559,7 +769,10 @@
     primary: group:lcs004
     common: group:com004
 - id: echoes-of-the-coffin
-  $nameJA: 棺のこだま
+  name:
+    locales:
+      ja: "棺のこだま"
+      en: "Echoes of the Coffin"
   yomi: ヒツギノコダマ
   rarity: 5
   path: abundance
@@ -567,7 +780,10 @@
     primary: group:lcs007
     common: group:com006
 - id: the-unreachable-side
-  $nameJA: 着かない彼岸
+  name:
+    locales:
+      ja: "着かない彼岸"
+      en: "The Unreachable Side"
   yomi: ツカナイヒガン
   rarity: 5
   path: destruction
@@ -575,7 +791,10 @@
     primary: group:lcs005
     common: group:com005
 - id: patience-is-all-you-need
-  $nameJA: 待つのみ
+  name:
+    locales:
+      ja: "待つのみ"
+      en: "Patience Is All You Need"
   yomi: マツノミ
   rarity: 5
   path: nihility
@@ -583,7 +802,10 @@
     primary: group:lcs004
     common: group:com001
 - id: brighter-than-the-sun
-  $nameJA: 陽光より輝くもの
+  name:
+    locales:
+      ja: "陽光より輝くもの"
+      en: "Brighter Than the Sun"
   yomi: ヨウコウヨリカガヤクモノ
   rarity: 5
   path: destruction
@@ -591,7 +813,10 @@
     primary: group:lcs005
     common: group:com005
 - id: solitary-healing
-  $nameJA: 孤独の癒やし
+  name:
+    locales:
+      ja: "孤独の癒やし"
+      en: "Solitary Healing"
   yomi: コドクノイヤシ
   rarity: 5
   path: nihility
@@ -599,7 +824,10 @@
     primary: group:lcs004
     common: group:com002
 - id: she-already-shut-her-eyes
-  $nameJA: 閉ざした瞳
+  name:
+    locales:
+      ja: "閉ざした瞳"
+      en: "She Already Shut Her Eyes"
   yomi: トザシタヒトミ
   rarity: 5
   path: preservation
@@ -607,376 +835,517 @@
     primary: group:lcs001
     common: group:com006
 - id: i-shall-be-my-own-sword
+  name:
+    locales:
+      ja: "この身は剣なり"
+      en: "I Shall Be My Own Sword"
   yomi: コノミハケンナリ
-  $nameJA: この身は剣なり
   path: destruction
   rarity: 5
   materials:
     primary: group:lcs005
     common: group:com005
 - id: worrisome-blissful
+  name:
+    locales:
+      ja: "悩んで笑って"
+      en: "Worrisome, Blissful"
   yomi: ナヤンデワラッテ
-  $nameJA: 悩んで笑って
   path: the_hunt
   rarity: 5
   materials:
     primary: group:lcs002
     common: group:com003
 - id: hey-over-here
+  name:
+    locales:
+      ja: "よぉ、ここにいるぜ"
+      en: "Hey, Over Here"
   yomi: 'ヨオココニイルゼ'
-  $nameJA: よぉ、ここにいるぜ
   path: abundance
   rarity: 4
   materials:
     primary: group:lcs007
     common: group:com006
 - id: night-of-fright
+  name:
+    locales:
+      ja: "驚魂の夜"
+      en: "Night of Fright"
   yomi: 'キョウコンノヨル'
-  $nameJA: 驚魂の夜
   path: abundance
   rarity: 5
   materials:
     primary: group:lcs007
     common: group:com005
 - id: an-instant-before-a-gaze
+  name:
+    locales:
+      ja: "その一刻、目に焼き付けて"
+      en: "An Instant Before A Gaze"
   yomi: 'ソノイッコクメニヤキツケテ'
-  $nameJA: その一刻、目に焼き付けて
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs003
     common: group:com002
 - id: past-self-in-mirror
+  name:
+    locales:
+      ja: "鏡の中の私"
+      en: "Past Self in Mirror"
   yomi: カガミノナカノワタシ
-  $nameJA: 鏡の中の私
   path: harmony
   rarity: 5
   materials:
     primary: group:lcs006
     common: group:com005
 - id: baptism-of-pure-thought
+  name:
+    locales:
+      ja: "純粋なる思惟の洗礼"
+      en: "Baptism of Pure Thought"
   yomi: ジュンスイナルシユイノセンレイ
-  $nameJA: 純粋なる思惟の洗礼
   path: the_hunt
   rarity: 5
   materials:
     primary: group:lcs002
     common: group:com001
 - id: indelible-promise
+  name:
+    locales:
+      ja: "心に刻まれた約束"
+      en: "Indelible Promise"
   yomi: ココロニキザマレタヤクソク
-  $nameJA: '心に刻まれた約束'
   path: destruction
   rarity: 4
   materials:
     primary: group:lcs009
     common: group:com007
 - id: reforged-remembrance
+  name:
+    locales:
+      ja: "時間の記憶を再構築して"
+      en: "Reforged Remembrance"
   yomi: トキノキオクヲサイコウチクシテ
-  $nameJA: '時間の記憶を再構築して'
   path: nihility
   rarity: 5
   materials:
     primary: group:lcs008
     common: group:com002
 - id: what-is-real
+  name:
+    locales:
+      ja: "何が真か"
+      en: "What Is Real?"
   yomi: ナニガマコトカ
-  $nameJA: '何が真か'
   path: abundance
   rarity: 4
   materials:
     primary: group:lcs007
     common: group:com007
 - id: dreamville-adventure
+  name:
+    locales:
+      ja: "ドリームタウンの大冒険"
+      en: "Dreamville Adventure"
   yomi: ドリームタウンノダイボウケン
-  $nameJA: ドリームタウンの大冒険
   path: harmony
   rarity: 4
   materials:
     primary: group:lcs010
     common: group:com007
 - id: final-victor
+  name:
+    locales:
+      ja: "最後の勝者"
+      en: "Final Victor"
   yomi: サイゴノショウシャ
-  $nameJA: '最後の勝者'
   path: the_hunt
   rarity: 4
   materials:
     primary: group:lcs002
     common: group:com008
 - id: flames-afar
+  name:
+    locales:
+      ja: "烈火の彼方"
+      en: "Flames Afar"
   yomi: レッカノカナタ
-  $nameJA: '烈火の彼方'
   path: destruction
   rarity: 4
   materials:
     primary: group:lcs009
     common: group:com007
 - id: destinys-threads-forewoven
+  name:
+    locales:
+      ja: "運命を紡ぐ糸"
+      en: "Destiny's Threads Forewoven"
   yomi: ウンメイヲツムグイト
-  $nameJA: '運命を紡ぐ糸'
   path: preservation
   rarity: 4
   materials:
     primary: group:lcs001
     common: group:com008
 - id: the-day-the-cosmos-fell
+  name:
+    locales:
+      ja: "銀河が陥落した日"
+      en: "The Day The Cosmos Fell"
   yomi: ギンガガカンラクシタヒ
-  $nameJA: '銀河が陥落した日'
   path: erudition
   rarity: 4
   materials:
     primary: group:lcs003
     common: group:com007
 - id: its-showtime
+  name:
+    locales:
+      ja: "ショーの始まり"
+      en: "It's Showtime"
   yomi: ショーノハジマリ
-  $nameJA: ショーの始まり
   path: nihility
   rarity: 4
   materials:
     primary: group:lcs008
     common: group:com002
 - id: inherently-unjust-destiny
+  name:
+    locales:
+      ja: "運命は常に不公平"
+      en: "Inherently Unjust Destiny"
   yomi: ウンメイハツネニフコウヘイ
-  $nameJA: 運命は常に不公平
   path: preservation
   rarity: 5
   materials:
     primary: group:lcs011
     common: group:com008
 - id: along-the-passing-shore
+  name:
+    locales:
+      ja: "流れ逝く岸を歩いて"
+      en: "Along the Passing Shore"
   yomi: ナガレユクキシヲアルイテ
-  $nameJA: 流れ逝く岸を歩いて
   path: nihility
   rarity: 5
   materials:
     primary: group:lcs008
     common: group:com007
 - id: concert-for-two
+  name:
+    locales:
+      ja: "二人だけのコンサート"
+      en: "Concert for Two"
   yomi: フタリダケノコンサート
-  $nameJA: 二人だけのコンサート
   path: preservation
   rarity: 4
   materials:
     primary: group:lcs011
     common: group:com008
 - id: flowing-nightglow
+  name:
+    locales:
+      ja: "光あふれる夜"
+      en: "Flowing Nightglow"
   yomi: ヒカリアフレルヨル
-  $nameJA: 光あふれる夜
   path: harmony
   rarity: 5
   materials:
     primary: group:lcs010
     common: group:com007
 - id: boundless-choreo
+  name:
+    locales:
+      ja: "終わりなき舞踏"
+      en: "Boundless Choreo"
   yomi: オワリナキブトウ
-  $nameJA: 終わりなき舞踏
   path: nihility
   rarity: 4
   materials:
     primary: group:lcs008
     common: group:com008
 - id: for-tomorrows-journey
+  name:
+    locales:
+      ja: "明日のための旅"
+      en: "For Tomorrow's Journey"
   yomi: アスノタメノタビ
-  $nameJA: 明日のための旅
   path: harmony
   rarity: 4
   materials:
     primary: group:lcs010
     common: group:com007
 - id: sailing-towards-a-second-life
+  name:
+    locales:
+      ja: "二度目の生に向かって"
+      en: "Sailing Towards a Second Life"
   yomi: ニドメノセイニムカッテ
-  $nameJA: 二度目の生に向かって
   path: the_hunt
   rarity: 5
   materials:
     primary: group:zzP0
     common: group:com008
 - id: eternal-calculus
+  name:
+    locales:
+      ja: "絶え間ない演算"
+      en: "Eternal Calculus"
   yomi: タエマナイエンザン
-  $nameJA: 絶え間ない演算
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs012
     common: group:com002
 - id: whereabouts-should-dreams-rest
+  name:
+    locales:
+      ja: "夢が帰り着く場所"
+      en: "Whereabouts Should Dreams Rest"
   yomi: ユメガカエリツクバショ
-  $nameJA: 夢が帰り着く場所
   path: destruction
   rarity: 5
   materials:
     primary: group:lcs009
     common: group:com008
 - id: dance-at-sunset
+  name:
+    locales:
+      ja: "夕日に舞う"
+      en: "Dance at Sunset"
   yomi: ユウヒニマウ
-  $nameJA: 夕日に舞う
   path: destruction
   rarity: 5
   materials:
     primary: group:lcs009
     common: group:com006
 - id: yet-hope-is-priceless
+  name:
+    locales:
+      ja: "されど希望の銘は無価"
+      en: "Yet Hope Is Priceless"
   yomi: サレドキボウノメイハムカ
-  $nameJA: されど希望の銘は無価
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs012
     common: group:com007
 - id: after-the-charmony-fall
+  name:
+    locales:
+      ja: "調和が沈黙した後"
+      en: "After the Charmony Fall"
   yomi: チョウワガチンモクシタアト
-  $nameJA: 調和が沈黙した後
   path: erudition
   rarity: 4
   materials:
     primary: group:lcs012
     common: group:com008
 - id: poised-to-bloom
+  name:
+    locales:
+      ja: "美しき華よ今咲かん"
+      en: "Poised to Bloom"
   yomi: ウツクシキハナヨイマサカン
-  $nameJA: 美しき華よ今咲かん
   path: harmony
   rarity: 4
   materials:
     primary: group:lcs010
     common: group:com007
 - id: those-many-springs
+  name:
+    locales:
+      ja: "幾度目かの春"
+      en: "Those Many Springs"
   yomi: イクドメカノハル
-  $nameJA: 幾度目かの春
   path: nihility
   rarity: 5
   materials:
     primary: group:lcs008
     common: group:com005
 - id: i-venture-forth-to-hunt
+  name:
+    locales:
+      ja: "我が征く巡狩の道"
+      en: "I Venture Forth to Hunt"
   yomi: ワレガユクジュンシュノミチ
-  $nameJA: 我が征く巡狩の道
   path: the_hunt
   rarity: 5
   materials:
     primary: group:zzP0
     common: group:com006
 - id: scent-alone-stays-true
+  name:
+    locales:
+      ja: "昔日の香りは今も猶"
+      en: "Scent Alone Stays True"
   yomi: セキジツノカオリハイマモナオ
-  $nameJA: 昔日の香りは今も猶
   path: abundance
   rarity: 5
   materials:
     primary: group:tree-seeds
     common: group:com005
 - id: ninjutsu-inscription-dazzling-evilbreaker
+  name:
+    locales:
+      ja: "忍法帖・繚乱破魔"
+      en: "Ninjutsu Inscription: Dazzling Evilbreaker"
   yomi: ニンポウチョウリョウランハマ
-  $nameJA: 忍法帖・繚乱破魔
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs012
     common: group:com007
 - id: a-grounded-ascent
+  name:
+    locales:
+      ja: "大地より天を目指して"
+      en: "A Grounded Ascent"
   yomi: ダイチヨリテンヲメザシテ
-  $nameJA: 大地より天を目指して
   path: harmony
   rarity: 5
   materials:
     primary: group:lcs010
     common: group:com008
 - id: long-road-leads-home
+  name:
+    locales:
+      ja: "長途はやがて帰途へと続く"
+      en: "Long Road Leads Home"
   yomi: チョウトハヤガテキトヘトツヅク
-  $nameJA: 長途はやがて帰途へと続く
   path: nihility
   rarity: 5
   materials:
     primary: group:lcs008
     common: group:com005
 - id: into-the-unreachable-veil
+  name:
+    locales:
+      ja: "触れてはならぬ領域へ"
+      en: "Into the Unreachable Veil"
   yomi: フレテハナラヌリョウイキヘ
-  $nameJA: 触れてはならぬ領域へ
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs012
     common: group:com002
 - id: victory-in-a-blink
+  name:
+    locales:
+      ja: "瞬刻の勝機"
+      en: "Victory In a Blink"
   yomi: ショウコクノショウキ
-  $nameJA: 瞬刻の勝機
   path: remembrance
   rarity: 4
   materials:
     primary: group:lcs013
     common: group:com001
 - id: geniuses-greetings
+  name:
+    locales:
+      ja: "天才たちの「挨拶」"
+      en: "Geniuses' Greetings"
   yomi: テンサイタチノアイサツ
-  $nameJA: 天才たちの「挨拶」
   path: remembrance
   rarity: 4
   materials:
     primary: group:lcs013
     common: group:com009
 - id: sweat-now-cry-less
+  name:
+    locales:
+      ja: "流すなら涙より汗"
+      en: "Sweat Now, Cry Less"
   yomi: ナガスナラナミダヨリアセ
-  $nameJA: 流すなら涙より汗
   path: remembrance
   rarity: 4
   materials:
     primary: group:lcs013
     common: group:com009
 - id: time-woven-into-gold
+  name:
+    locales:
+      ja: "光陰を織り黄金と成す"
+      en: "Time Woven Into Gold"
   yomi: コウインヲオリオウゴントナス
-  $nameJA: 光陰を織り黄金と成す
   path: remembrance
   rarity: 5
   materials:
     primary: group:lcs013
     common: group:com009
 - id: shadowed-by-night
+  name:
+    locales:
+      ja: "夜は影のように付き纏う"
+      en: "Shadowed by Night"
   yomi: ヨルハカゲノヨウニツキマトウ
-  $nameJA: 夜は影のように付き纏う
   path: the_hunt
   rarity: 4
   materials:
     primary: group:zzP0
     common: group:com006
 - id: if-time-were-a-flower
+  name:
+    locales:
+      ja: "もしも時が花だったら"
+      en: "If Time Were a Flower"
   yomi: モシモトキガハナダッタラ
-  $nameJA: もしも時が花だったら
   path: harmony
   rarity: 5
   materials:
     primary: group:lcs010
     common: group:com009
 - id: flame-of-blood-blaze-my-path
+  name:
+    locales:
+      ja: "前途燃やす血の如き炎"
+      en: "Flame of Blood, Blaze My Path"
   yomi: ゼントモヤスチノゴトキホノオ
-  $nameJA: 前途燃やす血の如き炎
   path: destruction
   rarity: 5
   materials:
     primary: group:lcs009
     common: group:com009
 - id: dreams-montage
+  name:
+    locales:
+      ja: "夢のモンタージュ"
+      en: "Dream's Montage"
   yomi: ユメノモンタージュ
-  $nameJA: 夢のモンタージュ
   path: abundance
   rarity: 4
   materials:
     primary: group:tree-seeds
     common: group:com007
 - id: ninja-record-sound-hunt
+  name:
+    locales:
+      ja: "忍事録・音律狩猟"
+      en: "Ninja Record: Sound Hunt"
   yomi: ニンジロクオンリツシュリョウ
-  $nameJA: 忍事録・音律狩猟
   path: destruction
   rarity: 4
   materials:
     primary: group:lcs009
     common: group:com008
 - id: reminiscence
+  name:
+    locales:
+      ja: "辿る記憶"
+      en: "Reminiscence"
   yomi: タドルキオク
-  $nameJA: 辿る記憶
   path: remembrance
   rarity: 3
   materials:
     primary: group:lcs013
     common: group:com009
 - id: shadowburn
+  name:
+    locales:
+      ja: "燃ゆる影"
+      en: "Shadowburn"
   yomi: モユルカゲ
-  $nameJA: 燃ゆる影
   path: remembrance
   rarity: 3
   materials:
