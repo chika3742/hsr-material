@@ -1,30 +1,49 @@
 - id: trailblazer
-  $nameJA: 開拓者
+  name:
+    locales:
+      ja: 開拓者
+      en: Trailblazer
   yomi: カイタクシャ
   rarity: 5
   variants:
-    - path: destruction
+    - name:
+        locales:
+          ja: 開拓者 (壊滅)
+          en: Trailblazer (Destruction)
+      path: destruction
       combatType: physical
       materials:
         common: group:com001
         ascension: id:enigmatic-ectostella
         skills: group:lcs005
         skillsAdvanced: id:destroyers-final-road
-    - path: preservation
+    - name:
+        locales:
+          ja: 開拓者 (存護)
+          en: Trailblazer (Preservation)
+      path: preservation
       combatType: fire
       materials:
         common: group:com001
         ascension: id:enigmatic-ectostella
         skills: group:lcs001
         skillsAdvanced: id:destroyers-final-road
-    - path: harmony
+    - name:
+        locales:
+          ja: 開拓者 (調和)
+          en: Trailblazer (Harmony)
+      path: harmony
       combatType: imaginary
       materials:
         common: group:com001
         ascension: id:enigmatic-ectostella
         skills: group:lcs010
         skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
-    - path: remembrance
+    - name:
+        locales:
+          ja: 開拓者 (記憶)
+          en: Trailblazer (Remembrance)
+      path: remembrance
       combatType: ice
       levelingItemTable: r5Remembrance
       materials:
@@ -32,29 +51,41 @@
         ascension: id:enigmatic-ectostella
         skills: group:lcs013
         skillsAdvanced: id:auspice-sliver
-
 - id: march-7th
-  $nameJA: 三月なのか
+  name:
+    locales:
+      ja: 三月なのか
+      en: March 7th
   yomi: ミツキナノカ
   rarity: 4
   variants:
-    - path: preservation
+    - name:
+        locales:
+          ja: 三月なのか (存護)
+          en: March 7th (Preservation)
+      path: preservation
       combatType: ice
       materials:
         common: group:com001
         ascension: id:horn-of-snow
         skills: group:lcs001
         skillsAdvanced: id:destroyers-final-road
-    - path: the_hunt
+    - name:
+        locales:
+          ja: 三月なのか (巡狩)
+          en: March 7th (The Hunt)
+      path: the_hunt
       combatType: imaginary
       materials:
         ascension: id:horn-of-snow
         skills: group:zzP0
         skillsAdvanced: id:destroyers-final-road
         common: group:com001
-
 - id: dan-heng
-  $nameJA: 丹恒
+  name:
+    locales:
+      ja: "丹恒"
+      en: "Dan Heng"
   yomi: タンコウ
   rarity: 4
   path: the_hunt
@@ -64,9 +95,11 @@
     ascension: id:storm-eye
     skills: group:lcs002
     skillsAdvanced: id:destroyers-final-road
-
 - id: himeko
-  $nameJA: 姫子
+  name:
+    locales:
+      ja: "姫子"
+      en: "Himeko"
   yomi: ヒメコ
   rarity: 5
   path: erudition
@@ -76,9 +109,11 @@
     ascension: id:endotherm-chitin
     skills: group:lcs003
     skillsAdvanced: id:destroyers-final-road
-
 - id: welt
-  $nameJA: ヴェルト
+  name:
+    locales:
+      ja: "ヴェルト"
+      en: "Welt"
   yomi: ヴェルト
   rarity: 5
   path: nihility
@@ -88,9 +123,11 @@
     ascension: id:golden-crown-of-the-past-shadow
     skills: group:lcs004
     skillsAdvanced: id:destroyers-final-road
-
 - id: silver-wolf
-  $nameJA: 銀狼
+  name:
+    locales:
+      ja: "銀狼"
+      en: "Silver Wolf"
   yomi: ギンロウ
   rarity: 5
   path: nihility
@@ -100,9 +137,11 @@
     ascension: id:void-cast-iron
     skills: group:lcs004
     skillsAdvanced: id:destroyers-final-road
-
 - id: arlan
-  $nameJA: アーラン
+  name:
+    locales:
+      ja: "アーラン"
+      en: "Arlan"
   yomi: アーラン
   rarity: 4
   path: destruction
@@ -112,9 +151,11 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs005
     skillsAdvanced: id:destroyers-final-road
-
 - id: asta
-  $nameJA: アスター
+  name:
+    locales:
+      ja: "アスター"
+      en: "Asta"
   yomi: アスター
   rarity: 4
   path: harmony
@@ -124,9 +165,11 @@
     ascension: id:endotherm-chitin
     skills: group:lcs006
     skillsAdvanced: id:destroyers-final-road
-
 - id: herta
-  $nameJA: ヘルタ
+  name:
+    locales:
+      ja: "ヘルタ"
+      en: "Herta"
   yomi: ヘルタ
   rarity: 4
   path: erudition
@@ -136,9 +179,11 @@
     ascension: id:horn-of-snow
     skills: group:lcs003
     skillsAdvanced: id:destroyers-final-road
-
 - id: bronya
-  $nameJA: ブローニャ
+  name:
+    locales:
+      ja: "ブローニャ"
+      en: "Bronya"
   yomi: ブローニャ
   rarity: 5
   path: harmony
@@ -148,9 +193,11 @@
     ascension: id:storm-eye
     skills: group:lcs006
     skillsAdvanced: id:guardians-lament
-
 - id: seele
-  $nameJA: ゼーレ
+  name:
+    locales:
+      ja: "ゼーレ"
+      en: "Seele"
   yomi: ゼーレ
   rarity: 5
   path: the_hunt
@@ -160,9 +207,11 @@
     ascension: id:void-cast-iron
     skills: group:lcs002
     skillsAdvanced: id:guardians-lament
-
 - id: serval
-  $nameJA: セーバル
+  name:
+    locales:
+      ja: "セーバル"
+      en: "Serval"
   yomi: セーバル
   rarity: 4
   path: erudition
@@ -172,9 +221,11 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs003
     skillsAdvanced: id:guardians-lament
-
 - id: gepard
-  $nameJA: ジェパード
+  name:
+    locales:
+      ja: "ジェパード"
+      en: "Gepard"
   yomi: ジェパード
   rarity: 5
   path: preservation
@@ -184,9 +235,11 @@
     ascension: id:horn-of-snow
     skills: group:lcs001
     skillsAdvanced: id:guardians-lament
-
 - id: natasha
-  $nameJA: ナターシャ
+  name:
+    locales:
+      ja: "ナターシャ"
+      en: "Natasha"
   yomi: ナターシャ
   rarity: 4
   path: abundance
@@ -196,9 +249,11 @@
     ascension: id:broken-teeth-of-iron-wolf
     skills: group:lcs007
     skillsAdvanced: id:guardians-lament
-
 - id: pela
-  $nameJA: ペラ
+  name:
+    locales:
+      ja: "ペラ"
+      en: "Pela"
   yomi: ペラ
   rarity: 4
   path: nihility
@@ -208,9 +263,11 @@
     ascension: id:horn-of-snow
     skills: group:lcs004
     skillsAdvanced: id:guardians-lament
-
 - id: clara
-  $nameJA: クラーラ
+  name:
+    locales:
+      ja: "クラーラ"
+      en: "Clara"
   yomi: クラーラ
   rarity: 5
   path: destruction
@@ -220,9 +277,11 @@
     ascension: id:broken-teeth-of-iron-wolf
     skills: group:lcs005
     skillsAdvanced: id:guardians-lament
-
 - id: sampo
-  $nameJA: サンポ
+  name:
+    locales:
+      ja: "サンポ"
+      en: "Sampo"
   yomi: サンポ
   rarity: 4
   path: nihility
@@ -232,9 +291,11 @@
     ascension: id:storm-eye
     skills: group:lcs004
     skillsAdvanced: id:guardians-lament
-
 - id: hook
-  $nameJA: フック
+  name:
+    locales:
+      ja: "フック"
+      en: "Hook"
   yomi: フック
   rarity: 4
   path: destruction
@@ -244,9 +305,11 @@
     ascension: id:endotherm-chitin
     skills: group:lcs005
     skillsAdvanced: id:guardians-lament
-
 - id: qingque
-  $nameJA: 青雀
+  name:
+    locales:
+      ja: "青雀"
+      en: "Qingque"
   yomi: セイジャク
   rarity: 4
   path: erudition
@@ -256,9 +319,11 @@
     ascension: id:void-cast-iron
     skills: group:lcs003
     skillsAdvanced: id:guardians-lament
-
 - id: tingyun
-  $nameJA: 停雲
+  name:
+    locales:
+      ja: "停雲"
+      en: "Tingyun"
   yomi: テイウン
   rarity: 4
   path: harmony
@@ -268,9 +333,11 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs006
     skillsAdvanced: id:destroyers-final-road
-
 - id: jing-yuan
-  $nameJA: 景元
+  name:
+    locales:
+      ja: "景元"
+      en: "Jing Yuan"
   yomi: ケイゲン
   rarity: 5
   path: erudition
@@ -280,9 +347,11 @@
     ascension: id:shape-shifters-lightning-staff
     skills: group:lcs003
     skillsAdvanced: id:destroyers-final-road
-
 - id: sushang
-  $nameJA: 素裳
+  name:
+    locales:
+      ja: "素裳"
+      en: "Sushang"
   yomi: スショウ
   rarity: 4
   path: the_hunt
@@ -292,9 +361,11 @@
     ascension: id:broken-teeth-of-iron-wolf
     skills: group:lcs002
     skillsAdvanced: id:guardians-lament
-
 - id: yanqing
-  $nameJA: 彦卿
+  name:
+    locales:
+      ja: "彦卿"
+      en: "Yanqing"
   yomi: ゲンキョウ
   rarity: 5
   path: the_hunt
@@ -304,9 +375,11 @@
     ascension: id:gelid-chitin
     skills: group:lcs002
     skillsAdvanced: id:guardians-lament
-
 - id: bailu
-  $nameJA: 白露
+  name:
+    locales:
+      ja: "白露"
+      en: "Bailu"
   yomi: ビャクロ
   rarity: 5
   path: abundance
@@ -316,9 +389,11 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs007
     skillsAdvanced: id:guardians-lament
-
 - id: luocha
-  $nameJA: 羅刹
+  name:
+    locales:
+      ja: "羅刹"
+      en: "Luocha"
   yomi: ラセツ
   rarity: 5
   path: abundance
@@ -328,9 +403,11 @@
     ascension: id:golden-crown-of-the-past-shadow
     skills: group:lcs007
     skillsAdvanced: id:guardians-lament
-
 - id: yukong
-  $nameJA: 御空
+  name:
+    locales:
+      ja: "御空"
+      en: "Yukong"
   yomi: ギョクウ
   rarity: 4
   path: harmony
@@ -340,9 +417,11 @@
     ascension: id:golden-crown-of-the-past-shadow
     skills: group:lcs006
     skillsAdvanced: id:destroyers-final-road
-
 - id: blade
-  $nameJA: 刃
+  name:
+    locales:
+      ja: "刃"
+      en: "Blade"
   yomi: ジン
   rarity: 5
   path: destruction
@@ -352,9 +431,11 @@
     ascension: id:ascendant-debris
     skills: group:lcs005
     skillsAdvanced: id:regret-of-infinite-ochema
-
 - id: kafka
-  $nameJA: カフカ
+  name:
+    locales:
+      ja: "カフカ"
+      en: "Kafka"
   yomi: カフカ
   rarity: 5
   path: nihility
@@ -364,9 +445,11 @@
     ascension: id:shape-shifters-lightning-staff
     skills: group:lcs004
     skillsAdvanced: id:regret-of-infinite-ochema
-
 - id: luka
-  $nameJA: ルカ
+  name:
+    locales:
+      ja: "ルカ"
+      en: "Luka"
   yomi: ルカ
   rarity: 4
   path: nihility
@@ -376,9 +459,11 @@
     ascension: id:broken-teeth-of-iron-wolf
     skills: group:lcs004
     skillsAdvanced: id:regret-of-infinite-ochema
-
 - id: dan-heng-imbibitor-lunae
-  $nameJA: 丹恒・飲月
+  name:
+    locales:
+      ja: "丹恒・飲月"
+      en: "Dan Heng・Imbibitor Lunae"
   yomi: タンコウインゲツ
   rarity: 5
   path: destruction
@@ -388,9 +473,11 @@
     ascension: id:suppressing-edict
     skills: group:lcs005
     skillsAdvanced: id:regret-of-infinite-ochema
-
 - id: fu-xuan
-  $nameJA: 符玄
+  name:
+    locales:
+      ja: "符玄"
+      en: "Fu Xuan"
   yomi: フゲン
   rarity: 5
   path: preservation
@@ -400,9 +487,11 @@
     ascension: id:nail-of-the-ape
     skills: group:lcs001
     skillsAdvanced: id:regret-of-infinite-ochema
-
 - id: lynx
-  $nameJA: リンクス
+  name:
+    locales:
+      ja: "リンクス"
+      en: "Lynx"
   yomi: リンクス
   rarity: 4
   path: abundance
@@ -412,9 +501,11 @@
     ascension: id:nail-of-the-ape
     skills: group:lcs007
     skillsAdvanced: id:regret-of-infinite-ochema
-
 - id: jingliu
-  $nameJA: 鏡流
+  name:
+    locales:
+      ja: "鏡流"
+      en: "Jingliu"
   yomi: ケイリュウ
   rarity: 5
   path: destruction
@@ -424,9 +515,11 @@
     skills: group:lcs005
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
-
 - id: topaz-and-numby
-  $nameJA: トパーズ&カブ
+  name:
+    locales:
+      ja: "トパーズ&カブ"
+      en: "Topaz and Numby"
   yomi: トパーズアンドカブ
   rarity: 5
   path: the_hunt
@@ -436,9 +529,11 @@
     skills: group:lcs002
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com003
-
 - id: guinaifen
-  $nameJA: 桂乃芬
+  name:
+    locales:
+      ja: "桂乃芬"
+      en: "Guinaifen"
   yomi: ケイナイフン
   rarity: 4
   path: nihility
@@ -449,7 +544,10 @@
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
 - id: huohuo
-  $nameJA: フォフォ
+  name:
+    locales:
+      ja: "フォフォ"
+      en: "Huohuo"
   yomi: フォフォ
   rarity: 5
   path: abundance
@@ -460,7 +558,10 @@
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
 - id: argenti
-  $nameJA: アルジェンティ
+  name:
+    locales:
+      ja: "アルジェンティ"
+      en: "Argenti"
   yomi: 'アルジェンティ'
   rarity: 5
   path: erudition
@@ -471,7 +572,10 @@
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com002
 - id: hanya
-  $nameJA: 寒鴉
+  name:
+    locales:
+      ja: "寒鴉"
+      en: "Hanya"
   yomi: 'カンウ'
   rarity: 4
   path: harmony
@@ -482,7 +586,10 @@
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
 - id: ruan-mei
-  $nameJA: ルアン・メェイ
+  name:
+    locales:
+      ja: "ルアン・メェイ"
+      en: "Ruan Mei"
   yomi: ルアン・メェイ
   rarity: 5
   path: harmony
@@ -493,7 +600,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com005
 - id: xueyi
-  $nameJA: 雪衣
+  name:
+    locales:
+      ja: "雪衣"
+      en: "Xueyi"
   yomi: セツイ
   rarity: 4
   path: destruction
@@ -504,7 +614,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com002
 - id: dr-ratio
-  $nameJA: Dr.レイシオ
+  name:
+    locales:
+      ja: "Dr.レイシオ"
+      en: "Dr. Ratio"
   yomi: ドクターレイシオ
   rarity: 5
   path: the_hunt
@@ -515,7 +628,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com001
 - id: black-swan
-  $nameJA: ブラックスワン
+  name:
+    locales:
+      ja: "ブラックスワン"
+      en: "Black Swan"
   yomi: ブラックスワン
   rarity: 5
   path: nihility
@@ -526,7 +642,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com002
 - id: misha
-  $nameJA: ミーシャ
+  name:
+    locales:
+      ja: "ミーシャ"
+      en: "Misha"
   yomi: ミーシャ
   rarity: 4
   path: destruction
@@ -537,7 +656,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
 - id: sparkle
-  $nameJA: 花火
+  name:
+    locales:
+      ja: "花火"
+      en: "Sparkle"
   yomi: ハナビ
   rarity: 5
   path: harmony
@@ -548,7 +670,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com008
 - id: acheron
-  $nameJA: 黄泉
+  name:
+    locales:
+      ja: "黄泉"
+      en: "Acheron"
   yomi: ヨミ
   rarity: 5
   path: nihility
@@ -559,7 +684,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
 - id: aventurine
-  $nameJA: アベンチュリン
+  name:
+    locales:
+      ja: "アベンチュリン"
+      en: "Aventurine"
   yomi: アベンチュリン
   rarity: 5
   path: preservation
@@ -570,7 +698,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com008
 - id: gallagher
-  $nameJA: ギャラガー
+  name:
+    locales:
+      ja: "ギャラガー"
+      en: "Gallagher"
   yomi: ギャラガー
   rarity: 4
   path: abundance
@@ -581,7 +712,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
 - id: robin
-  $nameJA: ロビン
+  name:
+    locales:
+      ja: "ロビン"
+      en: "Robin"
   yomi: ロビン
   rarity: 5
   path: harmony
@@ -592,7 +726,10 @@
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
 - id: boothill
-  $nameJA: ブートヒル
+  name:
+    locales:
+      ja: "ブートヒル"
+      en: "Boothill"
   yomi: ブートヒル
   rarity: 5
   path: the_hunt
@@ -603,7 +740,10 @@
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com008
 - id: firefly
-  $nameJA: ホタル
+  name:
+    locales:
+      ja: "ホタル"
+      en: "Firefly"
   yomi: ホタル
   rarity: 5
   path: destruction
@@ -614,7 +754,10 @@
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com008
 - id: jade
-  $nameJA: ジェイド
+  name:
+    locales:
+      ja: "ジェイド"
+      en: "Jade"
   yomi: ジェイド
   rarity: 5
   path: erudition
@@ -625,7 +768,10 @@
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com007
 - id: yunli
-  $nameJA: 雲璃
+  name:
+    locales:
+      ja: "雲璃"
+      en: "Yunli"
   yomi: ウンリ
   rarity: 5
   path: destruction
@@ -636,7 +782,10 @@
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
 - id: jiaoqiu
-  $nameJA: 椒丘
+  name:
+    locales:
+      ja: "椒丘"
+      en: "Jiaoqiu"
   yomi: ショウキュウ
   rarity: 5
   path: nihility
@@ -647,7 +796,10 @@
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
 - id: feixiao
-  $nameJA: 飛霄
+  name:
+    locales:
+      ja: "飛霄"
+      en: "Feixiao"
   yomi: ヒショウ
   rarity: 5
   path: the_hunt
@@ -658,7 +810,10 @@
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
 - id: moze
-  $nameJA: モゼ
+  name:
+    locales:
+      ja: "モゼ"
+      en: "Moze"
   yomi: モゼ
   rarity: 4
   path: the_hunt
@@ -669,7 +824,10 @@
     skillsAdvanced: id:auspice-sliver
     common: group:com006
 - id: lingsha
-  $nameJA: 霊砂
+  name:
+    locales:
+      ja: "霊砂"
+      en: "Lingsha"
   yomi: レイサ
   rarity: 5
   path: abundance
@@ -680,7 +838,10 @@
     skillsAdvanced: id:auspice-sliver
     common: group:com005
 - id: rappa
-  $nameJA: 乱破
+  name:
+    locales:
+      ja: "乱破"
+      en: "Rappa"
   yomi: ランハ
   rarity: 5
   path: erudition
@@ -691,7 +852,10 @@
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com007
 - id: sunday
-  $nameJA: サンデー
+  name:
+    locales:
+      ja: "サンデー"
+      en: "Sunday"
   yomi: サンデー
   rarity: 5
   path: harmony
@@ -702,7 +866,10 @@
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com008
 - id: fugue
-  $nameJA: 帰忘の流離人
+  name:
+    locales:
+      ja: "帰忘の流離人"
+      en: "Fugue"
   yomi: キボウノサスライビト
   rarity: 5
   path: nihility
@@ -713,7 +880,10 @@
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
 - id: the-herta
-  $nameJA: マダム・ヘルタ
+  name:
+    locales:
+      ja: "マダム・ヘルタ"
+      en: "The Herta"
   yomi: マダムヘルタ
   rarity: 5
   path: erudition
@@ -724,7 +894,10 @@
     skillsAdvanced: id:auspice-sliver
     common: group:com002
 - id: aglaea
-  $nameJA: アグライア
+  name:
+    locales:
+      ja: "アグライア"
+      en: "Aglaea"
   yomi: アグライア
   rarity: 5
   path: remembrance
@@ -736,7 +909,10 @@
     skillsAdvanced: id:auspice-sliver
     common: group:com009
 - id: tribbie
-  $nameJA: トリビー
+  name:
+    locales:
+      ja: "トリビー"
+      en: "Tribbie"
   yomi: トリビー
   rarity: 5
   path: harmony
@@ -747,7 +923,10 @@
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com009
 - id: mydei
-  $nameJA: モーディス
+  name:
+    locales:
+      ja: "モーディス"
+      en: "Mydei"
   yomi: モーディス
   rarity: 5
   path: destruction
@@ -758,7 +937,10 @@
     skillsAdvanced: id:auspice-sliver
     common: group:com009
 - id: castorice
-  $nameJA: キャストリス
+  name:
+    locales:
+      ja: "キャストリス"
+      en: "Castorice"
   yomi: キャストリス
   rarity: 5
   path: remembrance
@@ -770,7 +952,10 @@
     skillsAdvanced: id:auspice-sliver
     common: group:lcs014
 - id: anaxa
-  $nameJA: アナイクス
+  name:
+    locales:
+      ja: "アナイクス"
+      en: "Anaxa"
   yomi: アナイクス
   rarity: 5
   path: erudition
