@@ -10,6 +10,15 @@
     "./packages/nuxt/schemas/equipments.g.json": [
       "/packages/nuxt/assets/data/light-cones.yaml"
     ],
+    "./packages/nuxt/schemas/materials.g.json": [
+      "/packages/nuxt/assets/data/materials.yaml"
+    ],
+    "./packages/nuxt/schemas/decoration-sets.g.json": [
+      "/packages/nuxt/assets/data/relic-sets.yaml"
+    ],
+    "./packages/nuxt/schemas/decoration-pieces.g.json": [
+      "/packages/nuxt/assets/data/relic-pieces.yaml"
+    ],
     "./packages/nuxt/schemas/drop-rates.g.json": [
       "/packages/nuxt/assets/data/drop-rates.yaml"
     ],

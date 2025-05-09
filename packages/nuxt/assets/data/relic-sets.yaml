@@ -1,0 +1,294 @@
+- id: band-of-sizzling-thunder
+  name:
+    locales:
+      ja: 雷鳴轟くバンド
+      en: Band of Sizzling Thunder
+  yomi: ライメイトドロクバンド
+  type: cavern
+- id: hunter-of-glacial-forest
+  name:
+    locales:
+      ja: 雪の密林の狩人
+      en: Hunter of Glacial Forest
+  yomi: ユキノミツリンノカリュウド
+  type: cavern
+- id: wastelander-of-banditry-desert
+  name:
+    locales:
+      ja: 荒地で盗みを働く廃土客
+      en: Wastelander of Banditry Desert
+  yomi: アレチデヌスミヲハタラクハイドキャク
+  type: cavern
+- id: musketeer-of-wild-wheat
+  name:
+    locales:
+      ja: 草の穂ガンマン
+      en: Musketeer of Wild Wheat
+  yomi: クサノホガンマン
+  type: cavern
+- id: inert-salsotto
+  name:
+    locales:
+      ja: 自転が止まったサルソット
+      en: Inert Salsotto
+  yomi: ジテンガトマッタサルソット
+  type: planar
+- id: fleet-of-the-ageless
+  name:
+    locales:
+      ja: 老いぬ者の仙舟
+      en: Fleet of the Ageless
+  yomi: オイヌモノノセンシュウ
+  type: planar
+- id: knight-of-purity-palace
+  name:
+    locales:
+      ja: 純庭教会の聖騎士
+      en: Knight of Purity Palace
+  yomi: ジュンテイキョウカイノセイキシ
+  type: cavern
+- id: talia-kingdom-of-banditry
+  name:
+    locales:
+      ja: 盗賊公国タリア
+      en: "Talia: Kingdom of Banditry"
+  yomi: トウゾクコウコクタリア
+  type: planar
+- id: sprightly-vonwacq
+  name:
+    locales:
+      ja: 生命のウェンワーク
+      en: Sprightly Vonwacq
+  yomi: セイメイノウェンワーク
+  type: planar
+- id: firesmith-of-lava-forging
+  name:
+    locales:
+      ja: 溶岩で鍛造する火匠
+      en: Firesmith of Lava-Forging
+  yomi: ヨウガンデタンゾウスルカショウ
+  type: cavern
+- id: passerby-of-wandering-cloud
+  name:
+    locales:
+      ja: 流雲無痕の過客
+      en: Passerby of Wandering Cloud
+  yomi: リュウウンムコンノカカク
+  type: cavern
+- id: thief-of-shooting-meteor
+  name:
+    locales:
+      ja: 流星の跡を追う怪盗
+      en: Thief of Shooting Meteor
+  yomi: リュウセイノアトヲオウカイトウ
+  type: cavern
+- id: pan-galactic-commercial-enterprise
+  name:
+    locales:
+      ja: 汎銀河商事会社
+      en: Pan-Galactic Commercial Enterprise
+  yomi: ハンギンガショウジガイシャ
+  type: planar
+- id: eagle-of-twilight-line
+  name:
+    locales:
+      ja: 昼夜の狭間を翔ける鷹
+      en: Eagle of Twilight Line
+  yomi: チュウヤノハザマヲカケルタカ
+  type: cavern
+- id: genius-of-brilliant-stars
+  name:
+    locales:
+      ja: 星の如く輝く天才
+      en: Genius of Brilliant Stars
+  yomi: ホシノゴトクカガヤクテンサイ
+  type: cavern
+- id: champion-of-streetwise-boxing
+  name:
+    locales:
+      ja: 成り上がりチャンピオン
+      en: Champion of Streetwise Boxing
+  yomi: ナリアガリチャンピオン
+  type: cavern
+- id: belobog-of-the-architects
+  name:
+    locales:
+      ja: 建創者のベロブルグ
+      en: Belobog of the Architects
+  yomi: ケンソウシャノベロブルグ
+  type: planar
+- id: space-sealing-station
+  name:
+    locales:
+      ja: 宇宙封印ステーション
+      en: Space Sealing Station
+  yomi: ウチュウフウインステーション
+  type: planar
+- id: celestial-differentiator
+  name:
+    locales:
+      ja: 天体階差機関
+      en: Celestial Differentiator
+  yomi: テンタイカイサキカン
+  type: planar
+- id: guard-of-wuthering-snow
+  name:
+    locales:
+      ja: 吹雪と対峙する兵士
+      en: Guard of Wuthering Snow
+  yomi: フブキトタイジスルヘイシ
+  type: cavern
+- id: longevous-disciple
+  name:
+    locales:
+      ja: 宝命長存の蒔者
+      en: Longevous Disciple
+  yomi: ホウメイチョウゾンノジシャ
+  type: cavern
+- id: messenger-traversing-hackerspace
+  name:
+    locales:
+      ja: 仮想空間を漫遊するメッセンジャー
+      en: Messenger Traversing Hackerspace
+  yomi: カソウクウカンヲマンユウスルメッセンジャー
+  type: cavern
+- id: rutilant-arena
+  name:
+    locales:
+      ja: 星々の競技場
+      en: Rutilant Arena
+  yomi: ホシボシノキョウギジョウ
+  type: planar
+- id: broken-keel
+  name:
+    locales:
+      ja: 折れた竜骨
+      en: Broken Keel
+  yomi: オレタリュウコツ
+  type: planar
+- id: pioneer-diver-of-dead-waters
+  name:
+    locales:
+      ja: 死水に潜る先駆者
+      en: Pioneer Diver of Dead Waters
+  yomi: シスイニモグルセンクシャ
+  type: cavern
+- id: watchmaker-master-of-dream-machinations
+  name:
+    locales:
+      ja: 夢を弄ぶ時計屋
+      en: Watchmaker, Master of Dream Machinations
+  yomi: ユメヲモテアソブトケイヤ
+  type: cavern
+- id: sigonia-the-unclaimed-desolation
+  name:
+    locales:
+      ja: 荒涼の惑星ツガンニヤ
+      en: Sigonia, the Unclaimed Desolation
+  yomi: コウリョウノワクセイツガンニヤ
+  type: planar
+- id: izumo-gensei-and-takama-divine-realm
+  name:
+    locales:
+      ja: 顕世の出雲と高天の神国
+      en: Izumo Gensei and Takama Divine Realm
+  yomi: ケンセノイズモトタカマノシンコク
+  type: planar
+- id: the-ashblazing-grand-duke
+  name:
+    locales:
+      ja: 灰燼を燃やし尽くす大公
+      en: The Ashblazing Grand Duke
+  yomi: カイジンヲモヤシツクスタイコウ
+  type: cavern
+- id: prisoner-in-deep-confinement
+  name:
+    locales:
+      ja: 深い牢獄の囚人
+      en: Prisoner in Deep Confinement
+  yomi: フカイロウゴクノシュウジン
+  type: cavern
+- id: firmament-frontline-glamoth
+  name:
+    locales:
+      ja: 蒼穹戦線グラモス
+      en: "Firmament Frontline: Glamoth"
+  yomi: ソウキュウセンセングラモス
+  type: planar
+- id: penacony-land-of-the-dreams
+  name:
+    locales:
+      ja: 夢の地ピノコニー
+      en: Penacony, Land of the Dreams
+  yomi: ユメノチピノコニー
+  type: planar
+- id: iron-cavalry-against-the-scourge
+  name:
+    locales:
+      ja: 蝗害を一掃せし鉄騎
+      en: Iron Cavalry Against the Scourge
+  yomi: コウガイヲイッソウセシテッキ
+  type: cavern
+- id: the-wind-soaring-valorous
+  name:
+    locales:
+      ja: 風雲を薙ぎ払う勇烈
+      en: The Wind-Soaring Valorous
+  yomi: フウウンヲナギハラウユウレツ
+  type: cavern
+- id: duran-dynasty-of-running-wolves
+  name:
+    locales:
+      ja: 奔狼の都藍王朝
+      en: Duran, Dynasty of Running Wolves
+  yomi: ホンロウノドゥーランオウチョウ
+  type: planar
+- id: forge-of-the-kalpagni-lantern
+  name:
+    locales:
+      ja: 劫火と蓮灯の鋳煉宮
+      en: Forge of the Kalpagni Lantern
+  yomi: ゴウカトレントウノチュウレングウ
+  type: planar
+- id: lushaka-the-sunken-seas
+  name:
+    locales:
+      ja: 海に沈んだルサカ
+      en: Lushaka, the Sunken Seas
+  yomi: ウミニシズンダルサカ
+  type: planar
+- id: the-wondrous-bananamusement-park
+  name:
+    locales:
+      ja: 奇想天外のバナダイス
+      en: The Wondrous BananAmusement Park
+  yomi: キソウテンガイノバナダイス
+  type: planar
+- id: hero-of-triumphant-song
+  name:
+    locales:
+      ja: 凱歌を揚げる英雄
+      en: Hero of Triumphant Song
+  yomi: ガイカヲアゲルエイユウ
+  type: cavern
+- id: poet-of-mourning-collapse
+  name:
+    locales:
+      ja: 亡国の悲哀を詠う詩人
+      en: Poet of Mourning Collapse
+  yomi: ボウコクノヒアイヲウタウシジン
+  type: cavern
+- id: giant-tree-of-rapt-brooding
+  name:
+    locales:
+      ja: 深慮に浸る巨樹
+      en: Giant Tree of Rapt Brooding
+  yomi: シンリョニヒタルキョジュ
+  type: planar
+- id: bone-collections-serene-demesne
+  name:
+    locales:
+      ja: 静謐な拾骨地
+      en: Bone Collection's Serene Demesne
+  yomi: セイヒツナシュウコツチ
+  type: planar

@@ -31,21 +31,21 @@ declare module "~/assets/data/light-cone-ingredients.yaml" {
   export default lightConeIngredients
 }
 
-declare module "~/assets/data/materials.csv" {
+declare module "~/assets/data/materials.yaml" {
   import type { Material } from "~/types/data/materials"
 
   const materials: Material[]
   export default materials
 }
 
-declare module "assets/data/relic-sets.csv" {
+declare module "assets/data/relic-sets.yaml" {
   import type { RelicSet } from "~/types/data/relics"
 
   const relicSets: RelicSet[]
   export default relicSets
 }
 
-declare module "assets/data/relic-pieces.csv" {
+declare module "assets/data/relic-pieces.yaml" {
   import type { RelicPiece } from "~/types/data/relics"
 
   const relicPieces: RelicPiece[]
