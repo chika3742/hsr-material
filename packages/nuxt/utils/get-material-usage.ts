@@ -1,5 +1,5 @@
 import characters from "~/assets/data/characters.yaml"
-import materials from "~/assets/data/materials.csv"
+import materials from "~/assets/data/materials.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 import type { MaterialExpr } from "~/types/data/ingredient"
 import { isCharacterGroup } from "~/types/data/src/characters"

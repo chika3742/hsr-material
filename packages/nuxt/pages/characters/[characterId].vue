@@ -22,6 +22,7 @@ const character = characters.find(e => e.id === route.params.characterId)!
 const currentVariant = ref<HsrCharacterVariant>(isCharacterGroup(character)
   ? character.variants[0]!
   : {
+      name: character.name,
       path: character.path,
       combatType: character.combatType,
       materials: character.materials,

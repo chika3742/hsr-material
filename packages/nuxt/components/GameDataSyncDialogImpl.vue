@@ -29,7 +29,7 @@ const showcaseUser = ref<UserInfoResponse>()
 const loadingShowcaseUser = ref(false)
 const getters: DataSyncMapGetters = {
   getCharacterId: (character: ShowcaseCharacter) => {
-    const foundCharacter = characters.find(e => e.$nameJA === character.nameJP)
+    const foundCharacter = characters.find(e => e.name.locales.ja === character.nameJP)
     if (!foundCharacter) {
       return ""
     }

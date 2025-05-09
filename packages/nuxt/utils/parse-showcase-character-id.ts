@@ -15,5 +15,5 @@ const trailblazerCombatTypeToPath = (combatType: string): HsrPath => {
 export const parseShowcaseCharacterId = (nameJP: string, variant: string) => {
   return nameJP === "開拓者"
     ? toCharacterIdWithVariant("trailblazer", trailblazerCombatTypeToPath(variant))
-    : characters.find(e => e.$nameJA === nameJP)?.id
+    : characters.find(e => e.name.locales.ja === nameJP)?.id
 }

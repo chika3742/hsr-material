@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import relicSets from "assets/data/relic-sets.csv"
-import relicPieces from "assets/data/relic-pieces.csv"
+import relicSets from "assets/data/relic-sets.yaml"
+import relicPieces from "assets/data/relic-pieces.yaml"
 import type { RelicPiece, RelicSet } from "~/types/data/relics"
 
 definePageMeta({

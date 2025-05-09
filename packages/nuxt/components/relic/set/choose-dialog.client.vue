@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import relicSets from "assets/data/relic-sets.csv"
+import relicSets from "assets/data/relic-sets.yaml"
 import type { RelicSet } from "~/types/data/relics"
 
 interface Props {

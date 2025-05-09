@@ -1,4 +1,4 @@
-import materials from "~/assets/data/materials.csv"
+import materials from "~/assets/data/materials.yaml"
 import { type Ingredient, isCraftableIngredient, isExpIngredient, isFixedIdIngredient } from "~/types/data/ingredient"
 
 type MaterialDefinitions = Partial<Record<string, string>>

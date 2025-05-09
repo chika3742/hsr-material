@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import materials from "~/assets/data/materials.csv"
+import materials from "~/assets/data/materials.yaml"
 import { splitByField } from "#imports"
 
 definePageMeta({

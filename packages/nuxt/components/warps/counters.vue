@@ -265,7 +265,7 @@ const pityCountList = computed(() => {
 const getItemNameI18nKey = (warp: Warp) => {
   switch (warp.itemType) {
     case "キャラクター": {
-      const found = characters.find(e => e.$nameJA === warp.name)
+      const found = characters.find(e => e.name.locales.ja === warp.name)
       if (!found) {
         console.error(`Character not found: ${warp.name}`)
       }

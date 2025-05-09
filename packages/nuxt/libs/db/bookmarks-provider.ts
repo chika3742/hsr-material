@@ -166,7 +166,7 @@ export class BookmarksProvider extends DbProvider {
         }
 
         const lightConeId = character.equipment !== null
-          ? lightCones.find(e => e.$nameJA === character.equipment!.nameJP)?.id
+          ? lightCones.find(e => e.name.locales.ja === character.equipment!.nameJP)?.id
           : undefined
 
         const skillLevels = Object.fromEntries(character.skills.map(e => [e.type, e.originalLevel]))
