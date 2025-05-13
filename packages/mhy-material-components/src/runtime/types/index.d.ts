@@ -1,6 +1,6 @@
 interface DrawerItem {
   icon: string
-  title?: string
+  title: string
   to?: string
   href?: string
   target?: string
