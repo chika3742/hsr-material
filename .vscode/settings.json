@@ -13,6 +13,9 @@
     "./packages/nuxt/schemas/materials.g.json": [
       "/packages/nuxt/assets/data/materials.yaml"
     ],
+    "./packages/nuxt/schemas/materials-meta.g.json": [
+      "/packages/nuxt/assets/data/materials-meta.yaml"
+    ],
     "./packages/nuxt/schemas/decoration-sets.g.json": [
       "/packages/nuxt/assets/data/relic-sets.yaml"
     ],

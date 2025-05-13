@@ -38,6 +38,13 @@ declare module "~/assets/data/materials.yaml" {
   export default materials
 }
 
+declare module "~/assets/data/materials-meta.yaml" {
+  import type { MaterialsMeta } from "~/types/data/src/materials-meta"
+
+  const materialsMeta: MaterialsMeta
+  export default materialsMeta
+}
+
 declare module "assets/data/relic-sets.yaml" {
   import type { RelicSet } from "~/types/data/src/decoration-sets"
 

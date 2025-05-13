@@ -1,0 +1,31 @@
+categories:
+  - id: exp
+    title:
+      locales:
+        ja: 経験値素材
+        en: EXP Materials
+  - id: character_ascension
+    title:
+      locales:
+        ja: キャラクター昇格素材
+        en: Character Ascension Materials
+  - id: common
+    title:
+      locales:
+        ja: 一般素材
+        en: Common Materials
+  - id: light_cone_or_skill_upgrade
+    title:
+      locales:
+        ja: 光円錐・スキル昇格素材
+        en: Light Cone & Skill Upgrade Materials
+  - id: advanced_skill_upgrade
+    title:
+      locales:
+        ja: 上級スキル昇格素材
+        en: Advanced Skill Upgrade Materials
+  - id: others
+    title:
+      locales:
+        ja: その他
+        en: Others
