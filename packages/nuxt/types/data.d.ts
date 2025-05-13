@@ -32,21 +32,21 @@ declare module "~/assets/data/light-cone-ingredients.yaml" {
 }
 
 declare module "~/assets/data/materials.yaml" {
-  import type { Material } from "~/types/data/materials"
+  import type { Material } from "~/types/data/src/materials"
 
   const materials: Material[]
   export default materials
 }
 
 declare module "assets/data/relic-sets.yaml" {
-  import type { RelicSet } from "~/types/data/relics"
+  import type { RelicSet } from "~/types/data/src/decoration-sets"
 
   const relicSets: RelicSet[]
   export default relicSets
 }
 
 declare module "assets/data/relic-pieces.yaml" {
-  import type { RelicPiece } from "~/types/data/relics"
+  import type { RelicPiece } from "~/types/data/src/decoration-pieces"
 
   const relicPieces: RelicPiece[]
   export default relicPieces

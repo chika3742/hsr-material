@@ -1,6 +1,6 @@
 import type { LocalizedText } from "../locales"
 
-export interface Material {
+export interface Material extends Record<string, unknown> {
   id: string
   name: LocalizedText
   yomi: string
