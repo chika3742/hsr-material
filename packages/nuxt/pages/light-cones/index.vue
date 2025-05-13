@@ -1,13 +1,10 @@
 <script lang="ts" setup>
-import GroupedList from "~/components/grouped-list.vue"
+import GroupedList, { type GroupedListGroup, type GroupedListItem } from "~/components/grouped-list.vue"
 import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
 import characters from "~/assets/data/characters.yaml"
 import { isCharacterGroup } from "~/types/data/src/characters"
-
-definePageMeta({
-  title: "lightCones",
-})
+import { hsrPaths } from "~/types/data/enums"
 
 const route = useRoute()
 
@@ -15,8 +12,25 @@ const filteringRarity = ref<number[]>([])
 const expanded = ref<number[]>([])
 const showSkillDescriptions = ref(false)
 
-const items = computed(() => {
+const filteredItems = computed(() => {
   return lightCones.filter(e => filteringRarity.value.length === 0 || e.rarity === filteringRarity.value[0]).sort((a, b) => b.rarity - a.rarity)
+})
+const groupItems = computed<GroupedListItem[]>(() => {
+  return filteredItems.value.map(e => ({
+    key: e.id,
+    name: localize(e.name, i18n),
+    imagePath: getLightConeImage(e.id),
+    groupKey: e.path,
+    rarity: e.rarity,
+    to: `/light-cones/${e.id}`,
+    descContent: showSkillDescriptions.value ? tx(i18n, `lightConeSkillDescriptions.${e.id}`) : undefined,
+  }))
+})
+const groups = computed<GroupedListGroup[]>(() => {
+  return hsrPaths.map(e => ({
+    groupKey: e,
+    title: tx(i18n, `paths.${e}`),
+  }))
 })
 
 const spiltByRarity = splitByField(lightCones, "rarity")
@@ -110,12 +124,8 @@ onActivated(() => {
 
     <GroupedList
       v-model="expanded"
-      :image-func="getLightConeImage"
-      :items="items"
-      category-field="path"
-      category-i18n-key="paths"
-      item-i18n-key="lightConeNames"
-      link-base-path="/light-cones"
+      :groups="groups"
+      :items="groupItems"
       :has-subtitle="showSkillDescriptions"
       preserve-query
     >

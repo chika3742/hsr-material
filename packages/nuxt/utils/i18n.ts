@@ -33,7 +33,7 @@ export const tx: Tx = (arg1: Loc | Composer, arg2?: Record<string, unknown> | Lo
 /**
  * Get translation for current locale of {@link LocalizedText}.
  */
-export const localiz = (l: LocalizedText) => {
-  const i18n = useI18n()
+export const localize = (l: LocalizedText, i18n?: Composer) => {
+  i18n ??= useI18n()
   return l.locales[i18n.locale.value]
 }

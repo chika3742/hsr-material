@@ -56,9 +56,9 @@ export interface GroupedListGroup {
     style="user-select: none"
   >
     <v-list-group
-      v-for="(group, i) in groups"
+      v-for="group in groups"
       :key="group.groupKey"
-      :value="i"
+      :value="group.groupKey"
     >
       <template #activator="{ props: _props }">
         <v-list-item
@@ -87,10 +87,12 @@ export interface GroupedListGroup {
         :lines="item.descContent ? 'two' : 'one'"
       >
         <template #subtitle>
-          <EmphasizedText
-            v-if="item.descContent"
-            :text="item.descContent"
-          />
+          <v-list-item-subtitle class="mt-1">
+            <EmphasizedText
+              v-if="item.descContent"
+              :text="item.descContent"
+            />
+          </v-list-item-subtitle>
         </template>
       </ItemListItem>
     </v-list-group>
