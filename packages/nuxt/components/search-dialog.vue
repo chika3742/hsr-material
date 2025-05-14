@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { SearchClient } from "@algolia/client-search"
-import type { RouteLocation } from "vue-router"
 import type { AlgoliaRecord } from "~/types/algolia-record"
 
 const props = defineProps<{
@@ -41,7 +40,7 @@ watch(toRefs(props).modelValue, (value) => {
   }
 })
 
-const executeQuery = async(_query: string) => {
+const executeQuery = async (_query: string) => {
   loading.value = true
 
   try {
@@ -170,7 +169,7 @@ const getItemImage = (item: AlgoliaRecord): string => {
             :key="item.objectID"
             :prepend-avatar="getItemImage(item)"
             :subtitle="tx(`searchRecordTypes.${item.recordType}`)"
-            :title="tx(item.i18nKey)"
+            :title="item[`name_${i18n.locale.value}`]"
             :to="$localePath(item.url)"
             @click="clearQuery(); closeDialog()"
           />
