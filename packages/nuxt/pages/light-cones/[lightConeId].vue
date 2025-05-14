@@ -6,11 +6,6 @@ import characters from "~/assets/data/characters.yaml"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import type { HsrCharacterWoV } from "~/types/data/src/characters"
 
-definePageMeta({
-  title: "lightConeDetails",
-  itemI18nKey: "lightConeNames",
-})
-
 const route = useRoute()
 
 if (!lightCones.some(e => e.id === route.params.lightConeId)) {
@@ -18,6 +13,8 @@ if (!lightCones.some(e => e.id === route.params.lightConeId)) {
 }
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
+usePageTitle(tx("pageTitles.lightConeDetails", { name: localize(lightCone.name) }))
+
 const levels = lightConeIngredients.ingredientsTables[(() => {
   switch (lightCone.rarity) {
     case 3:

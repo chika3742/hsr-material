@@ -1,11 +1,6 @@
 <script lang="ts" setup>
 import materials from "~/assets/data/materials.yaml"
 
-definePageMeta({
-  title: "materialDetails",
-  itemI18nKey: "materialNames",
-})
-
 const route = useRoute()
 
 if (!materials.some(e => e.id === route.params.materialId)) {
@@ -13,6 +8,7 @@ if (!materials.some(e => e.id === route.params.materialId)) {
 }
 
 const material = materials.find(e => e.id === route.params.materialId)!
+usePageTitle(tx("pageTitles.materialDetails", { name: localize(material.name) }))
 
 const characterUsage = getMaterialUsageCharacter(material.id)
 const lightConeUsage = getMaterialUsageLightCone(material.id)

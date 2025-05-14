@@ -1,12 +1,8 @@
 <script lang="ts" setup>
 import relicSets from "assets/data/relic-sets.yaml"
 import relicPieces from "assets/data/relic-pieces.yaml"
-import type { RelicPiece, RelicSet } from "~/types/data/relics"
-
-definePageMeta({
-  title: "relicDetails",
-  itemI18nKey: "relicSetTitles",
-})
+import type { RelicSet } from "~/types/data/src/decoration-sets"
+import type { RelicPiece } from "~/types/data/src/decoration-pieces"
 
 const route = useRoute()
 
@@ -30,6 +26,8 @@ if (!relicSets.some(e => e.id === route.params.relicId)) {
 }
 
 const relicSet = relicSets.find(e => e.id === route.params.relicId)!
+
+usePageTitle(tx("pageTitles.relicDetails", { name: localize(relicSet.name) }))
 
 const bookmarkBtnText = computed(() => {
   switch (relicSet.type) {

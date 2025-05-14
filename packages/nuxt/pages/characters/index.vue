@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import characters from "~/assets/data/characters.yaml"
 import { reactive } from "#imports"
-import { hsrCombatTypes, hsrPaths, type HsrCombatType, type HsrPath } from "~/types/data/enums"
+import { type HsrCombatType, hsrCombatTypes, type HsrPath, hsrPaths } from "~/types/data/enums"
 import { isCharacterGroup } from "~/types/data/src/characters"
 
-definePageMeta({
-  title: "characters",
-})
+usePageTitle(tx("pageTitles.characters"))
 
 const config = useConfigStore()
 

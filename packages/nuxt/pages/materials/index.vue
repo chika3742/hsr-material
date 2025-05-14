@@ -4,9 +4,9 @@ import { splitByField } from "#imports"
 import type { GroupedListGroup, GroupedListItem } from "~/components/grouped-list.vue"
 import materialsMeta from "~/assets/data/materials-meta.yaml"
 
-definePageMeta({
-  title: "materials",
-})
+usePageTitle(tx("pageTitles.materials"))
+
+const i18n = useI18n()
 
 const filteringRarity = ref<number[]>([])
 const expandedGroups = ref<number[]>([])

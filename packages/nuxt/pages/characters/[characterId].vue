@@ -4,14 +4,10 @@ import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
 import { type HsrCharacterVariant, isCharacterGroup } from "~/types/data/src/characters"
 
-definePageMeta({
-  title: "characterDetails",
-  itemI18nKey: "characterNames",
-})
-
 const route = useRoute()
 const router = useRouter()
 const config = useConfigStore()
+const i18n = useI18n()
 
 if (!characters.some(e => e.id === route.params.characterId)) {
   throw createError({ statusCode: 404, message: "Page not found", fatal: true })
@@ -30,6 +26,14 @@ const currentVariant = ref<HsrCharacterVariant>(isCharacterGroup(character)
     })
 
 const currentVariantId = computed(() => isCharacterGroup(character) ? currentVariant.value.path : null)
+
+usePageTitle(computed(() => {
+  return tx(
+    i18n,
+    "pageTitles.characterDetails",
+    { name: localize(currentVariant.value.name, i18n) },
+  )
+}))
 
 const purposeTypes = computed<LevelsForPurposeTypes>(() => {
   const getDefaultLitForRarity = () => {

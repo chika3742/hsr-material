@@ -1,18 +1,16 @@
 <script lang="ts" setup>
 import relics from "assets/data/relic-sets.yaml"
 
-definePageMeta({
-  title: "relics",
-})
+usePageTitle(tx("pageTitles.relics"))
 
 const openedPanels = ref<string[]>([])
 const showCavernRelics = ref(true)
 const showPlanarOrnaments = ref(true)
 
-const _relics = computed(() => {
+const filteredRelics = computed(() => {
   return [
-    ...relics.filter(e => e.type === "cavern" && showCavernRelics.value),
-    ...relics.filter(e => e.type === "planar" && showPlanarOrnaments.value),
+    ...showCavernRelics.value ? relics.filter(e => e.type === "cavern") : [],
+    ...showPlanarOrnaments.value ? relics.filter(e => e.type === "planar") : [],
   ]
 })
 </script>
@@ -30,7 +28,7 @@ const _relics = computed(() => {
       <v-btn
         :text="tx('common.expandAll')"
         prepend-icon="mdi-expand-all"
-        @click="openedPanels = _relics.map(e => e.id)"
+        @click="openedPanels = filteredRelics.map(e => e.id)"
       />
       <v-btn
         :text="tx('common.collapseAll')"
@@ -58,7 +56,7 @@ const _relics = computed(() => {
       multiple
     >
       <v-expansion-panel
-        v-for="relic in _relics"
+        v-for="relic in filteredRelics"
         :key="relic.id"
         :value="relic.id"
       >
@@ -75,7 +73,7 @@ const _relics = computed(() => {
               max-width="35px"
               width="35px"
             />
-            <span>{{ tx(`relicSetTitles.${relic.id}`) }}</span>
+            <span>{{ localize(relic.name) }}</span>
             <v-fade-transition>
               <v-btn
                 v-show="!openedPanels.includes(relic.id)"

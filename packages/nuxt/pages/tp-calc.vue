@@ -7,9 +7,7 @@ import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
 import { computed } from "#imports"
 import { CustomMarked } from "~/libs/custom-marked"
 
-definePageMeta({
-  title: "tpCalc",
-})
+usePageTitle(tx("pageTitles.tpCalc"))
 
 const config = useConfigStore()
 const i18n = useI18n()

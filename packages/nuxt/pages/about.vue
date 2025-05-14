@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { CustomMarked } from "~/libs/custom-marked"
 
-definePageMeta({
-  title: "about",
-})
+usePageTitle(tx("pageTitles.about"))
 
 const marked = new CustomMarked()
 

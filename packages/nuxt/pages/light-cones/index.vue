@@ -7,6 +7,8 @@ import { isCharacterGroup } from "~/types/data/src/characters"
 import { hsrPaths } from "~/types/data/enums"
 
 const route = useRoute()
+const i18n = useI18n()
+usePageTitle(tx("pageTitles.lightCones"))
 
 const filteringRarity = ref<number[]>([])
 const expanded = ref<number[]>([])
