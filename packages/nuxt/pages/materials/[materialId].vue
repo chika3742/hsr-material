@@ -82,11 +82,10 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
           <ItemListItem
             v-for="lightCone in group"
             :key="lightCone.id"
-            :image-func="getLightConeImage"
-            :item-id="lightCone.id"
-            :item-rarity="lightCone.rarity"
-            item-i18n-key="lightConeNames"
-            link-base-path="/light-cones"
+            :image-path="getLightConeImage(lightCone.id)"
+            :to="`/light-cones/${lightCone.id}`"
+            :name="localize(lightCone.name)"
+            :rarity="lightCone.rarity"
           />
         </template>
       </v-list>
