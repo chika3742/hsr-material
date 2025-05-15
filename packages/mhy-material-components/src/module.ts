@@ -15,7 +15,6 @@ export interface ModuleOptions {
     }
   }
   i18nKeys?: {
-    equipment?: string
     extension?: string
   }
 }
@@ -37,7 +36,6 @@ export default defineNuxtModule<ModuleOptions>({
       },
     },
     i18nKeys: {
-      equipment: "weapons",
       extension: "artifacts",
     },
   },

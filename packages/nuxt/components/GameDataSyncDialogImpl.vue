@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 import { db } from "~/libs/db/providers"
-import { isCharacterGroup } from "~/types/data/src/characters"
+import type { ShowcaseResponse } from "~/types/showcase-response"
 
 interface Props {
   modelValue: boolean
@@ -25,32 +24,9 @@ watch(toRefs(props).modelValue, (value) => {
 })
 
 const showcaseUid = ref("")
-const showcaseUser = ref<UserInfoResponse>()
+const showcaseResponse = ref<ShowcaseResponse | null>(null)
 const loadingShowcaseUser = ref(false)
-const getters: DataSyncMapGetters = {
-  getCharacterId: (character: ShowcaseCharacter) => {
-    const foundCharacter = characters.find(e => e.name.locales.ja === character.nameJP)
-    if (!foundCharacter) {
-      return ""
-    }
 
-    if (isCharacterGroup(foundCharacter)) {
-      const variant = foundCharacter.variants.find(e => e.combatType === character.variant)
-      if (!variant) {
-        return ""
-      }
-
-      return toCharacterIdWithVariant(foundCharacter.id, variant.path)
-    } else {
-      return foundCharacter.id
-    }
-  },
-  getCharacterImage: (character: ShowcaseCharacter) =>
-    getCharacterImage(getters.getCharacterId(character), "small"),
-  getEquipmentId: (lightConeName: string) =>
-    lightCones.find(e => e.$nameJA === lightConeName)?.id ?? "",
-  getEquipmentImage: (lightConeId: string) => getLightConeImage(lightConeId),
-}
 const getShowcaseCharacters = async () => {
   if (showcaseUid.value.length !== 9) {
     snackbar.show(tx(i18n, "gameDataSync.invalidUidLength"), "error")
@@ -60,8 +36,8 @@ const getShowcaseCharacters = async () => {
   loadingShowcaseUser.value = true
 
   try {
-    const result = await $fetch<UserInfoResponse>(`/api/v1/showcase?uid=${showcaseUid.value}`)
-    showcaseUser.value = result
+    const result = await $fetch<ShowcaseResponse>(`/api/v1/showcase?uid=${showcaseUid.value}`)
+    showcaseResponse.value = result
     config.uid = showcaseUid.value
   } catch (e) {
     console.error(e)
@@ -71,15 +47,15 @@ const getShowcaseCharacters = async () => {
   loadingShowcaseUser.value = false
 }
 const importGameData = async () => {
-  if (typeof showcaseUser.value === "undefined") {
+  if (!showcaseResponse.value) {
     return
   }
 
   loadingShowcaseUser.value = true
 
   try {
-    await db.bookmarks.removeByShowcase(showcaseUser.value.characters)
-    for (const character of showcaseUser.value.characters) {
+    await db.bookmarks.removeByShowcase(showcaseResponse.value.characters)
+    for (const character of showcaseResponse.value.characters) {
       const characterId = parseShowcaseCharacterId(character.nameJP, character.variant)
       if (typeof characterId === "undefined") {
         continue
@@ -122,18 +98,51 @@ const importGameData = async () => {
 
   loadingShowcaseUser.value = false
 }
+
+const showcaseContent = computed<ShowcaseContent | null>(() => {
+  if (!showcaseResponse.value) {
+    return null
+  }
+
+  const content: ShowcaseContent = { ...showcaseResponse.value, characters: [] }
+  for (const character of showcaseResponse.value.characters) {
+    const characterId = parseShowcaseCharacterId(character.nameJP, character.variant)
+    if (!characterId) continue
+    const variant = getCharacterVariant(characterId)
+    if (!variant) continue
+    const equipmentData = character.equipment && (lightCones.find(e => e.name.locales.ja === character.equipment!.nameJP) ?? null)
+
+    content.characters.push({
+      id: characterId,
+      name: localize(variant.name, i18n),
+      imageUrl: getCharacterImage(characterId, "small"),
+      level: character.level,
+      promotion: character.promotion,
+      rank: character.rank,
+      skills: character.skills,
+      equipment: equipmentData && {
+        name: localize(equipmentData.name, i18n),
+        imageUrl: getLightConeImage(equipmentData.id),
+        level: character.equipment!.level,
+        promotion: character.equipment!.promotion,
+      },
+    })
+  }
+
+  return content
+})
 </script>
 
 <template>
   <GameDataSyncDialog
-    v-model:user="showcaseUser"
     v-model:uid="showcaseUid"
     :model-value="modelValue"
-    :getters="getters"
+    :showcase="showcaseContent"
     :loading="loadingShowcaseUser"
     @get-data="getShowcaseCharacters"
     @import="importGameData"
     @update:model-value="$emit('update:modelValue', $event)"
+    @clear="showcaseResponse = null"
   >
     <template #help>
       <GameDataSyncHelp />

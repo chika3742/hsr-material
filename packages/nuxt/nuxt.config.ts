@@ -222,9 +222,6 @@ export default defineNuxtConfig({
   },
 
   mhyMaterialComponents: {
-    i18nKeys: {
-      equipment: "lightConeNames",
-    },
   },
 
   piniaPersistedstate: {

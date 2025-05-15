@@ -15,6 +15,7 @@ import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
 import { EventLogger } from "~/libs/event-logger"
 import lightCones from "~/assets/data/light-cones.yaml"
 import { parseShowcaseCharacterId } from "~/utils/parse-showcase-character-id"
+import type { ShowcaseResponseCharacter } from "~/types/showcase-response"
 
 /**
  * Provides methods for bookmark-related database operations.
@@ -154,7 +155,7 @@ export class BookmarksProvider extends DbProvider {
     })
   }
 
-  removeByShowcase(showcaseCharacters: ShowcaseCharacter[]) {
+  removeByShowcase(showcaseCharacters: ShowcaseResponseCharacter[]) {
     const upperLevelToPromotion = (upperLevel: number) => {
       return upperLevel / 10 - 2
     }
