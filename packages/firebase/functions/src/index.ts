@@ -1,5 +1,5 @@
 import admin from "firebase-admin"
-import { initializeFirestore } from "firebase-admin/firestore";
+import { initializeFirestore } from "firebase-admin/firestore"
 
 const app = admin.initializeApp()
 initializeFirestore(app, {

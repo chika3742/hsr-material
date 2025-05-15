@@ -6,7 +6,7 @@ import { createGenerator, type Config } from "ts-json-schema-generator"
 const typesDir = "./types/data/src"
 const schemasDir = "./schemas"
 
-export const generateSchemas = async() => {
+export const generateSchemas = async () => {
   // skip if in production mode
   if (process.env.NODE_ENV === "production") {
     return

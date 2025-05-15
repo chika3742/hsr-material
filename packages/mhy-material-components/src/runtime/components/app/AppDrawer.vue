@@ -39,7 +39,7 @@ onMounted(() => {
             :title="item.title"
             :to="item.to ? $localePath(item.to) : undefined"
             density="comfortable"
-            @click="item.onClick?.(); isOpen = false"
+            @click="item.onClick?.()"
           />
           <v-divider
             v-else
