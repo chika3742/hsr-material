@@ -5,6 +5,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "dev:local-server": "USE_FIREBASE_EMULATOR=true bunx wrangler pages dev --port 3000 -- nuxt dev --port 3001",
+    "typecheck": "nuxt typecheck",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "prepack": "nuxt prepare"
