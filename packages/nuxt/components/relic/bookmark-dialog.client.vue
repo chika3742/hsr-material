@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import relicStats from "assets/data/relic-stats.yaml"
-import type { RelicPiece, RelicSet } from "~/types/data/relics"
 import type { CharacterIdWithVariant } from "~/types/strings"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableRelic } from "~/types/bookmark/bookmarkables"
 import { BookmarkableRelicPiece, BookmarkableRelicSet } from "~/types/bookmark/bookmarkables"
 import type { HsrRelicPosition, HsrStat } from "~/types/data/enums"
+import type { RelicSet } from "~/types/data/src/decoration-sets"
+import type { RelicPiece } from "~/types/data/src/decoration-pieces"
 
 interface Props {
   modelValue: boolean
@@ -47,14 +48,14 @@ const headerRelics = computed<HeaderRelic[]>(() => {
     }
 
     return props.relicSets.map(e => ({
-      title: tx(`relicSetTitles.${e.id}`) + " (" + tx(`relicDetailsPage.${type}`) + ")",
+      title: localize(e.name) + " (" + tx(`relicDetailsPage.${type}`) + ")",
       image: getRelicSetImage(e.id),
     }))
   } else {
     // single relic piece
     return [
       {
-        title: tx(`relicPieceNames.${props.relicPiece!.id}`),
+        title: localize(props.relicPiece!.name),
         subtitle: tx(`relicLocations.${props.relicPiece!.type}`),
         image: getRelicPieceImage(props.relicPiece!.id),
       },

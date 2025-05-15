@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import relicSets from "assets/data/relic-sets.yaml"
-import type { RelicSet } from "~/types/data/relics"
+import type { RelicSet } from "~/types/data/src/decoration-sets"
 
 interface Props {
   modelValue: boolean
@@ -40,7 +40,7 @@ watch(toRefs(props).modelValue, (value) => {
             v-for="item in relicSets.filter(e => e.id !== currentSetId && e.type === 'cavern')"
             :key="item.id"
             :prepend-avatar="getRelicSetImage(item.id)"
-            :title="tx(`relicSetTitles.${item.id}`)"
+            :title="localize(item.name)"
             :value="item"
             color="primary"
           >

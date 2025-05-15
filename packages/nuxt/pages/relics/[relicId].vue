@@ -115,7 +115,7 @@ const bookmarkPiece = (piece: RelicPiece) => {
               :key="item.id"
               :prepend-avatar="getRelicPieceImage(item.id)"
               :subtitle="tx(`relicLocations.${item.type}`)"
-              :title="tx(`relicPieceNames.${item.id}`)"
+              :title="localize(item.name)"
             >
               <template #append>
                 <v-btn

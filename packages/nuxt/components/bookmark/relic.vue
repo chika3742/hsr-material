@@ -13,12 +13,21 @@ const props = defineProps<Props>()
 const snackbar = useSnackbar()
 const i18n = useI18n()
 
+const findRelicSet = (id: string) => {
+  return relicSets.find(e => e.id === id)!
+}
+
+const findRelicPiece = (id: string) => {
+  return relicPieces.find(e => e.id === id)!
+}
+
 const setIds = (() => {
-  switch (props.item.type) {
+  const item = props.item
+  switch (item.type) {
     case "relic_set":
-      return props.item.relicSetIds
+      return item.relicSetIds
     case "relic_piece":
-      return [relicPieces.find(e => e.id === (props.item as Bookmark.RelicPiece).relicPieceId)!.setId]
+      return [findRelicPiece(item.relicPieceId)!.setId]
   }
 })()
 
@@ -32,14 +41,15 @@ const images = (() => {
 })()
 
 const titleLines = (() => {
-  switch (props.item.type) {
+  const item = props.item
+  switch (item.type) {
     case "relic_set": {
-      const relicSet = relicSets.find(e => e.id === (props.item as Bookmark.RelicSet).relicSetIds[0])!
-      const pcs = props.item.relicSetIds.length === 1 && relicSet.type === "cavern" ? "4pcs" : "2pcs"
-      return props.item.relicSetIds.map(e => `${tx(i18n, `relicSetTitles.${e}`)} (${tx(i18n, `relicDetailsPage.${pcs}`)})`)
+      const relicSet = findRelicSet(item.relicSetIds[0])!
+      const pcs = item.relicSetIds.length === 1 && relicSet.type === "cavern" ? "4pcs" : "2pcs"
+      return item.relicSetIds.map(e => `${localize(findRelicSet(e).name)} (${tx(i18n, `relicDetailsPage.${pcs}`)})`)
     }
     case "relic_piece":
-      return [tx(i18n, `relicPieceNames.${props.item.relicPieceId}`)]
+      return [localize(relicPieces.find(e => e.id === item.relicPieceId)!.name)]
   }
 })()
 
@@ -129,7 +139,7 @@ const removeBookmark = async (id: number) => {
             v-for="id in setIds"
             :key="id"
             :prepend-avatar="getRelicSetImage(id)"
-            :title="tx(`relicSetTitles.${id}`)"
+            :title="localize(relicSets.find(e => e.id === id)!.name)"
             :to="$localePath(`/relics/${id}`)"
           />
         </v-list>

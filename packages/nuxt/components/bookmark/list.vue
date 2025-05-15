@@ -49,7 +49,7 @@ const saveCharacterSort = (ev: Sortable.SortableEvent) => {
         v-for="characterId in bookmarkedCharacterIds"
         :key="characterId"
         :data-character-id="characterId"
-        :character="characterId"
+        :character-id="characterId"
         :show-farming-count="config.showFarmingCount"
       />
     </Draggable>
