@@ -1,4 +1,4 @@
-import type { HsrCombatType, HsrPath } from "../enums"
+import type { HsrCombatType, HsrPath, HsrPurposeType } from "../enums"
 import type { MaterialExpr } from "../ingredient"
 import type { LocalizedText } from "../locales"
 
@@ -9,20 +9,22 @@ interface CharacterBase {
   rarity: number
 }
 
-type CharacterVariant<T> = (T & {
+export interface CharacterSkill {
+  name: LocalizedText
+}
+
+type CharacterVariant<T> = T & {
   name: LocalizedText
   materials: Record<string, MaterialExpr>
+  skills: { [k in Exclude<HsrPurposeType, "ascension">]?: CharacterSkill }
   levelingItemTable?: string
-})
+}
 
 interface CharacterWithVariantsBase<T> extends CharacterBase {
   variants: CharacterVariant<T>[]
 }
 
-interface CharacterWithoutVariantsBase extends CharacterBase {
-  materials: Record<string, MaterialExpr>
-  levelingItemTable?: string
-}
+type CharacterWithoutVariantsBase<T> = CharacterBase & CharacterVariant<T>
 
 interface HsrCharacterMixin {
   path: HsrPath
@@ -33,12 +35,12 @@ interface HsrCharacterMixin {
 export type HsrCharacterWV = CharacterWithVariantsBase<HsrCharacterMixin>
 export type HsrCharacterVariant = CharacterVariant<HsrCharacterMixin>
 /** Character for HSR w/o variants */
-export type HsrCharacterWoV = CharacterWithoutVariantsBase & HsrCharacterMixin
+export type HsrCharacterWoV = CharacterWithoutVariantsBase<HsrCharacterMixin>
 export type HsrCharacter = HsrCharacterWV | HsrCharacterWoV
 
 export type Characters = HsrCharacter[]
 
 /** `character` is a character group = `character` has variants */
-export const isCharacterGroup = <T>(x: CharacterWithVariantsBase<T> | CharacterWithoutVariantsBase): x is CharacterWithVariantsBase<T> => {
+export const isCharacterGroup = <T>(x: CharacterWithVariantsBase<T> | CharacterWithoutVariantsBase<T>): x is CharacterWithVariantsBase<T> => {
   return "variants" in x
 }

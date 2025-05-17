@@ -3,6 +3,7 @@ import type { LocalizedText } from "../locales"
 interface DecorationSetBase {
   id: string
   name: LocalizedText
+  effects: { [type: string]: LocalizedText }
   yomi: string
 }
 

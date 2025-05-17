@@ -5,6 +5,15 @@
       en: Band of Sizzling Thunder
   yomi: ライメイトドロクバンド
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 雷属性ダメージ+<10%>。
+        en: Increases Lightning DMG by <10%>.
+    4pc:
+      locales:
+        ja: 装備キャラが戦闘スキルを発動した時、装備キャラの攻撃力+<20%>、<1>ターン継続。
+        en: When the wearer uses their Skill, increases the wearer's ATK by <20%> for <1> turn(s).
 - id: hunter-of-glacial-forest
   name:
     locales:
@@ -12,6 +21,15 @@
       en: Hunter of Glacial Forest
   yomi: ユキノミツリンノカリュウド
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 氷属性ダメージ+<10%>。
+        en: Increases Ice DMG by <10%>.
+    4pc:
+      locales:
+        ja: 装備キャラが必殺技を発動した時、会心ダメージ+<25%>、<2>ターン継続。
+        en: After the wearer uses their Ultimate, their CRIT DMG increases by <25%> for <2> turn(s).
 - id: wastelander-of-banditry-desert
   name:
     locales:
@@ -19,6 +37,15 @@
       en: Wastelander of Banditry Desert
   yomi: アレチデヌスミヲハタラクハイドキャク
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 虚数属性ダメージ+<10%>。
+        en: Increases Imaginary DMG by <10%>.
+    4pc:
+      locales:
+        ja: デバフ状態の敵にダメージを与えた時、装備キャラの会心率+<10%>。禁錮状態の敵にダメージを与えた時、会心ダメージ+<20%>。
+        en: When attacking debuffed enemies, the wearer's CRIT Rate increases by <10%>, and their CRIT DMG increases by <20%> against Imprisoned enemies.
 - id: musketeer-of-wild-wheat
   name:
     locales:
@@ -26,6 +53,15 @@
       en: Musketeer of Wild Wheat
   yomi: クサノホガンマン
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 攻撃力+<12%>。
+        en: ATK increases by <12%>.
+    4pc:
+      locales:
+        ja: 装備キャラの速度+<6%>、通常攻撃の与ダメージ+<10%>。
+        en: The wearer's SPD increases by <6%> and Basic ATK DMG increases by <10%>.
 - id: inert-salsotto
   name:
     locales:
@@ -33,6 +69,11 @@
       en: Inert Salsotto
   yomi: ジテンガトマッタサルソット
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの会心率+<8%>。装備キャラの会心率が<50%>以上の場合、必殺技と追加攻撃の与ダメージ+<15%>。
+        en: Increases the wearer's CRIT Rate by <8%>. When the wearer's current CRIT Rate reaches <50%> or higher, the wearer's Ultimate and follow-up attack DMG increases by <15%>.
 - id: fleet-of-the-ageless
   name:
     locales:
@@ -40,6 +81,11 @@
       en: Fleet of the Ageless
   yomi: オイヌモノノセンシュウ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの最大HP+<12%>。装備キャラの速度が<120>以上の場合、味方全体の攻撃力+<8%>。
+        en: Increases the wearer's Max HP by <12%>. When the wearer's SPD reaches <120> or higher, all allies' ATK increases by <8%>.
 - id: knight-of-purity-palace
   name:
     locales:
@@ -47,6 +93,15 @@
       en: Knight of Purity Palace
   yomi: ジュンテイキョウカイノセイキシ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 防御力+<15%>。
+        en: Increases DEF by <15%>.
+    4pc:
+      locales:
+        ja: 装備キャラが付与するバリアの耐久値+<20%>。
+        en: Increases the max DMG that can be absorbed by the Shield created by the wearer by <20%>.
 - id: talia-kingdom-of-banditry
   name:
     locales:
@@ -54,6 +109,11 @@
       en: "Talia: Kingdom of Banditry"
   yomi: トウゾクコウコクタリア
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの撃破特効+<16%>。装備キャラの速度が<145>以上の場合、さらに撃破特効+<20%>。
+        en: Increases the wearer's Break Effect by <16%>. When the wearer's SPD reaches <145> or higher, the wearer's Break effect increases by an extra <20%>.
 - id: sprightly-vonwacq
   name:
     locales:
@@ -61,6 +121,11 @@
       en: Sprightly Vonwacq
   yomi: セイメイノウェンワーク
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラのEP回復効率+<5%>。装備キャラの速度が<120>以上の場合、戦闘に入る時、行動順が<40%>早まる。
+        en: Increases the wearer's Energy Regeneration Rate by <5%>. When the wearer's SPD reaches <120> or higher, the wearer's action is Advanced Forward by <40%> immediately upon entering battle.
 - id: firesmith-of-lava-forging
   name:
     locales:
@@ -68,6 +133,15 @@
       en: Firesmith of Lava-Forging
   yomi: ヨウガンデタンゾウスルカショウ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 炎属性ダメージ+<10%>。
+        en: Increases Fire DMG by <10%>.
+    4pc:
+      locales:
+        ja: 装備キャラの戦闘スキルの与ダメージ+<12%>。必殺技を発動した後、次の攻撃の炎属性与ダメージ+<12%>。
+        en: Increases the wearer's Skill DMG by <12%>. After unleashing Ultimate, increases the wearer's Fire DMG by <12%> for the next attack.
 - id: passerby-of-wandering-cloud
   name:
     locales:
@@ -75,6 +149,15 @@
       en: Passerby of Wandering Cloud
   yomi: リュウウンムコンノカカク
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 治癒量+<10%>。
+        en: Increases Outgoing Healing by <10%>.
+    4pc:
+      locales:
+        ja: 戦闘開始時、SPを1回復する。
+        en: At the start of the battle, immediately regenerates 1 Skill Point.
 - id: thief-of-shooting-meteor
   name:
     locales:
@@ -82,6 +165,15 @@
       en: Thief of Shooting Meteor
   yomi: リュウセイノアトヲオウカイトウ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 撃破特効+<16%>。
+        en: Increases Break Effect by <16%>.
+    4pc:
+      locales:
+        ja: 装備キャラの撃破特効+<16%>。装備キャラが敵を弱点撃破した後、EPを<3>回復する。
+        en: Increases the wearer's Break Effect by <16%>. When the wearer inflicts Weakness Break on an enemy, regenerates <3> Energy.
 - id: pan-galactic-commercial-enterprise
   name:
     locales:
@@ -89,6 +181,11 @@
       en: Pan-Galactic Commercial Enterprise
   yomi: ハンギンガショウジガイシャ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの効果命中+<10%>。装備キャラの攻撃力が、現在の効果命中<25%>分アップ、最大で+<25%>。
+        en: Increases the wearer's Effect Hit Rate by <10%>. Meanwhile, the wearer's ATK increases by an amount that is equal to <25%> of the current Effect Hit Rate, up to a maximum of <25%>.
 - id: eagle-of-twilight-line
   name:
     locales:
@@ -96,6 +193,15 @@
       en: Eagle of Twilight Line
   yomi: チュウヤノハザマヲカケルタカ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 風属性ダメージ+<10%>。
+        en: Increases Wind DMG by <10%>.
+    4pc:
+      locales:
+        ja: 装備キャラが必殺技を発動した後、行動順が<25%>早まる。
+        en: After the wearer uses their Ultimate, their action is Advanced Forward by <25%>.
 - id: genius-of-brilliant-stars
   name:
     locales:
@@ -103,6 +209,15 @@
       en: Genius of Brilliant Stars
   yomi: ホシノゴトクカガヤクテンサイ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 量子属性ダメージ+<10%>。
+        en: Increases Quantum DMG by <10%>.
+    4pc:
+      locales:
+        ja: 装備キャラが敵にダメージを与えた時、敵の防御力を<10%>無視する。敵に量子属性の弱点がある場合、さらに防御力を<10%>無視する。
+        en: When the wearer deals DMG to the target enemy, ignores <10%> DEF. If the target enemy has Quantum Weakness, the wearer additionally ignores <10%> DEF.
 - id: champion-of-streetwise-boxing
   name:
     locales:
@@ -110,6 +225,15 @@
       en: Champion of Streetwise Boxing
   yomi: ナリアガリチャンピオン
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 物理ダメージ+<10%>。
+        en: Increases Physical DMG by <10%>.
+    4pc:
+      locales:
+        ja: 装備キャラが攻撃を行う、または攻撃を受けた後、今回の戦闘中の攻撃力+<5%>、最大で<5>層累積できる。
+        en: After the wearer attacks or is hit, their ATK increases by <5%> for the rest of the battle. This effect can stack up to <5> time(s).
 - id: belobog-of-the-architects
   name:
     locales:
@@ -117,6 +241,11 @@
       en: Belobog of the Architects
   yomi: ケンソウシャノベロブルグ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの防御力+<15%>。装備キャラの効果命中が<50%>以上の場合、さらに防御力+<15%>。
+        en: Increases the wearer's DEF by <15%>. When the wearer's Effect Hit Rate is <50%> or higher, the wearer gains an extra <15%> DEF.
 - id: space-sealing-station
   name:
     locales:
@@ -124,6 +253,11 @@
       en: Space Sealing Station
   yomi: ウチュウフウインステーション
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの攻撃力+<12%>。装備キャラの速度が<120>以上の場合、さらに攻撃力+<12%>。
+        en: Increases the wearer's ATK by <12%>. When the wearer's SPD reaches <120> or higher, the wearer's ATK increases by an extra <12%>.
 - id: celestial-differentiator
   name:
     locales:
@@ -131,6 +265,11 @@
       en: Celestial Differentiator
   yomi: テンタイカイサキカン
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの会心ダメージ+<16%>。装備キャラの会心ダメージが<120%>以上の場合、戦闘に入った後、装備キャラの会心率+<60%>、初回の攻撃が終了するまで継続。
+        en: Increases the wearer's CRIT DMG by <16%>. When the wearer's current CRIT DMG reaches <120%> or higher, after entering battle, the wearer's CRIT Rate increases by <60%> until the end of their first attack.
 - id: guard-of-wuthering-snow
   name:
     locales:
@@ -138,6 +277,15 @@
       en: Guard of Wuthering Snow
   yomi: フブキトタイジスルヘイシ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 被ダメージ-<8%>。
+        en: Reduces DMG taken by <8%>.
+    4pc:
+      locales:
+        ja: ターンが回ってきた時、装備キャラの残りHPが<50%>以下の場合、HPを最大HP<8%>分回復し、EPを<5>回復する。
+        en: At the beginning of the turn, if the wearer's HP is equal to or less than <50%>, restores HP equal to <8%> of their Max HP and regenerates <5> Energy.
 - id: longevous-disciple
   name:
     locales:
@@ -145,6 +293,15 @@
       en: Longevous Disciple
   yomi: ホウメイチョウゾンノジシャ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 最大HP+<12%>。
+        en: Increases Max HP by <12%>.
+    4pc:
+      locales:
+        ja: 装備キャラが攻撃を受ける、または味方によってHPを消費させられた後、会心率+<8%>、<2>ターン継続。この効果は最大で<2>層累積できる。
+        en: When the wearer is hit or has their HP consumed by an ally or themselves, their CRIT Rate increases by <8%> for <2> turn(s) and up to <2> stacks.
 - id: messenger-traversing-hackerspace
   name:
     locales:
@@ -152,6 +309,15 @@
       en: Messenger Traversing Hackerspace
   yomi: カソウクウカンヲマンユウスルメッセンジャー
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 速度+<6%>。
+        en: Increases SPD by <6%>.
+    4pc:
+      locales:
+        ja: 装備キャラが味方に対して必殺技を発動した時、味方全体の速度+<12%>、<1>ターン継続。この効果は累積できない。
+        en: When the wearer uses their Ultimate on an ally, SPD for all allies increases by <12%> for <1> turn(s). This effect cannot be stacked.
 - id: rutilant-arena
   name:
     locales:
@@ -159,6 +325,11 @@
       en: Rutilant Arena
   yomi: ホシボシノキョウギジョウ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの会心率+<8%>。装備キャラの会心率が<70%>以上の時、通常攻撃と戦闘スキルの与ダメージ+<20%>。
+        en: Increases the wearer's CRIT Rate by <8%>. When the wearer's current CRIT Rate reaches <70%> or higher, the wearer's Basic ATK and Skill DMG increase by <20%>.
 - id: broken-keel
   name:
     locales:
@@ -166,6 +337,11 @@
       en: Broken Keel
   yomi: オレタリュウコツ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの効果抵抗+<10%>。装備キャラの効果抵抗が<30%>以上の時、味方全体の会心ダメージ+<10%>。
+        en: Increases the wearer's Effect RES by <10%>. When the wearer's Effect RES is at <30%> or higher, all allies' CRIT DMG increases by <10%>.
 - id: pioneer-diver-of-dead-waters
   name:
     locales:
@@ -173,6 +349,15 @@
       en: Pioneer Diver of Dead Waters
   yomi: シスイニモグルセンクシャ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: デバフの影響を受けている敵への与ダメージ+<12%>。
+        en: Increases DMG dealt to enemies with debuffs by <12%>.
+    4pc:
+      locales:
+        ja: 会心率+<4%>。デバフを<2>/<3>つ以上付与されている敵に対する、装備キャラの会心ダメージ+<8%>/<12%>。装備キャラが敵にデバフを付与した後、上記の効果が2倍になる、<1>ターン継続。
+        en: Increases CRIT Rate by <4%>. The wearer deals <8%>/<12%> increased CRIT DMG to enemies with at least <2>/<3> debuffs. After the wearer inflicts a debuff on enemy targets, the aforementioned effects increase by <100%>, lasting for <1> turn(s).
 - id: watchmaker-master-of-dream-machinations
   name:
     locales:
@@ -180,6 +365,15 @@
       en: Watchmaker, Master of Dream Machinations
   yomi: ユメヲモテアソブトケイヤ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 撃破特効+<16%>。
+        en: Increases Break Effect by <16%>.
+    4pc:
+      locales:
+        ja: 装備キャラが味方に対して必殺技を発動する時、味方全体の撃破特効+<30%>、<2>ターン継続。この効果は累積できない。
+        en: When the wearer uses their Ultimate on an ally, all allies' Break Effect increases by <30%> for <2> turn(s). This effect cannot be stacked.
 - id: sigonia-the-unclaimed-desolation
   name:
     locales:
@@ -187,6 +381,11 @@
       en: Sigonia, the Unclaimed Desolation
   yomi: コウリョウノワクセイツガンニヤ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの会心率+<4%>。敵が倒された時、装備キャラの会心ダメージ+<4%>、最大で<10>回累積できる。
+        en: Increases the wearer's CRIT Rate by <4%>. When an enemy target gets defeated, the wearer's CRIT DMG increases by <4%>, stacking up to <10> time(s).
 - id: izumo-gensei-and-takama-divine-realm
   name:
     locales:
@@ -194,6 +393,11 @@
       en: Izumo Gensei and Takama Divine Realm
   yomi: ケンセノイズモトタカマノシンコク
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの攻撃力+<12%>。戦闘に入る時、装備キャラと同じ運命のキャラが他に存在する場合、装備キャラの会心率+<12%>。
+        en: Increases the wearer's ATK by <12%>. When entering battle, if at least one other ally follows the same Path as the wearer, then the wearer's CRIT Rate increases by <12%>.
 - id: the-ashblazing-grand-duke
   name:
     locales:
@@ -201,6 +405,15 @@
       en: The Ashblazing Grand Duke
   yomi: カイジンヲモヤシツクスタイコウ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 追加攻撃ダメージ+<20%>。
+        en: Increases the DMG dealt by follow-up attacks by <20%>.
+    4pc:
+      locales:
+        ja: 装備キャラが追加攻撃を行った時、追加攻撃のヒット数に応じて、ダメージを与えるたびに装備者の攻撃力+<6%>、最大<8>回まで累積でき、<3>ターン継続。この効果は、装備キャラが次の追加攻撃を行った時に解除される。
+        en: When the wearer uses follow-up attacks, increases the wearer's ATK by <6%> for every time the follow-up attack deals DMG. This effect can stack up to <8> time(s) and lasts for <3> turn(s). This effect is removed the next time the wearer uses a follow-up attack.
 - id: prisoner-in-deep-confinement
   name:
     locales:
@@ -208,6 +421,15 @@
       en: Prisoner in Deep Confinement
   yomi: フカイロウゴクノシュウジン
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 攻撃力+<12%>。
+        en: Increases ATK by <12%>.
+    4pc:
+      locales:
+        ja: 敵に付与された持続ダメージ系デバフが1つにつき、装備キャラがその敵にダメージを与える時に防御力を<6%>無視する。持続ダメージ系デバフは最大で<3>つまでカウントされる。
+        en: For every DoT the target enemy is afflicted with, the wearer will ignore <6%> of its DEF when dealing DMG to it. This effect is valid for a max of <3> DoTs.
 - id: firmament-frontline-glamoth
   name:
     locales:
@@ -215,6 +437,11 @@
       en: "Firmament Frontline: Glamoth"
   yomi: ソウキュウセンセングラモス
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの攻撃力+<12%>。装備キャラの速度が<135>/<160>以上の時、装備キャラの与ダメージ+<12%>/<18%>。
+        en: Increases the wearer's ATK by <12%>. When the wearer's SPD is equal to or higher than <135>/<160>, the wearer deals <12%>/<18%> more DMG.
 - id: penacony-land-of-the-dreams
   name:
     locales:
@@ -222,6 +449,11 @@
       en: Penacony, Land of the Dreams
   yomi: ユメノチピノコニー
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラのEP回復効率+<5%>。パーティ中の装備キャラと同じ属性の味方の与ダメージ+<10%>。
+        en: Increases wearer's Energy Regeneration Rate by <5%>. Increases DMG by <10%> for all other allies that are of the same Type as the wearer.
 - id: iron-cavalry-against-the-scourge
   name:
     locales:
@@ -229,6 +461,15 @@
       en: Iron Cavalry Against the Scourge
   yomi: コウガイヲイッソウセシテッキ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 撃破特効+<16%>。
+        en: Increases Break Effect by <16%>.
+    4pc:
+      locales:
+        ja: 装備キャラの撃破特効が<150%>以上の時、敵に与える弱点撃破ダメージが防御力を<10%>無視する。装備キャラの撃破特効が<250%>以上の時、さらに敵に与える超撃破ダメージが防御力を<15%>無視する。
+        en: If the wearer's Break Effect is <150%> or higher, the Break DMG dealt to the enemy target ignores <10%> of their DEF. If the wearer's Break Effect is <250%> or higher, the Super Break DMG dealt to the enemy target additionally ignores <15%> of their DEF.
 - id: the-wind-soaring-valorous
   name:
     locales:
@@ -236,6 +477,15 @@
       en: The Wind-Soaring Valorous
   yomi: フウウンヲナギハラウユウレツ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 攻撃力+<12%>。
+        en: Increases ATK by <12%>.
+    4pc:
+      locales:
+        ja: 装備キャラの会心率+<6%>。装備キャラが追加攻撃を行う時、必殺技の与ダメージ+<36%>、<1>ターン継続。
+        en: Increases the wearer's CRIT Rate by <6%>. After the wearer uses a follow-up attack, increases the DMG dealt by their Ultimate by <36%>, lasting for <1> turn(s).
 - id: duran-dynasty-of-running-wolves
   name:
     locales:
@@ -243,6 +493,11 @@
       en: Duran, Dynasty of Running Wolves
   yomi: ホンロウノドゥーランオウチョウ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 味方が追加攻撃を行う時、装備キャラは「勲功」を1層獲得する、最大で<5>層累積できる。「勲功」1層につき、装備キャラの追加攻撃ダメージ+<5%>。「勲功」が<5>層に達する時、さらに装備キャラの会心ダメージ+<25%>。
+        en: When allies use follow-up attacks, the wearer gains 1 stack of Merit, stacking up to <5> times. Each stack of Merit increases the DMG dealt by the wearer's follow-up attacks by <5%>. When there are <5> stacks, additionally increases the wearer's CRIT DMG by <25%>.
 - id: forge-of-the-kalpagni-lantern
   name:
     locales:
@@ -250,6 +505,11 @@
       en: Forge of the Kalpagni Lantern
   yomi: ゴウカトレントウノチュウレングウ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの速度+<6%>。装備キャラの攻撃が炎属性弱点を持つ敵に命中する時、撃破特効+<40%>、<1>ターン継続。
+        en: Increases the wearer's SPD by <6%>. When the wearer hits an enemy target that has Fire Weakness, the wearer's Break Effect increases by <40%>, lasting for <1> turn(s).
 - id: lushaka-the-sunken-seas
   name:
     locales:
@@ -257,6 +517,11 @@
       en: Lushaka, the Sunken Seas
   yomi: ウミニシズンダルサカ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラのEP回復効率+<5%>。装備キャラがパーティの1枠目のキャラでない場合、1枠目のキャラの攻撃力+<12%>。
+        en: Increases the wearer's Energy Regeneration Rate by <5%>. If the wearer is not the first character in the team lineup, then increases the ATK of the first character in the team lineup by <12%>.
 - id: the-wondrous-bananamusement-park
   name:
     locales:
@@ -264,6 +529,11 @@
       en: The Wondrous BananAmusement Park
   yomi: キソウテンガイノバナダイス
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの会心ダメージ+<16%>。装備キャラが召喚したターゲットがフィールド上にいる場合、さらに会心ダメージ+<32%>。
+        en: Increases the wearer's CRIT DMG by <16%>. When a target summoned by the wearer is on the field, CRIT DMG additionally increases by <32%>.
 - id: hero-of-triumphant-song
   name:
     locales:
@@ -271,6 +541,15 @@
       en: Hero of Triumphant Song
   yomi: ガイカヲアゲルエイユウ
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 攻撃力+<12%>。
+        en: Increases ATK by <12%>.
+    4pc:
+      locales:
+        ja: 装備キャラの記憶の精霊がフィールドにいる時、装備キャラの速度+<6%>。装備キャラの記憶の精霊が攻撃を行う時、装備キャラおよびその記憶の精霊の会心ダメージ+<30%>、<2>ターン継続。
+        en: While the wearer's memosprite is on the field, increases the wearer's SPD by <6%>. When the wearer's memosprite attacks, increases the wearer's and memosprite's CRIT DMG by <30%>, lasting for <2> turn(s).
 - id: poet-of-mourning-collapse
   name:
     locales:
@@ -278,6 +557,15 @@
       en: Poet of Mourning Collapse
   yomi: ボウコクノヒアイヲウタウシジン
   type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 量子属性ダメージ+<10%>。
+        en: Increases Quantum DMG by <10%>.
+    4pc:
+      locales:
+        ja: 装備キャラの速度-<8%>。戦闘に入る前、装備キャラの速度が<110>/<95>を下回る時、装備キャラの会心率+<20%>/<32%>。この効果は装備キャラの記憶の精霊にも有効。
+        en: Decreases the wearer's SPD by <8%>. Before entering battle, if the wearer's SPD is lower than <110>/<95>, increases the wearer's CRIT Rate by <20%>/<32%>. This effect applies to the wearer's memosprite at the same time.
 - id: giant-tree-of-rapt-brooding
   name:
     locales:
@@ -285,6 +573,11 @@
       en: Giant Tree of Rapt Brooding
   yomi: シンリョニヒタルキョジュ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの速度+<6%>。装備キャラの速度が<135>/<180>以上の時、装備キャラ及びその記憶の精霊の治癒量+<12%>/<20%>。
+        en: Increases the wearer's SPD by <6%>. When the wearer's SPD is <135>/<180> or higher, the wearer and their memosprite's Outgoing Healing increases by <12%>/<20%>.
 - id: bone-collections-serene-demesne
   name:
     locales:
@@ -292,3 +585,8 @@
       en: Bone Collection's Serene Demesne
   yomi: セイヒツナシュウコツチ
   type: planar
+  effects:
+    2pc:
+      locales:
+        ja: 装備キャラの最大HP+<12%>。装備キャラの最大HPが<5000>以上の時、装備キャラおよびその記憶の精霊の会心ダメージ+<28%>。
+        en: Increases the wearer's Max HP by <12%>. When the wearer's Max HP is <5000> or higher, increases the wearer's and their memosprite's CRIT DMG by <28%>.
