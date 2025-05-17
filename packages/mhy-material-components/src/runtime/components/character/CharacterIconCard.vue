@@ -1,26 +1,18 @@
 <script lang="ts" setup>
-import { toCharacterId, toVariant } from "../../utils/variant"
-import { computed, useI18n, useNuxtApp } from "#imports"
+import { useNuxtApp } from "#imports"
 
-const props = defineProps<{
-  characterIdWithVariant: string
+defineProps<{
+  to: string
+  name: string
   imageUrl: string
 }>()
 
-const i18n = useI18n()
 const { $isTouchDevice } = useNuxtApp()
-
-const characterName = computed(() => {
-  return i18n.t(`characterNames.${props.characterIdWithVariant}`)
-})
 </script>
 
 <template>
   <v-card
-    :to="$localePath({
-      path: `/characters/${toCharacterId(characterIdWithVariant)}`,
-      query: { variant: toVariant(characterIdWithVariant) ?? undefined },
-    })"
+    :to="to"
     color="card"
   >
     <div class="d-flex flex-column align-center">
@@ -34,7 +26,7 @@ const characterName = computed(() => {
         v-show="$isTouchDevice"
         class="px-2 py-1"
       >
-        {{ characterName }}
+        {{ name }}
       </v-card-subtitle>
     </div>
 
@@ -45,7 +37,7 @@ const characterName = computed(() => {
         location="bottom"
         open-delay="100"
       >
-        <span>{{ characterName }}</span>
+        <span>{{ name }}</span>
       </v-tooltip>
     </client-only>
   </v-card>
