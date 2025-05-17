@@ -85,7 +85,7 @@ const characterSelectFilter = (id: string): boolean => {
         {{ tx('lightConeDetailsPage.skillDescriptions') }}
       </h4>
       <EmphasizedText
-        :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)"
+        :text="localize(lightCone.skillDescription)"
         class="pl-4 mt-1"
       />
     </section>

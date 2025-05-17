@@ -25,7 +25,8 @@ const groupItems = computed<GroupedListItem[]>(() => {
     groupKey: e.path,
     rarity: e.rarity,
     to: `/light-cones/${e.id}`,
-    descContent: showSkillDescriptions.value ? tx(i18n, `lightConeSkillDescriptions.${e.id}`) : undefined,
+    lines: showSkillDescriptions.value ? "two" : "one",
+    skillDesc: localize(e.skillDescription, i18n),
   }))
 })
 const groups = computed<GroupedListGroup[]>(() => {
@@ -128,15 +129,14 @@ onActivated(() => {
       v-model="expanded"
       :groups="groups"
       :items="groupItems"
-      :has-subtitle="showSkillDescriptions"
       preserve-query
     >
-      <template #subtitle="{ itemId }">
+      <template #subtitle="{ item }">
         <v-list-item-subtitle
           v-if="showSkillDescriptions"
           class="mt-1"
         >
-          <EmphasizedText :text="tx(`lightConeSkillDescriptions.${itemId}`)" />
+          <EmphasizedText :text="item.skillDesc as string" />
         </v-list-item-subtitle>
       </template>
     </GroupedList>

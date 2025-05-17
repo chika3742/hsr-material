@@ -48,7 +48,14 @@ const groupByLevel = (items: LevelingBookmark[] | undefined): { [purpose: string
 }
 
 const getSkillTitle = (item: LevelingBookmark) => {
-  return tx(i18n, `skillTitles.${item.characterId.replace("_", ".")}.${item.usage.purposeType}`)
+  if (item.usage.purposeType === "ascension") {
+    return null
+  }
+  const skillName = getCharacterVariant(item.characterId)?.skills[item.usage.purposeType]?.name
+  if (!skillName) {
+    return null
+  }
+  return localize(skillName, i18n)
 }
 
 const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {

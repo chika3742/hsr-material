@@ -1,13 +1,14 @@
 <script lang="ts" setup>
 import type { PurposeType } from "~/types/strings"
-import type { LevelIngredients, LevelsForPurposeTypes } from "~/types/level-ingredients"
+import type { LevelIngredients } from "~/types/level-ingredients"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
 import type { HsrPath } from "~/types/data/enums"
-import { isExpIngredient, type MaterialExpr } from "~/types/data/ingredient"
+import { isExpIngredient, type EachLevels, type Ingredient, type MaterialExpr } from "~/types/data/ingredient"
 
 interface Slider {
   type: PurposeType
+  title: string
   levelIngredients: LevelIngredients[]
 }
 
@@ -16,16 +17,15 @@ const props = defineProps<{
   characterId: string
   variant: HsrPath | null
   materialDefs: Record<string, MaterialExpr>
-  purposeTypes: Omit<LevelsForPurposeTypes, "ascension">
+  skills: SliderSkill[]
 }>()
 
 const config = useConfigStore()
 
-const skillI18nKeyBase = computed(() => `skillTitles.${props.characterId + (props.variant ? `.${props.variant}` : "")}`)
-
-const sliders = computed<Slider[]>(() => Object.entries(props.purposeTypes).map(([type, e]) => ({
-  type: type as PurposeType,
-  levelIngredients: levelsToLevelIngredients(e.levels),
+const sliders = computed<Slider[]>(() => props.skills.map(e => ({
+  type: e.purposeType,
+  title: e.title,
+  levelIngredients: levelsToLevelIngredients(e.ingredients.levels),
 })))
 
 const ranges = ref(sliders.value.map((e) => {
@@ -121,6 +121,14 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
 })
 </script>
 
+<script lang="ts">
+export interface SliderSkill {
+  purposeType: PurposeType
+  title: string
+  ingredients: EachLevels<Ingredient[]>
+}
+</script>
+
 <template>
   <v-expansion-panel :title="title">
     <v-expansion-panel-text eager>
@@ -139,7 +147,7 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
             />
             <h4>
               <span class="label-subtitle">{{ tx(`common.skillTypes.${item.type}`) }}</span>
-              <span class="ml-2 text-primary">{{ tx(`${skillI18nKeyBase}.${item.type}`) }}</span>
+              <span class="ml-2 text-primary">{{ item.title }}</span>
             </h4>
           </v-row>
           <v-expand-transition>

@@ -34,14 +34,17 @@ const groupedItems = computed(() => {
 </script>
 
 <script lang="ts">
-export interface GroupedListItem {
+export interface GroupedListItem extends Record<string, unknown> {
   key: string
   name: string
   to: string
   imagePath: string
   groupKey: string
   rarity: number
-  descContent?: string
+  /**
+   * @default "one"
+   */
+  lines?: "one" | "two"
 }
 export interface GroupedListGroup {
   groupKey: string
@@ -84,15 +87,13 @@ export interface GroupedListGroup {
         :image-path="item.imagePath"
         :rarity="item.rarity"
         :preserve-query="preserveQuery"
-        :lines="item.descContent ? 'two' : 'one'"
+        :lines="item.lines ?? 'one'"
       >
         <template #subtitle>
-          <v-list-item-subtitle class="mt-1">
-            <EmphasizedText
-              v-if="item.descContent"
-              :text="item.descContent"
-            />
-          </v-list-item-subtitle>
+          <slot
+            name="subtitle"
+            :item="item"
+          />
         </template>
       </ItemListItem>
     </v-list-group>

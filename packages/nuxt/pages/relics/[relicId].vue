@@ -80,7 +80,7 @@ const bookmarkPiece = (piece: RelicPiece) => {
       </div>
     </v-row>
 
-    <RelicSetEffects :relic-id="relicSet.id" />
+    <RelicSetEffects :relic-set="relicSet" />
 
     <v-expansion-panels v-model="expandedPanels">
       <v-expansion-panel :title="tx('relicDetailsPage.bookmarkInSets')">

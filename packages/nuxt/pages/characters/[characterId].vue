@@ -47,10 +47,12 @@ const purposeTypes = computed<LevelsForPurposeTypes>(() => {
   return characterIngredients.ingredientsTables[currentVariant.value.levelingItemTable ?? getDefaultLitForRarity()].purposeTypes
 })
 
-const purposeTypesOmitted = computed<Omit<LevelsForPurposeTypes, "ascension">>(() => {
-  const result = { ...purposeTypes.value } as any
-  delete result.ascension
-  return result
+const skills = computed<SliderSkill[]>(() => {
+  return Object.entries(currentVariant.value.skills).map(([k, v]) => ({
+    purposeType: k as PurposeType,
+    title: localize(v.name, i18n),
+    ingredients: purposeTypes.value[k as PurposeType]!,
+  }))
 })
 
 watch(currentVariant, (value) => {
@@ -181,8 +183,8 @@ onActivated(() => {
         :character-id="character.id"
         :material-defs="currentVariant.materials"
         :title="tx('characterDetailsPage.skills')"
-        :purpose-types="purposeTypesOmitted"
         :variant="currentVariantId"
+        :skills="skills"
       />
     </v-expansion-panels>
   </div>

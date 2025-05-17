@@ -45,7 +45,7 @@ watch(toRefs(props).modelValue, (value) => {
             color="primary"
           >
             <RelicSetEffects
-              :relic-id="item.id"
+              :relic-set="item"
               show2pc-only
               style="font-size: 0.9em; margin-top: 2px"
             />

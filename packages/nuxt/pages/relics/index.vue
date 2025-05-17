@@ -88,7 +88,7 @@ const filteredRelics = computed(() => {
         </v-expansion-panel-title>
         <v-expansion-panel-text>
           <div>
-            <RelicSetEffects :relic-id="relic.id" />
+            <RelicSetEffects :relic-set="relic" />
             <v-btn
               :to="$localePath({ path: `/relics/${relic.id}`, query: $route.query })"
               class="mt-2"
