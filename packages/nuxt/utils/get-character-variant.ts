@@ -1,3 +1,4 @@
+import { omit } from "lodash-es"
 import characters from "~/assets/data/characters.yaml"
 import { type HsrCharacterVariant, isCharacterGroup } from "~/types/data/src/characters"
 import type { CharacterIdWithVariant } from "~/types/strings"
@@ -8,11 +9,5 @@ export const getCharacterVariant = (id: CharacterIdWithVariant): HsrCharacterVar
 
   return isCharacterGroup(character)
     ? character.variants.find(e => e.path === toVariant(id)) ?? null
-    : {
-        name: character.name,
-        combatType: character.combatType,
-        path: character.path,
-        levelingItemTable: character.levelingItemTable,
-        materials: character.materials,
-      }
+    : omit(character, ["id", "rarity", "yomi"])
 }
