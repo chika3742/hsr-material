@@ -1,85 +1,70 @@
 <script setup lang="ts">
 import { computed, ref, useNuxtApp } from "#imports"
 
-type ExpItemDef = {
-  itemId: string
-  expPerItem: number
-}
-
 type BookmarkState = "none" | "partial" | "full"
 
 interface Props {
   /**
-   * Material ID. Not required if `isExpItem` is true.
+   * Name of the material.
    */
-  materialId?: string
+  name: string
   /**
-   * A method that returns the material image URL.
+   * Link destination when the material is clicked.
    */
-  materialImage: (materialId: string) => string
+  to: string
+  imagePath: string
   /**
    * Quantity of the material or exp.
    */
   quantity: number
   /**
-   * A method that returns the rarity of the material.
+   * Rarity of the material.
    */
-  rarity: (materialId: string) => number
-  dimmed?: boolean
-  bookmarkButtonLoading?: boolean
+  rarity: number
   /**
-   * If `undefined`, loading indicator will be shown.
+   * Determines whether the card should appear dimmed.
+   * When set to true, the card will display with reduced opacity,
+   * typically used to indicate a disabled or inactive state.
+   *
+   * @default false
    */
-  bookmarkState?: BookmarkState | undefined
-  initialSelectedExpItemId?: string
-  isExpItem?: boolean
-  expItemLineup?: ExpItemDef[]
-  farmingCount?: (materialId: string, quantity: number) => number | null
+  dimmed?: boolean
+  /**
+   * When true, a loading indicator will be shown on the bookmark button.
+   *
+   * @default false
+   */
+  loading?: boolean
+  bookmarkState?: BookmarkState
+  /**
+   * Shows a toggle button before the item. Typically used for exp items.
+   *
+   * @default false
+   */
+  showItemToggleButton?: boolean
+  farmingCount?: number | null
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  materialId: undefined,
-  bookmarkState: undefined,
-  initialSelectedExpItemId: undefined,
-  expItemLineup: () => [],
-  farmingCount: undefined,
+  dimmed: false,
+  loading: false,
+  showItemToggleButton: false,
+  bookmarkState: "none",
+  farmingCount: null,
 })
 
 interface Emits {
-  (event: "toggle-bookmark", selectedExpItemId: string | undefined): void
-
-  (event: "re-bookmark", selectedExpItemId: string | undefined): void
+  (event: "toggle-bookmark"): void
+  (event: "re-bookmark"): void
+  (event: "toggle-item"): void
 }
 
 defineEmits<Emits>()
 
 const { $isTouchDevice } = useNuxtApp()
 
-if (props.isExpItem && props.expItemLineup.length === 0) {
-  throw new Error("expItemLineup must not be empty")
-}
-
-const selectedExpItemIndex = ref(
-  Math.max(props.expItemLineup.findIndex(e => e.itemId === props.initialSelectedExpItemId), 0),
-)
-const forwardSelectedExpItem = () => {
-  selectedExpItemIndex.value = (selectedExpItemIndex.value + 1) % props.expItemLineup.length
-}
-
-const _materialId = computed(() => {
-  return props.isExpItem
-    ? props.expItemLineup[selectedExpItemIndex.value].itemId
-    : props.materialId!
-})
-
-const _quantity = computed(() => {
-  return props.isExpItem
-    ? Math.ceil(props.quantity / props.expItemLineup[selectedExpItemIndex.value].expPerItem)
-    : props.quantity
-})
-
 const markerColorCss = computed(() => {
-  return `rgb(var(--v-theme-rarity-${props.rarity(_materialId.value)}))`
+  return `rgb(var(--v-theme-rarity-${props.rarity}))`
 })
 
 // eslint-disable-next-line vue/return-in-computed-property -- false positive
@@ -118,7 +103,7 @@ const showBookmarkMenu = ref(false)
 
 const farmingCount = computed(() => {
   if (props.farmingCount) {
-    return props.farmingCount(_materialId.value, _quantity.value)
+    return props.farmingCount
   }
   return null
 })
@@ -126,7 +111,6 @@ const farmingCount = computed(() => {
 
 <template>
   <v-card
-    v-show="_quantity !== 0"
     :class="dimmed ? 'dimmed' : ''"
     :v-slot:loader="false"
     color="card"
@@ -134,10 +118,10 @@ const farmingCount = computed(() => {
     <div class="d-flex h-100">
       <!-- exp item forward button -->
       <MaterialCardAction
-        v-if="isExpItem"
+        v-if="showItemToggleButton"
         icon="mdi-swap-horizontal"
         compact
-        @click="forwardSelectedExpItem"
+        @click="$emit('toggle-item')"
       />
 
       <!-- item & qty info -->
@@ -146,11 +130,11 @@ const farmingCount = computed(() => {
         class="flex-shrink-1 h-100 px-2"
         :rounded="0"
         style="gap: 4px"
-        :to="$localePath(`/materials/${_materialId}`)"
+        :to="to"
       >
         <div class="d-flex align-center">
           <v-img
-            :src="materialImage(_materialId)"
+            :src="imagePath"
             height="35"
             width="35"
           />
@@ -158,11 +142,11 @@ const farmingCount = computed(() => {
             v-show="$isTouchDevice"
             class="ml-1 font-kiwi-maru text-wrap flex-shrink-1"
             style="font-size: 1.2em"
-          >{{ $t(`materialNames.${_materialId}`) }}</span>
+          >{{ name }}</span>
           <span
             class="ml-2 font-cairo"
             style="font-size: 1.5em"
-          >×{{ _quantity }}</span>
+          >×{{ quantity }}</span>
           <div
             v-if="farmingCount"
             class="pt-4 mr-n2"
@@ -178,14 +162,15 @@ const farmingCount = computed(() => {
       <MaterialCardAction
         :icon="bookmarkButtonIcon"
         :icon-color="bookmarkButtonIconColor"
-        :loading="bookmarkButtonLoading"
+        :loading="loading"
         :disabled="typeof bookmarkState === 'undefined'"
         @click="bookmarkState === 'partial'
           ? showBookmarkMenu = !showBookmarkMenu
-          : $emit('toggle-bookmark', isExpItem ? _materialId : undefined)"
+          : $emit('toggle-bookmark')"
       >
         <template #menu>
           <v-menu
+            v-if="bookmarkState === 'partial'"
             v-model="showBookmarkMenu"
             :open-on-click="false"
             activator="parent"
@@ -196,14 +181,14 @@ const farmingCount = computed(() => {
                 prepend-icon="mdi-bookmark-check"
                 :title="$t('bookmark.reBookmark')"
                 :subtitle="$t('bookmark.reBookmarkDesc')"
-                @click="$emit('re-bookmark', isExpItem ? _materialId : undefined)"
+                @click="$emit('re-bookmark')"
               />
               <v-list-item
                 lines="two"
                 prepend-icon="mdi-delete"
                 :title="$t('bookmark.unBookmark')"
                 :subtitle="$t('bookmark.unBookmarkDesc')"
-                @click="$emit('toggle-bookmark', isExpItem ? _materialId : undefined)"
+                @click="$emit('toggle-bookmark')"
               />
             </v-list>
           </v-menu>
@@ -223,7 +208,7 @@ const farmingCount = computed(() => {
         activator="parent"
         location="bottom"
       >
-        <span class="font-kiwi-maru">{{ $t(`materialNames.${_materialId}`) }}</span>
+        <span class="font-kiwi-maru">{{ name }}</span>
       </v-tooltip>
     </client-only>
   </v-card>

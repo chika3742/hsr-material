@@ -6,187 +6,193 @@ expItems:
   - itemId: sparse-aether
     expPerItem: 500
 
-levelingItemTables:
+ingredientsTables:
   r3Base:
-    levels:
-      '20':
-        - exp: 16000
-      '30':
-        - exp: 26000
-        - type: common
-          craftLevel: 1
-          quantity: 4
-        - fixedId: credit
-          quantity: 3000
-      '40':
-        - exp: 36000
-        - type: primary
-          craftLevel: 1
-          quantity: 2
-        - type: common
-          craftLevel: 1
-          quantity: 8
-        - fixedId: credit
-          quantity: 6000
-      '50':
-        - exp: 55500
-        - type: primary
-          craftLevel: 2
-          quantity: 2
-        - type: common
-          craftLevel: 2
-          quantity: 4
-        - fixedId: credit
-          quantity: 12000
-      '60':
-        - exp: 86500
-        - type: primary
-          craftLevel: 2
-          quantity: 4
-        - type: common
-          craftLevel: 2
-          quantity: 6
-        - fixedId: credit
-          quantity: 30000
-      '70':
-        - exp: 131500
-        - type: primary
-          craftLevel: 3
-          quantity: 3
-        - type: common
-          craftLevel: 3
-          quantity: 3
-        - fixedId: credit
-          quantity: 60000
-      '80':
-        - exp: 248000
-        - type: primary
-          craftLevel: 3
-          quantity: 6
-        - type: common
-          craftLevel: 3
-          quantity: 5
-        - fixedId: credit
-          quantity: 120000
+    purposeTypes:
+      ascension:
+        levels:
+          '20':
+            - exp: 16000
+          '30':
+            - exp: 26000
+            - type: common
+              craftLevel: 1
+              quantity: 4
+            - fixedId: credit
+              quantity: 3000
+          '40':
+            - exp: 36000
+            - type: primary
+              craftLevel: 1
+              quantity: 2
+            - type: common
+              craftLevel: 1
+              quantity: 8
+            - fixedId: credit
+              quantity: 6000
+          '50':
+            - exp: 55500
+            - type: primary
+              craftLevel: 2
+              quantity: 2
+            - type: common
+              craftLevel: 2
+              quantity: 4
+            - fixedId: credit
+              quantity: 12000
+          '60':
+            - exp: 86500
+            - type: primary
+              craftLevel: 2
+              quantity: 4
+            - type: common
+              craftLevel: 2
+              quantity: 6
+            - fixedId: credit
+              quantity: 30000
+          '70':
+            - exp: 131500
+            - type: primary
+              craftLevel: 3
+              quantity: 3
+            - type: common
+              craftLevel: 3
+              quantity: 3
+            - fixedId: credit
+              quantity: 60000
+          '80':
+            - exp: 248000
+            - type: primary
+              craftLevel: 3
+              quantity: 6
+            - type: common
+              craftLevel: 3
+              quantity: 5
+            - fixedId: credit
+              quantity: 120000
   r4Base:
-    levels:
-      '20':
-        - exp: 21500
-      '30':
-        - exp: 34500
-        - type: common
-          craftLevel: 1
-          quantity: 5
-        - fixedId: credit
-          quantity: 4000
-      '40':
-        - exp: 48000
-        - type: primary
-          craftLevel: 1
-          quantity: 3
-        - type: common
-          craftLevel: 1
-          quantity: 10
-        - fixedId: credit
-          quantity: 8000
-      '50':
-        - exp: 74000
-        - type: primary
-          craftLevel: 2
-          quantity: 3
-        - type: common
-          craftLevel: 2
-          quantity: 6
-        - fixedId: credit
-          quantity: 16000
-      '60':
-        - exp: 115000
-        - type: primary
-          craftLevel: 2
-          quantity: 6
-        - type: common
-          craftLevel: 2
-          quantity: 9
-        - fixedId: credit
-          quantity: 40000
-      '70':
-        - exp: 175000
-        - type: primary
-          craftLevel: 3
-          quantity: 4
-        - type: common
-          craftLevel: 3
-          quantity: 5
-        - fixedId: credit
-          quantity: 80000
-      '80':
-        - exp: 330500
-        - type: primary
-          craftLevel: 3
-          quantity: 8
-        - type: common
-          craftLevel: 3
-          quantity: 7
-        - fixedId: credit
-          quantity: 160000
+    purposeTypes:
+      ascension:
+        levels:
+          '20':
+            - exp: 21500
+          '30':
+            - exp: 34500
+            - type: common
+              craftLevel: 1
+              quantity: 5
+            - fixedId: credit
+              quantity: 4000
+          '40':
+            - exp: 48000
+            - type: primary
+              craftLevel: 1
+              quantity: 3
+            - type: common
+              craftLevel: 1
+              quantity: 10
+            - fixedId: credit
+              quantity: 8000
+          '50':
+            - exp: 74000
+            - type: primary
+              craftLevel: 2
+              quantity: 3
+            - type: common
+              craftLevel: 2
+              quantity: 6
+            - fixedId: credit
+              quantity: 16000
+          '60':
+            - exp: 115000
+            - type: primary
+              craftLevel: 2
+              quantity: 6
+            - type: common
+              craftLevel: 2
+              quantity: 9
+            - fixedId: credit
+              quantity: 40000
+          '70':
+            - exp: 175000
+            - type: primary
+              craftLevel: 3
+              quantity: 4
+            - type: common
+              craftLevel: 3
+              quantity: 5
+            - fixedId: credit
+              quantity: 80000
+          '80':
+            - exp: 330500
+            - type: primary
+              craftLevel: 3
+              quantity: 8
+            - type: common
+              craftLevel: 3
+              quantity: 7
+            - fixedId: credit
+              quantity: 160000
   r5Base:
-    levels:
-      '20':
-        - exp: 26500
-      '30':
-        - exp: 43000
-        - type: common
-          craftLevel: 1
-          quantity: 8
-        - fixedId: credit
-          quantity: 5000
-      '40':
-        - exp: 59500
-        - type: primary
-          craftLevel: 1
-          quantity: 4
-        - type: common
-          craftLevel: 1
-          quantity: 12
-        - fixedId: credit
-          quantity: 10000
-      '50':
-        - exp: 92500
-        - type: primary
-          craftLevel: 2
-          quantity: 4
-        - type: common
-          craftLevel: 2
-          quantity: 8
-        - fixedId: credit
-          quantity: 20000
-      '60':
-        - exp: 143500
-        - type: primary
-          craftLevel: 2
-          quantity: 8
-        - type: common
-          craftLevel: 2
-          quantity: 12
-        - fixedId: credit
-          quantity: 50000
-      '70':
-        - exp: 218500
-        - type: primary
-          craftLevel: 3
-          quantity: 5
-        - type: common
-          craftLevel: 3
-          quantity: 6
-        - fixedId: credit
-          quantity: 100000
-      '80':
-        - exp: 413000
-        - type: primary
-          craftLevel: 3
-          quantity: 10
-        - type: common
-          craftLevel: 3
-          quantity: 8
-        - fixedId: credit
-          quantity: 200000
+    purposeTypes:
+      ascension:
+        levels:
+          '20':
+            - exp: 26500
+          '30':
+            - exp: 43000
+            - type: common
+              craftLevel: 1
+              quantity: 8
+            - fixedId: credit
+              quantity: 5000
+          '40':
+            - exp: 59500
+            - type: primary
+              craftLevel: 1
+              quantity: 4
+            - type: common
+              craftLevel: 1
+              quantity: 12
+            - fixedId: credit
+              quantity: 10000
+          '50':
+            - exp: 92500
+            - type: primary
+              craftLevel: 2
+              quantity: 4
+            - type: common
+              craftLevel: 2
+              quantity: 8
+            - fixedId: credit
+              quantity: 20000
+          '60':
+            - exp: 143500
+            - type: primary
+              craftLevel: 2
+              quantity: 8
+            - type: common
+              craftLevel: 2
+              quantity: 12
+            - fixedId: credit
+              quantity: 50000
+          '70':
+            - exp: 218500
+            - type: primary
+              craftLevel: 3
+              quantity: 5
+            - type: common
+              craftLevel: 3
+              quantity: 6
+            - fixedId: credit
+              quantity: 100000
+          '80':
+            - exp: 413000
+            - type: primary
+              craftLevel: 3
+              quantity: 10
+            - type: common
+              craftLevel: 3
+              quantity: 8
+            - fixedId: credit
+              quantity: 200000

@@ -1,8 +1,8 @@
 import characters from "~/assets/data/characters.yaml"
-import type { CombatType, Path } from "~/types/generated/characters.g"
+import type { HsrCombatType, HsrPath } from "~/types/data/enums"
 
-const trailblazerCombatTypeToPath = (combatType: string): Path => {
-  switch (combatType as CombatType) {
+const trailblazerCombatTypeToPath = (combatType: string): HsrPath => {
+  switch (combatType as HsrCombatType) {
     case "physical":
       return "destruction"
     case "fire":
@@ -15,5 +15,5 @@ const trailblazerCombatTypeToPath = (combatType: string): Path => {
 export const parseShowcaseCharacterId = (nameJP: string, variant: string) => {
   return nameJP === "開拓者"
     ? toCharacterIdWithVariant("trailblazer", trailblazerCombatTypeToPath(variant))
-    : characters.find(e => e.$nameJA === nameJP)?.id
+    : characters.find(e => e.name.locales.ja === nameJP)?.id
 }

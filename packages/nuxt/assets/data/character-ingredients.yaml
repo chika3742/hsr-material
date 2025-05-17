@@ -6,7 +6,7 @@ expItems:
   - itemId: travel-encounters
     expPerItem: 1000
 
-levelingItemTables:
+ingredientsTables:
   r4Base:
     purposeTypes:
       ascension:

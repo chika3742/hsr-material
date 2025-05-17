@@ -1,6 +1,8 @@
 <script lang="ts" setup>
+import type { RelicSet } from "~/types/data/src/decoration-sets"
+
 withDefaults(defineProps<{
-  relicId: string
+  relicSet: RelicSet
   show2pcOnly?: boolean
 }>(), {
   show2pcOnly: false,
@@ -15,18 +17,18 @@ withDefaults(defineProps<{
       </h4>
       <EmphasizedText
         :class="['pl-4', show2pcOnly ? '' : 'my-1']"
-        :text="tx(`relicSetEffects.${relicId}.2pc`)"
+        :text="localize(relicSet.effects['2pc'])"
       />
     </section>
     <section
-      v-if="$te(`relicSetEffects.${relicId}.4pc`)"
+      v-if="relicSet.effects['4pc']"
       v-show="!show2pcOnly"
     >
       <h4 class="c-subheader">
         {{ tx("common.4pcEffect") }}
       </h4>
       <EmphasizedText
-        :text="tx(`relicSetEffects.${relicId}.4pc`)"
+        :text="localize(relicSet.effects['4pc'])"
         class="pl-4 my-1"
       />
     </section>

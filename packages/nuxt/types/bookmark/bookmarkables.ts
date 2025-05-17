@@ -1,6 +1,6 @@
+import type { HsrRelicPosition, HsrStat } from "../data/enums"
 import type { Bookmark } from "~/types/bookmark/bookmark"
 import type { CharacterIdWithVariant } from "~/types/strings"
-import type { Stat } from "~/types/generated/relic-stats.g"
 
 export type BookmarkableCharacterMaterial = Omit<Bookmark.CharacterMaterial, "id" | "bookmarkedAt">
 export type BookmarkableLightConeMaterial = Omit<Bookmark.LightConeMaterial, "id" | "bookmarkedAt">
@@ -22,8 +22,8 @@ export function isBookmarkableMaterial(item: BookmarkableIngredient): item is Bo
 export class BookmarkableRelicSet implements Omit<Bookmark.RelicSet, "id" | "bookmarkedAt"> {
   relicSetIds: string[]
   characterId: CharacterIdWithVariant
-  mainStats: Record<string, Stat | null>
-  subStats: Stat[]
+  mainStats: Partial<Record<HsrRelicPosition, HsrStat | null>>
+  subStats: HsrStat[]
   type = "relic_set" as const
 
   constructor(data: Omit<BookmarkableRelicSet, "id" | "bookmarkedAt" | "type">) {
@@ -37,8 +37,8 @@ export class BookmarkableRelicSet implements Omit<Bookmark.RelicSet, "id" | "boo
 export class BookmarkableRelicPiece implements Omit<Bookmark.RelicPiece, "id" | "bookmarkedAt"> {
   relicPieceId: string
   characterId: CharacterIdWithVariant
-  mainStat: Stat | null
-  subStats: Stat[]
+  mainStat: HsrStat | null
+  subStats: HsrStat[]
   type = "relic_piece" as const
 
   constructor(data: Omit<BookmarkableRelicPiece, "id" | "bookmarkedAt" | "type">) {

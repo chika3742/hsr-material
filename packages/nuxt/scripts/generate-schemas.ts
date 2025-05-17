@@ -1,24 +1,47 @@
-import fs from "fs"
-import path from "path"
-import { compile } from "json-schema-to-typescript"
-import { parse } from "yaml"
+import * as fs from "fs/promises"
+import * as path from "path"
 import { pascalCase } from "scule"
-import type { JSONSchema4 } from "json-schema"
+import { createGenerator, type Config } from "ts-json-schema-generator"
+
+const typesDir = "./types/data/src"
+const schemasDir = "./schemas"
 
 export const generateSchemas = async () => {
-  const inputDir = "./schemas"
-  const outputDir = "./types/generated"
+  // skip if in production mode
+  if (process.env.NODE_ENV === "production") {
+    return
+  }
 
-  const files = fs.readdirSync(inputDir)
+  const files = await fs.readdir(typesDir)
+
+  // make sure the destination directory exists
+  await fs.mkdir(schemasDir, { recursive: true })
+
+  const createdFileNames: string[] = []
+
   for (const fileName of files) {
-    const name = pascalCase(fileName.split(".")[0])
+    const tsPath = path.resolve(typesDir, fileName)
 
-    const result = await compile(parse(fs.readFileSync(path.resolve(inputDir, fileName)).toString()) as JSONSchema4, name, {
-      bannerComment: "/* This file was generated. DO NOT edit by hand. */",
-      cwd: inputDir,
-    })
-    fs.mkdirSync(outputDir, { recursive: true })
-    const outputFilePath = path.join(outputDir, `${fileName.split(".")[0]}.g.ts`)
-    fs.writeFileSync(outputFilePath, result)
+    const config: Config = {
+      path: tsPath,
+      type: pascalCase(path.basename(fileName, ".ts")),
+      skipTypeCheck: true,
+      encodeRefs: false,
+    }
+
+    const result = createGenerator(config).createSchema(config.type)
+
+    const outputFileName = `${path.basename(fileName, ".ts")}.g.json`
+    createdFileNames.push(outputFileName)
+    const outputFilePath = path.join(schemasDir, outputFileName)
+
+    await fs.writeFile(outputFilePath, JSON.stringify(result, null, 2))
+  }
+
+  // delete obsolete generated files
+  for (const fileName of await fs.readdir(schemasDir)) {
+    if (!createdFileNames.includes(fileName)) {
+      await fs.rm(path.resolve(schemasDir, fileName))
+    }
   }
 }

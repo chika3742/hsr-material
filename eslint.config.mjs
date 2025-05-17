@@ -3,7 +3,7 @@
 /** @type {import("./packages/nuxt/.nuxt/eslint.config.d.mjs").withNuxt} */
 import withNuxt from "./packages/nuxt/.nuxt/eslint.config.mjs"
 
-/** @type {import("eslint/rules").ESLintRules & import("./packages/nuxt/node_modules/@stylistic/eslint-plugin").RuleOptions} */
+/** @type {{[K: string]: import("eslint").Linter.RuleEntry}} */
 const commonRules = {
   "@stylistic/quotes": [
     "error",
@@ -19,10 +19,9 @@ const commonRules = {
   ],
   "@stylistic/object-curly-spacing": ["error", "always"],
   "@stylistic/block-spacing": ["error", "always"],
-  "space-before-function-paren": [
-    "error",
-    "never",
-  ],
+  "@stylistic/space-before-function-paren": ["error", {
+    named: "never",
+  }],
   "@stylistic/brace-style": ["error", "1tbs"],
   "no-useless-constructor": "off",
   "vue/multi-word-component-names": "off",

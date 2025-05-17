@@ -1,12 +1,8 @@
 <script lang="ts" setup>
-import relicSets from "assets/data/relic-sets.csv"
-import relicPieces from "assets/data/relic-pieces.csv"
-import type { RelicPiece, RelicSet } from "~/types/data/relics"
-
-definePageMeta({
-  title: "relicDetails",
-  itemI18nKey: "relicSetTitles",
-})
+import relicSets from "assets/data/relic-sets.yaml"
+import relicPieces from "assets/data/relic-pieces.yaml"
+import type { RelicSet } from "~/types/data/src/decoration-sets"
+import type { RelicPiece } from "~/types/data/src/decoration-pieces"
 
 const route = useRoute()
 
@@ -30,6 +26,8 @@ if (!relicSets.some(e => e.id === route.params.relicId)) {
 }
 
 const relicSet = relicSets.find(e => e.id === route.params.relicId)!
+
+usePageTitle(tx("pageTitles.relicDetails", { name: localize(relicSet.name) }))
 
 const bookmarkBtnText = computed(() => {
   switch (relicSet.type) {
@@ -82,7 +80,7 @@ const bookmarkPiece = (piece: RelicPiece) => {
       </div>
     </v-row>
 
-    <RelicSetEffects :relic-id="relicSet.id" />
+    <RelicSetEffects :relic-set="relicSet" />
 
     <v-expansion-panels v-model="expandedPanels">
       <v-expansion-panel :title="tx('relicDetailsPage.bookmarkInSets')">
@@ -117,7 +115,7 @@ const bookmarkPiece = (piece: RelicPiece) => {
               :key="item.id"
               :prepend-avatar="getRelicPieceImage(item.id)"
               :subtitle="tx(`relicLocations.${item.type}`)"
-              :title="tx(`relicPieceNames.${item.id}`)"
+              :title="localize(item.name)"
             >
               <template #append>
                 <v-btn

@@ -1,68 +1,73 @@
 declare module "~/assets/data/release-notes.yaml" {
-  import type { ReleaseNotes } from "~/types/generated/release-notes.g"
-
   const releaseNotes: ReleaseNotes
   export default releaseNotes
 }
 
 declare module "~/assets/data/characters.yaml" {
-  import type { Characters } from "~/types/generated/characters.g"
+  import type { Characters } from "~/types/data/src/characters"
 
   const characters: Characters
   export default characters
 }
 
 declare module "~/assets/data/character-ingredients.yaml" {
-  import type { CharacterIngredients } from "~/types/generated/character-ingredients.g"
+  import type { Ingredients } from "~/types/data/src/ingredients"
 
-  const characterIngredients: CharacterIngredients
+  const characterIngredients: Ingredients
   export default characterIngredients
 }
 
 declare module "~/assets/data/light-cones.yaml" {
-  import type { LightCone } from "~/types/generated/light-cones.g"
+  import type { Equipments } from "~/types/data/src/equipments"
 
-  const lightCones: (LightCone & Record<string, unknown>)[]
+  const lightCones: Equipments
   export default lightCones
 }
 
 declare module "~/assets/data/light-cone-ingredients.yaml" {
-  import type { LightConeIngredients } from "~/types/generated/light-cone-ingredients.g"
+  import type { Ingredients } from "~/types/data/src/ingredients"
 
-  const lightConeIngredients: LightConeIngredients
+  const lightConeIngredients: Ingredients
   export default lightConeIngredients
 }
 
-declare module "~/assets/data/materials.csv" {
-  import type { Material } from "~/types/data/materials"
+declare module "~/assets/data/materials.yaml" {
+  import type { Material } from "~/types/data/src/materials"
 
   const materials: Material[]
   export default materials
 }
 
-declare module "assets/data/relic-sets.csv" {
-  import type { RelicSet } from "~/types/data/relics"
+declare module "~/assets/data/materials-meta.yaml" {
+  import type { MaterialsMeta } from "~/types/data/src/materials-meta"
+
+  const materialsMeta: MaterialsMeta
+  export default materialsMeta
+}
+
+declare module "assets/data/relic-sets.yaml" {
+  import type { RelicSet } from "~/types/data/src/decoration-sets"
 
   const relicSets: RelicSet[]
   export default relicSets
 }
 
-declare module "assets/data/relic-pieces.csv" {
-  import type { RelicPiece } from "~/types/data/relics"
+declare module "assets/data/relic-pieces.yaml" {
+  import type { RelicPiece } from "~/types/data/src/decoration-pieces"
 
   const relicPieces: RelicPiece[]
   export default relicPieces
 }
 
 declare module "assets/data/relic-stats.yaml" {
-  import type { RelicStats } from "~/types/generated/relic-stats.g"
+  import type { HsrRelicStats } from "~/types/data/src/decoration-stats"
 
-  const relicStats: RelicStats
+  const relicStats: HsrRelicStats
   export default relicStats
 }
 
 declare module "assets/data/drop-rates.yaml" {
-  import type { DropRates } from "~/types/generated/drop-rates.g"
+  import type { DropRates } from "~/types/data/src/drop-rates"
 
   const dropRates: DropRates
   export default dropRates

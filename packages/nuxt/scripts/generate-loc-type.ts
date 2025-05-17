@@ -42,6 +42,7 @@ export const generateLocType = () => {
 
   locTs += "  | string & {}\n"
 
+  fs.mkdirSync(outputDir, { recursive: true })
   fs.writeFileSync(path.join(outputDir, "loc.g.ts"), locTs)
 
   if (missingKeys.length > 0) {

@@ -8,7 +8,7 @@
         v-for="entry in entries"
         :key="entry.path"
         :prepend-icon="entry.icon"
-        :title="getPageTitle(entry.path)"
+        :title="entry.title"
         :to="$localePath(entry.path)"
       />
     </v-list>
@@ -16,37 +16,42 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  title: "home",
-})
+usePageTitle(tx("pageTitles.home"))
 
 interface Entry {
+  title: string
   path: string
   icon: string
 }
 
 const entries: Entry[] = [
   {
+    title: tx("pageTitles.characters"),
     icon: "mdi-account",
     path: "/characters",
   },
   {
+    title: tx("pageTitles.lightCones"),
     icon: "mdi-cone",
     path: "/light-cones",
   },
   {
+    title: tx("pageTitles.relics"),
     icon: "mdi-star-david",
     path: "/relics",
   },
   {
+    title: tx("pageTitles.materials"),
     icon: "mdi-grass",
     path: "/materials",
   },
   {
+    title: tx("pageTitles.tpCalc"),
     icon: "mdi-sphere",
     path: "/tp-calc",
   },
   {
+    title: tx("pageTitles.warps"),
     icon: "mdi-history",
     path: "/warps",
   },

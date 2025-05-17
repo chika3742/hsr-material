@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref, useI18n, useRoute } from "#imports"
+import { computed, onMounted, ref, useRoute } from "#imports"
 
 interface Props {
   modelValue: string | undefined
   label?: string
-  characters: { id: string, image: string }[]
+  characters: { id: string, name: string, image: string }[]
   maxWidth?: string
   error?: string
   filter?: (id: string) => boolean
@@ -15,7 +15,6 @@ const props = withDefaults(defineProps<Props>(), {
   label: "",
   maxWidth: "unset",
   error: "",
-  filter: undefined,
   filterDisableCheckboxText: "",
 })
 
@@ -24,7 +23,6 @@ const emit = defineEmits<{
   (e: "update:error", value: string): void
 }>()
 
-const i18n = useI18n()
 const route = useRoute()
 
 const isFilterDisabled = ref(false)
@@ -36,18 +34,14 @@ const vSelectItems = computed(() => {
     characters = characters.filter(e => props.filter?.(e.id))
   }
 
-  return characters.map(character => ({
-    title: i18n.t(`characterNames.${character.id}`),
-    value: character.id,
-    image: character.image,
-  }))
+  return characters
 })
 
 const toggleFilterDisabled = () => {
   isFilterDisabled.value = !isFilterDisabled.value
 
-  if (props.modelValue && !vSelectItems.value.some(({ value: id }) => props.modelValue === id)) {
-    emit("update:modelValue", vSelectItems.value[0].value)
+  if (props.modelValue && !vSelectItems.value.some(({ id }) => props.modelValue === id)) {
+    emit("update:modelValue", vSelectItems.value[0].id)
   }
 }
 
@@ -80,6 +74,8 @@ onMounted(() => {
     :items="vSelectItems"
     :label="label"
     :model-value="modelValue"
+    item-value="id"
+    item-title="name"
     :style="{ 'max-width': maxWidth }"
     class="mt-2"
     @blur="$emit('update:error', '')"

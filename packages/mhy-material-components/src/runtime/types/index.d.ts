@@ -1,6 +1,6 @@
 interface DrawerItem {
   icon: string
-  title?: string
+  title: string
   to?: string
   href?: string
   target?: string
@@ -54,13 +54,15 @@ interface FilterOption {
 type PossessionStatus = "owned" | "notOwned"
 
 interface ShowcaseCharacter {
-  nameJP: string
-  variant: string
+  id: string
+  name: string
+  imageUrl: string
   level: number
   rank: number
   promotion: number
   equipment: {
-    nameJP: string
+    name: string
+    imageUrl: string
     level: number
     promotion: number
   } | null
@@ -72,16 +74,9 @@ interface ShowcaseCharacter {
   }[]
 }
 
-interface UserInfoResponse {
+interface ShowcaseContent {
   uid: string
   nickname: string
   level: number
   characters: ShowcaseCharacter[]
-}
-
-interface DataSyncMapGetters {
-  getCharacterId: (character: ShowcaseCharacter) => string
-  getCharacterImage: (character: ShowcaseCharacter) => string
-  getEquipmentId: (equipmentName: string) => string
-  getEquipmentImage: (equipmentId: string) => string
 }

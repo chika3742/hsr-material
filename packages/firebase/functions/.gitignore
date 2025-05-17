@@ -1,7 +1,8 @@
-lib/**/*
-bundle/index.js
-!bundle/.env.hsr-material-dev
-!bundle/.env.hsr-material
+/lib/**/*
+/bundle/**/*
+!/bundle/.env.hsr-material-dev
+!/bundle/.env.hsr-material
+!/bundle/package.json
 
 # yarn not using zero-installs
 .pnp.*

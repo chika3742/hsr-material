@@ -1,0 +1,1024 @@
+- id: bands-polarized-sunglasses
+  name:
+    locales:
+      ja: バンドの偏光サングラス
+      en: Band's Polarized Sunglasses
+  setId: band-of-sizzling-thunder
+  type: head
+  yomi: バンドノヘンコウサングラス
+- id: bands-touring-bracelet
+  name:
+    locales:
+      ja: バンドのツアーブレスレット
+      en: Band's Touring Bracelet
+  setId: band-of-sizzling-thunder
+  type: hands
+  yomi: バンドノツアーブレスレット
+- id: bands-leather-jacket-with-studs
+  name:
+    locales:
+      ja: バンドのスパイク付き革ジャン
+      en: Band's Leather Jacket With Studs
+  setId: band-of-sizzling-thunder
+  type: body
+  yomi: バンドノスパイクツキカワジャン
+- id: bands-ankle-boots-with-rivets
+  name:
+    locales:
+      ja: バンドのリベットブーツ
+      en: Band's Ankle Boots With Rivets
+  setId: band-of-sizzling-thunder
+  type: feet
+  yomi: バンドノリベットブーツ
+- id: hunters-artaius-hood
+  name:
+    locales:
+      ja: 狩人の荒ぶる神のフード
+      en: Hunter's Artaius Hood
+  setId: hunter-of-glacial-forest
+  type: head
+  yomi: カリュウドノアラブルカミノフード
+- id: hunters-lizard-gloves
+  name:
+    locales:
+      ja: 狩人のオオトカゲグローブ
+      en: Hunter's Lizard Gloves
+  setId: hunter-of-glacial-forest
+  type: hands
+  yomi: カリュウドノオオトカゲグローブ
+- id: hunters-ice-dragon-cloak
+  name:
+    locales:
+      ja: 狩人の氷竜マント
+      en: Hunter's Ice Dragon Cloak
+  setId: hunter-of-glacial-forest
+  type: body
+  yomi: カリュウドノヒョウリュウマント
+- id: hunters-soft-elkskin-boots
+  name:
+    locales:
+      ja: 狩人の鹿革のブーツ
+      en: Hunter's Soft Elkskin Boots
+  setId: hunter-of-glacial-forest
+  type: feet
+  yomi: カリュウドノカカクノブーツ
+- id: wastelanders-breathing-mask
+  name:
+    locales:
+      ja: 廃土客の呼吸マスク
+      en: Wastelander's Breathing Mask
+  setId: wastelander-of-banditry-desert
+  type: head
+  yomi: ハイドキャククノコキュウマスク
+- id: wastelanders-desert-terminal
+  name:
+    locales:
+      ja: 廃土客の荒涼端末
+      en: Wastelander's Desert Terminal
+  setId: wastelander-of-banditry-desert
+  type: hands
+  yomi: ハイドキャクノコウリョウタンマツ
+- id: wastelanders-friar-robe
+  name:
+    locales:
+      ja: 廃土客の修道服
+      en: Wastelander's Friar Robe
+  setId: wastelander-of-banditry-desert
+  type: body
+  yomi: ハイドキャクノシュウドウフク
+- id: wastelanders-powered-greaves
+  name:
+    locales:
+      ja: 廃土客の動力腿甲
+      en: Wastelander's Powered Greaves
+  setId: wastelander-of-banditry-desert
+  type: feet
+  yomi: ハイドキャクノドウリョクタイコウ
+- id: musketeers-wild-wheat-felt-hat
+  name:
+    locales:
+      ja: ガンマンの草の穂フェルト帽
+      en: Musketeer's Wild Wheat Felt Hat
+  setId: musketeer-of-wild-wheat
+  type: head
+  yomi: ガンマンノクサノホフェルトボウ
+- id: musketeers-coarse-leather-gloves
+  name:
+    locales:
+      ja: ガンマンの荒い革手袋
+      en: Musketeer's Coarse Leather Gloves
+  setId: musketeer-of-wild-wheat
+  type: hands
+  yomi: ガンマンノアライカワテブクロ
+- id: musketeers-wind-hunting-shawl
+  name:
+    locales:
+      ja: ガンマンの風狩りポンチョ
+      en: Musketeer's Wind-Hunting Shawl
+  setId: musketeer-of-wild-wheat
+  type: body
+  yomi: ガンマンノカゼガリポンチョ
+- id: musketeers-rivets-riding-boots
+  name:
+    locales:
+      ja: ガンマンのリベットブーツ
+      en: Musketeer's Rivets Riding Boots
+  setId: musketeer-of-wild-wheat
+  type: feet
+  yomi: ガンマンノリベットブーツ
+- id: salsottos-moving-city
+  name:
+    locales:
+      ja: サルソットの移動都市
+      en: Salsotto's Moving City
+  setId: inert-salsotto
+  type: planar_sphere
+  yomi: サルソットノイドウトシ
+- id: salsottos-terminator-line
+  name:
+    locales:
+      ja: サルソットの明暗境界線
+      en: Salsotto's Terminator Line
+  setId: inert-salsotto
+  type: link_rope
+  yomi: サルソットノメイアンキョウカイセン
+- id: the-xianzhou-luofus-celestial-ark
+  name:
+    locales:
+      ja: 羅浮仙舟の天外楼船
+      en: The Xianzhou Luofu's Celestial Ark
+  setId: fleet-of-the-ageless
+  type: planar_sphere
+  yomi: ラフセンシュウノテンガイロウセン
+- id: the-xianzhou-luofus-ambrosial-arbor-vines
+  name:
+    locales:
+      ja: 羅浮仙舟の建木の枝と蔓
+      en: The Xianzhou Luofu's Ambrosial Arbor Vines
+  setId: fleet-of-the-ageless
+  type: link_rope
+  yomi: ラフセンシュウノケンボクノエダトツル
+- id: knights-forgiving-casque
+  name:
+    locales:
+      ja: 聖騎士の赦しのヘルム
+      en: Knight's Forgiving Casque
+  setId: knight-of-purity-palace
+  type: head
+  yomi: セイキシノユルシノヘルム
+- id: knights-silent-oath-ring
+  name:
+    locales:
+      ja: 聖騎士の沈黙の誓いの指輪
+      en: Knight's Silent Oath Ring
+  setId: knight-of-purity-palace
+  type: hands
+  yomi: セイキシノチンモクノチカイノユビワ
+- id: knights-solemn-breastplate
+  name:
+    locales:
+      ja: 聖騎士の厳かな鎧
+      en: Knight's Solemn Breastplate
+  setId: knight-of-purity-palace
+  type: body
+  yomi: セイキシノオゴソカナヨロイ
+- id: knights-iron-boots-of-order
+  name:
+    locales:
+      ja: 聖騎士の秩序の鉄靴
+      en: Knight's Iron Boots of Order
+  setId: knight-of-purity-palace
+  type: feet
+  yomi: セイキシノチツジョノカナグツ
+- id: talias-nailscrap-town
+  name:
+    locales:
+      ja: タリアのネイルシェル
+      en: Talia's Nailscrap Town
+  setId: talia-kingdom-of-banditry
+  type: planar_sphere
+  yomi: タリアノネイルシェル
+- id: talias-exposed-electric-wire
+  name:
+    locales:
+      ja: タリアの裸電線
+      en: Talia's Exposed Electric Wire
+  setId: talia-kingdom-of-banditry
+  type: link_rope
+  yomi: タリアノラデンセン
+- id: vonwacqs-island-of-birth
+  name:
+    locales:
+      ja: ウェンワーク誕生の島
+      en: Vonwacq's Island of Birth
+  setId: sprightly-vonwacq
+  type: planar_sphere
+  yomi: ウェンワークノタンジョウノシマ
+- id: vonwacqs-islandic-coast
+  name:
+    locales:
+      ja: ウェンワークの島巡り海岸
+      en: Vonwacq's Islandic Coast
+  setId: sprightly-vonwacq
+  type: link_rope
+  yomi: ウェンワークノシマメグリカイガン
+- id: firesmiths-obsidian-goggles
+  name:
+    locales:
+      ja: 火匠の黒曜レンズ
+      en: Firesmith's Obsidian Goggles
+  setId: firesmith-of-lava-forging
+  type: head
+  yomi: カショウノコクヨウレンズ
+- id: firesmiths-ring-of-flame-mastery
+  name:
+    locales:
+      ja: 火匠の操炎の指輪
+      en: Firesmith's Ring of Flame-Mastery
+  setId: firesmith-of-lava-forging
+  type: hands
+  yomi: カショウノソウエンノユビワ
+- id: firesmiths-fireproof-apron
+  name:
+    locales:
+      ja: 火匠の防炎エプロン
+      en: Firesmith's Fireproof Apron
+  setId: firesmith-of-lava-forging
+  type: body
+  yomi: カショウノボウエンエプロン
+- id: firesmiths-alloy-leg
+  name:
+    locales:
+      ja: 火匠の合金義肢
+      en: Firesmith's Alloy Leg
+  setId: firesmith-of-lava-forging
+  type: feet
+  yomi: カショウノゴウキンギシ
+- id: passerbys-rejuvenated-wooden-hairstick
+  name:
+    locales:
+      ja: 過客の迎春かんざし
+      en: Passerby's Rejuvenated Wooden Hairstick
+  setId: passerby-of-wandering-cloud
+  type: head
+  yomi: カキャクノゲイシュンカンザシ
+- id: passerbys-roaming-dragon-bracer
+  name:
+    locales:
+      ja: 過客の游龍腕甲
+      en: Passerby's Roaming Dragon Bracer
+  setId: passerby-of-wandering-cloud
+  type: hands
+  yomi: カキャクノユウリュウワンコウ
+- id: passerbys-ragged-embroided-coat
+  name:
+    locales:
+      ja: 過客の刺繍の解れた外套
+      en: Passerby's Ragged Embroided Coat
+  setId: passerby-of-wandering-cloud
+  type: body
+  yomi: カキャクノシシュウノホツレタガイトウ
+- id: passerbys-stygian-hiking-boots
+  name:
+    locales:
+      ja: 過客の冥途遊歴
+      en: Passerby's Stygian Hiking Boots
+  setId: passerby-of-wandering-cloud
+  type: feet
+  yomi: カキャクノメイドユウレキ
+- id: thiefs-myriad-faced-mask
+  name:
+    locales:
+      ja: 怪盗の千人仮面
+      en: Thief's Myriad-Faced Mask
+  setId: thief-of-shooting-meteor
+  type: head
+  yomi: カイトウノセンニンカメン
+- id: thiefs-gloves-with-prints
+  name:
+    locales:
+      ja: 怪盗の紋様手袋
+      en: Thief's Gloves With Prints
+  setId: thief-of-shooting-meteor
+  type: hands
+  yomi: カイトウノモンヨウテブクロ
+- id: thiefs-steel-grappling-hook
+  name:
+    locales:
+      ja: 怪盗のワイヤーかぎ爪
+      en: Thief's Steel Grappling Hook
+  setId: thief-of-shooting-meteor
+  type: body
+  yomi: カイトウノワイヤーカギヅメ
+- id: thiefs-meteor-boots
+  name:
+    locales:
+      ja: 怪盗の流星ブーツ
+      en: Thief's Meteor Boots
+  setId: thief-of-shooting-meteor
+  type: feet
+  yomi: カイトウノリュウセイブーツ
+- id: the-ipcs-mega-hq
+  name:
+    locales:
+      ja: カンパニーの巨構本部
+      en: The IPC's Mega HQ
+  setId: pan-galactic-commercial-enterprise
+  type: planar_sphere
+  yomi: カンパニーノキョコウホンブ
+- id: the-ipcs-trade-route
+  name:
+    locales:
+      ja: カンパニーの貿易航路
+      en: The IPC's Trade Route
+  setId: pan-galactic-commercial-enterprise
+  type: link_rope
+  yomi: カンパニーノボウエキコウロ
+- id: eagles-beaked-helmet
+  name:
+    locales:
+      ja: 空飛ぶ鷹の長嘴ヘルメット
+      en: Eagle's Beaked Helmet
+  setId: eagle-of-twilight-line
+  type: head
+  yomi: ソラトブタカノチョウシヘルメット
+- id: eagles-soaring-ring
+  name:
+    locales:
+      ja: 空飛ぶ鷹の双翼指輪
+      en: Eagle's Soaring Ring
+  setId: eagle-of-twilight-line
+  type: hands
+  yomi: ソラトブタカノソウヨクユビワ
+- id: eagles-winged-suit-harness
+  name:
+    locales:
+      ja: 空飛ぶ鷹の翼装ベルト
+      en: Eagle's Winged Suit Harness
+  setId: eagle-of-twilight-line
+  type: body
+  yomi: ソラトブタカノヨクソウベルト
+- id: eagles-quilted-puttees
+  name:
+    locales:
+      ja: 空飛ぶ鷹の羽毛バンド
+      en: Eagle's Quilted Puttees
+  setId: eagle-of-twilight-line
+  type: feet
+  yomi: ソラトブタカノウモウバンド
+- id: geniuss-ultraremote-sensing-visor
+  name:
+    locales:
+      ja: 天才の超距離センシング
+      en: Genius's Ultraremote Sensing Visor
+  setId: genius-of-brilliant-stars
+  type: head
+  yomi: テンサイノチョウキョリセンシング
+- id: geniuss-frequency-catcher
+  name:
+    locales:
+      ja: 天才の周波数変動キャッチャー
+      en: Genius's Frequency Catcher
+  setId: genius-of-brilliant-stars
+  type: hands
+  yomi: テンサイノシュウハスウヘンドウキャッチャー
+- id: geniuss-metafield-suit
+  name:
+    locales:
+      ja: 天才のメタバース深潜
+      en: Genius's Metafield Suit
+  setId: genius-of-brilliant-stars
+  type: body
+  yomi: テンサイノメタバースシンセン
+- id: geniuss-gravity-walker
+  name:
+    locales:
+      ja: 天才の引力漫歩
+      en: Genius's Gravity Walker
+  setId: genius-of-brilliant-stars
+  type: feet
+  yomi: テンサイノインリョクマンポ
+- id: champions-headgear
+  name:
+    locales:
+      ja: チャンピオンの王冠ヘッドギア
+      en: Champion's Headgear
+  setId: champion-of-streetwise-boxing
+  type: head
+  yomi: チャンピオンノオウカンヘッドギア
+- id: champions-heavy-gloves
+  name:
+    locales:
+      ja: チャンピオンの重砲グローブ
+      en: Champion's Heavy Gloves
+  setId: champion-of-streetwise-boxing
+  type: hands
+  yomi: チャンピオンノジュウホウグローブ
+- id: champions-chest-guard
+  name:
+    locales:
+      ja: チャンピオンのチェストガード
+      en: Champion's Chest Guard
+  setId: champion-of-streetwise-boxing
+  type: body
+  yomi: チャンピオンノチェストガード
+- id: champions-fleetfoot-boots
+  name:
+    locales:
+      ja: チャンピオンの弧歩シューズ
+      en: Champion's Fleetfoot Boots
+  setId: champion-of-streetwise-boxing
+  type: feet
+  yomi: チャンピオンノコホシューズ
+- id: belobogs-fortress-of-preservation
+  name:
+    locales:
+      ja: ベロブルグの存護の砦
+      en: Belobog's Fortress of Preservation
+  setId: belobog-of-the-architects
+  type: planar_sphere
+  yomi: ベロブルグノソンゴノトリデ
+- id: belobogs-iron-defense
+  name:
+    locales:
+      ja: ベロブルグのシルバーメイン防衛線
+      en: Belobog's Iron Defense
+  setId: belobog-of-the-architects
+  type: link_rope
+  yomi: ベロブルグノシルバーメインボウエイセン
+- id: hertas-space-station
+  name:
+    locales:
+      ja: 「ヘルタ」の宇宙ステーション
+      en: Herta's Space Station
+  setId: space-sealing-station
+  type: planar_sphere
+  yomi: ヘルタノウチュウステーション
+- id: hertas-wandering-trek
+  name:
+    locales:
+      ja: 「ヘルタ」の軌跡
+      en: Herta's Wandering Trek
+  setId: space-sealing-station
+  type: link_rope
+  yomi: ヘルタノキセキ
+- id: planet-screwllums-mechanical-sun
+  name:
+    locales:
+      ja: スクリュー星の機械太陽
+      en: Planet Screwllum's Mechanical Sun
+  setId: celestial-differentiator
+  type: planar_sphere
+  yomi: スクリューセイノキカイタイヨウ
+- id: planet-screwllums-ring-system
+  name:
+    locales:
+      ja: スクリュー星の穿孔惑星リング
+      en: Planet Screwllum's Ring System
+  setId: celestial-differentiator
+  type: link_rope
+  yomi: スクリューセイノセンコウワクセイリング
+- id: guards-cast-iron-helmet
+  name:
+    locales:
+      ja: 兵士の鉄製ヘルム
+      en: Guard's Cast Iron Helmet
+  setId: guard-of-wuthering-snow
+  type: head
+  yomi: ヘイシノテツセイヘルム
+- id: guards-shining-gauntlets
+  name:
+    locales:
+      ja: 兵士の銀鱗ガントレット
+      en: Guard's Shining Gauntlets
+  setId: guard-of-wuthering-snow
+  type: hands
+  yomi: ヘイシノギンリンガントレット
+- id: guards-uniform-of-old
+  name:
+    locales:
+      ja: 兵士の旧制軍服
+      en: Guard's Uniform of Old
+  setId: guard-of-wuthering-snow
+  type: body
+  yomi: ヘイシノキュウセイグンプク
+- id: guards-silver-greaves
+  name:
+    locales:
+      ja: 兵士の白銀グリーブ
+      en: Guard's Silver Greaves
+  setId: guard-of-wuthering-snow
+  type: feet
+  yomi: ヘイシノハクギングリーブ
+- id: disciples-prosthetic-eye
+  name:
+    locales:
+      ja: 蒔者の光をもたらす義眼
+      en: Disciple's Prosthetic Eye
+  setId: longevous-disciple
+  type: head
+  yomi: ジシャノヒカリヲモタラスギガン
+- id: disciples-ingenium-hand
+  name:
+    locales:
+      ja: 蒔者の機巧義手
+      en: Disciple's Ingenium Hand
+  setId: longevous-disciple
+  type: hands
+  yomi: ジシャノキコウギシュ
+- id: disciples-dewy-feather-garb
+  name:
+    locales:
+      ja: 蒔者の露払いの羽衣
+      en: Disciple's Dewy Feather Garb
+  setId: longevous-disciple
+  type: body
+  yomi: ジシャノキリバライノハゴロモ
+- id: disciples-celestial-silk-sandals
+  name:
+    locales:
+      ja: 蒔者の天人絲鞋
+      en: Disciple's Celestial Silk Sandals
+  setId: longevous-disciple
+  type: feet
+  yomi: ジシャノテンニンシガイ
+- id: messengers-holovisor
+  name:
+    locales:
+      ja: メッセンジャーのホログラフィーゴーグル
+      en: Messenger's Holovisor
+  setId: messenger-traversing-hackerspace
+  type: head
+  yomi: メッセンジャーノホログラフィーゴーグル
+- id: messengers-transformative-arm
+  name:
+    locales:
+      ja: メッセンジャーの百変義手
+      en: Messenger's Transformative Arm
+  setId: messenger-traversing-hackerspace
+  type: hands
+  yomi: メッセンジャーノヒャクヘンギシュ
+- id: messengers-secret-satchel
+  name:
+    locales:
+      ja: メッセンジャーの密書ショルダーバッグ
+      en: Messenger's Secret Satchel
+  setId: messenger-traversing-hackerspace
+  type: body
+  yomi: メッセンジャーノミッショショルダーバッグ
+- id: messengers-par-kool-sneakers
+  name:
+    locales:
+      ja: メッセンジャーのパルクールシューズ
+      en: Messenger's Par-kool Sneakers
+  setId: messenger-traversing-hackerspace
+  type: feet
+  yomi: メッセンジャーノパルクールシューズ
+- id: taikiyan-laser-stadium
+  name:
+    locales:
+      ja: タイキヤンのレーザー球場
+      en: Taikiyan Laser Stadium
+  setId: rutilant-arena
+  type: planar_sphere
+  yomi: タイキヤンノレーザーキュウジョウ
+- id: taikiyans-arclight-race-track
+  name:
+    locales:
+      ja: タイキヤンのアークトラック
+      en: Taikiyan's Arclight Race Track
+  setId: rutilant-arena
+  type: link_rope
+  yomi: タイキヤンノアークトラック
+- id: insumousus-whalefall-ship
+  name:
+    locales:
+      ja: 伊須磨州の沈没遺跡
+      en: Insumousu's Whalefall Ship
+  setId: broken-keel
+  type: planar_sphere
+  yomi: イスマシュウノチンボツイセキ
+- id: insumousus-frayed-hawser
+  name:
+    locales:
+      ja: 伊須磨州の千切れたホーサー
+      en: Insumousu's Frayed Hawser
+  setId: broken-keel
+  type: link_rope
+  yomi: イスマシュウノチギレタホーサー
+- id: pioneers-heatproof-shell
+  name:
+    locales:
+      ja: 先駆者の断熱ヘルメット
+      en: Pioneer's Heatproof Shell
+  setId: pioneer-diver-of-dead-waters
+  type: head
+  yomi: センクシャノダンネツヘルメット
+- id: pioneers-lacuna-compass
+  name:
+    locales:
+      ja: 先駆者の虚極コンパス
+      en: Pioneer's Lacuna Compass
+  setId: pioneer-diver-of-dead-waters
+  type: hands
+  yomi: センクシャノキョキョクコンパス
+- id: pioneers-sealed-lead-apron
+  name:
+    locales:
+      ja: 先駆者の密閉された鉛の潜水服
+      en: Pioneer's Sealed Lead Apron
+  setId: pioneer-diver-of-dead-waters
+  type: body
+  yomi: センクシャノミッペイサレタナマリノセンスイフク
+- id: pioneers-starfaring-anchor
+  name:
+    locales:
+      ja: 先駆者の星に泊まるアンカー
+      en: Pioneer's Starfaring Anchor
+  setId: pioneer-diver-of-dead-waters
+  type: feet
+  yomi: センクシャノホシニトマルアンカー
+- id: watchmakers-telescoping-lens
+  name:
+    locales:
+      ja: 時計屋の望遠レンズ
+      en: Watchmaker's Telescoping Lens
+  setId: watchmaker-master-of-dream-machinations
+  type: head
+  yomi: トケイヤノボウエンレンズ
+- id: watchmakers-fortuitous-wristwatch
+  name:
+    locales:
+      ja: 時計屋の運を引き寄せる腕時計
+      en: Watchmaker's Fortuitous Wristwatch
+  yomi: トケイヤノウンヲヒキヨセルウデドケイ
+  setId: watchmaker-master-of-dream-machinations
+  type: hands
+- id: watchmakers-illusory-formal-suit
+  name:
+    locales:
+      ja: 時計屋の虚空礼服
+      en: Watchmaker's Illusory Formal Suit
+  setId: watchmaker-master-of-dream-machinations
+  type: body
+  yomi: トケイヤノコクウレイフク
+- id: watchmakers-dream-concealing-dress-shoes
+  name:
+    locales:
+      ja: 時計屋の隠された夢の革靴
+      en: Watchmaker's Dream-Concealing Dress Shoes
+  setId: watchmaker-master-of-dream-machinations
+  type: feet
+  yomi: トケイヤノカクサレタユメノカワグツ
+- id: sigonias-gaiathra-berth
+  name:
+    locales:
+      ja: ツガンニヤの地母神の寝台
+      en: Sigonia's Gaiathra Berth
+  setId: sigonia-the-unclaimed-desolation
+  type: planar_sphere
+  yomi: ツガンニヤノチボシンノシンダイ
+- id: sigonias-knot-of-cyclicality
+  name:
+    locales:
+      ja: ツガンニヤの輪廻の結び目
+      en: Sigonia's Knot of Cyclicality
+  setId: sigonia-the-unclaimed-desolation
+  type: link_rope
+  yomi: ツガンニヤノリンネノムスビメ
+- id: izumos-magatsu-no-morokami
+  name:
+    locales:
+      ja: 出雲の禍津衆神
+      en: Izumo's Magatsu no Morokami
+  setId: izumo-gensei-and-takama-divine-realm
+  type: planar_sphere
+  yomi: イズモノマガツノモロカミ
+- id: izumos-blades-of-origin-and-end
+  name:
+    locales:
+      ja: 出雲の終始一刀
+      en: Izumo's Blades of Origin and End
+  setId: izumo-gensei-and-takama-divine-realm
+  type: link_rope
+  yomi: イズモノシュウシイットウ
+- id: grand-dukes-crown-of-netherflame
+  name:
+    locales:
+      ja: 大公の冥焔の冠
+      en: Grand Duke's Crown of Netherflame
+  setId: the-ashblazing-grand-duke
+  type: head
+  yomi: タイコウノメイエンノカンムリ
+- id: grand-dukes-gloves-of-fieryfur
+  name:
+    locales:
+      ja: 大公の炎の手袋
+      en: Grand Duke's Gloves of Fieryfur
+  setId: the-ashblazing-grand-duke
+  type: hands
+  yomi: タイコウノホノオノテブクロ
+- id: grand-dukes-robe-of-grace
+  name:
+    locales:
+      ja: 大公の恩恵のロングジャケット
+      en: Grand Duke's Robe of Grace
+  setId: the-ashblazing-grand-duke
+  type: body
+  yomi: タイコウノオンケイノロングジャケット
+- id: grand-dukes-ceremonial-boots
+  name:
+    locales:
+      ja: 大公の優雅なブーツ
+      en: Grand Duke's Ceremonial Boots
+  setId: the-ashblazing-grand-duke
+  type: feet
+  yomi: タイコウノユウガナブーツ
+- id: prisoners-sealed-muzzle
+  name:
+    locales:
+      ja: 囚人の獣面口輪
+      en: Prisoner's Sealed Muzzle
+  setId: prisoner-in-deep-confinement
+  type: head
+  yomi: シュウジンノジュウメンクチワ
+- id: prisoners-leadstone-shackles
+  name:
+    locales:
+      ja: 囚人の鉛の手枷
+      en: Prisoner's Leadstone Shackles
+  setId: prisoner-in-deep-confinement
+  type: hands
+  yomi: シュウジンノナマリノテカセ
+- id: prisoners-repressive-straitjacket
+  name:
+    locales:
+      ja: 囚人の幽閉拘束衣
+      en: Prisoner's Repressive Straitjacket
+  setId: prisoner-in-deep-confinement
+  type: body
+  yomi: シュウジンノユウヘイコウソクイ
+- id: prisoners-restrictive-fetters
+  name:
+    locales:
+      ja: 囚人の歩みを阻む足枷
+      en: Prisoner's Restrictive Fetters
+  setId: prisoner-in-deep-confinement
+  type: feet
+  yomi: シュウジンノアユミヲハバムアシカセ
+- id: glamoths-iron-cavalry-regiment
+  name:
+    locales:
+      ja: グラモスの鉄騎兵団
+      en: Glamoth's Iron Cavalry Regiment
+  setId: firmament-frontline-glamoth
+  type: planar_sphere
+  yomi: グラモスノテッキヘイダン
+- id: glamoths-silent-tombstone
+  name:
+    locales:
+      ja: グラモスの静寂の墓碑
+      en: Glamoth's Silent Tombstone
+  setId: firmament-frontline-glamoth
+  type: link_rope
+  yomi: グラモスノセイジャクノボヒ
+- id: penaconys-grand-hotel
+  name:
+    locales:
+      ja: ピノコニーのグランドホテル
+      en: Penacony's Grand Hotel
+  setId: penacony-land-of-the-dreams
+  type: planar_sphere
+  yomi: ピノコニーノグランドホテル
+- id: penaconys-dream-seeking-tracks
+  name:
+    locales:
+      ja: ピノコニーの夢追い軌道
+      en: Penacony's Dream-Seeking Tracks
+  setId: penacony-land-of-the-dreams
+  type: link_rope
+  yomi: ピノコニーノユメオイキドウ
+- id: iron-cavalrys-homing-helm
+  name:
+    locales:
+      ja: 鉄騎の索敵用ヘルム
+      en: Iron Cavalry's Homing Helm
+  setId: iron-cavalry-against-the-scourge
+  type: head
+  yomi: テッキノサクテキヨウヘルム
+- id: iron-cavalrys-crushing-wristguard
+  name:
+    locales:
+      ja: 鉄騎の粉砕アーム
+      en: Iron Cavalry's Crushing Wristguard
+  setId: iron-cavalry-against-the-scourge
+  type: hands
+  yomi: テッキノフンサイアーム
+- id: iron-cavalrys-silvery-armor
+  name:
+    locales:
+      ja: 鉄騎の銀影アーマー
+      en: Iron Cavalry's Silvery Armor
+  setId: iron-cavalry-against-the-scourge
+  type: body
+  yomi: テッキノギンエイアーマー
+- id: iron-cavalrys-skywalk-greaves
+  name:
+    locales:
+      ja: 鉄騎の飛翔グリーブ
+      en: Iron Cavalry's Skywalk Greaves
+  setId: iron-cavalry-against-the-scourge
+  type: feet
+  yomi: テッキノヒショウグリーブ
+- id: valorous-mask-of-northern-skies
+  name:
+    locales:
+      ja: 勇猛な鋭嘴フェイスガード
+      en: Valorous Mask of Northern Skies
+  setId: the-wind-soaring-valorous
+  type: head
+  yomi: ユウモウナエイシフェイスガード
+- id: valorous-bracelet-of-grappling-hooks
+  name:
+    locales:
+      ja: 勇猛な鉤爪ガントレット
+      en: Valorous Bracelet of Grappling Hooks
+  setId: the-wind-soaring-valorous
+  type: hands
+  yomi: ユウモウナカギヅメガントレット
+- id: valorous-plate-of-soaring-flight
+  name:
+    locales:
+      ja: 勇猛な蒼羽アーマー
+      en: Valorous Plate of Soaring Flight
+  setId: the-wind-soaring-valorous
+  type: body
+  yomi: ユウモウナソウウアーマー
+- id: valorous-greaves-of-pursuing-hunt
+  name:
+    locales:
+      ja: 勇猛な狩猟キュイス
+      en: Valorous Greaves of Pursuing Hunt
+  setId: the-wind-soaring-valorous
+  type: feet
+  yomi: ユウモウナシュリョウキュイス
+- id: durans-tent-of-golden-sky
+  name:
+    locales:
+      ja: 都藍の黄金ドーム
+      en: Duran's Tent of Golden Sky
+  setId: duran-dynasty-of-running-wolves
+  type: planar_sphere
+  yomi: ドゥーランノコウゴンドーム
+- id: durans-mechabeast-bridle
+  name:
+    locales:
+      ja: 都藍の器獣の手綱とくつわ
+      en: Duran's Mechabeast Bridle
+  setId: duran-dynasty-of-running-wolves
+  type: link_rope
+  yomi: ドゥーランノキジュウノタヅナトクツワ
+- id: forges-lotus-lantern-wick
+  name:
+    locales:
+      ja: 鋳煉宮の蓮花ランプの芯
+      en: Forge's Lotus Lantern Wick
+  setId: forge-of-the-kalpagni-lantern
+  type: planar_sphere
+  yomi: チュウレングウノレンカランプノシン
+- id: forges-heavenly-flamewheel-silk
+  name:
+    locales:
+      ja: 鋳煉宮の焔輪天織
+      en: Forge's Heavenly Flamewheel Silk
+  setId: forge-of-the-kalpagni-lantern
+  type: link_rope
+  yomi: チュウレングウノエンリンテンショク
+- id: lushakas-waterscape
+  name:
+    locales:
+      ja: ルサカの水に朽ちた蒼都
+      en: Lushaka's Waterscape
+  setId: lushaka-the-sunken-seas
+  type: planar_sphere
+  yomi: ルサカノミズニクチタソウト
+- id: lushakas-twinlanes
+  name:
+    locales:
+      ja: ルサカの双生航路
+      en: Lushaka's Twinlanes
+  setId: lushaka-the-sunken-seas
+  type: link_rope
+  yomi: ルサカノソウセイコウロ
+- id: bananamusement-parks-bananaxis-plaza
+  name:
+    locales:
+      ja: バナダイスの中央広場
+      en: BananAmusement Park's BananAxis Plaza
+  setId: the-wondrous-bananamusement-park
+  type: planar_sphere
+  yomi: バナダイスノチュウオウヒロバ
+- id: bananamusement-parks-memetic-cables
+  name:
+    locales:
+      ja: バナダイスのミームケーブル
+      en: BananAmusement Park's Memetic Cables
+  setId: the-wondrous-bananamusement-park
+  type: link_rope
+  yomi: バナダイスノミームケーブル
+- id: heros-wreath-of-championship
+  name:
+    locales:
+      ja: 英雄の月桂冠
+      en: Hero's Wreath of Championship
+  setId: hero-of-triumphant-song
+  type: head
+  yomi: エイユウノゲッケイカン
+- id: heros-gilded-bracers
+  name:
+    locales:
+      ja: 英雄の黄金手甲
+      en: Hero's Gilded Bracers
+  setId: hero-of-triumphant-song
+  type: hands
+  yomi: エイユウノオウゴンシュコウ
+- id: heros-gallant-golden-armor
+  name:
+    locales:
+      ja: 英雄の勇戦金鎧
+      en: Hero's Gallant Golden Armor
+  setId: hero-of-triumphant-song
+  type: body
+  yomi: エイユウノユウセンカネヨロイ
+- id: heros-firechasing-shinguard
+  name:
+    locales:
+      ja: 英雄の炎行脛当
+      en: Hero's Firechasing Shinguard
+  setId: hero-of-triumphant-song
+  type: feet
+  yomi: エイユウノエンコウスネアテ
+- id: poets-dill-wreath
+  name:
+    locales:
+      ja: 詩人の花をあしらった冠
+      en: Poet's Dill Wreath
+  setId: poet-of-mourning-collapse
+  type: head
+  yomi: シジンノハナヲアシラッタカンムリ
+- id: poets-gilded-bracelet
+  name:
+    locales:
+      ja: 詩人の黄金を用いた腕輪
+      en: Poet's Gilded Bracelet
+  setId: poet-of-mourning-collapse
+  type: hands
+  yomi: シジンノオウゴンヲモチイタウデワ
+- id: poets-star-studded-skirt
+  name:
+    locales:
+      ja: 詩人の星降るドレス
+      en: Poet's Star-Studded Skirt
+  setId: poet-of-mourning-collapse
+  type: body
+  yomi: シジンノホシフルドレス
+- id: poets-silver-studded-shoes
+  name:
+    locales:
+      ja: 詩人の銀鋲を添えたサンダル
+      en: Poet's Silver-Studded Shoes
+  setId: poet-of-mourning-collapse
+  type: feet
+  yomi: シジンノギンビョウヲソエタサンダル
+- id: grove-of-epiphanys-pondering-colossus
+  name:
+    locales:
+      ja: 神悟の樹庭の熟慮する根系
+      en: Grove of Epiphany's Pondering Colossus
+  setId: giant-tree-of-rapt-brooding
+  type: planar_sphere
+  yomi: シンゴノジュテイノジュクリョスルコンケイ
+- id: grove-of-epiphanys-interwoven-veins
+  name:
+    locales:
+      ja: 神悟の樹庭の知を繋ぐ樹路
+      en: Grove of Epiphany's Interwoven Veins
+  setId: giant-tree-of-rapt-brooding
+  type: link_rope
+  yomi: シンゴノジュテイノチヲツナグジュロ
+- id: aidonias-deceased-gravestones
+  name:
+    locales:
+      ja: エイジリアの慰霊祭碑
+      en: Aidonia's Deceased Gravestones
+  setId: bone-collections-serene-demesne
+  type: planar_sphere
+  yomi: エイジリアノイレイサイヒ
+- id: aidonias-deathward-bone-chains
+  name:
+    locales:
+      ja: エイジリアの冥河の骨連環
+      en: Aidonia's Deathward Bone Chains
+  setId: bone-collections-serene-demesne
+  type: link_rope
+  yomi: エイジリアノメイガノコツレンカン

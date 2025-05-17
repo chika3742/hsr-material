@@ -1,4 +1,5 @@
 import type { Composer } from "vue-i18n"
+import type { LocalizedText } from "~/types/data/locales"
 import type { Loc } from "~/types/generated/loc.g"
 
 type Tx = {
@@ -27,4 +28,12 @@ export const tx: Tx = (arg1: Loc | Composer, arg2?: Record<string, unknown> | Lo
   }
 
   return i18n.t(key, named)
+}
+
+/**
+ * Get translation for current locale of {@link LocalizedText}.
+ */
+export const localize = (l: LocalizedText, i18n?: Composer) => {
+  i18n ??= useI18n()
+  return l.locales[i18n.locale.value]
 }

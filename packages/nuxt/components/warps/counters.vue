@@ -216,12 +216,12 @@ const pityInfo = computed<Record<number, { count: number, lastPulled: string }>>
     if (pityInfo[5].lastPulled === "-" && warp.rankType === "5") {
       pityInfo[5] = {
         count: i,
-        lastPulled: getItemNameI18nKey(warp),
+        lastPulled: getItemName(warp),
       }
     } else if (pityInfo[4].lastPulled === "-" && warp.rankType === "4") {
       pityInfo[4] = {
         count: i,
-        lastPulled: getItemNameI18nKey(warp),
+        lastPulled: getItemName(warp),
       }
     }
 
@@ -248,10 +248,10 @@ const pityCountList = computed(() => {
 
     if (Object.keys(pityCount).includes(warp.rankType)) {
       result.push({
-        name: i18n.t(getItemNameI18nKey(warp)),
+        name: getItemName(warp),
         type: warp.itemType,
         count: warp.rankType !== "3" ? pityCount[warp.rankType] : null,
-        offBanner: warp.gachaType !== "1" && offBannerItems.includes(warp.name),
+        offBanner: warp.gachaType !== "1" && offBannerItems.includes(getItemName(warp)),
         dateTime: DateTime.fromFormat(warp.time, "yyyy-MM-dd HH:mm:ss"),
         rank: warp.rankType,
       })
@@ -262,21 +262,23 @@ const pityCountList = computed(() => {
   return result.reverse()
 })
 
-const getItemNameI18nKey = (warp: Warp) => {
+const getItemName = (warp: Warp) => {
   switch (warp.itemType) {
     case "キャラクター": {
-      const found = characters.find(e => e.$nameJA === warp.name)
+      const found = characters.find(e => e.name.locales.ja === warp.name)
       if (!found) {
         console.error(`Character not found: ${warp.name}`)
+        return "?"
       }
-      return `characterNames.${found?.id}`
+      return localize(found.name, i18n)
     }
     case "光円錐": {
-      const found = lightCones.find(e => e.$nameJA === warp.name)
+      const found = lightCones.find(e => e.name.locales.ja === warp.name)
       if (!found) {
         console.error(`Light cone not found: ${warp.name}`)
+        return "?"
       }
-      return `lightConeNames.${found?.id}`
+      return localize(found.name, i18n)
     }
   }
 }

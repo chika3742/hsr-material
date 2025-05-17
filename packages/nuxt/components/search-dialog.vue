@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { SearchClient } from "@algolia/client-search"
-import type { RouteLocation } from "vue-router"
 import type { AlgoliaRecord } from "~/types/algolia-record"
 
 const props = defineProps<{
@@ -103,18 +102,6 @@ const getItemImage = (item: AlgoliaRecord): string => {
       return getRelicPieceImage(item.itemId)
   }
 }
-
-const urlToRouteLocation = (url: string): Partial<RouteLocation> => {
-  let query = {}
-  if (url.split("?").length > 1) {
-    query = Object.fromEntries(new URLSearchParams(url.split("?")[1]))
-  }
-
-  return {
-    path: url.split("?")[0],
-    query,
-  }
-}
 </script>
 
 <template>
@@ -182,8 +169,8 @@ const urlToRouteLocation = (url: string): Partial<RouteLocation> => {
             :key="item.objectID"
             :prepend-avatar="getItemImage(item)"
             :subtitle="tx(`searchRecordTypes.${item.recordType}`)"
-            :title="tx(item.i18nKey)"
-            :to="$localePath(urlToRouteLocation(item.url))"
+            :title="item[`name_${i18n.locale.value}`]"
+            :to="$localePath(item.url)"
             @click="clearQuery(); closeDialog()"
           />
           <div style="height: env(safe-area-inset-bottom)" />

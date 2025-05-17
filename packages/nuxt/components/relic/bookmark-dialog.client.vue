@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import relicStats from "assets/data/relic-stats.yaml"
-import type { RelicPiece, RelicSet } from "~/types/data/relics"
-import type { Stat } from "~/types/generated/relic-stats.g"
 import type { CharacterIdWithVariant } from "~/types/strings"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableRelic } from "~/types/bookmark/bookmarkables"
 import { BookmarkableRelicPiece, BookmarkableRelicSet } from "~/types/bookmark/bookmarkables"
+import type { HsrRelicPosition, HsrStat } from "~/types/data/enums"
+import type { RelicSet } from "~/types/data/src/decoration-sets"
+import type { RelicPiece } from "~/types/data/src/decoration-pieces"
 
 interface Props {
   modelValue: boolean
@@ -47,14 +48,14 @@ const headerRelics = computed<HeaderRelic[]>(() => {
     }
 
     return props.relicSets.map(e => ({
-      title: tx(`relicSetTitles.${e.id}`) + " (" + tx(`relicDetailsPage.${type}`) + ")",
+      title: localize(e.name) + " (" + tx(`relicDetailsPage.${type}`) + ")",
       image: getRelicSetImage(e.id),
     }))
   } else {
     // single relic piece
     return [
       {
-        title: tx(`relicPieceNames.${props.relicPiece!.id}`),
+        title: localize(props.relicPiece!.name),
         subtitle: tx(`relicLocations.${props.relicPiece!.type}`),
         image: getRelicPieceImage(props.relicPiece!.id),
       },
@@ -63,9 +64,9 @@ const headerRelics = computed<HeaderRelic[]>(() => {
 })
 
 interface RadioGroup {
-  type: string
+  type: HsrRelicPosition
   title: string
-  items: Stat[]
+  items: HsrStat[]
 }
 
 const radioGroups = computed<RadioGroup[]>(() => {
@@ -104,7 +105,7 @@ const radioGroups = computed<RadioGroup[]>(() => {
   } else if (props.relicPiece) {
     return [
       {
-        type: "piece",
+        type: props.relicPiece.type,
         title: "relicDetailsPage.mainStat",
         items: relicStats.main[props.relicPiece.type],
       },
@@ -116,8 +117,8 @@ const radioGroups = computed<RadioGroup[]>(() => {
 
 const selectedCharacter = ref<CharacterIdWithVariant>()
 const selectedStats = reactive({
-  main: {} as Record<string, Stat | null>,
-  sub: [] as Stat[],
+  main: {} as Partial<Record<HsrRelicPosition, HsrStat | null>>,
+  sub: [] as HsrStat[],
 })
 watch(toRefs(props).modelValue, (value) => {
   if (value) {
@@ -151,7 +152,7 @@ const saveBookmark = async () => {
       return new BookmarkableRelicPiece({
         relicPieceId: props.relicPiece!.id,
         characterId: selectedCharacter.value,
-        mainStat: selectedStats.main.piece!,
+        mainStat: selectedStats.main[props.relicPiece!.type]!,
         subStats: toRaw(selectedStats.sub),
       })
     }
@@ -171,7 +172,7 @@ const saveBookmark = async () => {
   }
 }
 
-const getIsRadioButtonDisabled = (stat: Stat): boolean => {
+const getIsRadioButtonDisabled = (stat: HsrStat): boolean => {
   if (props.relicSets) {
     return false
   }
@@ -179,12 +180,14 @@ const getIsRadioButtonDisabled = (stat: Stat): boolean => {
   return selectedStats.sub.includes(stat)
 }
 
-const getCheckBoxDisabled = (stat: Stat): boolean => {
+const getCheckBoxDisabled = (stat: HsrStat): boolean => {
   if (props.relicSets) {
-    return false
+    return false // not applicable to relic set bookmarks
   }
 
-  return selectedStats.main.piece === stat || (selectedStats.sub.length >= 4 && !selectedStats.sub.includes(stat))
+  return selectedStats.main[props.relicPiece!.type] === stat // this sub stat is selected in main stat radio.
+    || (relicStats.main[props.relicPiece!.type].length === 1 && relicStats.main[props.relicPiece!.type][0] === stat) // this sub stat conflicts with the only main stat
+    || (selectedStats.sub.length >= 4 && !selectedStats.sub.includes(stat)) // already selected 4(max) sub stats.
 }
 </script>
 

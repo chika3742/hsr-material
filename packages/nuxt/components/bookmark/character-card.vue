@@ -7,16 +7,18 @@ import { type CharacterIdWithVariant, purposeTypeList } from "~/types/strings"
 import { reactive } from "#imports"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
 import { db } from "~/libs/db/providers"
+import type { HsrCharacterVariant } from "~/types/data/src/characters"
+import lightCones from "~/assets/data/light-cones.yaml"
 
 interface Props {
-  character: CharacterIdWithVariant
+  characterId: CharacterIdWithVariant
   showFarmingCount?: boolean
 }
 
 const props = defineProps<Props>()
 
 const bookmarks = import.meta.client
-  ? useObservable(from(liveQuery(() => db.bookmarks.getByCharacter(props.character))), {
+  ? useObservable(from(liveQuery(() => db.bookmarks.getByCharacter(props.characterId))), {
       initialValue: [] as Bookmark[],
     })
   : ref([])
@@ -27,6 +29,14 @@ interface BookmarkGroups {
   relicSets: Bookmark.RelicSet[]
   relicPieces: Bookmark.RelicPiece[]
 }
+
+const charaVariant = computed<HsrCharacterVariant>(() => {
+  const result = getCharacterVariant(props.characterId)
+  if (!result) {
+    throw new Error(`Invalid characterId: ${props.characterId}`)
+  }
+  return result
+})
 
 const groupedBookmarks = computed(() => {
   const result: BookmarkGroups = {
@@ -74,13 +84,13 @@ const detailsDialog = reactive({
         </div>
 
         <v-list-item
-          :title="tx(`characterNames.${character}`)"
-          :to="$localePath({ path: `/characters/${toCharacterId(character)}`, query: { variant: toVariant(character) ?? undefined } })"
+          :title="localize(charaVariant.name)"
+          :to="$localePath({ path: `/characters/${toCharacterId(characterId)}`, query: { variant: toVariant(characterId) ?? undefined } })"
           class="d-flex flex-grow-1 pl-0"
         >
           <template #prepend>
             <v-img
-              :src="getCharacterImage(character, 'small')"
+              :src="getCharacterImage(characterId, 'small')"
               aspect-ratio="1"
               class="mr-2"
               width="50px"
@@ -125,8 +135,8 @@ const detailsDialog = reactive({
               <v-list-item
                 :prepend-avatar="getLightConeImage(lcId)"
                 :subtitle="tx('searchRecordTypes.light-cone')"
-                :title="tx(`lightConeNames.${lcId}`)"
-                :to="$localePath({ path: `/light-cones/${lcId}`, query: { character } })"
+                :title="localize(lightCones.find((e) => e.id === lcId)!.name)"
+                :to="$localePath({ path: `/light-cones/${lcId}`, query: { character: characterId } })"
                 density="compact"
                 lines="two"
                 rounded

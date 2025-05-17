@@ -1,16 +1,34 @@
 <script lang="ts" setup>
-import materials from "~/assets/data/materials.csv"
+import materials from "~/assets/data/materials.yaml"
 import { splitByField } from "#imports"
+import type { GroupedListGroup, GroupedListItem } from "~/components/grouped-list.vue"
+import materialsMeta from "~/assets/data/materials-meta.yaml"
 
-definePageMeta({
-  title: "materials",
-})
+usePageTitle(tx("pageTitles.materials"))
+
+const i18n = useI18n()
 
 const filteringRarity = ref<number[]>([])
 const expandedGroups = ref<number[]>([])
 
-const materialList = computed(() => {
-  return filteringRarity.value.length >= 1 ? materials.filter(e => e.rarity === filteringRarity.value[0]) : materials
+const filteredMaterials = computed<GroupedListItem[]>(() => {
+  return (filteringRarity.value.length >= 1 ? materials.filter(e => e.rarity === filteringRarity.value[0]) : materials).map(e => ({
+    key: e.id,
+    name: localize(e.name, i18n),
+    imagePath: getMaterialImage(e.id),
+    rarity: e.rarity,
+    groupKey: e.category,
+    to: `/materials/${e.id}`,
+  }))
+})
+
+const groups = computed<GroupedListGroup[]>(() => {
+  return materialsMeta.categories
+    .filter(e => filteredMaterials.value.some(f => f.groupKey == e.id))
+    .map(e => ({
+      title: localize(e.title, i18n),
+      groupKey: e.id,
+    }))
 })
 </script>
 
@@ -48,13 +66,9 @@ const materialList = computed(() => {
 
     <GroupedList
       v-model="expandedGroups"
-      :image-func="getMaterialImage"
-      :items="materialList"
-      category-field="category"
-      category-i18n-key="materialCategories"
+      :groups="groups"
+      :items="filteredMaterials"
       class="mt-4"
-      item-i18n-key="materialNames"
-      link-base-path="/materials"
     />
   </div>
 </template>

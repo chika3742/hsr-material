@@ -1,12 +1,10 @@
 <script lang="ts" setup>
 import dropRates from "assets/data/drop-rates.yaml"
-import materials from "~/assets/data/materials.csv"
+import materials from "~/assets/data/materials.yaml"
 import SwitchListItem from "~/components/switch-list-item.vue"
 import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
 
-definePageMeta({
-  title: "settings",
-})
+usePageTitle(tx("pageTitles.settings"))
 
 const config = useConfigStore()
 const dialog = useDialog()

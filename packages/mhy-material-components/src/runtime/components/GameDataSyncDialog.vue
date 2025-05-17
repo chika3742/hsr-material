@@ -1,35 +1,27 @@
 <script setup lang="ts">
 import { tx } from "../utils/i18n"
-import { nextTick, ref, toRefs, useI18n, useRuntimeConfig, watch } from "#imports"
+import { nextTick, ref, toRefs, useI18n, watch } from "#imports"
 
 interface Props {
   modelValue: boolean
-  user?: UserInfoResponse | undefined
+  showcase?: ShowcaseContent | null
   uid: string
   loading?: boolean | undefined
-  getters: DataSyncMapGetters
 }
 
 const props = defineProps<Props>()
 
 interface Emits {
   (e: "update:modelValue", value: boolean): void
-
-  (e: "update:user", value: UserInfoResponse | undefined): void
-
   (e: "update:uid", value: string): void
-
   (e: "getData"): void
-
   (e: "import"): void
+  (e: "clear"): void
 }
 
 const emit = defineEmits<Emits>()
 
 const i18n = useI18n()
-const runtimeConfig = useRuntimeConfig().public.mmc
-
-const equipmentI18nKey = runtimeConfig.i18nKeys.equipment
 
 const validate = (v: string) => {
   return !!v.match(/^[0-9]*$/) || tx(i18n, "gameDataSync.invalidUid")
@@ -43,7 +35,7 @@ const emitGetData = () => {
   }
 
   // clear user data
-  emit("update:user", undefined)
+  emit("clear")
   emit("getData")
 }
 
@@ -51,7 +43,7 @@ watch(toRefs(props).modelValue, (value) => {
   if (value) {
     // clear obtained data when dialog is opened
     disableExpandTransition.value = true
-    emit("update:user", undefined)
+    emit("clear")
     void nextTick(() => {
       disableExpandTransition.value = false
     })
@@ -103,33 +95,33 @@ const showHelpDialog = ref(false)
             :disabled="disableExpandTransition"
           >
             <div
-              v-if="user"
+              v-if="showcase"
               class="d-flex flex-column g-4"
             >
               <!-- userinfo -->
               <div>
-                <h4>{{ user.nickname }}</h4>
+                <h4>{{ showcase.nickname }}</h4>
                 <p style="font-size: 0.8em">
-                  <span>Lv.{{ user.level }}</span>
-                  <span class="ml-4">UID: {{ user.uid }}</span>
+                  <span>Lv.{{ showcase.level }}</span>
+                  <span class="ml-4">UID: {{ showcase.uid }}</span>
                 </p>
               </div>
 
               <!-- character container -->
               <div
-                v-for="character in user.characters"
-                :key="character.nameJP"
+                v-for="character in showcase.characters"
+                :key="character.id"
                 class="d-flex flex-column g-2"
               >
                 <!-- header -->
                 <div class="d-flex g-2 align-center">
                   <v-img
-                    :src="getters.getCharacterImage(character)"
+                    :src="character.imageUrl"
                     max-width="50px"
                     height="50px"
                   />
                   <div class="d-flex flex-column">
-                    <h4>{{ tx(`characterNames.${getters.getCharacterId(character)}`) }}</h4>
+                    <h4>{{ character.name }}</h4>
                     <p>
                       <span style="font-size: 0.8em">Lv.</span>
                       <span class="font-weight-bold">{{ character.level }}</span>
@@ -171,12 +163,12 @@ const showHelpDialog = ref(false)
                   class="ml-8 d-flex align-center g-2"
                 >
                   <v-img
-                    :src="getters.getEquipmentImage(getters.getEquipmentId(character.equipment.nameJP))"
+                    :src="character.equipment.imageUrl"
                     max-width="45px"
                     height="45px"
                   />
                   <div class="d-flex flex-column">
-                    <h4>{{ tx(`${equipmentI18nKey}.${getters.getEquipmentId(character.equipment.nameJP)}`) }}</h4>
+                    <h4>{{ character.equipment.name }}</h4>
                     <p>
                       <span style="font-size: 0.8em">Lv.</span>
                       <span class="font-weight-bold">{{ character.equipment.level }}</span>
@@ -197,11 +189,11 @@ const showHelpDialog = ref(false)
           />
           <v-btn
             variant="text"
-            :text="user?.uid !== uid ? tx('gameDataSync.next') : tx('gameDataSync.import')"
+            :text="showcase?.uid !== uid ? tx('gameDataSync.next') : tx('gameDataSync.import')"
             color="primary"
             :disabled="uid === '' || validate(uid) !== true"
             :loading="loading"
-            @click="user?.uid !== uid ? emitGetData() : $emit('import')"
+            @click="showcase?.uid !== uid ? emitGetData() : $emit('import')"
           />
         </template>
       </v-card>
