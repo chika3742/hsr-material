@@ -23,6 +23,7 @@
     "@vueuse/rxjs": "13.0.0",
     "dexie": "4.0.11",
     "firebase": "11.6.0",
+    "lodash-es": "4.17.21",
     "luxon": "3.6.1",
     "marked": "15.0.7",
     "nuxt": "3.16.2",
