@@ -110,7 +110,7 @@
         "@types/object-hash": "3.0.6",
         "@types/sortablejs": "1.15.8",
         "@vue/language-server": "2.2.8",
-        "bootstrap": "5.3.3",
+        "bootstrap": "5.3.6",
       },
     },
   },
@@ -1097,7 +1097,7 @@
 
     "boolbase": ["boolbase@1.0.0", "", {}, "sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww=="],
 
-    "bootstrap": ["bootstrap@5.3.3", "", { "peerDependencies": { "@popperjs/core": "^2.11.8" } }, "sha512-8HLCdWgyoMguSO9o+aH+iuZ+aht+mzW0u3HIMzVu7Srrpv7EBBxTnrFlSCskwdY1+EOFQSm7uMJhNQHkdPcmjg=="],
+    "bootstrap": ["bootstrap@5.3.6", "", { "peerDependencies": { "@popperjs/core": "^2.11.8" } }, "sha512-jX0GAcRzvdwISuvArXn3m7KZscWWFAf1MKBcnzaN02qWMb3jpMoUX4/qgeiGzqyIb4ojulRzs89UCUmGcFSzTA=="],
 
     "brace-expansion": ["brace-expansion@1.1.11", "", { "dependencies": { "balanced-match": "^1.0.0", "concat-map": "0.0.1" } }, "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="],
 

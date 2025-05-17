@@ -47,7 +47,7 @@
     "@types/object-hash": "3.0.6",
     "@types/sortablejs": "1.15.8",
     "@vue/language-server": "2.2.8",
-    "bootstrap": "5.3.3"
+    "bootstrap": "5.3.6"
   },
   "packageManager": "bun@1"
 }
