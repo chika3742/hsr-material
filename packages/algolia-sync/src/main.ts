@@ -57,6 +57,7 @@ export const syncObjects = async () => {
       yomi: kataToHira(e.yomi),
       recordType: "character" as const,
       url: `/characters/${e.id}`,
+      resultPriority: 0,
     })),
     ...lightCones.map(e => ({
       objectID: e.id + "_light-cone",
@@ -66,6 +67,7 @@ export const syncObjects = async () => {
       yomi: kataToHira(e.yomi),
       recordType: "light-cone" as const,
       url: `/light-cones/${e.id}`,
+      resultPriority: 10,
     })),
     ...materials.map(e => ({
       objectID: e.id + "_material",
@@ -75,6 +77,7 @@ export const syncObjects = async () => {
       yomi: kataToHira(e.yomi),
       recordType: "material" as const,
       url: `/materials/${e.id}`,
+      resultPriority: 10,
     })),
     ...relicSets.map(e => ({
       objectID: e.id + "_relic-set",
@@ -84,6 +87,7 @@ export const syncObjects = async () => {
       yomi: kataToHira(e.yomi),
       recordType: "relic-set" as const,
       url: `/relics/${e.id}`,
+      resultPriority: 20,
     })),
     ...relicPieces.map(e => ({
       objectID: e.id + "_relic-piece",
@@ -93,6 +97,7 @@ export const syncObjects = async () => {
       yomi: kataToHira(e.yomi),
       recordType: "relic-piece" as const,
       url: `/relics/${e.setId}?expansion_index=1`,
+      resultPriority: 20,
     })),
   ]
 

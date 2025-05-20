@@ -5,4 +5,5 @@ export interface AlgoliaRecord extends Record<string, unknown> {
   name_en: string
   recordType: "character" | "light-cone" | "material" | "relic-set" | "relic-piece"
   url: string
+  resultPriority: number
 }
