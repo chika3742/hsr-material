@@ -27,7 +27,7 @@
       <v-main class="h-100">
         <div
           class="position-fixed"
-          style="top: 64px; width: 100%; z-index: 9999"
+          style="top: 64px; width: 100%; z-index: 1005"
         >
           <v-progress-linear
             :active="isLoadingPage"
