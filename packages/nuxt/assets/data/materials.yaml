@@ -1064,3 +1064,11 @@
   category: common
   groupId: lcs014
   craftLevel: 3
+- id: daythunder-anamnesis
+  name:
+    locales:
+      ja: 遥かなる陽雷の想い
+      en: Daythunder Anamnesis
+  yomi: ハルカナルヨウライノオモイ
+  category: advanced_skill_upgrade
+  rarity: 4

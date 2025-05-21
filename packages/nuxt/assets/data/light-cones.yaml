@@ -1858,3 +1858,27 @@
     locales:
       ja: 装備キャラが戦闘中に初めて記憶の精霊を召喚する時、SPを1回復し、自身のEPを<12>回復する。
       en: When the wearer summons memosprite for the first time, recovers 1 Skill Point(s) and regenerates <12> Energy for this unit.
+- id: long-may-rainbows-adorn-the-sky
+  yomi: ソラノニジガキエヌヨウニ
+  name:
+    locales:
+      ja: 空の虹が消えぬように
+      en: Long May Rainbows Adorn the Sky
+  path: remembrance
+  rarity: 5
+  materials:
+    primary: group:lcs013
+    common: group:com009
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの速度+<18%>。装備キャラが通常攻撃、戦闘スキルまたは必殺技を発動する時、味方それぞれの残りHP<1%>分のHPを消費し、装備キャラの記憶の精霊が次の攻撃を行った後に消費したHP<250%>分の付加ダメージを1回与える。なお、この付加ダメージの属性は装備キャラの記憶の精霊と同じものになる。その後、消費したHPのカウントはクリアされる。装備キャラの記憶の精霊が精霊スキルを発動する時、敵全体の受けるダメージ+<18%>、2ターン継続。同系統のスキルは累積できない。
+      en: >-
+        Increases the wearer’s SPD by <18%>. When the wearer uses Basic ATK,
+        Skill, or Ultimate, consumes all allies’ HP equal to <1%> of their
+        current HP and additionally deals 1 instance of Additional DMG of the
+        wearer’s memosprite Type equal to <250%> of the total consumed HP to the
+        attacked target after the next attack launched by the wearer’s
+        memosprite. The total HP consumed is then reset. When the wearer’s
+        memosprite uses Memosprite Skill, increases the DMG taken by all enemies
+        by <18%> for 2 turn(s). The same types of effects cannot stack.

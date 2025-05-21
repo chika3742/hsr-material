@@ -2444,3 +2444,84 @@
         locales:
           ja: 四智、三重の無上
           en: Tetrad Wisdom Reigns Thrice
+- id: hyacine
+  name:
+    locales:
+      ja: ヒアンシー
+      en: Hyacine
+  yomi: ヒアンシー
+  rarity: 5
+  path: remembrance
+  combatType: wind
+  levelingItemTable: r5Remembrance
+  materials:
+    ascension: id:a-glass-of-the-besotted-era
+    skills: group:lcs013
+    skillsAdvanced: id:lost-echo-of-the-shared-wish
+    common: group:com009
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 雲を撫でるそよ風
+          en: When Breeze Kisses Cirrus
+    skill:
+      name:
+        locales:
+          ja: 降り注ぐ彩虹の愛
+          en: Love Over the Rainbow
+    ultimate:
+      name:
+        locales:
+          ja: 晨昏に飛び込むわたしたち
+          en: We Who Fly Into Twilight
+    talent:
+      name:
+        locales:
+          ja: 世界を癒やす暁の光
+          en: First Light Heals the World
+    memospriteSkill:
+      name:
+        locales:
+          ja: 黒雲退散！
+          en: Rainclouds, Time to Go!
+    memospriteTalent:
+      name:
+        locales:
+          ja: 青空と手を取り合って
+          en: Take Sky in Hand
+- id: cipher
+  name:
+    locales:
+      ja: サフェル
+      en: Cipher
+  yomi: サフェル
+  rarity: 5
+  path: nihility
+  combatType: quantum
+  materials:
+    ascension: id:darkveil-moonlight
+    skills: group:lcs008
+    skillsAdvanced: id:daythunder-anamnesis
+    common: group:lcs014
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: おっと！魚は逃がさないよ
+          en: Oops, a Missed Catch
+    skill:
+      name:
+        locales:
+          ja: へへっ！お宝いただき～！
+          en: Hey, Jackpot for the Taking
+    ultimate:
+      name:
+        locales:
+          ja: 怪盗ニャンコ、参上！
+          en: Yours Truly, Kitty Phantom Thief!
+    talent:
+      name:
+        locales:
+          ja: 親切なドロス人
+          en: The Hospitable Dolosian
