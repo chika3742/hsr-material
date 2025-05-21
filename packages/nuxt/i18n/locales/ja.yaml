@@ -198,6 +198,7 @@ warpsPage:
   itemName: アイテム名
   pityHistory: 天井カウントの履歴
   lastPulled: "最後に引いた ☆{star}"
+  unknownItem: 不明
   prob: 次の10連で☆5が出る確率
   errors:
     invalidUrl: URLが無効です。

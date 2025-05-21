@@ -268,7 +268,7 @@ const getItemName = (warp: Warp) => {
       const found = characters.find(e => e.name.locales.ja === warp.name)
       if (!found) {
         console.error(`Character not found: ${warp.name}`)
-        return "?"
+        return tx(i18n, "warpsPage.unknownItem")
       }
       return localize(found.name, i18n)
     }
@@ -276,7 +276,7 @@ const getItemName = (warp: Warp) => {
       const found = lightCones.find(e => e.name.locales.ja === warp.name)
       if (!found) {
         console.error(`Light cone not found: ${warp.name}`)
-        return "?"
+        return tx(i18n, "warpsPage.unknownItem")
       }
       return localize(found.name, i18n)
     }
