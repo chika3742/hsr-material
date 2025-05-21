@@ -44,7 +44,7 @@ const purposeTypes = computed<LevelsForPurposeTypes>(() => {
     }
   }
 
-  return characterIngredients.ingredientsTables[currentVariant.value.levelingItemTable ?? getDefaultLitForRarity()].purposeTypes
+  return characterIngredients.ingredientsTables[currentVariant.value.ingredientsTable ?? getDefaultLitForRarity()].purposeTypes
 })
 
 const skills = computed<SliderSkill[]>(() => {
