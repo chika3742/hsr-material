@@ -17,7 +17,7 @@ type CharacterVariant<T> = T & {
   name: LocalizedText
   materials: Record<string, MaterialExpr>
   skills: { [k in Exclude<HsrPurposeType, "ascension">]?: CharacterSkill }
-  levelingItemTable?: string
+  ingredientsTable?: string
 }
 
 interface CharacterWithVariantsBase<T> extends CharacterBase {

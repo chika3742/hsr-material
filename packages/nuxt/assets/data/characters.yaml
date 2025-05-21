@@ -108,7 +108,7 @@
           en: Trailblazer (Remembrance)
       path: remembrance
       combatType: ice
-      levelingItemTable: r5Remembrance
+      ingredientsTable: r5Remembrance
       materials:
         common: group:com001
         ascension: id:enigmatic-ectostella
@@ -2256,7 +2256,7 @@
   rarity: 5
   path: remembrance
   combatType: lightning
-  levelingItemTable: r5Remembrance
+  ingredientsTable: r5Remembrance
   materials:
     ascension: id:nail-of-the-beast-coffin
     skills: group:lcs013
@@ -2372,7 +2372,7 @@
   rarity: 5
   path: remembrance
   combatType: quantum
-  levelingItemTable: r5Remembrance
+  ingredientsTable: r5Remembrance
   materials:
     ascension: id:darkveil-moonlight
     skills: group:lcs013
@@ -2453,7 +2453,7 @@
   rarity: 5
   path: remembrance
   combatType: wind
-  levelingItemTable: r5Remembrance
+  ingredientsTable: r5Remembrance
   materials:
     ascension: id:a-glass-of-the-besotted-era
     skills: group:lcs013
