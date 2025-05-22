@@ -87,9 +87,7 @@ import { _db } from "~/dexie/db"
 import { db } from "~/libs/db/providers"
 import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
 
-definePageMeta({
-  title: "warps",
-})
+usePageTitle(tx("pageTitles.warps"))
 
 const config = useConfigStore()
 const i18n = useI18n()

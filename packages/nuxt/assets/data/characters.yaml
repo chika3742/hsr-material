@@ -1,60 +1,227 @@
 - id: trailblazer
-  $nameJA: 開拓者
+  name:
+    locales:
+      ja: 開拓者
+      en: Trailblazer
   yomi: カイタクシャ
   rarity: 5
   variants:
-    - path: destruction
+    - name:
+        locales:
+          ja: 開拓者 (壊滅)
+          en: Trailblazer (Destruction)
+      path: destruction
       combatType: physical
       materials:
         common: group:com001
         ascension: id:enigmatic-ectostella
         skills: group:lcs005
         skillsAdvanced: id:destroyers-final-road
-    - path: preservation
+      skills:
+        basicAttack:
+          name:
+            locales:
+              ja: サヨナラ安打
+              en: Farewell Hit
+        skill:
+          name:
+            locales:
+              ja: 安息ホームラン
+              en: RIP Home Run
+        ultimate:
+          name:
+            locales:
+              ja: スターダストエース
+              en: Stardust Ace
+        talent:
+          name:
+            locales:
+              ja: 盗塁牽制
+              en: Perfect Pickoff
+    - name:
+        locales:
+          ja: 開拓者 (存護)
+          en: Trailblazer (Preservation)
+      path: preservation
       combatType: fire
       materials:
         common: group:com001
         ascension: id:enigmatic-ectostella
         skills: group:lcs001
         skillsAdvanced: id:destroyers-final-road
-    - path: harmony
+      skills:
+        basicAttack:
+          name:
+            locales:
+              ja: 堅氷を貫く烈火
+              en: Ice-Breaking Light
+        skill:
+          name:
+            locales:
+              ja: 不滅のアンバー
+              en: Ever-Burning Amber
+        ultimate:
+          name:
+            locales:
+              ja: 陥陣無帰の炎槍
+              en: War-Flaming Lance
+        talent:
+          name:
+            locales:
+              ja: 建創者の失われし宝
+              en: Treasure of the Architects
+    - name:
+        locales:
+          ja: 開拓者 (調和)
+          en: Trailblazer (Harmony)
+      path: harmony
       combatType: imaginary
       materials:
         common: group:com001
         ascension: id:enigmatic-ectostella
         skills: group:lcs010
         skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
-    - path: remembrance
+      skills:
+        basicAttack:
+          name:
+            locales:
+              ja: 揺らめく礼儀
+              en: Swing Dance Etiquette
+        skill:
+          name:
+            locales:
+              ja: 間奏曲が降らす雨
+              en: Halftime to Make It Rain
+        ultimate:
+          name:
+            locales:
+              ja: 賑やかなパレード
+              en: All-Out Footlight Parade
+        talent:
+          name:
+            locales:
+              ja: エアリアルステップ
+              en: Full-on Aerial Dance
+    - name:
+        locales:
+          ja: 開拓者 (記憶)
+          en: Trailblazer (Remembrance)
+      path: remembrance
       combatType: ice
-      levelingItemTable: r5Remembrance
+      ingredientsTable: r5Remembrance
       materials:
         common: group:com001
         ascension: id:enigmatic-ectostella
         skills: group:lcs013
         skillsAdvanced: id:auspice-sliver
-
+      skills:
+        basicAttack:
+          name:
+            locales:
+              ja: お任せあれ！
+              en: Leave It to Me!
+        skill:
+          name:
+            locales:
+              ja: ミュリオンに決めた！
+              en: I Choose You!
+        ultimate:
+          name:
+            locales:
+              ja: やっちゃえミュリオン！
+              en: Together, Mem!
+        talent:
+          name:
+            locales:
+              ja: なんでもできる仲間
+              en: Almighty Companion
+        memospriteSkill:
+          name:
+            locales:
+              ja: 厄介な悪者さん！
+              en: Baddies! Trouble!
+        memospriteTalent:
+          name:
+            locales:
+              ja: 仲間と一緒に！
+              en: Friends! Together!
 - id: march-7th
-  $nameJA: 三月なのか
+  name:
+    locales:
+      ja: 三月なのか
+      en: March 7th
   yomi: ミツキナノカ
   rarity: 4
   variants:
-    - path: preservation
+    - name:
+        locales:
+          ja: 三月なのか (存護)
+          en: March 7th (Preservation)
+      path: preservation
       combatType: ice
       materials:
         common: group:com001
         ascension: id:horn-of-snow
         skills: group:lcs001
         skillsAdvanced: id:destroyers-final-road
-    - path: the_hunt
+      skills:
+        basicAttack:
+          name:
+            locales:
+              ja: 極寒の弓矢
+              en: Frigid Cold Arrow
+        skill:
+          name:
+            locales:
+              ja: 可愛いは正義
+              en: The Power of Cuteness
+        ultimate:
+          name:
+            locales:
+              ja: 氷刻矢雨の時
+              en: Glacial Cascade
+        talent:
+          name:
+            locales:
+              ja: 少女の特権
+              en: Girl Power
+    - name:
+        locales:
+          ja: 三月なのか (巡狩)
+          en: March 7th (The Hunt)
+      path: the_hunt
       combatType: imaginary
       materials:
         ascension: id:horn-of-snow
         skills: group:zzP0
         skillsAdvanced: id:destroyers-final-road
         common: group:com001
-
+      skills:
+        basicAttack:
+          name:
+            locales:
+              ja: 妖魔を祓う瑠璃剣
+              en: My Sword Zaps Demons
+        skill:
+          name:
+            locales:
+              ja: 師匠、お茶をどうぞ！
+              en: Master, It's Tea Time!
+        ultimate:
+          name:
+            locales:
+              ja: 蓋世の傑物、三月なのか
+              en: March 7th, the Apex Heroine
+        talent:
+          name:
+            locales:
+              ja: 師匠、わかりました！
+              en: Master, I've Ascended!
 - id: dan-heng
-  $nameJA: 丹恒
+  name:
+    locales:
+      ja: 丹恒
+      en: Dan Heng
   yomi: タンコウ
   rarity: 4
   path: the_hunt
@@ -64,9 +231,32 @@
     ascension: id:storm-eye
     skills: group:lcs002
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 雲騎槍術・朔風
+          en: "Cloudlancer Art: North Wind"
+    skill:
+      name:
+        locales:
+          ja: 雲騎槍術・疾雨
+          en: "Cloudlancer Art: Torrent"
+    ultimate:
+      name:
+        locales:
+          ja: 洞天幻化、長夢一覚
+          en: Ethereal Dream
+    talent:
+      name:
+        locales:
+          ja: 寸長寸強
+          en: Superiority of Reach
 - id: himeko
-  $nameJA: 姫子
+  name:
+    locales:
+      ja: 姫子
+      en: Himeko
   yomi: ヒメコ
   rarity: 5
   path: erudition
@@ -76,9 +266,32 @@
     ascension: id:endotherm-chitin
     skills: group:lcs003
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 武装調律
+          en: Sawblade Tuning
+    skill:
+      name:
+        locales:
+          ja: 溶核爆裂
+          en: Molten Detonation
+    ultimate:
+      name:
+        locales:
+          ja: 天墜の火
+          en: Heavenly Flare
+    talent:
+      name:
+        locales:
+          ja: 乗勝追撃
+          en: Victory Rush
 - id: welt
-  $nameJA: ヴェルト
+  name:
+    locales:
+      ja: ヴェルト
+      en: Welt
   yomi: ヴェルト
   rarity: 5
   path: nihility
@@ -88,9 +301,32 @@
     ascension: id:golden-crown-of-the-past-shadow
     skills: group:lcs004
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 重力制圧
+          en: Gravity Suppression
+    skill:
+      name:
+        locales:
+          ja: 虚空断界
+          en: Edge of the Void
+    ultimate:
+      name:
+        locales:
+          ja: 疑似ブラックホール
+          en: Synthetic Black Hole
+    talent:
+      name:
+        locales:
+          ja: 時空の歪み
+          en: Time Distortion
 - id: silver-wolf
-  $nameJA: 銀狼
+  name:
+    locales:
+      ja: 銀狼
+      en: Silver Wolf
   yomi: ギンロウ
   rarity: 5
   path: nihility
@@ -100,9 +336,32 @@
     ascension: id:void-cast-iron
     skills: group:lcs004
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: "{'|'}システム警告{'|'}"
+          en: System Warning
+    skill:
+      name:
+        locales:
+          ja: 変更を許可しますか？
+          en: Allow Changes?
+    ultimate:
+      name:
+        locales:
+          ja: "{'|'}アカウントがBANされた{'|'}"
+          en: User Banned
+    talent:
+      name:
+        locales:
+          ja: プログラム応答なし…
+          en: Awaiting System Response...
 - id: arlan
-  $nameJA: アーラン
+  name:
+    locales:
+      ja: アーラン
+      en: Arlan
   yomi: アーラン
   rarity: 4
   path: destruction
@@ -112,9 +371,32 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs005
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 疾行する雷の如し
+          en: Lightning Rush
+    skill:
+      name:
+        locales:
+          ja: 禁錮解除
+          en: Shackle Breaker
+    ultimate:
+      name:
+        locales:
+          ja: 狂者の制裁
+          en: Frenzied Punishment
+    talent:
+      name:
+        locales:
+          ja: 痛みと怒りの極み
+          en: Pain and Anger
 - id: asta
-  $nameJA: アスター
+  name:
+    locales:
+      ja: アスター
+      en: Asta
   yomi: アスター
   rarity: 4
   path: harmony
@@ -124,9 +406,32 @@
     ascension: id:endotherm-chitin
     skills: group:lcs006
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: スペクトル光線
+          en: Spectrum Beam
+    skill:
+      name:
+        locales:
+          ja: スターフォール
+          en: Meteor Storm
+    ultimate:
+      name:
+        locales:
+          ja: 星空祝言
+          en: Astral Blessing
+    talent:
+      name:
+        locales:
+          ja: 天象学
+          en: Astrometry
 - id: herta
-  $nameJA: ヘルタ
+  name:
+    locales:
+      ja: ヘルタ
+      en: Herta
   yomi: ヘルタ
   rarity: 4
   path: erudition
@@ -136,9 +441,32 @@
     ascension: id:horn-of-snow
     skills: group:lcs003
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 何見てるの？
+          en: What Are You Looking At?
+    skill:
+      name:
+        locales:
+          ja: 一度限りの取引
+          en: One-Time Offer
+    ultimate:
+      name:
+        locales:
+          ja: 私がかけた魔法だよ
+          en: It's Magic, I Added Some Magic
+    talent:
+      name:
+        locales:
+          ja: やっぱり私がやる
+          en: Fine, I'll Do It Myself
 - id: bronya
-  $nameJA: ブローニャ
+  name:
+    locales:
+      ja: ブローニャ
+      en: Bronya
   yomi: ブローニャ
   rarity: 5
   path: harmony
@@ -148,9 +476,32 @@
     ascension: id:storm-eye
     skills: group:lcs006
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 疾風の弾丸
+          en: Windrider Bullet
+    skill:
+      name:
+        locales:
+          ja: 作戦再展開
+          en: Combat Redeployment
+    ultimate:
+      name:
+        locales:
+          ja: ベロブルグ行進曲
+          en: The Belobog March
+    talent:
+      name:
+        locales:
+          ja: 先人一歩
+          en: Leading the Way
 - id: seele
-  $nameJA: ゼーレ
+  name:
+    locales:
+      ja: ゼーレ
+      en: Seele
   yomi: ゼーレ
   rarity: 5
   path: the_hunt
@@ -160,9 +511,32 @@
     ascension: id:void-cast-iron
     skills: group:lcs002
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 強襲
+          en: Thwack
+    skill:
+      name:
+        locales:
+          ja: 還刃
+          en: Sheathed Blade
+    ultimate:
+      name:
+        locales:
+          ja: 乱れ蝶
+          en: Butterfly Flurry
+    talent:
+      name:
+        locales:
+          ja: 再現
+          en: Resurgence
 - id: serval
-  $nameJA: セーバル
+  name:
+    locales:
+      ja: セーバル
+      en: Serval
   yomi: セーバル
   rarity: 4
   path: erudition
@@ -172,9 +546,32 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs003
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 雷鳴音階
+          en: Roaring Thunderclap
+    skill:
+      name:
+        locales:
+          ja: スパーク
+          en: Lightning Flash
+    ultimate:
+      name:
+        locales:
+          ja: 機械ブーム登場！
+          en: Here Comes the Mechanical Fever
+    talent:
+      name:
+        locales:
+          ja: 情熱コード
+          en: Galvanic Chords
 - id: gepard
-  $nameJA: ジェパード
+  name:
+    locales:
+      ja: ジェパード
+      en: Gepard
   yomi: ジェパード
   rarity: 5
   path: preservation
@@ -184,9 +581,32 @@
     ascension: id:horn-of-snow
     skills: group:lcs001
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 一意の拳
+          en: Fist of Conviction
+    skill:
+      name:
+        locales:
+          ja: 震撼の一撃
+          en: Daunting Smite
+    ultimate:
+      name:
+        locales:
+          ja: 永屹の壁
+          en: Enduring Bulwark
+    talent:
+      name:
+        locales:
+          ja: 不屈の体躯
+          en: Unyielding Will
 - id: natasha
-  $nameJA: ナターシャ
+  name:
+    locales:
+      ja: ナターシャ
+      en: Natasha
   yomi: ナターシャ
   rarity: 4
   path: abundance
@@ -196,9 +616,32 @@
     ascension: id:broken-teeth-of-iron-wolf
     skills: group:lcs007
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 慈心の裏側
+          en: Behind the Kindness
+    skill:
+      name:
+        locales:
+          ja: 愛、救済と選択
+          en: Love, Heal, and Choose
+    ultimate:
+      name:
+        locales:
+          ja: 新生の礼
+          en: Gift of Rebirth
+    talent:
+      name:
+        locales:
+          ja: 生命の輝き
+          en: Innervation
 - id: pela
-  $nameJA: ペラ
+  name:
+    locales:
+      ja: ペラ
+      en: Pela
   yomi: ペラ
   rarity: 4
   path: nihility
@@ -208,9 +651,32 @@
     ascension: id:horn-of-snow
     skills: group:lcs004
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 氷点狙撃
+          en: Frost Shot
+    skill:
+      name:
+        locales:
+          ja: 低温妨害
+          en: Frostbite
+    ultimate:
+      name:
+        locales:
+          ja: 領域制圧
+          en: Zone Suppression
+    talent:
+      name:
+        locales:
+          ja: データ採取
+          en: Data Collecting
 - id: clara
-  $nameJA: クラーラ
+  name:
+    locales:
+      ja: クラーラ
+      en: Clara
   yomi: クラーラ
   rarity: 5
   path: destruction
@@ -220,9 +686,32 @@
     ascension: id:broken-teeth-of-iron-wolf
     skills: group:lcs005
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: クラーラもお手伝いします
+          en: I Want to Help
+    skill:
+      name:
+        locales:
+          ja: スヴァローグが見てる
+          en: Svarog Watches Over You
+    ultimate:
+      name:
+        locales:
+          ja: 命令じゃなくて約束
+          en: Promise, Not Command
+    talent:
+      name:
+        locales:
+          ja: 家族なんだから
+          en: Because We're Family
 - id: sampo
-  $nameJA: サンポ
+  name:
+    locales:
+      ja: サンポ
+      en: Sampo
   yomi: サンポ
   rarity: 4
   path: nihility
@@ -232,9 +721,32 @@
     ascension: id:storm-eye
     skills: group:lcs004
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 眩い刃紋
+          en: Dazzling Blades
+    skill:
+      name:
+        locales:
+          ja: 反復横跳びの愛
+          en: Ricochet Love
+    ultimate:
+      name:
+        locales:
+          ja: サプライズボックス
+          en: Surprise Present
+    talent:
+      name:
+        locales:
+          ja: 風を切り裂く匕首
+          en: Windtorn Dagger
 - id: hook
-  $nameJA: フック
+  name:
+    locales:
+      ja: フック
+      en: Hook
   yomi: フック
   rarity: 4
   path: destruction
@@ -244,9 +756,32 @@
     ascension: id:endotherm-chitin
     skills: group:lcs005
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: おい！火の元に気をつけな
+          en: Hehe! Don't Get Burned!
+    skill:
+      name:
+        locales:
+          ja: おい！フックを覚えてるか？
+          en: Hey! Remember Hook?
+    ultimate:
+      name:
+        locales:
+          ja: ドカン！飛んでけ花火！
+          en: Boom! Here Comes the Fire!
+    talent:
+      name:
+        locales:
+          ja: はっ！火に油を注ぐ
+          en: Ha! Oil to the Flames!
 - id: qingque
-  $nameJA: 青雀
+  name:
+    locales:
+      ja: 青雀
+      en: Qingque
   yomi: セイジャク
   rarity: 4
   path: erudition
@@ -256,9 +791,32 @@
     ascension: id:void-cast-iron
     skills: group:lcs003
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 門前清
+          en: Flower Pick
+    skill:
+      name:
+        locales:
+          ja: 海底撈月
+          en: A Scoop of Moon
+    ultimate:
+      name:
+        locales:
+          ja: 幺魚暗カン？アガリ！
+          en: A Quartet? Woo-hoo!
+    talent:
+      name:
+        locales:
+          ja: 帝垣美玉
+          en: Celestial Jade
 - id: tingyun
-  $nameJA: 停雲
+  name:
+    locales:
+      ja: 停雲
+      en: Tingyun
   yomi: テイウン
   rarity: 4
   path: harmony
@@ -268,9 +826,32 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs006
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 逐客令
+          en: Dislodged
+    skill:
+      name:
+        locales:
+          ja: 祥音和韻
+          en: Soothing Melody
+    ultimate:
+      name:
+        locales:
+          ja: 慶雲光覆儀祷
+          en: Amidst the Rejoicing Clouds
+    talent:
+      name:
+        locales:
+          ja: 揺れる紫電
+          en: Violet Sparknado
 - id: jing-yuan
-  $nameJA: 景元
+  name:
+    locales:
+      ja: 景元
+      en: Jing Yuan
   yomi: ケイゲン
   rarity: 5
   path: erudition
@@ -280,9 +861,32 @@
     ascension: id:shape-shifters-lightning-staff
     skills: group:lcs003
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 電光石火
+          en: Glistening Light
+    skill:
+      name:
+        locales:
+          ja: 紫霄の雷鳴
+          en: Rifting Zenith
+    ultimate:
+      name:
+        locales:
+          ja: 我が身の輝き
+          en: Lightbringer
+    talent:
+      name:
+        locales:
+          ja: 退魔の形神
+          en: Prana Extirpated
 - id: sushang
-  $nameJA: 素裳
+  name:
+    locales:
+      ja: 素裳
+      en: Sushang
   yomi: スショウ
   rarity: 4
   path: the_hunt
@@ -292,9 +896,32 @@
     ascension: id:broken-teeth-of-iron-wolf
     skills: group:lcs002
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 雲騎剣経・月虹
+          en: "Cloudfencer Art: Starshine"
+    skill:
+      name:
+        locales:
+          ja: 雲騎剣経・山傾
+          en: "Cloudfencer Art: Mountainfall"
+    ultimate:
+      name:
+        locales:
+          ja: 太虚形蘊・燭夜
+          en: "Shape of Taixu: Dawn Herald"
+    talent:
+      name:
+        locales:
+          ja: 游刃若水
+          en: Dancing Blade
 - id: yanqing
-  $nameJA: 彦卿
+  name:
+    locales:
+      ja: 彦卿
+      en: Yanqing
   yomi: ゲンキョウ
   rarity: 5
   path: the_hunt
@@ -304,9 +931,32 @@
     ascension: id:gelid-chitin
     skills: group:lcs002
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 寒光刺す霜鋒
+          en: Frost Thorn
+    skill:
+      name:
+        locales:
+          ja: 三尺秋水
+          en: Darting Ironthorn
+    ultimate:
+      name:
+        locales:
+          ja: 快雨に戯れる燕
+          en: Amidst the Raining Bliss
+    talent:
+      name:
+        locales:
+          ja: 呼影剣
+          en: One With the Sword
 - id: bailu
-  $nameJA: 白露
+  name:
+    locales:
+      ja: 白露
+      en: Bailu
   yomi: ビャクロ
   rarity: 5
   path: abundance
@@ -316,9 +966,32 @@
     ascension: id:lightning-crown-of-the-past-shadow
     skills: group:lcs007
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 望・聞・問…蹴！
+          en: Diagnostic Kick
+    skill:
+      name:
+        locales:
+          ja: 雲吟乍然、零れる珠露
+          en: Singing Among Clouds
+    ultimate:
+      name:
+        locales:
+          ja: 雷鳴率いる躍渊の蛟龍
+          en: Felicitous Thunderleap
+    talent:
+      name:
+        locales:
+          ja: 懸壺済世
+          en: Gourdful of Elixir
 - id: luocha
-  $nameJA: 羅刹
+  name:
+    locales:
+      ja: 羅刹
+      en: Luocha
   yomi: ラセツ
   rarity: 5
   path: abundance
@@ -328,9 +1001,32 @@
     ascension: id:golden-crown-of-the-past-shadow
     skills: group:lcs007
     skillsAdvanced: id:guardians-lament
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 黒淵の棘
+          en: Thorns of the Abyss
+    skill:
+      name:
+        locales:
+          ja: 白花の祈望
+          en: Prayer of Abyss Flower
+    ultimate:
+      name:
+        locales:
+          ja: 帰葬の成就
+          en: Death Wish
+    talent:
+      name:
+        locales:
+          ja: 生命の輪廻
+          en: Cycle of Life
 - id: yukong
-  $nameJA: 御空
+  name:
+    locales:
+      ja: 御空
+      en: Yukong
   yomi: ギョクウ
   rarity: 4
   path: harmony
@@ -340,9 +1036,32 @@
     ascension: id:golden-crown-of-the-past-shadow
     skills: group:lcs006
     skillsAdvanced: id:destroyers-final-road
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 流鏑
+          en: Arrowslinger
+    skill:
+      name:
+        locales:
+          ja: 天宮に鳴り響む弦
+          en: Emboldening Salvo
+    ultimate:
+      name:
+        locales:
+          ja: 貫雲箭
+          en: Diving Kestrel
+    talent:
+      name:
+        locales:
+          ja: 徹札矢
+          en: Seven Layers, One Arrow
 - id: blade
-  $nameJA: 刃
+  name:
+    locales:
+      ja: 刃
+      en: Blade
   yomi: ジン
   rarity: 5
   path: destruction
@@ -352,9 +1071,32 @@
     ascension: id:ascendant-debris
     skills: group:lcs005
     skillsAdvanced: id:regret-of-infinite-ochema
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 支離剣
+          en: Shard Sword
+    skill:
+      name:
+        locales:
+          ja: 地獄変
+          en: Hellscape
+    ultimate:
+      name:
+        locales:
+          ja: 大辟万死
+          en: Death Sentence
+    talent:
+      name:
+        locales:
+          ja: 倏忽の恩賜
+          en: Shuhu's Gift
 - id: kafka
-  $nameJA: カフカ
+  name:
+    locales:
+      ja: カフカ
+      en: Kafka
   yomi: カフカ
   rarity: 5
   path: nihility
@@ -364,9 +1106,32 @@
     ascension: id:shape-shifters-lightning-staff
     skills: group:lcs004
     skillsAdvanced: id:regret-of-infinite-ochema
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 止まない夜の喧騒
+          en: Midnight Tumult
+    skill:
+      name:
+        locales:
+          ja: 月明かりが撫でる連綿
+          en: Caressing Moonlight
+    ultimate:
+      name:
+        locales:
+          ja: 悲劇最果ての顫音
+          en: Twilight Trill
+    talent:
+      name:
+        locales:
+          ja: 優しさもまた残酷
+          en: Gentle but Cruel
 - id: luka
-  $nameJA: ルカ
+  name:
+    locales:
+      ja: ルカ
+      en: Luka
   yomi: ルカ
   rarity: 4
   path: nihility
@@ -376,9 +1141,32 @@
     ascension: id:broken-teeth-of-iron-wolf
     skills: group:lcs004
     skillsAdvanced: id:regret-of-infinite-ochema
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 裂地拳
+          en: Direct Punch
+    skill:
+      name:
+        locales:
+          ja: 裂創拳
+          en: Lacerating Fist
+    ultimate:
+      name:
+        locales:
+          ja: 勝利の一撃
+          en: Coup de Grâce
+    talent:
+      name:
+        locales:
+          ja: 飛び散る火花
+          en: Flying Sparks
 - id: dan-heng-imbibitor-lunae
-  $nameJA: 丹恒・飲月
+  name:
+    locales:
+      ja: 丹恒・飲月
+      en: Dan Heng・Imbibitor Lunae
   yomi: タンコウインゲツ
   rarity: 5
   path: destruction
@@ -388,9 +1176,32 @@
     ascension: id:suppressing-edict
     skills: group:lcs005
     skillsAdvanced: id:regret-of-infinite-ochema
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 水華
+          en: Beneficent Lotus
+    skill:
+      name:
+        locales:
+          ja: 龍力自在
+          en: Dracore Libre
+    ultimate:
+      name:
+        locales:
+          ja: 傲睨せし蒼龍、世を濯ぐ劫水
+          en: Azure's Aqua Ablutes All
+    talent:
+      name:
+        locales:
+          ja: 亢心
+          en: Righteous Heart
 - id: fu-xuan
-  $nameJA: 符玄
+  name:
+    locales:
+      ja: 符玄
+      en: Fu Xuan
   yomi: フゲン
   rarity: 5
   path: preservation
@@ -400,9 +1211,32 @@
     ascension: id:nail-of-the-ape
     skills: group:lcs001
     skillsAdvanced: id:regret-of-infinite-ochema
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 始撃歳星
+          en: Novaburst
+    skill:
+      name:
+        locales:
+          ja: 太微の行棋、影示す霊台
+          en: Known by Stars, Shown by Hearts
+    ultimate:
+      name:
+        locales:
+          ja: 天律大衍、歴劫帰一
+          en: Woes of Many Morphed to One
+    talent:
+      name:
+        locales:
+          ja: 乾坤清夷、一陽来復
+          en: Bleak Breeds Bliss
 - id: lynx
-  $nameJA: リンクス
+  name:
+    locales:
+      ja: リンクス
+      en: Lynx
   yomi: リンクス
   rarity: 4
   path: abundance
@@ -412,9 +1246,32 @@
     ascension: id:nail-of-the-ape
     skills: group:lcs007
     skillsAdvanced: id:regret-of-infinite-ochema
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: アイスクライミングテクニック
+          en: Ice Crampon Technique
+    skill:
+      name:
+        locales:
+          ja: 塩漬け野営缶詰
+          en: Salted Camping Cans
+    ultimate:
+      name:
+        locales:
+          ja: 雪原救急処置
+          en: Snowfield First Aid
+    talent:
+      name:
+        locales:
+          ja: 野外サバイバル経験
+          en: Outdoor Survival Experience
 - id: jingliu
-  $nameJA: 鏡流
+  name:
+    locales:
+      ja: 鏡流
+      en: Jingliu
   yomi: ケイリュウ
   rarity: 5
   path: destruction
@@ -424,9 +1281,32 @@
     skills: group:lcs005
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 流影穿
+          en: Lucent Moonglow
+    skill:
+      name:
+        locales:
+          ja: 無罅の飛光
+          en: Transcendent Flash
+    ultimate:
+      name:
+        locales:
+          ja: 曇華生滅、夢瀉す天河
+          en: Florephemeral Dreamflux
+    talent:
+      name:
+        locales:
+          ja: 淡月転魄
+          en: Crescent Transmigration
 - id: topaz-and-numby
-  $nameJA: トパーズ&カブ
+  name:
+    locales:
+      ja: トパーズ&カブ
+      en: Topaz and Numby
   yomi: トパーズアンドカブ
   rarity: 5
   path: the_hunt
@@ -436,9 +1316,32 @@
     skills: group:lcs002
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com003
-
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 赤字…
+          en: Deficit...
+    skill:
+      name:
+        locales:
+          ja: 支払困難？
+          en: Difficulty Paying?
+    ultimate:
+      name:
+        locales:
+          ja: 赤字を黒字に！
+          en: Turn a Profit!
+    talent:
+      name:
+        locales:
+          ja: ピッグ・マーケット！？
+          en: Trotter Market!?
 - id: guinaifen
-  $nameJA: 桂乃芬
+  name:
+    locales:
+      ja: 桂乃芬
+      en: Guinaifen
   yomi: ケイナイフン
   rarity: 4
   path: nihility
@@ -448,8 +1351,32 @@
     skills: group:lcs004
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 喝采満場
+          en: Standing Ovation
+    skill:
+      name:
+        locales:
+          ja: 出だし好調
+          en: Blazing Welcome
+    ultimate:
+      name:
+        locales:
+          ja: 十八番を披露するね
+          en: Watch This Showstopper
+    talent:
+      name:
+        locales:
+          ja: 古来、芸人は君子に頼る
+          en: PatrAeon Benefits
 - id: huohuo
-  $nameJA: フォフォ
+  name:
+    locales:
+      ja: フォフォ
+      en: Huohuo
   yomi: フォフォ
   rarity: 5
   path: abundance
@@ -459,9 +1386,33 @@
     skills: group:lcs007
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 令旗・風雨招来
+          en: "Banner: Stormcaller"
+    skill:
+      name:
+        locales:
+          ja: 霊符・護身
+          en: "Talisman: Protection"
+    ultimate:
+      name:
+        locales:
+          ja: シッポ・神鬼使役
+          en: "Tail: Spiritual Domination"
+    talent:
+      name:
+        locales:
+          ja: 憑依・真気通天
+          en: "Possession: Ethereal Metaflow"
 - id: argenti
-  $nameJA: アルジェンティ
-  yomi: 'アルジェンティ'
+  name:
+    locales:
+      ja: アルジェンティ
+      en: Argenti
+  yomi: アルジェンティ
   rarity: 5
   path: erudition
   combatType: physical
@@ -470,9 +1421,33 @@
     skills: group:lcs003
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com002
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 刹那の芬芳
+          en: Fleeting Fragrance
+    skill:
+      name:
+        locales:
+          ja: 公正、ここに咲き誇る
+          en: Justice, Hereby Blooms
+    ultimate:
+      name:
+        locales:
+          ja: 花園にて捧げる美の際限
+          en: For In This Garden, Supreme Beauty Bestows
+    talent:
+      name:
+        locales:
+          ja: 崇高なる客体
+          en: Sublime Object
 - id: hanya
-  $nameJA: 寒鴉
-  yomi: 'カンウ'
+  name:
+    locales:
+      ja: 寒鴉
+      en: Hanya
+  yomi: カンウ
   rarity: 4
   path: harmony
   combatType: physical
@@ -481,8 +1456,32 @@
     skills: group:lcs006
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 冥兆天筆
+          en: Oracle Brush
+    skill:
+      name:
+        locales:
+          ja: 生滅捕縛
+          en: Samsara, Locked
+    ultimate:
+      name:
+        locales:
+          ja: 十王の勅令、遍く遵行せよ
+          en: Ten-Lords' Decree, All Shall Obey
+    talent:
+      name:
+        locales:
+          ja: 懲悪
+          en: Sanction
 - id: ruan-mei
-  $nameJA: ルアン・メェイ
+  name:
+    locales:
+      ja: ルアン・メェイ
+      en: Ruan Mei
   yomi: ルアン・メェイ
   rarity: 5
   path: harmony
@@ -492,8 +1491,32 @@
     skills: group:lcs006
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com005
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 幽蘭の調べ
+          en: Threading Fragrance
+    skill:
+      name:
+        locales:
+          ja: 緩く捻りて
+          en: String Sings Slow Swirls
+    ultimate:
+      name:
+        locales:
+          ja: 花に濡れても雫は払わず
+          en: Petals to Stream, Repose in Dream
+    talent:
+      name:
+        locales:
+          ja: フラクタルの螺旋
+          en: Somatotypical Helix
 - id: xueyi
-  $nameJA: 雪衣
+  name:
+    locales:
+      ja: 雪衣
+      en: Xueyi
   yomi: セツイ
   rarity: 4
   path: destruction
@@ -503,8 +1526,32 @@
     skills: group:lcs005
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com002
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 破魔錐
+          en: Mara-Sunder Awl
+    skill:
+      name:
+        locales:
+          ja: 諸悪摂伏
+          en: Iniquity Obliteration
+    ultimate:
+      name:
+        locales:
+          ja: 身を貫く天罰
+          en: Divine Castigation
+    talent:
+      name:
+        locales:
+          ja: 十王の聖裁、業報は常に在り
+          en: Karmic Perpetuation
 - id: dr-ratio
-  $nameJA: Dr.レイシオ
+  name:
+    locales:
+      ja: Dr.レイシオ
+      en: Dr. Ratio
   yomi: ドクターレイシオ
   rarity: 5
   path: the_hunt
@@ -514,8 +1561,32 @@
     skills: group:lcs002
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com001
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 知識は力なり
+          en: Mind is Might
+    skill:
+      name:
+        locales:
+          ja: 産婆術
+          en: Intellectual Midwifery
+    ultimate:
+      name:
+        locales:
+          ja: 三段階のパラドックス
+          en: Syllogistic Paradox
+    talent:
+      name:
+        locales:
+          ja: 我思う、故に我あり
+          en: Cogito, Ergo Sum
 - id: black-swan
-  $nameJA: ブラックスワン
+  name:
+    locales:
+      ja: ブラックスワン
+      en: Black Swan
   yomi: ブラックスワン
   rarity: 5
   path: nihility
@@ -525,8 +1596,32 @@
     skills: group:lcs008
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com002
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 洞察、緘黙の黎明
+          en: Percipience, Silent Dawn
+    skill:
+      name:
+        locales:
+          ja: 失墜、偽神の黄昏
+          en: Decadence, False Twilight
+    ultimate:
+      name:
+        locales:
+          ja: 彼方の抱擁に酔いしれて
+          en: Bliss of Otherworld's Embrace
+    talent:
+      name:
+        locales:
+          ja: 果てなき運命の機織り
+          en: Loom of Fate's Caprice
 - id: misha
-  $nameJA: ミーシャ
+  name:
+    locales:
+      ja: ミーシャ
+      en: Misha
   yomi: ミーシャ
   rarity: 4
   path: destruction
@@ -536,8 +1631,32 @@
     skills: group:lcs009
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: ど…退いてくださーい！
+          en: E—Excuse Me, Please!
+    skill:
+      name:
+        locales:
+          ja: ル…ルームサービスです！
+          en: R—Room Service
+    ultimate:
+      name:
+        locales:
+          ja: ち…遅刻する！
+          en: G—Gonna Be Late!
+    talent:
+      name:
+        locales:
+          ja: 脱進機
+          en: Horological Escapement
 - id: sparkle
-  $nameJA: 花火
+  name:
+    locales:
+      ja: 花火
+      en: Sparkle
   yomi: ハナビ
   rarity: 5
   path: harmony
@@ -547,8 +1666,32 @@
     skills: group:lcs010
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com008
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 独り芝居
+          en: Monodrama
+    skill:
+      name:
+        locales:
+          ja: 夢を泳ぐ魚
+          en: Dreamdiver
+    ultimate:
+      name:
+        locales:
+          ja: 一人千役
+          en: The Hero with a Thousand Faces
+    talent:
+      name:
+        locales:
+          ja: 叙述トリック
+          en: Red Herring
 - id: acheron
-  $nameJA: 黄泉
+  name:
+    locales:
+      ja: 黄泉
+      en: Acheron
   yomi: ヨミ
   rarity: 5
   path: nihility
@@ -558,8 +1701,32 @@
     skills: group:lcs008
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 三途の枯木
+          en: Trilateral Wiltcross
+    skill:
+      name:
+        locales:
+          ja: 八雷渡り
+          en: Octobolt Flash
+    ultimate:
+      name:
+        locales:
+          ja: 残夢染める繚乱の一太刀
+          en: Slashed Dream Cries in Red
+    talent:
+      name:
+        locales:
+          ja: 紅葉に時雨、万里の空
+          en: Atop Rainleaf Hangs Oneness
 - id: aventurine
-  $nameJA: アベンチュリン
+  name:
+    locales:
+      ja: アベンチュリン
+      en: Aventurine
   yomi: アベンチュリン
   rarity: 5
   path: preservation
@@ -569,8 +1736,32 @@
     skills: group:lcs011
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com008
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: ストレートべット
+          en: Straight Bet
+    skill:
+      name:
+        locales:
+          ja: 繁栄の基石
+          en: Cornerstone Deluxe
+    ultimate:
+      name:
+        locales:
+          ja: ロード・オブ・ルーレット
+          en: Roulette Shark
+    talent:
+      name:
+        locales:
+          ja: 銃口の右には…
+          en: Shot Loaded Right
 - id: gallagher
-  $nameJA: ギャラガー
+  name:
+    locales:
+      ja: ギャラガー
+      en: Gallagher
   yomi: ギャラガー
   rarity: 4
   path: abundance
@@ -580,8 +1771,32 @@
     skills: group:tree-seeds
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 持ち込み料
+          en: Corkage Fee
+    skill:
+      name:
+        locales:
+          ja: 特製ドリンク
+          en: Special Brew
+    ultimate:
+      name:
+        locales:
+          ja: シャンパン・マナー
+          en: Champagne Etiquette
+    talent:
+      name:
+        locales:
+          ja: 飲み比べ
+          en: Tipsy Tussle
 - id: robin
-  $nameJA: ロビン
+  name:
+    locales:
+      ja: ロビン
+      en: Robin
   yomi: ロビン
   rarity: 5
   path: harmony
@@ -591,8 +1806,32 @@
     skills: group:lcs010
     skillsAdvanced: id:past-evils-of-the-borehole-planet-disaster
     common: group:com007
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 羽ばたくホワイトノイズ
+          en: Wingflip White Noise
+    skill:
+      name:
+        locales:
+          ja: 飛翔のアリア
+          en: Pinion's Aria
+    ultimate:
+      name:
+        locales:
+          ja: 千の音で、群星にフーガを
+          en: Vox Harmonique, Opus Cosmique
+    talent:
+      name:
+        locales:
+          ja: 調和の純正律
+          en: Tonal Resonance
 - id: boothill
-  $nameJA: ブートヒル
+  name:
+    locales:
+      ja: ブートヒル
+      en: Boothill
   yomi: ブートヒル
   rarity: 5
   path: the_hunt
@@ -602,8 +1841,32 @@
     skills: group:zzP0
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com008
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: スパーズ・クラッシュ
+          en: Skullcrush Spurs
+    skill:
+      name:
+        locales:
+          ja: 熱砂のタンゴ
+          en: Sizzlin' Tango
+    ultimate:
+      name:
+        locales:
+          ja: ダストデビル・ダンサー
+          en: Dust Devil's Sunset Rodeo
+    talent:
+      name:
+        locales:
+          ja: 5発の銃弾
+          en: Five Peas in a Pod
 - id: firefly
-  $nameJA: ホタル
+  name:
+    locales:
+      ja: ホタル
+      en: Firefly
   yomi: ホタル
   rarity: 5
   path: destruction
@@ -613,8 +1876,32 @@
     skills: group:lcs009
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com008
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: コマンド-フラッシュオーバー推進
+          en: "Order: Flare Propulsion"
+    skill:
+      name:
+        locales:
+          ja: コマンド-天火轟撃
+          en: "Order: Aerial Bombardment"
+    ultimate:
+      name:
+        locales:
+          ja: ファイアフライ-IV-完全燃焼
+          en: "Fyrefly Type-IV: Complete Combustion"
+    talent:
+      name:
+        locales:
+          ja: ホタル式源火中枢
+          en: Chrysalid Pyronexus
 - id: jade
-  $nameJA: ジェイド
+  name:
+    locales:
+      ja: ジェイド
+      en: Jade
   yomi: ジェイド
   rarity: 5
   path: erudition
@@ -624,8 +1911,32 @@
     skills: group:lcs012
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com007
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: むしり取る鞭打ち
+          en: Lash of Riches
+    skill:
+      name:
+        locales:
+          ja: ほしいままに呑み込む買収
+          en: Acquisition Surety
+    ultimate:
+      name:
+        locales:
+          ja: 欲望の淵での地獄の契り
+          en: Vow of the Deep
+    talent:
+      name:
+        locales:
+          ja: 富を削ぐ毒牙
+          en: Fang of Flare Flaying
 - id: yunli
-  $nameJA: 雲璃
+  name:
+    locales:
+      ja: 雲璃
+      en: Yunli
   yomi: ウンリ
   rarity: 5
   path: destruction
@@ -635,8 +1946,32 @@
     skills: group:lcs009
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 震天動地
+          en: Galespin Summersault
+    skill:
+      name:
+        locales:
+          ja: 天威煌々
+          en: Bladeborne Quake
+    ultimate:
+      name:
+        locales:
+          ja: 天を揺るがす大地の剣
+          en: Earthbind, Etherbreak
+    talent:
+      name:
+        locales:
+          ja: 閃熔
+          en: Flashforge
 - id: jiaoqiu
-  $nameJA: 椒丘
+  name:
+    locales:
+      ja: 椒丘
+      en: Jiaoqiu
   yomi: ショウキュウ
   rarity: 5
   path: nihility
@@ -646,8 +1981,32 @@
     skills: group:lcs008
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 心火計
+          en: Heart Afire
+    skill:
+      name:
+        locales:
+          ja: 燎原奔襲
+          en: Scorch Onslaught
+    ultimate:
+      name:
+        locales:
+          ja: 炊陣妙法、詭正相生
+          en: Pyrograph Arcanum
+    talent:
+      name:
+        locales:
+          ja: 詭正転変、至微精妙
+          en: Quartet Finesse, Octave Finery
 - id: feixiao
-  $nameJA: 飛霄
+  name:
+    locales:
+      ja: 飛霄
+      en: Feixiao
   yomi: ヒショウ
   rarity: 5
   path: the_hunt
@@ -657,8 +2016,32 @@
     skills: group:zzP0
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com006
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 閃裂
+          en: Boltsunder
+    skill:
+      name:
+        locales:
+          ja: 斧貫
+          en: Waraxe
+    ultimate:
+      name:
+        locales:
+          ja: 大荒滅破砕
+          en: Terrasplit
+    talent:
+      name:
+        locales:
+          ja: 雷狩
+          en: Thunderhunt
 - id: moze
-  $nameJA: モゼ
+  name:
+    locales:
+      ja: モゼ
+      en: Moze
   yomi: モゼ
   rarity: 4
   path: the_hunt
@@ -668,8 +2051,32 @@
     skills: group:zzP0
     skillsAdvanced: id:auspice-sliver
     common: group:com006
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 暗器
+          en: Hurlthorn
+    skill:
+      name:
+        locales:
+          ja: 急襲する迅羽
+          en: Fleetwinged Raid
+    ultimate:
+      name:
+        locales:
+          ja: 潜む刃、鋭い影
+          en: Dash In, Gash Out
+    talent:
+      name:
+        locales:
+          ja: 翼を折りて鋒鋩とす
+          en: Cascading Featherblade
 - id: lingsha
-  $nameJA: 霊砂
+  name:
+    locales:
+      ja: 霊砂
+      en: Lingsha
   yomi: レイサ
   rarity: 5
   path: abundance
@@ -679,8 +2086,32 @@
     skills: group:tree-seeds
     skillsAdvanced: id:auspice-sliver
     common: group:com005
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 供香
+          en: Votive Incense
+    skill:
+      name:
+        locales:
+          ja: 彩煙
+          en: Smoke and Splendor
+    ultimate:
+      name:
+        locales:
+          ja: 彩雲の如く巡る霞
+          en: Dripping Mistscape
+    talent:
+      name:
+        locales:
+          ja: 紅霧より出づる煙獣
+          en: Mistdance Manifest
 - id: rappa
-  $nameJA: 乱破
+  name:
+    locales:
+      ja: 乱破
+      en: Rappa
   yomi: ランハ
   rarity: 5
   path: erudition
@@ -690,8 +2121,32 @@
     skills: group:lcs012
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com007
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 忍法・七転八起
+          en: "Ninjutsu: Rise Above Tumbles"
+    skill:
+      name:
+        locales:
+          ja: 忍切・初志貫徹
+          en: "Ninja Strike: Rooted Resolute"
+    ultimate:
+      name:
+        locales:
+          ja: 忍道・極・愛死天流
+          en: "Nindō Supreme: Aishiteru"
+    talent:
+      name:
+        locales:
+          ja: シノビ・サイエンス・堪忍袋
+          en: "Ninja Tech: Endurance Gauge"
 - id: sunday
-  $nameJA: サンデー
+  name:
+    locales:
+      ja: サンデー
+      en: Sunday
   yomi: サンデー
   rarity: 5
   path: harmony
@@ -701,8 +2156,32 @@
     skills: group:lcs010
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com008
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 光を纏う告諭
+          en: Gleaming Admonition
+    skill:
+      name:
+        locales:
+          ja: 紙と式典の賜物
+          en: Benison of Paper and Rites
+    ultimate:
+      name:
+        locales:
+          ja: 抱擁と傷痕の賛歌
+          en: Ode to Caress and Cicatrix
+    talent:
+      name:
+        locales:
+          ja: 肉体の告解
+          en: The Sorrowing Body
 - id: fugue
-  $nameJA: 帰忘の流離人
+  name:
+    locales:
+      ja: 帰忘の流離人
+      en: Fugue
   yomi: キボウノサスライビト
   rarity: 5
   path: nihility
@@ -712,8 +2191,32 @@
     skills: group:lcs008
     skillsAdvanced: id:regret-of-infinite-ochema
     common: group:com005
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 燦然たる日月の尾
+          en: Radiant Streak
+    skill:
+      name:
+        locales:
+          ja: 義を有せば吉兆を招く
+          en: Virtue Beckons Bliss
+    ultimate:
+      name:
+        locales:
+          ja: 極陽は遍く世を照らす
+          en: Solar Splendor Shines Upon All
+    talent:
+      name:
+        locales:
+          ja: 善満ちる所福来たる
+          en: Fortune Follows Where Virtue Spreads
 - id: the-herta
-  $nameJA: マダム・ヘルタ
+  name:
+    locales:
+      ja: マダム・ヘルタ
+      en: The Herta
   yomi: マダムヘルタ
   rarity: 5
   path: erudition
@@ -723,20 +2226,78 @@
     skills: group:lcs012
     skillsAdvanced: id:auspice-sliver
     common: group:com002
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: これでわかった？
+          en: Did You Get It
+    skill:
+      name:
+        locales:
+          ja: 視野が狭いよ
+          en: Big Brain Energy
+    ultimate:
+      name:
+        locales:
+          ja: 魔法だって言ったでしょ
+          en: Told Ya! Magic Happens
+    talent:
+      name:
+        locales:
+          ja: 私がもらうね
+          en: Hand Them Over
 - id: aglaea
-  $nameJA: アグライア
+  name:
+    locales:
+      ja: アグライア
+      en: Aglaea
   yomi: アグライア
   rarity: 5
   path: remembrance
   combatType: lightning
-  levelingItemTable: r5Remembrance
+  ingredientsTable: r5Remembrance
   materials:
     ascension: id:nail-of-the-beast-coffin
     skills: group:lcs013
     skillsAdvanced: id:auspice-sliver
     common: group:com009
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: サイフォスの蜜
+          en: Thorned Nectar
+    skill:
+      name:
+        locales:
+          ja: 掲げよ、昇華せし名を
+          en: Rise, Exalted Renown
+    ultimate:
+      name:
+        locales:
+          ja: 共に舞え、運命のラフトラ
+          en: Dance, Destined Weaveress
+    talent:
+      name:
+        locales:
+          ja: 薔薇色の指先
+          en: Rosy-Fingered
+    memospriteSkill:
+      name:
+        locales:
+          ja: サイフォスの罠
+          en: Thorned Snare
+    memospriteTalent:
+      name:
+        locales:
+          ja: 涙で鍛えし匠の躯
+          en: A Body Brewed by Tears
 - id: tribbie
-  $nameJA: トリビー
+  name:
+    locales:
+      ja: トリビー
+      en: Tribbie
   yomi: トリビー
   rarity: 5
   path: harmony
@@ -746,8 +2307,32 @@
     skills: group:lcs010
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:com009
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 百発分のピラヴロス
+          en: Hundred Rockets
+    skill:
+      name:
+        locales:
+          ja: プレゼントはどこ？
+          en: Where'd the Gifts Go
+    ultimate:
+      name:
+        locales:
+          ja: ここに住んでるのは誰でしょう！
+          en: Guess Who Lives Here
+    talent:
+      name:
+        locales:
+          ja: どたばたトリビー
+          en: Busy as Tribbie
 - id: mydei
-  $nameJA: モーディス
+  name:
+    locales:
+      ja: モーディス
+      en: Mydei
   yomi: モーディス
   rarity: 5
   path: destruction
@@ -757,20 +2342,78 @@
     skills: group:lcs009
     skillsAdvanced: id:auspice-sliver
     common: group:com009
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 征途踏破の誓い
+          en: Vow of Voyage
+    skill:
+      name:
+        locales:
+          ja: 万死に悔いなし
+          en: Deaths are Legion, Regrets are None
+    ultimate:
+      name:
+        locales:
+          ja: 天を滅す炎骨の王座
+          en: Throne of Bones
+    talent:
+      name:
+        locales:
+          ja: 血を以って血を制す
+          en: Blood for Blood
 - id: castorice
-  $nameJA: キャストリス
+  name:
+    locales:
+      ja: キャストリス
+      en: Castorice
   yomi: キャストリス
   rarity: 5
   path: remembrance
   combatType: quantum
-  levelingItemTable: r5Remembrance
+  ingredientsTable: r5Remembrance
   materials:
     ascension: id:darkveil-moonlight
     skills: group:lcs013
     skillsAdvanced: id:auspice-sliver
     common: group:lcs014
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 哀悼、死海の小波
+          en: Lament, Nethersea's Ripple
+    skill:
+      name:
+        locales:
+          ja: 沈黙、幽蝶の慈しみ
+          en: Silence, Wraithfly's Caress
+    ultimate:
+      name:
+        locales:
+          ja: 亡者の怒哮、蘇生の鐘
+          en: Doomshriek, Dawn's Chime
+    talent:
+      name:
+        locales:
+          ja: 手のひらを伝う衰亡
+          en: Desolation Across Palms
+    memospriteSkill:
+      name:
+        locales:
+          ja: 冥茫裂く爪痕
+          en: Claw Splits the Veil
+    memospriteTalent:
+      name:
+        locales:
+          ja: 月の繭が覆う身躰
+          en: Mooncocoon Shrouds the Form
 - id: anaxa
-  $nameJA: アナイクス
+  name:
+    locales:
+      ja: アナイクス
+      en: Anaxa
   yomi: アナイクス
   rarity: 5
   path: erudition
@@ -780,3 +2423,105 @@
     skills: group:lcs012
     skillsAdvanced: id:lost-echo-of-the-shared-wish
     common: group:lcs014
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 苦痛、認識の造成
+          en: Pain, Brews Truth
+    skill:
+      name:
+        locales:
+          ja: 分形、誤謬の駆逐
+          en: Fractal, Exiles Fallacy
+    ultimate:
+      name:
+        locales:
+          ja: 化育、世界の創造
+          en: Sprouting Life Sculpts Earth
+    talent:
+      name:
+        locales:
+          ja: 四智、三重の無上
+          en: Tetrad Wisdom Reigns Thrice
+- id: hyacine
+  name:
+    locales:
+      ja: ヒアンシー
+      en: Hyacine
+  yomi: ヒアンシー
+  rarity: 5
+  path: remembrance
+  combatType: wind
+  ingredientsTable: r5Remembrance
+  materials:
+    ascension: id:a-glass-of-the-besotted-era
+    skills: group:lcs013
+    skillsAdvanced: id:lost-echo-of-the-shared-wish
+    common: group:com009
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 雲を撫でるそよ風
+          en: When Breeze Kisses Cirrus
+    skill:
+      name:
+        locales:
+          ja: 降り注ぐ彩虹の愛
+          en: Love Over the Rainbow
+    ultimate:
+      name:
+        locales:
+          ja: 晨昏に飛び込むわたしたち
+          en: We Who Fly Into Twilight
+    talent:
+      name:
+        locales:
+          ja: 世界を癒やす暁の光
+          en: First Light Heals the World
+    memospriteSkill:
+      name:
+        locales:
+          ja: 黒雲退散！
+          en: Rainclouds, Time to Go!
+    memospriteTalent:
+      name:
+        locales:
+          ja: 青空と手を取り合って
+          en: Take Sky in Hand
+- id: cipher
+  name:
+    locales:
+      ja: サフェル
+      en: Cipher
+  yomi: サフェル
+  rarity: 5
+  path: nihility
+  combatType: quantum
+  materials:
+    ascension: id:darkveil-moonlight
+    skills: group:lcs008
+    skillsAdvanced: id:daythunder-anamnesis
+    common: group:lcs014
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: おっと！魚は逃がさないよ
+          en: Oops, a Missed Catch
+    skill:
+      name:
+        locales:
+          ja: へへっ！お宝いただき～！
+          en: Hey, Jackpot for the Taking
+    ultimate:
+      name:
+        locales:
+          ja: 怪盗ニャンコ、参上！
+          en: Yours Truly, Kitty Phantom Thief!
+    talent:
+      name:
+        locales:
+          ja: 親切なドロス人
+          en: The Hospitable Dolosian

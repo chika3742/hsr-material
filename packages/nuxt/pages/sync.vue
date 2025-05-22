@@ -4,9 +4,7 @@ import { GoogleAuthProvider, OAuthProvider, reauthenticateWithPopup, signInWithP
 import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
 import { _db } from "~/dexie/db"
 
-definePageMeta({
-  title: "sync",
-})
+usePageTitle(tx("pageTitles.sync"))
 
 const { $auth, $firestore } = useNuxtApp()
 const dialog = useDialog()

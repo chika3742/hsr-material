@@ -1,17 +1,16 @@
 <script setup lang="ts">
+import { omit } from "lodash-es"
 import characters from "~/assets/data/characters.yaml"
-import type { CharacterVariant } from "~/types/generated/characters.g"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
-
-definePageMeta({
-  title: "characterDetails",
-  itemI18nKey: "characterNames",
-})
+import { type HsrCharacterVariant, isCharacterGroup } from "~/types/data/src/characters"
+import type { SliderSkill } from "~/components/skill-sliders-panel.vue"
+import type { PurposeType } from "~/types/strings"
 
 const route = useRoute()
 const router = useRouter()
 const config = useConfigStore()
+const i18n = useI18n()
 
 if (!characters.some(e => e.id === route.params.characterId)) {
   throw createError({ statusCode: 404, message: "Page not found", fatal: true })
@@ -19,12 +18,19 @@ if (!characters.some(e => e.id === route.params.characterId)) {
 
 const character = characters.find(e => e.id === route.params.characterId)!
 
-const currentVariant = ref<CharacterVariant>(character.variants?.[0] ?? {
-  path: character.path!,
-  combatType: character.combatType!,
-  materials: character.materials!,
-  levelingItemTable: character.levelingItemTable,
-})
+const currentVariant = ref<HsrCharacterVariant>(isCharacterGroup(character)
+  ? character.variants[0]!
+  : omit(character, ["id", "rarity", "yomi"]))
+
+const currentVariantId = computed(() => isCharacterGroup(character) ? currentVariant.value.path : null)
+
+usePageTitle(computed(() => {
+  return tx(
+    i18n,
+    "pageTitles.characterDetails",
+    { name: localize(currentVariant.value.name, i18n) },
+  )
+}))
 
 const purposeTypes = computed<LevelsForPurposeTypes>(() => {
   const getDefaultLitForRarity = () => {
@@ -38,13 +44,15 @@ const purposeTypes = computed<LevelsForPurposeTypes>(() => {
     }
   }
 
-  return characterIngredients.levelingItemTables[currentVariant.value.levelingItemTable ?? getDefaultLitForRarity()].purposeTypes
+  return characterIngredients.ingredientsTables[currentVariant.value.ingredientsTable ?? getDefaultLitForRarity()].purposeTypes
 })
 
-const purposeTypesOmitted = computed<Omit<LevelsForPurposeTypes, "ascension">>(() => {
-  const result = { ...purposeTypes.value } as any
-  delete result.ascension
-  return result
+const skills = computed<SliderSkill[]>(() => {
+  return Object.entries(currentVariant.value.skills).map(([k, v]) => ({
+    purposeType: k as PurposeType,
+    title: localize(v.name, i18n),
+    ingredients: purposeTypes.value[k as PurposeType]!,
+  }))
 })
 
 watch(currentVariant, (value) => {
@@ -52,7 +60,7 @@ watch(currentVariant, (value) => {
 })
 
 onActivated(() => {
-  if (character.variants && route.query.variant) {
+  if (isCharacterGroup(character) && route.query.variant) {
     currentVariant.value = character.variants.find(e => e.path === route.query.variant) ?? currentVariant.value
   }
 })
@@ -67,7 +75,7 @@ onActivated(() => {
     >
       <!-- character image -->
       <v-img
-        :src="getCharacterImage(toCharacterIdWithVariant(character.id, character.variants && currentVariant.path), 'small')"
+        :src="getCharacterImage(toCharacterIdWithVariant(character.id, currentVariantId), 'small')"
         aspect-ratio="1"
         max-width="80px"
         width="80px"
@@ -131,7 +139,7 @@ onActivated(() => {
           variant="outlined"
           @click="$router.push($localePath({
             path: '/light-cones',
-            query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
+            query: { character: toCharacterIdWithVariant(character.id, currentVariantId) },
           }))"
         />
 
@@ -142,7 +150,7 @@ onActivated(() => {
           variant="outlined"
           @click="$router.push($localePath({
             path: '/relics',
-            query: { character: toCharacterIdWithVariant(character.id, character.variants ? currentVariant.path : null) },
+            query: { character: toCharacterIdWithVariant(character.id, currentVariantId) },
           }))"
         />
       </div>
@@ -150,7 +158,7 @@ onActivated(() => {
 
     <client-only>
       <v-select
-        v-if="character.variants"
+        v-if="isCharacterGroup(character)"
         v-model="currentVariant"
         :items="character.variants.map(e => ({ title: tx(`paths.${e.path}` as const), value: e }))"
         :label="tx('common.path')"
@@ -167,16 +175,16 @@ onActivated(() => {
       <SingleSliderPanel
         :material-defs="currentVariant.materials"
         :character-id="character.id"
-        :variant="character.variants ? currentVariant.path : null"
-        :levels="purposeTypes.ascension"
+        :variant="currentVariantId"
+        :levels="purposeTypes.ascension!"
         :title="tx('characterDetailsPage.ascension')"
       />
       <SkillSlidersPanel
         :character-id="character.id"
         :material-defs="currentVariant.materials"
         :title="tx('characterDetailsPage.skills')"
-        :purpose-types="purposeTypesOmitted"
-        :variant="character.variants ? currentVariant.path : null"
+        :variant="currentVariantId"
+        :skills="skills"
       />
     </v-expansion-panels>
   </div>

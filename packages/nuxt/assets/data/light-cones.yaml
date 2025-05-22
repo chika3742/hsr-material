@@ -1,984 +1,1884 @@
 - id: collapsing-sky
-  $nameJA: 天傾
+  name:
+    locales:
+      ja: 天傾
+      en: Collapsing Sky
   yomi: テンケイ
   rarity: 3
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 装備キャラの通常攻撃と戦闘スキルの与ダメージ+<20%>。
+      en: Increases the wearer's Basic ATK and Skill DMG by <20%>.
 - id: shattered-home
-  $nameJA: 楽壊
+  name:
+    locales:
+      ja: 楽壊
+      en: Shattered Home
   yomi: ラクカイ
   rarity: 3
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 残りHPが50%を超える敵に対する、装備キャラの与ダメージ+<20%>。
+      en: Deals <20%> increased DMG to any enemies whose HP is above 50%.
 - id: mutual-demise
-  $nameJA: 倶歿
+  name:
+    locales:
+      ja: 倶歿
+      en: Mutual Demise
   yomi: グボツ
   rarity: 3
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラの残りHPが80%未満の場合、会心率+<12%>。
+      en: If the wearer's current HP is lower than 80%, CRIT Rate increases by <12%>.
 - id: the-moles-welcome-you
-  $nameJA: モグラ党へようこそ
+  name:
+    locales:
+      ja: モグラ党へようこそ
+      en: The Moles Welcome You
   yomi: モグラトウヘヨウコソ
   rarity: 4
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 装備キャラが通常攻撃、戦闘スキルまたは必殺技で敵に攻撃を行った後、それぞれ「わんぱく値」を1層まで獲得できる。1層につき、装備キャラの攻撃力+<12%>。
+      en: When the wearer uses Basic ATK, Skill, or Ultimate to attack enemies, the wearer gains one stack of Mischievous. Each stack increases the wearer's ATK by <12%>.
 - id: a-secret-vow
-  $nameJA: 秘密の誓い
+  name:
+    locales:
+      ja: 秘密の誓い
+      en: A Secret Vow
   yomi: ヒミツノチカイ
   rarity: 4
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラの与ダメージ+<20%>。
+      en: Increases DMG dealt by the wearer by <20%> of DMG to enemies whose current HP percentage is equal to or higher than the wearer's current HP percentage.
 - id: on-the-fall-of-an-aeon
-  $nameJA: とある星神の殞落を記す
+  name:
+    locales:
+      ja: とある星神の殞落を記す
+      en: On the Fall of an Aeon
   yomi: トアルアイオーンノウンラクヲシルス
   rarity: 5
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラが攻撃した時、今回の戦闘中、装備キャラの攻撃力+<12%>、2ターン継続。
+      en: Whenever the wearer attacks, their ATK is increased by <12%> for 2 turn(s).
 - id: under-the-blue-sky
-  $nameJA: 青空の下で
+  name:
+    locales:
+      ja: 青空の下で
+      en: Under the Blue Sky
   yomi: アオゾラノシタデ
   rarity: 4
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<12%>、3ターン継続。
+      en: Increases the wearer's ATK by <12%> for 3 turn(s).
 - id: woof-walk-time
-  $nameJA: ワン！散歩の時間！
+  name:
+    locales:
+      ja: ワン！散歩の時間！
+      en: Woof! Walk Time!
   yomi: ワンサンポノジカン
   rarity: 4
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<16%>、この効果は持続ダメージにも有効。
+      en: Increases the wearer's ATK by <16%>. This also applies to DoT.
 - id: nowhere-to-run
-  $nameJA: 逃げ場なし
+  name:
+    locales:
+      ja: 逃げ場なし
+      en: Nowhere to Run
   yomi: ニゲバナシ
   rarity: 4
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<12%>分のHPを回復する。
+      en: Increases the wearer's ATK by <12%> of their ATK.
 - id: something-irreplaceable
-  $nameJA: かけがえのないもの
+  name:
+    locales:
+      ja: かけがえのないもの
+      en: Something Irreplaceable
   yomi: カケガエノナイモノ
   rarity: 5
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<24%>、効果は自身の次のターンが終了するまで継続。この効果は累積できず、ターンが回ってくるたびに1回まで発動できる。
+      en: Increases the wearer's ATK by <24%> until the end of their next turn. This effect cannot stack and can only trigger 1 time per turn.
 - id: arrows
-  $nameJA: 矢じり
+  name:
+    locales:
+      ja: 矢じり
+      en: Arrows
   yomi: ヤジリ
   rarity: 3
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 戦闘開始時、装備キャラの会心率+<12%>、3ターン継続。
+      en: At the start of the battle, the wearer's CRIT Rate increases by <12%> for 3 turn(s).
 - id: darting-arrow
-  $nameJA: 離弦
+  name:
+    locales:
+      ja: 離弦
+      en: Darting Arrow
   yomi: リゲン
   rarity: 3
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラが敵を倒した後、攻撃力+<24%>、3ターン持続。
+      en: When the wearer defeats an enemy, increases ATK by <24%> for 3 turn(s).
 - id: adversarial
-  $nameJA: 相抗
+  name:
+    locales:
+      ja: 相抗
+      en: Adversarial
   yomi: ソウコウ
   rarity: 3
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 装備キャラが敵を倒した後、速度+<10%>、2ターン持続。
+      en: When the wearer defeats an enemy, increases SPD by <10%> for 2 turn(s).
 - id: only-silence-remains
-  $nameJA: 沈黙のみ
+  name:
+    locales:
+      ja: 沈黙のみ
+      en: Only Silence Remains
   yomi: チンモクノミ
   rarity: 4
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<12%>。
+      en: Increases the wearer's ATK by <12%>.
 - id: swordplay
-  $nameJA: 論剣
+  name:
+    locales:
+      ja: 論剣
+      en: Swordplay
   yomi: ロンケン
   rarity: 4
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃が連続で同じ敵に命中するたびに、与ダメージ+<8%>、この効果は最大で5層累積できる。ターゲットが変わると、バフはリセットされる。
+      en: For each time the wearer hits the same target, DMG dealt increases by <8%>, stacking up to 5 time(s). This effect will be dispelled when the wearer changes targets.
 - id: subscribe-for-more
-  $nameJA: フォローして！
+  name:
+    locales:
+      ja: フォローして！
+      en: Subscribe for More!
   yomi: フォローシテ
   rarity: 4
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの通常攻撃と戦闘スキルの与ダメージ+<24%>。
+      en: Increases the DMG of the wearer's Basic ATK and Skill by <24%> when the wearer's current Energy reaches its max level.
 - id: in-the-night
-  $nameJA: 夜の帳の中で
+  name:
+    locales:
+      ja: 夜の帳の中で
+      en: In the Night
   yomi: ヨルノトバリノナカデ
   rarity: 5
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<12%>、最大で6層累積できる。
+      en: Increases the wearer's CRIT Rate by <12%>. This effect can stack up to 6 time(s).
 - id: sleep-like-the-dead
-  $nameJA: 泥の如き眠り
+  name:
+    locales:
+      ja: 泥の如き眠り
+      en: Sleep Like the Dead
   yomi: ドロノゴトキネムリ
   rarity: 5
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<36%>、1ターン継続。この効果は3ターンごとに1回発動できる。
+      en: Increases the wearer's CRIT DMG by <36%> for 1 turn(s). This effect can only trigger once every 3 turn(s).
 - id: cruising-in-the-stellar-sea
-  $nameJA: 星海巡航
+  name:
+    locales:
+      ja: 星海巡航
+      en: Cruising in the Stellar Sea
   yomi: セイカイジュンコウ
   rarity: 5
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<20%>、2ターン継続。
+      en: Increases the wearer's CRIT rate by <20%> for 2 turn(s).
 - id: river-flows-in-spring
-  $nameJA: 春水に初生する
+  name:
+    locales:
+      ja: 春水に初生する
+      en: River Flows in Spring
   yomi: シュンスイニショセイスル
   rarity: 4
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 戦闘に入った後、装備キャラの速度+<12%>。この効果は装備キャラがダメージを受けた後に失効し、装備キャラの次のターンが終了した時に再度効力を発生する。
+      en: After entering battle, increases the wearer's SPD by <12%>. When the wearer takes DMG, this effect will disappear. This effect will resume after the end of the wearer's next turn.
 - id: return-to-darkness
-  $nameJA: 幽冥に帰す
+  name:
+    locales:
+      ja: 幽冥に帰す
+      en: Return to Darkness
   yomi: ユウメイニキス
   rarity: 4
   path: the_hunt
   materials:
     primary: group:lcs002
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<16%>の固定確率で攻撃を受けた敵のバフを1つ解除する、この効果は1回の攻撃で1回まで発動できる。
+      en: Increases the wearer's CRIT Rate by <16%> fixed chance to dispel 1 buff on the target enemy. This effect can only trigger 1 time per attack.
 - id: data-bank
-  $nameJA: アーカイブ
+  name:
+    locales:
+      ja: アーカイブ
+      en: Data Bank
   yomi: アーカイブ
   rarity: 3
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの必殺技の与ダメージ+<28%>。
+      en: Increases the wearer's Ultimate DMG by <28%>.
 - id: passkey
-  $nameJA: 霊鍵
+  name:
+    locales:
+      ja: 霊鍵
+      en: Passkey
   yomi: レイケン
   rarity: 3
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラが戦闘スキルを発動した後、さらにEPを<8>回復する、この効果は1ターンに1回まで発動できる。
+      en: After the wearer uses their Skill, additionally regenerates <8> Energy. This effect can only be triggered 1 time per turn.
 - id: sagacity
-  $nameJA: 見識
+  name:
+    locales:
+      ja: 見識
+      en: Sagacity
   yomi: ケンシキ
   rarity: 3
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 装備キャラが必殺技を発動した時、攻撃力+<24%>、2ターン継続。
+      en: When the wearer uses their Ultimate, increases ATK by <24%> for 2 turn(s).
 - id: the-birth-of-the-self
-  $nameJA: 「私」の誕生
+  name:
+    locales:
+      ja: 「私」の誕生
+      en: The Birth of the Self
   yomi: ワタシノタンジョウ
   rarity: 4
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 装備キャラの追加攻撃の与ダメージ+<24%>。
+      en: Increases DMG dealt by the wearer's follow-up attacks by <24%>.
 - id: make-the-world-clamor
-  $nameJA: この世界に喧噪を
+  name:
+    locales:
+      ja: この世界に喧噪を
+      en: Make the World Clamor
   yomi: コノセカイニケンソウヲ
   rarity: 4
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 戦闘に入る時、装備キャラはEPを<32%>。
+      en: The wearer regenerates <32%>.
 - id: night-on-the-milky-way
-  $nameJA: 銀河鉄道の夜
+  name:
+    locales:
+      ja: 銀河鉄道の夜
+      en: Night on the Milky Way
   yomi: ギンガテツドウノヨル
   rarity: 5
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com002
+  skillDescription:
+    locales:
+      ja: フィールド上にいる敵1体につき、装備キャラの攻撃力+<30%>、1ターン継続。
+      en: For every enemy on the field, increases the wearer's ATK by <30%> for 1 turn.
 - id: before-dawn
-  $nameJA: 夜明け前
+  name:
+    locales:
+      ja: 夜明け前
+      en: Before Dawn
   yomi: ヨアケマエ
   rarity: 5
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<48%>。
+      en: Increases the wearer's CRIT DMG by <48%>.
 - id: geniuses-repose
-  $nameJA: 天才たちの休息
+  name:
+    locales:
+      ja: 天才たちの休息
+      en: Geniuses' Repose
   yomi: テンサイタチノキュウソク
   rarity: 4
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<24%>、3ターン継続。
+      en: Increases the wearer's ATK by <24%> for 3 turn(s).
 - id: the-seriousness-of-breakfast
-  $nameJA: 朝食の儀式感
+  name:
+    locales:
+      ja: 朝食の儀式感
+      en: The Seriousness of Breakfast
   yomi: チョウショクノギシキカン
   rarity: 4
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの与ダメージ+<4%>、この効果は最大で3層累積できる。
+      en: Increases the wearer's DMG by <4%>, stacking up to 3 time(s).
 - id: today-is-another-peaceful-day
-  $nameJA: 今日も平和な一日
+  name:
+    locales:
+      ja: 今日も平和な一日
+      en: Today Is Another Peaceful Day
   yomi: キョウモヘイワナイチニチ
   rarity: 4
   path: erudition
   materials:
     primary: group:lcs003
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 戦闘に入った後、装備キャラの最大EPに応じて、装備キャラの与ダメージをアップする。1EPにつき+<0.2%>、最大で160までカウントされる。
+      en: After entering battle, increases the wearer's DMG based on their Max Energy. DMG increases by <0.2%> per point of Energy, up to 160 Energy.
 - id: chorus
-  $nameJA: 斉頌
+  name:
+    locales:
+      ja: 斉頌
+      en: Chorus
   yomi: セイショウ
   rarity: 3
   path: harmony
   materials:
     primary: group:lcs006
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 戦闘に入った後、味方全体の攻撃力+<8%>。同系統のスキルは重ね掛け不可。
+      en: After entering battle, increases the ATK of all allies by <8%>. Effects of the same type cannot stack.
 - id: meshing-cogs
-  $nameJA: 輪契
+  name:
+    locales:
+      ja: 輪契
+      en: Meshing Cogs
   yomi: リンケイ
   rarity: 3
   path: harmony
   materials:
     primary: group:lcs006
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラが攻撃を行った後、または攻撃を受けた後、さらにEPを<4>回復する、この効果は1ターンに1回まで発動できる。
+      en: After the wearer uses attacks or gets hit, additionally regenerates <4> Energy. This effect can only be triggered 1 time per turn.
 - id: mediation
-  $nameJA: 同調
+  name:
+    locales:
+      ja: 同調
+      en: Mediation
   yomi: ドウチョウ
   rarity: 3
   path: harmony
   materials:
     primary: group:lcs006
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 戦闘に入る時、味方全体の速度+<12>、1ターン継続。
+      en: Upon entering battle, increases SPD of all allies by <12> points for 1 turn(s).
 - id: memories-of-the-past
-  $nameJA: 記憶の中の姿
+  name:
+    locales:
+      ja: 記憶の中の姿
+      en: Memories of the Past
   yomi: キオクノナカノスガタ
   rarity: 4
   path: harmony
   materials:
     primary: group:lcs006
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<4>回復する、この効果は1ターンに1回まで発動できる。
+      en: Increases the wearer's Break Effect by <4> Energy. This effect can only be triggered 1 time per turn.
 - id: planetary-rendezvous
-  $nameJA: 惑星との出会い
+  name:
+    locales:
+      ja: 惑星との出会い
+      en: Planetary Rendezvous
   yomi: ワクセイトノデアイ
   rarity: 4
   path: harmony
   materials:
     primary: group:lcs006
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 戦闘に入った後、味方が装備キャラと同じ属性のダメージを与えた時、与ダメージ+<12%>。
+      en: After entering battle, if an ally deals the same DMG Type as the wearer, DMG dealt increases by <12%>.
 - id: but-the-battle-isnt-over
-  $nameJA: だが戦争は終わらない
+  name:
+    locales:
+      ja: だが戦争は終わらない
+      en: But the Battle Isn't Over
   yomi: ダガセンソウハオワラナイ
   rarity: 5
   path: harmony
   materials:
     primary: group:lcs006
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラのEP回復効率+<30%>、1ターン継続。
+      en: Increases the wearer's Energy Regeneration Rate by <30%> more DMG for 1 turn(s).
 - id: carve-the-moon-weave-the-clouds
-  $nameJA: 彫月裁雲の意
+  name:
+    locales:
+      ja: 彫月裁雲の意
+      en: Carve the Moon, Weave the Clouds
   yomi: チョウゲツサイウンノイ
   rarity: 4
   path: harmony
   materials:
     primary: group:lcs006
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 戦闘開始時、および装備キャラのターンが回ってきた時、ランダムで効果を1つ発動する。この効果が発動されるたび、前回の効果を上書きする。同じ効果は連続で発動されない。効果は以下を含む：味方全体の攻撃力+<6%>。同系統のスキルは累積できず、装備キャラが戦闘不能状態になると効果は解除される。
+      en: "At the start of the battle and whenever the wearer's turn begins, one of the following effects is applied randomly: All allies' ATK increases by <6%>. The applied effect cannot be identical to the last effect applied, and will replace the previous effect. The applied effect will be removed when the wearer has been knocked down. Effects of the similar type cannot be stacked."
 - id: dance-dance-dance
-  $nameJA: ダンス！ダンス！ダンス！
+  name:
+    locales:
+      ja: ダンス！ダンス！ダンス！
+      en: Dance! Dance! Dance!
   yomi: ダンスダンスダンス
   rarity: 4
   path: harmony
   materials:
     primary: group:lcs006
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラが必殺技を発動した後、味方全体の行動順が<16%>早まる。
+      en: When the wearer uses their Ultimate, all allies' actions are Advanced Forward by <16%>.
 - id: past-and-future
-  $nameJA: 過去と未来
+  name:
+    locales:
+      ja: 過去と未来
+      en: Past and Future
   yomi: カコトミライ
   rarity: 4
   path: harmony
   materials:
     primary: group:lcs006
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラが戦闘スキルを発動した後、次に行動する他の味方の与ダメージ+<16%>、1ターン継続。
+      en: When the wearer uses their Skill, the next ally taking action (except the wearer) deals <16%> increased DMG for 1 turn(s).
 - id: void
-  $nameJA: 幽邃
+  name:
+    locales:
+      ja: 幽邃
+      en: Void
   yomi: ユウスイ
   rarity: 3
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 戦闘開始時、装備キャラの効果命中+<20%>、3ターン継続。
+      en: At the start of the battle, the wearer's Effect Hit Rate increases by <20%> for 3 turn(s).
 - id: loop
-  $nameJA: 淵環
+  name:
+    locales:
+      ja: 淵環
+      en: Loop
   yomi: エンカン
   rarity: 3
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 減速状態の敵に対する、装備キャラの与ダメージ+<24%>。
+      en: Increases DMG dealt from its wearer to Slowed enemies by <24%>.
 - id: hidden-shadow
-  $nameJA: 匿影
+  name:
+    locales:
+      ja: 匿影
+      en: Hidden Shadow
   yomi: トクエイ
   rarity: 3
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 戦闘スキルを発動した後、装備キャラの次の通常攻撃が、敵に自身の攻撃力<60%>分の付加ダメージを与える。
+      en: After using Skill, the wearer's next Basic ATK deals Additional DMG equal to <60%> of ATK to the target enemy.
 - id: good-night-and-sleep-well
-  $nameJA: おやすみなさいと寝顔
+  name:
+    locales:
+      ja: おやすみなさいと寝顔
+      en: Good Night and Sleep Well
   yomi: オヤスミナサイトネガオ
   rarity: 4
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 敵にデバフが1つあるごとに、その敵に対する装備キャラの与ダメージ+<12%>、最大で3層累積できる。この効果は持続ダメージにも有効。
+      en: For every debuff the target enemy has, the DMG dealt by the wearer increases by <12%>, stacking up to 3 time(s). This effect also applies to DoT.
 - id: eyes-of-the-prey
-  $nameJA: 獲物の視線
+  name:
+    locales:
+      ja: 獲物の視線
+      en: Eyes of the Prey
   yomi: エモノノシセン
   rarity: 4
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 装備キャラの効果命中+<24%>。
+      en: Increases the wearer's Effect Hit Rate by <24%>.
 - id: resolution-shines-as-pearls-of-sweat
-  $nameJA: 決意は汗のように輝く
+  name:
+    locales:
+      ja: 決意は汗のように輝く
+      en: Resolution Shines As Pearls of Sweat
   yomi: ケツイハアセノヨウニカガヤク
   rarity: 4
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃が敵に命中した時、その敵が「陥落」状態でない場合、<12%>、1ターン継続。
+      en: When the wearer hits an enemy and if the hit enemy is not already Ensnared, then there is a <12%> for 1 turn(s).
 - id: in-the-name-of-the-world
-  $nameJA: 世界の名を以て
+  name:
+    locales:
+      ja: 世界の名を以て
+      en: In the Name of the World
   yomi: セカイノナヲモッテ
   rarity: 5
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com003
+  skillDescription:
+    locales:
+      ja: デバフ状態の敵に対して、装備キャラの与ダメージ+<24%>。
+      en: Increases the wearer's DMG to debuffed enemies by <24%>.
 - id: fermata
-  $nameJA: フェルマータ
+  name:
+    locales:
+      ja: フェルマータ
+      en: Fermata
   yomi: フェルマータ
   rarity: 4
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<16%>、この効果は持続ダメージにも有効。
+      en: Increases the Break Effect dealt by the wearer by <16%>. This also applies to DoT.
 - id: we-will-meet-again
-  $nameJA: またお会いしましょう
+  name:
+    locales:
+      ja: またお会いしましょう
+      en: We Will Meet Again
   yomi: マタオアイシマショウ
   rarity: 4
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 装備キャラが通常攻撃または戦闘スキルを発動した後、攻撃を受けた敵からランダムに1体選択し、装備キャラの攻撃力<48%>分の付加ダメージを与える。
+      en: After the wearer uses Basic ATK or Skill, deals Additional DMG equal to <48%> of the wearer's ATK to a random enemy that has been attacked.
 - id: amber
-  $nameJA: 琥珀
+  name:
+    locales:
+      ja: 琥珀
+      en: Amber
   yomi: コハク
   rarity: 3
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの防御力+<16%>。
+      en: Increases the wearer's DEF by <16%>.
 - id: defense
-  $nameJA: 防衛
+  name:
+    locales:
+      ja: 防衛
+      en: Defense
   yomi: ボウエイ
   rarity: 3
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 装備キャラが必殺技を発動した時、HPを最大HP<18%>分回復する。
+      en: When the wearer unleashes their Ultimate, they restore HP by <18%> of their Max HP.
 - id: pioneering
-  $nameJA: 新天地
+  name:
+    locales:
+      ja: 新天地
+      en: Pioneering
   yomi: シンテンチ
   rarity: 3
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラが敵を弱点撃破した時、HPを最大HP<12%>分回復する。
+      en: When the wearer Breaks an enemy's Weakness, the wearer restores HP by <12%> of their Max HP.
 - id: day-one-of-my-new-life
-  $nameJA: 余生の初日
+  name:
+    locales:
+      ja: 余生の初日
+      en: Day One of My New Life
   yomi: ヨセイノショニチ
   rarity: 4
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの防御力+<8%>。同系統のスキルは重ね掛け不可。
+      en: Increases the wearer's DEF by <8%>. Effects of the same type cannot stack.
 - id: landaus-choice
-  $nameJA: ランドゥーの選択
+  name:
+    locales:
+      ja: ランドゥーの選択
+      en: Landau's Choice
   yomi: ランドゥーノセンタク
   rarity: 4
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラが敵の攻撃を受ける確率がアップする、被ダメージ-<16%>。
+      en: The wearer is more likely to be attacked, and DMG taken is reduced by <16%>.
 - id: trend-of-the-universal-market
-  $nameJA: 星間市場のトレンド
+  name:
+    locales:
+      ja: 星間市場のトレンド
+      en: Trend of the Universal Market
   yomi: セイカンシジョウノトレンド
   rarity: 4
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの防御力+<40%>分の持続ダメージを受ける、2ターン継続。
+      en: Increases the wearer's DEF by <40%> of the wearer's DEF for 2 turn(s).
 - id: moment-of-victory
-  $nameJA: 勝利の刹那
+  name:
+    locales:
+      ja: 勝利の刹那
+      en: Moment of Victory
   yomi: ショウリノセツナ
   rarity: 5
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラの防御力+<24%>、効果は自身のターンが終了するまで継続。
+      en: Increases the wearer's DEF by <24%> until the end of the wearer's turn.
 - id: texture-of-memories
-  $nameJA: 記憶の素材
+  name:
+    locales:
+      ja: 記憶の素材
+      en: Texture of Memories
   yomi: キオクノソザイ
   rarity: 5
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの効果抵抗+<12%>。
+      en: Increases the wearer's Effect RES by <12%>.
 - id: we-are-wildfire
-  $nameJA: 我ら地炎
+  name:
+    locales:
+      ja: 我ら地炎
+      en: We Are Wildfire
   yomi: ワレラチエン
   rarity: 4
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 戦闘開始時、味方全体の被ダメージ-<30%>分回復する。
+      en: At the start of the battle, the DMG dealt to all allies decreases by <30%> of the respective HP difference between the characters' Max HP and current HP.
 - id: this-is-me
-  $nameJA: これがウチだよ！
+  name:
+    locales:
+      ja: これがウチだよ！
+      en: This Is Me!
   yomi: コレガウチダヨ
   rarity: 4
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 装備キャラの防御力+<60%>分アップする。この効果は必殺技を発動するたび、1体の敵に対して1回まで発動できる。
+      en: Increases the wearer's DEF by <60%> of the wearer's DEF. This effect only applies 1 time per enemy target during each use of the wearer's Ultimate.
 - id: cornucopia
-  $nameJA: 物穣
+  name:
+    locales:
+      ja: 物穣
+      en: Cornucopia
   yomi: ブツジョウ
   rarity: 3
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラが戦闘スキル、または必殺技を発動した時、治癒量+<12%>。
+      en: When the wearer uses their Skill or Ultimate, their Outgoing Healing increases by <12%>.
 - id: fine-fruit
-  $nameJA: 嘉果
+  name:
+    locales:
+      ja: 嘉果
+      en: Fine Fruit
   yomi: カカ
   rarity: 3
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 戦闘開始時、味方全体のEPを<6>回復する。
+      en: At the start of the battle, immediately regenerates <6> Energy for all allies.
 - id: multiplication
-  $nameJA: 蕃殖
+  name:
+    locales:
+      ja: 蕃殖
+      en: Multiplication
   yomi: ハンショク
   rarity: 3
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラが通常攻撃を行った後、次の行動順が<12%>早まる。
+      en: After the wearer uses their Basic ATK, their next action will be Advanced Forward by <12%>.
 - id: post-op-conversation
-  $nameJA: 手術後の会話
+  name:
+    locales:
+      ja: 手術後の会話
+      en: Post-Op Conversation
   yomi: シュジュツゴノカイワ
   rarity: 4
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラのEP回復効率+<12%>。
+      en: Increases the wearer's Energy Regeneration Rate by <12%>.
 - id: shared-feeling
-  $nameJA: 同じ気持ち
+  name:
+    locales:
+      ja: 同じ気持ち
+      en: Shared Feeling
   yomi: オナジキモチ
   rarity: 4
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの治癒量+<2>回復する。
+      en: Increases the wearer's Outgoing Healing by <2> Energy for all allies.
 - id: perfect-timing
-  $nameJA: 今が丁度
+  name:
+    locales:
+      ja: 今が丁度
+      en: Perfect Timing
   yomi: イマガチョウド
   rarity: 4
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの効果抵抗+<15%>アップできる。
+      en: Increases the wearer's Effect RES by <15%>.
 - id: quid-pro-quo
-  $nameJA: 等価交換
+  name:
+    locales:
+      ja: 等価交換
+      en: Quid Pro Quo
   yomi: トウカコウカン
   rarity: 4
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラのターンが回って来た時、自身以外のEPが50%未満の味方からランダムに1人選択し、EPを<8>回復させる。
+      en: At the start of the wearer's turn, regenerates <8> Energy for a randomly chosen ally (excluding the wearer) whose current Energy is lower than 50%.
 - id: warmth-shortens-cold-nights
-  $nameJA: 暖かい夜は長くない
+  name:
+    locales:
+      ja: 暖かい夜は長くない
+      en: Warmth Shortens Cold Nights
   yomi: アタタカイヨルハナガクナイ
   rarity: 4
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの最大HP+<2%>分回復する。
+      en: Increases the wearer's Max HP by <2%> of their respective Max HP.
 - id: time-waits-for-no-one
-  $nameJA: 時節は居らず
+  name:
+    locales:
+      ja: 時節は居らず
+      en: Time Waits for No One
   yomi: ジセツハオラズ
   rarity: 5
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの最大HP+<36%>分の付加ダメージを与える。このダメージはバフの影響を受けず、ターンが回ってくるたびに1回まで発生する。
+      en: Increases the wearer's Max HP by <36%> of the recorded Outgoing Healing value. This Additional DMG is of the same Type as the wearer's, is not affected by other buffs, and can only occur 1 time per turn.
 - id: before-the-tutorial-mission-starts
-  $nameJA: 初めてのクエストの前に
+  name:
+    locales:
+      ja: 初めてのクエストの前に
+      en: Before the Tutorial Mission Starts
   yomi: ハジメテノクエストノマエニ
   rarity: 4
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの効果命中+<20%>。装備キャラが、防御力がダウンされた敵に攻撃を行った後、EPを<4>回復する。
+      en: Increases the wearer's Effect Hit Rate by <20%>. When the wearer attacks DEF-reduced enemies, regenerates <4> Energy.
 - id: incessant-rain
-  $nameJA: 降りやまぬ雨
+  name:
+    locales:
+      ja: 降りやまぬ雨
+      en: Incessant Rain
   yomi: フリヤマヌアメ
   rarity: 5
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com004
+  skillDescription:
+    locales:
+      ja: 装備キャラの効果命中+<24%>。デバフが3つ以上ある敵に対して、装備キャラの会心率+<12%>。装備キャラが通常攻撃、戦闘スキル、必殺技を発動した後、100%の基礎確率で攻撃を受けた敵の中から、「エーテルコード」を付与されてないランダムな敵1体に「エーテルコード」を付与する。「エーテルコード」を付与された敵の被ダメージ+<12%>、1ターン継続。
+      en: Increases the wearer's Effect Hit Rate by <24%>. When the wearer deals DMG to an enemy that currently has 3 or more debuffs, increases the wearer's CRIT Rate by <12%>. After the wearer uses their Basic ATK, Skill, or Ultimate, there is a 100% base chance to implant Aether Code on a random hit target that does not yet have it. Targets with Aether Code receive <12%> increased DMG for 1 turn.
 - id: echoes-of-the-coffin
-  $nameJA: 棺のこだま
+  name:
+    locales:
+      ja: 棺のこだま
+      en: Echoes of the Coffin
   yomi: ヒツギノコダマ
   rarity: 5
   path: abundance
   materials:
     primary: group:lcs007
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<24%>。装備キャラが攻撃を行った後、異なる敵に攻撃が命中するごとにEPを<3>回復する。1回の攻撃で、この効果を通して最大で3回EPを回復できる。装備キャラが必殺技を発動した後、味方全体の速度+<12>、1ターン継続。
+      en: Increases the wearer's ATK by <24%>. After the wearer uses an attack, for each different enemy target the wearer hits, regenerates <3> Energy. Each attack can regenerate Energy up to 3 time(s) this way. After the wearer uses their Ultimate, all allies gain <12> SPD for 1 turn.
 - id: the-unreachable-side
-  $nameJA: 着かない彼岸
+  name:
+    locales:
+      ja: 着かない彼岸
+      en: The Unreachable Side
   yomi: ツカナイヒガン
   rarity: 5
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<18%>、最大HP+<18%>。装備キャラが攻撃を受ける、または自身のHPを消費すると、与ダメージ+<24%>、この効果は装備キャラが攻撃を行った後に解除される。
+      en: Increases the wearer's CRIT rate by <18%> and increases their Max HP by <18%>. When the wearer is attacked or consumes their own HP, their DMG increases by <24%>. This effect is removed after the wearer uses an attack.
 - id: patience-is-all-you-need
-  $nameJA: 待つのみ
+  name:
+    locales:
+      ja: 待つのみ
+      en: Patience Is All You Need
   yomi: マツノミ
   rarity: 5
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com001
+  skillDescription:
+    locales:
+      ja: |-
+        装備キャラの与ダメージ+<24%>。装備キャラが攻撃を行った後、速度+<4.8%>、最大で3層累積できる。
+        装備キャラの攻撃が敵に命中した時、その敵が「遊糸」状態でない場合、<100%>の基礎確率で敵を「遊糸」状態にする。敵が「遊糸」状態の時、感電状態と見なされる。「遊糸」状態の敵はターンが回ってくるたびに、装備キャラの攻撃力<60%>分の雷属性持続ダメージを受ける、1ターン継続。
+      en: |-
+        Increases DMG dealt by the wearer by <24%>. After every attack launched by wearer, their SPD increases by <4.8%>, stacking up to 3 times.
+        If the wearer hits an enemy target that is not afflicted by Erode, there is a <unbreak>100%</unbreak> base chance to inflict Erode to the target. Enemies afflicted with Erode are also considered to be Shocked and will receive Lightning DoT at the start of each turn equal to <60%> of the wearer's ATK, lasting for 1 turn(s).
 - id: brighter-than-the-sun
-  $nameJA: 陽光より輝くもの
+  name:
+    locales:
+      ja: 陽光より輝くもの
+      en: Brighter Than the Sun
   yomi: ヨウコウヨリカガヤクモノ
   rarity: 5
   path: destruction
   materials:
     primary: group:lcs005
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<18%>。装備キャラが通常攻撃を行った時、「龍吟」を1層獲得する、2ターン継続。「龍吟」1層につき、装備キャラの攻撃力+<18%>、EP回復効率+<6%>。「龍吟」は最大で2層累積できる。
+      en: Increases the wearer's CRIT Rate by <18%>. When the wearer uses their Basic ATK, they will gain 1 stack of Dragon's Call, lasting for 2 turns. Each stack of Dragon's Call increases the wearer's ATK by <18%> and Energy Regeneration Rate by <6%>. Dragon's Call can be stacked up to 2 times.
 - id: solitary-healing
-  $nameJA: 孤独の癒やし
+  name:
+    locales:
+      ja: 孤独の癒やし
+      en: Solitary Healing
   yomi: コドクノイヤシ
   rarity: 5
   path: nihility
   materials:
     primary: group:lcs004
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<20%>。装備キャラが必殺技を発動した時、装備キャラの持続与ダメージ+<24%>、2ターン継続。装備キャラに持続ダメージ系デバフを付与された敵が倒された時、装備キャラのEPを<4>回復する。
+      en: Increases the wearer's Break Effect by <20%>. When the wearer uses their Ultimate, increases DoT dealt by the wearer by <24%>, lasting for 2 turn(s). When a target enemy suffering from DoT imposed by the wearer is defeated, regenerates <4> Energy for the wearer.
 - id: she-already-shut-her-eyes
-  $nameJA: 閉ざした瞳
+  name:
+    locales:
+      ja: 閉ざした瞳
+      en: She Already Shut Her Eyes
   yomi: トザシタヒトミ
   rarity: 5
   path: preservation
   materials:
     primary: group:lcs001
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの最大HP+<24%>、EP回復効率+<12%>。装備キャラのHPが減った時、味方全体の与ダメージ+<9%>、2ターン継続。\n各ウェーブ開始時、味方全体のHPをそれぞれ失ったHPの<80%>分回復する。
+      en: Increases the wearer's Max HP by <24%> and Energy Regeneration Rate by <12%>. When the wearer's HP is reduced, all allies' DMG dealt increases by <9%>, lasting for 2 turn(s).\nAt the start of every wave, restores HP to all allies by an amount equal to <80%> of their respective lost HP.
 - id: i-shall-be-my-own-sword
+  name:
+    locales:
+      ja: この身は剣なり
+      en: I Shall Be My Own Sword
   yomi: コノミハケンナリ
-  $nameJA: この身は剣なり
   path: destruction
   rarity: 5
   materials:
     primary: group:lcs005
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<20%>。自身以外の味方が攻撃を受ける、またはHPを消費した後、装備キャラは「月蝕」を1層獲得する。この効果は最大で3層累積できる。「月蝕」1層につき、装備キャラの次の攻撃の与ダメージ+<14%>。「月蝕」が上限の3層に累積した時、その回の攻撃は敵の防御力を<12%>無視する。この効果は装備キャラが攻撃を行った後に解除される。
+      en: Increases the wearer's CRIT DMG by <20%>. When an ally (excluding the wearer) gets attacked or loses HP, the wearer gains 1 stack of Eclipse, up to a max of 3 stack(s). Each stack of Eclipse increases the DMG of the wearer's next attack by <14%>. When 3 stack(s) are reached, additionally enables that attack to ignore <12%> of the enemy's DEF. This effect will be removed after the wearer uses an attack.
 - id: worrisome-blissful
+  name:
+    locales:
+      ja: 悩んで笑って
+      en: Worrisome, Blissful
   yomi: ナヤンデワラッテ
-  $nameJA: 悩んで笑って
   path: the_hunt
   rarity: 5
   materials:
     primary: group:lcs002
     common: group:com003
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<18%>、追加攻撃の与ダメージ+<30%>。装備キャラが追加攻撃を行った後、敵を「従順」状態にする。この効果は最大で2層累積できる。味方の攻撃が「従順」状態の敵に命中した時、「従順」1層につき与える会心ダメージ+<12%>。
+      en: Increase the wearer's CRIT Rate by <18%> and their follow-up attacks' DMG by <30%>. After the wearer uses a follow-up attack, apply the Tame state to the target, stacking up to 2 stacks. When allies hit enemy targets under the Tame state, every Tame stack increases the CRIT DMG dealt by <12%>.
 - id: hey-over-here
-  yomi: 'ヨオココニイルゼ'
-  $nameJA: よぉ、ここにいるぜ
+  name:
+    locales:
+      ja: よぉ、ここにいるぜ
+      en: Hey, Over Here
+  yomi: ヨオココニイルゼ
   path: abundance
   rarity: 4
   materials:
     primary: group:lcs007
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの最大HP+<8%>。装備キャラが戦闘スキルを発動した時、治癒量+<16%>、2ターン継続。
+      en: Increases the wearer's Max HP by <8%>. When the wearer uses their Skill, increases Outgoing Healing by <16%>, lasting for 2 turn(s).
 - id: night-of-fright
-  yomi: 'キョウコンノヨル'
-  $nameJA: 驚魂の夜
+  name:
+    locales:
+      ja: 驚魂の夜
+      en: Night of Fright
+  yomi: キョウコンノヨル
   path: abundance
   rarity: 5
   materials:
     primary: group:lcs007
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラのEP回復効率+<12%>。味方が必殺技を発動した時、装備キャラは残りHP割合が最も低い味方のHPを、その味方の最大HP<10%>分回復する。装備キャラが味方に治癒を行った時、その味方の攻撃力+<2.4%>、この効果は最大で5層累積できる、2ターン継続。
+      en: Increases the wearer's Energy Regeneration Rate by <12%>. When any ally uses their Ultimate, the wearer restores HP for the ally currently with the lowest HP percentage by an amount equal to <10%> of the healed ally's Max HP. When the wearer provides healing for an ally, increases the healed ally's ATK by <2.4%>. This effect can stack up to 5 times and lasts for 2 turn(s).
 - id: an-instant-before-a-gaze
-  yomi: 'ソノイッコクメニヤキツケテ'
-  $nameJA: その一刻、目に焼き付けて
+  name:
+    locales:
+      ja: その一刻、目に焼き付けて
+      en: An Instant Before A Gaze
+  yomi: ソノイッコクメニヤキツケテ
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs003
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<36%>。装備キャラが必殺技を発動した時、装備キャラの最大EPに応じて装備キャラの必殺技の与ダメージをアップする、1EPにつき+<0.36%>、最大で180までカウントされる。
+      en: Increases the wearer's CRIT DMG by <36%>. When the wearer uses Ultimate, increases the wearer's Ultimate DMG based on their Max Energy. Each point of Energy increases the Ultimate DMG by <0.36%>, up to 180 points of Energy.
 - id: past-self-in-mirror
+  name:
+    locales:
+      ja: 鏡の中の私
+      en: Past Self in Mirror
   yomi: カガミノナカノワタシ
-  $nameJA: 鏡の中の私
   path: harmony
   rarity: 5
   materials:
     primary: group:lcs006
     common: group:com005
+  skillDescription:
+    locales:
+      ja: |-
+        装備キャラの撃破特効+<60%>。装備キャラが必殺技を発動した後、味方全体の与ダメージ+<24%>、3ターン継続。また、装備キャラの撃破特効が150%以上の場合、SPを1回復。
+        各ウェーブ開始時、味方全体のEPを<10>回復する。同系統のスキルは重ね掛け不可。
+      en: |-
+        Increases the wearer's Break Effect by <60%>. When the wearer uses their Ultimate, increases all allies' DMG by <24%>, lasting for 3 turn(s). Should the wearer's Break Effect exceed or equal 150%, 1 Skill Point will be recovered.
+        At the start of each wave, all allies regenerate <10> Energy immediately. Effects of the same type cannot stack.
 - id: baptism-of-pure-thought
+  name:
+    locales:
+      ja: 純粋なる思惟の洗礼
+      en: Baptism of Pure Thought
   yomi: ジュンスイナルシユイノセンレイ
-  $nameJA: 純粋なる思惟の洗礼
   path: the_hunt
   rarity: 5
   materials:
     primary: group:lcs002
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<20%>。敵にあるデバフ1つにつき、装備キャラがその敵に与える会心ダメージ+<8%>、最大で3層累積できる。必殺技で敵を攻撃する時、装備キャラは「論弁」効果を獲得し、与ダメージ+<36%>、追加攻撃が敵の防御力を<24%>無視する、この効果は2ターン継続する。
+      en: Increases the wearer's CRIT DMG by <20%>. For every debuff on the enemy target, the wearer's CRIT DMG dealt against this target increases by <8%>, stacking up to 3 times. When using Ultimate to attack the enemy target, the wearer receives the Disputation effect, which increases DMG dealt by <36%> and enables their follow-up attacks to ignore <24%> of the target's DEF. This effect lasts for 2 turns.
 - id: indelible-promise
+  name:
+    locales:
+      ja: 心に刻まれた約束
+      en: Indelible Promise
   yomi: ココロニキザマレタヤクソク
-  $nameJA: '心に刻まれた約束'
   path: destruction
   rarity: 4
   materials:
     primary: group:lcs009
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<28%>。装備キャラが必殺技を発動する時、会心率+<15%>、2ターン継続。
+      en: Increases the wearer's Break Effect by <28%>. When the wearer uses their Ultimate, increases CRIT Rate by <15%>, lasting for 2 turn(s).
 - id: reforged-remembrance
+  name:
+    locales:
+      ja: 時間の記憶を再構築して
+      en: Reforged Remembrance
   yomi: トキノキオクヲサイコウチクシテ
-  $nameJA: '時間の記憶を再構築して'
   path: nihility
   rarity: 5
   materials:
     primary: group:lcs008
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの効果命中+<40%>。装備キャラが風化、燃焼、感電、または裂創状態の敵にダメージを与える時、それぞれ「予見」を1層獲得する、最大で4層累積できる。一度の戦闘において、各種類の持続ダメージ系デバフがそれぞれ累積できる「予見」は1層のみ。「予見」1層につき、装備キャラの攻撃力+<5%>、与える持続ダメージが敵の防御力を<7.2%>無視する。
+      en: Increases the wearer's Effect Hit Rate by <40%>. When the wearer deals DMG to an enemy inflicted with Wind Shear, Burn, Shock, or Bleed, each respectively grants 1 stack of Prophet, stacking up to 4 time(s). In a single battle, only 1 stack of Prophet can be granted for each type of DoT. Every stack of Prophet increases wearer's ATK by <5%> and enables the DoT dealt to ignore <7.2%> of the target's DEF.
 - id: what-is-real
+  name:
+    locales:
+      ja: 何が真か
+      en: What Is Real?
   yomi: ナニガマコトカ
-  $nameJA: '何が真か'
   path: abundance
   rarity: 4
   materials:
     primary: group:lcs007
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<24%>。通常攻撃を行った後、装備キャラのHPを最大HP<2%>+800回復する。
+      en: Increases the wearer's Break Effect by <24%>. After using Basic ATK, restores HP for the wearer by an amount equal to <2%> of Max HP plus 800.
 - id: dreamville-adventure
+  name:
+    locales:
+      ja: ドリームタウンの大冒険
+      en: Dreamville Adventure
   yomi: ドリームタウンノダイボウケン
-  $nameJA: ドリームタウンの大冒険
   path: harmony
   rarity: 4
   materials:
     primary: group:lcs010
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラが通常攻撃、戦闘スキル、必殺技のうち、任意のタイプのスキルを発動した後、味方全体に「童心」を付与する。「童心」を持つ味方の、対応するタイプのスキルの与ダメージ+<12%>。「童心」は装備キャラが最後に発動したタイプのスキルにのみ効果を発揮する。この効果は累積できない。
+      en: After the wearer uses a certain type of ability such as Basic ATK, Skill, or Ultimate, all allies gain Childishness, which increases allies' DMG for the same type of ability as used by the wearer by <12%>. Childishness only takes effect for the most recent type of ability the wearer used and cannot be stacked.
 - id: final-victor
+  name:
+    locales:
+      ja: 最後の勝者
+      en: Final Victor
   yomi: サイゴノショウシャ
-  $nameJA: '最後の勝者'
   path: the_hunt
   rarity: 4
   materials:
     primary: group:lcs002
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<12%>。装備キャラが敵に攻撃を行い、会心が発生した後、「好運」を1層獲得する、最大で4層累積できる。「好運」1層につき、装備キャラの会心ダメージ+<8%>。「好運」は装備キャラのターン終了時に解除される。
+      en: Increases the wearer's ATK by <12%>. When the wearer lands a CRIT hit on enemies, gains a stack of Good Fortune, stacking up to 4 time(s). Every stack of Good Fortune the wearer has will increase their CRIT DMG by <8%>. Good Fortune will be removed at the end of the wearer's turn.
 - id: flames-afar
+  name:
+    locales:
+      ja: 烈火の彼方
+      en: Flames Afar
   yomi: レッカノカナタ
-  $nameJA: '烈火の彼方'
   path: destruction
   rarity: 4
   materials:
     primary: group:lcs009
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラが1回の攻撃で最大HP25%分を超えるHPを失う、または1回で最大HP25%分を超えるHPを消費した後、装備キャラの最大HP15%分のHPを回復し、与ダメージ+<25%>、2ターン継続。この効果は3ターンごとに1回発動できる。
+      en: When the cumulative HP loss of the wearer during a single attack exceeds 25% of their Max HP, or if the amount of their own HP they consume at one time is greater than 25% of their Max HP, immediately heals the wearer for 15% of their Max HP, and at the same time, increases the DMG they deal by <25%> for 2 turn(s). This effect can only be triggered once every 3 turn(s).
 - id: destinys-threads-forewoven
+  name:
+    locales:
+      ja: 運命を紡ぐ糸
+      en: Destiny's Threads Forewoven
   yomi: ウンメイヲツムグイト
-  $nameJA: '運命を紡ぐ糸'
   path: preservation
   rarity: 4
   materials:
     primary: group:lcs001
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラの効果抵抗+<12%>。装備キャラの防御力100につき、与ダメージ+<0.8%>、最大で与ダメージ+<32%>。
+      en: Increases the wearer's Effect RES by <12%>. For every 100 of DEF the wearer has, increases the wearer's DMG dealt by <0.8%>, up to a maximum DMG increase of <32%>.
 - id: the-day-the-cosmos-fell
+  name:
+    locales:
+      ja: 銀河が陥落した日
+      en: The Day The Cosmos Fell
   yomi: ギンガガカンラクシタヒ
-  $nameJA: '銀河が陥落した日'
   path: erudition
   rarity: 4
   materials:
     primary: group:lcs003
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<16%>。装備キャラが攻撃を行った後、攻撃を受けた敵の内、攻撃の属性と同じ弱点を持つ敵が2体以上の場合、装備キャラの会心ダメージ+<20%>、2ターン継続。
+      en: Increases the wearer's ATK by <16%>. When the wearer uses an attack and at least 2 attacked enemies have the corresponding Weakness, the wearer's CRIT DMG increases by <20%> for 2 turn(s).
 - id: its-showtime
+  name:
+    locales:
+      ja: ショーの始まり
+      en: It's Showtime
   yomi: ショーノハジマリ
-  $nameJA: ショーの始まり
   path: nihility
   rarity: 4
   materials:
     primary: group:lcs008
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラが敵にデバフを付与した後、「トリック」を1層獲得する。「トリック」1層につき、装備キャラの与ダメージ+<6%>、1ターン継続、最大で3層累積できる。装備キャラの効果命中が80%以上の時、攻撃力+<20%>。
+      en: When the wearer inflicts a debuff on an enemy, gains a stack of Trick. Every stack of Trick increases the wearer's DMG dealt by <6%>, stacking up to 3 time(s). This effect lasts for 1 turn(s). When the wearer's Effect Hit Rate is 80% or higher, increases ATK by <20%>.
 - id: inherently-unjust-destiny
+  name:
+    locales:
+      ja: 運命は常に不公平
+      en: Inherently Unjust Destiny
   yomi: ウンメイハツネニフコウヘイ
-  $nameJA: 運命は常に不公平
   path: preservation
   rarity: 5
   materials:
     primary: group:lcs011
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラの防御力+<40%>。装備キャラが味方にバリアを付与する時、装備キャラの会心ダメージ+<40%>、2ターン継続。装備キャラの追加攻撃が敵に命中する時、<100%>の基礎確率で攻撃を受ける敵の被ダメージを<10%>アップさせる、2ターン継続。
+      en: Increases the wearer's DEF by <40%>. When the wearer provides a Shield to an ally, the wearer's CRIT DMG increases by <40%>, lasting for 2 turn(s). When the wearer's follow-up attack hits an enemy target, there is a <100%> base chance to increase the DMG taken by the attacked enemy target by <10%>, lasting for 2 turn(s).
 - id: along-the-passing-shore
+  name:
+    locales:
+      ja: 流れ逝く岸を歩いて
+      en: Along the Passing Shore
   yomi: ナガレユクキシヲアルイテ
-  $nameJA: 流れ逝く岸を歩いて
   path: nihility
   rarity: 5
   materials:
     primary: group:lcs008
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<36%>。装備キャラの攻撃が敵に命中する時、敵を「泡影」状態にする、1ターン継続。この効果は装備キャラが攻撃を行うたびに、敵それぞれに1回まで発動できる。「泡影」状態の敵に対する装備キャラの与ダメージ+<24%>、さらに必殺技の与ダメージ+<24%>。
+      en: Increases the wearer's CRIT DMG by <36%>. When the wearer hits an enemy target, inflicts Mirage Fizzle on the enemy, lasting for 1 turn. Each time the wearer attacks, this effect can only trigger 1 time on each target. The wearer deals <24%> increased DMG to targets afflicted with Mirage Fizzle, and the DMG dealt by the wearer's Ultimate additionally increases by <24%>.
 - id: concert-for-two
+  name:
+    locales:
+      ja: 二人だけのコンサート
+      en: Concert for Two
   yomi: フタリダケノコンサート
-  $nameJA: 二人だけのコンサート
   path: preservation
   rarity: 4
   materials:
     primary: group:lcs011
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラの防御力+<16%>。フィールド上にいるバリアを持つ味方1名につき、装備キャラの与ダメージ+<4%>。
+      en: Increases the wearer's DEF by <16%>. For every on-field character that has a Shield, the DMG dealt by the wearer increases by <4%>.
 - id: flowing-nightglow
+  name:
+    locales:
+      ja: 光あふれる夜
+      en: Flowing Nightglow
   yomi: ヒカリアフレルヨル
-  $nameJA: 光あふれる夜
   path: harmony
   rarity: 5
   materials:
     primary: group:lcs010
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 味方が攻撃を行うたび、装備キャラは「朗唱」を1層獲得する。「朗唱」1層につき、装備キャラのEP回復効率+<3%>、最大で5層累積できる。装備キャラが必殺技を発動する時、「朗唱」を解除し「華彩」を獲得する。「華彩」がある時、装備キャラの攻撃力+<48%>、味方全体の与ダメージ+<24%>、1ターン継続。
+      en: Every time an ally attacks, the wearer gains 1 stack of Cantillation. Each stack of Cantillation increases the wearer's Energy Regeneration Rate by <3%>, stacking up to 5 time(s). When the wearer uses their Ultimate, removes Cantillation and gains Cadenza. Cadenza increases the Wearer's ATK by <48%> and increases all allies' DMG dealt by <24%>, lasting for 1 turn(s).
 - id: boundless-choreo
+  name:
+    locales:
+      ja: 終わりなき舞踏
+      en: Boundless Choreo
   yomi: オワリナキブトウ
-  $nameJA: 終わりなき舞踏
   path: nihility
   rarity: 4
   materials:
     primary: group:lcs008
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<8%>。防御力ダウン状態または減速状態の敵に対する、装備キャラの会心ダメージ+<24%>。
+      en: Increase the wearer's CRIT Rate by <8%>. The wearer deals <24%> more CRIT DMG to enemies that are currently Slowed or have reduced DEF.
 - id: for-tomorrows-journey
+  name:
+    locales:
+      ja: 明日のための旅
+      en: For Tomorrow's Journey
   yomi: アスノタメノタビ
-  $nameJA: 明日のための旅
   path: harmony
   rarity: 4
   materials:
     primary: group:lcs010
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<16%>。装備キャラが必殺技を発動した後、与ダメージ+<18%>、1ターン継続。
+      en: Increases the wearer's ATK by <16%>. After the wearer uses their Ultimate, increases their DMG dealt by <18%>, lasting for 1 turn(s).
 - id: sailing-towards-a-second-life
+  name:
+    locales:
+      ja: 二度目の生に向かって
+      en: Sailing Towards a Second Life
   yomi: ニドメノセイニムカッテ
-  $nameJA: 二度目の生に向かって
   path: the_hunt
   rarity: 5
   materials:
     primary: group:zzP0
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<60%>、与える弱点撃破ダメージが敵の防御力を<20%>無視する。戦闘中、装備キャラの撃破特効が150%以上の場合、速度<+12%>。
+      en: Increases the wearer's Break Effect by <60%>. The Break DMG dealt by the wearer ignores <20%> of the target's DEF. When the wearer's Break Effect in battle is at 150% or greater, increases their SPD by <12%>.
 - id: eternal-calculus
+  name:
+    locales:
+      ja: 絶え間ない演算
+      en: Eternal Calculus
   yomi: タエマナイエンザン
-  $nameJA: 絶え間ない演算
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs012
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<8%>。攻撃を行った後、命中した敵1体につき、さらに攻撃力+<4%>。この効果は最大で5回累積でき、次の攻撃を行った後まで継続。攻撃が3体以上の敵に命中した場合、自身の速度+<8%>、1ターン継続。
+      en: Increases the wearer's ATK by <8%>. After using an attack, for each enemy target hit, additionally increases ATK by <4%>. This effect can stack up to 5 times and last until the next attack. If there are 3 or more enemy targets hit, this unit's SPD increases by <8%>, lasting for 1 turn(s).
 - id: whereabouts-should-dreams-rest
+  name:
+    locales:
+      ja: 夢が帰り着く場所
+      en: Whereabouts Should Dreams Rest
   yomi: ユメガカエリツクバショ
-  $nameJA: 夢が帰り着く場所
   path: destruction
   rarity: 5
   materials:
     primary: group:lcs009
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<60%>。装備キャラが敵に弱点撃破ダメージを与える時、敵に「敗走」状態を付与する、2ターン継続。「敗走」状態の敵は速度-20%、装備キャラから受ける弱点撃破ダメージ+<24%>。同系統のスキルは累積できない。
+      en: Increases the wearer's Break Effect by <60%>. When the wearer deals Break DMG to an enemy target, inflicts Routed on the enemy, lasting for 2 turn(s). Targets afflicted with Routed receive <24%> increased Break DMG from the wearer, and their SPD is lowered by 20%. Effects of the similar type cannot be stacked.
 - id: dance-at-sunset
+  name:
+    locales:
+      ja: 夕日に舞う
+      en: Dance at Sunset
   yomi: ユウヒニマウ
-  $nameJA: 夕日に舞う
   path: destruction
   rarity: 5
   materials:
     primary: group:lcs009
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃を受ける確率が大アップし、会心ダメージ+<36%>。装備キャラが必殺技を発動した後、「炎舞」を1層獲得する、2ターン継続、最大で2層累積できる。「炎舞」1層につき、装備キャラの追加攻撃ダメージ+<36%>。
+      en: Greatly increases the wearer's chance of getting attacked and increases CRIT DMG by <36%>. After the wearer uses Ultimate, receives 1 stack of Firedance, lasting for 2 turns and stacking up to 2 time(s). Each stack of Firedance increases the DMG dealt by the wearer's follow-up attack by <36%>.
 - id: yet-hope-is-priceless
+  name:
+    locales:
+      ja: されど希望の銘は無価
+      en: Yet Hope Is Priceless
   yomi: サレドキボウノメイハムカ
-  $nameJA: されど希望の銘は無価
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs012
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<16%>。戦闘中、装備キャラの会心ダメージが120%を超えた時、超過した会心ダメージ20%につき、追加攻撃ダメージ+<12%>。この効果は最大で4層累積できる。戦闘開始時および装備キャラが通常攻撃を行った後、追加攻撃ダメージと必殺技によるダメージがターゲットの防御力を<20%>無視する、2ターン継続。
+      en: Increases the wearer's CRIT Rate by <16%>. While the wearer is in battle, for every 20% CRIT DMG that exceeds 120%, the DMG dealt by follow-up attack increases by <12%>. This effect can stack up to 4 time(s). When the battle starts or after the wearer uses their Basic ATK, enables the DMG dealt by Ultimate or follow-up attack to ignore <20%> of the target's DEF, lasting for 2 turn(s).
 - id: after-the-charmony-fall
+  name:
+    locales:
+      ja: 調和が沈黙した後
+      en: After the Charmony Fall
   yomi: チョウワガチンモクシタアト
-  $nameJA: 調和が沈黙した後
   path: erudition
   rarity: 4
   materials:
     primary: group:lcs012
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<28%>。装備キャラが必殺技を発動した後、速度+<8%>、2ターン継続。
+      en: Increases the wearer's Break Effect by <28%>. After the wearer uses Ultimate, increases SPD by <8%>, lasting for 2 turn(s).
 - id: poised-to-bloom
+  name:
+    locales:
+      ja: 美しき華よ今咲かん
+      en: Poised to Bloom
   yomi: ウツクシキハナヨイマサカン
-  $nameJA: 美しき華よ今咲かん
   path: harmony
   rarity: 4
   materials:
     primary: group:lcs010
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<16%>。戦闘に入る時、パーティに同じ運命の味方が2名以上いる場合、それらの味方の会心ダメージ+<16%>。同系統のスキルは重ね掛け不可。
+      en: Increases the wearer's ATK by <16%>. Upon entering battle, if two or more characters follow the same Path, then these characters' CRIT DMG increases by <16%>. Abilities of the same type cannot stack.
 - id: those-many-springs
+  name:
+    locales:
+      ja: 幾度目かの春
+      en: Those Many Springs
   yomi: イクドメカノハル
-  $nameJA: 幾度目かの春
   path: nihility
   rarity: 5
   materials:
     primary: group:lcs008
     common: group:com005
+  skillDescription:
+    locales:
+      ja: |-
+        装備キャラの効果命中+<60%>。装備キャラが通常攻撃、戦闘スキル、または必殺技を発動して敵に攻撃した後、60%の基礎確率で敵を「甲卸」状態にする。
+        「甲卸」状態の敵の受けるダメージ+<10%>、2ターン継続。ターゲットが装備キャラによって持続ダメージ系デバフを付与されている場合、60%の基礎確率で装備キャラが付与した「甲卸」状態を「窮寇」状態に強化し、さらに敵の受けるダメージ+<14%>、2ターン継続。
+        敵に「窮寇」状態がある時、装備キャラはその敵に「甲卸」状態を付与できない。
+      en: Increases the wearer's Effect Hit Rate by <60%>. After the wearer uses Basic ATK, Skill, or Ultimate to attack an enemy target, there is a 60% base chance to inflict "Unarmored" on the target. While in the Unarmored state, the enemy target receives <10%> increased DMG, lasting for 2 turn(s). If the target is under a DoT state inflicted by the wearer, there is a 60% base chance to upgrade the "Unarmored" state inflicted by the wearer to the "Cornered" state, which additionally increases the DMG the enemy target receives by <14%>, lasting for 2 turn(s). During this period, the wearer cannot inflict "Unarmored" on the target.
 - id: i-venture-forth-to-hunt
+  name:
+    locales:
+      ja: 我が征く巡狩の道
+      en: I Venture Forth to Hunt
   yomi: ワレガユクジュンシュノミチ
-  $nameJA: 我が征く巡狩の道
   path: the_hunt
   rarity: 5
   materials:
     primary: group:zzP0
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<15%>。装備キャラが追加攻撃を行う時、「流光」を1層獲得する。「流光」は最大で2層累積できる。「流光」が1層あるごとに、装備キャラの与える必殺技ダメージが敵の防御力を<27%>無視する。装備キャラのターン終了時、「流光」が1層解除される。
+      en: Increases the wearer's CRIT Rate by <15%>. When the wearer launches a follow-up attack, gains 1 stack of "Luminflux," stacking up to 2 time(s). Each stack of "Luminflux" enables the Ultimate DMG dealt by the wearer to ignore <27%> of the target's DEF. When the wearer's turn ends, removes 1 stack of "Luminflux."
 - id: scent-alone-stays-true
+  name:
+    locales:
+      ja: 昔日の香りは今も猶
+      en: Scent Alone Stays True
   yomi: セキジツノカオリハイマモナオ
-  $nameJA: 昔日の香りは今も猶
   path: abundance
   rarity: 5
   materials:
     primary: group:tree-seeds
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<60%>。装備キャラが必殺技を発動して敵を攻撃した後、その敵を「忘憂」状態にする、2ターン継続。「忘憂」状態の敵が受けるダメージ+<10%>。装備キャラの撃破特効が150%以上の場合、敵の受けるダメージアップ効果がさらに+<8%>。
+      en: Increases the wearer's Break Effect by <60%>. After the wearer uses Ultimate to attack enemy targets, inflicts the targets with the "Woefree" state, lasting for 2 turn(s). While in "Woefree," enemy targets take <10%> increased DMG. The effect of increasing DMG taken is additionally boosted by <8%> if the wearer's current Break Effect is 150% or higher.
 - id: ninjutsu-inscription-dazzling-evilbreaker
+  name:
+    locales:
+      ja: 忍法帖・繚乱破魔
+      en: "Ninjutsu Inscription: Dazzling Evilbreaker"
   yomi: ニンポウチョウリョウランハマ
-  $nameJA: 忍法帖・繚乱破魔
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs012
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<60%>。戦闘に入る時EPを<30>回復し、装備キャラが必殺技を発動した後「雷遁」を獲得する。通常攻撃を2回行った後、「雷遁」の効果を解除し、装備キャラの行動順を<50%>早める。なお、装備キャラが必殺技を発動すると「雷遁」はリセットされる。
+      en: Increases the wearer's Break Effect by <60%>. When entering battle, immediately regenerates <30> Energy. After the wearer uses Ultimate, obtains "Raiton." After using 2 Basic ATKs, advances the wearer's action by <50%> and removes "Raiton." After the wearer uses Ultimate, resets "Raiton."
 - id: a-grounded-ascent
+  name:
+    locales:
+      ja: 大地より天を目指して
+      en: A Grounded Ascent
   yomi: ダイチヨリテンヲメザシテ
-  $nameJA: 大地より天を目指して
   path: harmony
   rarity: 5
   materials:
     primary: group:lcs010
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラが味方キャラ単体に戦闘スキル、または必殺技を発動すると、装備キャラはEPを<6>回復し、スキルターゲットは「聖なる詠唱」を1層獲得する、3ターン継続。最大で3層累積できる。「聖なる詠唱」1層につき、所持者の与ダメージ+<15%>。装備キャラが味方キャラ単体に戦闘スキル、または必殺技を2回発動するたびに、SPを1回復する。
+      en: After the wearer uses Skill or Ultimate on one ally character, the wearer regenerates <6> Energy and the ability's target receives 1 stack of "Hymn" for 3 turn(s), stacking up to 3 time(s). Each stack of "Hymn" increases its holder's DMG dealt by <15%>. After every 2 instance(s) of Skill or Ultimate the wearer uses on one ally character, recovers 1 Skill Point.
 - id: long-road-leads-home
+  name:
+    locales:
+      ja: 長途はやがて帰途へと続く
+      en: Long Road Leads Home
   yomi: チョウトハヤガテキトヘトツヅク
-  $nameJA: 長途はやがて帰途へと続く
   path: nihility
   rarity: 5
   materials:
     primary: group:lcs008
     common: group:com005
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<60%>。敵が弱点撃破される時、100%の基礎確率で「着火」状態を付与し、敵が受ける弱点撃破ダメージ+<18%>。2ターン継続、最大2層累積できる。
+      en: Increases the wearer's Break Effect by <60%>. When an enemy target's Weakness gets broken, there is a 100% base chance to inflict the "Charring" state on it, which increases its Break DMG taken by <18%>, lasting for 2 turn(s). This effect can stack 2 time(s).
 - id: into-the-unreachable-veil
+  name:
+    locales:
+      ja: 触れてはならぬ領域へ
+      en: Into the Unreachable Veil
   yomi: フレテハナラヌリョウイキヘ
-  $nameJA: 触れてはならぬ領域へ
   path: erudition
   rarity: 5
   materials:
     primary: group:lcs012
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<12%>。装備キャラが必殺技を発動する時、装備キャラの戦闘スキルおよび必殺技ダメージ+<60%>、3ターン継続。装備キャラが必殺技を発動した後、その回の必殺技で消費したEPが140以上の場合、SPを1回復する。
+      en: Increases the wearer's CRIT Rate by <12%>. When the wearer uses Ultimate, increases the Skill and Ultimate DMG dealt by the wearer by <60%>, lasting for 3 turn(s). After the wearer uses Ultimate, if this instance of Ultimate consumed 140 or more Energy, recovers 1 Skill Point.
 - id: victory-in-a-blink
+  name:
+    locales:
+      ja: 瞬刻の勝機
+      en: Victory In a Blink
   yomi: ショウコクノショウキ
-  $nameJA: 瞬刻の勝機
   path: remembrance
   rarity: 4
   materials:
     primary: group:lcs013
     common: group:com001
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<12%>。装備キャラの記憶の精霊が味方にスキルを発動する時、味方全体の与ダメージ+<8%>、3ターン継続。
+      en: Increases the wearer's CRIT DMG by <12%>. When the wearer's memosprite uses an ability on an ally target, increases the DMG dealt by all ally targets by <8%>, lasting for 3 turn(s).
 - id: geniuses-greetings
+  name:
+    locales:
+      ja: 天才たちの「挨拶」
+      en: Geniuses' Greetings
   yomi: テンサイタチノアイサツ
-  $nameJA: 天才たちの「挨拶」
   path: remembrance
   rarity: 4
   materials:
     primary: group:lcs013
     common: group:com009
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<16%>。装備キャラが必殺技を発動した後、装備キャラおよびその記憶の精霊の通常攻撃ダメージ+<20%>、3ターン継続。
+      en: Increases the wearer's ATK by <16%>. After the wearer uses Ultimate, increases the Basic ATK DMG dealt by the wearer and their memosprite by <20%>, lasting for 3 turn(s).
 - id: sweat-now-cry-less
+  name:
+    locales:
+      ja: 流すなら涙より汗
+      en: Sweat Now, Cry Less
   yomi: ナガスナラナミダヨリアセ
-  $nameJA: 流すなら涙より汗
   path: remembrance
   rarity: 4
   materials:
     primary: group:lcs013
     common: group:com009
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<12%>。装備キャラの記憶の精霊がフィールド上にいる時、装備キャラおよびその記憶の精霊の与ダメージ+<24%>。
+      en: Increases the wearer's CRIT Rate by <12%>. When the wearer's memosprite is on the field, increases the DMG dealt by the wearer and their memosprite by <24%>.
 - id: time-woven-into-gold
+  name:
+    locales:
+      ja: 光陰を織り黄金と成す
+      en: Time Woven Into Gold
   yomi: コウインヲオリオウゴントナス
-  $nameJA: 光陰を織り黄金と成す
   path: remembrance
   rarity: 5
   materials:
     primary: group:lcs013
     common: group:com009
+  skillDescription:
+    locales:
+      ja: 装備キャラの基礎速度+<12>。装備キャラまたはその記憶の精霊が攻撃を行った後、装備キャラに「錦を織って」を1層付与する。「錦を織って」1層につき、装備キャラおよびその記憶の精霊の会心ダメージ+<9%>、最大で6層累積できる。「錦を織って」の層数が上限に達すると、1層につき、追加で通常攻撃ダメージ+<9%>。
+      en: Increases the wearer's base SPD by <12>. After the wearer and the wearer's memosprite attacks, the wearer gains 1 stack of "Brocade." Each stack of "Brocade" increases the wearer's and their memosprite's CRIT DMG by <9%>, stacking up to 6 time(s). When reaching maximum stacks, each "Brocade" stack additionally increases Basic ATK DMG dealt by <9%>.
 - id: shadowed-by-night
+  name:
+    locales:
+      ja: 夜は影のように付き纏う
+      en: Shadowed by Night
   yomi: ヨルハカゲノヨウニツキマトウ
-  $nameJA: 夜は影のように付き纏う
   path: the_hunt
   rarity: 4
   materials:
     primary: group:zzP0
     common: group:com006
+  skillDescription:
+    locales:
+      ja: 装備キャラの撃破特効+<28%>、戦闘に入った時または弱点撃破ダメージを与えた後、速度+<8%>、2ターン継続。この効果はターンが回ってくるたびに1回まで発動できる。
+      en: Increases the wearer's Break Effect by <28%>. When entering battle or after dealing Break DMG, increases SPD by <8%>, lasting for 2 turn(s). This effect can only trigger once per turn.
 - id: if-time-were-a-flower
+  name:
+    locales:
+      ja: もしも時が花だったら
+      en: If Time Were a Flower
   yomi: モシモトキガハナダッタラ
-  $nameJA: もしも時が花だったら
   path: harmony
   rarity: 5
   materials:
     primary: group:lcs010
     common: group:com009
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<36%>。装備キャラが追加攻撃を行った後、さらにEPを12回復し、「啓示」を獲得する、2ターン継続。装備キャラが「啓示」を所持している場合、味方全体の会心ダメージ+<48%>。戦闘に入る時、装備キャラのEPが21回復し、「啓示」を獲得する、2ターン継続。
+      en: Increases the wearer's CRIT DMG by <36%>. After the wearer launches Follow-up ATK, additionally regenerates 12 Energy and gains "Presage," lasting for 2 turn(s). While the wearer has "Presage," all ally targets' CRIT DMG increases by <48%>. When entering battle, the wearer regenerates 21 Energy and gains "Presage," lasting for 2 turn(s).
 - id: flame-of-blood-blaze-my-path
+  name:
+    locales:
+      ja: 前途燃やす血の如き炎
+      en: Flame of Blood, Blaze My Path
   yomi: ゼントモヤスチノゴトキホノオ
-  $nameJA: 前途燃やす血の如き炎
   path: destruction
   rarity: 5
   materials:
     primary: group:lcs009
     common: group:com009
+  skillDescription:
+    locales:
+      ja: |-
+        装備キャラの最大HP+<18%>、受ける治癒量+<20%>。戦闘スキルまたは必殺技を発動する時、自身の最大HP<6%>分のHPを消費し、その回の攻撃の与ダメージ+<30%>。この効果で消費したHPが500を超えると、さらに与ダメージ+<30%>。
+        残りHPが足りない場合、この効果で装備キャラの残りHPが1になる。
+      en: |-
+        Increases the wearer's Max HP by <18%> and Incoming Healing by <20%>. When using Skill or Ultimate, consumes HP equal to <6%> of the wearer's Max HP and increases the DMG dealt by this attack by <30%>. If this effect's consumed HP is greater than 500, the DMG additionally increases by <30%>.
+        If the current HP is not sufficient, this effect reduces the wearer's current HP down to 1.
 - id: dreams-montage
+  name:
+    locales:
+      ja: 夢のモンタージュ
+      en: Dream's Montage
   yomi: ユメノモンタージュ
-  $nameJA: 夢のモンタージュ
   path: abundance
   rarity: 4
   materials:
     primary: group:tree-seeds
     common: group:com007
+  skillDescription:
+    locales:
+      ja: 装備キャラの速度+<8%>、弱点撃破状態の敵を攻撃した後、EPを<3>回復する。この効果はターンが回ってくるたびに2回まで発動できる。
+      en: Increases the wearer's SPD by <8%>. After attacking enemy targets that are Weakness Broken, regenerates <3> Energy. This effect can trigger up to 2 time(s) per turn.
 - id: ninja-record-sound-hunt
+  name:
+    locales:
+      ja: 忍事録・音律狩猟
+      en: "Ninja Record: Sound Hunt"
   yomi: ニンジロクオンリツシュリョウ
-  $nameJA: 忍事録・音律狩猟
   path: destruction
   rarity: 4
   materials:
     primary: group:lcs009
     common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラの最大HP+<12%>。HPを失う、または回復した後、会心ダメージ+<18%>、2ターン継続。この効果はターンが回ってくるたびに1回まで発動できる。
+      en: Increases the wearer's Max HP by <12%>. When losing or restoring this unit's HP, increases CRIT DMG by <18%>, lasting for 2 turn(s). This effect can only trigger once per turn.
 - id: reminiscence
+  name:
+    locales:
+      ja: 辿る記憶
+      en: Reminiscence
   yomi: タドルキオク
-  $nameJA: 辿る記憶
   path: remembrance
   rarity: 3
   materials:
     primary: group:lcs013
     common: group:com009
+  skillDescription:
+    locales:
+      ja: 記憶の精霊のターンが回ってきた時、装備キャラおよびその記憶の精霊それぞれに「追懐」を1層付与する。「追懐」1層につき与ダメージ+<8%>、最大で4層累積できる。記憶の精霊が消える時、装備キャラおよびその記憶の精霊の「追懐」は解除される。
+      en: When memosprite's turn starts, the wearer and memosprite each gain 1 stack of "Commemoration." Each stack increases DMG dealt by <8%>, stacking up to 4 time(s). When memosprite disappears, removes "Commemoration" from the wearer and memosprite.
 - id: shadowburn
+  name:
+    locales:
+      ja: 燃ゆる影
+      en: Shadowburn
   yomi: モユルカゲ
-  $nameJA: 燃ゆる影
   path: remembrance
   rarity: 3
   materials:
     primary: group:lcs013
     common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラが戦闘中に初めて記憶の精霊を召喚する時、SPを1回復し、自身のEPを<12>回復する。
+      en: When the wearer summons memosprite for the first time, recovers 1 Skill Point(s) and regenerates <12> Energy for this unit.
+- id: long-may-rainbows-adorn-the-sky
+  yomi: ソラノニジガキエヌヨウニ
+  name:
+    locales:
+      ja: 空の虹が消えぬように
+      en: Long May Rainbows Adorn the Sky
+  path: remembrance
+  rarity: 5
+  materials:
+    primary: group:lcs013
+    common: group:com009
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの速度+<18%>。装備キャラが通常攻撃、戦闘スキルまたは必殺技を発動する時、味方それぞれの残りHP<1%>分のHPを消費し、装備キャラの記憶の精霊が次の攻撃を行った後に消費したHP<250%>分の付加ダメージを1回与える。なお、この付加ダメージの属性は装備キャラの記憶の精霊と同じものになる。その後、消費したHPのカウントはクリアされる。装備キャラの記憶の精霊が精霊スキルを発動する時、敵全体の受けるダメージ+<18%>、2ターン継続。同系統のスキルは累積できない。
+      en: >-
+        Increases the wearer’s SPD by <18%>. When the wearer uses Basic ATK,
+        Skill, or Ultimate, consumes all allies’ HP equal to <1%> of their
+        current HP and additionally deals 1 instance of Additional DMG of the
+        wearer’s memosprite Type equal to <250%> of the total consumed HP to the
+        attacked target after the next attack launched by the wearer’s
+        memosprite. The total HP consumed is then reset. When the wearer’s
+        memosprite uses Memosprite Skill, increases the DMG taken by all enemies
+        by <18%> for 2 turn(s). The same types of effects cannot stack.

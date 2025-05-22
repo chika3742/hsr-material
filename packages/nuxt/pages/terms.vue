@@ -92,7 +92,5 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  title: "terms",
-})
+usePageTitle(tx("pageTitles.terms"))
 </script>

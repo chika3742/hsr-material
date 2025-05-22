@@ -1,28 +1,30 @@
 <script lang="ts" setup>
-withDefaults(defineProps<{
-  itemId: string
-  itemRarity: number
-  linkBasePath: string
+const props = withDefaults(defineProps<{
+  name: string
+  to: string
+  rarity: number
+  imagePath: string
+  /** Passes the query parameters to the link destinations. */
   preserveQuery?: boolean
-  itemI18nKey: string
-  imageFunc: (id: string) => string
   lines?: "one" | "two"
 }>(), {
   lines: "one",
 })
+
+const toPath = new URL(props.to, "https://dummy").pathname
 </script>
 
 <template>
   <v-list-item
     :lines="lines"
     :to="$localePath({
-      path: `${linkBasePath}/${itemId}`,
+      path: toPath,
       query: preserveQuery ? $route.query : {},
     })"
   >
     <template #prepend>
       <v-img
-        :src="imageFunc(itemId)"
+        :src="imagePath"
         aspect-ratio="1"
         class="mr-2"
         width="45px"
@@ -34,13 +36,13 @@ withDefaults(defineProps<{
       no-gutters
       style="gap: 8px"
     >
-      <v-list-item-title>{{ tx(`${itemI18nKey}.${itemId}`) }}</v-list-item-title>
+      <v-list-item-title>{{ name }}</v-list-item-title>
       <v-chip
-        :color="`rarity-${itemRarity}`"
+        :color="`rarity-${rarity}`"
         size="small"
       >
         <v-icon>mdi-star</v-icon>
-        {{ itemRarity }}
+        {{ rarity }}
       </v-chip>
     </v-row>
 

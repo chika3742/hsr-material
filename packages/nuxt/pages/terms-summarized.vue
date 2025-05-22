@@ -31,7 +31,5 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  title: "termsSummarized",
-})
+usePageTitle(tx("pageTitles.termsSummarized"))
 </script>

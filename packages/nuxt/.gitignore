@@ -8,6 +8,13 @@ node_modules
 dist
 /py/
 types/generated
+
+# service worker related
 public/sw-dev.js
 public/workbox-*.js
+
+# Cloudflare related
 .wrangler
+
+# Generated JSON schemas will be placed in this directory.
+/schemas/**.g.json

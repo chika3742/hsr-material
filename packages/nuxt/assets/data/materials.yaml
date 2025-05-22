@@ -1,0 +1,1074 @@
+- id: travel-encounters
+  name:
+    locales:
+      ja: 旅の見聞
+      en: Travel Encounters
+  yomi: タビノケンブン
+  rarity: 2
+  category: exp
+  groupId: exp001
+  craftLevel: 1
+- id: adventure-log
+  name:
+    locales:
+      ja: 冒険記録
+      en: Adventure Log
+  yomi: ボウケンキロク
+  rarity: 3
+  category: exp
+  groupId: exp001
+  craftLevel: 2
+- id: travelers-guide
+  name:
+    locales:
+      ja: 漫遊指南
+      en: Traveler’s Guide
+  yomi: マンユウシナン
+  rarity: 4
+  category: exp
+  groupId: exp001
+  craftLevel: 3
+- id: sparse-aether
+  name:
+    locales:
+      ja: 希薄なエーテル
+      en: Sparse Aether
+  yomi: キハクナエーテル
+  rarity: 2
+  category: exp
+  groupId: exp002
+  craftLevel: 1
+- id: condensed-aether
+  name:
+    locales:
+      ja: 濃縮エーテル
+      en: Condensed Aether
+  yomi: ノウシュクエーテル
+  rarity: 3
+  category: exp
+  groupId: exp002
+  craftLevel: 2
+- id: refined-aether
+  name:
+    locales:
+      ja: 精製エーテル
+      en: Refined Aether
+  yomi: セイセイエーテル
+  rarity: 4
+  category: exp
+  groupId: exp002
+  craftLevel: 3
+- id: horn-of-snow
+  name:
+    locales:
+      ja: 吹雪の角
+      en: Horn of Snow
+  yomi: フブキノツノ
+  rarity: 4
+  category: character_ascension
+- id: storm-eye
+  name:
+    locales:
+      ja: 暴風の眼
+      en: Storm Eye
+  yomi: ボウフウノメ
+  rarity: 4
+  category: character_ascension
+- id: endotherm-chitin
+  name:
+    locales:
+      ja: 恒温晶殻
+      en: Endotherm Chitin
+  yomi: コウオンカイガラ
+  rarity: 4
+  category: character_ascension
+- id: golden-crown-of-the-past-shadow
+  name:
+    locales:
+      ja: 過去の影の金装飾
+      en: Golden Crown of the Past Shadow
+  yomi: カコノカゲノキンソウショク
+  rarity: 4
+  category: character_ascension
+- id: shape-shifters-lightning-staff
+  name:
+    locales:
+      ja: 鍛錬者の雷枝
+      en: Shape Shifter’s Lightning Staff
+  yomi: タンレンシャノライシ
+  rarity: 4
+  category: character_ascension
+- id: void-cast-iron
+  name:
+    locales:
+      ja: 虚幻鋳鉄
+      en: Void Cast Iron
+  yomi: キョゲンチュウテツ
+  rarity: 4
+  category: character_ascension
+- id: lightning-crown-of-the-past-shadow
+  name:
+    locales:
+      ja: 過去の影の雷冠
+      en: Lightning Crown of the Past Shadow
+  yomi: カコノカゲノライカン
+  rarity: 4
+  category: character_ascension
+- id: broken-teeth-of-iron-wolf
+  name:
+    locales:
+      ja: 鉄狼の砕けた刃
+      en: Broken Teeth of Iron Wolf
+  yomi: テツロウノクダケタヤイバ
+  rarity: 4
+  category: character_ascension
+- id: gelid-chitin
+  name:
+    locales:
+      ja: 苦寒晶殻
+      en: Gelid Chitin
+  yomi: クカンショウカク
+  rarity: 4
+  category: character_ascension
+- id: enigmatic-ectostella
+  name:
+    locales:
+      ja: 深邃な星外物質
+      en: Enigmatic Ectostella
+  yomi: シンスイナセイガイブッシツ
+  rarity: 4
+  category: character_ascension
+- id: ascendant-debris
+  name:
+    locales:
+      ja: 天人の残穢
+      en: Ascendant Debris
+  yomi: テンニンノザンエ
+  rarity: 4
+  category: character_ascension
+- id: suppressing-edict
+  name:
+    locales:
+      ja: 霊鎮めの勅符
+      en: Suppressing Edict
+  yomi: レイシズメノチョクフ
+  rarity: 4
+  category: character_ascension
+- id: nail-of-the-ape
+  name:
+    locales:
+      ja: 蒼猿の釘
+      en: Nail of the Ape
+  yomi: ソウエンノクギ
+  rarity: 4
+  category: character_ascension
+- id: thiefs-instinct
+  name:
+    locales:
+      ja: 略奪の本能
+      en: Thief’s Instinct
+  yomi: リャクダツノホンノウ
+  rarity: 2
+  category: common
+  groupId: com001
+  craftLevel: 1
+- id: usurpers-scheme
+  name:
+    locales:
+      ja: 改ざんの野心
+      en: Usurper’s Scheme
+  yomi: カイザンノヤシン
+  rarity: 3
+  category: common
+  groupId: com001
+  craftLevel: 2
+- id: conquerors-will
+  name:
+    locales:
+      ja: 踏みにじる意志
+      en: Conqueror’s Will
+  yomi: フミニジルイシ
+  rarity: 4
+  category: common
+  groupId: com001
+  craftLevel: 3
+- id: extinguished-core
+  name:
+    locales:
+      ja: 消滅した原核
+      en: Extinguished Core
+  yomi: ショウメツシタゲンカク
+  rarity: 2
+  category: common
+  groupId: com002
+  craftLevel: 1
+- id: glimmering-core
+  name:
+    locales:
+      ja: 微かに光る原核
+      en: Glimmering Core
+  yomi: ワズカニヒカルゲンカク
+  rarity: 3
+  category: common
+  groupId: com002
+  craftLevel: 2
+- id: squirming-core
+  name:
+    locales:
+      ja: 脈動する原核
+      en: Squirming Core
+  yomi: ミャクドウスルゲンカク
+  rarity: 4
+  category: common
+  groupId: com002
+  craftLevel: 3
+- id: silvermane-badge
+  name:
+    locales:
+      ja: シルバーメインの釦
+      en: Silvermane Badge
+  yomi: シルバーメインノボタン
+  rarity: 2
+  category: common
+  groupId: com003
+  craftLevel: 1
+- id: silvermane-insignia
+  name:
+    locales:
+      ja: シルバーメインの記章
+      en: Silvermane Insignia
+  yomi: シルバーメインノキショウ
+  rarity: 3
+  category: common
+  groupId: com003
+  craftLevel: 2
+- id: silvermane-medal
+  name:
+    locales:
+      ja: シルバーメインの勲章
+      en: Silvermane Medal
+  yomi: シルバーメインノクンショウ
+  rarity: 4
+  category: common
+  groupId: com003
+  craftLevel: 3
+- id: ancient-part
+  name:
+    locales:
+      ja: 古代パーツ
+      en: Ancient Part
+  yomi: コダイパーツ
+  rarity: 2
+  category: common
+  groupId: com004
+  craftLevel: 1
+- id: ancient-spindle
+  name:
+    locales:
+      ja: 古代シャフト
+      en: Ancient Spindle
+  yomi: コダイシャフト
+  rarity: 3
+  category: common
+  groupId: com004
+  craftLevel: 2
+- id: ancient-engine
+  name:
+    locales:
+      ja: 古代エンジン
+      en: Ancient Engine
+  yomi: コダイエンジン
+  rarity: 4
+  category: common
+  groupId: com004
+  craftLevel: 3
+- id: immortal-scionette
+  name:
+    locales:
+      ja: 永寿の萌芽
+      en: Immortal Scionette
+  yomi: エイジュノホウガ
+  rarity: 2
+  category: common
+  groupId: com005
+  craftLevel: 1
+- id: immortal-aeroblossom
+  name:
+    locales:
+      ja: 永寿の天華
+      en: Immortal Aeroblossom
+  yomi: エイジュノテンゲ
+  rarity: 3
+  category: common
+  groupId: com005
+  craftLevel: 2
+- id: immortal-lumintwig
+  name:
+    locales:
+      ja: 永寿の栄枝
+      en: Immortal Lumintwig
+  yomi: エイジュノエイシ
+  rarity: 4
+  category: common
+  groupId: com005
+  craftLevel: 3
+- id: artifexs-module
+  name:
+    locales:
+      ja: 工造機関
+      en: Artifex’s Module
+  yomi: コウゾウキカン
+  rarity: 2
+  category: common
+  groupId: com006
+  craftLevel: 1
+- id: artifexs-cogwheel
+  name:
+    locales:
+      ja: 工造迴輪
+      en: Artifex’s Cogwheel
+  yomi: コウゾウカイリン
+  rarity: 3
+  category: common
+  groupId: com006
+  craftLevel: 2
+- id: artifexs-gyreheart
+  name:
+    locales:
+      ja: 工造渾心
+      en: Artifex’s Gyreheart
+  yomi: コウゾウコンシン
+  rarity: 4
+  category: common
+  groupId: com006
+  craftLevel: 3
+- id: endurance-of-bronze
+  name:
+    locales:
+      ja: 青銅の執着
+      en: Endurance of Bronze
+  yomi: セイドウノシュウチャク
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs001
+  craftLevel: 1
+- id: oath-of-steel
+  name:
+    locales:
+      ja: 寒鉄の誓い
+      en: Oath of Steel
+  yomi: カンテツノチカイ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs001
+  craftLevel: 2
+- id: safeguard-of-amber
+  name:
+    locales:
+      ja: 琥珀の堅守
+      en: Safeguard of Amber
+  yomi: コハクノケンシュ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs001
+  craftLevel: 3
+- id: arrow-of-the-beast-hunter
+  name:
+    locales:
+      ja: 狩獣の矢
+      en: Arrow of the Beast Hunter
+  yomi: シュジュウノヤ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs002
+  craftLevel: 1
+- id: arrow-of-the-demon-slayer
+  name:
+    locales:
+      ja: 屠魔の矢
+      en: Arrow of the Demon Slayer
+  yomi: トマノヤ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs002
+  craftLevel: 2
+- id: arrow-of-the-starchaser
+  name:
+    locales:
+      ja: 逐星の矢
+      en: Arrow of the Starchaser
+  yomi: スイセイノヤ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs002
+  craftLevel: 3
+- id: key-of-inspiration
+  name:
+    locales:
+      ja: 着想のカギ
+      en: Key of Inspiration
+  yomi: チャクソウノカギ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs003
+  craftLevel: 1
+- id: key-of-knowledge
+  name:
+    locales:
+      ja: 啓発のカギ
+      en: Key of Knowledge
+  yomi: ケイハツノカギ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs003
+  craftLevel: 2
+- id: key-of-wisdom
+  name:
+    locales:
+      ja: 叡智のカギ
+      en: Key of Wisdom
+  yomi: エイチノカギ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs003
+  craftLevel: 3
+- id: obsidian-of-dread
+  name:
+    locales:
+      ja: 黯淡な黒曜
+      en: Obsidian of Dread
+  yomi: アンタンナコクヨウ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs004
+  craftLevel: 1
+- id: obsidian-of-desolation
+  name:
+    locales:
+      ja: 虚空の黒曜
+      en: Obsidian of Desolation
+  yomi: コクウノコクヨウ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs004
+  craftLevel: 2
+- id: obsidian-of-obsession
+  name:
+    locales:
+      ja: 沈淪せし黒曜
+      en: Obsidian of Obsession
+  yomi: チンリンセシコクヨウ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs004
+  craftLevel: 3
+- id: shattered-blade
+  name:
+    locales:
+      ja: 破砕の刃切
+      en: Shattered Blade
+  yomi: ハサイノハギレ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs005
+  craftLevel: 1
+- id: lifeless-blade
+  name:
+    locales:
+      ja: 無生の刃切
+      en: Lifeless Blade
+  yomi: ムショウノハギレ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs005
+  craftLevel: 2
+- id: worldbreaker-blade
+  name:
+    locales:
+      ja: 浄世の刃切
+      en: Worldbreaker Blade
+  yomi: ジョウセイノハギレ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs005
+  craftLevel: 3
+- id: harmonic-tune
+  name:
+    locales:
+      ja: 調和のハーモニー
+      en: Harmonic Tune
+  yomi: チョウワノハーモニー
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs006
+  craftLevel: 1
+- id: ancestral-hymn
+  name:
+    locales:
+      ja: ファミリー賛歌
+      en: Ancestral Hymn
+  yomi: ファミリーサンカ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs006
+  craftLevel: 2
+- id: stellaris-symphony
+  name:
+    locales:
+      ja: 群星の楽章
+      en: Stellaris Symphony
+  yomi: グンセイノガクショウ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs006
+  craftLevel: 3
+- id: seed-of-abundance
+  name:
+    locales:
+      ja: 豊穣の種
+      en: Seed of Abundance
+  yomi: ホウジョウノタネ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs007
+  craftLevel: 1
+- id: sprout-of-life
+  name:
+    locales:
+      ja: 生命の芽
+      en: Sprout of Life
+  yomi: セイメイノメ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs007
+  craftLevel: 2
+- id: flower-of-eternity
+  name:
+    locales:
+      ja: 永久の花
+      en: Flower of Eternity
+  yomi: エイキュウノハナ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs007
+  craftLevel: 3
+- id: destroyers-final-road
+  name:
+    locales:
+      ja: 壊滅者の末路
+      en: Destroyer’s Final Road
+  yomi: カイメツシャノマツロ
+  rarity: 4
+  category: advanced_skill_upgrade
+- id: guardians-lament
+  name:
+    locales:
+      ja: 守護者の悲願
+      en: Guardian’s Lament
+  yomi: シュゴシャノヒガン
+  rarity: 4
+  category: advanced_skill_upgrade
+- id: regret-of-infinite-ochema
+  name:
+    locales:
+      ja: 無窮なる仮身の遺恨
+      en: Regret of Infinite Ochema
+  yomi: ムキュウナルカシンノイコン
+  rarity: 4
+  category: advanced_skill_upgrade
+- id: tracks-of-destiny
+  name:
+    locales:
+      ja: 運命の足跡
+      en: Tracks of Destiny
+  yomi: ウンメイノアシアト
+  rarity: 5
+  category: others
+- id: credit
+  name:
+    locales:
+      ja: 信用ポイント
+      en: Credit
+  yomi: シンヨウポイント
+  rarity: 3
+  category: others
+- id: searing-steel-blade
+  name:
+    locales:
+      ja: 灼熱の鋼刃
+      en: Searing Steel Blade
+  yomi: シャクネツノコウジン
+  rarity: 4
+  category: character_ascension
+- id: netherworld-token
+  name:
+    locales:
+      ja: 幽府通令
+      en: Netherworld Token
+  yomi: レイフツウレイ
+  rarity: 4
+  category: character_ascension
+- id: past-evils-of-the-borehole-planet-disaster
+  name:
+    locales:
+      ja: 星を蝕む古の悪
+      en: Past Evils of the Borehole Planet Disaster
+  yomi: ホシヲムシバムイニシエノアク
+  rarity: 4
+  category: advanced_skill_upgrade
+- id: fiery-spirit
+  name:
+    locales:
+      ja: 熾烈の霊
+      en: Fiery Spirit
+  yomi: シレツノコダマ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs008
+  craftLevel: 1
+- id: starfire-essence
+  name:
+    locales:
+      ja: 星火の精
+      en: Starfire Essence
+  yomi: セイカノセイ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs008
+  craftLevel: 2
+- id: heaven-incinerator
+  name:
+    locales:
+      ja: 焼天の魔
+      en: Heaven Incinerator
+  yomi: ショウテンノマ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs008
+  craftLevel: 3
+- id: borisin-teeth
+  name:
+    locales:
+      ja: 歩離の犬牙
+      en: Borisin Teeth
+  yomi: ホリノケンガ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs009
+  craftLevel: 1
+- id: lupitoxin-sawteeth
+  name:
+    locales:
+      ja: 狼毒の牙
+      en: Lupitoxin Sawteeth
+  yomi: ロウドクノキバ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs009
+  craftLevel: 2
+- id: moon-madness-fang
+  name:
+    locales:
+      ja: 月狂いの凶牙
+      en: Moon Madness Fang
+  yomi: ツキグルイノキョウガ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs009
+  craftLevel: 3
+- id: dream-collection-component
+  name:
+    locales:
+      ja: ドリームコレクションパーツ
+      en: Dream Collection Component
+  yomi: ドリームコレクションパーツ
+  rarity: 2
+  category: common
+  groupId: com007
+  craftLevel: 1
+- id: dream-flow-valve
+  name:
+    locales:
+      ja: ドリームフローバルブ
+      en: Dream Flow Valve
+  yomi: ドリームフローバルブ
+  rarity: 3
+  category: common
+  groupId: com007
+  craftLevel: 2
+- id: dream-making-engine
+  name:
+    locales:
+      ja: ドリームメイキングモーター
+      en: Dream Making Engine
+  yomi: ドリームメイキングモーター
+  rarity: 4
+  category: common
+  groupId: com007
+  craftLevel: 3
+- id: dream-fridge
+  name:
+    locales:
+      ja: 夢の冷蔵庫
+      en: Dream Fridge
+  yomi: ユメノレイゾウコ
+  rarity: 4
+  category: character_ascension
+- id: firmament-note
+  name:
+    locales:
+      ja: 雲端の音符
+      en: Firmament Note
+  yomi: ウンタンノオンプ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs010
+  craftLevel: 1
+- id: celestial-section
+  name:
+    locales:
+      ja: 空際の小節
+      en: Celestial Section
+  yomi: クウサイノショウセツ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs010
+  craftLevel: 2
+- id: heavenly-melody
+  name:
+    locales:
+      ja: 天外の楽章
+      en: Heavenly Melody
+  yomi: テンガイノガクショウ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs010
+  craftLevel: 3
+- id: tatters-of-thought
+  name:
+    locales:
+      ja: 思考の粉末
+      en: Tatters of Thought
+  yomi: シコウノフンマツ
+  rarity: 2
+  category: common
+  groupId: com008
+  craftLevel: 1
+- id: fragments-of-impression
+  name:
+    locales:
+      ja: 印象の残晶
+      en: Fragments of Impression
+  yomi: インショウノザンショウ
+  rarity: 3
+  category: common
+  groupId: com008
+  craftLevel: 2
+- id: shards-of-desires
+  name:
+    locales:
+      ja: 砕けた欲望の鏡
+      en: Shards of Desires
+  yomi: クダケタヨクボウノカガミ
+  rarity: 4
+  category: common
+  groupId: com008
+  craftLevel: 3
+- id: scattered-stardust
+  name:
+    locales:
+      ja: 散らばった星の砂
+      en: Scattered Stardust
+  yomi: チラバッタホシノスナ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs011
+  craftLevel: 1
+- id: crystal-meteorites
+  name:
+    locales:
+      ja: 流星プリズム
+      en: Crystal Meteorites
+  yomi: リュウセイプリズム
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs011
+  craftLevel: 2
+- id: divine-amber
+  name:
+    locales:
+      ja: 聖なる琥珀
+      en: Divine Amber
+  yomi: セイナルコハク
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs011
+  craftLevel: 3
+- id: alien-tree-seed
+  name:
+    locales:
+      ja: 珍木の種
+      en: Alien Tree Seed
+  yomi: チンモクノタネ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: tree-seeds
+  craftLevel: 1
+- id: nourishing-honey
+  name:
+    locales:
+      ja: 育みの蜜
+      en: Nourishing Honey
+  yomi: ハグクミノミツ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: tree-seeds
+  craftLevel: 2
+- id: myriad-fruit
+  name:
+    locales:
+      ja: 森羅の果実
+      en: Myriad Fruit
+  yomi: シンラノカジツ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: tree-seeds
+  craftLevel: 3
+- id: raging-heart
+  name:
+    locales:
+      ja: 憤怒の心
+      en: Raging Heart
+  yomi: フンドノココロ
+  rarity: 4
+  category: character_ascension
+- id: ipc-work-permit
+  name:
+    locales:
+      ja: スターピース社員証
+      en: IPC Work Permit
+  yomi: スターピースシャインショウ
+  rarity: 4
+  category: character_ascension
+- id: dream-flamer
+  name:
+    locales:
+      ja: 夢を炙るトーチバーナー
+      en: Dream Flamer
+  yomi: ユメヲアブルトーチバーナー
+  rarity: 4
+  category: character_ascension
+- id: meteoric-bullet
+  name:
+    locales:
+      ja: 隕鉄の弾丸
+      en: Meteoric Bullet
+  yomi: インテツノダンガン
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: zzP0
+  craftLevel: 1
+- id: destined-expiration
+  name:
+    locales:
+      ja: 定められた死因
+      en: Destined Expiration
+  yomi: サダメラレタシイン
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: zzP0
+  craftLevel: 2
+- id: countertemporal-shot
+  name:
+    locales:
+      ja: 時に抗う一撃
+      en: Countertemporal Shot
+  yomi: トキニアラガウイチゲキ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: zzP0
+  craftLevel: 3
+- id: lost-echo-of-the-shared-wish
+  name:
+    locales:
+      ja: 同願の遺音
+      en: Lost Echo of the Shared Wish
+  yomi: ドウガンノイオン
+  rarity: 4
+  category: advanced_skill_upgrade
+- id: rough-sketch
+  name:
+    locales:
+      ja: ラフスケッチ
+      en: Rough Sketch
+  yomi: ラフスケッチ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs012
+  craftLevel: 1
+- id: dynamic-outlining
+  name:
+    locales:
+      ja: 躍動感のある線画
+      en: Dynamic Outlining
+  yomi: ヤクドウカンノアルセンガ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs012
+  craftLevel: 2
+- id: exquisite-colored-draft
+  name:
+    locales:
+      ja: 見事なカラー原画
+      en: Exquisite Colored Draft
+  yomi: ミゴトナカラーゲンガ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs012
+  craftLevel: 3
+- id: a-glass-of-the-besotted-era
+  name:
+    locales:
+      ja: 酩酊する時代の一杯
+      en: A Glass of the Besotted Era
+  yomi: メイテイスルジダイノイッパイ
+  rarity: 4
+  category: character_ascension
+- id: nail-of-the-beast-coffin
+  name:
+    locales:
+      ja: 獣棺の釘
+      en: Nail of the Beast Coffin
+  yomi: ジュウカンノクギ
+  rarity: 4
+  category: character_ascension
+- id: auspice-sliver
+  name:
+    locales:
+      ja: 吉光の羽
+      en: Auspice Sliver
+  yomi: キッコウノハネ
+  rarity: 4
+  category: advanced_skill_upgrade
+- id: chordal-mirage
+  name:
+    locales:
+      ja: 響き合う幻景
+      en: Chordal Mirage
+  yomi: ヒビキアウゲンケイ
+  rarity: 4
+  category: character_ascension
+- id: bija-of-consciousness
+  name:
+    locales:
+      ja: イの種
+      en: Bīja of Consciousness
+  yomi: イノタネ
+  rarity: 2
+  category: light_cone_or_skill_upgrade
+  groupId: lcs013
+  craftLevel: 1
+- id: seedling-of-manas
+  name:
+    locales:
+      ja: マナの苗
+      en: Seedling of Manas
+  yomi: マナノナエ
+  rarity: 3
+  category: light_cone_or_skill_upgrade
+  groupId: lcs013
+  craftLevel: 2
+- id: flower-of-alaya
+  name:
+    locales:
+      ja: アラヤの花
+      en: Flower of Ālaya
+  yomi: アラヤノハナ
+  rarity: 4
+  category: light_cone_or_skill_upgrade
+  groupId: lcs013
+  craftLevel: 3
+- id: fear-stomped-flesh
+  name:
+    locales:
+      ja: 恐怖は血肉を踏み潰す
+      en: Fear-Stomped Flesh
+  yomi: キョウフハチニクヲフミツブス
+  rarity: 2
+  category: common
+  groupId: com009
+  craftLevel: 1
+- id: courage-torn-chest
+  name:
+    locales:
+      ja: 勇気は胸を切り裂く
+      en: Courage-Torn Chest
+  yomi: ユウキハムネヲキリサク
+  rarity: 3
+  category: common
+  groupId: com009
+  craftLevel: 2
+- id: glory-aspersed-torso
+  name:
+    locales:
+      ja: 栄光は身体を洗礼する
+      en: Glory-Aspersed Torso
+  yomi: エイコウハカラダヲセンレイスル
+  rarity: 4
+  category: common
+  groupId: com009
+  craftLevel: 3
+- id: darkveil-moonlight
+  name:
+    locales:
+      ja: 夜の帳に輝く月華
+      en: Darkveil Moonlight
+  yomi: ヨルノトバリニカガヤクゲッカ
+  rarity: 4
+  category: character_ascension
+- id: harbinger-of-strife
+  name:
+    locales:
+      ja: 紛争の兆し
+      en: Harbinger of Strife
+  yomi: フンソウノキザシ
+  rarity: 4
+  category: character_ascension
+- id: ethereal-omen
+  name:
+    locales:
+      ja: あるようでない予兆
+      en: Ethereal Omen
+  yomi: アルヨウデナイヨチョウ
+  rarity: 2
+  category: common
+  groupId: lcs014
+  craftLevel: 1
+- id: echoing-wail
+  name:
+    locales:
+      ja: 遠くから近づく悲鳴
+      en: Echoing Wail
+  yomi: トオクカラチカヅクヒメイ
+  rarity: 3
+  category: common
+  groupId: lcs014
+  craftLevel: 2
+- id: eternal-lament
+  name:
+    locales:
+      ja: 果てしなく続く悲嘆
+      en: Eternal Lament
+  yomi: ハテシナクツヅクヒタン
+  rarity: 4
+  category: common
+  groupId: lcs014
+  craftLevel: 3
+- id: daythunder-anamnesis
+  name:
+    locales:
+      ja: 遥かなる陽雷の想い
+      en: Daythunder Anamnesis
+  yomi: ハルカナルヨウライノオモイ
+  category: advanced_skill_upgrade
+  rarity: 4

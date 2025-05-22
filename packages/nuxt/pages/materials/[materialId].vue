@@ -1,10 +1,5 @@
 <script lang="ts" setup>
-import materials from "~/assets/data/materials.csv"
-
-definePageMeta({
-  title: "materialDetails",
-  itemI18nKey: "materialNames",
-})
+import materials from "~/assets/data/materials.yaml"
 
 const route = useRoute()
 
@@ -13,6 +8,7 @@ if (!materials.some(e => e.id === route.params.materialId)) {
 }
 
 const material = materials.find(e => e.id === route.params.materialId)!
+usePageTitle(tx("pageTitles.materialDetails", { name: localize(material.name) }))
 
 const characterUsage = getMaterialUsageCharacter(material.id)
 const lightConeUsage = getMaterialUsageLightCone(material.id)
@@ -63,7 +59,8 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
           <CharacterIconCard
             v-for="character in characterUsage"
             :key="character.id"
-            :character-id-with-variant="toCharacterIdWithVariant(character.id, character.variant ?? null)"
+            :to="$localePath(`/characters/${character.id}` + (character.variant ? `?variant=${character.variant}` : ''))"
+            :name="localize(getCharacterVariant(toCharacterIdWithVariant(character.id, character.variant ?? null))!.name)"
             :image-url="getCharacterImage(toCharacterIdWithVariant(character.id, character.variant ?? null), 'small')"
           />
         </v-row>
@@ -86,11 +83,10 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
           <ItemListItem
             v-for="lightCone in group"
             :key="lightCone.id"
-            :image-func="getLightConeImage"
-            :item-id="lightCone.id"
-            :item-rarity="lightCone.rarity"
-            item-i18n-key="lightConeNames"
-            link-base-path="/light-cones"
+            :image-path="getLightConeImage(lightCone.id)"
+            :to="`/light-cones/${lightCone.id}`"
+            :name="localize(lightCone.name)"
+            :rarity="lightCone.rarity"
           />
         </template>
       </v-list>

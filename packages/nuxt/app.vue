@@ -27,7 +27,7 @@
       <v-main class="h-100">
         <div
           class="position-fixed"
-          style="top: 64px; width: 100%; z-index: 9999"
+          style="top: 64px; width: 100%; z-index: 1005"
         >
           <v-progress-linear
             :active="isLoadingPage"
@@ -157,62 +157,73 @@ const feedbackPageUrl = "https://www.chikach.net/hsr-material-fb"
 const hoyolabArticleUrl = "https://www.hoyolab.com/article/18406761"
 const drawerItems: DrawerItemOrDivider[] = [
   {
+    title: tx("pageTitles.home"),
     icon: "mdi-home",
     to: "/",
   },
   {
+    title: tx("pageTitles.bookmarks"),
     icon: "mdi-bookmark-multiple",
     to: "/bookmarks",
   },
   {
     icon: "mdi-import",
-    title: "gameDataSync",
+    title: tx("navDrawer.gameDataSync"),
     onClick() {
       showGameDataSyncDialog.value = true
     },
   },
   "---" as const,
   {
+    title: tx("pageTitles.characters"),
     icon: "mdi-account",
     to: "/characters",
   },
   {
+    title: tx("pageTitles.lightCones"),
     icon: "mdi-cone",
     to: "/light-cones",
   },
   {
+    title: tx("pageTitles.relics"),
     icon: "mdi-star-david",
     to: "/relics",
   },
   {
+    title: tx("pageTitles.materials"),
     icon: "mdi-grass",
     to: "/materials",
   },
   "---" as const,
   {
+    title: tx("pageTitles.warps"),
     icon: "ms:history",
     to: "/warps",
   },
   {
+    title: tx("pageTitles.tpCalc"),
     icon: "mdi-sphere",
     to: "/tp-calc",
   },
   {
+    title: tx("pageTitles.sync"),
     icon: "mdi-book-sync",
     to: "/sync",
   },
   "---" as const,
   {
+    title: tx("pageTitles.settings"),
     icon: "mdi-cog",
     to: "/settings",
   },
   {
+    title: tx("pageTitles.about"),
     icon: "mdi-information",
     to: "/about",
   },
   {
+    title: tx("navDrawer.kofi"),
     icon: "mdi-coffee",
-    title: "kofi",
     href: "https://ko-fi.com/chika3742",
     target: "_blank",
   },
@@ -224,7 +235,7 @@ const isLoadingPage = ref(false)
 const showSearchDialog = ref(false)
 const showGameDataSyncDialog = ref(false)
 
-const title = computed(() => getPageTitle(router.currentRoute.value.fullPath, router, i18n))
+const title = usePageTitle()
 
 useHead({
   title,

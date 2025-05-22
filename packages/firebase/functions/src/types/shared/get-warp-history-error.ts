@@ -7,7 +7,7 @@ export type GetWarpHistoryErrorCode =
 export class GetWarpHistoryError extends Error {
   constructor(
     public readonly code: GetWarpHistoryErrorCode,
-    public readonly message: string,
+    public override readonly message: string,
   ) {
     super(message)
   }

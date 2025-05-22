@@ -69,7 +69,5 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  title: "privacy",
-})
+usePageTitle(tx("pageTitles.privacy"))
 </script>

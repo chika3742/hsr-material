@@ -4,11 +4,7 @@ import EmphasizedText from "~/components/emphasized-text.vue"
 import type { CharacterIdWithVariant } from "~/types/strings"
 import characters from "~/assets/data/characters.yaml"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
-
-definePageMeta({
-  title: "lightConeDetails",
-  itemI18nKey: "lightConeNames",
-})
+import type { HsrCharacterWoV } from "~/types/data/src/characters"
 
 const route = useRoute()
 
@@ -17,7 +13,9 @@ if (!lightCones.some(e => e.id === route.params.lightConeId)) {
 }
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
-const levels = lightConeIngredients.levelingItemTables[(() => {
+usePageTitle(tx("pageTitles.lightConeDetails", { name: localize(lightCone.name) }))
+
+const levels = lightConeIngredients.ingredientsTables[(() => {
   switch (lightCone.rarity) {
     case 3:
       return "r3Base"
@@ -28,7 +26,7 @@ const levels = lightConeIngredients.levelingItemTables[(() => {
     default:
       throw new Error("Invalid rarity")
   }
-})()]
+})()].purposeTypes.ascension!
 
 const selectedCharacter = ref<CharacterIdWithVariant>()
 
@@ -37,7 +35,7 @@ const characterSelectFilter = (id: string): boolean => {
   if (variant !== null) {
     return variant === lightCone.path
   } else {
-    return characters.find(e => e.id === id)!.path === lightCone.path
+    return (characters.find(e => e.id === id) as HsrCharacterWoV).path === lightCone.path
   }
 }
 </script>
@@ -87,7 +85,7 @@ const characterSelectFilter = (id: string): boolean => {
         {{ tx('lightConeDetailsPage.skillDescriptions') }}
       </h4>
       <EmphasizedText
-        :text="tx(`lightConeSkillDescriptions.${lightCone.id}`)"
+        :text="localize(lightCone.skillDescription)"
         class="pl-4 mt-1"
       />
     </section>

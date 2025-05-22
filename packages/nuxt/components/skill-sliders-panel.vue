@@ -1,30 +1,31 @@
 <script lang="ts" setup>
 import type { PurposeType } from "~/types/strings"
-import type { CharacterMaterialDefinitions, Path } from "~/types/generated/characters.g"
-import type { LevelIngredients, LevelsForPurposeTypes } from "~/types/level-ingredients"
+import type { LevelIngredients } from "~/types/level-ingredients"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
+import type { HsrPath } from "~/types/data/enums"
+import { isExpIngredient, type EachLevels, type Ingredient, type MaterialExpr } from "~/types/data/ingredient"
 
 interface Slider {
   type: PurposeType
+  title: string
   levelIngredients: LevelIngredients[]
 }
 
 const props = defineProps<{
   title: string
   characterId: string
-  variant: Path | null
-  materialDefs: CharacterMaterialDefinitions
-  purposeTypes: Omit<LevelsForPurposeTypes, "ascension">
+  variant: HsrPath | null
+  materialDefs: Record<string, MaterialExpr>
+  skills: SliderSkill[]
 }>()
 
 const config = useConfigStore()
 
-const skillI18nKeyBase = computed(() => `skillTitles.${props.characterId + (props.variant ? `.${props.variant}` : "")}`)
-
-const sliders = computed<Slider[]>(() => Object.entries(props.purposeTypes).map(([type, e]) => ({
-  type: type as PurposeType,
-  levelIngredients: levelsToLevelIngredients(e.levels),
+const sliders = computed<Slider[]>(() => props.skills.map(e => ({
+  type: e.purposeType,
+  title: e.title,
+  levelIngredients: levelsToLevelIngredients(e.ingredients.levels),
 })))
 
 const ranges = ref(sliders.value.map((e) => {
@@ -86,20 +87,46 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
     if (!checkedList.value[i]) {
       return []
     }
-    return e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
-      .map(f => f.ingredients.map<BookmarkableMaterial>(g => ({
-        type: "character_material",
-        characterId: toCharacterIdWithVariant(props.characterId, props.variant),
-        materialId: getMaterialIdFromIngredient(g, props.materialDefs),
-        quantity: g.quantity!,
-        usage: {
-          type: "character",
-          upperLevel: f.level,
-          purposeType: e.type,
-        },
-      }))).flat()
+    const filtered = e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
+    const characterIdWithVariant = toCharacterIdWithVariant(props.characterId, props.variant)
+    const result: BookmarkableMaterial[] = []
+
+    for (const lv of filtered) {
+      for (const item of lv.ingredients) {
+        if (isExpIngredient(item)) {
+          throw new Error("Exp ingredients are not supported.")
+        }
+
+        const materialId = getMaterialIdFromIngredient(item, props.materialDefs, characterIdWithVariant)
+        if (materialId === null) {
+          continue // qty is zero
+        }
+
+        result.push({
+          type: "character_material",
+          characterId: characterIdWithVariant,
+          materialId,
+          quantity: item.quantity!,
+          usage: {
+            type: "character",
+            upperLevel: lv.level,
+            purposeType: e.type,
+          },
+        })
+      }
+    }
+
+    return result
   }).flat()
 })
+</script>
+
+<script lang="ts">
+export interface SliderSkill {
+  purposeType: PurposeType
+  title: string
+  ingredients: EachLevels<Ingredient[]>
+}
 </script>
 
 <template>
@@ -120,7 +147,7 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
             />
             <h4>
               <span class="label-subtitle">{{ tx(`common.skillTypes.${item.type}`) }}</span>
-              <span class="ml-2 text-primary">{{ tx(`${skillI18nKeyBase}.${item.type}`) }}</span>
+              <span class="ml-2 text-primary">{{ item.title }}</span>
             </h4>
           </v-row>
           <v-expand-transition>

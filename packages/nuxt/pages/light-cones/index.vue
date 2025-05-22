@@ -1,35 +1,65 @@
 <script lang="ts" setup>
-import GroupedList from "~/components/grouped-list.vue"
+import GroupedList, { type GroupedListGroup, type GroupedListItem } from "~/components/grouped-list.vue"
 import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
 import characters from "~/assets/data/characters.yaml"
-
-definePageMeta({
-  title: "lightCones",
-})
+import { isCharacterGroup } from "~/types/data/src/characters"
+import { hsrPaths } from "~/types/data/enums"
 
 const route = useRoute()
+const i18n = useI18n()
+usePageTitle(tx("pageTitles.lightCones"))
 
 const filteringRarity = ref<number[]>([])
 const expanded = ref<number[]>([])
 const showSkillDescriptions = ref(false)
 
-const items = computed(() => {
+const filteredItems = computed(() => {
   return lightCones.filter(e => filteringRarity.value.length === 0 || e.rarity === filteringRarity.value[0]).sort((a, b) => b.rarity - a.rarity)
+})
+const groupItems = computed<GroupedListItem[]>(() => {
+  return filteredItems.value.map(e => ({
+    key: e.id,
+    name: localize(e.name, i18n),
+    imagePath: getLightConeImage(e.id),
+    groupKey: e.path,
+    rarity: e.rarity,
+    to: `/light-cones/${e.id}`,
+    lines: showSkillDescriptions.value ? "two" : "one",
+    skillDesc: localize(e.skillDescription, i18n),
+  }))
+})
+const groups = computed<GroupedListGroup[]>(() => {
+  return hsrPaths.map(e => ({
+    groupKey: e,
+    title: tx(i18n, `paths.${e}`),
+  }))
 })
 
 const spiltByRarity = splitByField(lightCones, "rarity")
 const spiltByPath = splitByField(lightCones, "path")
 
 onActivated(() => {
-  if (route.query.character) {
-    if (toVariant(route.query.character as string)) {
-      expanded.value = [spiltByPath.findIndex(e => e[0].path === toVariant(route.query.character as string))]
-    } else {
-      const queryCharacter = characters.find(e => e.id === route.query.character)
-      if (typeof queryCharacter !== "undefined") {
-        expanded.value = [spiltByPath.findIndex(e => e[0].path === queryCharacter.path)]
+  const specifiedCharaId = route.query.character
+  if (typeof specifiedCharaId === "string") { // not undefined and valid
+    const queryCharacter = characters.find(e => e.id === toCharacterId(specifiedCharaId))
+    if (typeof queryCharacter === "undefined") {
+      return
+    }
+
+    const variant = (() => {
+      if (isCharacterGroup(queryCharacter)) {
+        if (!queryCharacter.variants.some(e => e.path === toVariant(specifiedCharaId))) {
+          return null
+        }
+        return toVariant(specifiedCharaId)
+      } else {
+        return queryCharacter.path
       }
+    })()
+    const index = spiltByPath.findIndex(e => e[0].path === variant)
+    if (index !== -1) {
+      expanded.value = [index]
     }
   }
 })
@@ -97,21 +127,16 @@ onActivated(() => {
 
     <GroupedList
       v-model="expanded"
-      :image-func="getLightConeImage"
-      :items="items"
-      category-field="path"
-      category-i18n-key="paths"
-      item-i18n-key="lightConeNames"
-      link-base-path="/light-cones"
-      :has-subtitle="showSkillDescriptions"
+      :groups="groups"
+      :items="groupItems"
       preserve-query
     >
-      <template #subtitle="{ itemId }">
+      <template #subtitle="{ item }">
         <v-list-item-subtitle
           v-if="showSkillDescriptions"
           class="mt-1"
         >
-          <EmphasizedText :text="tx(`lightConeSkillDescriptions.${itemId}`)" />
+          <EmphasizedText :text="item.skillDesc as string" />
         </v-list-item-subtitle>
       </template>
     </GroupedList>

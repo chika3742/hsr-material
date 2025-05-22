@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { ReleaseNote } from "~/types/generated/release-notes.g"
+import type { ReleaseNotesEntry } from "~/types/data/src/release-notes"
 
 interface Props {
-  item: ReleaseNote
+  item: ReleaseNotesEntry
   previousItem: ReleaseNote | undefined
 }
 

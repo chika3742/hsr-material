@@ -3,4 +3,4 @@
 
 node_modules
 # Cloudflare Pages Functions
-functions
+/functions

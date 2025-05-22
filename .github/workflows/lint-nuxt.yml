@@ -28,7 +28,13 @@ jobs:
           path: ~/.bun/install/cache
           key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
 
-      - run: bun install
+      - id: install
+        run: bun install
 
       - name: Lint
         run: bun lint
+
+      - name: Typecheck
+        if: always() && steps.install.outcome == 'success'
+        working-directory: ./packages/nuxt
+        run: bun typecheck

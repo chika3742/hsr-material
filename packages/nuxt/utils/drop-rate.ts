@@ -1,5 +1,5 @@
 import dropRates from "assets/data/drop-rates.yaml"
-import materials from "~/assets/data/materials.csv"
+import materials from "~/assets/data/materials.yaml"
 
 export const getDropRateForMaterial = (id: string) => {
   const el = useConfigStore().equilibriumLevel

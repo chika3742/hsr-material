@@ -1,5 +1,5 @@
+import type { HsrPath } from "~/types/data/enums"
 import type { CharacterIdWithVariant } from "~/types/strings"
-import type { Path } from "~/types/generated/characters.g"
 
 /**
  * Converts characterId and variant to a single string.
@@ -18,7 +18,7 @@ export const toCharacterId = (characterIdWithVariant: CharacterIdWithVariant): s
 /**
  * Extracts variant from characterIdWithVariant. Returns null if no variant.
  */
-export const toVariant = (characterIdWithVariant: CharacterIdWithVariant): Path | null => {
+export const toVariant = (characterIdWithVariant: CharacterIdWithVariant): HsrPath | null => {
   const variant = characterIdWithVariant.split("_").slice(1).join("_")
-  return variant ? variant as Path : null
+  return variant ? variant as HsrPath : null
 }

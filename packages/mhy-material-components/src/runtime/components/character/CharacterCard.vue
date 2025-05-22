@@ -1,6 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-  characterId: string
+  to: string
+  name: string
   image: string
   attributeImages: string[]
 }>()
@@ -8,7 +9,7 @@ defineProps<{
 
 <template>
   <v-card
-    :to="$localePath(`/characters/${characterId}`)"
+    :to="to"
     :v-slot:loader="false"
     class="character-card"
   >
@@ -30,7 +31,7 @@ defineProps<{
         :style="`filter: brightness(${$vuetify.theme.name === 'dark' ? '0.8' : '1'})`"
       />
     </v-row>
-    <span class="font-kaisei-opti">{{ $t(`characterNames.${characterId}`) }}</span>
+    <span class="font-kaisei-opti">{{ name }}</span>
   </v-card>
 </template>
 

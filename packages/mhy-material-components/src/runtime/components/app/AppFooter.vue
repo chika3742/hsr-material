@@ -172,10 +172,10 @@ defineEmits<Emits>()
 
 const i18n = useI18n()
 
-const availableLocales: { code: string, name: string }[] = [
+const availableLocales = [
   { code: "ja", name: "日本語" },
   { code: "en", name: "English" },
-]
+] as const
 
 const feedbackUrl = computed(() => {
   if (!import.meta.client) {

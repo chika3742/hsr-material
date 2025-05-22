@@ -1,17 +1,10 @@
 <script lang="ts" setup>
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   modelValue: number[]
-  items: (Record<string, unknown> & { id: string, rarity: number })[]
-  categoryField: string
-  imageFunc: (id: string) => string
-  categoryI18nKey: string
-  itemI18nKey: string
-  linkBasePath: string
+  groups: GroupedListGroup[]
+  items: GroupedListItem[]
   preserveQuery?: boolean
-  hasSubtitle?: boolean
-}>(), {
-  hasSubtitle: false,
-})
+}>()
 
 const emit = defineEmits<{
   (event: "update:modelValue", value: number[]): void
@@ -25,6 +18,38 @@ const opened = computed({
     emit("update:modelValue", v)
   },
 })
+
+const groupedItems = computed(() => {
+  const result: Record<string, GroupedListItem[]> = {}
+  for (const e of props.groups) {
+    result[e.groupKey] = []
+  }
+
+  for (const e of props.items) {
+    result[e.groupKey].push(e)
+  }
+
+  return result
+})
+</script>
+
+<script lang="ts">
+export interface GroupedListItem extends Record<string, unknown> {
+  key: string
+  name: string
+  to: string
+  imagePath: string
+  groupKey: string
+  rarity: number
+  /**
+   * @default "one"
+   */
+  lines?: "one" | "two"
+}
+export interface GroupedListGroup {
+  groupKey: string
+  title: string
+}
 </script>
 
 <template>
@@ -34,18 +59,18 @@ const opened = computed({
     style="user-select: none"
   >
     <v-list-group
-      v-for="(group, i) in splitByField(items, categoryField)"
-      :key="group[0].id"
-      :value="i"
+      v-for="group in groups"
+      :key="group.groupKey"
+      :value="group.groupKey"
     >
       <template #activator="{ props: _props }">
         <v-list-item
-          :title="tx(`${categoryI18nKey}.${group[0][categoryField]}`)"
+          :title="group.title"
           v-bind="_props"
         >
           <template #prepend>
             <v-img
-              :src="imageFunc(group[0].id)"
+              :src="groupedItems[group.groupKey][0].imagePath"
               class="mr-2"
               height="40px"
               width="40px"
@@ -55,20 +80,19 @@ const opened = computed({
       </template>
 
       <ItemListItem
-        v-for="item in group"
-        :key="item.id"
-        :image-func="imageFunc"
-        :item-id="item.id"
-        :item-rarity="item.rarity"
-        :item-i18n-key="itemI18nKey"
-        :link-base-path="linkBasePath"
+        v-for="item in groupedItems[group.groupKey]"
+        :key="item.key"
+        :name="item.name"
+        :to="item.to"
+        :image-path="item.imagePath"
+        :rarity="item.rarity"
         :preserve-query="preserveQuery"
-        :lines="hasSubtitle ? 'two' : 'one'"
+        :lines="item.lines ?? 'one'"
       >
         <template #subtitle>
           <slot
-            :item-id="item.id"
             name="subtitle"
+            :item="item"
           />
         </template>
       </ItemListItem>

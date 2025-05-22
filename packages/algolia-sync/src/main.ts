@@ -1,12 +1,13 @@
 import * as path from "path"
 import * as dotenv from "dotenv"
 import { searchClient } from "@algolia/client-search"
-import type { Characters } from "../../nuxt/types/generated/characters.g"
-import type { Materials } from "../../nuxt/types/data/materials"
-import type { LightCones } from "../../nuxt/types/generated/light-cones.g"
+import type { Characters } from "../../nuxt/types/data/src/characters"
+import type { Materials } from "../../nuxt/types/data/src/materials"
+import type { LightCone } from "../../nuxt/types/data/src/equipments"
+import type { RelicSet } from "../../nuxt/types/data/src/decoration-sets"
+import type { RelicPiece } from "../../nuxt/types/data/src/decoration-pieces"
 import type { AlgoliaRecord } from "../../nuxt/types/algolia-record"
 import algoliaConfig from "../../nuxt/algolia.json" assert { type: "json" }
-import type { RelicPiece, RelicSet } from "../../nuxt/types/data/relics"
 import { loadCsvSync, loadYamlSync } from "./utils.js"
 
 type LocaleObject = {
@@ -42,7 +43,7 @@ export const syncObjects = async () => {
   const localeEn = loadYamlSync<LocaleObject>(path.resolve(localeDir, "en.yaml"))
 
   const characters = loadYamlSync<Characters>(path.resolve(dataDir, "characters.yaml"))
-  const lightCones = loadYamlSync<LightCones>(path.resolve(dataDir, "light-cones.yaml"))
+  const lightCones = loadYamlSync<LightCone[]>(path.resolve(dataDir, "light-cones.yaml"))
   const materials = loadCsvSync<Materials>(path.resolve(dataDir, "materials.csv"))
   const relicSets = loadCsvSync<RelicSet[]>(path.resolve(dataDir, "relic-sets.csv"))
   const relicPieces = loadCsvSync<RelicPiece[]>(path.resolve(dataDir, "relic-pieces.csv"))
@@ -53,50 +54,50 @@ export const syncObjects = async () => {
       itemId: e.id,
       name_ja: localeJa.characterNames[e.id],
       name_en: localeEn.characterNames[e.id],
-      i18nKey: `characterNames.${e.id}`,
       yomi: kataToHira(e.yomi),
       recordType: "character" as const,
       url: `/characters/${e.id}`,
+      resultPriority: 0,
     })),
     ...lightCones.map(e => ({
       objectID: e.id + "_light-cone",
       itemId: e.id,
       name_ja: localeJa.lightConeNames[e.id],
       name_en: localeEn.lightConeNames[e.id],
-      i18nKey: `lightConeNames.${e.id}`,
       yomi: kataToHira(e.yomi),
       recordType: "light-cone" as const,
       url: `/light-cones/${e.id}`,
+      resultPriority: 10,
     })),
     ...materials.map(e => ({
       objectID: e.id + "_material",
       itemId: e.id,
       name_ja: localeJa.materialNames[e.id],
       name_en: localeEn.materialNames[e.id],
-      i18nKey: `materialNames.${e.id}`,
       yomi: kataToHira(e.yomi),
       recordType: "material" as const,
       url: `/materials/${e.id}`,
+      resultPriority: 10,
     })),
     ...relicSets.map(e => ({
       objectID: e.id + "_relic-set",
       itemId: e.id,
       name_ja: localeJa.relicSetTitles[e.id],
       name_en: localeEn.relicSetTitles[e.id],
-      i18nKey: `relicSetTitles.${e.id}`,
       yomi: kataToHira(e.yomi),
       recordType: "relic-set" as const,
       url: `/relics/${e.id}`,
+      resultPriority: 20,
     })),
     ...relicPieces.map(e => ({
       objectID: e.id + "_relic-piece",
       itemId: e.id,
       name_ja: localeJa.relicPieceNames[e.id],
       name_en: localeEn.relicPieceNames[e.id],
-      i18nKey: `relicPieceNames.${e.id}`,
       yomi: kataToHira(e.yomi),
       recordType: "relic-piece" as const,
       url: `/relics/${e.setId}?expansion_index=1`,
+      resultPriority: 20,
     })),
   ]
 

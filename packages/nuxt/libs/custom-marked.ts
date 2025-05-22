@@ -12,7 +12,7 @@ export class CustomMarked extends Marked {
 
     const renderer = new Renderer()
 
-    renderer.link = (href, title, text) => {
+    renderer.link = ({ href, title, text }) => {
       return `<a href="${href}" title="${title ?? ""}" target="_blank" rel="noopener noreferrer">${text}</a>`
     }
 

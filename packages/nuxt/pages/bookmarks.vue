@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-definePageMeta({
-  title: "bookmarks",
-})
+usePageTitle(tx("pageTitles.bookmarks"))
 </script>
 
 <template>

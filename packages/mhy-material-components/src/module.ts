@@ -15,7 +15,6 @@ export interface ModuleOptions {
     }
   }
   i18nKeys?: {
-    equipment?: string
     extension?: string
   }
 }
@@ -37,7 +36,6 @@ export default defineNuxtModule<ModuleOptions>({
       },
     },
     i18nKeys: {
-      equipment: "weapons",
       extension: "artifacts",
     },
   },
@@ -64,10 +62,9 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     addPlugin(resolver.resolve("./runtime/plugins/is-touch-device"))
-    addPlugin(resolver.resolve("./runtime/plugins/utils"))
     addPlugin(resolver.resolve("./runtime/plugins/directives/safe-area"))
 
-    await addComponentsDir({
+    addComponentsDir({
       path: resolver.resolve("./runtime/components"),
       watch: true,
     })
