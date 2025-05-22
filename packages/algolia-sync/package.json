@@ -19,7 +19,6 @@
   "packageManager": "bun@1",
   "dependencies": {
     "@algolia/client-search": "5.23.1",
-    "csv-parse": "5.6.0",
     "dotenv": "16.4.7",
     "js-yaml": "4.1.0"
   }
