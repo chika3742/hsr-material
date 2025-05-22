@@ -1882,3 +1882,46 @@
         memosprite. The total HP consumed is then reset. When the wearer’s
         memosprite uses Memosprite Skill, increases the DMG taken by all enemies
         by <18%> for 2 turn(s). The same types of effects cannot stack.
+- id: memorys-curtain-never-falls
+  yomi: ツキヌツイオク
+  name:
+    locales:
+      ja: 尽きぬ追憶
+      en: Memory’s Curtain Never Falls
+  path: remembrance
+  rarity: 5
+  materials:
+    primary: group:lcs013
+    common: group:com002
+  skillDescription:
+    locales:
+      ja: 装備キャラの速度+<6%>。装備キャラが戦闘スキルを発動した後、味方全体の与ダメージ+<8%>、3ターン継続。
+      en: >-
+        Increases the wearer’s SPD by <6%>. After the wearer uses Skill,
+        increases the DMG dealt by all allies by <8%>, lasting for 3 turn(s).
+- id: make-farewells-more-beautiful
+  yomi: エイケツヨウツクシクアレ
+  name:
+    locales:
+      ja: 永訣よ美しくあれ
+      en: Make Farewells More Beautiful
+  path: remembrance
+  rarity: 5
+  materials:
+    primary: group:lcs013
+    common: group:lcs014
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの最大HP+<30%>。装備キャラまたは装備キャラの記憶の精霊が自身のターンでHPを失った時、装備キャラは「冥花」を獲得する。「冥花」を持つ場合、装備キャラおよびその記憶の精霊によるダメージは、ターゲットの防御力を<30%>無視する。2ターン継続。
+
+        また、装備キャラの記憶の精霊が消えた時、装備キャラの行動順が<12%>早まる。この効果は1回まで発動でき、装備キャラが必殺技を発動するたびに、発動可能回数がリセットされる。
+      en: >-
+        Increases the wearer’s Max HP by <30%>. When the wearer or their
+        memosprite loses HP during their own turn, the wearer gains “Death
+        Flower.” “Death Flower” allows the wearer and their memosprite to ignore
+        <30%> of the target’s DEF when dealing DMG, lasting for 2 turn(s).
+
+        When the wearer’s memosprite disappears, advances the wearer’s action by
+        <12%>. This effect can only trigger up to 1 time, and the trigger count
+        resets every time the wearer uses Ultimate.

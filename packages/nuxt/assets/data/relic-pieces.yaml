@@ -1022,3 +1022,67 @@
   setId: bone-collections-serene-demesne
   type: link_rope
   yomi: エイジリアノメイガノコツレンカン
+- id: warrior-goddesss-winged-helm
+  name:
+    locales:
+      ja: 武神の翼兜
+      en: Warrior Goddess’s Winged Helm
+  yomi: ブシンノヨクト
+  type: head
+  setId: warrior-goddess-of-sun-and-thunder
+- id: warrior-goddesss-cavalry-gauntlets
+  name:
+    locales:
+      ja: 武神の騎兵手甲
+      en: Warrior Goddess’s Cavalry Gauntlets
+  yomi: ブシンノキヘイシュコウ
+  type: hands
+  setId: warrior-goddess-of-sun-and-thunder
+- id: warrior-goddesss-dawn-cape
+  name:
+    locales:
+      ja: 武神の旅立ちの外衣
+      en: Warrior Goddess’s Dawn Cape
+  yomi: ブシンノタビダチノガイイ
+  type: body
+  setId: warrior-goddess-of-sun-and-thunder
+- id: warrior-goddesss-honor-spurs
+  name:
+    locales:
+      ja: 武神の栄光の輪拍
+      en: Warrior Goddess’s Honor Spurs
+  yomi: ブシンノエイコウノリンハク
+  type: feet
+  setId: warrior-goddess-of-sun-and-thunder
+- id: captains-navigator-hat
+  name:
+    locales:
+      ja: 船長の羅針ハット
+      en: Captain’s Navigator Hat
+  yomi: センチョウノラシンハット
+  type: head
+  setId: wavestrider-captain
+- id: captains-lightcatcher-astrolabe
+  name:
+    locales:
+      ja: 船長の集光アストロラーベ
+      en: Captain’s Lightcatcher Astrolabe
+  yomi: センチョウノシュウコウアストロラーベ
+  type: hands
+  setId: wavestrider-captain
+- id: captains-wind-mantle
+  name:
+    locales:
+      ja: 船長の統風マント
+      en: Captain’s Wind Mantle
+  yomi: センチョウノトウフウマント
+  type: body
+  setId: wavestrider-captain
+- id: captains-tidal-boots
+  name:
+    locales:
+      ja: 船長の波踏ブーツ
+      en: Captain’s Tidal Boots
+  yomi: センチョウノハトウブーツ
+  type: feet
+  setId: wavestrider-captain
