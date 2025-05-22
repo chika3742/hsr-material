@@ -1,19 +1,17 @@
 import characters from "~/assets/data/characters.yaml"
-import type { HsrCombatType, HsrPath } from "~/types/data/enums"
+import { isCharacterGroup } from "~/types/data/src/characters"
 
-const trailblazerCombatTypeToPath = (combatType: string): HsrPath => {
-  switch (combatType as HsrCombatType) {
-    case "physical":
-      return "destruction"
-    case "fire":
-      return "preservation"
-    default:
-      return "destruction"
+export const parseShowcaseCharacterId = (nameJP: string, combatType: string) => {
+  const character = characters.find(e => e.name.locales.ja === nameJP)
+  if (!character) {
+    return null
   }
-}
-
-export const parseShowcaseCharacterId = (nameJP: string, variant: string) => {
-  return nameJP === "開拓者"
-    ? toCharacterIdWithVariant("trailblazer", trailblazerCombatTypeToPath(variant))
-    : characters.find(e => e.name.locales.ja === nameJP)?.id
+  if (isCharacterGroup(character)) {
+    const path = character.variants.find(e => e.combatType === combatType)?.path
+    if (!path) {
+      return null
+    }
+    return toCharacterIdWithVariant(character.id, path)
+  }
+  return characters.find(e => e.name.locales.ja === nameJP)?.id
 }
