@@ -2,13 +2,13 @@ import * as path from "path"
 import * as dotenv from "dotenv"
 import { searchClient } from "@algolia/client-search"
 import type { Characters } from "../../nuxt/types/data/src/characters"
-import type { Materials } from "../../nuxt/types/data/src/materials"
+import type { Material } from "../../nuxt/types/data/src/materials"
 import type { LightCone } from "../../nuxt/types/data/src/equipments"
 import type { RelicSet } from "../../nuxt/types/data/src/decoration-sets"
 import type { RelicPiece } from "../../nuxt/types/data/src/decoration-pieces"
 import type { AlgoliaRecord } from "../../nuxt/types/algolia-record"
 import algoliaConfig from "../../nuxt/algolia.json" assert { type: "json" }
-import { loadCsvSync, loadYamlSync } from "./utils.js"
+import { loadYamlSync } from "./utils.js"
 
 type LocaleObject = {
   characterNames: Record<string, string>
@@ -44,9 +44,9 @@ export const syncObjects = async () => {
 
   const characters = loadYamlSync<Characters>(path.resolve(dataDir, "characters.yaml"))
   const lightCones = loadYamlSync<LightCone[]>(path.resolve(dataDir, "light-cones.yaml"))
-  const materials = loadCsvSync<Materials>(path.resolve(dataDir, "materials.csv"))
-  const relicSets = loadCsvSync<RelicSet[]>(path.resolve(dataDir, "relic-sets.csv"))
-  const relicPieces = loadCsvSync<RelicPiece[]>(path.resolve(dataDir, "relic-pieces.csv"))
+  const materials = loadYamlSync<Material[]>(path.resolve(dataDir, "materials.yaml"))
+  const relicSets = loadYamlSync<RelicSet[]>(path.resolve(dataDir, "relic-sets.yaml"))
+  const relicPieces = loadYamlSync<RelicPiece[]>(path.resolve(dataDir, "relic-pieces.yaml"))
 
   const objects: AlgoliaRecord[] = [
     ...characters.map(e => ({
