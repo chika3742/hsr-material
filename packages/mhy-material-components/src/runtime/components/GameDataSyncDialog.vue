@@ -7,9 +7,12 @@ interface Props {
   showcase?: ShowcaseContent | null
   uid: string
   loading?: boolean | undefined
+  fetchAvailableInSeconds?: number | null
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  fetchAvailableInSeconds: null,
+})
 
 interface Emits {
   (e: "update:modelValue", value: boolean): void
@@ -99,12 +102,22 @@ const showHelpDialog = ref(false)
               class="d-flex flex-column g-4"
             >
               <!-- userinfo -->
-              <div>
-                <h4>{{ showcase.nickname }}</h4>
-                <p style="font-size: 0.8em">
-                  <span>Lv.{{ showcase.level }}</span>
-                  <span class="ml-4">UID: {{ showcase.uid }}</span>
-                </p>
+              <div class="d-flex align-center">
+                <div>
+                  <h4>{{ showcase.nickname }}</h4>
+                  <p style="font-size: 0.8em">
+                    <span>Lv.{{ showcase.level }}</span>
+                    <span class="ml-4">UID: {{ showcase.uid }}</span>
+                  </p>
+                </div>
+                <v-spacer />
+                <span v-if="fetchAvailableInSeconds !== null">{{ fetchAvailableInSeconds }}s</span>
+                <v-btn
+                  icon="mdi-refresh"
+                  variant="text"
+                  :disabled="fetchAvailableInSeconds !== null"
+                  @click="emitGetData"
+                />
               </div>
 
               <!-- character container -->

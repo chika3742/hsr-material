@@ -1,3 +1,29 @@
+/**
+ * Find the first occurrence of each unique key in the array.
+ * @param arr input array
+ * @param keyCallback function to extract the key from each element
+ */
+const filterFirstOfEach = <T>(arr: T[], keyCallback: (e: T) => any, predicate: (e: T) => boolean): T[] => {
+  const obj = {}
+
+  for (const e of arr) {
+    const key = keyCallback(e)
+    if (!(key in obj) && predicate(e)) {
+      obj[key] = e
+    }
+  }
+  return Object.values(obj)
+}
+
+const skillTypeMap = {
+  Normal: "basicAttack",
+  BPSkill: "skill",
+  Ultra: "ultimate",
+  Talent: "talent",
+  MemospriteSkill: "memospriteSkill",
+  MemospriteTalent: "memospriteTalent",
+}
+
 export const onRequest: PagesFunction = async (context) => {
   if (context.request.method !== "GET") {
     return new Response(null, {
@@ -56,7 +82,7 @@ export const onRequest: PagesFunction = async (context) => {
             promotion: character.light_cone.promotion,
           }
         : null,
-      skills: (character.skills as any[]).slice(0, 4).map((skill) => {
+      skills: filterFirstOfEach(character.skills as any[], e => e.type, e => Object.keys(skillTypeMap).includes(e.type)).map((skill) => {
         let originalLevel = skill.level
         let extraLevel = 0
 
@@ -71,18 +97,7 @@ export const onRequest: PagesFunction = async (context) => {
         }
 
         return {
-          type: (() => {
-            switch (skill.type) {
-              case "Normal":
-                return "basicAttack"
-              case "BPSkill":
-                return "skill"
-              case "Ultra":
-                return "ultimate"
-              case "Talent":
-                return "talent"
-            }
-          })(),
+          type: skillTypeMap[skill.type],
           iconUrl: `https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${skill.icon}`,
           originalLevel,
           extraLevel,
