@@ -4,9 +4,9 @@ declare module "~/assets/data/release-notes.yaml" {
 }
 
 declare module "~/assets/data/characters.yaml" {
-  import type { Characters } from "~/types/data/src/characters"
+  import type { HsrCharacter } from "~/types/data/src/characters"
 
-  const characters: Characters
+  const characters: HsrCharacter[]
   export default characters
 }
 
@@ -18,9 +18,9 @@ declare module "~/assets/data/character-ingredients.yaml" {
 }
 
 declare module "~/assets/data/light-cones.yaml" {
-  import type { Equipments } from "~/types/data/src/equipments"
+  import type { LightCone } from "~/types/data/src/equipments"
 
-  const lightCones: Equipments
+  const lightCones: LightCone[]
   export default lightCones
 }
 
