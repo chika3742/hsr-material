@@ -1,6 +1,5 @@
 import { DateTime } from "luxon"
 import releaseNotes from "~/assets/data/release-notes.yaml"
-import type { ReleaseNotesEntry } from "~/types/data/src/release-notes"
 
 /**
  * Gets current version.
@@ -35,14 +34,4 @@ export const getCurrentVersionText = () => {
   }
 
   return str
-}
-
-/**
- * Generates version string from {@link ReleaseNotesEntry}.
- *
- * @param releaseNote Release note entry
- * @returns e.g. `v1.0.0_D1.0.0`
- */
-export const getVersionText = (releaseNote: ReleaseNotesEntry) => {
-  return `v${releaseNote.funcVersion}_D${releaseNote.dataVersion}`
 }
