@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { DateTime } from "luxon"
 import lightCones from "~/assets/data/light-cones.yaml"
 import { db } from "~/libs/db/providers"
 import type { ShowcaseResponse } from "~/types/showcase-response"
@@ -16,6 +17,18 @@ const emit = defineEmits<Emits>()
 const snackbar = useSnackbar()
 const config = useConfigStore()
 const i18n = useI18n()
+const pTimer = usePeriodicTimer(() => {
+  if (fetchAvailableAfter.value === null) {
+    pTimer.stop()
+    return
+  }
+  fetchAvailableInSeconds.value = Math.round(fetchAvailableAfter.value.diffNow().as("seconds"))
+  if (fetchAvailableInSeconds.value <= 0) {
+    fetchAvailableInSeconds.value = null
+    fetchAvailableAfter.value = null
+    pTimer.stop()
+  }
+}, 1000, true)
 
 watch(toRefs(props).modelValue, (value) => {
   if (value) {
@@ -26,6 +39,8 @@ watch(toRefs(props).modelValue, (value) => {
 const showcaseUid = ref("")
 const showcaseResponse = ref<ShowcaseResponse | null>(null)
 const loadingShowcaseUser = ref(false)
+const fetchAvailableAfter = ref<DateTime | null>(null)
+const fetchAvailableInSeconds = ref<number | null>(null)
 
 const getShowcaseCharacters = async () => {
   if (showcaseUid.value.length !== 9) {
@@ -45,6 +60,8 @@ const getShowcaseCharacters = async () => {
   }
 
   loadingShowcaseUser.value = false
+  fetchAvailableAfter.value = DateTime.now().plus({ seconds: 5 })
+  pTimer.start()
 }
 const importGameData = async () => {
   if (!showcaseResponse.value) {
@@ -139,6 +156,7 @@ const showcaseContent = computed<ShowcaseContent | null>(() => {
     :model-value="modelValue"
     :showcase="showcaseContent"
     :loading="loadingShowcaseUser"
+    :fetch-available-in-seconds="fetchAvailableInSeconds"
     @get-data="getShowcaseCharacters"
     @import="importGameData"
     @update:model-value="$emit('update:modelValue', $event)"

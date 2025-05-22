@@ -1,5 +1,7 @@
 declare module "~/assets/data/release-notes.yaml" {
-  const releaseNotes: ReleaseNotes
+  import type { ReleaseNotesEntry } from "~/types/data/src/release-notes"
+
+  const releaseNotes: ReleaseNotesEntry[]
   export default releaseNotes
 }
 

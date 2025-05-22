@@ -13,7 +13,7 @@
         <v-timeline-item
           v-for="(item, i) in releaseNotes"
           :key="i"
-          :dot-color="item.funcVersion !== releaseNotes[i + 1]?.funcVersion ? '#ffc046' : '#40fff8'"
+          :dot-color="!item.isDataUpdateOnly && item.funcVersion !== releaseNotes[i + 1]?.funcVersion ? '#ffc046' : '#40fff8'"
           :size="item.isMajor ? 'default' : 'small'"
         >
           <template #opposite>
