@@ -10,14 +10,6 @@ import type { AlgoliaRecord } from "../../nuxt/types/algolia-record"
 import algoliaConfig from "../../nuxt/algolia.json" assert { type: "json" }
 import { loadYamlSync } from "./utils.js"
 
-type LocaleObject = {
-  characterNames: Record<string, string>
-  lightConeNames: Record<string, string>
-  materialNames: Record<string, string>
-  relicSetTitles: Record<string, string>
-  relicPieceNames: Record<string, string>
-}
-
 if (process.env.NODE_ENV === "development") {
   dotenv.config()
 }
@@ -30,7 +22,6 @@ const kataToHira = (input: string) => {
 }
 
 const dataDir = "../nuxt/assets/data"
-const localeDir = "../nuxt/i18n/locales"
 
 export const syncObjects = async () => {
   if (process.env.ALGOLIA_API_KEY === undefined) {
@@ -38,9 +29,6 @@ export const syncObjects = async () => {
   }
 
   const index = searchClient(algoliaConfig.appId, process.env.ALGOLIA_API_KEY)
-
-  const localeJa = loadYamlSync<LocaleObject>(path.resolve(localeDir, "ja.yaml"))
-  const localeEn = loadYamlSync<LocaleObject>(path.resolve(localeDir, "en.yaml"))
 
   const characters = loadYamlSync<Characters>(path.resolve(dataDir, "characters.yaml"))
   const lightCones = loadYamlSync<LightCone[]>(path.resolve(dataDir, "light-cones.yaml"))
@@ -52,8 +40,8 @@ export const syncObjects = async () => {
     ...characters.map(e => ({
       objectID: e.id + "_character",
       itemId: e.id,
-      name_ja: localeJa.characterNames[e.id],
-      name_en: localeEn.characterNames[e.id],
+      name_ja: e.name.locales.ja,
+      name_en: e.name.locales.en,
       yomi: kataToHira(e.yomi),
       recordType: "character" as const,
       url: `/characters/${e.id}`,
@@ -62,8 +50,8 @@ export const syncObjects = async () => {
     ...lightCones.map(e => ({
       objectID: e.id + "_light-cone",
       itemId: e.id,
-      name_ja: localeJa.lightConeNames[e.id],
-      name_en: localeEn.lightConeNames[e.id],
+      name_ja: e.name.locales.ja,
+      name_en: e.name.locales.en,
       yomi: kataToHira(e.yomi),
       recordType: "light-cone" as const,
       url: `/light-cones/${e.id}`,
@@ -72,8 +60,8 @@ export const syncObjects = async () => {
     ...materials.map(e => ({
       objectID: e.id + "_material",
       itemId: e.id,
-      name_ja: localeJa.materialNames[e.id],
-      name_en: localeEn.materialNames[e.id],
+      name_ja: e.name.locales.ja,
+      name_en: e.name.locales.en,
       yomi: kataToHira(e.yomi),
       recordType: "material" as const,
       url: `/materials/${e.id}`,
@@ -82,8 +70,8 @@ export const syncObjects = async () => {
     ...relicSets.map(e => ({
       objectID: e.id + "_relic-set",
       itemId: e.id,
-      name_ja: localeJa.relicSetTitles[e.id],
-      name_en: localeEn.relicSetTitles[e.id],
+      name_ja: e.name.locales.ja,
+      name_en: e.name.locales.en,
       yomi: kataToHira(e.yomi),
       recordType: "relic-set" as const,
       url: `/relics/${e.id}`,
@@ -92,8 +80,8 @@ export const syncObjects = async () => {
     ...relicPieces.map(e => ({
       objectID: e.id + "_relic-piece",
       itemId: e.id,
-      name_ja: localeJa.relicPieceNames[e.id],
-      name_en: localeEn.relicPieceNames[e.id],
+      name_ja: e.name.locales.ja,
+      name_en: e.name.locales.en,
       yomi: kataToHira(e.yomi),
       recordType: "relic-piece" as const,
       url: `/relics/${e.setId}?expansion_index=1`,
