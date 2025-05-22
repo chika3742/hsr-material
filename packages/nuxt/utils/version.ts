@@ -18,11 +18,18 @@ export const getCurrentVersionText = () => {
   const cv = getCurrentVersion()
   let str = ""
 
-  str += `v${cv.funcVersion}`
+  if (cv.version) {
+    str += `v${cv.version}`
+  } else {
+    str += `v${cv.funcVersion}`
+  }
+
   if (!config.public.isProdBranch) {
     str += `-dev.${config.public.pagesCommitSha.substring(0, 7)}`
   }
-  str += `_D${cv.dataVersion}`
+  if (cv.dataVersion) {
+    str += `_D${cv.dataVersion}`
+  }
   if (!config.public.isProdBranch) {
     str += ` (built at ${DateTime.fromISO(config.public.builtAt).toFormat("yyyy/MM/dd HH:mm:ss")})`
   }
