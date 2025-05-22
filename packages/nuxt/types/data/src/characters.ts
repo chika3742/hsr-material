@@ -41,6 +41,6 @@ export type HsrCharacter = HsrCharacterWV | HsrCharacterWoV
 export type Characters = HsrCharacter[]
 
 /** `character` is a character group = `character` has variants */
-export const isCharacterGroup = <T>(x: CharacterWithVariantsBase<T> | CharacterWithoutVariantsBase<T>): x is CharacterWithVariantsBase<T> => {
+export const isCharacterGroup = <T>(x: CharacterBase): x is CharacterWithVariantsBase<T> => {
   return "variants" in x
 }

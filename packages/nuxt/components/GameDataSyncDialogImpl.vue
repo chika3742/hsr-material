@@ -57,7 +57,7 @@ const importGameData = async () => {
     await db.bookmarks.removeByShowcase(showcaseResponse.value.characters)
     for (const character of showcaseResponse.value.characters) {
       const characterId = parseShowcaseCharacterId(character.nameJP, character.variant)
-      if (typeof characterId === "undefined") {
+      if (characterId === null) {
         continue
       }
 
