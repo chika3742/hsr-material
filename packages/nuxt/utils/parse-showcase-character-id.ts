@@ -1,7 +1,7 @@
 import characters from "~/assets/data/characters.yaml"
 import { isCharacterGroup } from "~/types/data/src/characters"
 
-export const parseShowcaseCharacterId = (nameJP: string, combatType: string) => {
+export const parseShowcaseCharacterId = (nameJP: string, combatType: string): string | null => {
   const character = characters.find(e => e.name.locales.ja === nameJP)
   if (!character) {
     return null
@@ -13,5 +13,5 @@ export const parseShowcaseCharacterId = (nameJP: string, combatType: string) => 
     }
     return toCharacterIdWithVariant(character.id, path)
   }
-  return characters.find(e => e.name.locales.ja === nameJP)?.id
+  return characters.find(e => e.name.locales.ja === nameJP)?.id ?? null
 }
