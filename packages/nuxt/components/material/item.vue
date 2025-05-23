@@ -169,7 +169,7 @@ const reBookmark = async () => {
 
   try {
     await db.bookmarks.remove(...(savedBookmarks.value as LevelingBookmark[]).map(e => e.id!))
-    await db.bookmarks.addLevelingItems(props.items, currentExpItem.value!.itemId)
+    await db.bookmarks.addLevelingItems(props.items, currentExpItem.value?.itemId)
 
     snackbar.show(tx(i18n, "bookmark.bookmarked"))
   } catch (e) {
