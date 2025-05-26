@@ -36,9 +36,12 @@ const props = withDefaults(defineProps<Props>(), {
 
 const snackbar = useSnackbar()
 const i18n = useI18n()
+const config = useConfigStore()
 
 const loading = ref(false)
 const currentExpItemIndex = ref(0)
+
+const farmingCountDivideByBase = 6
 
 const expItems = computed(() => {
   if (props.items[0].type === "character_exp") {
@@ -136,6 +139,13 @@ const bookmarkState = computed<"full" | "partial" | "none" | undefined>(() => {
   }
 })
 
+const farmingCountDivideBy = computed(() => {
+  if (config.farmingCountDivision && getDropRateForMaterial(material.value.id)?.isChallengeableConsecutively) {
+    return farmingCountDivideByBase
+  }
+  return undefined
+})
+
 const toggleBookmark = async () => {
   if (savedBookmarks.value === null) {
     return
@@ -193,6 +203,7 @@ const reBookmark = async () => {
     :quantity="quantity"
     :rarity="material.rarity"
     :farming-count="showFarmingCount ? getFarmingCount(material.id, quantity) : null"
+    :farming-count-divide-by="farmingCountDivideBy"
     @toggle-bookmark="toggleBookmark"
     @re-bookmark="reBookmark"
     @toggle-item="forwardExpItem"

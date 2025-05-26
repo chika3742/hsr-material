@@ -328,6 +328,8 @@ releaseNotesPage:
 settingsPage:
   bookmarkDisplay: Bookmark Display
   showFarmingCount: Show farming count for each item
+  farmingCountDivision: Auto Farming Mode
+  farmingCountDivisionDesc: For materials that can be challenged a stage consecutively, the estimated farming count will be displayed as 1/6.
   equilibriumLevel: Equilibrium Level
   equilibriumLevelDesc: Farming count is calculated based on the equilibrium level. If you want to change the equilibrium level, please change it here.
   dropRateTable: Drop Rate Table

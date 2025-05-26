@@ -1,10 +1,15 @@
 <script lang="ts" setup>
 interface Props {
   title: string
+  subtitle?: string
+  lines?: "one" | "two"
   modelValue: boolean
+  disabled?: boolean
 }
 
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  disabled: false,
+})
 
 interface Emits {
   (event: "update:modelValue", value: boolean): void
@@ -15,16 +20,18 @@ defineEmits<Emits>()
 
 <template>
   <v-list-item
-    :active="modelValue"
     :title="title"
+    :subtitle="subtitle"
+    :lines="lines"
     color="primary"
     density="comfortable"
+    :disabled="disabled"
     @click="$emit('update:modelValue', !modelValue)"
   >
-    <template #append="{ isActive }">
+    <template #append>
       <div class="px-2">
         <v-switch
-          :model-value="isActive"
+          :model-value="modelValue"
           color="primary"
           density="compact"
           hide-details

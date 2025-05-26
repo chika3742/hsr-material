@@ -1,7 +1,7 @@
 import dropRates from "assets/data/drop-rates.yaml"
 import materials from "~/assets/data/materials.yaml"
 
-export const getDropRateForMaterial = (id: string) => {
+export const getDropRateForMaterial = (id: string): { rate: number, isChallengeableConsecutively: boolean } | null => {
   const el = useConfigStore().equilibriumLevel
 
   const material = materials.find(e => e.id === id)
@@ -32,7 +32,14 @@ export const getDropRateForMaterial = (id: string) => {
     rate += dropCount / factorProduct
   }
 
-  return rate
+  if (rate === 0) {
+    return null
+  }
+
+  return {
+    rate,
+    isChallengeableConsecutively: entry.isChallengeableConsecutively,
+  }
 }
 
 export const getFarmingCount = (materialId: string, quantity: number) => {
@@ -41,5 +48,5 @@ export const getFarmingCount = (materialId: string, quantity: number) => {
     return null
   }
 
-  return Math.ceil(quantity / dropRate)
+  return Math.ceil(quantity / dropRate.rate)
 }
