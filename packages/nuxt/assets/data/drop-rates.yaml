@@ -7,6 +7,7 @@
     rarities:
       2: 5
       3: 4
+  isChallengeableConsecutively: true
   drops:
     - equilibriumLevels:
         - 0
@@ -50,6 +51,7 @@
     rarities:
       2: 4
       3: 3
+  isChallengeableConsecutively: true
   drops:
     - equilibriumLevels:
         - 0
@@ -87,6 +89,7 @@
 - readableType: credit
   ids:
     - credit
+  isChallengeableConsecutively: true
   drops:
     - equilibriumLevels:
         - 0
@@ -112,6 +115,7 @@
         3: 24000
 
 - type: character_ascension
+  isChallengeableConsecutively: false
   drops:
     - equilibriumLevels:
         - 2
@@ -136,6 +140,7 @@
     rarities:
       2: 3
       3: 3
+  isChallengeableConsecutively: true
   drops:
     - equilibriumLevels:
         - 0
@@ -176,6 +181,7 @@
         4: 0.16
 
 - type: advanced_skill_upgrade
+  isChallengeableConsecutively: false
   drops:
     - equilibriumLevels:
         - 1

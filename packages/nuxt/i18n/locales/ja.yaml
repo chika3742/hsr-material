@@ -335,6 +335,8 @@ releaseNotesPage:
 settingsPage:
   bookmarkDisplay: ブックマーク表示設定
   showFarmingCount: アイテムの周回目安回数を表示する
+  farmingCountDivision: オート周回モード
+  farmingCountDivisionDesc: ステージに連続で挑戦できる素材は、周回目安回数を6分の1にして表示します。
   equilibriumLevel: 均衡レベル
   equilibriumLevelDesc: この設定値に応じて、周回回数の目安が表示されます。
   dropRateTable: ドロップ率一覧

@@ -37,6 +37,7 @@ export const useConfigStore = defineStore("config", {
     characterOrder: [] as string[],
     equilibriumLevel: 6,
     showFarmingCount: true,
+    farmingCountDivision: true,
     previousVersion: getCurrentVersionText(),
   }),
   actions: {
