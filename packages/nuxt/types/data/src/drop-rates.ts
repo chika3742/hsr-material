@@ -6,6 +6,7 @@ export interface DropRateEntry {
   craftFactors?: {
     rarities: Record<string, number>
   }
+  isChallengeableConsecutively: boolean
   drops: {
     equilibriumLevels: number[]
     rarities: Record<string, number>

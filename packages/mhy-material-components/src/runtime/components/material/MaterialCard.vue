@@ -43,6 +43,7 @@ interface Props {
    */
   showItemToggleButton?: boolean
   farmingCount?: number | null
+  farmingCountDivideBy?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -153,7 +154,11 @@ const farmingCount = computed(() => {
             style="opacity: 0.6"
           >
             <v-icon>mdi-tractor</v-icon>
-            <span>{{ farmingCount }}</span>
+            <span>{{ Math.ceil(farmingCount / (farmingCountDivideBy ?? 1)) }}</span>
+            <span
+              v-if="farmingCountDivideBy"
+              style="font-size: 0.7em;"
+            >×{{ farmingCountDivideBy }}</span>
           </div>
         </div>
       </v-btn>

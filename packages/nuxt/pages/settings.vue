@@ -53,6 +53,14 @@ const clearCharacterLevels = () => {
           :title="tx('settingsPage.showFarmingCount')"
           @click="syncFirestore"
         />
+        <SwitchListItem
+          v-model="config.farmingCountDivision"
+          :title="tx('settingsPage.farmingCountDivision')"
+          :subtitle="tx('settingsPage.farmingCountDivisionDesc')"
+          lines="two"
+          :disabled="!config.showFarmingCount"
+          @click="syncFirestore"
+        />
       </v-list>
     </section>
 
