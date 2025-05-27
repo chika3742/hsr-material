@@ -13,7 +13,7 @@
         <v-timeline-item
           v-for="(item, i) in releaseNotes"
           :key="i"
-          :dot-color="!item.isDataUpdateOnly && item.funcVersion !== releaseNotes[i + 1]?.funcVersion ? '#ffc046' : '#40fff8'"
+          :dot-color="getDotColor(item, releaseNotes[i + 1])"
           :size="item.isMajor ? 'default' : 'small'"
         >
           <template #opposite>
@@ -86,6 +86,7 @@
 <script lang="ts" setup>
 import releaseNotes from "~/assets/data/release-notes.yaml"
 import { CustomMarked } from "~/libs/custom-marked"
+import type { ReleaseNotesEntry } from "~/types/data/src/release-notes"
 
 usePageTitle(tx("pageTitles.releaseNotes"))
 
@@ -108,6 +109,16 @@ const timelineStyle = computed(() => {
   }
   return "max-height: 600px; height: 600px" // collapsed
 })
+
+const getDotColor = (item: ReleaseNotesEntry, prevItem: ReleaseNotesEntry | undefined) => {
+  const orangeColor = "#ffc046"
+  const lightBlueColor = "#40fff8"
+
+  if (item.isDataUpdateOnly === undefined) {
+    return item.funcVersion !== prevItem?.funcVersion ? orangeColor : lightBlueColor
+  }
+  return item.isDataUpdateOnly ? lightBlueColor : orangeColor
+}
 </script>
 
 <style lang="sass">
