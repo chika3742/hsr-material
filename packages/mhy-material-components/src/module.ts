@@ -73,25 +73,4 @@ export default defineNuxtModule<ModuleOptions>({
       src: resolver.resolve("./runtime/types/enums.d.ts"),
     })
   },
-  hooks: {
-    async "i18n:registerModule"(registerModule) {
-      const resolver = createResolver(import.meta.url)
-
-      registerModule({
-        locales: [
-          {
-            code: "ja",
-            language: "ja-JP",
-            file: "ja.yaml",
-          },
-          {
-            code: "en",
-            language: "en-US",
-            file: "en.yaml",
-          },
-        ],
-        langDir: resolver.resolve("./runtime/locales/"),
-      })
-    },
-  },
 })
