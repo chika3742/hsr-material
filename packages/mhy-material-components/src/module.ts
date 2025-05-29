@@ -1,7 +1,6 @@
-import { addComponentsDir, addPlugin, addTypeTemplate, createResolver, defineNuxtModule } from "@nuxt/kit"
+import { addComponentsDir, addTypeTemplate, createResolver, defineNuxtModule } from "@nuxt/kit"
 import yaml from "@rollup/plugin-yaml"
 import type * as vite from "vite"
-import { withCssExtension } from "./utils/with-css-extension"
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -53,16 +52,11 @@ export default defineNuxtModule<ModuleOptions>({
       exclude: "**",
     }) as vite.Plugin)
 
-    nuxt.options.css.push(await withCssExtension(resolver.resolve("./runtime/styles/global")))
-
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     if (options.injectVuetify) {
-      nuxt.options.build.transpile.push("vuetify")
-      addPlugin(resolver.resolve("./runtime/plugins/vuetify"))
+      // nuxt.options.build.transpile.push("vuetify")
+      // addPlugin(resolver.resolve("./runtime/plugins/vuetify"))
     }
-
-    addPlugin(resolver.resolve("./runtime/plugins/is-touch-device"))
-    addPlugin(resolver.resolve("./runtime/plugins/directives/safe-area"))
 
     addComponentsDir({
       path: resolver.resolve("./runtime/components"),
@@ -77,11 +71,6 @@ export default defineNuxtModule<ModuleOptions>({
     addTypeTemplate({
       filename: "types/mmc-enums.d.ts",
       src: resolver.resolve("./runtime/types/enums.d.ts"),
-    })
-
-    addTypeTemplate({
-      filename: "types/mmc-plugins.d.ts",
-      src: resolver.resolve("./runtime/types/plugins.d.ts"),
     })
   },
   hooks: {
