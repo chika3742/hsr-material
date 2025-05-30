@@ -10,7 +10,8 @@ import invert from "invert-color"
 import { defineNuxtPlugin } from "#app"
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const options = nuxtApp.$config.public.mmc
+  const primaryDark = "#80CBC4"
+  const primaryLight = "#00796B"
 
   const vuetify = createVuetify({
     ssr: true,
@@ -22,8 +23,8 @@ export default defineNuxtPlugin((nuxtApp) => {
         dark: {
           dark: true,
           colors: {
-            "primary": options.theme.dark.primary,
-            "inverse-primary": invert(options.theme.dark.primary),
+            "primary": primaryDark,
+            "inverse-primary": invert(primaryDark),
             "star": "#ffff00",
             "button-activated": "#d24700",
             "rarity-5": "#f1931d",
@@ -39,8 +40,8 @@ export default defineNuxtPlugin((nuxtApp) => {
         light: {
           dark: false,
           colors: {
-            "primary": options.theme.light.primary,
-            "inverse-primary": invert(options.theme.light.primary),
+            "primary": primaryLight,
+            "inverse-primary": invert(primaryLight),
             "star": "#ff8c00",
             "button-activated": "#ff5900",
             "rarity-5": "#f1931d",

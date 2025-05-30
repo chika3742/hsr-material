@@ -6,3 +6,7 @@ export type PurposeType = keyof LevelsForPurposeTypes
 export const purposeTypeList: PurposeType[] = ["ascension", "basicAttack", "skill", "ultimate", "talent", "memospriteSkill", "memospriteTalent"]
 
 export type CharacterIdWithVariant = string | `${string}_${HsrPath}`
+
+export type ThemeSetting = "auto" | "light" | "dark"
+
+export type PossessionStatus = "owned" | "notOwned"

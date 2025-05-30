@@ -4,7 +4,6 @@ import { Readable } from "stream"
 import fs from "node:fs/promises"
 import yaml from "@rollup/plugin-yaml"
 import { DateTime } from "luxon"
-import dsv from "@rollup/plugin-dsv"
 import type { SitemapItemLoose } from "sitemap"
 import { EnumChangefreq, SitemapStream, streamToPromise } from "sitemap"
 import type { FirebaseOptions } from "@firebase/app"
@@ -20,7 +19,6 @@ const routes: string[] = []
 
 export default defineNuxtConfig({
   modules: [
-    "@hsr-material/mhy-material-components",
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
@@ -131,20 +129,6 @@ export default defineNuxtConfig({
       yaml({
         exclude: "**/locales/**",
       }),
-      // @ts-ignore
-      dsv({
-        processRow(row) {
-          const result: Record<string, unknown> = {}
-          for (const key of Object.keys(row)) {
-            const value = row[key]
-            if (value !== "") {
-              result[key] = isNaN(+value) ? value : +value
-            }
-          }
-
-          return result
-        },
-      }),
     ],
   },
 
@@ -219,9 +203,6 @@ export default defineNuxtConfig({
     bundle: {
       optimizeTranslationDirective: false,
     },
-  },
-
-  mhyMaterialComponents: {
   },
 
   piniaPersistedstate: {
