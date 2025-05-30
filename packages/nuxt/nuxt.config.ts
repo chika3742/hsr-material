@@ -19,7 +19,6 @@ const routes: string[] = []
 
 export default defineNuxtConfig({
   modules: [
-    "@hsr-material/mhy-material-components",
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
@@ -204,9 +203,6 @@ export default defineNuxtConfig({
     bundle: {
       optimizeTranslationDirective: false,
     },
-  },
-
-  mhyMaterialComponents: {
   },
 
   piniaPersistedstate: {

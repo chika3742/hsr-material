@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@algolia/client-search": "5.23.1",
-    "@hsr-material/mhy-material-components": "workspace:*",
     "@mdi/font": "7.4.47",
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/i18n": "9.4.0",
