@@ -1,1 +1,1 @@
-type ThemeSetting = "auto" | "light" | "dark"
+// type ThemeSetting = "auto" | "light" | "dark"

@@ -1,6 +1,31 @@
 <script setup lang="ts">
-import { tx } from "../utils/i18n"
-import { nextTick, ref, toRefs, useI18n, watch } from "#imports"
+export interface ShowcaseCharacter {
+  id: string
+  name: string
+  imageUrl: string
+  level: number
+  rank: number
+  promotion: number
+  equipment: {
+    name: string
+    imageUrl: string
+    level: number
+    promotion: number
+  } | null
+  skills: {
+    type: string
+    iconUrl: string
+    originalLevel: number
+    extraLevel: number
+  }[]
+}
+
+export interface ShowcaseContent {
+  uid: string
+  nickname: string
+  level: number
+  characters: ShowcaseCharacter[]
+}
 
 interface Props {
   modelValue: boolean

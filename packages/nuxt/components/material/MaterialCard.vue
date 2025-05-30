@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed, ref, useNuxtApp } from "#imports"
-
 type BookmarkState = "none" | "partial" | "full"
 
 interface Props {

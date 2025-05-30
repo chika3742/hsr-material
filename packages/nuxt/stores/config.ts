@@ -1,4 +1,5 @@
 import { DateTime } from "luxon"
+import type { ThemeSetting } from "~/types/strings"
 
 export const useConfigStore = defineStore("config", {
   state: () => ({

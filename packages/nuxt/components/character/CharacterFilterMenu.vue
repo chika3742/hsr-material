@@ -1,5 +1,14 @@
 <script setup lang="ts">
-import { tx } from "../../utils/i18n"
+export interface FilterOption {
+  key: string
+  titleI18nKey: string
+  items: {
+    icon: string
+    invertIconColor?: boolean
+    textI18nKey: string
+    value: string
+  }[]
+}
 
 interface Props {
   filter: { [key in "possessionStatus" | "rarity" | string]: string[] }

@@ -137,7 +137,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, useI18n } from "#imports"
+import type { ThemeSetting } from "~/types/strings"
 
 interface Props {
   /**

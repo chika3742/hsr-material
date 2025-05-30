@@ -1,6 +1,18 @@
 <script setup lang="ts">
 import { useDisplay } from "vuetify"
-import { onMounted } from "#imports"
+
+export interface DrawerItem {
+  icon: string
+  title: string
+  to?: string
+  href?: string
+  target?: string
+  onClick?: () => void
+}
+
+type Divider = "---"
+
+export type DrawerItemOrDivider = DrawerItem | Divider
 
 defineProps<{
   modelValue: boolean

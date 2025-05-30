@@ -135,6 +135,7 @@
 <script lang="ts" setup>
 import { useTheme } from "vuetify"
 import type { Unsubscribe } from "firebase/auth"
+import type { DrawerItemOrDivider } from "./components/app/AppDrawer.vue"
 import { ref } from "#imports"
 import { useSnackbar } from "~/composables/snackbar"
 import { useDialog } from "~/composables/dialog"
