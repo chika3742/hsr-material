@@ -11,7 +11,7 @@
     "prepack": "nuxt prepare"
   },
   "dependencies": {
-    "@algolia/client-search": "5.23.1",
+    "@algolia/client-search": "5.25.0",
     "@mdi/font": "7.4.47",
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/i18n": "9.4.0",
