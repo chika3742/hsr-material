@@ -12,7 +12,7 @@ type MaterialDefinitions = Partial<Record<string, string>>
  * @param materialDefs {@link CharacterMaterialDefinitions} or {@link LightConeMaterialDefinitions}
  * @returns Material ID or `null`. If null, the quantity of this ingredient is zero.
  */
-export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs: MaterialDefinitions, characterId: string): string | null {
+export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs: MaterialDefinitions, characterId?: string): string | null {
   if (isExpIngredient(ingredient)) {
     throw new Error("ExpIngredient is unsupported in this function")
   }
@@ -21,7 +21,7 @@ export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs
     return ingredient.fixedId
   }
 
-  if (ingredient.overrides?.[characterId]) {
+  if (characterId !== undefined && ingredient.overrides?.[characterId]) {
     return ingredient.overrides?.[characterId]
   }
 

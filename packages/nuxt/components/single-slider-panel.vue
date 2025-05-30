@@ -20,14 +20,12 @@ import type { LevelIngredients } from "~/types/level-ingredients"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
 import { type EachLevels, type Ingredient, isExpIngredient, type MaterialExpr } from "~/types/data/ingredient"
-import type { HsrPath } from "~/types/data/enums"
 
 const props = defineProps<{
   title: string
   characterId: string
   lightConeId?: string
   levels: EachLevels<Ingredient[]>
-  variant: HsrPath | null
   materialDefs: Record<string, MaterialExpr>
 }>()
 
@@ -47,7 +45,7 @@ const setInitialRangeBasedOnBookmarks = async () => {
 
   const bookmarks = await db.bookmarks.getByPurpose(
     props.characterId,
-    props.variant,
+    null,
     props.lightConeId,
     "ascension",
   )
@@ -58,12 +56,11 @@ const setInitialRangeBasedOnBookmarks = async () => {
 
     range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1], max]
   } else {
-    const characterId = toCharacterIdWithVariant(props.characterId, props.variant)
-    const sliderLowerRange = config.characterLevels[characterId]?.ascension ?? sliderTicks.value[0]
+    const sliderLowerRange = config.characterLevels[props.characterId]?.ascension ?? sliderTicks.value[0]
     range.value = [sliderLowerRange, sliderTicks.value.slice(-1)[0]]
   }
 }
-watch([toRefs(props).characterId, toRefs(props).variant], () => {
+watch(toRefs(props).characterId, () => {
   void setInitialRangeBasedOnBookmarks()
 }, { immediate: true })
 
@@ -72,7 +69,6 @@ const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
 })
 
 const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): BookmarkableIngredient[] => {
-  const characterIdWithVariant = toCharacterIdWithVariant(props.characterId, props.variant)
   const result: BookmarkableIngredient[] = []
 
   for (const lv of ingredients) {
@@ -80,7 +76,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
       if (isExpIngredient(e)) {
         result.push({
           type: props.lightConeId ? "light_cone_exp" : "character_exp",
-          characterId: characterIdWithVariant,
+          characterId: props.characterId,
           exp: e.exp,
           usage: {
             type: "exp",
@@ -92,7 +88,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
         continue
       }
 
-      const materialId = getMaterialIdFromIngredient(e, props.materialDefs, characterIdWithVariant)
+      const materialId = getMaterialIdFromIngredient(e, props.materialDefs)
       if (materialId === null) {
         continue // qty is zero
       }
@@ -100,7 +96,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
       if (!props.lightConeId) { // character bookmark
         result.push({
           type: "character_material",
-          characterId: characterIdWithVariant,
+          characterId: props.characterId,
           materialId,
           quantity: e.quantity,
           usage: {
@@ -112,7 +108,7 @@ const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): 
       } else { // light cone bookmark
         result.push({
           type: "light_cone_material",
-          characterId: characterIdWithVariant,
+          characterId: props.characterId,
           materialId,
           quantity: e.quantity,
           usage: {
