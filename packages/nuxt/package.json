@@ -33,7 +33,7 @@
     "sitemap": "8.0.0",
     "sortablejs": "1.15.6",
     "ts-json-schema-generator": "2.4.0",
-    "typescript": "5.8.2",
+    "typescript": "5.8.3",
     "vuetify": "3.8.7",
     "workbox-build": "7.3.0"
   },
