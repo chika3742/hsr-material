@@ -20,6 +20,8 @@ import type { LevelIngredients } from "~/types/level-ingredients"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
 import { type EachLevels, type Ingredient, isExpIngredient, type MaterialExpr } from "~/types/data/ingredient"
+import characters from "~/assets/data/characters.yaml"
+import { isCharacterGroup } from "~/types/data/src/characters"
 
 const props = defineProps<{
   title: string
@@ -38,6 +40,24 @@ const levelIngredients = computed(() => {
 const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredients.value))
 
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
+
+const setInitialRangeBasedOnGameData = () => {
+  const character = characters.find(c => c.id === props.characterId)
+  let maxAscension: number | null = null
+  if (character && isCharacterGroup(character)) {
+    for (const variant of character.variants) {
+      const key = toCharacterIdWithVariant(props.characterId, variant.path)
+      const asc = config.characterLevels[key]?.ascension
+      if (asc === undefined) continue
+      if (maxAscension === null || asc > maxAscension) {
+        maxAscension = asc
+      }
+    }
+  }
+  const sliderLowerRange = maxAscension ?? sliderTicks.value[0]
+  range.value = [sliderLowerRange, sliderTicks.value.slice(-1)[0]]
+}
+
 const setInitialRangeBasedOnBookmarks = async () => {
   if (import.meta.server) {
     return
@@ -56,8 +76,7 @@ const setInitialRangeBasedOnBookmarks = async () => {
 
     range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1], max]
   } else {
-    const sliderLowerRange = config.characterLevels[props.characterId]?.ascension ?? sliderTicks.value[0]
-    range.value = [sliderLowerRange, sliderTicks.value.slice(-1)[0]]
+    setInitialRangeBasedOnGameData()
   }
 }
 watch(toRefs(props).characterId, () => {

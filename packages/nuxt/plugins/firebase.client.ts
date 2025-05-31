@@ -1,4 +1,4 @@
-import type { FirebaseOptions } from "@firebase/app"
+import type { FirebaseOptions } from "firebase/app"
 import { initializeApp } from "firebase/app"
 import { connectFunctionsEmulator, getFunctions } from "firebase/functions"
 import { connectAuthEmulator, getAuth } from "firebase/auth"
