@@ -175,7 +175,6 @@ onActivated(() => {
       <SingleSliderPanel
         :material-defs="currentVariant.materials"
         :character-id="character.id"
-        :variant="currentVariantId"
         :levels="purposeTypes.ascension!"
         :title="tx('characterDetailsPage.ascension')"
       />
