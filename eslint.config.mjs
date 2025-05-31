@@ -72,4 +72,10 @@ export default withNuxt(
       "packages/firebase/functions/bundle/**",
     ],
   },
-).overrideRules(commonRules)
+)
+  .overrideRules(commonRules)
+  .override("nuxt/import/rules", {
+    rules: {
+      "import/no-extraneous-dependencies": "error",
+    },
+  })
