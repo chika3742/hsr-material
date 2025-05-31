@@ -35,7 +35,9 @@
     "ts-json-schema-generator": "2.4.0",
     "typescript": "5.8.3",
     "vuetify": "3.8.7",
-    "workbox-build": "7.3.0"
+    "workbox-build": "7.3.0",
+    "vue": "3.5.16",
+    "yaml": "2.8.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250529.0",

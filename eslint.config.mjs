@@ -68,6 +68,7 @@ export default withNuxt(
       "packages/nuxt/**/generated/**",
       "packages/nuxt/py/**",
       "packages/nuxt/public/**",
+      "packages/file-converters/**",
       "**/dist/**",
       "packages/firebase/functions/bundle/**",
     ],

@@ -1,4 +1,4 @@
-import _ from "lodash"
+import { isArray } from "lodash-es"
 import materials from "~/assets/data/materials.yaml"
 
 import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
@@ -44,8 +44,8 @@ export const mergeItems = (items: BookmarkableIngredient[]): BookmarkableIngredi
 }
 
 export const materialSortFunc = (a: BookmarkableIngredient | BookmarkableIngredient[], b: BookmarkableIngredient | BookmarkableIngredient[]): number => {
-  const aElement = _.isArray(a) ? a[0] : a
-  const bElement = _.isArray(b) ? b[0] : b
+  const aElement = isArray(a) ? a[0] : a
+  const bElement = isArray(b) ? b[0] : b
 
   if (isBookmarkableExp(aElement) || isBookmarkableExp(bElement)) {
     return isBookmarkableExp(aElement) ? -1 : 1

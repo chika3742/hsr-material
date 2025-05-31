@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { DateTime } from "luxon"
-import _ from "lodash"
 import type { Ref } from "vue"
+import { debounce } from "lodash-es"
 import { maxTpCount } from "~/utils/tp"
 import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
 import { computed } from "#imports"
@@ -35,7 +35,7 @@ watch(currentTpCount, (value: string) => {
   }
 })
 
-const sendToFirestore = _.debounce(() => {
+const sendToFirestore = debounce(() => {
   void FirestoreProvider.instance?.sendLocalData()
 }, 1000)
 

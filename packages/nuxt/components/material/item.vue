@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
-import _ from "lodash"
 import hash from "object-hash"
+import { isEqual } from "lodash-es"
 import type { PurposeType } from "~/types/strings"
 import materials from "~/assets/data/materials.yaml"
 import { computed } from "#imports"
@@ -127,8 +127,8 @@ const bookmarkState = computed<"full" | "partial" | "none" | undefined>(() => {
     return undefined
   }
 
-  const diff1 = bookmarks.filter(a => !props.items.some(b => _.isEqual(a.usage, b.usage)))
-  const diff2 = props.items.filter(a => !bookmarks.some(b => _.isEqual(a.usage, b.usage)))
+  const diff1 = bookmarks.filter(a => !props.items.some(b => isEqual(a.usage, b.usage)))
+  const diff2 = props.items.filter(a => !bookmarks.some(b => isEqual(a.usage, b.usage)))
 
   if (bookmarks.length !== 0 && diff1.length === 0 && diff2.length === 0) {
     return "full"

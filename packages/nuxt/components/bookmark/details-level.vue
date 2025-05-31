@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import _ from "lodash"
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
+import { flatMap, omit } from "lodash-es"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
@@ -26,7 +26,7 @@ defineEmits<Emits>()
 
 const bookmarkedItemCount = import.meta.client
   ? useObservable(from(liveQuery(() => {
-      return db.bookmarks.bookmarks.where("id").anyOf(_.flatMap(props.items, e => e.id!)).count()
+      return db.bookmarks.bookmarks.where("id").anyOf(flatMap(props.items, e => e.id!)).count()
     })), {
       initialValue: 1,
     })
@@ -70,7 +70,7 @@ const bookmarkedItemCount = import.meta.client
           :key="item.id"
           :initial-selected-exp-item="isBookmarkableExp(item) ? item.selectedItem : undefined"
           :item-id="item.id"
-          :items="[_.omit(item, ['id', 'bookmarkedAt', 'selectedItem', 'hash']) as BookmarkableIngredient]"
+          :items="[omit(item, ['id', 'bookmarkedAt', 'selectedItem', 'hash']) as BookmarkableIngredient]"
           :purpose-types="[purpose]"
           :show-farming-count="showFarmingCount"
           individual

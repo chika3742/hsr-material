@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import _ from "lodash"
+import { groupBy } from "lodash-es"
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
 import type { Bookmark, LevelingBookmark } from "~/types/bookmark/bookmark"
@@ -119,7 +119,7 @@ const detailsDialog = reactive({
         <section v-if="groupedBookmarks.characterMaterials.length >= 1">
           <div class="d-flex g-2 flex-wrap">
             <MaterialItem
-              v-for="(materials, mId) in _.groupBy(groupedBookmarks.characterMaterials, 'materialId') as Record<string, (Bookmark.CharacterMaterial | Bookmark.Exp)[]>"
+              v-for="(materials, mId) in groupBy(groupedBookmarks.characterMaterials, 'materialId') as Record<string, (Bookmark.CharacterMaterial | Bookmark.Exp)[]>"
               :key="mId"
               :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
               :items="materials"
@@ -156,7 +156,7 @@ const detailsDialog = reactive({
               />
               <div class="d-flex g-2 flex-wrap ml-4 mt-2">
                 <MaterialItem
-                  v-for="(materials, mId) in _.groupBy(lcMaterials, 'materialId') as Record<string, (Bookmark.LightConeMaterial | Bookmark.Exp)[]>"
+                  v-for="(materials, mId) in groupBy(lcMaterials, 'materialId') as Record<string, (Bookmark.LightConeMaterial | Bookmark.Exp)[]>"
                   :key="mId"
                   :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
                   :items="materials"
