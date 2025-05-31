@@ -1,5 +1,5 @@
 import type { HsrPath } from "~/types/data/enums"
-import type { CharacterIdWithVariant } from "~/types/strings"
+import type { CharacterIdWithVariant } from "~/types/data/src/characters"
 
 /**
  * Converts characterId and variant to a single string.

@@ -3,7 +3,7 @@ import { omit } from "lodash-es"
 import characters from "~/assets/data/characters.yaml"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
-import { type HsrCharacterVariant, isCharacterGroup } from "~/types/data/src/characters"
+import { type HsrCharacterSpecs, isCharacterGroup } from "~/types/data/src/characters"
 import type { SliderSkill } from "~/components/skill-sliders-panel.vue"
 import type { PurposeType } from "~/types/strings"
 
@@ -18,7 +18,7 @@ if (!characters.some(e => e.id === route.params.characterId)) {
 
 const character = characters.find(e => e.id === route.params.characterId)!
 
-const currentVariant = ref<HsrCharacterVariant>(isCharacterGroup(character)
+const currentVariant = ref<HsrCharacterSpecs>(isCharacterGroup(character)
   ? character.variants[0]!
   : omit(character, ["id", "rarity", "yomi"]))
 

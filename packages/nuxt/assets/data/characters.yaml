@@ -6,7 +6,8 @@
   yomi: カイタクシャ
   rarity: 5
   variants:
-    - name:
+    - variantId: destruction
+      name:
         locales:
           ja: 開拓者 (壊滅)
           en: Trailblazer (Destruction)
@@ -38,7 +39,8 @@
             locales:
               ja: 盗塁牽制
               en: Perfect Pickoff
-    - name:
+    - variantId: preservation
+      name:
         locales:
           ja: 開拓者 (存護)
           en: Trailblazer (Preservation)
@@ -70,7 +72,8 @@
             locales:
               ja: 建創者の失われし宝
               en: Treasure of the Architects
-    - name:
+    - variantId: harmony
+      name:
         locales:
           ja: 開拓者 (調和)
           en: Trailblazer (Harmony)
@@ -102,7 +105,8 @@
             locales:
               ja: エアリアルステップ
               en: Full-on Aerial Dance
-    - name:
+    - variantId: remembrance
+      name:
         locales:
           ja: 開拓者 (記憶)
           en: Trailblazer (Remembrance)
@@ -153,7 +157,8 @@
   yomi: ミツキナノカ
   rarity: 4
   variants:
-    - name:
+    - variantId: preservation
+      name:
         locales:
           ja: 三月なのか (存護)
           en: March 7th (Preservation)
@@ -185,7 +190,8 @@
             locales:
               ja: 少女の特権
               en: Girl Power
-    - name:
+    - variantId: the_hunt
+      name:
         locales:
           ja: 三月なのか (巡狩)
           en: March 7th (The Hunt)

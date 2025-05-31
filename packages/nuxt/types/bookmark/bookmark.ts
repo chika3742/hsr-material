@@ -1,6 +1,6 @@
 import type { HsrRelicPosition, HsrStat } from "../data/enums"
+import type { CharacterIdWithVariant } from "../data/src/characters"
 import type { Usage } from "~/types/bookmark/usage"
-import type { CharacterIdWithVariant } from "~/types/strings"
 
 export type Bookmark =
   | Bookmark.CharacterMaterial
