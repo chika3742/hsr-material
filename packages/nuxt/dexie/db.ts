@@ -4,7 +4,7 @@ import type { Warp } from "#shared/warp"
 import type { Bookmark } from "~/types/bookmark/bookmark"
 import type { SyncedUserData, UserDocument } from "~/types/firestore/user-document"
 import { DataSyncError } from "~/libs/data-sync-error"
-import { migrate } from "~/utils/migrate"
+import { migrate } from "~/dexie/migrate"
 
 export class MySubClassedDexie extends Dexie {
   bookmarks!: Table<Bookmark>
