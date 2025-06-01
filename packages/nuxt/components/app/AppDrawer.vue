@@ -74,8 +74,10 @@ onMounted(() => {
     <div v-safe-area="{ top: true, left: true }">
       <v-list nav>
         <v-select
+          class="mb-4"
           :model-value="getCurrentGame()"
           :items="availableGames"
+          hide-details
           density="comfortable"
           @update:model-value="navigateToGame($event)"
         >
