@@ -1,6 +1,5 @@
 common:
-  appName: 崩壊：スターレイル 素材ノート
-  gameName: 崩壊：スターレイル
+  appName: 素材ノート
   nonProdWarning: これは開発版であり、不具合や今後変更される機能が含まれる可能性が比較的高いです。
   backToHome: ホームに戻る
   ok: OK
@@ -38,7 +37,7 @@ games:
   hsr: 崩壊：スターレイル
 
 footer:
-  disclaimer: このサイトは非公式です。
+  disclaimer: このサイトは非公式です。画像・データ：©COGNOSPHERE
   feedback: フィードバック
   feedbackMenuItems:
     comment: コメントページ
@@ -266,7 +265,7 @@ warpsPage:
       contents: |
         ※Windows 11でのみ動作確認済み。
         
-        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」を選択します。
+        1. @:{'games.hsr'}を起動し、「跳躍」→「詳細を確認」を選択します。
         1. WindowsキーとRキーを同時に押し、「ファイル名を指定して実行」を開きます。
         1. 以下のコマンドをコピー＆ペーストし、Enterキーを押します。
             <div id="cmd-win" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline}</code></pre></div>
@@ -291,7 +290,7 @@ warpsPage:
         ### URL取得
         
         1. Streamアプリを開き、「Sniff Now」をタップします。
-        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を開きます。（「跳躍履歴」をタップした地点でSniffが開始されていれば構いません）
+        1. @:{'games.hsr'}を起動し、「跳躍」→「詳細を確認」→「跳躍履歴」を開きます。（「跳躍履歴」をタップした地点でSniffが開始されていれば構いません）
         1. Streamアプリに戻り、「Stop Sniffing」をタップし、右の「Sniff History」をタップします。
         1. 一番上の時間をタップし、その中で一番上の項目をタップします。
         1. 上部の「Request」タブをタップし、「REQUEST LINE」の下の部分をタップし、「Copy Url」をタップするとURLをコピーできます。
@@ -309,7 +308,7 @@ warpsPage:
         
         1. ターミナルで以下のコマンドを実行します。
             <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
-        1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」を開きます。
+        1. @:{'games.hsr'}を起動し、「跳躍」→「詳細を確認」を開きます。
         1. 自動的にURLがコピーされ、スクリプトが終了します。
 
 tpCalcPage:

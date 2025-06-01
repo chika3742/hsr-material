@@ -1,6 +1,5 @@
 common:
-  appName: "Honkai: Star Rail Material Note"
-  gameName: "Honkai: Star Rail"
+  appName: "Material Notebook"
   nonProdWarning: This is an development version, so it may contain bugs or features that will be changed in the future.
   backToHome: Back to Home
   ok: OK
@@ -38,7 +37,7 @@ games:
   hsr: "Honkai: Star Rail"
 
 footer:
-  disclaimer: This site is unofficial. Translation errors may occur.
+  disclaimer: "This site is unofficial. Translation errors may occur. Images & data: ©COGNOSPHERE"
   feedback: Feedback
   feedbackMenuItems:
     comment: Special Page
@@ -268,7 +267,7 @@ warpsPage:
       contents: |
         *Confirmed to work only on Windows 11.
 
-        1. Launch @:{'common.gameName'}, select Warp > View Details.
+        1. Launch @:{'games.hsr'}, select Warp > View Details.
         1. Press Windows key + R key to open the Run dialog.
         1. Copy and paste the following command then press Enter key.
             <div id="cmd-win" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline}</code></pre></div>
@@ -293,7 +292,7 @@ warpsPage:
         ### Get URL
         
         1. Open the Stream app and tap **Sniff Now**.
-        1. Launch @:{'common.gameName'}, and open **Warp > View Details > Records**.
+        1. Launch @:{'games.hsr'}, and open **Warp > View Details > Records**.
         1. Return to the Stream app and tap **Stop Sniffing**, then tap **Sniff History** on the right.
         1. Tap the top time in the list, then tap the top item in the list, and tap **Request** at the top, then tap the bottom of **REQUEST LINE** and tap **Copy Url** to copy the URL.
     macos:
@@ -310,7 +309,7 @@ warpsPage:
         
         1. Run the command below on the terminal.
             <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
-        1. Run @:{'common.gameName'} and open **Warp** > **View Details**.
+        1. Run @:{'games.hsr'} and open **Warp** > **View Details**.
         1. URL will be copied and the script exits automatically.
 
 tpCalcPage:
