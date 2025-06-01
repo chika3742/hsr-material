@@ -7,6 +7,7 @@ import materialsMeta from "~/assets/data/materials-meta.yaml"
 usePageTitle(tx("pageTitles.materials"))
 
 const i18n = useI18n()
+const localePath = useLocalePath()
 
 const filteringRarity = ref<number[]>([])
 const expandedGroups = ref<number[]>([])
@@ -18,7 +19,7 @@ const filteredMaterials = computed<GroupedListItem[]>(() => {
     imagePath: getMaterialImage(e.id),
     rarity: e.rarity,
     groupKey: e.category,
-    to: `/materials/${e.id}`,
+    to: localePath(`/hsr/materials/${e.id}`),
   }))
 })
 

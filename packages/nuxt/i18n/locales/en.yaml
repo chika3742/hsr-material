@@ -33,6 +33,10 @@ common:
     memospriteTalent: Memosprite Talent
   updated: Updated to {version}.
 
+games:
+  genshin: Genshin Impact
+  hsr: "Honkai: Star Rail"
+
 footer:
   disclaimer: This site is unofficial. Translation errors may occur.
   feedback: Feedback
@@ -84,6 +88,14 @@ pageTitles:
   privacy: Privacy Policy
   about: About This App
   settings: Settings
+  weapons: Weapons
+  weaponDetails: Weapons / {name}
+  artifacts: Artifacts
+  artifactDetails: Artifacts / {name}
+  furnishingSets: Furnishing Sets
+  furnishingSetDetails: Furnishing Sets / {name}
+  wishes: Wish Pity Counter
+  resinCalc: Resin Recovery Calc
 
 navDrawer:
   gameDataSync: Game Data Sync

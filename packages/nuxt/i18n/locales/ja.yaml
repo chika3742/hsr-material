@@ -33,6 +33,10 @@ common:
     memospriteTalent: 精霊天賦
   updated: "{version} に更新されました。"
 
+games:
+  genshin: 原神
+  hsr: 崩壊：スターレイル
+
 footer:
   disclaimer: このサイトは非公式です。
   feedback: フィードバック
@@ -84,6 +88,14 @@ pageTitles:
   privacy: プライバシーポリシー
   about: このアプリについて
   settings: 設定
+  weapons: 武器
+  weaponDetails: 武器 / {name}
+  artifacts: 聖遺物
+  artifactDetails: 聖遺物 / {name}
+  furnishingSets: 調度品セット
+  furnishingSetDetails: 調度品セット / {name}
+  wishes: 祈願天井カウンター
+  resinCalc: 樹脂回復時刻計算機
 
 navDrawer:
   gameDataSync: ゲームデータ同期

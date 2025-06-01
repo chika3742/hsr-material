@@ -174,7 +174,7 @@ const filteredCharacters = computed(() => {
           ...!isCharacterGroup(character) ? [getCombatTypeImage(character.combatType)] : [],
           ...!isCharacterGroup(character) ? [getPathImage(character.path)] : [],
         ]"
-        :to="$localePath(`/characters/${character.id}`)"
+        :to="$localePath(`/hsr/characters/${character.id}`)"
         :name="localize(character.name)"
         :image="getCharacterImage(character.id, 'full')"
       />

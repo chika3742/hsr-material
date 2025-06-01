@@ -59,7 +59,7 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
           <CharacterIconCard
             v-for="character in characterUsage"
             :key="character.id"
-            :to="$localePath(`/characters/${character.id}` + (character.variant ? `?variant=${character.variant}` : ''))"
+            :to="$localePath(`/hsr/characters/${character.id}` + (character.variant ? `?variant=${character.variant}` : ''))"
             :name="localize(getCharacterVariant(toCharacterIdWithVariant(character.id, character.variant ?? null))!.name)"
             :image-url="getCharacterImage(toCharacterIdWithVariant(character.id, character.variant ?? null), 'small')"
           />
@@ -84,7 +84,7 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
             v-for="lightCone in group"
             :key="lightCone.id"
             :image-path="getLightConeImage(lightCone.id)"
-            :to="`/light-cones/${lightCone.id}`"
+            :to="`/hsr/light-cones/${lightCone.id}`"
             :name="localize(lightCone.name)"
             :rarity="lightCone.rarity"
           />

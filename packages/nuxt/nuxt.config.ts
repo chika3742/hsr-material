@@ -39,6 +39,11 @@ export default defineNuxtConfig({
       leaveActiveClass: "position-absolute d-none",
       duration: 200,
     },
+    layoutTransition: {
+      name: "scroll-x-reverse-transition",
+      leaveActiveClass: "position-absolute d-none",
+      duration: 200,
+    },
     head: {
       link: [
         {
@@ -85,6 +90,10 @@ export default defineNuxtConfig({
 
   build: {
     transpile: ["vuetify"],
+  },
+
+  routeRules: {
+    "/": { redirect: "/hsr" },
   },
 
   experimental: {

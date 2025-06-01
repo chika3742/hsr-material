@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { useDisplay } from "vuetify"
+import genshinIcon from "~/assets/img/icon_genshin.png"
+import hsrIcon from "~/assets/img/icon_hsr.png"
 
 export interface DrawerItem {
   icon: string
@@ -24,6 +26,36 @@ const emit = defineEmits<{
 }>()
 
 const display = useDisplay()
+const i18n = useI18n()
+const localePath = useLocalePath()
+const router = useRouter()
+
+const availableGames = computed(() => ([
+  {
+    title: tx(i18n, "games.genshin"),
+    value: "genshin",
+    to: localePath("/genshin"),
+    props: {
+      iconUrl: genshinIcon,
+    },
+  },
+  {
+    title: tx(i18n, "games.hsr"),
+    value: "hsr",
+    to: localePath("/hsr"),
+    props: {
+      iconUrl: hsrIcon,
+    },
+  },
+]))
+
+const navigateToGame = (game: string) => {
+  if (game === "genshin") {
+    router.push(localePath("/genshin"))
+  } else if (game === "hsr") {
+    router.push(localePath("/hsr"))
+  }
+}
 
 onMounted(() => {
   if (!display.mobile.value) {
@@ -41,6 +73,35 @@ onMounted(() => {
   >
     <div v-safe-area="{ top: true, left: true }">
       <v-list nav>
+        <v-select
+          :model-value="getCurrentGame()"
+          :items="availableGames"
+          density="comfortable"
+          @update:model-value="navigateToGame($event)"
+        >
+          <template #selection="{ item }">
+            <div class="d-flex ga-2 align-center">
+              <v-img
+                :src="item.props.iconUrl"
+                width="30"
+                height="30"
+              />
+              <span style="font-size: 0.9rem;">{{ item.title }}</span>
+            </div>
+          </template>
+          <template #item="{ props }">
+            <v-list-item v-bind="props">
+              <template #prepend>
+                <v-img
+                  :src="props.iconUrl as string"
+                  width="30"
+                  height="30"
+                  class="mr-4"
+                />
+              </template>
+            </v-list-item>
+          </template>
+        </v-select>
         <template v-for="(item, i) in drawerItems">
           <v-list-item
             v-if="item !== '---'"

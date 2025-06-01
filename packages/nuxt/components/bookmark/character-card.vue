@@ -98,7 +98,7 @@ const detailsDialog = reactive({
 
         <v-list-item
           :title="localize(characterName)"
-          :to="$localePath({ path: `/characters/${toCharacterId(characterId)}`, query: { variant: toVariant(characterId) ?? undefined } })"
+          :to="$localePath({ path: `/hsr/characters/${toCharacterId(characterId)}`, query: { variant: toVariant(characterId) ?? undefined } })"
           class="d-flex flex-grow-1 pl-0"
         >
           <template #prepend>
@@ -149,7 +149,7 @@ const detailsDialog = reactive({
                 :prepend-avatar="getLightConeImage(lcId)"
                 :subtitle="tx('searchRecordTypes.light-cone')"
                 :title="localize(lightCones.find((e) => e.id === lcId)!.name)"
-                :to="$localePath({ path: `/light-cones/${lcId}`, query: { character: characterId } })"
+                :to="$localePath({ path: `/hsr/light-cones/${lcId}`, query: { character: characterId } })"
                 density="compact"
                 lines="two"
                 rounded

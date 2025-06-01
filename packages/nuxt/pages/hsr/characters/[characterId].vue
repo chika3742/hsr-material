@@ -142,10 +142,10 @@ onActivated(() => {
           color="primary"
           prepend-icon="mdi-cone"
           variant="outlined"
-          @click="$router.push($localePath({
-            path: '/light-cones',
+          :to="$localePath({
+            path: '/hsr/light-cones',
             query: { character: toCharacterIdWithVariant(character.id, currentVariantId) },
-          }))"
+          })"
         />
 
         <v-btn
@@ -153,10 +153,10 @@ onActivated(() => {
           color="primary"
           prepend-icon="mdi-star-david"
           variant="outlined"
-          @click="$router.push($localePath({
-            path: '/relics',
+          :to="$localePath({
+            path: '/hsr/relics',
             query: { character: toCharacterIdWithVariant(character.id, currentVariantId) },
-          }))"
+          })"
         />
       </div>
     </v-row>

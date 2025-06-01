@@ -24,36 +24,38 @@ interface Entry {
   icon: string
 }
 
+const pathPrefix = "/hsr"
+
 const entries: Entry[] = [
   {
     title: tx("pageTitles.characters"),
     icon: "mdi-account",
-    path: "/characters",
+    path: `${pathPrefix}/characters`,
   },
   {
     title: tx("pageTitles.lightCones"),
     icon: "mdi-cone",
-    path: "/light-cones",
+    path: `${pathPrefix}/light-cones`,
   },
   {
     title: tx("pageTitles.relics"),
     icon: "mdi-star-david",
-    path: "/relics",
+    path: `${pathPrefix}/relics`,
   },
   {
     title: tx("pageTitles.materials"),
     icon: "mdi-grass",
-    path: "/materials",
+    path: `${pathPrefix}/materials`,
   },
   {
     title: tx("pageTitles.tpCalc"),
     icon: "mdi-sphere",
-    path: "/tp-calc",
+    path: `${pathPrefix}/tp-calc`,
   },
   {
     title: tx("pageTitles.warps"),
     icon: "mdi-history",
-    path: "/warps",
+    path: `${pathPrefix}/warps`,
   },
 ]
 </script>

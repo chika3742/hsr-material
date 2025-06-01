@@ -77,7 +77,7 @@ const filteredRelics = computed(() => {
             <v-fade-transition>
               <v-btn
                 v-show="!openedPanels.includes(relic.id)"
-                :to="$localePath({ path: `/relics/${relic.id}`, query: $route.query })"
+                :to="$localePath({ path: `/hsr/relics/${relic.id}`, query: $route.query })"
                 icon="mdi-loupe"
                 size="small"
                 variant="text"
@@ -90,7 +90,7 @@ const filteredRelics = computed(() => {
           <div>
             <RelicSetEffects :relic-set="relic" />
             <v-btn
-              :to="$localePath({ path: `/relics/${relic.id}`, query: $route.query })"
+              :to="$localePath({ path: `/hsr/relics/${relic.id}`, query: $route.query })"
               class="mt-2"
               color="primary"
               prepend-icon="mdi-loupe"

@@ -24,7 +24,7 @@ const groupItems = computed<GroupedListItem[]>(() => {
     imagePath: getLightConeImage(e.id),
     groupKey: e.path,
     rarity: e.rarity,
-    to: `/light-cones/${e.id}`,
+    to: `/hsr/light-cones/${e.id}`,
     lines: showSkillDescriptions.value ? "two" : "one",
     skillDesc: localize(e.skillDescription, i18n),
   }))

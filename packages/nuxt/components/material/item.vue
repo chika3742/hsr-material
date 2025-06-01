@@ -194,7 +194,7 @@ const reBookmark = async () => {
 <template>
   <MaterialCard
     :name="localize(material.name)"
-    :to="`/materials/${material.id}`"
+    :to="$localePath(`/hsr/materials/${material.id}`)"
     :loading="loading || bookmarkState === undefined"
     :bookmark-state="bookmarkState"
     :dimmed="typeof itemId !== 'undefined' && bookmarkState === 'none'"
