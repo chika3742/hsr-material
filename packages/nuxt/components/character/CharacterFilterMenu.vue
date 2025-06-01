@@ -118,7 +118,7 @@ const setFilter = (key: keyof Props["filter"], value: string[]) => {
                   :src="item.icon"
                   width="25"
                   aspect-ratio="1"
-                  :style="!$vuetify.theme.global.current.dark && item.invertIconColor ? 'filter: brightness(0)' : ''"
+                  :style="!$vuetify.theme.current.dark && item.invertIconColor ? 'filter: brightness(0)' : ''"
                 />
               </template>
             </v-list-item>

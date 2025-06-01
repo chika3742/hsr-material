@@ -15,7 +15,7 @@ defineProps<{
   >
     <v-img
       :src="image"
-      :style="`filter: brightness(${$vuetify.theme.name === 'dark' ? '0.8' : '1'})`"
+      :style="`filter: brightness(${$vuetify.theme.current.dark ? '0.8' : '1'})`"
     />
     <v-row
       v-if="attributeImages.length >= 1"
@@ -28,7 +28,7 @@ defineProps<{
         :src="attributeImage"
         width="25px"
         aspect-ratio="1"
-        :style="`filter: brightness(${$vuetify.theme.name === 'dark' ? '0.8' : '1'})`"
+        :style="`filter: brightness(${$vuetify.theme.current.dark ? '0.8' : '1'})`"
       />
     </v-row>
     <span class="font-kaisei-opti">{{ name }}</span>

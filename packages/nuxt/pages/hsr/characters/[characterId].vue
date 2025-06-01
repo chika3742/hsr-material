@@ -105,7 +105,7 @@ onActivated(() => {
           <span class="font-weight-bold">{{ tx("common.path") }}</span>
           <v-img
             :src="getPathImage(currentVariant.path)"
-            :style="!$vuetify.theme.global.current.dark ? 'filter: invert(1)' : ''"
+            :style="!$vuetify.theme.current.dark ? 'filter: invert(1)' : ''"
             aspect-ratio="1"
             class="ml-3"
             max-width="22px"

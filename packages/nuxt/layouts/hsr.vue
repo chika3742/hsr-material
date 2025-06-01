@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :theme="theme === 'dark' ? 'hsrDark' : 'hsrLight'">
     <AppDrawer
       v-model="isDrawerOpenOnMobile"
       :drawer-items="drawerItems"
@@ -43,7 +43,7 @@ const isDrawerOpenOnMobile = ref(false)
 const showSearchDialog = ref(false)
 const showGameDataSyncDialog = ref(false)
 
-useGlobalTheme()
+const theme = useGlobalTheme()
 
 const pathPrefix = "/hsr"
 const drawerItems = computed<DrawerItemOrDivider[]>(() => {

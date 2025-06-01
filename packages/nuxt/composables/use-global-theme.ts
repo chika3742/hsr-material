@@ -1,12 +1,11 @@
-import { useTheme } from "vuetify"
-
 export default function useGlobalTheme() {
-  const theme = useTheme()
   const config = useConfigStore()
+
+  const currentTheme = ref("dark")
 
   const updateCurrentTheme = () => {
     setTimeout(() => {
-      theme.global.name.value = config.getCurrentTheme()
+      currentTheme.value = config.getCurrentTheme()
     })
   }
 
@@ -25,4 +24,6 @@ export default function useGlobalTheme() {
     // remove the event listener
     mediaWatcher.removeEventListener("change", updateCurrentTheme)
   })
+
+  return currentTheme
 }

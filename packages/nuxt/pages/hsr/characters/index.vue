@@ -123,7 +123,7 @@ const filteredCharacters = computed(() => {
                           :src="getPathImage(path)"
                           width="25"
                           aspect-ratio="1"
-                          :style="!$vuetify.theme.global.current.dark ? 'filter: brightness(0)' : ''"
+                          :style="!$vuetify.theme.current.dark ? 'filter: invert(-1)' : ''"
                         />
                       </template>
                     </v-list-item>

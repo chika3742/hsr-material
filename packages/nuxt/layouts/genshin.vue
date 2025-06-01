@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :theme="theme === 'dark' ? 'genshinDark' : 'genshinLight'">
     <AppDrawer
       v-model="isDrawerOpenOnMobile"
       :drawer-items="drawerItems"
@@ -34,7 +34,7 @@
 import type { DrawerItemOrDivider } from "~/components/app/AppDrawer.vue"
 
 const i18n = useI18n()
-useGlobalTheme()
+const theme = useGlobalTheme()
 
 const isDrawerOpenOnMobile = ref(false)
 

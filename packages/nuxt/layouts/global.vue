@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :theme="theme === 'dark' ? 'defaultDark' : 'defaultLight'">
     <GlobalAppBar
       nav-icon="mdi-arrow-left"
       hide-search-icon
@@ -24,6 +24,8 @@
 
 <script setup lang="ts">
 const router = useRouter()
+
+const theme = useGlobalTheme()
 
 function handleNavIconClicked(): void {
   const state = router.options.history.state
