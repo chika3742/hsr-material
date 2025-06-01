@@ -3,7 +3,7 @@ import { omit } from "lodash-es"
 import characters from "~/assets/data/characters.yaml"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
-import { type HsrCharacterSpecs, isCharacterGroup } from "~/types/data/src/characters"
+import { type CharacterVariantId, type HsrCharacterSpecs, isCharacterGroup } from "~/types/data/src/characters"
 import type { SliderSkill } from "~/components/skill-sliders-panel.vue"
 import type { PurposeType } from "~/types/strings"
 
@@ -18,11 +18,15 @@ if (!characters.some(e => e.id === route.params.characterId)) {
 
 const character = characters.find(e => e.id === route.params.characterId)!
 
-const currentVariant = ref<HsrCharacterSpecs>(isCharacterGroup(character)
-  ? character.variants[0]!
-  : omit(character, ["id", "rarity", "yomi"]))
+const currentVariant = computed<HsrCharacterSpecs>(() => {
+  if (!isCharacterGroup(character)) {
+    return omit(character, ["id", "rarity", "yomi"])
+  } else {
+    return omit(character.variants.find(e => e.variantId === currentVariantId.value)!, ["variantId"])
+  }
+})
 
-const currentVariantId = computed(() => isCharacterGroup(character) ? currentVariant.value.path : null)
+const currentVariantId = ref<CharacterVariantId | null>(isCharacterGroup(character) ? character.variants[0]!.variantId : null)
 
 usePageTitle(computed(() => {
   return tx(
@@ -61,7 +65,8 @@ watch(currentVariant, (value) => {
 
 onActivated(() => {
   if (isCharacterGroup(character) && route.query.variant) {
-    currentVariant.value = character.variants.find(e => e.path === route.query.variant) ?? currentVariant.value
+    currentVariantId.value = character.variants.find(e => e.path === route.query.variant)?.variantId
+      ?? currentVariantId.value
   }
 })
 </script>
@@ -159,8 +164,8 @@ onActivated(() => {
     <client-only>
       <v-select
         v-if="isCharacterGroup(character)"
-        v-model="currentVariant"
-        :items="character.variants.map(e => ({ title: tx(`paths.${e.path}` as const), value: e }))"
+        v-model="currentVariantId"
+        :items="character.variants.map(e => ({ title: tx(`paths.${e.path}`), value: e.variantId }))"
         :label="tx('common.path')"
         class="mt-4"
         hide-details

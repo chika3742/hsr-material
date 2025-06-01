@@ -7,11 +7,11 @@ export const parseShowcaseCharacterId = (nameJP: string, combatType: string): st
     return null // Character not found
   }
   if (isCharacterGroup(character)) {
-    const path = character.variants.find(e => e.combatType === combatType)?.path
-    if (!path) {
+    const variantId = character.variants.find(e => e.combatType === combatType)?.variantId
+    if (!variantId) {
       return null
     }
-    return toCharacterIdWithVariant(character.id, path)
+    return toCharacterIdWithVariant(character.id, variantId)
   }
   return characters.find(e => e.name.locales.ja === nameJP)?.id ?? null
 }

@@ -2,13 +2,13 @@ import characters from "~/assets/data/characters.yaml"
 import materials from "~/assets/data/materials.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 import type { MaterialExpr } from "~/types/data/ingredient"
-import { isCharacterGroup } from "~/types/data/src/characters"
+import { isCharacterGroup, type CharacterVariantId } from "~/types/data/src/characters"
 import type { LightCone } from "~/types/data/src/equipments"
 import type { HsrPath } from "~/types/data/enums"
 
 interface UsageCharacter {
   id: string
-  variant?: HsrPath
+  variant?: CharacterVariantId
 }
 
 /**
@@ -55,7 +55,7 @@ export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] 
     if (isCharacterGroup(character)) {
       for (const variant of character.variants) {
         if (getIsMaterialUsedByCharacter(materialId, variant.materials)) {
-          result.push({ id: character.id, variant: variant.path })
+          result.push({ id: character.id, variant: variant.variantId })
         }
       }
     } else if (getIsMaterialUsedByCharacter(materialId, character.materials!)) {

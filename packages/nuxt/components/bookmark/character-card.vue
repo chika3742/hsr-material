@@ -43,7 +43,7 @@ const characterName = computed<LocalizedText>(() => {
   // find variant
   character = characters.find(c => c.id === toCharacterId(props.characterId))
   if (character !== undefined && isCharacterGroup(character)) {
-    const variant = character.variants.find(v => v.path === toVariant(props.characterId))
+    const variant = character.variants.find(v => v.variantId === toVariant(props.characterId))
     if (variant) {
       return variant.name
     }

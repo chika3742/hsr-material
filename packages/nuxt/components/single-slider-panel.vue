@@ -46,7 +46,7 @@ const setInitialRangeBasedOnGameData = () => {
   let maxAscension: number | null = null
   if (character && isCharacterGroup(character)) {
     for (const variant of character.variants) {
-      const key = toCharacterIdWithVariant(props.characterId, variant.path)
+      const key = toCharacterIdWithVariant(props.characterId, variant.variantId)
       const asc = config.characterLevels[key]?.ascension
       if (asc === undefined) continue
       if (maxAscension === null || asc > maxAscension) {
