@@ -1,7 +1,7 @@
 import type { Table } from "dexie"
 import hash from "object-hash"
 import type { Bookmark, LevelingBookmark, RelicBookmark } from "~/types/bookmark/bookmark"
-import type { CharacterIdWithVariant, PurposeType } from "~/types/strings"
+import type { PurposeType } from "~/types/strings"
 import { _db } from "~/dexie/db"
 import { DbProvider } from "~/libs/db/db-provider"
 import type {
@@ -16,6 +16,7 @@ import { EventLogger } from "~/libs/event-logger"
 import lightCones from "~/assets/data/light-cones.yaml"
 import { parseShowcaseCharacterId } from "~/utils/parse-showcase-character-id"
 import type { ShowcaseResponseCharacter } from "~/types/showcase-response"
+import type { CharacterIdWithVariant } from "~/types/data/src/characters"
 
 /**
  * Provides methods for bookmark-related database operations.

@@ -6,7 +6,7 @@ import { liveQuery } from "dexie"
 import type Sortable from "sortablejs"
 import { _db } from "~/dexie/db"
 import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
-import type { CharacterIdWithVariant } from "~/types/strings"
+import type { CharacterIdWithVariant } from "~/types/data/src/characters"
 
 const config = useConfigStore()
 

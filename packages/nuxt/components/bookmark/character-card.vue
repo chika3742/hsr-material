@@ -3,11 +3,11 @@ import { groupBy } from "lodash-es"
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
 import type { Bookmark, LevelingBookmark } from "~/types/bookmark/bookmark"
-import { type CharacterIdWithVariant, purposeTypeList } from "~/types/strings"
+import { purposeTypeList } from "~/types/strings"
 import { reactive } from "#imports"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
 import { db } from "~/libs/db/providers"
-import { isCharacterGroup } from "~/types/data/src/characters"
+import { isCharacterGroup, type CharacterIdWithVariant } from "~/types/data/src/characters"
 import lightCones from "~/assets/data/light-cones.yaml"
 import type { LocalizedText } from "~/types/data/locales"
 import characters from "~/assets/data/characters.yaml"
@@ -43,7 +43,7 @@ const characterName = computed<LocalizedText>(() => {
   // find variant
   character = characters.find(c => c.id === toCharacterId(props.characterId))
   if (character !== undefined && isCharacterGroup(character)) {
-    const variant = character.variants.find(v => v.path === toVariant(props.characterId))
+    const variant = character.variants.find(v => v.variantId === toVariant(props.characterId))
     if (variant) {
       return variant.name
     }

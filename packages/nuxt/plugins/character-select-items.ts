@@ -9,9 +9,9 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (isCharacterGroup(character)) {
       for (const variant of character.variants) {
         characterSelectItems.push({
-          id: toCharacterIdWithVariant(character.id, variant.path),
+          id: toCharacterIdWithVariant(character.id, variant.variantId),
           name: localize(variant.name, nuxtApp.$i18n as Composer),
-          image: getCharacterImage(toCharacterIdWithVariant(character.id, variant.path), "small"),
+          image: getCharacterImage(toCharacterIdWithVariant(character.id, variant.variantId), "small"),
         })
       }
     } else {

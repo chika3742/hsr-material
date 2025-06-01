@@ -3,8 +3,8 @@ import type { PurposeType } from "~/types/strings"
 import type { LevelIngredients } from "~/types/level-ingredients"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
-import type { HsrPath } from "~/types/data/enums"
 import { isExpIngredient, type EachLevels, type Ingredient, type MaterialExpr } from "~/types/data/ingredient"
+import type { CharacterVariantId } from "~/types/data/src/characters"
 
 interface Slider {
   type: PurposeType
@@ -15,7 +15,7 @@ interface Slider {
 const props = defineProps<{
   title: string
   characterId: string
-  variant: HsrPath | null
+  variant: CharacterVariantId | null
   materialDefs: Record<string, MaterialExpr>
   skills: SliderSkill[]
 }>()

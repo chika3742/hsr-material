@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import relicStats from "assets/data/relic-stats.yaml"
-import type { CharacterIdWithVariant } from "~/types/strings"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableRelic } from "~/types/bookmark/bookmarkables"
 import { BookmarkableRelicPiece, BookmarkableRelicSet } from "~/types/bookmark/bookmarkables"
 import type { HsrRelicPosition, HsrStat } from "~/types/data/enums"
 import type { RelicSet } from "~/types/data/src/decoration-sets"
 import type { RelicPiece } from "~/types/data/src/decoration-pieces"
+import type { CharacterIdWithVariant } from "~/types/data/src/characters"
 
 interface Props {
   modelValue: boolean
