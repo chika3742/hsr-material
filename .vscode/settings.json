@@ -1,11 +1,13 @@
 {
   "yaml.schemas": {
     "./packages/nuxt/schemas/characters.g.json": [
-      "/packages/nuxt/assets/data/characters.yaml"
+      "/packages/nuxt/assets/data/characters.yaml",
+      "/packages/nuxt/assets/data/genshin/characters.yaml",
     ],
     "./packages/nuxt/schemas/ingredients.g.json": [
       "/packages/nuxt/assets/data/character-ingredients.yaml",
       "/packages/nuxt/assets/data/light-cone-ingredients.yaml",
+      "/packages/nuxt/assets/data/genshin/character-ingredients.yaml",
     ],
     "./packages/nuxt/schemas/equipments.g.json": [
       "/packages/nuxt/assets/data/light-cones.yaml"

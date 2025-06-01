@@ -1,4 +1,4 @@
-import type { HsrCombatType, HsrPath, HsrPurposeType } from "../enums"
+import type { GenshinElement, GenshinPurposeType, GenshinWeaponType, HsrCombatType, HsrPath, HsrPurposeType } from "../enums"
 import type { MaterialExpr } from "../ingredient"
 import type { LocalizedText } from "../locales"
 
@@ -21,7 +21,7 @@ export interface CharacterSkill {
 type CharacterSpecs<T> = T & {
   name: LocalizedText
   materials: Record<string, MaterialExpr>
-  skills: { [k in Exclude<HsrPurposeType, "ascension">]?: CharacterSkill }
+  skills: { [k in Exclude<HsrPurposeType | GenshinPurposeType, "ascension">]?: CharacterSkill }
   ingredientsTable?: string
 }
 
@@ -40,14 +40,22 @@ interface HsrCharacterMixin {
   combatType: HsrCombatType
 }
 
-/** Character for HSR w/ variants */
+interface GenshinCharacterMixin {
+  element: GenshinElement
+  weaponType: GenshinWeaponType
+}
+
 export type HsrCharacterGroup = CharacterGroupBase<HsrCharacterMixin>
 export type HsrCharacterSpecs = CharacterSpecs<HsrCharacterMixin>
-/** Character for HSR w/o variants */
 export type VariantlessHsrCharacter = CharacterWithoutVariantsBase<HsrCharacterMixin>
 export type HsrCharacter = HsrCharacterGroup | VariantlessHsrCharacter
 
-export type Characters = HsrCharacter[]
+export type GenshinCharacterGroup = CharacterGroupBase<GenshinCharacterMixin>
+export type GenshinCharacterSpecs = CharacterSpecs<GenshinCharacterMixin>
+export type VariantlessGenshinCharacter = CharacterWithoutVariantsBase<GenshinCharacterMixin>
+export type GenshinCharacter = GenshinCharacterGroup | VariantlessGenshinCharacter
+
+export type Characters = HsrCharacter[] | GenshinCharacter[]
 
 /** `character` is a character group = `character` has variants */
 export const isCharacterGroup = <T>(x: CharacterBase): x is CharacterGroupBase<T> => {

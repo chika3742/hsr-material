@@ -1,0 +1,85 @@
+- id: traveler
+  name:
+    locales:
+      ja: 旅人
+      en: Traveler
+  yomi: タビビト
+  rarity: 5
+  variants:
+    - variantId: anemo
+      name:
+        locales:
+          ja: 旅人（風）
+          en: Traveler (Anemo)
+      element: anemo
+      weaponType: sword
+      materials:
+        foo: bar
+      skills:
+        basicAttack:
+          name:
+            locales:
+              ja: 異邦の鉄風
+              en: Foreign Ironwind
+        elementalSkill:
+          name:
+            locales:
+              ja: 旋風の剣
+              en: Palm Vortex
+        elementalBurst:
+          name:
+            locales:
+              ja: 激風の息
+              en: Gust Surge
+    - variantId: geo
+      name:
+        locales:
+          ja: 旅人（岩）
+          en: Traveler (Geo)
+      element: geo
+      weaponType: sword
+      materials:
+        foo: bar
+      skills:
+        basicAttack:
+          name:
+            locales:
+              ja: 異邦の岩峰
+              en: Foreign Rockblade
+        elementalSkill:
+          name:
+            locales:
+              ja: 星落としの剣
+              en: Starfell Sword
+        elementalBurst:
+          name:
+            locales:
+              ja: 岩潮幾重
+              en: Wake of Earth
+- id: amber
+  name:
+    locales:
+      ja: アンバー
+      en: Amber
+  yomi: アンバー
+  rarity: 4
+  element: pyro
+  weaponType: bow
+  materials:
+    foo: bar
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 一流射手
+          en: Sharpshooter
+    elementalSkill:
+      name:
+        locales:
+          ja: 爆弾人形
+          en: Explosive Puppet
+    elementalBurst:
+      name:
+        locales:
+          ja: 矢の雨
+          en: Fiery Rain

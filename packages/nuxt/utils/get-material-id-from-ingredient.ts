@@ -21,8 +21,8 @@ export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs
     return ingredient.fixedId
   }
 
-  if (characterId !== undefined && ingredient.overrides?.[characterId]) {
-    return ingredient.overrides?.[characterId]
+  if (characterId !== undefined && ingredient.overrides?.[characterId] !== undefined) {
+    return ingredient.overrides![characterId]
   }
 
   const defString = materialDefs[ingredient.type!]

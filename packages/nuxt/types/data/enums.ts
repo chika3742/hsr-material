@@ -66,3 +66,31 @@ export const hsrRelicPositions = [
   "link_rope",
 ] as const
 export type HsrRelicPosition = (typeof hsrRelicPositions)[number]
+
+export const genshinElements = [
+  "pyro",
+  "hydro",
+  "electro",
+  "dendro",
+  "cryo",
+  "geo",
+  "anemo",
+] as const
+export type GenshinElement = (typeof genshinElements)[number]
+
+export const genshinWeaponTypes = [
+  "sword",
+  "claymore",
+  "polearm",
+  "bow",
+  "catalyst",
+] as const
+export type GenshinWeaponType = (typeof genshinWeaponTypes)[number]
+
+export const genshinPurposeTypes = [
+  "ascension",
+  "basicAttack",
+  "elementalSkill",
+  "elementalBurst",
+] as const
+export type GenshinPurposeType = (typeof genshinPurposeTypes)[number]

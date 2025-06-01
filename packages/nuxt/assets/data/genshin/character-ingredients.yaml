@@ -1,0 +1,214 @@
+expItems:
+  - itemId: heros-wit
+    expPerItem: 20000
+  - itemId: adventurers-experience
+    expPerItem: 5000
+  - itemId: wanderers-advice
+    expPerItem: 1000
+
+ingredientsTables:
+  main:
+    purposeTypes:
+      ascension:
+        levels:
+          "20":
+            - exp: 120175
+            - fixedId: mora
+              quantity: 24035
+          "40":
+            - exp: 578325
+            - type: primary
+              craftLevel: 1
+              quantity: 1
+              overrides:
+                traveler: brilliant-diamond-sliver
+            - type: secondary
+              craftLevel: 1
+              quantity: 3
+            - type: local
+              quantity: 3
+            - fixedId: mora
+              quantity: 135665
+          "50":
+            - exp: 579100
+            - type: primary
+              craftLevel: 2
+              quantity: 3
+              overrides:
+                traveler: brilliant-diamond-fragment
+            - type: secondary
+              craftLevel: 1
+              quantity: 15
+            - type: elementalStone
+              quantity: 2
+              overrides:
+                traveler:
+            - type: local
+              quantity: 10
+            - fixedId: mora
+              quantity: 155820
+          "60":
+            - exp: 854125
+            - type: primary
+              craftLevel: 2
+              quantity: 6
+              overrides:
+                traveler: brilliant-diamond-fragment
+            - type: secondary
+              craftLevel: 2
+              quantity: 12
+            - type: elementalStone
+              quantity: 4
+              overrides:
+                traveler:
+            - type: local
+              quantity: 20
+            - fixedId: mora
+              quantity: 230825
+          "70":
+            - exp: 1195925
+            - type: primary
+              craftLevel: 3
+              quantity: 3
+              overrides:
+                traveler: brilliant-diamond-chunk
+            - type: secondary
+              craftLevel: 2
+              quantity: 18
+            - type: elementalStone
+              quantity: 8
+              overrides:
+                traveler:
+            - type: local
+              quantity: 30
+            - fixedId: mora
+              quantity: 319185
+          "80":
+            - exp: 1611875
+            - type: primary
+              craftLevel: 3
+              quantity: 6
+              overrides:
+                traveler: brilliant-diamond-chunk
+            - type: secondary
+              craftLevel: 3
+              quantity: 12
+            - type: elementalStone
+              quantity: 12
+              overrides:
+                traveler:
+            - type: local
+              quantity: 45
+            - fixedId: mora
+              quantity: 422375
+          "90":
+            - exp: 3423125
+            - type: primary
+              craftLevel: 4
+              quantity: 6
+              overrides:
+                traveler: brilliant-diamond-gemstone
+            - type: secondary
+              craftLevel: 3
+              quantity: 24
+            - type: elementalStone
+              quantity: 20
+              overrides:
+                traveler:
+            - type: local
+              quantity: 60
+            - fixedId: mora
+              quantity: 804625
+      normalAttack: &talent
+        levels:
+          "2":
+            - type: talentPrimary
+              craftLevel: 1
+              quantity: 3
+            - type: secondary
+              craftLevel: 1
+              quantity: 6
+            - fixedId: mora
+              quantity: 12500
+          "3":
+            - type: talentPrimary
+              craftLevel: 2
+              quantity: 2
+            - type: secondary
+              craftLevel: 2
+              quantity: 3
+            - fixedId: mora
+              quantity: 17500
+          "4":
+            - type: talentPrimary
+              craftLevel: 2
+              quantity: 4
+            - type: secondary
+              craftLevel: 2
+              quantity: 4
+            - fixedId: mora
+              quantity: 25000
+          "5":
+            - type: talentPrimary
+              craftLevel: 2
+              quantity: 6
+            - type: secondary
+              craftLevel: 2
+              quantity: 6
+            - fixedId: mora
+              quantity: 30000
+          "6":
+            - type: talentPrimary
+              craftLevel: 2
+              quantity: 9
+            - type: secondary
+              craftLevel: 2
+              quantity: 9
+            - fixedId: mora
+              quantity: 37500
+          "7":
+            - type: talentPrimary
+              craftLevel: 3
+              quantity: 4
+            - type: secondary
+              craftLevel: 3
+              quantity: 4
+            - type: talentBoss
+              quantity: 1
+            - fixedId: mora
+              quantity: 120000
+          "8":
+            - type: talentPrimary
+              craftLevel: 3
+              quantity: 6
+            - type: secondary
+              craftLevel: 3
+              quantity: 6
+            - type: talentBoss
+              quantity: 1
+            - fixedId: mora
+              quantity: 260000
+          "9":
+            - type: talentPrimary
+              craftLevel: 3
+              quantity: 12
+            - type: secondary
+              craftLevel: 3
+              quantity: 9
+            - type: talentBoss
+              quantity: 2
+            - fixedId: mora
+              quantity: 450000
+          "10":
+            - type: talentPrimary
+              craftLevel: 3
+              quantity: 16
+            - type: secondary
+              craftLevel: 3
+              quantity: 12
+            - type: talentBoss
+              quantity: 2
+            - fixedId: crown-of-insight
+              quantity: 1
+            - fixedId: mora
+              quantity: 700000

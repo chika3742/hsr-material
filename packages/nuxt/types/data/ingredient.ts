@@ -1,10 +1,10 @@
-import type { HsrPurposeType } from "./enums"
+import type { GenshinPurposeType, HsrPurposeType } from "./enums"
 
 export type Ingredient = FixedIdIngredient | ExpIngredient | TypedIngredient | CraftableIngredient
 
 interface IngredientOverrides {
   overrides?: {
-    [id: string]: string
+    [id: string]: string | null
   }
 }
 
@@ -24,12 +24,12 @@ export function isExpIngredient(x: Ingredient): x is ExpIngredient {
 }
 
 export interface TypedIngredient extends IngredientOverrides {
-  type: "ascension" | "skillsAdvanced"
+  type: "ascension" | "skillsAdvanced" | "local" | "elementalStone" | "talentBoss"
   quantity: number
 }
 
 export interface CraftableIngredient extends IngredientOverrides {
-  type: "common" | "primary" | "ascension" | "skills"
+  type: "common" | "primary" | "secondary" | "ascension" | "skills" | "talentPrimary"
   quantity: number
   craftLevel: number
 }
@@ -38,7 +38,7 @@ export function isCraftableIngredient(x: Ingredient): x is CraftableIngredient {
 }
 
 export type EachPurposeTypes<T> = {
-  purposeTypes: Partial<Record<HsrPurposeType, T>>
+  purposeTypes: Partial<Record<HsrPurposeType | GenshinPurposeType, T>>
 }
 
 export type EachLevels<T> = {
