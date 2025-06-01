@@ -124,6 +124,27 @@ gameDataSync:
   importSuccess: Imported.
   importError: Failed to import.
 
+indexPageHsr:
+  title: "Honkai: Star Rail Material Notebook"
+  desc: "This app helps you manage the growth status of characters and Light Cones in Honkai: Star Rail. With the bookmark feature, you can quickly check the required materials."
+  charactersDesc: You can check the ascension and skill level-up materials for characters. The intuitive slider makes it easy to use.
+  lightConesDesc: You can check the ascension materials for Light Cones.
+  relicsDesc: You can bookmark relic sets and individual relics by part.
+  materialsDesc: You can check which characters and Light Cones use each material.
+  tpCalcDesc: You can calculate the time when Trailblaze Power will be fully replenished. Just enter your current Trailblaze Power to see when it will be full.
+  warpsDesc: Retrieve your warp history and check your pity count and its history.
+
+indexPageGenshin:
+  title: "Genshin Material Notebook"
+  desc: This app helps you manage the growth status of characters, weapons, and artifacts in Genshin Impact. With the bookmark feature, you can quickly check the required materials.
+  charactersDesc: You can check the ascension and talent level-up materials for characters. The intuitive slider makes it easy to use.
+  weaponsDesc: You can check the ascension materials for weapons.
+  artifactsDesc: You can bookmark artifact sets and individual artifacts by part.
+  furnishingSetsDesc: You can count and bookmark the furnishings required for furnishing sets.
+  materialsDesc: You can check which characters and weapons use each material.
+  resinCalcDesc: You can calculate the time when Resin will be fully replenished. Just enter your current Resin to see when it will be full.
+  wishesDesc: Retrieve your wish history and check your pity count and its history.
+
 charactersPage:
   possessionStatus: Possession Status
   owned: Owned
