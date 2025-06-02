@@ -8,8 +8,8 @@ declare module "~/assets/data/release-notes.yaml" {
 declare module "~/assets/data/characters.yaml" {
   import type { HsrCharacter } from "~/types/data/src/characters"
 
-  const characters: HsrCharacter[]
-  export default characters
+  const hCharacters: HsrCharacter[]
+  export default hCharacters
 }
 
 declare module "~/assets/data/character-ingredients.yaml" {
@@ -73,4 +73,11 @@ declare module "assets/data/drop-rates.yaml" {
 
   const dropRates: DropRates
   export default dropRates
+}
+
+declare module "~/assets/data/genshin/characters.yaml" {
+  import type { GenshinCharacter } from "~/types/data/src/characters"
+
+  const gCharacters: GenshinCharacter[]
+  export default gCharacters
 }

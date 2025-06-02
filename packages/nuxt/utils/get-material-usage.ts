@@ -1,4 +1,4 @@
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 import materials from "~/assets/data/materials.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 import type { MaterialExpr } from "~/types/data/ingredient"
@@ -51,7 +51,7 @@ const getIsMaterialUsedByCharacter = (materialId: string, defs: Record<string, M
 export const getMaterialUsageCharacter = (materialId: string): UsageCharacter[] => {
   const result: UsageCharacter[] = []
 
-  for (const character of characters) {
+  for (const character of hCharacters) {
     if (isCharacterGroup(character)) {
       for (const variant of character.variants) {
         if (getIsMaterialUsedByCharacter(materialId, variant.materials)) {

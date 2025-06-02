@@ -1,11 +1,11 @@
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 import { isCharacterGroup } from "~/types/data/src/characters"
 import type { Composer } from "#i18n"
 
 export default defineNuxtPlugin((nuxtApp) => {
   const characterSelectItems: { id: string, name: string, image: string }[] = []
 
-  for (const character of characters) {
+  for (const character of hCharacters) {
     if (isCharacterGroup(character)) {
       for (const variant of character.variants) {
         characterSelectItems.push({

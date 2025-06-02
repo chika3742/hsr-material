@@ -10,7 +10,7 @@ import { db } from "~/libs/db/providers"
 import { isCharacterGroup, type CharacterIdWithVariant } from "~/types/data/src/characters"
 import lightCones from "~/assets/data/light-cones.yaml"
 import type { LocalizedText } from "~/types/data/locales"
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 
 type CharacterIdWithVariantOrWithoutVariant = CharacterIdWithVariant | string
 
@@ -36,12 +36,12 @@ const bookmarks = import.meta.client
 
 const characterName = computed<LocalizedText>(() => {
   // find normal character or character group
-  let character = characters.find(c => c.id === props.characterId)
+  let character = hCharacters.find(c => c.id === props.characterId)
   if (character !== undefined) {
     return character.name
   }
   // find variant
-  character = characters.find(c => c.id === toCharacterId(props.characterId))
+  character = hCharacters.find(c => c.id === toCharacterId(props.characterId))
   if (character !== undefined && isCharacterGroup(character)) {
     const variant = character.variants.find(v => v.variantId === toVariant(props.characterId))
     if (variant) {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { omit } from "lodash-es"
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
 import { type CharacterVariantId, type HsrCharacterSpecs, isCharacterGroup } from "~/types/data/src/characters"
@@ -12,11 +12,11 @@ const router = useRouter()
 const config = useConfigStore()
 const i18n = useI18n()
 
-if (!characters.some(e => e.id === route.params.characterId)) {
+if (!hCharacters.some(e => e.id === route.params.characterId)) {
   throw createError({ statusCode: 404, message: "Page not found", fatal: true })
 }
 
-const character = characters.find(e => e.id === route.params.characterId)!
+const character = hCharacters.find(e => e.id === route.params.characterId)!
 
 const currentVariant = computed<HsrCharacterSpecs>(() => {
   if (!isCharacterGroup(character)) {

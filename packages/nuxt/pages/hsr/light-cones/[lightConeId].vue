@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import type { CharacterIdWithVariant, VariantlessHsrCharacter } from "~/types/data/src/characters"
 
@@ -34,7 +34,7 @@ const characterSelectFilter = (id: string): boolean => {
   if (variant !== null) {
     return variant === lightCone.path
   } else {
-    return (characters.find(e => e.id === id) as VariantlessHsrCharacter).path === lightCone.path
+    return (hCharacters.find(e => e.id === id) as VariantlessHsrCharacter).path === lightCone.path
   }
 }
 </script>

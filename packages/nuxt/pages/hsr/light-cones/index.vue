@@ -2,7 +2,7 @@
 import GroupedList, { type GroupedListGroup, type GroupedListItem } from "~/components/grouped-list.vue"
 import lightCones from "~/assets/data/light-cones.yaml"
 import EmphasizedText from "~/components/emphasized-text.vue"
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 import { isCharacterGroup } from "~/types/data/src/characters"
 import { hsrPaths } from "~/types/data/enums"
 
@@ -42,7 +42,7 @@ const spiltByPath = splitByField(lightCones, "path")
 onActivated(() => {
   const specifiedCharaId = route.query.character
   if (typeof specifiedCharaId === "string") { // not undefined and valid
-    const queryCharacter = characters.find(e => e.id === toCharacterId(specifiedCharaId))
+    const queryCharacter = hCharacters.find(e => e.id === toCharacterId(specifiedCharaId))
     if (typeof queryCharacter === "undefined") {
       return
     }

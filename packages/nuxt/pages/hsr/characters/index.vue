@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 import { reactive } from "#imports"
 import { type HsrCombatType, hsrCombatTypes, type HsrPath, hsrPaths } from "~/types/data/enums"
 import { isCharacterGroup } from "~/types/data/src/characters"
@@ -16,7 +16,7 @@ const filter = reactive({
 })
 
 const filteredCharacters = computed(() => {
-  return characters.filter((character) => {
+  return hCharacters.filter((character) => {
     if (filter.path.length > 0
       && (isCharacterGroup(character)
         ? character.variants.every(e => !filter.path.includes(e.path))

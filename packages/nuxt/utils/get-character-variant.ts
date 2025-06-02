@@ -1,9 +1,9 @@
 import { omit } from "lodash-es"
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 import { type CharacterIdWithVariant, type HsrCharacterSpecs, isCharacterGroup } from "~/types/data/src/characters"
 
 export const getCharacterVariant = (id: CharacterIdWithVariant, fallbackGroup: boolean = false): HsrCharacterSpecs | null => {
-  const character = characters.find(e => e.id === toCharacterId(id))
+  const character = hCharacters.find(e => e.id === toCharacterId(id))
   if (character === undefined) return null
 
   return isCharacterGroup(character)

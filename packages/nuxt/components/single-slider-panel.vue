@@ -20,7 +20,7 @@ import type { LevelIngredients } from "~/types/level-ingredients"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
 import { type EachLevels, type Ingredient, isExpIngredient, type MaterialExpr } from "~/types/data/ingredient"
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 import { isCharacterGroup } from "~/types/data/src/characters"
 
 const props = defineProps<{
@@ -42,7 +42,7 @@ const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredient
 const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
 
 const setInitialRangeBasedOnGameData = () => {
-  const character = characters.find(c => c.id === props.characterId)
+  const character = hCharacters.find(c => c.id === props.characterId)
   let maxAscension: number | null = null
   if (character && isCharacterGroup(character)) {
     for (const variant of character.variants) {

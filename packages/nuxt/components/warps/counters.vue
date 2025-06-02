@@ -156,7 +156,7 @@
 <script lang="ts" setup>
 import { DateTime } from "luxon"
 import type { Warp } from "#shared/warp"
-import characters from "~/assets/data/characters.yaml"
+import hCharacters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
 
 const props = defineProps<{
@@ -265,7 +265,7 @@ const pityCountList = computed(() => {
 const getItemName = (warp: Warp) => {
   switch (warp.itemType) {
     case "キャラクター": {
-      const found = characters.find(e => e.name.locales.ja === warp.name)
+      const found = hCharacters.find(e => e.name.locales.ja === warp.name)
       if (!found) {
         console.error(`Character not found: ${warp.name}`)
         return tx(i18n, "warpsPage.unknownItem")

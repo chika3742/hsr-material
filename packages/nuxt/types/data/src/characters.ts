@@ -18,14 +18,14 @@ export interface CharacterSkill {
   name: LocalizedText
 }
 
-type CharacterSpecs<T> = T & {
+type CharacterSpecsInternal<T> = T & {
   name: LocalizedText
   materials: Record<string, MaterialExpr>
   skills: { [k in Exclude<HsrPurposeType | GenshinPurposeType, "ascension">]?: CharacterSkill }
   ingredientsTable?: string
 }
 
-type CharacterVariant<T> = CharacterSpecs<T> & {
+type CharacterVariant<T> = CharacterSpecsInternal<T> & {
   variantId: CharacterVariantId
 }
 
@@ -33,7 +33,7 @@ interface CharacterGroupBase<T> extends CharacterBase {
   variants: CharacterVariant<T>[]
 }
 
-type CharacterWithoutVariantsBase<T> = CharacterBase & CharacterSpecs<T>
+type CharacterWithoutVariantsBase<T> = CharacterBase & CharacterSpecsInternal<T>
 
 interface HsrCharacterMixin {
   path: HsrPath
@@ -46,16 +46,18 @@ interface GenshinCharacterMixin {
 }
 
 export type HsrCharacterGroup = CharacterGroupBase<HsrCharacterMixin>
-export type HsrCharacterSpecs = CharacterSpecs<HsrCharacterMixin>
+export type HsrCharacterSpecs = CharacterSpecsInternal<HsrCharacterMixin>
 export type VariantlessHsrCharacter = CharacterWithoutVariantsBase<HsrCharacterMixin>
 export type HsrCharacter = HsrCharacterGroup | VariantlessHsrCharacter
 
 export type GenshinCharacterGroup = CharacterGroupBase<GenshinCharacterMixin>
-export type GenshinCharacterSpecs = CharacterSpecs<GenshinCharacterMixin>
+export type GenshinCharacterSpecs = CharacterSpecsInternal<GenshinCharacterMixin>
 export type VariantlessGenshinCharacter = CharacterWithoutVariantsBase<GenshinCharacterMixin>
 export type GenshinCharacter = GenshinCharacterGroup | VariantlessGenshinCharacter
 
+export type Character = HsrCharacter | GenshinCharacter
 export type Characters = HsrCharacter[] | GenshinCharacter[]
+export type CharacterSpecs = HsrCharacterSpecs | GenshinCharacterSpecs
 
 /** `character` is a character group = `character` has variants */
 export const isCharacterGroup = <T>(x: CharacterBase): x is CharacterGroupBase<T> => {
