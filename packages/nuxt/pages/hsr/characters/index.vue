@@ -2,6 +2,7 @@
 import hCharacters from "~/assets/data/characters.yaml"
 import { reactive } from "#imports"
 import { type HsrCombatType, hsrCombatTypes, type HsrPath, hsrPaths } from "~/types/data/enums"
+import type { HsrCharacter } from "~/types/data/src/characters"
 import { isCharacterGroup } from "~/types/data/src/characters"
 
 usePageTitle(tx("pageTitles.characters"))
@@ -16,30 +17,35 @@ const filter = reactive({
 })
 
 const filteredCharacters = computed(() => {
-  return hCharacters.filter((character) => {
-    if (filter.path.length > 0
-      && (isCharacterGroup(character)
-        ? character.variants.every(e => !filter.path.includes(e.path))
-        : !filter.path.includes(character.path))) {
-      return false
-    } else if (filter.combatType.length > 0
-      && (isCharacterGroup(character)
-        ? character.variants.every(e => !filter.combatType.includes(e.combatType))
-        : !filter.combatType.includes(character.combatType))) {
-      return false
-    } else if (filter.rarity.length > 0 && !filter.rarity.includes(character.rarity)) {
-      return false
-    } else if (filter.possessionStatus.length > 0) {
-      const owned = [...config.ownedCharacters, "trailblazer"] // Trailblazer is always owned
-      if (filter.possessionStatus[0] === "owned" && !owned.includes(character.id)) {
-        return false
-      } else if (filter.possessionStatus[0] === "not-owned" && owned.includes(character.id)) {
-        return false
-      }
-    }
+  const filterOptions = {
+    matchInVariant: {} as Record<string, unknown>,
+    matchInRoot: {} as Record<string, unknown>,
+  }
 
-    return true
-  })
+  if (filter.path.length > 0) {
+    filterOptions.matchInVariant.path = filter.path[0]
+  }
+  if (filter.combatType.length > 0) {
+    filterOptions.matchInVariant.combatType = filter.combatType[0]
+  }
+  if (filter.rarity.length > 0) {
+    filterOptions.matchInRoot.rarity = filter.rarity[0]
+  }
+
+  let filtered = filterCharacters<HsrCharacter>(hCharacters, filterOptions)
+  if (filter.possessionStatus.length > 0) {
+    filtered = filtered.filter((character) => {
+      const owned = [...config.ownedCharacters, "trailblazer"] // Trailblazer is always owned
+      if (filter.possessionStatus[0] === "owned" && owned.includes(character.id)) {
+        return true
+      } else if (filter.possessionStatus[0] === "not-owned" && !owned.includes(character.id)) {
+        return true
+      }
+      return false
+    })
+  }
+
+  return filtered
 })
 </script>
 
