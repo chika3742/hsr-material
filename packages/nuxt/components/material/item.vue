@@ -199,7 +199,7 @@ const reBookmark = async () => {
     :bookmark-state="bookmarkState"
     :dimmed="typeof itemId !== 'undefined' && bookmarkState === 'none'"
     :show-item-toggle-button="isBookmarkableExp(items[0])"
-    :image-path="getMaterialImage(material.id)"
+    :image-path="getHsrMaterialImage(material.id)"
     :quantity="quantity"
     :rarity="material.rarity"
     :farming-count="showFarmingCount ? getFarmingCount(material.id, quantity) : null"

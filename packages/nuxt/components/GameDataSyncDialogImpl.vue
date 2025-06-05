@@ -133,7 +133,7 @@ const showcaseContent = computed<ShowcaseContent | null>(() => {
     content.characters.push({
       id: characterId,
       name: localize(variant.name, i18n),
-      imageUrl: getCharacterImage(characterId, "small"),
+      imageUrl: getHsrCharacterImage(characterId, "small"),
       level: character.level,
       promotion: character.promotion,
       rank: character.rank,

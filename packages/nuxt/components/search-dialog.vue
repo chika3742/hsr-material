@@ -91,11 +91,11 @@ const closeDialog = () => {
 const getItemImage = (item: AlgoliaRecord): string => {
   switch (item.recordType) {
     case "character":
-      return getCharacterImage(item.itemId, "small")
+      return getHsrCharacterImage(item.itemId, "small")
     case "light-cone":
       return getLightConeImage(item.itemId)
     case "material":
-      return getMaterialImage(item.itemId)
+      return getHsrMaterialImage(item.itemId)
     case "relic-set":
       return getRelicSetImage(item.itemId)
     case "relic-piece":

@@ -80,7 +80,7 @@ onActivated(() => {
     >
       <!-- character image -->
       <v-img
-        :src="getCharacterImage(toCharacterIdWithVariant(character.id, currentVariantId), 'small')"
+        :src="getHsrCharacterImage(toCharacterIdWithVariant(character.id, currentVariantId), 'small')"
         aspect-ratio="1"
         max-width="80px"
         width="80px"

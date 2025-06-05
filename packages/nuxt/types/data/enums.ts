@@ -94,3 +94,9 @@ export const genshinPurposeTypes = [
   "elementalBurst",
 ] as const
 export type GenshinPurposeType = (typeof genshinPurposeTypes)[number]
+
+export const games = [
+  "genshin",
+  "hsr",
+] as const
+export type Game = (typeof games)[number]

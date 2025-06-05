@@ -24,7 +24,7 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
       no-gutters
     >
       <v-img
-        :src="getMaterialImage(material.id)"
+        :src="getHsrMaterialImage(material.id)"
         aspect-ratio="1"
         max-width="50px"
         width="50px"
@@ -61,7 +61,7 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
             :key="character.id"
             :to="$localePath(`/hsr/characters/${character.id}` + (character.variant ? `?variant=${character.variant}` : ''))"
             :name="localize(getCharacterVariant(toCharacterIdWithVariant(character.id, character.variant ?? null))!.name)"
-            :image-url="getCharacterImage(toCharacterIdWithVariant(character.id, character.variant ?? null), 'small')"
+            :image-url="getHsrCharacterImage(toCharacterIdWithVariant(character.id, character.variant ?? null), 'small')"
           />
         </v-row>
       </v-card-text>

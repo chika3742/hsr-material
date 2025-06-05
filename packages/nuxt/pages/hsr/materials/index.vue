@@ -16,7 +16,7 @@ const filteredMaterials = computed<GroupedListItem[]>(() => {
   return (filteringRarity.value.length >= 1 ? materials.filter(e => e.rarity === filteringRarity.value[0]) : materials).map(e => ({
     key: e.id,
     name: localize(e.name, i18n),
-    imagePath: getMaterialImage(e.id),
+    imagePath: getHsrMaterialImage(e.id),
     rarity: e.rarity,
     groupKey: e.category,
     to: localePath(`/hsr/materials/${e.id}`),

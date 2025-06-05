@@ -30,7 +30,7 @@ const filteredCharacters = computed(() => gCharacters)
         ]"
         :to="$localePath(`/genshin/characters/${character.id}`)"
         :name="localize(character.name)"
-        :image="getCharacterImage(character.id, 'full')"
+        :image="getGenshinCharacterImage(character.id, 'full')"
       />
     </v-row>
   </div>

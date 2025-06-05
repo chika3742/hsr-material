@@ -11,14 +11,14 @@ export default defineNuxtPlugin((nuxtApp) => {
         characterSelectItems.push({
           id: toCharacterIdWithVariant(character.id, variant.variantId),
           name: localize(variant.name, nuxtApp.$i18n as Composer),
-          image: getCharacterImage(toCharacterIdWithVariant(character.id, variant.variantId), "small"),
+          image: getHsrCharacterImage(toCharacterIdWithVariant(character.id, variant.variantId), "small"),
         })
       }
     } else {
       characterSelectItems.push({
         id: character.id,
         name: localize(character.name, nuxtApp.$i18n as Composer),
-        image: getCharacterImage(character.id, "small"),
+        image: getHsrCharacterImage(character.id, "small"),
       })
     }
   }

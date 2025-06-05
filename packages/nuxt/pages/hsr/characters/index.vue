@@ -135,7 +135,7 @@ const filteredCharacters = computed(() => {
         ]"
         :to="$localePath(`/hsr/characters/${character.id}`)"
         :name="localize(character.name)"
-        :image="getCharacterImage(character.id, 'full')"
+        :image="getHsrCharacterImage(character.id, 'full')"
       />
     </v-row>
   </div>

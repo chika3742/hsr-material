@@ -113,7 +113,7 @@ const clearCharacterLevels = () => {
                     class="d-flex align-center g-2"
                   >
                     <v-img
-                      :src="getMaterialImage(getFirstMaterialId(entry, Number(item[0])))"
+                      :src="getHsrMaterialImage(getFirstMaterialId(entry, Number(item[0])))"
                       width="35px"
                     />
                     <span>{{ item[1] }}</span>
