@@ -35,6 +35,7 @@ common:
   updated: "{version} に更新されました。"
 
 games:
+  null: "" # reserved for title template
   genshin: 原神
   hsr: 崩壊：スターレイル
 

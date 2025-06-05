@@ -22,10 +22,13 @@ const { $auth, $firestore } = useNuxtApp()
 const localePath = useLocalePath()
 
 const title = usePageTitle()
+const titleTemplate = computed(() => {
+  return `%s - ${tx(i18n, `games.${getCurrentGame()}`)}${i18n.t("common.appName")}`
+})
 
 useHead({
   title,
-  titleTemplate: `%s - ${i18n.t("common.appName")}`,
+  titleTemplate,
 })
 
 useSeoMeta({
