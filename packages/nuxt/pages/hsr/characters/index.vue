@@ -5,6 +5,7 @@ import { type HsrCombatType, hsrCombatTypes, type HsrPath, hsrPaths } from "~/ty
 import type { HsrCharacter } from "~/types/data/src/characters"
 import { isCharacterGroup } from "~/types/data/src/characters"
 import type { FilterOption } from "~/components/character/CharacterFilterMenu.vue"
+import type { PossessionStatus } from "~/types/strings"
 
 usePageTitle(tx("pageTitles.characters"))
 
@@ -16,7 +17,7 @@ const filter = ref({
   rarity: undefined as number | undefined,
   path: undefined as HsrPath | undefined,
   combatType: undefined as HsrCombatType | undefined,
-  possessionStatus: undefined as ("owned" | "not-owned") | undefined,
+  possessionStatus: undefined as PossessionStatus | undefined,
 })
 
 const filterOptions = computed<FilterOption[]>(() => [
@@ -30,7 +31,7 @@ const filterOptions = computed<FilterOption[]>(() => [
         text: tx(i18n, "charactersPage.owned"),
       },
       {
-        value: "not-owned",
+        value: "notOwned",
         icon: "mdi-close-box",
         text: tx(i18n, "charactersPage.notOwned"),
       },
@@ -93,7 +94,7 @@ const filteredCharacters = computed(() => {
       const owned = [...config.ownedCharacters, "trailblazer"] // Trailblazer is always owned
       if (filter.value.possessionStatus === "owned" && owned.includes(character.id)) {
         return true
-      } else if (filter.value.possessionStatus === "not-owned" && !owned.includes(character.id)) {
+      } else if (filter.value.possessionStatus === "notOwned" && !owned.includes(character.id)) {
         return true
       }
       return false
