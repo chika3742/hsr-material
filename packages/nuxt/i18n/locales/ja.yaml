@@ -8,6 +8,8 @@ common:
   rarity: レアリティ
   path: 運命
   combatType: 属性
+  element: 元素
+  weaponType: 武器種
   filter: 絞り込み
   expandAll: 全て展開
   collapseAll: 全て折りたたむ
@@ -457,6 +459,22 @@ stats:
   break_effect: 撃破特攻
   energy_regen_rate: EP回復効率
   effect_res: 効果抵抗
+
+elements:
+  pyro: 炎元素
+  cryo: 氷元素
+  electro: 雷元素
+  anemo: 風元素
+  hydro: 水元素
+  geo: 岩元素
+  dendro: 草元素
+
+weaponTypes:
+  sword: 片手剣
+  claymore: 両手剣
+  polearm: 長柄武器
+  bow: 弓
+  catalyst: 法器
 
 purposeTypes:
   ascension: Lv/昇格素材
