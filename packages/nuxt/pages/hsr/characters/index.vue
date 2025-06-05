@@ -1,20 +1,75 @@
 <script setup lang="ts">
+import { useTheme } from "vuetify"
 import hCharacters from "~/assets/data/characters.yaml"
-import { reactive } from "#imports"
 import { type HsrCombatType, hsrCombatTypes, type HsrPath, hsrPaths } from "~/types/data/enums"
 import type { HsrCharacter } from "~/types/data/src/characters"
 import { isCharacterGroup } from "~/types/data/src/characters"
+import type { FilterOption } from "~/components/character/CharacterFilterMenu.vue"
 
 usePageTitle(tx("pageTitles.characters"))
 
+const i18n = useI18n()
+const theme = useTheme()
 const config = useConfigStore()
 
-const filter = reactive({
-  rarity: [] as number[],
-  path: [] as HsrPath[],
-  combatType: [] as HsrCombatType[],
-  possessionStatus: [] as ("owned" | "not-owned")[],
+const filter = ref({
+  rarity: undefined as number | undefined,
+  path: undefined as HsrPath | undefined,
+  combatType: undefined as HsrCombatType | undefined,
+  possessionStatus: undefined as ("owned" | "not-owned") | undefined,
 })
+
+const filterOptions = computed<FilterOption[]>(() => [
+  {
+    key: "possessionStatus",
+    title: tx(i18n, "charactersPage.possessionStatus"),
+    items: [
+      {
+        value: "owned",
+        icon: "mdi-check",
+        text: tx(i18n, "charactersPage.owned"),
+      },
+      {
+        value: "not-owned",
+        icon: "mdi-close-box",
+        text: tx(i18n, "charactersPage.notOwned"),
+      },
+    ],
+  },
+  {
+    key: "rarity",
+    title: tx(i18n, "common.rarity"),
+    items: [
+      {
+        value: 4,
+        text: "★4",
+      },
+      {
+        value: 5,
+        text: "★5",
+      },
+    ],
+  },
+  {
+    key: "path",
+    title: tx(i18n, "common.path"),
+    items: hsrPaths.map(e => ({
+      value: e,
+      text: tx(i18n, `paths.${e}`),
+      iconUrl: getPathImage(e),
+      invertIcon: !theme.current.value.dark,
+    })),
+  },
+  {
+    key: "combatType",
+    title: tx(i18n, "common.combatType"),
+    items: hsrCombatTypes.map(e => ({
+      value: e,
+      text: tx(i18n, `combatTypes.${e}`),
+      iconUrl: getCombatTypeImage(e),
+    })),
+  },
+])
 
 const filteredCharacters = computed(() => {
   const filterOptions = {
@@ -22,23 +77,23 @@ const filteredCharacters = computed(() => {
     matchInRoot: {} as Record<string, unknown>,
   }
 
-  if (filter.path.length > 0) {
-    filterOptions.matchInVariant.path = filter.path[0]
+  if (filter.value.path !== undefined) {
+    filterOptions.matchInVariant.path = filter.value.path
   }
-  if (filter.combatType.length > 0) {
-    filterOptions.matchInVariant.combatType = filter.combatType[0]
+  if (filter.value.combatType !== undefined) {
+    filterOptions.matchInVariant.combatType = filter.value.combatType
   }
-  if (filter.rarity.length > 0) {
-    filterOptions.matchInRoot.rarity = filter.rarity[0]
+  if (filter.value.rarity !== undefined) {
+    filterOptions.matchInRoot.rarity = filter.value.rarity
   }
 
   let filtered = filterCharacters<HsrCharacter>(hCharacters, filterOptions)
-  if (filter.possessionStatus.length > 0) {
+  if (filter.value.possessionStatus !== undefined) {
     filtered = filtered.filter((character) => {
       const owned = [...config.ownedCharacters, "trailblazer"] // Trailblazer is always owned
-      if (filter.possessionStatus[0] === "owned" && owned.includes(character.id)) {
+      if (filter.value.possessionStatus === "owned" && owned.includes(character.id)) {
         return true
-      } else if (filter.possessionStatus[0] === "not-owned" && !owned.includes(character.id)) {
+      } else if (filter.value.possessionStatus === "not-owned" && !owned.includes(character.id)) {
         return true
       }
       return false
@@ -54,117 +109,15 @@ const filteredCharacters = computed(() => {
     <v-row no-gutters>
       <!-- filter button -->
       <v-btn
-        :color="Object.values(filter).some(e => e.length >= 1) ? 'star' : ''"
+        :color="Object.values(filter).some(e => e) ? 'star' : ''"
         prepend-icon="mdi-filter"
       >
         <span>{{ tx("common.filter") }}</span>
-        <client-only>
-          <v-menu
-            activator="parent"
-            :close-on-content-click="false"
-            max-width="400px"
-          >
-            <v-card>
-              <div>
-                <div class="filter-row-title">
-                  {{ tx("charactersPage.possessionStatus") }}
-                </div>
-                <v-list v-model:selected="filter.possessionStatus">
-                  <v-row no-gutters>
-                    <v-list-item
-                      :title="tx('charactersPage.owned')"
-                      prepend-icon="mdi-check"
-                      value="owned"
-                    />
-                    <v-list-item
-                      :title="tx('charactersPage.notOwned')"
-                      prepend-icon="mdi-close"
-                      value="not-owned"
-                    />
-                  </v-row>
-                </v-list>
-              </div>
-              <v-divider />
-              <div>
-                <div class="filter-row-title">
-                  {{ tx("common.rarity") }}
-                </div>
-                <v-list v-model:selected="filter.rarity">
-                  <v-row no-gutters>
-                    <v-list-item
-                      v-for="rarity in [4, 5]"
-                      :key="rarity"
-                      :value="rarity"
-                    >
-                      <v-icon
-                        v-for="i of rarity"
-                        :key="i"
-                        :class="i !== 1 ? 'ml-n1' : ''"
-                        size="18"
-                        color="star"
-                      >
-                        mdi-star
-                      </v-icon>
-                    </v-list-item>
-                  </v-row>
-                </v-list>
-              </div>
-              <v-divider />
-              <div>
-                <div class="filter-row-title">
-                  {{ tx("common.path") }}
-                </div>
-                <v-list v-model:selected="filter.path">
-                  <v-row no-gutters>
-                    <v-list-item
-                      v-for="path in hsrPaths"
-                      :key="path"
-                      class="flex-grow-1"
-                      :title="tx(`paths.${path}` as const)"
-                      :value="path"
-                    >
-                      <template #prepend>
-                        <v-img
-                          class="mr-2"
-                          :src="getPathImage(path)"
-                          width="25"
-                          aspect-ratio="1"
-                          :style="!$vuetify.theme.current.dark ? 'filter: invert(-1)' : ''"
-                        />
-                      </template>
-                    </v-list-item>
-                  </v-row>
-                </v-list>
-              </div>
-              <v-divider />
-              <div>
-                <div class="filter-row-title">
-                  {{ tx("common.combatType") }}
-                </div>
-                <v-list v-model:selected="filter.combatType">
-                  <v-row no-gutters>
-                    <v-list-item
-                      v-for="type in hsrCombatTypes"
-                      :key="type"
-                      class="flex-grow-1"
-                      :title="tx(`combatTypes.${type}` as const)"
-                      :value="type"
-                    >
-                      <template #prepend>
-                        <v-img
-                          class="mr-2"
-                          :src="getCombatTypeImage(type)"
-                          width="30"
-                          aspect-ratio="1"
-                        />
-                      </template>
-                    </v-list-item>
-                  </v-row>
-                </v-list>
-              </div>
-            </v-card>
-          </v-menu>
-        </client-only>
+        <CharacterFilterMenu
+          v-model="filter"
+          activator="parent"
+          :options="filterOptions"
+        />
       </v-btn>
     </v-row>
 

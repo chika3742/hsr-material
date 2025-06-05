@@ -1,31 +1,35 @@
 <script setup lang="ts">
+import type { VMenu } from "vuetify/components"
+
 export interface FilterOption {
   key: string
-  titleI18nKey: string
+  title: string
   items: {
-    icon: string
-    invertIconColor?: boolean
-    textI18nKey: string
-    value: string
+    iconUrl?: string
+    icon?: string
+    invertIcon?: boolean
+    text: string
+    value: any
   }[]
 }
 
 interface Props {
-  filter: { [key in "possessionStatus" | "rarity" | string]: string[] }
-  extraFilterOptions: FilterOption[]
+  modelValue: Record<string, unknown>
+  activator?: VMenu["activator"]
+  options: FilterOption[]
 }
 
 const props = defineProps<Props>()
 
 interface Emits {
-  (e: "update:filter", value: Props["filter"]): void
+  (e: "update:model-value", value: Props["modelValue"]): void
 }
 
 const emit = defineEmits<Emits>()
 
-const setFilter = (key: keyof Props["filter"], value: string[]) => {
-  emit("update:filter", {
-    ...props.filter,
+const setFilter = (key: string, value: unknown) => {
+  emit("update:model-value", {
+    ...props.modelValue,
     [key]: value,
   })
 }
@@ -33,97 +37,63 @@ const setFilter = (key: keyof Props["filter"], value: string[]) => {
 
 <template>
   <v-menu
-    activator="parent"
+    v-slot="{ isActive }"
+    :activator="activator"
     :close-on-content-click="false"
     max-width="400px"
+    width="100%"
   >
     <v-card>
-      <section>
-        <!-- filter by possession status -->
-        <h4>{{ tx("characterFilterMenu.possessionStatus") }}</h4>
-        <v-list
-          :selected="filter['possessionStatus']"
-          color="primary"
-          @update:selected="setFilter('possessionStatus', $event as string[])"
-        >
-          <v-row no-gutters>
-            <!-- filter option items -->
-            <v-list-item
-              :title="tx('characterFilterMenu.owned')"
-              prepend-icon="mdi-check"
-              value="owned"
-            />
-            <v-list-item
-              :title="tx('characterFilterMenu.notOwned')"
-              prepend-icon="mdi-close"
-              value="notOwned"
-            />
-          </v-row>
-        </v-list>
-      </section>
-      <v-divider />
-      <!-- filter by rarity -->
-      <section>
-        <h4>{{ tx("characterFilterMenu.rarity") }}</h4>
-        <v-list
-          :selected="filter.rarity"
-          color="primary"
-          @update:selected="setFilter('rarity', $event as string[])"
-        >
-          <v-row no-gutters>
-            <!-- filter option items -->
-            <v-list-item
-              v-for="rarity in [4, 5]"
-              :key="rarity"
-              :value="rarity"
-            >
-              <v-icon
-                v-for="i of rarity"
-                :key="i"
-                :class="i !== 1 ? 'ml-n1' : ''"
-                size="18"
-                color="star"
-              >
-                mdi-star
-              </v-icon>
-            </v-list-item>
-          </v-row>
-        </v-list>
-      </section>
+      <v-btn
+        v-if="$vuetify.display.xs"
+        class="position-absolute top-0 right-0 ma-1"
+        variant="text"
+        icon="mdi-close"
+        @click="isActive.value = false"
+      />
 
-      <!-- extra filtering options -->
       <section
-        v-for="option in extraFilterOptions"
+        v-for="option in options"
         :key="option.key"
+        class="d-flex flex-column ga-2"
       >
-        <v-divider />
-        <h4>{{ tx(option.titleI18nKey) }}</h4>
-        <v-list
-          :selected="filter[option.key]"
-          color="primary"
-          @update:selected="setFilter(option.key, $event as string[])"
+        <h4>{{ option.title }}</h4>
+        <v-item-group
+          :model-value="modelValue[option.key]"
+          class="selection-grid-container"
+          @update:model-value="setFilter(option.key, $event)"
         >
-          <v-row no-gutters>
-            <!-- filter option items -->
+          <v-item
+            v-for="item in option.items"
+            :key="item.value"
+            v-slot="{ isSelected, toggle }"
+            :value="item.value"
+          >
             <v-list-item
-              v-for="item in option.items"
-              :key="item.value"
-              class="flex-grow-1"
-              :title="tx(item.textI18nKey)"
-              :value="item.value"
+              :title="item.text"
+              :active="isSelected"
+              height="45px"
+              color="primary"
+              @click="toggle"
             >
               <template #prepend>
                 <v-img
-                  class="mr-2"
-                  :src="item.icon"
-                  width="25"
-                  aspect-ratio="1"
-                  :style="!$vuetify.theme.current.dark && item.invertIconColor ? 'filter: brightness(0)' : ''"
+                  v-if="item.iconUrl"
+                  :src="item.iconUrl"
+                  width="30"
+                  height="30"
+                  class="mr-4"
+                  :class="{ 'invert-icon': item.invertIcon }"
+                />
+                <v-icon
+                  v-else-if="item.icon"
+                  :icon="item.icon"
                 />
               </template>
             </v-list-item>
-          </v-row>
-        </v-list>
+          </v-item>
+        </v-item-group>
+        <v-divider />
       </section>
     </v-card>
   </v-menu>
@@ -134,4 +104,11 @@ h4
   padding: 4px 16px 0
   margin-top: 8px
   font-weight: bold
+
+.invert-icon
+  filter: invert(1)
+
+.selection-grid-container
+  display: grid
+  grid-template-columns: 1fr 1fr
 </style>
