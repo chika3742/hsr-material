@@ -83,7 +83,7 @@ const setFilter = (key: string, value: unknown) => {
                   width="30"
                   height="30"
                   class="mr-4"
-                  :class="{ 'invert-icon': item.invertIcon }"
+                  :class="{ invert: item.invertIcon }"
                 />
                 <v-icon
                   v-else-if="item.icon"
@@ -104,9 +104,6 @@ h4
   padding: 4px 16px 0
   margin-top: 8px
   font-weight: bold
-
-.invert-icon
-  filter: invert(1)
 
 .selection-grid-container
   display: grid
