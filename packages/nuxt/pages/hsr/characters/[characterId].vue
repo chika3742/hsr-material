@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { omit } from "lodash-es"
+import { useTheme } from "vuetify"
 import hCharacters from "~/assets/data/characters.yaml"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
 import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
 import { type CharacterVariantId, type HsrCharacterSpecs, isCharacterGroup } from "~/types/data/src/characters"
 import type { SliderSkill } from "~/components/skill-sliders-panel.vue"
 import type { PurposeType } from "~/types/strings"
+import type { CharacterAttribute } from "~/components/character/CharacterInfoBox.vue"
 
 const route = useRoute()
 const router = useRouter()
 const config = useConfigStore()
 const i18n = useI18n()
+const theme = useTheme()
 
 if (!hCharacters.some(e => e.id === route.params.characterId)) {
   throw createError({ statusCode: 404, message: "Page not found", fatal: true })
@@ -59,6 +62,20 @@ const skills = computed<SliderSkill[]>(() => {
   }))
 })
 
+const attrs = computed<CharacterAttribute[]>(() => [
+  {
+    title: tx("common.path"),
+    contentImageUrl: getPathImage(currentVariant.value.path),
+    invertContentImage: !theme.current.value.dark,
+    content: tx(`paths.${currentVariant.value.path}`),
+  },
+  {
+    title: tx("common.combatType"),
+    contentImageUrl: getCombatTypeImage(currentVariant.value.combatType),
+    content: tx(`combatTypes.${currentVariant.value.combatType}`),
+  },
+])
+
 watch(currentVariant, (value) => {
   void router.replace({ query: { variant: value.path } })
 })
@@ -78,53 +95,14 @@ onActivated(() => {
       class="ga-4"
       no-gutters
     >
-      <!-- character image -->
-      <v-img
-        :src="getHsrCharacterImage(toCharacterIdWithVariant(character.id, currentVariantId), 'small')"
-        aspect-ratio="1"
-        max-width="80px"
-        width="80px"
-      />
-
-      <!-- character info -->
-      <div
-        class="d-flex flex-column"
-        style="gap: 4px"
+      <CharacterInfoBox
+        :image-url="getHsrCharacterImage(toCharacterIdWithVariant(character.id, currentVariantId), 'small')"
+        :attributes="attrs"
       >
-        <div>
-          <v-icon
-            v-for="i of character.rarity"
-            :key="i"
-            color="star"
-            size="18"
-          >
-            mdi-star
-          </v-icon>
-        </div>
-        <div class="d-flex align-center">
-          <span class="font-weight-bold">{{ tx("common.path") }}</span>
-          <v-img
-            :src="getPathImage(currentVariant.path)"
-            :style="!$vuetify.theme.current.dark ? 'filter: invert(1)' : ''"
-            aspect-ratio="1"
-            class="ml-3"
-            max-width="22px"
-            width="22px"
-          />
-          <span class="ml-1">{{ tx(`paths.${currentVariant.path}` as const) }}</span>
-        </div>
-        <div class="d-flex align-center">
-          <span class="font-weight-bold">{{ tx("common.combatType") }}</span>
-          <v-img
-            :src="getCombatTypeImage(currentVariant.combatType)"
-            class="ml-3"
-            aspect-ratio="1"
-            max-width="22px"
-            width="22px"
-          />
-          <span class="ml-1">{{ tx(`combatTypes.${currentVariant.combatType}` as const) }}</span>
-        </div>
-      </div>
+        <template #rarity>
+          <RarityStars :count="character.rarity" />
+        </template>
+      </CharacterInfoBox>
 
       <!-- Is owned checkbox -->
       <v-checkbox
