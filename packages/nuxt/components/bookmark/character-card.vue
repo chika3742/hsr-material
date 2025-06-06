@@ -117,7 +117,7 @@ const detailsDialog = reactive({
         style="gap: 8px"
       >
         <section v-if="groupedBookmarks.characterMaterials.length >= 1">
-          <div class="d-flex g-2 flex-wrap">
+          <div class="d-flex ga-2 flex-wrap">
             <MaterialItem
               v-for="(materials, mId) in groupBy(groupedBookmarks.characterMaterials, 'materialId') as Record<string, (Bookmark.CharacterMaterial | Bookmark.Exp)[]>"
               :key="mId"
@@ -154,7 +154,7 @@ const detailsDialog = reactive({
                 lines="two"
                 rounded
               />
-              <div class="d-flex g-2 flex-wrap ml-4 mt-2">
+              <div class="d-flex ga-2 flex-wrap ml-4 mt-2">
                 <MaterialItem
                   v-for="(materials, mId) in groupBy(lcMaterials, 'materialId') as Record<string, (Bookmark.LightConeMaterial | Bookmark.Exp)[]>"
                   :key="mId"

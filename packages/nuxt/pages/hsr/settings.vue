@@ -105,12 +105,12 @@ const clearCharacterLevels = () => {
               <client-only>
                 <div
                   v-if="getDropRates(entry)"
-                  class="d-flex g-4"
+                  class="d-flex ga-4"
                 >
                   <div
                     v-for="item in Object.entries(getDropRates(entry)!.rarities)"
                     :key="item[0]"
-                    class="d-flex align-center g-2"
+                    class="d-flex align-center ga-2"
                   >
                     <v-img
                       :src="getHsrMaterialImage(getFirstMaterialId(entry, Number(item[0])))"

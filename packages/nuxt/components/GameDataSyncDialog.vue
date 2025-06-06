@@ -124,7 +124,7 @@ const showHelpDialog = ref(false)
           >
             <div
               v-if="showcase"
-              class="d-flex flex-column g-4"
+              class="d-flex flex-column ga-4"
             >
               <!-- userinfo -->
               <div class="d-flex align-center">
@@ -149,10 +149,10 @@ const showHelpDialog = ref(false)
               <div
                 v-for="character in showcase.characters"
                 :key="character.id"
-                class="d-flex flex-column g-2"
+                class="d-flex flex-column ga-2"
               >
                 <!-- header -->
-                <div class="d-flex g-2 align-center">
+                <div class="d-flex ga-2 align-center">
                   <v-img
                     :src="character.imageUrl"
                     max-width="50px"
@@ -168,7 +168,7 @@ const showHelpDialog = ref(false)
                 </div>
 
                 <!-- skill levels -->
-                <div class="d-flex g-2 flex-wrap">
+                <div class="d-flex ga-2 flex-wrap">
                   <div
                     v-for="skill in character.skills"
                     :key="skill.type"
@@ -198,7 +198,7 @@ const showHelpDialog = ref(false)
                 <!-- equipment -->
                 <div
                   v-if="character.equipment"
-                  class="ml-8 d-flex align-center g-2"
+                  class="ml-8 d-flex align-center ga-2"
                 >
                   <v-img
                     :src="character.equipment.imageUrl"

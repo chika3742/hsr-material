@@ -75,7 +75,7 @@ onActivated(() => {
   <div>
     <v-row
       align="center"
-      class="g-4"
+      class="ga-4"
       no-gutters
     >
       <!-- character image -->
@@ -136,7 +136,7 @@ onActivated(() => {
         hide-details
       />
 
-      <div class="d-flex flex-column g-2">
+      <div class="d-flex flex-column ga-2">
         <v-btn
           :text="tx('characterDetailsPage.bookmarkLightCone')"
           color="primary"
