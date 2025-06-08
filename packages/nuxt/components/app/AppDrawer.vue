@@ -29,6 +29,7 @@ const display = useDisplay()
 const i18n = useI18n()
 const localePath = useLocalePath()
 const router = useRouter()
+const currentGame = useCurrentGame()
 
 const availableGames = computed(() => ([
   {
@@ -75,7 +76,7 @@ onMounted(() => {
       <v-list nav>
         <v-select
           class="mb-4"
-          :model-value="getCurrentGame()"
+          :model-value="currentGame"
           :items="availableGames"
           hide-details
           density="comfortable"
