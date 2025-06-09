@@ -14,6 +14,13 @@ if (character === undefined) {
   throw createError({ statusCode: 404, message: "Page not found", fatal: true })
 }
 
+const variants = isCharacterGroup(character)
+  ? character.variants.map(e => ({
+      title: tx(i18n, `elements.${e.element}`),
+      value: e.element,
+    }))
+  : null
+
 const currentVariantId = ref<CharacterVariantId | null>(isCharacterGroup(character) ? character.variants[0]!.variantId : null)
 
 const currentVariant = computed<GenshinCharacterSpecs>(() => {
@@ -54,5 +61,16 @@ const attrs = computed<CharacterAttribute[]>(() => [
         <RarityStars :count="character.rarity" />
       </template>
     </CharacterInfoBox>
+
+    <!-- variant select -->
+    <v-select
+      v-if="variants"
+      v-model="currentVariantId"
+      :items="variants"
+      :label="tx('common.element')"
+      hide-details
+      max-width="200px"
+      class="mt-4"
+    />
   </div>
 </template>

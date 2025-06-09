@@ -1,4 +1,4 @@
-import type { PurposeType } from "~/types/strings"
+import type { PurposeType } from "~/types/data/enums"
 
 export type Usage = Usage.Character | Usage.LightCone | Usage.Exp
 

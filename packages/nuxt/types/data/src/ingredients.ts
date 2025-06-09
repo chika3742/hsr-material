@@ -8,4 +8,4 @@ export interface Ingredients {
   ingredientsTables: Record<string, IngredientsTable>
 }
 
-type IngredientsTable = EachPurposeTypes<EachLevels<Ingredient[]>>
+export type IngredientsTable = EachPurposeTypes<EachLevels<Ingredient[]>>

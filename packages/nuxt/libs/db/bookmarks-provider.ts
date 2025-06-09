@@ -1,7 +1,6 @@
 import type { Table } from "dexie"
 import hash from "object-hash"
 import type { Bookmark, LevelingBookmark, RelicBookmark } from "~/types/bookmark/bookmark"
-import type { PurposeType } from "~/types/strings"
 import { _db } from "~/dexie/db"
 import { DbProvider } from "~/libs/db/db-provider"
 import type {
@@ -17,6 +16,7 @@ import lightCones from "~/assets/data/light-cones.yaml"
 import { parseShowcaseCharacterId } from "~/utils/parse-showcase-character-id"
 import type { ShowcaseResponseCharacter } from "~/types/showcase-response"
 import type { CharacterIdWithVariant } from "~/types/data/src/characters"
+import type { PurposeType } from "~/types/data/enums"
 
 /**
  * Provides methods for bookmark-related database operations.
@@ -39,7 +39,7 @@ export class BookmarksProvider extends DbProvider {
    * @param upperLevel Upper level to filter by
    * @returns List of {@link LevelingBookmark}
    */
-  getLevelingItems(items: BookmarkableIngredient[], purposeTypes: PurposeType[], upperLevel?: number) {
+  getLevelingItems(items: BookmarkableIngredient[], purposeTypes: readonly PurposeType[], upperLevel?: number) {
     const firstItem = items[0]
     // query all bookmarks with the same characterId
     return this.bookmarks.where("characterId").equals(firstItem.characterId)

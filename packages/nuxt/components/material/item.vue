@@ -3,7 +3,6 @@ import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
 import hash from "object-hash"
 import { isEqual } from "lodash-es"
-import type { PurposeType } from "~/types/strings"
 import materials from "~/assets/data/materials.yaml"
 import { computed } from "#imports"
 import type { LevelingBookmark } from "~/types/bookmark/bookmark"
@@ -13,6 +12,7 @@ import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import type { BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
 import type { Material } from "~/types/data/src/materials"
+import type { PurposeType } from "~/types/data/enums"
 
 interface Props {
   /**
@@ -24,7 +24,7 @@ interface Props {
    * If this is set, the item will be treated as a individual bookmark.
    */
   itemId?: number
-  purposeTypes: PurposeType[]
+  purposeTypes: readonly PurposeType[]
   initialSelectedExpItem?: string
   showFarmingCount?: boolean
 }

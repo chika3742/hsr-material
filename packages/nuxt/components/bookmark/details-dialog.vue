@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { flatMap, groupBy, mapValues } from "lodash-es"
-import type { PurposeType } from "~/types/strings"
 import type { LevelingBookmark } from "~/types/bookmark/bookmark"
 import { materialSortFunc } from "~/utils/merge-items"
 import { db } from "~/libs/db/providers"
+import type { PurposeType } from "~/types/data/enums"
 
 interface Props {
   modelValue: boolean

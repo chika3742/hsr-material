@@ -5,7 +5,7 @@ import { flatMap, omit } from "lodash-es"
 import { db } from "~/libs/db/providers"
 import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
-import type { PurposeType } from "~/types/strings"
+import type { PurposeType } from "~/types/data/enums"
 import type { LevelingBookmark } from "~/types/bookmark/bookmark"
 
 interface Props {

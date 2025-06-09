@@ -4,6 +4,8 @@ import EmphasizedText from "~/components/emphasized-text.vue"
 import hCharacters from "~/assets/data/characters.yaml"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import type { CharacterIdWithVariant, VariantlessHsrCharacter } from "~/types/data/src/characters"
+import { levelIngredientsToSliderTicks } from "~/utils/level-ingredients-to-slider-ticks"
+import { ingredientsToBookmarkableIngredients } from "~/utils/ingredients-to-bookmarkable-ingredients"
 
 const route = useRoute()
 
@@ -13,19 +15,6 @@ if (!lightCones.some(e => e.id === route.params.lightConeId)) {
 
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
 usePageTitle(tx("pageTitles.lightConeDetails", { name: localize(lightCone.name) }))
-
-const levels = lightConeIngredients.ingredientsTables[(() => {
-  switch (lightCone.rarity) {
-    case 3:
-      return "r3Base"
-    case 4:
-      return "r4Base"
-    case 5:
-      return "r5Base"
-    default:
-      throw new Error("Invalid rarity")
-  }
-})()].purposeTypes.ascension!
 
 const selectedCharacter = ref<CharacterIdWithVariant>()
 
@@ -37,6 +26,53 @@ const characterSelectFilter = (id: string): boolean => {
     return (hCharacters.find(e => e.id === id) as VariantlessHsrCharacter).path === lightCone.path
   }
 }
+
+const purposeTypes = computed(() => {
+  const tableId = (() => {
+    switch (lightCone.rarity) {
+      case 3:
+        return "r3Base"
+      case 4:
+        return "r4Base"
+      case 5:
+        return "r5Base"
+      default:
+        throw new Error("Invalid rarity")
+    }
+  })()
+
+  return lightConeIngredients.ingredientsTables[tableId].purposeTypes
+})
+
+const levels = purposeTypes.value.ascension?.levels
+if (!levels) {
+  throw new Error("Ascension levels not found")
+}
+const ascensionLevels = levelsToLevelIngredients(levels)
+
+const ascensionSliderTicks = computed(() =>
+  levelIngredientsToSliderTicks(ascensionLevels),
+)
+
+const ascensionRange = ref<[number, number]>([
+  ascensionSliderTicks.value[0],
+  ascensionSliderTicks.value.slice(-1)[0],
+])
+
+const ascensionMaterials = computed(() => {
+  if (!selectedCharacter.value) {
+    return []
+  }
+  const [minLevel, maxLevel] = ascensionRange.value
+  const filteredLevels = clampLevelIngredients(ascensionLevels, minLevel, maxLevel)
+  return ingredientsToBookmarkableIngredients({
+    levelIngredients: filteredLevels,
+    characterId: selectedCharacter.value,
+    lightConeId: lightCone.id,
+    purposeType: "ascension",
+    materialDefs: lightCone.materials,
+  })
+})
 </script>
 
 <template>
@@ -99,15 +135,15 @@ const characterSelectFilter = (id: string): boolean => {
       max-width="300px"
     />
 
-    <v-expansion-panels :model-value="[0]">
-      <SingleSliderPanel
-        v-if="selectedCharacter"
-        :material-defs="lightCone.materials"
-        :levels="levels"
+    <v-expansion-panels
+      class="mt-4"
+      mandatory="force"
+    >
+      <SliderPanelSingle
+        v-model="ascensionRange"
         :title="tx('lightConeDetailsPage.ascension')"
-        :light-cone-id="lightCone.id"
-        :character-id="toCharacterId(selectedCharacter)"
-        :variant="toVariant(selectedCharacter)"
+        :slider-ticks="ascensionSliderTicks"
+        :materials="ascensionMaterials"
       />
     </v-expansion-panels>
   </div>

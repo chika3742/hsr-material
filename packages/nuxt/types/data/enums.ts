@@ -32,6 +32,27 @@ export const hsrPurposeTypes = [
 ] as const
 export type HsrPurposeType = (typeof hsrPurposeTypes)[number]
 
+export const genshinPurposeTypes = [
+  "ascension",
+  "basicAttack",
+  "elementalSkill",
+  "elementalBurst",
+] as const
+export type GenshinPurposeType = (typeof genshinPurposeTypes)[number]
+
+export const purposeTypes = [
+  "ascension",
+  "basicAttack",
+  "skill",
+  "ultimate",
+  "talent",
+  "memospriteSkill",
+  "memospriteTalent",
+  "elementalSkill",
+  "elementalBurst",
+] as const
+export type PurposeType = (typeof purposeTypes)[number]
+
 export const hsrStats = [
   "hp",
   "atk",
@@ -86,14 +107,6 @@ export const genshinWeaponTypes = [
   "catalyst",
 ] as const
 export type GenshinWeaponType = (typeof genshinWeaponTypes)[number]
-
-export const genshinPurposeTypes = [
-  "ascension",
-  "basicAttack",
-  "elementalSkill",
-  "elementalBurst",
-] as const
-export type GenshinPurposeType = (typeof genshinPurposeTypes)[number]
 
 export const games = [
   "genshin",

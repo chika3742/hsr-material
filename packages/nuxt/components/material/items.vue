@@ -13,9 +13,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { PurposeType } from "~/types/strings"
 import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
 import { isBookmarkableMaterial } from "~/types/bookmark/bookmarkables"
+import type { PurposeType } from "~/types/data/enums"
 
 defineProps<{
   items: BookmarkableIngredient[]

@@ -3,11 +3,22 @@ import { omit } from "lodash-es"
 import { useTheme } from "vuetify"
 import hCharacters from "~/assets/data/characters.yaml"
 import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import type { LevelsForPurposeTypes } from "~/types/level-ingredients"
+import type { LevelIngredients } from "~/types/level-ingredients"
 import { type CharacterVariantId, type HsrCharacterSpecs, isCharacterGroup } from "~/types/data/src/characters"
-import type { SliderSkill } from "~/components/skill-sliders-panel.vue"
-import type { PurposeType } from "~/types/strings"
+import type { PurposeType } from "~/types/data/enums"
 import type { CharacterAttribute } from "~/components/character/CharacterInfoBox.vue"
+import { ingredientsToBookmarkableIngredients } from "~/utils/ingredients-to-bookmarkable-ingredients"
+import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
+import { levelsToLevelIngredients } from "~/utils/levels-to-level-ingredients"
+import { clampLevelIngredients } from "~/utils/ingredients"
+import type { SliderConfig } from "~/components/slider-panel/SliderPanelMultiple.vue"
+import type { IngredientsTable } from "~/types/data/src/ingredients"
+
+interface SkillInfo {
+  purposeType: PurposeType
+  title: string
+  ingredients: LevelIngredients[]
+}
 
 const route = useRoute()
 const router = useRouter()
@@ -39,7 +50,7 @@ usePageTitle(computed(() => {
   )
 }))
 
-const purposeTypes = computed<LevelsForPurposeTypes>(() => {
+const ingredientsTable = computed<IngredientsTable>(() => {
   const getDefaultLitForRarity = () => {
     switch (character.rarity) {
       case 4:
@@ -51,28 +62,75 @@ const purposeTypes = computed<LevelsForPurposeTypes>(() => {
     }
   }
 
-  return characterIngredients.ingredientsTables[currentVariant.value.ingredientsTable ?? getDefaultLitForRarity()].purposeTypes
+  return characterIngredients.ingredientsTables[currentVariant.value.ingredientsTable ?? getDefaultLitForRarity()]
 })
 
-const skills = computed<SliderSkill[]>(() => {
-  return Object.entries(currentVariant.value.skills).map(([k, v]) => ({
-    purposeType: k as PurposeType,
-    title: localize(v.name, i18n),
-    ingredients: purposeTypes.value[k as PurposeType]!,
+// ascension
+const ascensionLevels = levelsToLevelIngredients(ingredientsTable.value.purposeTypes.ascension!.levels)
+
+const ascensionSliderTicks = computed(() =>
+  levelIngredientsToSliderTicks(ascensionLevels),
+)
+
+const ascensionRange = ref<[number, number]>([
+  ascensionSliderTicks.value[0],
+  ascensionSliderTicks.value.slice(-1)[0],
+])
+
+const ascensionMaterials = computed(() => {
+  const [minLevel, maxLevel] = ascensionRange.value
+  const filteredLevels = clampLevelIngredients(ascensionLevels, minLevel, maxLevel)
+  return ingredientsToBookmarkableIngredients({
+    levelIngredients: filteredLevels,
+    characterId: character.id,
+    materialDefs: currentVariant.value.materials,
+    purposeType: "ascension",
+  })
+})
+
+const skills = computed<SkillInfo[]>(() => {
+  return Object.entries(currentVariant.value.skills).map(([purposeType, skill]) => ({
+    purposeType: purposeType as PurposeType,
+    title: localize(skill.name, i18n),
+    ingredients: levelsToLevelIngredients(
+      ingredientsTable.value.purposeTypes[purposeType as PurposeType]!.levels,
+    ),
   }))
+})
+
+const skillSliderConfigs = computed<SliderConfig[]>(() => {
+  return skills.value.map((skill) => {
+    return {
+      key: skill.purposeType,
+      title: skill.title,
+      sliderTicks: levelIngredientsToSliderTicks(skill.ingredients),
+      purposeType: skill.purposeType,
+    }
+  })
+})
+
+const skillRanges = ref<Record<string, [number, number]>>({})
+const enabledSkills = ref<string[]>([])
+
+watchEffect(() => {
+  skillRanges.value = Object.fromEntries(skillSliderConfigs.value.map(config => [
+    config.key,
+    [config.sliderTicks[0], config.sliderTicks.slice(-1)[0]],
+  ]))
+  enabledSkills.value = skills.value.map(s => s.purposeType)
 })
 
 const attrs = computed<CharacterAttribute[]>(() => [
   {
-    title: tx("common.path"),
+    title: tx(i18n, "common.path"),
     contentImageUrl: getPathImage(currentVariant.value.path),
     invertContentImage: !theme.current.value.dark,
-    content: tx(`paths.${currentVariant.value.path}`),
+    content: tx(i18n, `paths.${currentVariant.value.path}`),
   },
   {
-    title: tx("common.combatType"),
+    title: tx(i18n, "common.combatType"),
     contentImageUrl: getCombatTypeImage(currentVariant.value.combatType),
-    content: tx(`combatTypes.${currentVariant.value.combatType}`),
+    content: tx(i18n, `combatTypes.${currentVariant.value.combatType}`),
   },
 ])
 
@@ -85,6 +143,29 @@ onActivated(() => {
     currentVariantId.value = character.variants.find(e => e.path === route.query.variant)?.variantId
       ?? currentVariantId.value
   }
+})
+
+const skillMaterials = computed<BookmarkableIngredient[]>(() => {
+  const materials: BookmarkableIngredient[] = []
+
+  for (const skill of skills.value) {
+    if (!enabledSkills.value.includes(skill.purposeType)) continue
+    const range = skillRanges.value[skill.purposeType]
+    if (!range) continue
+    const [minLevel, maxLevel] = range
+    const filteredLevels = clampLevelIngredients(
+      skill.ingredients,
+      minLevel,
+      maxLevel,
+    )
+    materials.push(...ingredientsToBookmarkableIngredients({
+      levelIngredients: filteredLevels,
+      characterId: character.id,
+      materialDefs: currentVariant.value.materials,
+      purposeType: skill.purposeType,
+    }))
+  }
+  return materials
 })
 </script>
 
@@ -155,18 +236,18 @@ onActivated(() => {
       class="mt-4"
       mandatory="force"
     >
-      <SingleSliderPanel
-        :material-defs="currentVariant.materials"
-        :character-id="character.id"
-        :levels="purposeTypes.ascension!"
+      <SliderPanelSingle
+        v-model="ascensionRange"
         :title="tx('characterDetailsPage.ascension')"
+        :slider-ticks="ascensionSliderTicks"
+        :materials="ascensionMaterials"
       />
-      <SkillSlidersPanel
-        :character-id="character.id"
-        :material-defs="currentVariant.materials"
+      <SliderPanelMultiple
+        v-model="skillRanges"
+        v-model:enabled-skills="enabledSkills"
         :title="tx('characterDetailsPage.skills')"
-        :variant="currentVariantId"
-        :skills="skills"
+        :slider-configs="skillSliderConfigs"
+        :materials="skillMaterials"
       />
     </v-expansion-panels>
   </div>

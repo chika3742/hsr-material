@@ -3,7 +3,7 @@ import { groupBy } from "lodash-es"
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
 import type { Bookmark, LevelingBookmark } from "~/types/bookmark/bookmark"
-import { purposeTypeList } from "~/types/strings"
+import { purposeTypes } from "~/types/data/enums"
 import { reactive } from "#imports"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
 import { db } from "~/libs/db/providers"
@@ -123,7 +123,7 @@ const detailsDialog = reactive({
               :key="mId"
               :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
               :items="materials"
-              :purpose-types="purposeTypeList"
+              :purpose-types="purposeTypes"
               :show-farming-count="showFarmingCount"
             />
             <v-btn
