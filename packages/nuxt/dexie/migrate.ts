@@ -66,7 +66,20 @@ export const migrate = (data: { [table: string]: any }, oldVersion: number, newV
     }
     // remove duplicates
     data.bookmarks = uniqBy<any>(data.bookmarks, e => e.hash)
+
     oldVersion++
+  }
+
+  if (oldVersion === 5) {
+    // Migrate EXP materials to use expItemGroup
+    for (const bookmark of data.bookmarks) {
+      if (bookmark.type === "character_exp") {
+        bookmark.expItemGroup = "character"
+      }
+      if (bookmark.type === "light_cone_exp") {
+        bookmark.expItemGroup = "lightCone"
+      }
+    }
   }
 
   return data as SyncedUserData

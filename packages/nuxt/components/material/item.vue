@@ -3,12 +3,9 @@ import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
 import hash from "object-hash"
 import { isEqual } from "lodash-es"
-import materials from "~/assets/data/materials.yaml"
 import { computed } from "#imports"
 import type { LevelingBookmark } from "~/types/bookmark/bookmark"
 import { db } from "~/libs/db/providers"
-import characterIngredients from "~/assets/data/character-ingredients.yaml"
-import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import type { BookmarkableExp, BookmarkableIngredient, BookmarkableMaterial } from "~/types/bookmark/bookmarkables"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
 import type { Material } from "~/types/data/src/materials"
@@ -37,6 +34,8 @@ const props = withDefaults(defineProps<Props>(), {
 const snackbar = useSnackbar()
 const i18n = useI18n()
 const config = useConfigStore()
+const materials = useMaterials()
+const materialsMeta = useMaterialsMeta()
 
 const loading = ref(false)
 const currentExpItemIndex = ref(0)
@@ -44,13 +43,11 @@ const currentExpItemIndex = ref(0)
 const farmingCountDivideByBase = 6
 
 const expItems = computed(() => {
-  if (props.items[0].type === "character_exp") {
-    return characterIngredients.expItems
-  } else if (props.items[0].type === "light_cone_exp") {
-    return lightConeIngredients.expItems
-  } else {
-    return null
+  const firstItem = props.items[0]
+  if (isBookmarkableExp(firstItem)) {
+    return materialsMeta.expItemGroups[firstItem.expItemGroup]
   }
+  return null
 })
 
 const currentExpItem = computed(() => {

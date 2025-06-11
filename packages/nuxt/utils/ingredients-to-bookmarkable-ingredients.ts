@@ -39,6 +39,7 @@ export function ingredientsToBookmarkableIngredients({
             upperLevel: level.level,
           },
           exp: ingredient.exp,
+          expItemGroup: ingredient.expItemGroup,
         })
       } else {
         const materialId = getMaterialIdFromIngredient(ingredient, materialDefs ?? {}, characterId)

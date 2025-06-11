@@ -43,6 +43,7 @@ export namespace Bookmark {
     characterId: CharacterIdWithVariant
     usage: Usage.Exp
     exp: number
+    expItemGroup: string
     selectedItem: string
     hash?: string
   }

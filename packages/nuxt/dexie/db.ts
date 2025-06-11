@@ -38,6 +38,10 @@ export class MySubClassedDexie extends Dexie {
     this.version(5).stores({}).upgrade(async () => {
       await this.migrateIdb(5)
     })
+
+    this.version(6).stores({}).upgrade(async () => {
+      await this.migrateIdb(6)
+    })
   }
 
   dump() {
