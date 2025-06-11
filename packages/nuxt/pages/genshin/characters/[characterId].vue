@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { omit } from "lodash-es"
 import { useTheme } from "vuetify"
+import gCharacterIngredients from "~/assets/data/genshin/character-ingredients.yaml"
 import gCharacters from "~/assets/data/genshin/characters.yaml"
 import type { CharacterAttribute } from "~/components/character/CharacterInfoBox.vue"
 import { isCharacterGroup, type CharacterVariantId, type GenshinCharacterSpecs } from "~/types/data/src/characters"
@@ -49,6 +50,31 @@ const attrs = computed<CharacterAttribute[]>(() => [
     content: tx(i18n, `weaponTypes.${currentVariant.value.weaponType}`),
   },
 ])
+
+const ingredientsTable = gCharacterIngredients.ingredientsTables.main
+
+// ascension
+const ascensionLevels = levelsToLevelIngredients(ingredientsTable.purposeTypes.ascension!.levels)
+
+const ascensionSliderTicks = computed(() =>
+  levelIngredientsToSliderTicks(ascensionLevels),
+)
+
+const ascensionRange = ref<[number, number]>([
+  ascensionSliderTicks.value[0],
+  ascensionSliderTicks.value.slice(-1)[0],
+])
+
+const ascensionMaterials = computed(() => {
+  const [minLevel, maxLevel] = ascensionRange.value
+  const filteredLevels = clampLevelIngredients(ascensionLevels, minLevel, maxLevel)
+  return ingredientsToBookmarkableIngredients({
+    levelIngredients: filteredLevels,
+    characterId: character.id,
+    materialDefs: currentVariant.value.materials,
+    purposeType: "ascension",
+  })
+})
 </script>
 
 <template>
@@ -72,5 +98,17 @@ const attrs = computed<CharacterAttribute[]>(() => [
       max-width="200px"
       class="mt-4"
     />
+
+    <v-expansion-panels
+      class="mt-4"
+      mandatory="force"
+    >
+      <SliderPanelSingle
+        v-model="ascensionRange"
+        :title="tx('characterDetailsPage.ascensionGenshin')"
+        :slider-ticks="ascensionSliderTicks"
+        :materials="ascensionMaterials"
+      />
+    </v-expansion-panels>
   </div>
 </template>

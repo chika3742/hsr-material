@@ -238,7 +238,7 @@ const skillMaterials = computed<BookmarkableIngredient[]>(() => {
     >
       <SliderPanelSingle
         v-model="ascensionRange"
-        :title="tx('characterDetailsPage.ascension')"
+        :title="tx('characterDetailsPage.ascensionHsr')"
         :slider-ticks="ascensionSliderTicks"
         :materials="ascensionMaterials"
       />

@@ -157,7 +157,8 @@ characterDetailsPage:
   iHave: 所持
   bookmarkLightCone: 光円錐をブックマーク
   bookmarkRelics: 遺物をブックマーク
-  ascension: キャラLvアップ/昇格素材
+  ascensionGenshin: キャラLvアップ/突破素材
+  ascensionHsr: キャラLvアップ/昇格素材
   skills: スキルLvアップ素材
 
 lightConesPage:

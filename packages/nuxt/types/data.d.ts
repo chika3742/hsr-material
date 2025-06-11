@@ -81,3 +81,24 @@ declare module "~/assets/data/genshin/characters.yaml" {
   const gCharacters: GenshinCharacter[]
   export default gCharacters
 }
+
+declare module "~/assets/data/genshin/character-ingredients.yaml" {
+  import type { Ingredients } from "~/types/data/src/ingredients"
+
+  const gCharacterIngredients: Ingredients
+  export default gCharacterIngredients
+}
+
+declare module "~/assets/data/genshin/materials.yaml" {
+  import type { Material } from "~/types/data/src/materials"
+
+  const gMaterials: Material[]
+  export default gMaterials
+}
+
+declare module "~/assets/data/genshin/materials-meta.yaml" {
+  import type { MaterialsMeta } from "~/types/data/src/materials-meta"
+
+  const gMaterialsMeta: MaterialsMeta[]
+  export default gMaterialsMeta
+}

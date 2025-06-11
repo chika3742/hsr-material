@@ -1,8 +1,8 @@
 import dropRates from "assets/data/drop-rates.yaml"
-import materials from "~/assets/data/materials.yaml"
 
 export const getDropRateForMaterial = (id: string): { rate: number, isChallengeableConsecutively: boolean } | null => {
   const el = useConfigStore().equilibriumLevel
+  const materials = useMaterials()
 
   const material = materials.find(e => e.id === id)
   if (!material) {
