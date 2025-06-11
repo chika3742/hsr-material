@@ -1,0 +1,15 @@
+expItemGroups:
+  character:
+    - itemId: heros-wit
+      expPerItem: 20000
+    - itemId: adventurers-experience
+      expPerItem: 5000
+    - itemId: wanderers-advice
+      expPerItem: 1000
+
+categories:
+  - id: exp
+    title:
+      locales:
+        ja: 経験値素材
+        en: EXP Materials

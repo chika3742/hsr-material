@@ -1,0 +1,4446 @@
+- id: enhancement-ore
+  name:
+    locales:
+      ja: 仕上げ用雑鉱
+      en: Enhancement Ore
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/enhancement-ore.webp
+  yomi: シアゲヨウザッコウ
+  category: exp
+- id: fine-enhancement-ore
+  name:
+    locales:
+      ja: 仕上げ用良鉱
+      en: Fine Enhancement Ore
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/fine-enhancement-ore.webp
+  yomi: シアゲヨウリョウコウ
+  category: exp
+- id: mystic-enhancement-ore
+  name:
+    locales:
+      ja: 仕上げ用魔鉱
+      en: Mystic Enhancement Ore
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/mystic-enhancement-ore.webp
+  yomi: シアゲヨウマコウ
+  category: exp
+- id: wanderers-advice
+  name:
+    locales:
+      ja: 流浪者の経験
+      en: Wanderer's Advice
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/wanderers-advice.webp
+  yomi: ルロウシャノケイケン
+  category: exp
+- id: adventurers-experience
+  name:
+    locales:
+      ja: 冒険家の経験
+      en: Adventurer's Experience
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/adventurers-experience.webp
+  yomi: ボウケンカノケイケン
+  category: exp
+- id: heros-wit
+  name:
+    locales:
+      ja: 大英雄の経験
+      en: Hero's Wit
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/heros-wit.webp
+  yomi: ダイエイユウノケイケン
+  category: exp
+- id: crown-of-insight
+  name:
+    locales:
+      ja: 知恵の冠
+      en: Crown of Insight
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/crown-of-insight.webp
+  yomi: チエノカンムリ
+  category: others
+- id: mora
+  name:
+    locales:
+      ja: モラ
+      en: Mora
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/mora.webp
+  yomi: モラ
+  category: others
+- id: agnidus-agate-sliver
+  name:
+    locales:
+      ja: 炎願のアゲート·砕屑
+      en: Agnidus Agate Sliver
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/agnidus-agate-sliver.webp
+  yomi: エンガンノアゲートサイセツ
+  category: gems
+  groupId: agnidus-agate-gemstone
+  craftLevel: 1
+- id: agnidus-agate-fragment
+  name:
+    locales:
+      ja: 炎願のアゲート·欠片
+      en: Agnidus Agate Fragment
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/agnidus-agate-fragment.webp
+  yomi: エンガンノアゲートカケラ
+  category: gems
+  groupId: agnidus-agate-gemstone
+  craftLevel: 2
+- id: agnidus-agate-chunk
+  name:
+    locales:
+      ja: 炎願のアゲート·塊
+      en: Agnidus Agate Chunk
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/agnidus-agate-chunk.webp
+  yomi: エンガンノアゲートカタマリ
+  category: gems
+  groupId: agnidus-agate-gemstone
+  craftLevel: 3
+- id: agnidus-agate-gemstone
+  name:
+    locales:
+      ja: 炎願のアゲート
+      en: Agnidus Agate Gemstone
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/agnidus-agate-gemstone.webp
+  yomi: エンガンノアゲート
+  category: gems
+  groupId: agnidus-agate-gemstone
+  craftLevel: 4
+- id: varunada-lazurite-sliver
+  name:
+    locales:
+      ja: 澄明なラピスラズリ·砕屑
+      en: Varunada Lazurite Sliver
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/varunada-lazurite-sliver.webp
+  yomi: チョウメイナラピスラズリサイセツ
+  category: gems
+  groupId: varunada-lazurite-gemstone
+  craftLevel: 1
+- id: varunada-lazurite-fragment
+  name:
+    locales:
+      ja: 澄明なラピスラズリ·欠片
+      en: Varunada Lazurite Fragment
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/varunada-lazurite-fragment.webp
+  yomi: チョウメイナラピスラズリカケラ
+  category: gems
+  groupId: varunada-lazurite-gemstone
+  craftLevel: 2
+- id: varunada-lazurite-chunk
+  name:
+    locales:
+      ja: 澄明なラピスラズリ·塊
+      en: Varunada Lazurite Chunk
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/varunada-lazurite-chunk.webp
+  yomi: チョウメイナラピスラズリカタマリ
+  category: gems
+  groupId: varunada-lazurite-gemstone
+  craftLevel: 3
+- id: varunada-lazurite-gemstone
+  name:
+    locales:
+      ja: 澄明なラピスラズリ
+      en: Varunada Lazurite Gemstone
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/varunada-lazurite-gemstone.webp
+  yomi: チョウメイナラピスラズリ
+  category: gems
+  groupId: varunada-lazurite-gemstone
+  craftLevel: 4
+- id: shivada-jade-sliver
+  name:
+    locales:
+      ja: 哀切なアイスクリスタル·砕屑
+      en: Shivada Jade Sliver
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/shivada-jade-sliver.webp
+  yomi: アイセツナアイスクリスタルサイセツ
+  category: gems
+  groupId: shivada-jade-gemstone
+  craftLevel: 1
+- id: shivada-jade-fragment
+  name:
+    locales:
+      ja: 哀切なアイスクリスタル·欠片
+      en: Shivada Jade Fragment
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/shivada-jade-fragment.webp
+  yomi: アイセツナアイスクリスタルカケラ
+  category: gems
+  groupId: shivada-jade-gemstone
+  craftLevel: 2
+- id: shivada-jade-chunk
+  name:
+    locales:
+      ja: 哀切なアイスクリスタル·塊
+      en: Shivada Jade Chunk
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/shivada-jade-chunk.webp
+  yomi: アイセツナアイスクリスタルカタマリ
+  category: gems
+  groupId: shivada-jade-gemstone
+  craftLevel: 3
+- id: shivada-jade-gemstone
+  name:
+    locales:
+      ja: 哀切なアイスクリスタル
+      en: Shivada Jade Gemstone
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/shivada-jade-gemstone.webp
+  yomi: アイセツナアイスクリスタル
+  category: gems
+  groupId: shivada-jade-gemstone
+  craftLevel: 4
+- id: vajrada-amethyst-sliver
+  name:
+    locales:
+      ja: 最勝のアメシスト·砕屑
+      en: Vajrada Amethyst Sliver
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/vajrada-amethyst-sliver.webp
+  yomi: サイショウノアメシストサイセツ
+  category: gems
+  groupId: vajrada-amethyst-gemstone
+  craftLevel: 1
+- id: vajrada-amethyst-fragment
+  name:
+    locales:
+      ja: 最勝のアメシスト·欠片
+      en: Vajrada Amethyst Fragment
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/vajrada-amethyst-fragment.webp
+  yomi: サイショウノアメシストカケラ
+  category: gems
+  groupId: vajrada-amethyst-gemstone
+  craftLevel: 2
+- id: vajrada-amethyst-chunk
+  name:
+    locales:
+      ja: 最勝のアメシスト·塊
+      en: Vajrada Amethyst Chunk
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/vajrada-amethyst-chunk.webp
+  yomi: サイショウノアメシストカタマリ
+  category: gems
+  groupId: vajrada-amethyst-gemstone
+  craftLevel: 3
+- id: vajrada-amethyst-gemstone
+  name:
+    locales:
+      ja: 最勝のアメシスト
+      en: Vajrada Amethyst Gemstone
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/vajrada-amethyst-gemstone.webp
+  yomi: サイショウノアメシスト
+  category: gems
+  groupId: vajrada-amethyst-gemstone
+  craftLevel: 4
+- id: vayuda-turquoise-sliver
+  name:
+    locales:
+      ja: 自由のターコイズ·砕屑
+      en: Vayuda Turquoise Sliver
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/vayuda-turquoise-sliver.webp
+  yomi: ジユウノターコイズサイセツ
+  category: gems
+  groupId: vayuda-turquoise-gemstone
+  craftLevel: 1
+- id: vayuda-turquoise-fragment
+  name:
+    locales:
+      ja: 自由のターコイズ·欠片
+      en: Vayuda Turquoise Fragment
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/vayuda-turquoise-fragment.webp
+  yomi: ジユウノターコイズカケラ
+  category: gems
+  groupId: vayuda-turquoise-gemstone
+  craftLevel: 2
+- id: vayuda-turquoise-chunk
+  name:
+    locales:
+      ja: 自由のターコイズ·塊
+      en: Vayuda Turquoise Chunk
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/vayuda-turquoise-chunk.webp
+  yomi: ジユウノターコイズカタマリ
+  category: gems
+  groupId: vayuda-turquoise-gemstone
+  craftLevel: 3
+- id: vayuda-turquoise-gemstone
+  name:
+    locales:
+      ja: 自由のターコイズ
+      en: Vayuda Turquoise Gemstone
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/vayuda-turquoise-gemstone.webp
+  yomi: ジユウノターコイズ
+  category: gems
+  groupId: vayuda-turquoise-gemstone
+  craftLevel: 4
+- id: prithiva-topaz-sliver
+  name:
+    locales:
+      ja: 堅牢なトパーズ·砕屑
+      en: Prithiva Topaz Sliver
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/prithiva-topaz-sliver.webp
+  yomi: ケンロウナトパーズサイセツ
+  category: gems
+  groupId: prithiva-topaz-gemstone
+  craftLevel: 1
+- id: prithiva-topaz-fragment
+  name:
+    locales:
+      ja: 堅牢なトパーズ·欠片
+      en: Prithiva Topaz Fragment
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/prithiva-topaz-fragment.webp
+  yomi: ケンロウナトパーズカケラ
+  category: gems
+  groupId: prithiva-topaz-gemstone
+  craftLevel: 2
+- id: prithiva-topaz-chunk
+  name:
+    locales:
+      ja: 堅牢なトパーズ·塊
+      en: Prithiva Topaz Chunk
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/prithiva-topaz-chunk.webp
+  yomi: ケンロウナトパーズカタマリ
+  category: gems
+  groupId: prithiva-topaz-gemstone
+  craftLevel: 3
+- id: prithiva-topaz-gemstone
+  name:
+    locales:
+      ja: 堅牢なトパーズ
+      en: Prithiva Topaz Gemstone
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/prithiva-topaz-gemstone.webp
+  yomi: ケンロウナトパーズ
+  category: gems
+  groupId: prithiva-topaz-gemstone
+  craftLevel: 4
+- id: nagadus-emerald-sliver
+  name:
+    locales:
+      ja: 成長のエメラルド·砕屑
+      en: Nagadus Emerald Sliver
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/nagadus-emerald-sliver.webp
+  yomi: セイチョウノエメラルドサイセツ
+  category: gems
+  groupId: nagadus-emerald-gemstone
+  craftLevel: 1
+- id: nagadus-emerald-fragment
+  name:
+    locales:
+      ja: 成長のエメラルド·欠片
+      en: Nagadus Emerald Fragment
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/nagadus-emerald-fragment.webp
+  yomi: セイチョウノエメラルドカケラ
+  category: gems
+  groupId: nagadus-emerald-gemstone
+  craftLevel: 2
+- id: nagadus-emerald-chunk
+  name:
+    locales:
+      ja: 成長のエメラルド·塊
+      en: Nagadus Emerald Chunk
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/nagadus-emerald-chunk.webp
+  yomi: セイチョウノエメラルドカタマリ
+  category: gems
+  groupId: nagadus-emerald-gemstone
+  craftLevel: 3
+- id: nagadus-emerald-gemstone
+  name:
+    locales:
+      ja: 成長のエメラルド
+      en: Nagadus Emerald Gemstone
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/nagadus-emerald-gemstone.webp
+  yomi: セイチョウノエメラルド
+  category: gems
+  groupId: nagadus-emerald-gemstone
+  craftLevel: 4
+- id: brilliant-diamond-sliver
+  name:
+    locales:
+      ja: 輝くダイヤ·砕屑
+      en: Brilliant Diamond Sliver
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/brilliant-diamond-sliver.webp
+  yomi: カガヤクダイヤサイセツ
+  category: gems
+- id: brilliant-diamond-fragment
+  name:
+    locales:
+      ja: 輝くダイヤ·欠片
+      en: Brilliant Diamond Fragment
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/brilliant-diamond-fragment.webp
+  yomi: カガヤクダイヤカケラ
+  category: gems
+- id: brilliant-diamond-chunk
+  name:
+    locales:
+      ja: 輝くダイヤ·塊
+      en: Brilliant Diamond Chunk
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/brilliant-diamond-chunk.webp
+  yomi: カガヤクダイヤカタマリ
+  category: gems
+- id: brilliant-diamond-gemstone
+  name:
+    locales:
+      ja: 輝くダイヤ
+      en: Brilliant Diamond Gemstone
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/brilliant-diamond-gemstone.webp
+  yomi: カガヤクダイヤ
+  category: gems
+- id: hurricane-seed
+  name:
+    locales:
+      ja: 暴風の種
+      en: Hurricane Seed
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/hurricane-seed.webp
+  yomi: ボウフウノタネ
+  category: elementalStone
+- id: dandelion-seed
+  name:
+    locales:
+      ja: 蒲公英の種
+      en: Dandelion Seed
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/dandelion-seed.webp
+  yomi: タンポポノタネ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "37"
+    center: 50.55,29.49
+- id: damaged-mask
+  name:
+    locales:
+      ja: 破損した仮面
+      en: Damaged Mask
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/damaged-mask.webp
+  yomi: ハソンシタカメン
+  category: common
+  groupId: ominous-mask
+  craftLevel: 1
+- id: stained-mask
+  name:
+    locales:
+      ja: 汚れた仮面
+      en: Stained Mask
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/stained-mask.webp
+  yomi: ヨゴレタカメン
+  category: common
+  groupId: ominous-mask
+  craftLevel: 2
+- id: ominous-mask
+  name:
+    locales:
+      ja: 不吉な仮面
+      en: Ominous Mask
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/ominous-mask.webp
+  yomi: フキツナカメン
+  category: common
+  groupId: ominous-mask
+  craftLevel: 3
+- id: tile-of-decarabians-tower
+  name:
+    locales:
+      ja: 高塔の王の瓦
+      en: Tile of Decarabian's Tower
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/tile-of-decarabians-tower.webp
+  yomi: コウトウノオウノカワラ
+  category: weaponPrimary
+  groupId: scattered-piece-of-decarabians-dream
+  craftLevel: 1
+- id: debris-of-decarabians-city
+  name:
+    locales:
+      ja: 高塔の王の残壁
+      en: Debris of Decarabian's City
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/debris-of-decarabians-city.webp
+  yomi: コウトウノオウノザンペキ
+  category: weaponPrimary
+  groupId: scattered-piece-of-decarabians-dream
+  craftLevel: 2
+- id: fragment-of-decarabians-epic
+  name:
+    locales:
+      ja: 高塔の王の断片
+      en: Fragment of Decarabian's Epic
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/fragment-of-decarabians-epic.webp
+  yomi: コウトウノオウノダンペン
+  category: weaponPrimary
+  groupId: scattered-piece-of-decarabians-dream
+  craftLevel: 3
+- id: scattered-piece-of-decarabians-dream
+  name:
+    locales:
+      ja: 高塔の王の砕けた夢
+      en: Scattered Piece of Decarabian's Dream
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/scattered-piece-of-decarabians-dream.webp
+  yomi: コウトウノオウノクダケタユメ
+  category: weaponPrimary
+  groupId: scattered-piece-of-decarabians-dream
+  craftLevel: 4
+- id: heavy-horn
+  name:
+    locales:
+      ja: 重い角笛
+      en: Heavy Horn
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/heavy-horn.webp
+  yomi: オモイツノブエ
+  category: common
+  groupId: black-crystal-horn
+  craftLevel: 1
+- id: black-bronze-horn
+  name:
+    locales:
+      ja: 黒銅の角笛
+      en: Black Bronze Horn
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/black-bronze-horn.webp
+  yomi: コクドウノツノブエ
+  category: common
+  groupId: black-crystal-horn
+  craftLevel: 2
+- id: black-crystal-horn
+  name:
+    locales:
+      ja: 黒晶の角笛
+      en: Black Crystal Horn
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/black-crystal-horn.webp
+  yomi: コクショウノツノブエ
+  category: common
+  groupId: black-crystal-horn
+  craftLevel: 3
+- id: teachings-of-resistance
+  name:
+    locales:
+      ja: 「抗争」の教え
+      en: Teachings of Resistance
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-resistance.webp
+  yomi: コウソウノオシエ
+  category: talentBook
+  groupId: philosophies-of-resistance
+  craftLevel: 1
+- id: guide-to-resistance
+  name:
+    locales:
+      ja: 「抗争」の導き
+      en: Guide to Resistance
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-resistance.webp
+  yomi: コウソウノミチビキ
+  category: talentBook
+  groupId: philosophies-of-resistance
+  craftLevel: 2
+- id: philosophies-of-resistance
+  name:
+    locales:
+      ja: 「抗争」の哲学
+      en: Philosophies of Resistance
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-resistance.webp
+  yomi: コウソウノテツガク
+  category: talentBook
+  groupId: philosophies-of-resistance
+  craftLevel: 3
+- id: dvalins-plume
+  name:
+    locales:
+      ja: 東風の羽根
+      en: Dvalin's Plume
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/dvalins-plume.webp
+  yomi: トウフウノハネ|トワリンノハネ
+  category: talentBoss
+- id: hoarfrost-core
+  name:
+    locales:
+      ja: 極寒のコア
+      en: Hoarfrost Core
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/hoarfrost-core.webp
+  yomi: ゴッカンノコア
+  category: elementalStone
+- id: calla-lily
+  name:
+    locales:
+      ja: ドドリアン
+      en: Calla Lily
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/calla-lily.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "31"
+    center: 50.55,29.49
+- id: treasure-hoarder-insignia
+  name:
+    locales:
+      ja: 宝探しの鴉マーク
+      en: Treasure Hoarder Insignia
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/treasure-hoarder-insignia.webp
+  yomi: タカラサガシノカラスマーク
+  category: common
+  groupId: golden-raven-insignia
+  craftLevel: 1
+- id: silver-raven-insignia
+  name:
+    locales:
+      ja: シルバーの鴉マーク
+      en: Silver Raven Insignia
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/silver-raven-insignia.webp
+  yomi: シルバーノカラスマーク
+  category: common
+  groupId: golden-raven-insignia
+  craftLevel: 2
+- id: golden-raven-insignia
+  name:
+    locales:
+      ja: ゴールドの鴉マーク
+      en: Golden Raven Insignia
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/golden-raven-insignia.webp
+  yomi: ゴールドノカラスマーク
+  category: common
+  groupId: golden-raven-insignia
+  craftLevel: 3
+- id: teachings-of-ballad
+  name:
+    locales:
+      ja: 「詩文」の教え
+      en: Teachings of Ballad
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-ballad.webp
+  yomi: シブンノオシエ
+  category: talentBook
+  groupId: philosophies-of-ballad
+  craftLevel: 1
+- id: guide-to-ballad
+  name:
+    locales:
+      ja: 「詩文」の導き
+      en: Guide to Ballad
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-ballad.webp
+  yomi: シブンノミチビキ
+  category: talentBook
+  groupId: philosophies-of-ballad
+  craftLevel: 2
+- id: philosophies-of-ballad
+  name:
+    locales:
+      ja: 「詩文」の哲学
+      en: Philosophies of Ballad
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-ballad.webp
+  yomi: シブンノテツガク
+  category: talentBook
+  groupId: philosophies-of-ballad
+  craftLevel: 3
+- id: spirit-locket-of-boreas
+  name:
+    locales:
+      ja: 北風の魂箱
+      en: Spirit Locket of Boreas
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/spirit-locket-of-boreas.webp
+  yomi: ホクフウノコンソウ|キタカゼノコンソウ|ボレアスノコンソウ
+  category: talentBoss
+- id: everflame-seed
+  name:
+    locales:
+      ja: 常燃の火種
+      en: Everflame Seed
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/everflame-seed.webp
+  yomi: ジョウネンノヒダネ
+  category: elementalStone
+  source:
+    runtimeType: text
+    text:
+      locales:
+        ja: フィールドボス「爆炎樹」（璃月）
+        en: Field Boss "Pyro Regisvine" (Liyue)
+- id: small-lamp-grass
+  name:
+    locales:
+      ja: イグサ
+      en: Small Lamp Grass
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/small-lamp-grass.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "33"
+    center: 50.55,29.49
+- id: firm-arrowhead
+  name:
+    locales:
+      ja: 牢固な矢先
+      en: Firm Arrowhead
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/firm-arrowhead.webp
+  yomi: ロウコナヤサキ
+  category: common
+  groupId: weathered-arrowhead
+  craftLevel: 1
+- id: sharp-arrowhead
+  name:
+    locales:
+      ja: 鋭利な矢先
+      en: Sharp Arrowhead
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/sharp-arrowhead.webp
+  yomi: エイリナヤサキ
+  category: common
+  groupId: weathered-arrowhead
+  craftLevel: 2
+- id: weathered-arrowhead
+  name:
+    locales:
+      ja: 歴戦の矢先
+      en: Weathered Arrowhead
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/weathered-arrowhead.webp
+  yomi: レキセンノヤサキ
+  category: common
+  groupId: weathered-arrowhead
+  craftLevel: 3
+- id: teachings-of-freedom
+  name:
+    locales:
+      ja: 「自由」の教え
+      en: Teachings of Freedom
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-freedom.webp
+  yomi: ジユウノオシエ
+  category: talentBook
+  groupId: philosophies-of-freedom
+  craftLevel: 1
+- id: guide-to-freedom
+  name:
+    locales:
+      ja: 「自由」の導き
+      en: Guide to Freedom
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-freedom.webp
+  yomi: ジユウノミチビキ
+  category: talentBook
+  groupId: philosophies-of-freedom
+  craftLevel: 2
+- id: philosophies-of-freedom
+  name:
+    locales:
+      ja: 「自由」の哲学
+      en: Philosophies of Freedom
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-freedom.webp
+  yomi: ジユウノテツガク
+  category: talentBook
+  groupId: philosophies-of-freedom
+  craftLevel: 3
+- id: dvalins-sigh
+  name:
+    locales:
+      ja: 東風の吐息
+      en: Dvalin's Sigh
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/dvalins-sigh.webp
+  yomi: トウフウノトイキ|トワリンノトイキ
+  category: talentBoss
+- id: lightning-prism
+  name:
+    locales:
+      ja: 雷光のプリズム
+      en: Lightning Prism
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/lightning-prism.webp
+  yomi: ライコウノプリズム
+  category: elementalStone
+- id: valberry
+  name:
+    locales:
+      ja: ヴァルベリー
+      en: Valberry
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/valberry.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "29"
+    center: -485.50,754.50
+- id: slime-condensate
+  name:
+    locales:
+      ja: スライムの液体
+      en: Slime Condensate
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/slime-condensate.webp
+  yomi: スライムノエキタイ
+  category: common
+  groupId: slime-concentrate
+  craftLevel: 1
+- id: slime-secretions
+  name:
+    locales:
+      ja: スライムの分泌物
+      en: Slime Secretions
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/slime-secretions.webp
+  yomi: スライムノブンピツブツ
+  category: common
+  groupId: slime-concentrate
+  craftLevel: 2
+- id: slime-concentrate
+  name:
+    locales:
+      ja: スライムのピュレ
+      en: Slime Concentrate
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/slime-concentrate.webp
+  yomi: スライムノピュレ
+  category: common
+  groupId: slime-concentrate
+  craftLevel: 3
+- id: dvalins-claw
+  name:
+    locales:
+      ja: 東風の爪
+      en: Dvalin's Claw
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/dvalins-claw.webp
+  yomi: トウフウノツメ|トワリンノツメ
+  category: talentBoss
+- id: cleansing-heart
+  name:
+    locales:
+      ja: 浄水の心
+      en: Cleansing Heart
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/cleansing-heart.webp
+  yomi: ジョウスイノココロ
+  category: elementalStone
+- id: philanemo-mushroom
+  name:
+    locales:
+      ja: 慕風のマッシュルーム
+      en: Philanemo Mushroom
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/philanemo-mushroom.webp
+  yomi: ボフウノマッシュルーム
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "39"
+    center: 313.50,-51.50
+- id: divining-scroll
+  name:
+    locales:
+      ja: 占いの絵巻
+      en: Divining Scroll
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/divining-scroll.webp
+  yomi: ウラナイノエマキ
+  category: common
+  groupId: forbidden-curse-scroll
+  craftLevel: 1
+- id: sealed-scroll
+  name:
+    locales:
+      ja: 封魔の絵巻
+      en: Sealed Scroll
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/sealed-scroll.webp
+  yomi: フウマノエマキ
+  category: common
+  groupId: forbidden-curse-scroll
+  craftLevel: 2
+- id: forbidden-curse-scroll
+  name:
+    locales:
+      ja: 禁呪の絵巻
+      en: Forbidden Curse Scroll
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/forbidden-curse-scroll.webp
+  yomi: キンジュノエマキ
+  category: common
+  groupId: forbidden-curse-scroll
+  craftLevel: 3
+- id: ring-of-boreas
+  name:
+    locales:
+      ja: 北風のリング
+      en: Ring of Boreas
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/ring-of-boreas.webp
+  yomi: ホクフウノリング|キタカゼノリング|ボレアスノリング
+  category: talentBoss
+- id: recruits-insignia
+  name:
+    locales:
+      ja: 新兵の記章
+      en: Recruit's Insignia
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/recruits-insignia.webp
+  yomi: シンペイノキショウ
+  category: common
+  groupId: lieutenants-insignia
+  craftLevel: 1
+- id: sergeants-insignia
+  name:
+    locales:
+      ja: 士官の記章
+      en: Sergeant's Insignia
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/sergeants-insignia.webp
+  yomi: シカンノキショウ
+  category: common
+  groupId: lieutenants-insignia
+  craftLevel: 2
+- id: lieutenants-insignia
+  name:
+    locales:
+      ja: 尉官の記章
+      en: Lieutenant's Insignia
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/lieutenants-insignia.webp
+  yomi: イカンノキショウ
+  category: common
+  groupId: lieutenants-insignia
+  craftLevel: 3
+- id: wolfhook
+  name:
+    locales:
+      ja: ググプラム
+      en: Wolfhook
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/wolfhook.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "41"
+    center: 300.50,-368.50
+- id: cecilia
+  name:
+    locales:
+      ja: セシリアの花
+      en: Cecilia
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/cecilia.webp
+  yomi: セシリアノハナ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "35"
+    center: -221.50,1010.50
+- id: tail-of-boreas
+  name:
+    locales:
+      ja: 北風のしっぽ
+      en: Tail of Boreas
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/tail-of-boreas.webp
+  yomi: ホクフウノシッポ|キタカゼノシッポ|ボレアスノシッポ
+  category: talentBoss
+- id: windwheel-aster
+  name:
+    locales:
+      ja: 風車アスター
+      en: Windwheel Aster
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/windwheel-aster.webp
+  yomi: フウシャアスター
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "43"
+    center: -328.50,-944.50
+- id: basalt-pillar
+  name:
+    locales:
+      ja: 玄岩の塔
+      en: Basalt Pillar
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/basalt-pillar.webp
+  yomi: ゲンガンノトウ
+  category: elementalStone
+- id: whopperflower-nectar
+  name:
+    locales:
+      ja: トリックフラワーの蜜
+      en: Whopperflower Nectar
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/whopperflower-nectar.webp
+  yomi: トリックフラワーノミツ
+  category: common
+  groupId: energy-nectar
+  craftLevel: 1
+- id: shimmering-nectar
+  name:
+    locales:
+      ja: 微光花の蜜
+      en: Shimmering Nectar
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/shimmering-nectar.webp
+  yomi: ビコウカノミツ
+  category: common
+  groupId: energy-nectar
+  craftLevel: 2
+- id: energy-nectar
+  name:
+    locales:
+      ja: 原素花の蜜
+      en: Energy Nectar
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/energy-nectar.webp
+  yomi: ゲンソバナノミツ
+  category: common
+  groupId: energy-nectar
+  craftLevel: 3
+- id: shard-of-a-foul-legacy
+  name:
+    locales:
+      ja: 魔王の刃·残片
+      en: Shard of a Foul Legacy
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/shard-of-a-foul-legacy.webp
+  yomi: マオウノヤイバザンペン
+  category: talentBoss
+- id: tusk-of-monoceros-caeli
+  name:
+    locales:
+      ja: 呑天の鯨·只角
+      en: Tusk of Monoceros Caeli
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/tusk-of-monoceros-caeli.webp
+  yomi: ドンテンノクジラタダスミ
+  category: talentBoss
+- id: shadow-of-the-warrior
+  name:
+    locales:
+      ja: 武煉の魂·孤影
+      en: Shadow of the Warrior
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/shadow-of-the-warrior.webp
+  yomi: ブレンノタマシイコエイ
+  category: talentBoss
+- id: crystalline-bloom
+  name:
+    locales:
+      ja: 凝結の華
+      en: Crystalline Bloom
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/crystalline-bloom.webp
+  yomi: ギョウケツノハナ
+  category: elementalStone
+- id: dragon-lords-crown
+  name:
+    locales:
+      ja: 龍王の冠
+      en: Dragon Lord's Crown
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/dragon-lords-crown.webp
+  yomi: リュウオウノカンムリ
+  category: talentBoss
+- id: juvenile-jade
+  name:
+    locales:
+      ja: 未熟の玉石
+      en: Juvenile Jade
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/juvenile-jade.webp
+  yomi: ミジュクノギョクセキ
+  category: elementalStone
+- id: qingxin
+  name:
+    locales:
+      ja: 清心
+      en: Qingxin
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/qingxin.webp
+  yomi: セイシン
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "32"
+    center: 697.50,-1271.50
+- id: teachings-of-prosperity
+  name:
+    locales:
+      ja: 「繁栄」の教え
+      en: Teachings of Prosperity
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-prosperity.webp
+  yomi: ハンエイノオシエ
+  category: talentBook
+  groupId: philosophies-of-prosperity
+  craftLevel: 1
+- id: guide-to-prosperity
+  name:
+    locales:
+      ja: 「繁栄」の導き
+      en: Guide to Prosperity
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-prosperity.webp
+  yomi: ハンエイノミチビキ
+  category: talentBook
+  groupId: philosophies-of-prosperity
+  craftLevel: 2
+- id: philosophies-of-prosperity
+  name:
+    locales:
+      ja: 「繁栄」の哲学
+      en: Philosophies of Prosperity
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-prosperity.webp
+  yomi: ハンエイノテツガク
+  category: talentBook
+  groupId: philosophies-of-prosperity
+  craftLevel: 3
+- id: noctilucous-jade
+  name:
+    locales:
+      ja: 夜泊石
+      en: Noctilucous Jade
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/noctilucous-jade.webp
+  yomi: ヨドマリイシ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "42"
+    center: 1489.50,-434.50
+- id: teachings-of-gold
+  name:
+    locales:
+      ja: 「黄金」の教え
+      en: Teachings of Gold
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-gold.webp
+  yomi: オウゴンノオシエ
+  category: talentBook
+  groupId: philosophies-of-gold
+  craftLevel: 1
+- id: guide-to-gold
+  name:
+    locales:
+      ja: 「黄金」の導き
+      en: Guide to Gold
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-gold.webp
+  yomi: オウゴンノミチビキ
+  category: talentBook
+  groupId: philosophies-of-gold
+  craftLevel: 2
+- id: philosophies-of-gold
+  name:
+    locales:
+      ja: 「黄金」の哲学
+      en: Philosophies of Gold
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-gold.webp
+  yomi: オウゴンノテツガク
+  category: talentBook
+  groupId: philosophies-of-gold
+  craftLevel: 3
+- id: glaze-lily
+  name:
+    locales:
+      ja: 琉璃百合
+      en: Glaze Lily
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/glaze-lily.webp
+  yomi: ルリユリ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "38"
+    center: 2879.50,-1145.50
+- id: jueyun-chili
+  name:
+    locales:
+      ja: 絶雲の唐辛子
+      en: Jueyun Chili
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/jueyun-chili.webp
+  yomi: ゼツウンノトウガラシ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "30"
+    center: 1377.50,-2069.50
+- id: teachings-of-diligence
+  name:
+    locales:
+      ja: 「勤労」の教え
+      en: Teachings of Diligence
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-diligence.webp
+  yomi: キンロウノオシエ
+  category: talentBook
+  groupId: philosophies-of-diligence
+  craftLevel: 1
+- id: guide-to-diligence
+  name:
+    locales:
+      ja: 「勤労」の導き
+      en: Guide to Diligence
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-diligence.webp
+  yomi: キンロウノミチビキ
+  category: talentBook
+  groupId: philosophies-of-diligence
+  craftLevel: 2
+- id: philosophies-of-diligence
+  name:
+    locales:
+      ja: 「勤労」の哲学
+      en: Philosophies of Diligence
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-diligence.webp
+  yomi: キンロウノテツガク
+  category: talentBook
+  groupId: philosophies-of-diligence
+  craftLevel: 3
+- id: silk-flower
+  name:
+    locales:
+      ja: 霓裳花
+      en: Silk Flower
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/silk-flower.webp
+  yomi: ゲイショウバナ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "36"
+    center: 1379.56,-1003.95
+- id: cor-lapis
+  name:
+    locales:
+      ja: 石珀
+      en: Cor Lapis
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/cor-lapis.webp
+  yomi: セキハク
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "40"
+    center: 1620.68,-2547.57
+- id: violetgrass
+  name:
+    locales:
+      ja: 琉璃袋
+      en: Violetgrass
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/violetgrass.webp
+  yomi: ルリブクロ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "34"
+    center: 1495.52,-2350.99
+- id: starconch
+  name:
+    locales:
+      ja: 星螺
+      en: Starconch
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/starconch.webp
+  yomi: セイラ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "78"
+    center: 1945.50,-444.50
+- id: bloodjade-branch
+  name:
+    locales:
+      ja: 血玉の枝
+      en: Bloodjade Branch
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/bloodjade-branch.webp
+  yomi: ケツギョクノエダ
+  category: talentBoss
+- id: perpetual-heart
+  name:
+    locales:
+      ja: 恒常からくりの芯
+      en: Perpetual Heart
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/perpetual-heart.webp
+  yomi: コウジョウカラクリノシン
+  category: elementalStone
+- id: sakura-bloom
+  name:
+    locales:
+      ja: 緋櫻毬
+      en: Sakura Bloom
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/sakura-bloom.webp
+  yomi: ヒオウキュウ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "199"
+    center: 4797.71,3694.77
+- id: old-handguard
+  name:
+    locales:
+      ja: 古びた鍔
+      en: Old Handguard
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/old-handguard.webp
+  yomi: フルビタツバ
+  category: common
+  groupId: famed-handguard
+  craftLevel: 1
+- id: kageuchi-handguard
+  name:
+    locales:
+      ja: 影打の鍔
+      en: Kageuchi Handguard
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/kageuchi-handguard.webp
+  yomi: カゲウチノツバ
+  category: common
+  groupId: famed-handguard
+  craftLevel: 2
+- id: famed-handguard
+  name:
+    locales:
+      ja: 名刀の鍔
+      en: Famed Handguard
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/famed-handguard.webp
+  yomi: メイトウノツバ
+  category: common
+  groupId: famed-handguard
+  craftLevel: 3
+- id: teachings-of-elegance
+  name:
+    locales:
+      ja: 「風雅」の教え
+      en: Teachings of Elegance
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-elegance.webp
+  yomi: フウガノオシエ
+  category: talentBook
+  groupId: philosophies-of-elegance
+  craftLevel: 1
+- id: guide-to-elegance
+  name:
+    locales:
+      ja: 「風雅」の導き
+      en: Guide to Elegance
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-elegance.webp
+  yomi: フウガノミチビキ
+  category: talentBook
+  groupId: philosophies-of-elegance
+  craftLevel: 2
+- id: philosophies-of-elegance
+  name:
+    locales:
+      ja: 「風雅」の哲学
+      en: Philosophies of Elegance
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-elegance.webp
+  yomi: フウガノテツガク
+  category: talentBook
+  groupId: philosophies-of-elegance
+  craftLevel: 3
+- id: marionette-core
+  name:
+    locales:
+      ja: 魔偶の芯
+      en: Marionette Core
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/marionette-core.webp
+  yomi: マグウノシン
+  category: elementalStone
+- id: sea-ganoderma
+  name:
+    locales:
+      ja: ウミレイシ
+      en: Sea Ganoderma
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/sea-ganoderma.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "185"
+    center: 5801.50,2397.50
+- id: gilded-scale
+  name:
+    locales:
+      ja: 鍍金の鱗
+      en: Gilded Scale
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/gilded-scale.webp
+  yomi: トキンノリン
+  category: talentBoss
+- id: smoldering-pearl
+  name:
+    locales:
+      ja: 陰燃の珠
+      en: Smoldering Pearl
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/smoldering-pearl.webp
+  yomi: インネンノジュ
+  category: elementalStone
+- id: naku-weed
+  name:
+    locales:
+      ja: 鳴草
+      en: Naku Weed
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/naku-weed.webp
+  yomi: ナグサ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "197"
+    center: 7046.50,3324.50
+- id: teachings-of-transience
+  name:
+    locales:
+      ja: 「浮世」の教え
+      en: Teachings of Transience
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-transience.webp
+  yomi: ウキヨノオシエ
+  category: talentBook
+  groupId: philosophies-of-transience
+  craftLevel: 1
+- id: guide-to-transience
+  name:
+    locales:
+      ja: 「浮世」の導き
+      en: Guide to Transience
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-transience.webp
+  yomi: ウキヨノミチビキ
+  category: talentBook
+  groupId: philosophies-of-transience
+  craftLevel: 2
+- id: philosophies-of-transience
+  name:
+    locales:
+      ja: 「浮世」の哲学
+      en: Philosophies of Transience
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-transience.webp
+  yomi: ウキヨノテツガク
+  category: talentBook
+  groupId: philosophies-of-transience
+  craftLevel: 3
+- id: crystal-marrow
+  name:
+    locales:
+      ja: 晶化骨髄
+      en: Crystal Marrow
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/crystal-marrow.webp
+  yomi: ショウカコツズイ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "211"
+    center: 6129.72,1647.88
+- id: teachings-of-light
+  name:
+    locales:
+      ja: 「天光」の教え
+      en: Teachings of Light
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-light.webp
+  yomi: テンコウノオシエ
+  category: talentBook
+  groupId: philosophies-of-light
+  craftLevel: 1
+- id: guide-to-light
+  name:
+    locales:
+      ja: 「天光」の導き
+      en: Guide to Light
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-light.webp
+  yomi: テンコウノミチビキ
+  category: talentBook
+  groupId: philosophies-of-light
+  craftLevel: 2
+- id: philosophies-of-light
+  name:
+    locales:
+      ja: 「天光」の哲学
+      en: Philosophies of Light
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-light.webp
+  yomi: テンコウノテツガク
+  category: talentBook
+  groupId: philosophies-of-light
+  craftLevel: 3
+- id: storm-beads
+  name:
+    locales:
+      ja: 雷霆の念珠
+      en: Storm Beads
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/storm-beads.webp
+  yomi: ライテイノネンジュ
+  category: elementalStone
+- id: amakumo-fruit
+  name:
+    locales:
+      ja: 天雲草の実
+      en: Amakumo Fruit
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/amakumo-fruit.webp
+  yomi: アマクモグサノミ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "228"
+    center: 7027.22,3506.68
+- id: molten-moment
+  name:
+    locales:
+      ja: 溶滅の刻
+      en: Molten Moment
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/molten-moment.webp
+  yomi: ヨウメツノトキ
+  category: talentBoss
+- id: dew-of-repudiation
+  name:
+    locales:
+      ja: 排他の露
+      en: Dew of Repudiation
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/dew-of-repudiation.webp
+  yomi: ""
+  category: elementalStone
+- id: sango-pearl
+  name:
+    locales:
+      ja: 珊瑚真珠
+      en: Sango Pearl
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/sango-pearl.webp
+  yomi: サンゴシンジュ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "227"
+    center: 6076.87,51.76
+- id: spectral-husk
+  name:
+    locales:
+      ja: フライムの乾核
+      en: Spectral Husk
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/spectral-husk.webp
+  yomi: フライムノカンカク
+  category: common
+  groupId: spectral-nucleus
+  craftLevel: 1
+- id: spectral-heart
+  name:
+    locales:
+      ja: フライムの幽核
+      en: Spectral Heart
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/spectral-heart.webp
+  yomi: フライムノユウカク
+  category: common
+  groupId: spectral-nucleus
+  craftLevel: 2
+- id: spectral-nucleus
+  name:
+    locales:
+      ja: フライムの晶化核
+      en: Spectral Nucleus
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/spectral-nucleus.webp
+  yomi: フライムノショウカカク
+  category: common
+  groupId: spectral-nucleus
+  craftLevel: 3
+- id: hellfire-butterfly
+  name:
+    locales:
+      ja: 獄炎の蝶
+      en: Hellfire Butterfly
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/hellfire-butterfly.webp
+  yomi: ゴクエンノチョウ
+  category: talentBoss
+- id: dendrobium
+  name:
+    locales:
+      ja: 血石華
+      en: Dendrobium
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/dendrobium.webp
+  yomi: ケッセキカ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "198"
+    center: 5822.25,1943.25
+- id: ashen-heart
+  name:
+    locales:
+      ja: 灰燼の心
+      en: Ashen Heart
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/ashen-heart.webp
+  yomi: カイジンノココロ
+  category: talentBoss
+- id: fluorescent-fungus
+  name:
+    locales:
+      ja: ユウトウタケ
+      en: Fluorescent Fungus
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/fluorescent-fungus.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "266"
+    center: 8623.87,1927.01
+- id: riftborn-regalia
+  name:
+    locales:
+      ja: 獣域王器
+      en: Riftborn Regalia
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/riftborn-regalia.webp
+  yomi: ジュウイキオウキ
+  category: elementalStone
+- id: onikabuto
+  name:
+    locales:
+      ja: オニカブトムシ
+      en: Onikabuto
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/onikabuto.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "196"
+    center: 6047.75,2384.75
+- id: dragonheirs-false-fin
+  name:
+    locales:
+      ja: ドラゴエアのニセヒレ
+      en: Dragonheir's False Fin
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/dragonheirs-false-fin.webp
+  yomi: ドラゴエアノニセヒレ
+  category: elementalStone
+- id: the-meaning-of-aeons
+  name:
+    locales:
+      ja: 万劫の真意
+      en: The Meaning of Aeons
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/the-meaning-of-aeons.webp
+  yomi: バンゴウノシンイ
+  category: talentBoss
+- id: mudra-of-the-malefic-general
+  name:
+    locales:
+      ja: 凶将の手眼
+      en: Mudra of the Malefic General
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/mudra-of-the-malefic-general.webp
+  yomi: キョウショウノシュガン
+  category: talentBoss
+- id: runic-fang
+  name:
+    locales:
+      ja: 符文の歯車
+      en: Runic Fang
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/runic-fang.webp
+  yomi: フモンノハグルマ
+  category: elementalStone
+- id: tears-of-the-calamitous-god
+  name:
+    locales:
+      ja: 禍神の禊涙
+      en: Tears of the Calamitous God
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/tears-of-the-calamitous-god.webp
+  yomi: カジンノミソギルイ
+  category: talentBoss
+- id: majestic-hooked-beak
+  name:
+    locales:
+      ja: 茸王の鉤状のくちばし
+      en: Majestic Hooked Beak
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/majestic-hooked-beak.webp
+  yomi: タケオウノコウジョウノクチバシ
+  category: elementalStone
+- id: rukkhashava-mushrooms
+  name:
+    locales:
+      ja: ルッカデヴァータダケ
+      en: Rukkhashava Mushrooms
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/rukkhashava-mushrooms.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "402"
+    center: 2199.09,-3084.26
+- id: teachings-of-praxis
+  name:
+    locales:
+      ja: 「篤行」の教え
+      en: Teachings of Praxis
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-praxis.webp
+  yomi: トッコウノオシエ
+  category: talentBook
+  groupId: philosophies-of-praxis
+  craftLevel: 1
+- id: guide-to-praxis
+  name:
+    locales:
+      ja: 「篤行」の導き
+      en: Guide to Praxis
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-praxis.webp
+  yomi: トッコウノミチビキ
+  category: talentBook
+  groupId: philosophies-of-praxis
+  craftLevel: 2
+- id: philosophies-of-praxis
+  name:
+    locales:
+      ja: 「篤行」の哲学
+      en: Philosophies of Praxis
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-praxis.webp
+  yomi: トッコウノテツガク
+  category: talentBook
+  groupId: philosophies-of-praxis
+  craftLevel: 3
+- id: boreal-wolfs-milk-tooth
+  name:
+    locales:
+      ja: 凛風奔狼の乳歯
+      en: Boreal Wolf's Milk Tooth
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/boreal-wolfs-milk-tooth.webp
+  yomi: リンプウホウロウノニュウシ
+  category: weaponPrimary
+  groupId: boreal-wolfs-nostalgia
+  craftLevel: 1
+- id: boreal-wolfs-cracked-tooth
+  name:
+    locales:
+      ja: 凛風奔狼の砕牙
+      en: Boreal Wolf's Cracked Tooth
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/boreal-wolfs-cracked-tooth.webp
+  yomi: リンプウホウロウノサイガ
+  category: weaponPrimary
+  groupId: boreal-wolfs-nostalgia
+  craftLevel: 2
+- id: boreal-wolfs-broken-fang
+  name:
+    locales:
+      ja: 凛風奔狼の断牙
+      en: Boreal Wolf's Broken Fang
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/boreal-wolfs-broken-fang.webp
+  yomi: リンプウホウロウノダンガ
+  category: weaponPrimary
+  groupId: boreal-wolfs-nostalgia
+  craftLevel: 3
+- id: boreal-wolfs-nostalgia
+  name:
+    locales:
+      ja: 凛風奔狼の郷愁
+      en: Boreal Wolf's Nostalgia
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/boreal-wolfs-nostalgia.webp
+  yomi: リンプウホウロウノキョウシュウ
+  category: weaponPrimary
+  groupId: boreal-wolfs-nostalgia
+  craftLevel: 4
+- id: dead-ley-line-branch
+  name:
+    locales:
+      ja: 地脈の旧枝
+      en: Dead Ley Line Branch
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/dead-ley-line-branch.webp
+  yomi: チミャクノキュウシ
+  category: common
+  groupId: ley-line-sprout
+  craftLevel: 1
+- id: dead-ley-line-leaves
+  name:
+    locales:
+      ja: 地脈の枯れ葉
+      en: Dead Ley Line Leaves
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/dead-ley-line-leaves.webp
+  yomi: チミャクノカレハ
+  category: common
+  groupId: ley-line-sprout
+  craftLevel: 2
+- id: ley-line-sprout
+  name:
+    locales:
+      ja: 地脈の新芽
+      en: Ley Line Sprout
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/ley-line-sprout.webp
+  yomi: チミャクノシンメ
+  category: common
+  groupId: ley-line-sprout
+  craftLevel: 3
+- id: fetters-of-the-dandelion-gladiator
+  name:
+    locales:
+      ja: 獅牙戦士の枷
+      en: Fetters of the Dandelion Gladiator
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/fetters-of-the-dandelion-gladiator.webp
+  yomi: シガセンシノカセ
+  category: weaponPrimary
+  groupId: dream-of-the-dandelion-gladiator
+  craftLevel: 1
+- id: chains-of-the-dandelion-gladiator
+  name:
+    locales:
+      ja: 獅牙戦士の鎖
+      en: Chains of the Dandelion Gladiator
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/chains-of-the-dandelion-gladiator.webp
+  yomi: シガセンシノクサリ
+  category: weaponPrimary
+  groupId: dream-of-the-dandelion-gladiator
+  craftLevel: 2
+- id: shackles-of-the-dandelion-gladiator
+  name:
+    locales:
+      ja: 獅牙戦士の手錠
+      en: Shackles of the Dandelion Gladiator
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/shackles-of-the-dandelion-gladiator.webp
+  yomi: シガセンシノテジョウ
+  category: weaponPrimary
+  groupId: dream-of-the-dandelion-gladiator
+  craftLevel: 3
+- id: dream-of-the-dandelion-gladiator
+  name:
+    locales:
+      ja: 獅牙戦士の理想
+      en: Dream of the Dandelion Gladiator
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/dream-of-the-dandelion-gladiator.webp
+  yomi: シガセンシノリソウ
+  category: weaponPrimary
+  groupId: dream-of-the-dandelion-gladiator
+  craftLevel: 4
+- id: chaos-device
+  name:
+    locales:
+      ja: 混沌の装置
+      en: Chaos Device
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/chaos-device.webp
+  yomi: コントンノソウチ
+  category: common
+  groupId: chaos-core
+  craftLevel: 1
+- id: chaos-circuit
+  name:
+    locales:
+      ja: 混沌の回路
+      en: Chaos Circuit
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/chaos-circuit.webp
+  yomi: コントンノカイロ
+  category: common
+  groupId: chaos-core
+  craftLevel: 2
+- id: chaos-core
+  name:
+    locales:
+      ja: 混沌の炉心
+      en: Chaos Core
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/chaos-core.webp
+  yomi: コントンノロシン
+  category: common
+  groupId: chaos-core
+  craftLevel: 3
+- id: luminous-sands-from-guyun
+  name:
+    locales:
+      ja: 孤雲寒林の光砂
+      en: Luminous Sands from Guyun
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/luminous-sands-from-guyun.webp
+  yomi: コウンカンリンノコウサ
+  category: weaponPrimary
+  groupId: divine-body-from-guyun
+  craftLevel: 1
+- id: lustrous-stone-from-guyun
+  name:
+    locales:
+      ja: 孤雲寒林の輝岩
+      en: Lustrous Stone from Guyun
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/lustrous-stone-from-guyun.webp
+  yomi: コウンカンリンノキガン
+  category: weaponPrimary
+  groupId: divine-body-from-guyun
+  craftLevel: 2
+- id: relic-from-guyun
+  name:
+    locales:
+      ja: 孤雲寒林の聖骸
+      en: Relic from Guyun
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/relic-from-guyun.webp
+  yomi: コウンカンリンノセイガイ
+  category: weaponPrimary
+  groupId: divine-body-from-guyun
+  craftLevel: 3
+- id: divine-body-from-guyun
+  name:
+    locales:
+      ja: 孤雲寒林の神体
+      en: Divine Body from Guyun
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/divine-body-from-guyun.webp
+  yomi: コウンカンリンノシンタイ
+  category: weaponPrimary
+  groupId: divine-body-from-guyun
+  craftLevel: 4
+- id: hunters-sacrificial-knife
+  name:
+    locales:
+      ja: 猟兵の刀
+      en: Hunter's Sacrificial Knife
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/hunters-sacrificial-knife.webp
+  yomi: リョウヘイノカタナ
+  category: common
+  groupId: inspectors-sacrificial-knife
+  craftLevel: 1
+- id: agents-sacrificial-knife
+  name:
+    locales:
+      ja: エージェントの刀
+      en: Agent's Sacrificial Knife
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/agents-sacrificial-knife.webp
+  yomi: エージェントノカタナ
+  category: common
+  groupId: inspectors-sacrificial-knife
+  craftLevel: 2
+- id: inspectors-sacrificial-knife
+  name:
+    locales:
+      ja: 検査官の刀
+      en: Inspector's Sacrificial Knife
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/inspectors-sacrificial-knife.webp
+  yomi: ケンサカンノカタナ
+  category: common
+  groupId: inspectors-sacrificial-knife
+  craftLevel: 3
+- id: mist-veiled-lead-elixir
+  name:
+    locales:
+      ja: 霧海雲間の鉛丹
+      en: Mist Veiled Lead Elixir
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/mist-veiled-lead-elixir.webp
+  yomi: ムカイウンカンノエンタン
+  category: weaponPrimary
+  groupId: mist-veiled-primo-elixir
+  craftLevel: 1
+- id: mist-veiled-mercury-elixir
+  name:
+    locales:
+      ja: 霧海雲間の水銀
+      en: Mist Veiled Mercury Elixir
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/mist-veiled-mercury-elixir.webp
+  yomi: ムカイウンカンノスイギン
+  category: weaponPrimary
+  groupId: mist-veiled-primo-elixir
+  craftLevel: 2
+- id: mist-veiled-gold-elixir
+  name:
+    locales:
+      ja: 霧海雲間の金丹
+      en: Mist Veiled Gold Elixir
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/mist-veiled-gold-elixir.webp
+  yomi: ムカイウンカンノキンタン
+  category: weaponPrimary
+  groupId: mist-veiled-primo-elixir
+  craftLevel: 3
+- id: mist-veiled-primo-elixir
+  name:
+    locales:
+      ja: 霧海雲間の転還
+      en: Mist Veiled Primo Elixir
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/mist-veiled-primo-elixir.webp
+  yomi: ムカイウンカンノテンカン
+  category: weaponPrimary
+  groupId: mist-veiled-primo-elixir
+  craftLevel: 4
+- id: mist-grass-pollen
+  name:
+    locales:
+      ja: 霧虚ろの花粉
+      en: Mist Grass Pollen
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/mist-grass-pollen.webp
+  yomi: キリウツロノカフン
+  category: common
+  groupId: mist-grass-wick
+  craftLevel: 1
+- id: mist-grass
+  name:
+    locales:
+      ja: 霧虚ろの草嚢
+      en: Mist Grass
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/mist-grass.webp
+  yomi: キリウツロノソウノウ
+  category: common
+  groupId: mist-grass-wick
+  craftLevel: 2
+- id: mist-grass-wick
+  name:
+    locales:
+      ja: 霧虚ろの灯芯
+      en: Mist Grass Wick
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/mist-grass-wick.webp
+  yomi: キリウツロノトウシン
+  category: common
+  groupId: mist-grass-wick
+  craftLevel: 3
+- id: grain-of-aerosiderite
+  name:
+    locales:
+      ja: 漆黒の隕鉄の一粒
+      en: Grain of Aerosiderite
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/grain-of-aerosiderite.webp
+  yomi: シッコクノインテツノヒトツブ
+  category: weaponPrimary
+  groupId: chunk-of-aerosiderite
+  craftLevel: 1
+- id: piece-of-aerosiderite
+  name:
+    locales:
+      ja: 漆黒の隕鉄の一片
+      en: Piece of Aerosiderite
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/piece-of-aerosiderite.webp
+  yomi: シッコクノインテツノイッペン
+  category: weaponPrimary
+  groupId: chunk-of-aerosiderite
+  craftLevel: 2
+- id: bit-of-aerosiderite
+  name:
+    locales:
+      ja: 漆黒の隕鉄の一角
+      en: Bit of Aerosiderite
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/bit-of-aerosiderite.webp
+  yomi: シッコクノインテツノイッカク
+  category: weaponPrimary
+  groupId: chunk-of-aerosiderite
+  craftLevel: 3
+- id: chunk-of-aerosiderite
+  name:
+    locales:
+      ja: 漆黒の隕鉄の塊
+      en: Chunk of Aerosiderite
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/chunk-of-aerosiderite.webp
+  yomi: シッコクノインテツノカタマリ
+  category: weaponPrimary
+  groupId: chunk-of-aerosiderite
+  craftLevel: 4
+- id: fragile-bone-shard
+  name:
+    locales:
+      ja: 脆い骨片
+      en: Fragile Bone Shard
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/fragile-bone-shard.webp
+  yomi: モロイコッペン
+  category: common
+  groupId: fossilized-bone-shard
+  craftLevel: 1
+- id: sturdy-bone-shard
+  name:
+    locales:
+      ja: 丈夫な骨片
+      en: Sturdy Bone Shard
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/sturdy-bone-shard.webp
+  yomi: ジョウブナコッペン
+  category: common
+  groupId: fossilized-bone-shard
+  craftLevel: 2
+- id: fossilized-bone-shard
+  name:
+    locales:
+      ja: 石化した骨片
+      en: Fossilized Bone Shard
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/fossilized-bone-shard.webp
+  yomi: セッカシタコッペン
+  category: common
+  groupId: fossilized-bone-shard
+  craftLevel: 3
+- id: coral-branch-of-a-distant-sea
+  name:
+    locales:
+      ja: 遠海夷地の瑚枝
+      en: Coral Branch of a Distant Sea
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/coral-branch-of-a-distant-sea.webp
+  yomi: エンカイゾチノコシ
+  category: weaponPrimary
+  groupId: golden-branch-of-a-distant-sea
+  craftLevel: 1
+- id: jeweled-branch-of-a-distant-sea
+  name:
+    locales:
+      ja: 遠海夷地の石枝
+      en: Jeweled Branch of a Distant Sea
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/jeweled-branch-of-a-distant-sea.webp
+  yomi: エンカイゾチノセキシ
+  category: weaponPrimary
+  groupId: golden-branch-of-a-distant-sea
+  craftLevel: 2
+- id: jade-branch-of-a-distant-sea
+  name:
+    locales:
+      ja: 遠海夷地の玉枝
+      en: Jade Branch of a Distant Sea
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/jade-branch-of-a-distant-sea.webp
+  yomi: エンカイゾチノギョクシ
+  category: weaponPrimary
+  groupId: golden-branch-of-a-distant-sea
+  craftLevel: 3
+- id: golden-branch-of-a-distant-sea
+  name:
+    locales:
+      ja: 遠海夷地の金枝
+      en: Golden Branch of a Distant Sea
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/golden-branch-of-a-distant-sea.webp
+  yomi: エンカイゾチノキンシ
+  category: weaponPrimary
+  groupId: golden-branch-of-a-distant-sea
+  craftLevel: 4
+- id: chaos-gear
+  name:
+    locales:
+      ja: 混沌の機関
+      en: Chaos Gear
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/chaos-gear.webp
+  yomi: コントンノキカン
+  category: common
+  groupId: chaos-oculus
+  craftLevel: 1
+- id: chaos-axis
+  name:
+    locales:
+      ja: 混沌の中枢
+      en: Chaos Axis
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/chaos-axis.webp
+  yomi: コントンノチュウスウ
+  category: common
+  groupId: chaos-oculus
+  craftLevel: 2
+- id: chaos-oculus
+  name:
+    locales:
+      ja: 混沌の真眼
+      en: Chaos Oculus
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/chaos-oculus.webp
+  yomi: コントンノシンガン
+  category: common
+  groupId: chaos-oculus
+  craftLevel: 3
+- id: mask-of-the-wicked-lieutenant
+  name:
+    locales:
+      ja: 今昔劇画の悪尉
+      en: Mask of the Wicked Lieutenant
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/mask-of-the-wicked-lieutenant.webp
+  yomi: コンジャクゲキガノアクイ
+  category: weaponPrimary
+  groupId: mask-of-the-kijin
+  craftLevel: 1
+- id: mask-of-the-tigers-bite
+  name:
+    locales:
+      ja: 今昔劇画の虎牙
+      en: Mask of the Tiger's Bite
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/mask-of-the-tigers-bite.webp
+  yomi: コンジャクゲキガノコガ
+  category: weaponPrimary
+  groupId: mask-of-the-kijin
+  craftLevel: 2
+- id: mask-of-the-one-horned
+  name:
+    locales:
+      ja: 今昔劇画の隻角
+      en: Mask of the One-Horned
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/mask-of-the-one-horned.webp
+  yomi: コンジャクゲキガノセキカク
+  category: weaponPrimary
+  groupId: mask-of-the-kijin
+  craftLevel: 3
+- id: mask-of-the-kijin
+  name:
+    locales:
+      ja: 今昔劇画の鬼人
+      en: Mask of the Kijin
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/mask-of-the-kijin.webp
+  yomi: コンジャクゲキガノキジン
+  category: weaponPrimary
+  groupId: mask-of-the-kijin
+  craftLevel: 4
+- id: gloomy-statuette
+  name:
+    locales:
+      ja: 暗晦の彫刻
+      en: Gloomy Statuette
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/gloomy-statuette.webp
+  yomi: アンカイノチョウコク
+  category: common
+  groupId: deathly-statuette
+  craftLevel: 1
+- id: dark-statuette
+  name:
+    locales:
+      ja: 黒夜の彫刻
+      en: Dark Statuette
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/dark-statuette.webp
+  yomi: コクヤノチョウコク
+  category: common
+  groupId: deathly-statuette
+  craftLevel: 2
+- id: deathly-statuette
+  name:
+    locales:
+      ja: 幽邃なる彫刻
+      en: Deathly Statuette
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/deathly-statuette.webp
+  yomi: ユウスイナルチョウコク
+  category: common
+  groupId: deathly-statuette
+  craftLevel: 3
+- id: copper-talisman-of-the-forest-dew
+  name:
+    locales:
+      ja: 静謐な森のしずくの銅符
+      en: Copper Talisman of the Forest Dew
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/copper-talisman-of-the-forest-dew.webp
+  yomi: セイヒツナモリノシズクノドウフ
+  category: weaponPrimary
+  groupId: golden-talisman-of-the-forest-dew
+  craftLevel: 1
+- id: iron-talisman-of-the-forest-dew
+  name:
+    locales:
+      ja: 静謐な森のしずくの鉄符
+      en: Iron Talisman of the Forest Dew
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/iron-talisman-of-the-forest-dew.webp
+  yomi: セイヒツナモリノシズクノテツフ
+  category: weaponPrimary
+  groupId: golden-talisman-of-the-forest-dew
+  craftLevel: 2
+- id: silver-talisman-of-the-forest-dew
+  name:
+    locales:
+      ja: 静謐な森のしずくの銀符
+      en: Silver Talisman of the Forest Dew
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/silver-talisman-of-the-forest-dew.webp
+  yomi: セイヒツナモリノシズクノギンフ
+  category: weaponPrimary
+  groupId: golden-talisman-of-the-forest-dew
+  craftLevel: 3
+- id: golden-talisman-of-the-forest-dew
+  name:
+    locales:
+      ja: 静謐な森のしずくの金符
+      en: Golden Talisman of the Forest Dew
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/golden-talisman-of-the-forest-dew.webp
+  yomi: セイヒツナモリノシズクノキンフ
+  category: weaponPrimary
+  groupId: golden-talisman-of-the-forest-dew
+  craftLevel: 4
+- id: chaos-storage
+  name:
+    locales:
+      ja: 混沌ストレージ
+      en: Chaos Storage
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/chaos-storage.webp
+  yomi: コントンストレージ
+  category: common
+  groupId: chaos-bolt
+  craftLevel: 1
+- id: chaos-module
+  name:
+    locales:
+      ja: 混沌モジュール
+      en: Chaos Module
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/chaos-module.webp
+  yomi: コントンモジュール
+  category: common
+  groupId: chaos-bolt
+  craftLevel: 2
+- id: chaos-bolt
+  name:
+    locales:
+      ja: 混沌ボルト
+      en: Chaos Bolt
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/chaos-bolt.webp
+  yomi: コントンボルト
+  category: common
+  groupId: chaos-bolt
+  craftLevel: 3
+- id: faded-red-satin
+  name:
+    locales:
+      ja: 色褪せた赤い絹
+      en: Faded Red Satin
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/faded-red-satin.webp
+  yomi: イロアセタアカイキヌ
+  category: common
+  groupId: rich-red-brocade
+  craftLevel: 1
+- id: trimmed-red-silk
+  name:
+    locales:
+      ja: 縁飾の赤い絹
+      en: Trimmed Red Silk
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/trimmed-red-silk.webp
+  yomi: ""
+  category: common
+  groupId: rich-red-brocade
+  craftLevel: 2
+- id: rich-red-brocade
+  name:
+    locales:
+      ja: 金織の赤い絹
+      en: Rich Red Brocade
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/rich-red-brocade.webp
+  yomi: キンオリノアカイキヌ
+  category: common
+  groupId: rich-red-brocade
+  craftLevel: 3
+- id: damaged-prism
+  name:
+    locales:
+      ja: 壊れたプリズム
+      en: Damaged Prism
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/damaged-prism.webp
+  yomi: コワレタプリズム
+  category: common
+  groupId: radiant-prism
+  craftLevel: 1
+- id: turbid-prism
+  name:
+    locales:
+      ja: 濁ったプリズム
+      en: Turbid Prism
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/turbid-prism.webp
+  yomi: ニゴッタプリズム
+  category: common
+  groupId: radiant-prism
+  craftLevel: 2
+- id: radiant-prism
+  name:
+    locales:
+      ja: 輝くプリズム
+      en: Radiant Prism
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/radiant-prism.webp
+  yomi: カガヤクプリズム
+  category: common
+  groupId: radiant-prism
+  craftLevel: 3
+- id: narukamis-wisdom
+  name:
+    locales:
+      ja: 鳴神御霊の恩恵
+      en: Narukami's Wisdom
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/narukamis-wisdom.webp
+  yomi: ナルカミミタマノオンケイ
+  category: weaponPrimary
+  groupId: narukamis-valor
+  craftLevel: 1
+- id: narukamis-joy
+  name:
+    locales:
+      ja: 鳴神御霊の歓喜
+      en: Narukami's Joy
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/narukamis-joy.webp
+  yomi: ナルカミミタマノカンキ
+  category: weaponPrimary
+  groupId: narukamis-valor
+  craftLevel: 2
+- id: narukamis-affection
+  name:
+    locales:
+      ja: 鳴神御霊の親愛
+      en: Narukami's Affection
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/narukamis-affection.webp
+  yomi: ナルカミミタマノシンアイ
+  category: weaponPrimary
+  groupId: narukamis-valor
+  craftLevel: 3
+- id: narukamis-valor
+  name:
+    locales:
+      ja: 鳴神御霊の勇武
+      en: Narukami's Valor
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/narukamis-valor.webp
+  yomi: ナルカミミタマノユウブ
+  category: weaponPrimary
+  groupId: narukamis-valor
+  craftLevel: 4
+- id: dross-of-pure-sacred-dewdrop
+  name:
+    locales:
+      ja: 純聖な雫の濾滓
+      en: Dross of Pure Sacred Dewdrop
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/dross-of-pure-sacred-dewdrop.webp
+  yomi: ジュンセイナシズクノロシ
+  category: weaponPrimary
+  groupId: essence-of-pure-sacred-dewdrop
+  craftLevel: 1
+- id: sublimation-of-pure-sacred-dewdrop
+  name:
+    locales:
+      ja: 純聖な雫の昇華
+      en: Sublimation of Pure Sacred Dewdrop
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/sublimation-of-pure-sacred-dewdrop.webp
+  yomi: ジュンセイナシズクノショウカ
+  category: weaponPrimary
+  groupId: essence-of-pure-sacred-dewdrop
+  craftLevel: 2
+- id: spring-of-pure-sacred-dewdrop
+  name:
+    locales:
+      ja: 純聖な雫の甘泉
+      en: Spring of Pure Sacred Dewdrop
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/spring-of-pure-sacred-dewdrop.webp
+  yomi: ジュンセイナシズクノカンセン
+  category: weaponPrimary
+  groupId: essence-of-pure-sacred-dewdrop
+  craftLevel: 3
+- id: essence-of-pure-sacred-dewdrop
+  name:
+    locales:
+      ja: 純聖な雫の精髄
+      en: Essence of Pure Sacred Dewdrop
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/essence-of-pure-sacred-dewdrop.webp
+  yomi: ジュンセイナシズクノセイズイ
+  category: weaponPrimary
+  groupId: essence-of-pure-sacred-dewdrop
+  craftLevel: 4
+- id: drop-of-tainted-water
+  name:
+    locales:
+      ja: 濁水のひとしずく
+      en: Drop of Tainted Water
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/drop-of-tainted-water.webp
+  yomi: ダクスイノヒトシズク
+  category: common
+  groupId: newborn-tainted-hydro-phantasm
+  craftLevel: 1
+- id: scoop-of-tainted-water
+  name:
+    locales:
+      ja: 濁水のひとすくい
+      en: Scoop of Tainted Water
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/scoop-of-tainted-water.webp
+  yomi: ダクスイノヒトスクイ
+  category: common
+  groupId: newborn-tainted-hydro-phantasm
+  craftLevel: 2
+- id: newborn-tainted-hydro-phantasm
+  name:
+    locales:
+      ja: 生まれたての濁水幻霊
+      en: Newborn Tainted Hydro Phantasm
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/newborn-tainted-hydro-phantasm.webp
+  yomi: ウマレタテノダクスイゲンレイ
+  category: common
+  groupId: newborn-tainted-hydro-phantasm
+  craftLevel: 3
+- id: fragment-of-an-ancient-chord
+  name:
+    locales:
+      ja: 悠久の弦の残章
+      en: Fragment of an Ancient Chord
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/fragment-of-an-ancient-chord.webp
+  yomi: ユウキュウノゲンノザンショウ
+  category: weaponPrimary
+  groupId: echo-of-an-ancient-chord
+  craftLevel: 1
+- id: chapter-of-an-ancient-chord
+  name:
+    locales:
+      ja: 悠久の弦の断章
+      en: Chapter of an Ancient Chord
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/chapter-of-an-ancient-chord.webp
+  yomi: ユウキュウノゲンノダンショウ
+  category: weaponPrimary
+  groupId: echo-of-an-ancient-chord
+  craftLevel: 2
+- id: movement-of-an-ancient-chord
+  name:
+    locales:
+      ja: 悠久の弦の楽章
+      en: Movement of an Ancient Chord
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/movement-of-an-ancient-chord.webp
+  yomi: ユウキュウノゲンノガクショウ
+  category: weaponPrimary
+  groupId: echo-of-an-ancient-chord
+  craftLevel: 3
+- id: echo-of-an-ancient-chord
+  name:
+    locales:
+      ja: 悠久の弦の響き
+      en: Echo of an Ancient Chord
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/echo-of-an-ancient-chord.webp
+  yomi: ユウキュウノゲンノヒビキ
+  category: weaponPrimary
+  groupId: echo-of-an-ancient-chord
+  craftLevel: 4
+- id: transoceanic-pearl
+  name:
+    locales:
+      ja: 異海の露
+      en: Transoceanic Pearl
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/transoceanic-pearl.webp
+  yomi: イカイノツユ
+  category: common
+  groupId: xenochromatic-crystal
+  craftLevel: 1
+- id: transoceanic-chunk
+  name:
+    locales:
+      ja: 異海の塊
+      en: Transoceanic Chunk
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/transoceanic-chunk.webp
+  yomi: イカイノカタマリ
+  category: common
+  groupId: xenochromatic-crystal
+  craftLevel: 2
+- id: xenochromatic-crystal
+  name:
+    locales:
+      ja: 色変わりの結晶
+      en: Xenochromatic Crystal
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/xenochromatic-crystal.webp
+  yomi: イロカワリノケッショウ
+  category: common
+  groupId: xenochromatic-crystal
+  craftLevel: 3
+- id: old-operatives-pocket-watch
+  name:
+    locales:
+      ja: 古びた従者の懐中時計
+      en: Old Operative's Pocket Watch
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/old-operatives-pocket-watch.webp
+  yomi: フルビタジュウシャノカイチュウドケイ
+  category: common
+  groupId: operatives-constancy
+  craftLevel: 1
+- id: operatives-standard-pocket-watch
+  name:
+    locales:
+      ja: 従者の制式懐中時計
+      en: Operative's Standard Pocket Watch
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/operatives-standard-pocket-watch.webp
+  yomi: ジュウシャノセイシキカイチュウドケイ
+  category: common
+  groupId: operatives-constancy
+  craftLevel: 2
+- id: operatives-constancy
+  name:
+    locales:
+      ja: 従者の時々刻々
+      en: Operative's Constancy
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/operatives-constancy.webp
+  yomi: ジュウシャノジジコクコク
+  category: common
+  groupId: operatives-constancy
+  craftLevel: 3
+- id: desiccated-shell
+  name:
+    locales:
+      ja: 毀れた背骨
+      en: Desiccated Shell
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/desiccated-shell.webp
+  yomi: コワレタセボネ
+  category: common
+  groupId: marked-shell
+  craftLevel: 1
+- id: sturdy-shell
+  name:
+    locales:
+      ja: 堅固な背骨
+      en: Sturdy Shell
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/sturdy-shell.webp
+  yomi: ケンコナセボネ
+  category: common
+  groupId: marked-shell
+  craftLevel: 2
+- id: marked-shell
+  name:
+    locales:
+      ja: 刻紋の背骨
+      en: Marked Shell
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/marked-shell.webp
+  yomi: コクモンノセボネ
+  category: common
+  groupId: marked-shell
+  craftLevel: 3
+- id: meshing-gear
+  name:
+    locales:
+      ja: 整合の歯車
+      en: Meshing Gear
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/meshing-gear.webp
+  yomi: セイゴウノハグルマ
+  category: common
+  groupId: artificed-dynamic-gear
+  craftLevel: 1
+- id: mechanical-spur-gear
+  name:
+    locales:
+      ja: 機構の平歯車
+      en: Mechanical Spur Gear
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/mechanical-spur-gear.webp
+  yomi: キコウノヒラハグルマ
+  category: common
+  groupId: artificed-dynamic-gear
+  craftLevel: 2
+- id: artificed-dynamic-gear
+  name:
+    locales:
+      ja: 奇械のコア歯車
+      en: Artificed Dynamic Gear
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/artificed-dynamic-gear.webp
+  yomi: キカイノコアハグルマ
+  category: common
+  groupId: artificed-dynamic-gear
+  craftLevel: 3
+- id: nilotpala-lotus
+  name:
+    locales:
+      ja: サウマラタ蓮
+      en: Nilotpala Lotus
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/nilotpala-lotus.webp
+  yomi: サウマラタハス
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "400"
+    center: 2585.17,-3383.37
+- id: fungal-spores
+  name:
+    locales:
+      ja: キノコンの胞子
+      en: Fungal Spores
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/fungal-spores.webp
+  yomi: キノコンノホウシ
+  category: common
+  groupId: crystalline-cyst-dust
+  craftLevel: 1
+- id: luminescent-pollen
+  name:
+    locales:
+      ja: キノコンの蛍胞子
+      en: Luminescent Pollen
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/luminescent-pollen.webp
+  yomi: キノコンノホタルホウシ
+  category: common
+  groupId: crystalline-cyst-dust
+  craftLevel: 2
+- id: crystalline-cyst-dust
+  name:
+    locales:
+      ja: キノコンの晶胞子
+      en: Crystalline Cyst Dust
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/crystalline-cyst-dust.webp
+  yomi: キノコンノショウホウシ
+  category: common
+  groupId: crystalline-cyst-dust
+  craftLevel: 3
+- id: teachings-of-admonition
+  name:
+    locales:
+      ja: 「忠言」の教え
+      en: Teachings of Admonition
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-admonition.webp
+  yomi: チュウゲンノオシエ
+  category: talentBook
+  groupId: philosophies-of-admonition
+  craftLevel: 1
+- id: guide-to-admonition
+  name:
+    locales:
+      ja: 「忠言」の導き
+      en: Guide to Admonition
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-admonition.webp
+  yomi: チュウゲンノミチビキ
+  category: talentBook
+  groupId: philosophies-of-admonition
+  craftLevel: 2
+- id: philosophies-of-admonition
+  name:
+    locales:
+      ja: 「忠言」の哲学
+      en: Philosophies of Admonition
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-admonition.webp
+  yomi: チュウゲンノテツガク
+  category: talentBook
+  groupId: philosophies-of-admonition
+  craftLevel: 3
+- id: thunderclap-fruitcore
+  name:
+    locales:
+      ja: 隠雷の実
+      en: Thunderclap Fruitcore
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/thunderclap-fruitcore.webp
+  yomi: インライノミ
+  category: elementalStone
+- id: kalpalata-lotus
+  name:
+    locales:
+      ja: カルパラタ蓮
+      en: Kalpalata Lotus
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/kalpalata-lotus.webp
+  yomi: カルパラタハス
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "401"
+    center: 3572.30,-4382.51
+- id: teachings-of-ingenuity
+  name:
+    locales:
+      ja: 「創意」の教え
+      en: Teachings of Ingenuity
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-ingenuity.webp
+  yomi: ソウイノオシエ
+  category: talentBook
+  groupId: philosophies-of-ingenuity
+  craftLevel: 1
+- id: guide-to-ingenuity
+  name:
+    locales:
+      ja: 「創意」の導き
+      en: Guide to Ingenuity
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-ingenuity.webp
+  yomi: ソウイノミチビキ
+  category: talentBook
+  groupId: philosophies-of-ingenuity
+  craftLevel: 2
+- id: philosophies-of-ingenuity
+  name:
+    locales:
+      ja: 「創意」の哲学
+      en: Philosophies of Ingenuity
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-ingenuity.webp
+  yomi: ソウイノテツガク
+  category: talentBook
+  groupId: philosophies-of-ingenuity
+  craftLevel: 3
+- id: scarab
+  name:
+    locales:
+      ja: 聖金虫
+      en: Scarab
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/scarab.webp
+  yomi: セイキンチュウ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "430"
+    center: 4567.50,-6434.50
+- id: light-guiding-tetrahedron
+  name:
+    locales:
+      ja: 導光四面体
+      en: Light Guiding Tetrahedron
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/light-guiding-tetrahedron.webp
+  yomi: ドウコウシメンタイ
+  category: elementalStone
+- id: henna-berry
+  name:
+    locales:
+      ja: 赤念の実
+      en: Henna Berry
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/henna-berry.webp
+  yomi: セキネンノミ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "431"
+    center: 4579.50,-4771.50
+- id: perpetual-caliber
+  name:
+    locales:
+      ja: 永続コア
+      en: Perpetual Caliber
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/perpetual-caliber.webp
+  yomi: エイゾクコア
+  category: elementalStone
+- id: padisarah
+  name:
+    locales:
+      ja: パティサラ
+      en: Padisarah
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/padisarah.webp
+  yomi: パティサラ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "413"
+    center: 2524.36,-4188.05
+- id: quelled-creeper
+  name:
+    locales:
+      ja: 滅諍の蔓
+      en: Quelled Creeper
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/quelled-creeper.webp
+  yomi: メッソウノツル
+  category: elementalStone
+- id: puppet-strings
+  name:
+    locales:
+      ja: 傀儡の糸
+      en: Puppet Strings
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/puppet-strings.webp
+  yomi: カイライノイト
+  category: talentBoss
+- id: mirror-of-mushin
+  name:
+    locales:
+      ja: 無心の淵鏡
+      en: Mirror of Mushin
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/mirror-of-mushin.webp
+  yomi: ムシンノエンキョウ
+  category: talentBoss
+- id: dakas-bell
+  name:
+    locales:
+      ja: 空行の虚鈴
+      en: Daka's Bell
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/dakas-bell.webp
+  yomi: クウギョウノキョレイ
+  category: talentBoss
+- id: pseudo-stamens
+  name:
+    locales:
+      ja: 蒼礫蕊羽
+      en: Pseudo-Stamens
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/pseudo-stamens.webp
+  yomi: ソウレキズイウ
+  category: elementalStone
+- id: sand-grease-pupa
+  name:
+    locales:
+      ja: 砂脂蛹
+      en: Sand Grease Pupa
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/sand-grease-pupa.webp
+  yomi: サシヨウ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "462"
+    center: 3226.52,-5238.11
+- id: mourning-flower
+  name:
+    locales:
+      ja: 悼霊花
+      en: Mourning Flower
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/mourning-flower.webp
+  yomi: トウレイカ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "469"
+    center: 1504.50,-6588.50
+- id: primordial-greenbloom
+  name:
+    locales:
+      ja: 原初のオアシスの初咲き
+      en: Primordial Greenbloom
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/primordial-greenbloom.webp
+  yomi: ゲンショノオアシスノハツザキ
+  category: talentBoss
+- id: evergloom-ring
+  name:
+    locales:
+      ja: 常闇の輪
+      en: Evergloom Ring
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/evergloom-ring.webp
+  yomi: トコヤミノワ
+  category: elementalStone
+- id: worldspan-fern
+  name:
+    locales:
+      ja: 天地に生える蕨
+      en: Worldspan Fern
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/worldspan-fern.webp
+  yomi: テンチニハエルワラビ
+  category: talentBoss
+- id: everamber
+  name:
+    locales:
+      ja: 太古の樹海の一瞬
+      en: Everamber
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/everamber.webp
+  yomi: タイコノジュカイノイッシュン
+  category: talentBoss
+- id: artificed-spare-clockwork-component--coppelia
+  name:
+    locales:
+      ja: 奇械部品·コッペリア
+      en: Artificed Spare Clockwork Component — Coppelia
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/artificed-spare-clockwork-component--coppelia.webp
+  yomi: キカイブヒンコッペリア
+  category: elementalStone
+- id: lumidouce-bell
+  name:
+    locales:
+      ja: ルミドゥースベル
+      en: Lumidouce Bell
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/lumidouce-bell.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "502"
+    center: -1612.92,-5325.79
+- id: teachings-of-order
+  name:
+    locales:
+      ja: 「秩序」の教え
+      en: Teachings of Order
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-order.webp
+  yomi: チツジョノオシエ
+  category: talentBook
+  groupId: philosophies-of-order
+  craftLevel: 1
+- id: guide-to-order
+  name:
+    locales:
+      ja: 「秩序」の導き
+      en: Guide to Order
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-order.webp
+  yomi: チツジョノミチビキ
+  category: talentBook
+  groupId: philosophies-of-order
+  craftLevel: 2
+- id: philosophies-of-order
+  name:
+    locales:
+      ja: 「秩序」の哲学
+      en: Philosophies of Order
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-order.webp
+  yomi: チツジョノテツガク
+  category: talentBook
+  groupId: philosophies-of-order
+  craftLevel: 3
+- id: emperors-resolution
+  name:
+    locales:
+      ja: 帝王の決断
+      en: Emperor's Resolution
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/emperors-resolution.webp
+  yomi: テイオウノケツダン
+  category: elementalStone
+- id: rainbow-rose
+  name:
+    locales:
+      ja: レインボーローズ
+      en: Rainbow Rose
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/rainbow-rose.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "503"
+    center: -1517.46,-5629.14
+- id: teachings-of-equity
+  name:
+    locales:
+      ja: 「公平」の教え
+      en: Teachings of Equity
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-equity.webp
+  yomi: コウヘイノオシエ
+  category: talentBook
+  groupId: philosophies-of-equity
+  craftLevel: 1
+- id: guide-to-equity
+  name:
+    locales:
+      ja: 「公平」の導き
+      en: Guide to Equity
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-equity.webp
+  yomi: コウヘイノミチビキ
+  category: talentBook
+  groupId: philosophies-of-equity
+  craftLevel: 2
+- id: philosophies-of-equity
+  name:
+    locales:
+      ja: 「公平」の哲学
+      en: Philosophies of Equity
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-equity.webp
+  yomi: コウヘイノテツガク
+  category: talentBook
+  groupId: philosophies-of-equity
+  craftLevel: 3
+- id: artificed-spare-clockwork-component--coppelius
+  name:
+    locales:
+      ja: 奇械部品·コペリウス
+      en: Artificed Spare Clockwork Component — Coppelius
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/artificed-spare-clockwork-component--coppelius.webp
+  yomi: キカイブヒンコペリウス
+  category: elementalStone
+- id: romaritime-flower
+  name:
+    locales:
+      ja: ロマリタイムフラワー
+      en: Romaritime Flower
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/romaritime-flower.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "501"
+    center: -1130.50,-4926.50
+- id: teachings-of-justice
+  name:
+    locales:
+      ja: 「正義」の教え
+      en: Teachings of Justice
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-justice.webp
+  yomi: セイギノオシエ
+  category: talentBook
+  groupId: philosophies-of-justice
+  craftLevel: 1
+- id: guide-to-justice
+  name:
+    locales:
+      ja: 「正義」の導き
+      en: Guide to Justice
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-justice.webp
+  yomi: セイギノミチビキ
+  category: talentBook
+  groupId: philosophies-of-justice
+  craftLevel: 2
+- id: philosophies-of-justice
+  name:
+    locales:
+      ja: 「正義」の哲学
+      en: Philosophies of Justice
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-justice.webp
+  yomi: セイギノテツガク
+  category: talentBook
+  groupId: philosophies-of-justice
+  craftLevel: 3
+- id: fontemer-unihorn
+  name:
+    locales:
+      ja: 原海駿の角
+      en: Fontemer Unihorn
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/fontemer-unihorn.webp
+  yomi: ゲンカイシュンノツノ
+  category: elementalStone
+- id: lumitoile
+  name:
+    locales:
+      ja: ルエトワール
+      en: Lumitoile
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/lumitoile.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "545"
+    center: -2389.32,-5367.51
+- id: tourbillon-device
+  name:
+    locales:
+      ja: 「トゥールビヨン装置」
+      en: '"Tourbillon Device"'
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/tourbillon-device.webp
+  yomi: トゥールビヨンソウチ
+  category: elementalStone
+- id: subdetection-unit
+  name:
+    locales:
+      ja: 探測ユニット·子機
+      en: Subdetection Unit
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/subdetection-unit.webp
+  yomi: タンソクユニットコキ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "546"
+    center: -2512.36,-5178.00
+- id: beryl-conch
+  name:
+    locales:
+      ja: 蒼晶螺
+      en: Beryl Conch
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/beryl-conch.webp
+  yomi: ソウショウラ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "500"
+    center: -936.22,-5020.32
+- id: lightless-silk-string
+  name:
+    locales:
+      ja: 光なき糸
+      en: Lightless Silk String
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/lightless-silk-string.webp
+  yomi: ヒカリナキイト
+  category: talentBoss
+- id: water-that-failed-to-transcend
+  name:
+    locales:
+      ja: 超越に至らぬ水
+      en: Water That Failed To Transcend
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/water-that-failed-to-transcend.webp
+  yomi: チョウエツニイタラヌミズ
+  category: elementalStone
+- id: lakelight-lily
+  name:
+    locales:
+      ja: 湖光の鈴蘭
+      en: Lakelight Lily
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/lakelight-lily.webp
+  yomi: ココウノリンラン
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "548"
+    center: -1479.10,-3931.55
+- id: lightless-mass
+  name:
+    locales:
+      ja: 光なき一塊
+      en: Lightless Mass
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/lightless-mass.webp
+  yomi: ヒカリナキイッカイ
+  category: talentBoss
+- id: spring-of-the-first-dewdrop
+  name:
+    locales:
+      ja: 初露の源
+      en: Spring of the First Dewdrop
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/spring-of-the-first-dewdrop.webp
+  yomi: ハツツユノミナモト
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "549"
+    center: -358.75,-4384.25
+- id: lightless-eye-of-the-maelstrom
+  name:
+    locales:
+      ja: 光なき渦の眼
+      en: Lightless Eye of the Maelstrom
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/lightless-eye-of-the-maelstrom.webp
+  yomi: ヒカリナキウズノマナコ
+  category: talentBoss
+- id: cloudseam-scale
+  name:
+    locales:
+      ja: 凝雲の鱗甲
+      en: Cloudseam Scale
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/cloudseam-scale.webp
+  yomi: ギョウウンノリンコウ
+  category: elementalStone
+- id: clearwater-jade
+  name:
+    locales:
+      ja: 清水玉
+      en: Clearwater Jade
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/clearwater-jade.webp
+  yomi: セイスイギョク
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "566"
+    center: 706.50,-2421.50
+- id: fragment-of-a-golden-melody
+  name:
+    locales:
+      ja: 金色の旋律の断章
+      en: Fragment of a Golden Melody
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/fragment-of-a-golden-melody.webp
+  yomi: キンイロノセンリツノダンショウ
+  category: elementalStone
+- id: fading-candle
+  name:
+    locales:
+      ja: 残火の灯燭
+      en: Fading Candle
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/fading-candle.webp
+  yomi: ザンカノトウショク
+  category: talentBoss
+- id: trishiraite
+  name:
+    locales:
+      ja: サングイト
+      en: Trishiraite
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/trishiraite.webp
+  yomi: ""
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "468"
+    center: 1717.50,-7304.50
+- id: silken-feather
+  name:
+    locales:
+      ja: 絹織りの羽
+      en: Silken Feather
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/silken-feather.webp
+  yomi: キヌオリノハネ
+  category: talentBoss
+- id: echo-of-scorching-might
+  name:
+    locales:
+      ja: 烈日権威の残響
+      en: Echo of Scorching Might
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/echo-of-scorching-might.webp
+  yomi: レツジツケンイノザンキョウ
+  category: weaponPrimary
+  groupId: olden-days-of-scorching-might
+  craftLevel: 1
+- id: remnant-glow-of-scorching-might
+  name:
+    locales:
+      ja: 烈日権威の残光
+      en: Remnant Glow of Scorching Might
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/remnant-glow-of-scorching-might.webp
+  yomi: レツジツケンイノザンコウ
+  category: weaponPrimary
+  groupId: olden-days-of-scorching-might
+  craftLevel: 2
+- id: dream-of-scorching-might
+  name:
+    locales:
+      ja: 烈日権威の夢想
+      en: Dream of Scorching Might
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/dream-of-scorching-might.webp
+  yomi: レツジツケンイノムソウ
+  category: weaponPrimary
+  groupId: olden-days-of-scorching-might
+  craftLevel: 3
+- id: olden-days-of-scorching-might
+  name:
+    locales:
+      ja: 烈日権威の往日
+      en: Olden Days of Scorching Might
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/olden-days-of-scorching-might.webp
+  yomi: レツジツケンイノオウジツ
+  category: weaponPrimary
+  groupId: olden-days-of-scorching-might
+  craftLevel: 4
+- id: concealed-claw
+  name:
+    locales:
+      ja: 隠獣の指爪
+      en: Concealed Claw
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/concealed-claw.webp
+  yomi: インジュウノシソウ
+  category: common
+  groupId: concealed-talon
+  craftLevel: 1
+- id: concealed-unguis
+  name:
+    locales:
+      ja: 隠獣の利爪
+      en: Concealed Unguis
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/concealed-unguis.webp
+  yomi: インジュウノリソウ
+  category: common
+  groupId: concealed-talon
+  craftLevel: 2
+- id: concealed-talon
+  name:
+    locales:
+      ja: 隠獣の鬼爪
+      en: Concealed Talon
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/concealed-talon.webp
+  yomi: インジュウノキソウ
+  category: common
+  groupId: concealed-talon
+  craftLevel: 3
+- id: oasis-gardens-reminiscence
+  name:
+    locales:
+      ja: オアシスガーデンの追憶
+      en: Oasis Garden's Reminiscence
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/oasis-gardens-reminiscence.webp
+  yomi: オアシスガーデンノツイオク
+  category: weaponPrimary
+  groupId: oasis-gardens-truth
+  craftLevel: 1
+- id: oasis-gardens-kindness
+  name:
+    locales:
+      ja: オアシスガーデンの恩恵
+      en: Oasis Garden's Kindness
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/oasis-gardens-kindness.webp
+  yomi: オアシスガーデンノオンケイ
+  category: weaponPrimary
+  groupId: oasis-gardens-truth
+  craftLevel: 2
+- id: oasis-gardens-mourning
+  name:
+    locales:
+      ja: オアシスガーデンの哀思
+      en: Oasis Garden's Mourning
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/oasis-gardens-mourning.webp
+  yomi: オアシスガーデンノアイシ
+  category: weaponPrimary
+  groupId: oasis-gardens-truth
+  craftLevel: 3
+- id: oasis-gardens-truth
+  name:
+    locales:
+      ja: オアシスガーデンの真諦
+      en: Oasis Garden's Truth
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/oasis-gardens-truth.webp
+  yomi: オアシスガーデンノシンタイ
+  category: weaponPrimary
+  groupId: oasis-gardens-truth
+  craftLevel: 4
+- id: broken-goblet-of-the-pristine-sea
+  name:
+    locales:
+      ja: 無垢な海の苦杯
+      en: Broken Goblet of the Pristine Sea
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/broken-goblet-of-the-pristine-sea.webp
+  yomi: ムクナウミノクハイ
+  category: weaponPrimary
+  groupId: golden-goblet-of-the-pristine-sea
+  craftLevel: 1
+- id: wine-goblet-of-the-pristine-sea
+  name:
+    locales:
+      ja: 無垢な海の酒盃
+      en: Wine Goblet of the Pristine Sea
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/wine-goblet-of-the-pristine-sea.webp
+  yomi: ムクナウミノシュハイ
+  category: weaponPrimary
+  groupId: golden-goblet-of-the-pristine-sea
+  craftLevel: 2
+- id: silver-goblet-of-the-pristine-sea
+  name:
+    locales:
+      ja: 無垢な海の銀盃
+      en: Silver Goblet of the Pristine Sea
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/silver-goblet-of-the-pristine-sea.webp
+  yomi: ムクナウミノギンハイ
+  category: weaponPrimary
+  groupId: golden-goblet-of-the-pristine-sea
+  craftLevel: 3
+- id: golden-goblet-of-the-pristine-sea
+  name:
+    locales:
+      ja: 無垢な海の金盃
+      en: Golden Goblet of the Pristine Sea
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/golden-goblet-of-the-pristine-sea.webp
+  yomi: ムクナウミノキンハイ
+  category: weaponPrimary
+  groupId: golden-goblet-of-the-pristine-sea
+  craftLevel: 4
+- id: rift-core
+  name:
+    locales:
+      ja: 隙間のコア
+      en: Rift Core
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/rift-core.webp
+  yomi: スキマノコア
+  category: common
+  groupId: alien-life-core
+  craftLevel: 1
+- id: foreign-synapse
+  name:
+    locales:
+      ja: 外界のシナプス
+      en: Foreign Synapse
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/foreign-synapse.webp
+  yomi: ガイカイノシナプス
+  category: common
+  groupId: alien-life-core
+  craftLevel: 2
+- id: alien-life-core
+  name:
+    locales:
+      ja: 異界生命体のコア
+      en: Alien Life Core
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/alien-life-core.webp
+  yomi: イカイセイメイタイノコア
+  category: common
+  groupId: alien-life-core
+  craftLevel: 3
+- id: a-flower-yet-to-bloom
+  name:
+    locales:
+      ja: 何処かで摘まれた咲きかけの花
+      en: A Flower Yet to Bloom
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/a-flower-yet-to-bloom.webp
+  yomi: ドコカデツマレタサキカケノハナ
+  category: common
+  groupId: wanderers-blooming-flower
+  craftLevel: 1
+- id: treasured-flower
+  name:
+    locales:
+      ja: 誰かが大切にしていた花
+      en: Treasured Flower
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/treasured-flower.webp
+  yomi: ダレカガタイセツニシテイタハナ
+  category: common
+  groupId: wanderers-blooming-flower
+  craftLevel: 2
+- id: wanderers-blooming-flower
+  name:
+    locales:
+      ja: 流浪者の満開の花
+      en: Wanderer's Blooming Flower
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/wanderers-blooming-flower.webp
+  yomi: ルロウシャノマンカイノハナ
+  category: common
+  groupId: wanderers-blooming-flower
+  craftLevel: 3
+- id: feathery-fin
+  name:
+    locales:
+      ja: 翼状の羽鰭
+      en: Feathery Fin
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/feathery-fin.webp
+  yomi: ヨクジョウノハネヒレ
+  category: common
+  groupId: chasmlight-fin
+  craftLevel: 1
+- id: lunar-fin
+  name:
+    locales:
+      ja: 月光の羽鰭
+      en: Lunar Fin
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/lunar-fin.webp
+  yomi: ゲッコウノハネヒレ
+  category: common
+  groupId: chasmlight-fin
+  craftLevel: 2
+- id: chasmlight-fin
+  name:
+    locales:
+      ja: 淵光の羽鰭
+      en: Chasmlight Fin
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/chasmlight-fin.webp
+  yomi: エンコウノハネヒレ
+  category: common
+  groupId: chasmlight-fin
+  craftLevel: 3
+- id: ruined-hilt
+  name:
+    locales:
+      ja: 砕けた剣の柄
+      en: Ruined Hilt
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/ruined-hilt.webp
+  yomi: クダケタケンノエ
+  category: common
+  groupId: still-smoldering-hilt
+  craftLevel: 1
+- id: splintered-hilt
+  name:
+    locales:
+      ja: 折れた剣の柄
+      en: Splintered Hilt
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/splintered-hilt.webp
+  yomi: オレタケンノエ
+  category: common
+  groupId: still-smoldering-hilt
+  craftLevel: 2
+- id: still-smoldering-hilt
+  name:
+    locales:
+      ja: 光揺らぐ剣の柄
+      en: Still-Smoldering Hilt
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/still-smoldering-hilt.webp
+  yomi: ヒカリユラグケンノエ
+  category: common
+  groupId: still-smoldering-hilt
+  craftLevel: 3
+- id: dismal-prism
+  name:
+    locales:
+      ja: 暗色プリズム
+      en: Dismal Prism
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/dismal-prism.webp
+  yomi: アンショクプリズム
+  category: common
+  groupId: polarizing-prism
+  craftLevel: 1
+- id: crystal-prism
+  name:
+    locales:
+      ja: 水晶プリズム
+      en: Crystal Prism
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/crystal-prism.webp
+  yomi: スイショウプリズム
+  category: common
+  groupId: polarizing-prism
+  craftLevel: 2
+- id: polarizing-prism
+  name:
+    locales:
+      ja: 偏光プリズム
+      en: Polarizing Prism
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/polarizing-prism.webp
+  yomi: ヘンコウプリズム
+  category: common
+  groupId: polarizing-prism
+  craftLevel: 3
+- id: inactivated-fungal-nucleus
+  name:
+    locales:
+      ja: キノコンの衰菌核
+      en: Inactivated Fungal Nucleus
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/inactivated-fungal-nucleus.webp
+  yomi: キノコンノスイキンカク
+  category: common
+  groupId: robust-fungal-nucleus
+  craftLevel: 1
+- id: dormant-fungal-nucleus
+  name:
+    locales:
+      ja: キノコンの眠菌核
+      en: Dormant Fungal Nucleus
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/dormant-fungal-nucleus.webp
+  yomi: キノコンノミンキンカク
+  category: common
+  groupId: robust-fungal-nucleus
+  craftLevel: 2
+- id: robust-fungal-nucleus
+  name:
+    locales:
+      ja: キノコンの壮菌核
+      en: Robust Fungal Nucleus
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/robust-fungal-nucleus.webp
+  yomi: キノコンノソウキンカク
+  category: common
+  groupId: robust-fungal-nucleus
+  craftLevel: 3
+- id: mark-of-the-binding-blessing
+  name:
+    locales:
+      ja: 祝福の縛印
+      en: Mark of the Binding Blessing
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/mark-of-the-binding-blessing.webp
+  yomi: シュクフクノバクイン
+  category: elementalStone
+- id: sprayfeather-gill
+  name:
+    locales:
+      ja: 波しぶきのエラ
+      en: Sprayfeather Gill
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/sprayfeather-gill.webp
+  yomi: ナミシブキノエラ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "611"
+    center: 4797.38,-9555.25
+- id: sentrys-wooden-whistle
+  name:
+    locales:
+      ja: 従戦士の木笛
+      en: Sentry's Wooden Whistle
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/sentrys-wooden-whistle.webp
+  yomi: ジュウセンシノモクテキ
+  category: common
+  groupId: saurian-crowned-warriors-golden-whistle
+  craftLevel: 1
+- id: warriors-metal-whistle
+  name:
+    locales:
+      ja: 戦士の鉄笛
+      en: Warrior's Metal Whistle
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/warriors-metal-whistle.webp
+  yomi: センシノテツテキ
+  category: common
+  groupId: saurian-crowned-warriors-golden-whistle
+  craftLevel: 2
+- id: saurian-crowned-warriors-golden-whistle
+  name:
+    locales:
+      ja: 竜冠戦士の金笛
+      en: Saurian-Crowned Warrior's Golden Whistle
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/saurian-crowned-warriors-golden-whistle.webp
+  yomi: リュウカンセンシノキンテキ
+  category: common
+  groupId: saurian-crowned-warriors-golden-whistle
+  craftLevel: 3
+- id: teachings-of-contention
+  name:
+    locales:
+      ja: 「角逐」の教え
+      en: Teachings of Contention
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-contention.webp
+  yomi: カクチクノオシエ
+  category: talentBook
+  groupId: philosophies-of-contention
+  craftLevel: 1
+- id: guide-to-contention
+  name:
+    locales:
+      ja: 「角逐」の導き
+      en: Guide to Contention
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-contention.webp
+  yomi: カクチクノミチビキ
+  category: talentBook
+  groupId: philosophies-of-contention
+  craftLevel: 2
+- id: philosophies-of-contention
+  name:
+    locales:
+      ja: 「角逐」の哲学
+      en: Philosophies of Contention
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-contention.webp
+  yomi: カクチクノテツガク
+  category: talentBook
+  groupId: philosophies-of-contention
+  craftLevel: 3
+- id: overripe-flamegranate
+  name:
+    locales:
+      ja: フレイムグレネード·爛熟
+      en: Overripe Flamegranate
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/overripe-flamegranate.webp
+  yomi: フレイムグレネートランジュク
+  category: elementalStone
+- id: quenepa-berry
+  name:
+    locales:
+      ja: ケネパベリー
+      en: Quenepa Berry
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/quenepa-berry.webp
+  yomi: ケネパベリー
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "614"
+    center: 4530.03,-9308.76
+- id: teachings-of-conflict
+  name:
+    locales:
+      ja: 「紛争」の教え
+      en: Teachings of Conflict
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-conflict.webp
+  yomi: フンソウノオシエ
+  category: talentBook
+  groupId: philosophies-of-conflict
+  craftLevel: 1
+- id: guide-to-conflict
+  name:
+    locales:
+      ja: 「紛争」の導き
+      en: Guide to Conflict
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-conflict.webp
+  yomi: フンソウノミチビキ
+  category: talentBook
+  groupId: philosophies-of-conflict
+  craftLevel: 2
+- id: philosophies-of-conflict
+  name:
+    locales:
+      ja: 「紛争」の哲学
+      en: Philosophies of Conflict
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-conflict.webp
+  yomi: フンソウノテツガク
+  category: talentBook
+  groupId: philosophies-of-conflict
+  craftLevel: 3
+- id: saurian-claw-succulent
+  name:
+    locales:
+      ja: サウリアンサキュレント
+      en: Saurian Claw Succulent
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/saurian-claw-succulent.webp
+  yomi: サウリアンサキュレント
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "613"
+    center: 3745.75,-8856.00
+- id: juvenile-fang
+  name:
+    locales:
+      ja: 未熟な牙
+      en: Juvenile Fang
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/juvenile-fang.webp
+  yomi: ミジュクナキバ
+  category: common
+  groupId: tyrants-fang
+  craftLevel: 1
+- id: seasoned-fang
+  name:
+    locales:
+      ja: 熟練の牙
+      en: Seasoned Fang
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/seasoned-fang.webp
+  yomi: ジュクレンノキバ
+  category: common
+  groupId: tyrants-fang
+  craftLevel: 2
+- id: tyrants-fang
+  name:
+    locales:
+      ja: 覇道の牙
+      en: Tyrant's Fang
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/tyrants-fang.webp
+  yomi: ハドウノキバ
+  category: common
+  groupId: tyrants-fang
+  craftLevel: 3
+- id: teachings-of-kindling
+  name:
+    locales:
+      ja: 「焚燼」の教え
+      en: Teachings of Kindling
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/teachings-of-kindling.webp
+  yomi: フンジンノオシエ
+  category: talentBook
+  groupId: philosophies-of-kindling
+  craftLevel: 1
+- id: guide-to-kindling
+  name:
+    locales:
+      ja: 「焚燼」の導き
+      en: Guide to Kindling
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/guide-to-kindling.webp
+  yomi: フンジンノミチビキ
+  category: talentBook
+  groupId: philosophies-of-kindling
+  craftLevel: 2
+- id: philosophies-of-kindling
+  name:
+    locales:
+      ja: 「焚燼」の哲学
+      en: Philosophies of Kindling
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/philosophies-of-kindling.webp
+  yomi: フンジンノテツガク
+  category: talentBook
+  groupId: philosophies-of-kindling
+  craftLevel: 3
+- id: denial-and-judgment
+  name:
+    locales:
+      ja: 否定と裁決
+      en: Denial and Judgment
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/denial-and-judgment.webp
+  yomi: ヒテイトサイケツ
+  category: talentBoss
+- id: gold-inscribed-secret-source-core
+  name:
+    locales:
+      ja: 金紋の刻まれた源核
+      en: Gold-Inscribed Secret Source Core
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/gold-inscribed-secret-source-core.webp
+  yomi: キンモンノキザマレタゲンカク
+  category: elementalStone
+- id: brilliant-chrysanthemum
+  name:
+    locales:
+      ja: シャクギク
+      en: Brilliant Chrysanthemum
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/brilliant-chrysanthemum.webp
+  yomi: シャクギク
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "615"
+    center: "4229.72,-9802.18"
+- id: blazing-sacrificial-hearts-terror
+  name:
+    locales:
+      ja: 灼心を捧げる恐怖
+      en: Blazing Sacrificial Heart's Terror
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/blazing-sacrificial-hearts-terror.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: blazing-sacrificial-hearts-splendor
+  craftLevel: 1
+- id: blazing-sacrificial-hearts-hesitance
+  name:
+    locales:
+      ja: 灼心を捧げる躊躇
+      en: Blazing Sacrificial Heart's Hesitance
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/blazing-sacrificial-hearts-hesitance.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: blazing-sacrificial-hearts-splendor
+  craftLevel: 2
+- id: blazing-sacrificial-hearts-resolve
+  name:
+    locales:
+      ja: 灼心を捧げる決意
+      en: Blazing Sacrificial Heart's Resolve
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/blazing-sacrificial-hearts-resolve.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: blazing-sacrificial-hearts-splendor
+  craftLevel: 3
+- id: blazing-sacrificial-hearts-splendor
+  name:
+    locales:
+      ja: 灼心を捧げる栄光
+      en: Blazing Sacrificial Heart's Splendor
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/blazing-sacrificial-hearts-splendor.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: blazing-sacrificial-hearts-splendor
+  craftLevel: 4
+- id: ignited-stone
+  name:
+    locales:
+      ja: 燃え盛る石
+      en: Ignited Stone
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/ignited-stone.webp
+  yomi: ""
+  category: common
+  groupId: ignited-seeing-eye
+  craftLevel: 1
+- id: ignited-seed-of-life
+  name:
+    locales:
+      ja: 燃え盛る命の種
+      en: Ignited Seed of Life
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/ignited-seed-of-life.webp
+  yomi: ""
+  category: common
+  groupId: ignited-seeing-eye
+  craftLevel: 2
+- id: ignited-seeing-eye
+  name:
+    locales:
+      ja: 燃え盛る遊像の眼
+      en: Ignited Seeing Eye
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/ignited-seeing-eye.webp
+  yomi: ""
+  category: common
+  groupId: ignited-seeing-eye
+  craftLevel: 3
+- id: delirious-decadence-of-the-sacred-lord
+  name:
+    locales:
+      ja: 狂乱の聖主の腐敗
+      en: Delirious Decadence of the Sacred Lord
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/delirious-decadence-of-the-sacred-lord.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: delirious-divinity-of-the-sacred-lord
+  craftLevel: 1
+- id: delirious-desolation-of-the-sacred-lord
+  name:
+    locales:
+      ja: 狂乱の聖主の哀れ
+      en: Delirious Desolation of the Sacred Lord
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/delirious-desolation-of-the-sacred-lord.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: delirious-divinity-of-the-sacred-lord
+  craftLevel: 2
+- id: delirious-demeanor-of-the-sacred-lord
+  name:
+    locales:
+      ja: 狂乱の聖主の容貌
+      en: Delirious Demeanor of the Sacred Lord
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/delirious-demeanor-of-the-sacred-lord.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: delirious-divinity-of-the-sacred-lord
+  craftLevel: 3
+- id: delirious-divinity-of-the-sacred-lord
+  name:
+    locales:
+      ja: 狂乱の聖主の神面
+      en: Delirious Divinity of the Sacred Lord
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/delirious-divinity-of-the-sacred-lord.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: delirious-divinity-of-the-sacred-lord
+  craftLevel: 4
+- id: axis-of-the-secret-source
+  name:
+    locales:
+      ja: 秘源のベアリング
+      en: Axis of the Secret Source
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/axis-of-the-secret-source.webp
+  yomi: ""
+  category: common
+  groupId: heart-of-the-secret-source
+  craftLevel: 1
+- id: sheath-of-the-secret-source
+  name:
+    locales:
+      ja: 秘源のシース
+      en: Sheath of the Secret Source
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/sheath-of-the-secret-source.webp
+  yomi: ""
+  category: common
+  groupId: heart-of-the-secret-source
+  craftLevel: 2
+- id: heart-of-the-secret-source
+  name:
+    locales:
+      ja: 秘源のコア
+      en: Heart of the Secret Source
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/heart-of-the-secret-source.webp
+  yomi: ""
+  category: common
+  groupId: heart-of-the-secret-source
+  craftLevel: 3
+- id: night-winds-mystic-consideration
+  name:
+    locales:
+      ja: 神秘なる煙の思考
+      en: Night-Wind's Mystic Consideration
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/night-winds-mystic-consideration.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: night-winds-mystic-revelation
+  craftLevel: 1
+- id: night-winds-mystic-premonition
+  name:
+    locales:
+      ja: 神秘なる煙の予感
+      en: Night-Wind's Mystic Premonition
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/night-winds-mystic-premonition.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: night-winds-mystic-revelation
+  craftLevel: 2
+- id: night-winds-mystic-augury
+  name:
+    locales:
+      ja: 神秘なる煙の予兆
+      en: Night-Wind's Mystic Augury
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/night-winds-mystic-augury.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: night-winds-mystic-revelation
+  craftLevel: 3
+- id: night-winds-mystic-revelation
+  name:
+    locales:
+      ja: 神秘なる煙の啓示
+      en: Night-Wind's Mystic Revelation
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/night-winds-mystic-revelation.webp
+  yomi: ""
+  category: weaponPrimary
+  groupId: night-winds-mystic-revelation
+  craftLevel: 4
+- id: shard-of-a-shattered-will
+  name:
+    locales:
+      ja: 砕けた意志の欠片
+      en: Shard of a Shattered Will
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/shard-of-a-shattered-will.webp
+  yomi: ""
+  category: common
+  groupId: sigil-of-a-striding-will
+  craftLevel: 1
+- id: locus-of-a-clear-will
+  name:
+    locales:
+      ja: 明瞭な意志の偶像
+      en: Locus of a Clear Will
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/locus-of-a-clear-will.webp
+  yomi: ""
+  category: common
+  groupId: sigil-of-a-striding-will
+  craftLevel: 2
+- id: sigil-of-a-striding-will
+  name:
+    locales:
+      ja: 巡る意志の偶像
+      en: Sigil of a Striding Will
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/sigil-of-a-striding-will.webp
+  yomi: ""
+  category: common
+  groupId: sigil-of-a-striding-will
+  craftLevel: 3
+- id: ensnaring-gaze
+  name:
+    locales:
+      ja: 深遠と絡み合う眼差し
+      en: Ensnaring Gaze
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/ensnaring-gaze.webp
+  yomi: シンエントカラミアウマナザシ
+  category: elementalStone
+- id: withering-purpurbloom
+  name:
+    locales:
+      ja: 枯れ紫菖
+      en: Withering Purpurbloom
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/withering-purpurbloom.webp
+  yomi: カレシショウ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "655"
+    center: 2899.50,-10543.00
+- id: glowing-hornshroom
+  name:
+    locales:
+      ja: 蛍光ツノキノコ
+      en: Glowing Hornshroom
+  rarity: 1
+  imageUrl: assets/img/genshin/materials/glowing-hornshroom.webp
+  yomi: ケイコウツノキノコ
+  category: local
+  source:
+    runtimeType: teyvatMap
+    typeId: "656"
+    center: 3895.85,-10438.04
+- id: refractive-bud
+  name:
+    locales:
+      ja: 折光の胚芽
+      en: Refractive Bud
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/refractive-bud.webp
+  yomi: セッコウノハイガ
+  category: common
+  groupId: illusory-leafcoil
+  craftLevel: 1
+- id: bewildering-broadleaf
+  name:
+    locales:
+      ja: 誘光の広葉
+      en: Bewildering Broadleaf
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/bewildering-broadleaf.webp
+  yomi: ユウコウノコウヨウ
+  category: common
+  groupId: illusory-leafcoil
+  craftLevel: 2
+- id: illusory-leafcoil
+  name:
+    locales:
+      ja: 光惑う渦葉のコア
+      en: Illusory Leafcoil
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/illusory-leafcoil.webp
+  yomi: ヒカリマドウウズハノコア
+  category: common
+  groupId: illusory-leafcoil
+  craftLevel: 3
+- id: eroded-horn
+  name:
+    locales:
+      ja: 蝕滅の焔角
+      en: Eroded Horn
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/eroded-horn.webp
+  yomi: ショクメツノエンカク
+  category: talentBoss
+- id: talisman-of-the-enigmatic-land
+  name:
+    locales:
+      ja: 謎土の護符
+      en: Talisman of the Enigmatic Land
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/talisman-of-the-enigmatic-land.webp
+  yomi: メイドノゴフ
+  category: elementalStone
+- id: the-cornerstone-of-stars-and-flames
+  name:
+    locales:
+      ja: 星と炎の礎石
+      en: The Cornerstone of Stars and Flames
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/the-cornerstone-of-stars-and-flames.webp
+  yomi: ホシトホノオノソセキ
+  category: talentBoss
+  source:
+    runtimeType: text
+    text:
+      locales:
+        ja: 魔神任務、部族見聞、世界任務報酬（※週ボス素材ではありませんが、便宜上そのようにカテゴリ分けしております）
+        en: Archon Quests, Story Quests, World Quests
+- id: secret-source-airflow-accumulator
+  name:
+    locales:
+      ja: 秘源の蓄圧機
+      en: Secret Source Airflow Accumulator
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/secret-source-airflow-accumulator.webp
+  yomi: ヒゲンノチクアツキ
+  category: elementalStone
+- id: sparkless-statue-core
+  name:
+    locales:
+      ja: 龍像の無智なるコア
+      en: Sparkless Statue Core
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/sparkless-statue-core.webp
+  yomi: リュウゾウノムチナルコア
+  category: elementalStone
+- id: ascended-sample-rook
+  name:
+    locales:
+      ja: 昇揚のサンプル「ルーク」
+      en: "Ascended Sample: Rook"
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/ascended-sample-rook.webp
+  yomi: ショウヨウノサンプルルーク
+  category: talentBoss
+- id: eroded-sunfire
+  name:
+    locales:
+      ja: 蝕滅の陽炎
+      en: Eroded Sunfire
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/eroded-sunfire.webp
+  yomi: ショクメツノカゲロウ
+  category: talentBoss
+- id: dracolite
+  name:
+    locales:
+      ja: 琉鱗石
+      en: Dracolite
+  rarity: 0
+  imageUrl: assets/img/genshin/materials/dracolite.webp
+  yomi: リュウリンセキ
+  category: local
+- id: skysplit-gembloom
+  name:
+    locales:
+      ja: 岩裂の花
+      en: Skysplit Gembloom
+  rarity: 0
+  imageUrl: assets/img/genshin/materials/skysplit-gembloom.webp
+  yomi: ガンレツノハナ
+  category: local
+- id: eroded-scale-feather
+  name:
+    locales:
+      ja: 蝕滅の羽鱗
+      en: Eroded Scale-Feather
+  rarity: 5
+  imageUrl: assets/img/genshin/materials/eroded-scale-feather.webp
+  yomi: ショクメツノハリン
+  category: talentBoss
+- id: cold-cracked-shellshard
+  name:
+    locales:
+      ja: 冷えた鱗甲の欠片
+      en: Cold-Cracked Shellshard
+  rarity: 2
+  imageUrl: assets/img/genshin/materials/cold-cracked-shellshard.webp
+  yomi: ヒエタリンコウノカケラ
+  category: common
+  groupId: blazing-prismshell
+  craftLevel: 1
+- id: warm-back-shell
+  name:
+    locales:
+      ja: 熱を秘めた鱗甲
+      en: Warm Back-Shell
+  rarity: 3
+  imageUrl: assets/img/genshin/materials/warm-back-shell.webp
+  yomi: ネツヲヒメタリンコウ
+  category: common
+  groupId: blazing-prismshell
+  craftLevel: 2
+- id: blazing-prismshell
+  name:
+    locales:
+      ja: 燃える鱗甲のプリズム
+      en: Blazing Prismshell
+  rarity: 4
+  imageUrl: assets/img/genshin/materials/blazing-prismshell.webp
+  yomi: モエルリンコウノプリズム
+  category: common
+  groupId: blazing-prismshell
+  craftLevel: 3
