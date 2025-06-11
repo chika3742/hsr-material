@@ -29,3 +29,19 @@ categories:
       locales:
         ja: その他
         en: Others
+
+expItemGroups:
+  character:
+    - itemId: travelers-guide
+      expPerItem: 20000
+    - itemId: adventure-log
+      expPerItem: 5000
+    - itemId: travel-encounters
+      expPerItem: 1000
+  lightCone:
+    - itemId: refined-aether
+      expPerItem: 6000
+    - itemId: condensed-aether
+      expPerItem: 2000
+    - itemId: sparse-aether
+      expPerItem: 500

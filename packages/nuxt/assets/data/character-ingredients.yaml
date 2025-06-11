@@ -1,11 +1,3 @@
-expItems:
-  - itemId: travelers-guide
-    expPerItem: 20000
-  - itemId: adventure-log
-    expPerItem: 5000
-  - itemId: travel-encounters
-    expPerItem: 1000
-
 ingredientsTables:
   r4Base:
     purposeTypes:
@@ -13,8 +5,10 @@ ingredientsTables:
         levels:
           '20':
             - exp: 113000
+              expItemGroup: character
           '30':
             - exp: 178000
+              expItemGroup: character
             - type: common
               craftLevel: 1
               quantity: 4
@@ -22,6 +16,7 @@ ingredientsTables:
               quantity: 3200
           '40':
             - exp: 207000
+              expItemGroup: character
             - type: common
               craftLevel: 1
               quantity: 8
@@ -29,6 +24,7 @@ ingredientsTables:
               quantity: 6400
           '50':
             - exp: 390000
+              expItemGroup: character
             - type: ascension
               quantity: 2
             - type: common
@@ -38,6 +34,7 @@ ingredientsTables:
               quantity: 12800
           '60':
             - exp: 823000
+              expItemGroup: character
             - type: ascension
               quantity: 5
             - type: common
@@ -47,6 +44,7 @@ ingredientsTables:
               quantity: 32000
           '70':
             - exp: 1327000
+              expItemGroup: character
             - type: ascension
               quantity: 15
             - type: common
@@ -56,6 +54,7 @@ ingredientsTables:
               quantity: 64000
           '80':
             - exp: 2763000
+              expItemGroup: character
             - type: ascension
               quantity: 28
             - type: common
@@ -203,8 +202,10 @@ ingredientsTables:
         levels:
           '20':
             - exp: 113000
+              expItemGroup: character
           '30':
             - exp: 178000
+              expItemGroup: character
             - type: common
               craftLevel: 1
               quantity: 5
@@ -212,6 +213,7 @@ ingredientsTables:
               quantity: 4000
           '40':
             - exp: 207000
+              expItemGroup: character
             - type: common
               craftLevel: 1
               quantity: 10
@@ -219,6 +221,7 @@ ingredientsTables:
               quantity: 8000
           '50':
             - exp: 390000
+              expItemGroup: character
             - type: ascension
               quantity: 3
             - type: common
@@ -228,6 +231,7 @@ ingredientsTables:
               quantity: 16000
           '60':
             - exp: 823000
+              expItemGroup: character
             - type: ascension
               quantity: 7
             - type: common
@@ -237,6 +241,7 @@ ingredientsTables:
               quantity: 40000
           '70':
             - exp: 1327000
+              expItemGroup: character
             - type: ascension
               quantity: 20
             - type: common
@@ -246,6 +251,7 @@ ingredientsTables:
               quantity: 80000
           '80':
             - exp: 2763000
+              expItemGroup: character
             - type: ascension
               quantity: 35
             - type: common

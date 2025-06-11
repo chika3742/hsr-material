@@ -5,4 +5,8 @@ export interface MaterialsMeta {
     id: string
     title: LocalizedText
   }[]
+  expItemGroups: Record<string, {
+    itemId: string
+    expPerItem: number
+  }[]>
 }

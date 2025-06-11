@@ -18,6 +18,7 @@ export function isFixedIdIngredient(x: Ingredient): x is FixedIdIngredient {
 
 export interface ExpIngredient {
   exp: number
+  expItemGroup: string
 }
 export function isExpIngredient(x: Ingredient): x is ExpIngredient {
   return "exp" in x && typeof x.exp === "number"

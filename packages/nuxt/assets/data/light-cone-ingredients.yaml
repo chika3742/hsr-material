@@ -1,11 +1,3 @@
-expItems:
-  - itemId: refined-aether
-    expPerItem: 6000
-  - itemId: condensed-aether
-    expPerItem: 2000
-  - itemId: sparse-aether
-    expPerItem: 500
-
 ingredientsTables:
   r3Base:
     purposeTypes:
@@ -13,8 +5,10 @@ ingredientsTables:
         levels:
           '20':
             - exp: 16000
+              expItemGroup: lightCone
           '30':
             - exp: 26000
+              expItemGroup: lightCone
             - type: common
               craftLevel: 1
               quantity: 4
@@ -22,6 +16,7 @@ ingredientsTables:
               quantity: 3000
           '40':
             - exp: 36000
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 1
               quantity: 2
@@ -32,6 +27,7 @@ ingredientsTables:
               quantity: 6000
           '50':
             - exp: 55500
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 2
               quantity: 2
@@ -42,6 +38,7 @@ ingredientsTables:
               quantity: 12000
           '60':
             - exp: 86500
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 2
               quantity: 4
@@ -52,6 +49,7 @@ ingredientsTables:
               quantity: 30000
           '70':
             - exp: 131500
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 3
               quantity: 3
@@ -62,6 +60,7 @@ ingredientsTables:
               quantity: 60000
           '80':
             - exp: 248000
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 3
               quantity: 6
@@ -76,8 +75,10 @@ ingredientsTables:
         levels:
           '20':
             - exp: 21500
+              expItemGroup: lightCone
           '30':
             - exp: 34500
+              expItemGroup: lightCone
             - type: common
               craftLevel: 1
               quantity: 5
@@ -85,6 +86,7 @@ ingredientsTables:
               quantity: 4000
           '40':
             - exp: 48000
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 1
               quantity: 3
@@ -95,6 +97,7 @@ ingredientsTables:
               quantity: 8000
           '50':
             - exp: 74000
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 2
               quantity: 3
@@ -105,6 +108,7 @@ ingredientsTables:
               quantity: 16000
           '60':
             - exp: 115000
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 2
               quantity: 6
@@ -115,6 +119,7 @@ ingredientsTables:
               quantity: 40000
           '70':
             - exp: 175000
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 3
               quantity: 4
@@ -125,6 +130,7 @@ ingredientsTables:
               quantity: 80000
           '80':
             - exp: 330500
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 3
               quantity: 8
@@ -139,8 +145,10 @@ ingredientsTables:
         levels:
           '20':
             - exp: 26500
+              expItemGroup: lightCone
           '30':
             - exp: 43000
+              expItemGroup: lightCone
             - type: common
               craftLevel: 1
               quantity: 8
@@ -148,6 +156,7 @@ ingredientsTables:
               quantity: 5000
           '40':
             - exp: 59500
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 1
               quantity: 4
@@ -158,6 +167,7 @@ ingredientsTables:
               quantity: 10000
           '50':
             - exp: 92500
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 2
               quantity: 4
@@ -168,6 +178,7 @@ ingredientsTables:
               quantity: 20000
           '60':
             - exp: 143500
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 2
               quantity: 8
@@ -178,6 +189,7 @@ ingredientsTables:
               quantity: 50000
           '70':
             - exp: 218500
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 3
               quantity: 5
@@ -188,6 +200,7 @@ ingredientsTables:
               quantity: 100000
           '80':
             - exp: 413000
+              expItemGroup: lightCone
             - type: primary
               craftLevel: 3
               quantity: 10
