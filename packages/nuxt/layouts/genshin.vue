@@ -15,7 +15,9 @@
 
       <div class="d-flex flex-column h-100">
         <v-container v-safe-area="{ left: 16, right: 16 }">
-          <slot />
+          <DataProvider game="genshin">
+            <slot />
+          </DataProvider>
         </v-container>
 
         <v-spacer />
