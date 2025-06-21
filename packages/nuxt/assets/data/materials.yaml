@@ -1072,3 +1072,11 @@
   yomi: ハルカナルヨウライノオモイ
   category: advanced_skill_upgrade
   rarity: 4
+- id: invasive-clot
+  name:
+    locales:
+      ja: 侵略の結晶
+      en: Invasive Clot
+  yomi: シンリャクノケッショウ
+  category: character_ascension
+  rarity: 4
