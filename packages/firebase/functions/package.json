@@ -17,12 +17,12 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "axios": "1.7.9",
+    "axios": "1.9.0",
     "firebase-admin": "13.2.0",
     "firebase-functions": "6.3.2"
   },
   "devDependencies": {
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "private": true,
   "packageManager": "bun@1"

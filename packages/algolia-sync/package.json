@@ -14,11 +14,11 @@
     "@types/dotenv": "8.2.3",
     "@types/js-yaml": "4.0.9",
     "@types/node": "20.17.29",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "packageManager": "bun@1",
   "dependencies": {
-    "@algolia/client-search": "5.23.1",
+    "@algolia/client-search": "5.25.0",
     "dotenv": "16.4.7",
     "js-yaml": "4.1.0"
   }

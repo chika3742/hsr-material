@@ -1,5 +1,5 @@
-import type { DocumentReference, Firestore } from "@firebase/firestore"
-import { doc, getDoc, onSnapshot, setDoc, Timestamp } from "@firebase/firestore"
+import type { DocumentReference, Firestore } from "firebase/firestore"
+import { doc, getDoc, onSnapshot, setDoc, Timestamp } from "firebase/firestore"
 import type { User } from "@firebase/auth"
 import type { UserDocument } from "~/types/firestore/user-document"
 import { configStoreToSyncedConfig } from "~/types/firestore/user-document"

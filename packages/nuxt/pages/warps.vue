@@ -74,10 +74,10 @@
 </template>
 
 <script lang="ts" setup>
-import { doc, onSnapshot } from "@firebase/firestore"
+import { doc, onSnapshot } from "firebase/firestore"
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
-import _ from "lodash"
+import { groupBy } from "lodash-es"
 import type { Warp } from "#shared/warp"
 import type { WarpGettingProgress } from "#shared/warp-history-ticket"
 import { ref } from "#imports"
@@ -137,7 +137,7 @@ const warps = import.meta.client
   : ref([])
 
 const groupedWarps = computed(() => {
-  return _.groupBy(warps.value, "gachaType") as Record<string, Warp[]>
+  return groupBy(warps.value, "gachaType") as Record<string, Warp[]>
 })
 
 const getWarps = async () => {

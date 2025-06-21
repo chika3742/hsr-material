@@ -1,17 +1,28 @@
 <script lang="ts" setup>
-import _ from "lodash"
+import { groupBy } from "lodash-es"
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
 import type { Bookmark, LevelingBookmark } from "~/types/bookmark/bookmark"
-import { type CharacterIdWithVariant, purposeTypeList } from "~/types/strings"
+import { purposeTypeList } from "~/types/strings"
 import { reactive } from "#imports"
 import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
 import { db } from "~/libs/db/providers"
-import type { HsrCharacterVariant } from "~/types/data/src/characters"
+import { isCharacterGroup, type CharacterIdWithVariant } from "~/types/data/src/characters"
 import lightCones from "~/assets/data/light-cones.yaml"
+import type { LocalizedText } from "~/types/data/locales"
+import characters from "~/assets/data/characters.yaml"
+
+type CharacterIdWithVariantOrWithoutVariant = CharacterIdWithVariant | string
+
+interface BookmarkGroups {
+  characterMaterials: (Bookmark.CharacterMaterial | Bookmark.Exp)[]
+  lightCones: Record<string, (Bookmark.LightConeMaterial | Bookmark.Exp)[]>
+  relicSets: Bookmark.RelicSet[]
+  relicPieces: Bookmark.RelicPiece[]
+}
 
 interface Props {
-  characterId: CharacterIdWithVariant
+  characterId: CharacterIdWithVariantOrWithoutVariant
   showFarmingCount?: boolean
 }
 
@@ -23,19 +34,21 @@ const bookmarks = import.meta.client
     })
   : ref([])
 
-interface BookmarkGroups {
-  characterMaterials: (Bookmark.CharacterMaterial | Bookmark.Exp)[]
-  lightCones: Record<string, (Bookmark.LightConeMaterial | Bookmark.Exp)[]>
-  relicSets: Bookmark.RelicSet[]
-  relicPieces: Bookmark.RelicPiece[]
-}
-
-const charaVariant = computed<HsrCharacterVariant>(() => {
-  const result = getCharacterVariant(props.characterId)
-  if (!result) {
-    throw new Error(`Invalid characterId: ${props.characterId}`)
+const characterName = computed<LocalizedText>(() => {
+  // find normal character or character group
+  let character = characters.find(c => c.id === props.characterId)
+  if (character !== undefined) {
+    return character.name
   }
-  return result
+  // find variant
+  character = characters.find(c => c.id === toCharacterId(props.characterId))
+  if (character !== undefined && isCharacterGroup(character)) {
+    const variant = character.variants.find(v => v.variantId === toVariant(props.characterId))
+    if (variant) {
+      return variant.name
+    }
+  }
+  throw new Error(`Invalid characterId: ${props.characterId}`)
 })
 
 const groupedBookmarks = computed(() => {
@@ -84,7 +97,7 @@ const detailsDialog = reactive({
         </div>
 
         <v-list-item
-          :title="localize(charaVariant.name)"
+          :title="localize(characterName)"
           :to="$localePath({ path: `/characters/${toCharacterId(characterId)}`, query: { variant: toVariant(characterId) ?? undefined } })"
           class="d-flex flex-grow-1 pl-0"
         >
@@ -106,7 +119,7 @@ const detailsDialog = reactive({
         <section v-if="groupedBookmarks.characterMaterials.length >= 1">
           <div class="d-flex g-2 flex-wrap">
             <MaterialItem
-              v-for="(materials, mId) in _.groupBy(groupedBookmarks.characterMaterials, 'materialId') as Record<string, (Bookmark.CharacterMaterial | Bookmark.Exp)[]>"
+              v-for="(materials, mId) in groupBy(groupedBookmarks.characterMaterials, 'materialId') as Record<string, (Bookmark.CharacterMaterial | Bookmark.Exp)[]>"
               :key="mId"
               :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
               :items="materials"
@@ -143,7 +156,7 @@ const detailsDialog = reactive({
               />
               <div class="d-flex g-2 flex-wrap ml-4 mt-2">
                 <MaterialItem
-                  v-for="(materials, mId) in _.groupBy(lcMaterials, 'materialId') as Record<string, (Bookmark.LightConeMaterial | Bookmark.Exp)[]>"
+                  v-for="(materials, mId) in groupBy(lcMaterials, 'materialId') as Record<string, (Bookmark.LightConeMaterial | Bookmark.Exp)[]>"
                   :key="mId"
                   :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
                   :items="materials"

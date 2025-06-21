@@ -1,5 +1,5 @@
-import type { Functions } from "@firebase/functions"
-import { httpsCallable } from "@firebase/functions"
+import type { Functions } from "firebase/functions"
+import { httpsCallable } from "firebase/functions"
 import type { DispatchGetWarpHistoryParams, DispatchGetWarpHistoryResult } from "#shared/dispatch-get-warp-history"
 import type { GetWarpHistoryErrorCode } from "#shared/get-warp-history-error"
 

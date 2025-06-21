@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { DateTime } from "luxon"
+import type { ShowcaseContent } from "./GameDataSyncDialog.vue"
 import lightCones from "~/assets/data/light-cones.yaml"
 import { db } from "~/libs/db/providers"
 import type { ShowcaseResponse } from "~/types/showcase-response"

@@ -1,5 +1,16 @@
 # コピー用改行
 
+- date: 2025/06/21
+  version: 1.8.1
+  isMajor: false
+  isDataUpdateOnly: false
+  content: |
+    ### 仕様変更
+    - 複数の運命を持つキャラクターについて、昇格素材は全ての運命で共通のブックマークとして保存されるように変更しました。
+    
+    ### データ追加
+    - 崩壊：スターレイル v3.4に対応（プレリリース）
+
 - date: 2025/05/27
   version: 1.8.0
   isMajor: false

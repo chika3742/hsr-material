@@ -1,6 +1,6 @@
 import type { HsrRelicPosition, HsrStat } from "../data/enums"
+import type { CharacterIdWithVariant } from "../data/src/characters"
 import type { Bookmark } from "~/types/bookmark/bookmark"
-import type { CharacterIdWithVariant } from "~/types/strings"
 
 export type BookmarkableCharacterMaterial = Omit<Bookmark.CharacterMaterial, "id" | "bookmarkedAt">
 export type BookmarkableLightConeMaterial = Omit<Bookmark.LightConeMaterial, "id" | "bookmarkedAt">

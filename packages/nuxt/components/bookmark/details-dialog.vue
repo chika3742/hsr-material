@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import _ from "lodash"
+import { flatMap, groupBy, mapValues } from "lodash-es"
 import type { PurposeType } from "~/types/strings"
 import type { LevelingBookmark } from "~/types/bookmark/bookmark"
 import { materialSortFunc } from "~/utils/merge-items"
@@ -36,15 +36,15 @@ const purposes = computed(() => {
     }
   }
 
-  const grouped = _.mapValues(_purposes, bookmarks => groupByLevel(bookmarks))
+  const grouped = mapValues(_purposes, bookmarks => groupByLevel(bookmarks))
 
-  const sorted = _.mapValues(grouped, levels => _.mapValues(levels, items => items.sort(materialSortFunc)))
+  const sorted = mapValues(grouped, levels => mapValues(levels, items => items.sort(materialSortFunc)))
 
   return sorted
 })
 
 const groupByLevel = (items: LevelingBookmark[] | undefined): { [purpose: string]: LevelingBookmark[] } => {
-  return _.groupBy(items, e => e.usage.upperLevel)
+  return groupBy(items, e => e.usage.upperLevel)
 }
 
 const getSkillTitle = (item: LevelingBookmark) => {
@@ -59,7 +59,7 @@ const getSkillTitle = (item: LevelingBookmark) => {
 }
 
 const removeBookmarksInLevel = (purposeType: PurposeType, level: number) => {
-  const ids = _.flatMap(purposes.value[purposeType])?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
+  const ids = flatMap(purposes.value[purposeType])?.filter(e => e.usage.upperLevel <= level)?.map(e => e.id!)
   if (ids) {
     loadingCompleteLeveling.value = `${purposeType}-${level}`
     return db.bookmarks.remove(...ids).then((result) => {
