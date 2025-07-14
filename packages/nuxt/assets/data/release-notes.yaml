@@ -1,5 +1,13 @@
 # コピー用改行
 
+- date: 2025/07/14
+  version: 1.8.2
+  isMajor: false
+  isDataUpdateOnly: true
+  content: |
+    ### データ追加
+    - 崩壊：スターレイル v3.4に対応
+
 - date: 2025/06/21
   version: 1.8.1
   isMajor: false
