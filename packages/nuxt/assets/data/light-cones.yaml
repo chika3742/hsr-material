@@ -1925,3 +1925,188 @@
         When the wearer’s memosprite disappears, advances the wearer’s action by
         <12%>. This effect can only trigger up to 1 time, and the trigger count
         resets every time the wearer uses Ultimate.
+- id: journey-forever-peaceful
+  yomi: タビガヘイオンデアルヨウニ
+  name:
+    locales:
+      ja: 旅が平穏であるように
+      en: Journey, Forever Peaceful
+  path: preservation
+  rarity: 4
+  materials:
+    primary: group:lcs011
+    common: group:com008
+  skillDescription:
+    locales:
+      ja: 装備キャラが付与するバリアの耐久値+<12%>。味方がバリアを持つ時、与ダメージ+<12%>。
+      en: >-
+        Increases the wearer’s provided Shield Effect by <12%>. When an ally
+        target has a Shield, the DMG dealt increases by <12%>.
+- id: unto-tomorrows-morrow
+  yomi: アシタノアシタマデ
+  name:
+    locales:
+      ja: 明日の明日まで
+      en: Unto Tomorrow’s Morrow
+  path: abundance
+  rarity: 4
+  materials:
+    primary: group:tree-seeds
+    common: group:com009
+  skillDescription:
+    locales:
+      ja: 装備キャラの治癒量+<12%>。味方の残りHPが50%以上の場合、与ダメージ+<12%>。
+      en: >-
+        Increases the wearer’s Outgoing Healing by <12%>. When an ally target’s
+        current HP percentage is greater than or equal to 50%, increases the DMG
+        dealt by <12%>.
+- id: in-pursuit-of-the-wind
+  yomi: カゼヲオウトキ
+  name:
+    locales:
+      ja: 風を追う時
+      en: In Pursuit of the Wind
+  path: harmony
+  rarity: 4
+  materials:
+    primary: group:lcs010
+    common: group:lcs014
+  skillDescription:
+    locales:
+      ja: 戦闘に入った後、味方全体の弱点撃破ダメージ+<16%>。同系統のスキルは累積できない。
+      en: >-
+        After entering battle, increases all allies’ Break DMG dealt by <16%>.
+        Abilities of the same type cannot stack.
+- id: the-flower-remembers
+  yomi: ハナハワスレナイ
+  name:
+    locales:
+      ja: 花は忘れない
+      en: The Flower Remembers
+  path: remembrance
+  rarity: 4
+  materials:
+    primary: group:lcs013
+    common: group:lcs014
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<24%>。さらに装備キャラの記憶の精霊の会心ダメージ+<24%>。
+      en: >-
+        Increases the wearer’s CRIT DMG by <24%>. The CRIT DMG dealt by the
+        wearer’s memosprite increases by <24%>.
+- id: a-trail-of-bygone-blood
+  yomi: イニシエヨリウケツガレルチ
+  name:
+    locales:
+      ja: 古より受け継がれる血
+      en: A Trail of Bygone Blood
+  path: destruction
+  rarity: 4
+  materials:
+    primary: group:lcs009
+    common: group:com009
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<12%>。装備キャラの戦闘スキルダメージと必殺技ダメージ+<24%>。
+      en: >-
+        Increases the wearer’s CRIT Rate by <12%>. The Skill DMG and Ultimate
+        DMG dealt by the wearer increase by <24%>.
+- id: a-dream-scented-in-wheat
+  yomi: ムギノカオリタダヨウユメ
+  name:
+    locales:
+      ja: 麦の香り漂う夢
+      en: A Dream Scented in Wheat
+  path: erudition
+  rarity: 4
+  materials:
+    primary: group:lcs012
+    common: group:lcs014
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<12%>。装備キャラの必殺技ダメージと追加攻撃ダメージ+<24%>。
+      en: >-
+        Increases the wearer’s CRIT Rate by <12%>. The Ultimate DMG and
+        Follow-up ATK DMG dealt by the wearer increase by <24%>.
+- id: holiday-thermae-escapade
+  yomi: キュウジツノバルネアダイボウケン
+  name:
+    locales:
+      ja: 休日のバルネア大冒険
+      en: Holiday Thermae Escapade
+  path: nihility
+  rarity: 4
+  materials:
+    primary: group:lcs008
+    common: group:com009
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの与ダメージ+<16%>。装備キャラが攻撃を行った後、100%の基礎確率で攻撃を受けた敵を被ダメージアップ状態にする。状態中、敵の受けるダメージ+<10%>、2ターン継続。同系統のスキルは累積できない。
+      en: >-
+        Increases the wearer’s DMG dealt by <16%>. After the wearer attacks,
+        there is a 100% base chance that the attacked target is inflicted with
+        Vulnerability, increasing the DMG they receive by <10%> for 2 turn(s).
+        The same effect type cannot be stacked.
+- id: thus-burns-the-dawn
+  yomi: モエサカルレイメイノヨウニ
+  name:
+    locales:
+      ja: 燃え盛る黎明のように
+      en: Thus Burns the Dawn
+  path: destruction
+  rarity: 5
+  materials:
+    primary: group:lcs009
+    common: group:lcs014
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの基礎速度+<12>、ダメージを与える時、敵の防御力を<18%>無視する。装備キャラが必殺技を発動した後、「烈日」を獲得する。この効果はターンが回ってきた時に解除される。「烈日」を所持している場合、装備キャラの与ダメージ+<60%>。
+      en: >-
+        The wearer’s base SPD increases by <12>. When the wearer deals DMG,
+        ignores <18%> of the target’s DEF. After the wearer uses Ultimate,
+        obtains “Blazing Sun,” which is removed at the start of their turn.
+        While “Blazing Sun” is in possession, increases the wearer’s DMG dealt
+        by <60%>.
+- id: a-thankless-coronation
+  yomi: ムクワレヌタイカン
+  name:
+    locales:
+      ja: 報われぬ戴冠
+      en: A Thankless Coronation
+  path: destruction
+  rarity: 5
+  materials:
+    primary: group:lcs009
+    common: group:com001
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの会心ダメージ+<36%>。必殺技を発動する時、装備キャラの攻撃力+<40%>、2ターン継続。なお、装備キャラの最大EPが300以上の場合、自身の最大EP10%分のEPを回復し、追加で装備キャラの攻撃力+<40%>、2ターン継続。
+      en: >-
+        Increases the wearer’s CRIT DMG by <36%>. When using Ultimate, increases
+        the wearer’s ATK by <40%>, and if the wearer’s Max Energy is greater
+        than or equal to 300, regenerates a fixed amount of Energy equal to 10%
+        of the wearer’s Max Energy and once again increases the wearer’s ATK by
+        <40%>, lasting for 2 turns.
+- id: the-hell-where-ideals-burn
+  yomi: リソウヲヤクナラクデ
+  name:
+    locales:
+      ja: 理想を焼く奈落で
+      en: The Hell Where Ideals Burn
+  path: the_hunt
+  rarity: 5
+  materials:
+    primary: group:zzP0
+    common: group:com002
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの会心率+<16%>。戦闘に入る時、味方の最大SPが6以上の場合、装備キャラの攻撃力+<40%>。装備キャラが戦闘スキルを発動するたびに、装備キャラの攻撃力+<10%>、最大4層まで累積できる。
+      en: >-
+        Increases the wearer’s CRIT Rate by <16%>. When entering battle and if
+        the allies’ Skill Points max limit is 6 or higher, increases the
+        wearer’s ATK by <40%>. After the wearer uses a Skill, increases their
+        ATK by <10%>, stacking up to 4 time(s).
