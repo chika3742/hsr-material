@@ -198,7 +198,9 @@ warpsPage:
   warp: Warp | Warps
   warpTypes:
     11: Character Event Warp
+    21: Character Collaboration Warp
     12: Light Cone Event Warp
+    22: Light Cone Collaboration Warp
     1: Standard Warp
   urlInput: URL Input
   get: "Get Warps"
@@ -236,6 +238,10 @@ warpsPage:
     ## About This Feature
 
     This feature automatically fetches warp history from the game and displays the pity count. To use this, you need to get the URL below.
+    
+    **Prob of Getting ☆5 in the Next 10 Pulls** refers to the chance of obtaining at least one ★5 item in the upcoming
+    10 attempts, based on the number of past attempts. This calculation takes into account the soft pity system, but
+    it is based on estimation and may differ from the actual probabilities. 
 
     ## About Security
 

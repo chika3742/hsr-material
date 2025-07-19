@@ -115,11 +115,25 @@ const warpTypes: {
     singleProb: 0.006,
   },
   {
+    type: "21",
+    title: i18n.t("warpsPage.warpTypes.21"),
+    star5Pity: 90,
+    pseudoPityBorder: 73,
+    singleProb: 0.006,
+  },
+  {
     type: "12",
     title: i18n.t("warpsPage.warpTypes.12"),
     star5Pity: 80,
     pseudoPityBorder: 63,
-    singleProb: 0.007,
+    singleProb: 0.008,
+  },
+  {
+    type: "22",
+    title: i18n.t("warpsPage.warpTypes.22"),
+    star5Pity: 80,
+    pseudoPityBorder: 63,
+    singleProb: 0.008,
   },
   {
     type: "1",
