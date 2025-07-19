@@ -5,7 +5,7 @@ import type { Warp } from "../types/shared/warp"
 import { GetWarpHistoryError } from "../types/shared/get-warp-history-error.js"
 
 export class GachaLogRequest {
-  static readonly warpTypes = [11, 12, 1]
+  static readonly warpTypes = [11, 21, 12, 22, 1]
 
   private processedCount = 0
 
