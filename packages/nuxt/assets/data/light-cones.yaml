@@ -2110,3 +2110,26 @@
         the allies’ Skill Points max limit is 6 or higher, increases the
         wearer’s ATK by <40%>. After the wearer uses a Skill, increases their
         ATK by <10%>, stacking up to 4 time(s).
+- id: earthly-escapade
+  yomi: ジンセイハアソビ
+  name:
+    locales:
+      ja: 人生は遊び
+      en: Earthly Escapade
+  path: harmony
+  rarity: 5
+  materials:
+    primary: group:lcs010
+    common: group:com008
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの会心ダメージ+<32%>。戦闘開始時、装備キャラは「仮面」を獲得する、3ターン継続。装備キャラに「仮面」がある時、装備キャラ以外の味方の会心率+<10%>、会心ダメージ+<28%>。装備キャラがSPを1回復するたびに、「虹色の炎」を1層獲得する（SPを回復する際、上限を超えた分もカウントされる）。「虹色の炎」が4層に達した後、すべての「虹色の炎」を解除し、「仮面」を獲得する、4ターン継続。
+      en: >-
+        Increases the wearer’s CRIT DMG by <32%>. At the start of the battle,
+        the wearer gains Mask, lasting for 3 turn(s). While the wearer has Mask,
+        the wearer’s teammates have their CRIT Rate increased by <10%> and their
+        CRIT DMG increased by <28%>. For every 1 Skill Point the wearer recovers
+        (including Skill Points that exceed the limit), they gain 1 stack of
+        Radiant Flame. And when the wearer has 4 stacks of Radiant Flame, all
+        the stacks are removed, and they gain Mask, lasting for 4 turn(s).
