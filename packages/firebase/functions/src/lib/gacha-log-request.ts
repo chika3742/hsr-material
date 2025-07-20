@@ -4,8 +4,37 @@ import type { GetWarpHistoryParams } from "../types/get-warp-history-params"
 import type { Warp } from "../types/shared/warp"
 import { GetWarpHistoryError } from "../types/shared/get-warp-history-error.js"
 
+interface WarpType {
+  gachaType: string
+  endpoint: string
+}
+
+const getGachaLogEndpoint = "https://public-operation-hkrpg-sg.hoyoverse.com/common/gacha_record/api/getGachaLog"
+const getLdGachaLogEndpoint = "https://public-operation-hkrpg-sg.hoyoverse.com/common/gacha_record/api/getLdGachaLog"
+
 export class GachaLogRequest {
-  static readonly warpTypes = [11, 12, 1]
+  static readonly warpTypes: WarpType[] = [
+    {
+      gachaType: "11",
+      endpoint: getGachaLogEndpoint,
+    },
+    {
+      gachaType: "21",
+      endpoint: getLdGachaLogEndpoint,
+    },
+    {
+      gachaType: "12",
+      endpoint: getGachaLogEndpoint,
+    },
+    {
+      gachaType: "22",
+      endpoint: getLdGachaLogEndpoint,
+    },
+    {
+      gachaType: "1",
+      endpoint: getGachaLogEndpoint,
+    },
+  ]
 
   private processedCount = 0
 
@@ -25,14 +54,14 @@ export class GachaLogRequest {
       this.onProgress({
         "progress.gachaTypeCount": count,
       })
-      result.push(...await this.getGachaLogForWarpType(warpType.toString()))
+      result.push(...await this.getGachaLogForWarpType(warpType))
     }
 
     return result
   }
 
-  async getGachaLogForWarpType(warpType: string): Promise<Warp[]> {
-    const lastId = this.params.lastIds[warpType]
+  async getGachaLogForWarpType(warpType: WarpType): Promise<Warp[]> {
+    const lastId = this.params.lastIds[warpType.gachaType]
     const result: Warp[] = []
     let endLoop = false
     let lastIdTemp: string | null = null
@@ -41,7 +70,9 @@ export class GachaLogRequest {
     let has4Star = false
 
     while (!endLoop) {
-      const list: Warp[] = await this.sendGachaLogRequest(warpType, lastIdTemp)
+      const list: Warp[] = await this.sendGachaLogRequest(warpType.endpoint, warpType.gachaType, lastIdTemp)
+
+      await sleep(1000)
 
       if (list.length === 0) {
         break
@@ -73,15 +104,12 @@ export class GachaLogRequest {
       this.onProgress({
         "progress.gachaCount": this.processedCount,
       })
-
-      await sleep(1000)
     }
 
     return result.reverse()
   }
 
-  private async sendGachaLogRequest(warpType: string, lastId: string | null): Promise<Warp[]> {
-    const endpoint = "https://public-operation-hkrpg-sg.hoyoverse.com/common/gacha_record/api/getGachaLog"
+  private async sendGachaLogRequest(endpoint: string, warpType: string, lastId: string | null): Promise<Warp[]> {
     const params = {
       authkey_ver: "1",
       sign_type: "2",

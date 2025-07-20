@@ -198,7 +198,9 @@ warpsPage:
   warp: Warp | Warps
   warpTypes:
     11: Character Event Warp
+    21: Character Collaboration Warp
     12: Light Cone Event Warp
+    22: Light Cone Collaboration Warp
     1: Standard Warp
   urlInput: URL Input
   get: "Get Warps"
@@ -207,7 +209,7 @@ warpsPage:
   preparing: Preparing...
   invalidUrl: Invalid URL
   getPityHistory: Show Pity History
-  getPityHistoryDesc: If enabled, all history of the past 6 months will be fetched and you can check the pity count history of ☆4/☆5. However, it takes more to fetch the first time. You need to clear the warp history to change this setting.
+  getPityHistoryDesc: If enabled, all history of the past 6 months (24 months for collaboration warps) will be fetched and you can check the pity count history of ☆4/☆5. However, it takes more to fetch the first time. You need to clear the warp history to change this setting.
   noNewWarps: No new warp found. If you just pulled, please try again in up to 1 hour.
   fetched: "Fetched {n} @:{'warpsPage.warp'}"
   clearDialog: Do you want to clear all warp history?
@@ -236,6 +238,10 @@ warpsPage:
     ## About This Feature
 
     This feature automatically fetches warp history from the game and displays the pity count. To use this, you need to get the URL below.
+    
+    **Prob of Getting ☆5 in the Next 10 Pulls** refers to the chance of obtaining at least one ★5 item in the upcoming
+    10 attempts, based on the number of past attempts. This calculation takes into account the soft pity system, but
+    it is based on estimation and may differ from the actual probabilities. 
 
     ## About Security
 
