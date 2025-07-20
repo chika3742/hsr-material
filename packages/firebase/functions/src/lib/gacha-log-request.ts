@@ -72,6 +72,8 @@ export class GachaLogRequest {
     while (!endLoop) {
       const list: Warp[] = await this.sendGachaLogRequest(warpType.endpoint, warpType.gachaType, lastIdTemp)
 
+      await sleep(1000)
+
       if (list.length === 0) {
         break
       }
@@ -102,8 +104,6 @@ export class GachaLogRequest {
       this.onProgress({
         "progress.gachaCount": this.processedCount,
       })
-
-      await sleep(1000)
     }
 
     return result.reverse()
