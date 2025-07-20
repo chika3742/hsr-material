@@ -207,7 +207,7 @@ warpsPage:
   progress: "取得済みの跳躍数: {gachaCount} ({gachaTypeCount}/{gachaTypeTotal})"
   preparing: 履歴取得の準備をしています...
   getPityHistory: 天井カウントの履歴を表示
-  getPityHistoryDesc: オンにすると過去6ヶ月の全ての履歴を取得し、☆4/☆5天井カウントの履歴を確認できますが、初回の取得に時間がかかります。変更するには、跳躍履歴をクリアする必要があります。
+  getPityHistoryDesc: オンにすると過去6ヶ月（コラボ跳躍は24ヶ月）の全ての履歴を取得し、☆4/☆5天井カウントの履歴を確認できますが、初回の取得に時間がかかります。変更するには、跳躍履歴をクリアする必要があります。
   noNewWarps: 新しい跳躍はありません。引いたばかりの場合は、最長1時間後に再度お試しください。
   fetched: "{n} 件の跳躍を取得しました。"
   clearDialog: "跳躍履歴をすべて削除しますか？"

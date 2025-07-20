@@ -209,7 +209,7 @@ warpsPage:
   preparing: Preparing...
   invalidUrl: Invalid URL
   getPityHistory: Show Pity History
-  getPityHistoryDesc: If enabled, all history of the past 6 months will be fetched and you can check the pity count history of ☆4/☆5. However, it takes more to fetch the first time. You need to clear the warp history to change this setting.
+  getPityHistoryDesc: If enabled, all history of the past 6 months (24 months for collaboration warps) will be fetched and you can check the pity count history of ☆4/☆5. However, it takes more to fetch the first time. You need to clear the warp history to change this setting.
   noNewWarps: No new warp found. If you just pulled, please try again in up to 1 hour.
   fetched: "Fetched {n} @:{'warpsPage.warp'}"
   clearDialog: Do you want to clear all warp history?
