@@ -2636,3 +2636,73 @@
         locales:
           ja: 心眼（真）
           en: Mind's Eye (True)
+- id: cerydra
+  name:
+    locales:
+      ja: ケリュドラ
+      en: Cerydra
+  yomi: ケリュドラ
+  rarity: 5
+  path: harmony
+  combatType: wind
+  materials:
+    ascension: id:charred-bud-of-twilight
+    skills: group:lcs010
+    skillsAdvanced: id:daythunder-anamnesis
+    common: group:lcs014
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 征け、兵は神速を尊ぶ
+          en: King's Castling
+    skill:
+      name:
+        locales:
+          ja: 名を馳せよ、歩兵も将の器
+          en: Pawn's Promotion
+    ultimate:
+      name:
+        locales:
+          ja: 世は盤上、チェックメイト
+          en: Scholar's Mate
+    talent:
+      name:
+        locales:
+          ja: 栄光をカイザーに
+          en: Ave Imperator
+- id: hysilens
+  name:
+    locales:
+      ja: セイレンス
+      en: Hysilens
+  yomi: セイレンス
+  rarity: 5
+  path: nihility
+  combatType: physical
+  materials:
+    ascension: id:invasive-clot
+    skills: group:lcs008
+    skillsAdvanced: id:daythunder-anamnesis
+    common: group:com009
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 短調、止水に響く
+          en: 'Aeolian Mode: Echoes in Still Waters'
+    skill:
+      name:
+        locales:
+          ja: 倍音、暗流の先の斉唱
+          en: 'Overtone Hum: Chorus After Dark Tides'
+    ultimate:
+      name:
+        locales:
+          ja: 絶海の渦潮、呑魂の舞曲
+          en: Maelstrom Rhapsody
+    talent:
+      name:
+        locales:
+          ja: セイレーンの歓歌
+          en: Sirenic Serenade
