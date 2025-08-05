@@ -1080,3 +1080,11 @@
   yomi: シンリャクノケッショウ
   category: character_ascension
   rarity: 4
+- id: charred-bud-of-twilight
+  name:
+    locales:
+      ja: 夕焼けの蕾
+      en: Charred Bud of Twilight
+  yomi: ユウヤケノツボミ
+  category: character_ascension
+  rarity: 4
