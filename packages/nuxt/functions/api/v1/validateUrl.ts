@@ -1,6 +1,6 @@
 import type { GetWarpHistoryErrorCode } from "~/../firebase/functions/src/types/shared/get-warp-history-error"
 
-export const onRequest = async (context: any) => {
+export const onRequest: PagesFunction = async (context) => {
   if (context.request.method !== "GET") {
     return new Response(null, {
       status: 405,
@@ -21,8 +21,8 @@ export const onRequest = async (context: any) => {
     lang: "ja",
     game_biz: "hkrpg_global",
     size: "20",
-    authkey: reqUrl.searchParams.get("authKey") || "",
-    region: reqUrl.searchParams.get("region") || "",
+    authkey: reqUrl.searchParams.get("authKey"),
+    region: reqUrl.searchParams.get("region"),
     gacha_type: "11",
     end_id: "0",
   }
@@ -38,7 +38,7 @@ export const onRequest = async (context: any) => {
     })
   }
 
-  const result = await fetchResult.json() as { retcode: number }
+  const result = await fetchResult.json<{ retcode: number }>()
 
   const response: { success: boolean, errorCode?: GetWarpHistoryErrorCode } = (() => {
     switch (result.retcode) {
