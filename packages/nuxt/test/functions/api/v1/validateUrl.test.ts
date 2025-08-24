@@ -165,9 +165,11 @@ describe("validateUrl API endpoint", () => {
       await onRequest(context)
       
       expect(fetchMock).toHaveBeenCalledTimes(1)
-      const callArgs = fetchMock.mock.calls[0][0] as string
-      expect(callArgs).toContain("authkey=myAuthKey123")
-      expect(callArgs).toContain("region=os_usa")
+      const callArgs = fetchMock.mock.calls[0][0]
+      // Convert URL object to string if needed
+      const urlString = callArgs instanceof URL ? callArgs.toString() : String(callArgs)
+      expect(urlString).toContain("authkey=myAuthKey123")
+      expect(urlString).toContain("region=os_usa")
     })
 
     it("should call the correct API endpoint", async () => {
@@ -178,10 +180,12 @@ describe("validateUrl API endpoint", () => {
       await onRequest(context)
       
       expect(fetchMock).toHaveBeenCalledTimes(1)
-      const callArgs = fetchMock.mock.calls[0][0] as string
-      expect(callArgs).toContain("https://public-operation-hkrpg-sg.hoyoverse.com/common/gacha_record/api/getGachaLog")
-      expect(callArgs).toContain("authkey_ver=1")
-      expect(callArgs).toContain("game_biz=hkrpg_global")
+      const callArgs = fetchMock.mock.calls[0][0]
+      // Convert URL object to string if needed
+      const urlString = callArgs instanceof URL ? callArgs.toString() : String(callArgs)
+      expect(urlString).toContain("https://public-operation-hkrpg-sg.hoyoverse.com/common/gacha_record/api/getGachaLog")
+      expect(urlString).toContain("authkey_ver=1")
+      expect(urlString).toContain("game_biz=hkrpg_global")
     })
   })
 })

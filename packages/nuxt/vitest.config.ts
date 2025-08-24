@@ -12,6 +12,7 @@ export default defineConfig({
     alias: {
       '~': resolve(__dirname, './'),
       '#shared': resolve(__dirname, '../../firebase/functions/src/types/shared')
-    }
+    },
+    extensions: ['.ts', '.js', '.json', '.yaml']
   }
 })

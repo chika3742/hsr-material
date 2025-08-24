@@ -1,8 +1,8 @@
 import { isArray } from "lodash-es"
 import materials from "~/assets/data/materials.yaml"
 
-import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
-import { isBookmarkableExp } from "~/types/bookmark/bookmarkables"
+import type { BookmarkableIngredient } from "../types/bookmark/bookmarkables"
+import { isBookmarkableExp } from "../types/bookmark/bookmarkables"
 
 /**
  * Merges items in the list with the same material IDs and returns an array of arrays.
