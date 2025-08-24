@@ -2133,3 +2133,44 @@
         (including Skill Points that exceed the limit), they gain 1 stack of
         Radiant Flame. And when the wearer has 4 stacks of Radiant Flame, all
         the stacks are removed, and they gain Mask, lasting for 4 turn(s).
+- id: why-does-the-ocean-sing
+  yomi: ウミノウタハナニガタメ
+  name:
+    locales:
+      ja: 海の歌は何がため
+      en: Why Does the Ocean Sing
+  path: nihility
+  rarity: 5
+  materials:
+    primary: group:lcs008
+    common: group:com009
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの効果命中+<40%>。装備キャラが敵にデバフを付与した時、80%の基礎確率でその敵を「魂迷」状態にする。3ターン継続。なお、同系統のスキルは累積できない。「魂迷」状態の敵は、装備キャラにデバフを1つ付与されるごとに、受ける持続ダメージ+<5%>、この効果は最大で6層累積できる。味方が「魂迷」状態の敵を攻撃すると、その味方の速度+<10%>、3ターン継続。装備キャラが戦闘不能状態になると、すべての「魂迷」をクリアする。
+      en: >-
+        Increases the wearer’s Effect Hit Rate by <40%>. When an enemy target
+        gets inflicted with a debuff by the wearer, there is a 80% base chance
+        for them to enter “Enthrallment,” lasting for 3 turn(s). Effects of the
+        same type cannot stack. While the target is in “Enthrallment,” for every
+        1 debuff applied by the wearer on the target, increases the target’s
+        received DoT by <5%>, stacking up to 6 time(s). When the target gets
+        attacked by an ally, increases the attacker’s SPD by <10%> for 3
+        turn(s). When the wearer gets knocked down, removes all “Enthrallment.”
+- id: the-forever-victual
+  yomi: エイエンノメイキョウゴハン
+  name:
+    locales:
+      ja: 永遠の迷境ごはん
+      en: The Forever Victual
+  path: harmony
+  rarity: 4
+  materials:
+    primary: group:lcs010
+    common: group:com009
+  skillDescription:
+    locales:
+      ja: 装備キャラの攻撃力+<16%>。装備キャラが戦闘スキルを発動した後、攻撃力+<8%>、この効果は最大で3層累積できる。
+      en: >-
+        Increases the wearer’s ATK by <16%>. After the wearer uses Skill,
+        increases ATK by <8%>, stacking up to 3 times.
