@@ -10,7 +10,7 @@ describe("levelIngredientsToSliderTicks", () => {
 
   it("should return [1, level] for single level ingredient", () => {
     const levelIngredients: LevelIngredients[] = [
-      { level: 20, ingredients: [] }
+      { level: 20, ingredients: [] },
     ]
     const result = levelIngredientsToSliderTicks(levelIngredients)
     expect(result).toEqual([1, 20])
@@ -23,7 +23,7 @@ describe("levelIngredientsToSliderTicks", () => {
       { level: 50, ingredients: [] },
       { level: 60, ingredients: [] },
       { level: 70, ingredients: [] },
-      { level: 80, ingredients: [] }
+      { level: 80, ingredients: [] },
     ]
     const result = levelIngredientsToSliderTicks(levelIngredients)
     expect(result).toEqual([1, 20, 40, 50, 60, 70, 80])
@@ -34,7 +34,7 @@ describe("levelIngredientsToSliderTicks", () => {
       { level: 80, ingredients: [] },
       { level: 20, ingredients: [] },
       { level: 60, ingredients: [] },
-      { level: 40, ingredients: [] }
+      { level: 40, ingredients: [] },
     ]
     const result = levelIngredientsToSliderTicks(levelIngredients)
     expect(result).toEqual([1, 80, 20, 60, 40])
@@ -44,7 +44,7 @@ describe("levelIngredientsToSliderTicks", () => {
     const levelIngredients: LevelIngredients[] = [
       { level: 20, ingredients: [] },
       { level: 20, ingredients: [] },
-      { level: 40, ingredients: [] }
+      { level: 40, ingredients: [] },
     ]
     const result = levelIngredientsToSliderTicks(levelIngredients)
     expect(result).toEqual([1, 20, 20, 40])

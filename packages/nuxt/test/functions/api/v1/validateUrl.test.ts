@@ -12,21 +12,21 @@ describe("validateUrl API endpoint", () => {
   const createMockRequest = (url: string, method: string = "GET") => ({
     request: {
       method,
-      url
-    }
+      url,
+    },
   }) as any
 
   const createMockResponse = (retcode: number) => ({
     ok: true,
-    json: async () => ({ retcode })
+    json: async () => ({ retcode }),
   } as Response)
 
   describe("HTTP method validation", () => {
     it("should return 405 for non-GET requests", async () => {
       const context = createMockRequest("http://localhost/test", "POST")
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(405)
     })
 
@@ -34,9 +34,9 @@ describe("validateUrl API endpoint", () => {
       const context = createMockRequest("http://localhost/test?authKey=test&region=test")
       const fetchMock = vi.mocked(fetch)
       fetchMock.mockResolvedValueOnce(createMockResponse(0))
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).not.toBe(405)
     })
   })
@@ -44,25 +44,25 @@ describe("validateUrl API endpoint", () => {
   describe("Parameter validation", () => {
     it("should return 400 when authKey is missing", async () => {
       const context = createMockRequest("http://localhost/test?region=os_usa")
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(400)
     })
 
     it("should return 400 when region is missing", async () => {
       const context = createMockRequest("http://localhost/test?authKey=test123")
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(400)
     })
 
     it("should return 400 when both parameters are missing", async () => {
       const context = createMockRequest("http://localhost/test")
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(400)
     })
   })
@@ -73,11 +73,11 @@ describe("validateUrl API endpoint", () => {
       const fetchMock = vi.mocked(fetch)
       fetchMock.mockResolvedValueOnce({
         ok: false,
-        status: 500
+        status: 500,
       } as Response)
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(500)
     })
 
@@ -85,13 +85,13 @@ describe("validateUrl API endpoint", () => {
       const context = createMockRequest("http://localhost/test?authKey=test&region=test")
       const fetchMock = vi.mocked(fetch)
       fetchMock.mockResolvedValueOnce(createMockResponse(0))
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(200)
       const responseData = await response.json()
       expect(responseData).toEqual({
-        success: true
+        success: true,
       })
     })
 
@@ -99,14 +99,14 @@ describe("validateUrl API endpoint", () => {
       const context = createMockRequest("http://localhost/test?authKey=test&region=test")
       const fetchMock = vi.mocked(fetch)
       fetchMock.mockResolvedValueOnce(createMockResponse(-101))
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(200)
       const responseData = await response.json()
       expect(responseData).toEqual({
         success: false,
-        errorCode: "authKeyExpired"
+        errorCode: "authKeyExpired",
       })
     })
 
@@ -114,14 +114,14 @@ describe("validateUrl API endpoint", () => {
       const context = createMockRequest("http://localhost/test?authKey=test&region=test")
       const fetchMock = vi.mocked(fetch)
       fetchMock.mockResolvedValueOnce(createMockResponse(-100))
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(200)
       const responseData = await response.json()
       expect(responseData).toEqual({
         success: false,
-        errorCode: "authKeyInvalid"
+        errorCode: "authKeyInvalid",
       })
     })
 
@@ -129,14 +129,14 @@ describe("validateUrl API endpoint", () => {
       const context = createMockRequest("http://localhost/test?authKey=test&region=test")
       const fetchMock = vi.mocked(fetch)
       fetchMock.mockResolvedValueOnce(createMockResponse(-110))
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(200)
       const responseData = await response.json()
       expect(responseData).toEqual({
         success: false,
-        errorCode: "tooManyRequests"
+        errorCode: "tooManyRequests",
       })
     })
 
@@ -144,14 +144,14 @@ describe("validateUrl API endpoint", () => {
       const context = createMockRequest("http://localhost/test?authKey=test&region=test")
       const fetchMock = vi.mocked(fetch)
       fetchMock.mockResolvedValueOnce(createMockResponse(-999))
-      
+
       const response = await onRequest(context)
-      
+
       expect(response.status).toBe(200)
       const responseData = await response.json()
       expect(responseData).toEqual({
         success: false,
-        errorCode: "internal"
+        errorCode: "internal",
       })
     })
   })
@@ -161,9 +161,9 @@ describe("validateUrl API endpoint", () => {
       const context = createMockRequest("http://localhost/test?authKey=myAuthKey123&region=os_usa")
       const fetchMock = vi.mocked(fetch)
       fetchMock.mockResolvedValueOnce(createMockResponse(0))
-      
+
       await onRequest(context)
-      
+
       expect(fetchMock).toHaveBeenCalledTimes(1)
       const callArgs = fetchMock.mock.calls[0][0]
       // Convert URL object to string if needed
@@ -176,9 +176,9 @@ describe("validateUrl API endpoint", () => {
       const context = createMockRequest("http://localhost/test?authKey=test&region=test")
       const fetchMock = vi.mocked(fetch)
       fetchMock.mockResolvedValueOnce(createMockResponse(0))
-      
+
       await onRequest(context)
-      
+
       expect(fetchMock).toHaveBeenCalledTimes(1)
       const callArgs = fetchMock.mock.calls[0][0]
       // Convert URL object to string if needed

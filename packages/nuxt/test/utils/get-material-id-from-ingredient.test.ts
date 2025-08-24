@@ -10,21 +10,21 @@ vi.mock("~/assets/data/materials.yaml", () => ({
     { id: "common-mat-3", groupId: "common-group", craftLevel: 3 },
     { id: "primary-mat-1", groupId: "primary-group", craftLevel: 1 },
     { id: "primary-mat-2", groupId: "primary-group", craftLevel: 2 },
-  ]
+  ],
 }))
 
 describe("getMaterialIdFromIngredient", () => {
   const mockMaterialDefs = {
-    "common": "group:common-group",
-    "primary": "group:primary-group", 
-    "ascension": "id:ascension-material",
-    "skills": "id:skill-material"
+    common: "group:common-group",
+    primary: "group:primary-group",
+    ascension: "id:ascension-material",
+    skills: "id:skill-material",
   }
 
   describe("ExpIngredient handling", () => {
     it("should throw error for ExpIngredient", () => {
       const ingredient: Ingredient = { exp: 1000 }
-      
+
       expect(() => getMaterialIdFromIngredient(ingredient, mockMaterialDefs))
         .toThrow("ExpIngredient is unsupported in this function")
     })
@@ -32,11 +32,11 @@ describe("getMaterialIdFromIngredient", () => {
 
   describe("FixedIdIngredient handling", () => {
     it("should return fixedId for FixedIdIngredient", () => {
-      const ingredient: Ingredient = { 
-        fixedId: "fixed-material-id", 
-        quantity: 5 
+      const ingredient: Ingredient = {
+        fixedId: "fixed-material-id",
+        quantity: 5,
       }
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs)
       expect(result).toBe("fixed-material-id")
     })
@@ -49,10 +49,10 @@ describe("getMaterialIdFromIngredient", () => {
         quantity: 10,
         craftLevel: 2,
         overrides: {
-          "special-character": "special-material-id"
-        }
+          "special-character": "special-material-id",
+        },
       }
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs, "special-character")
       expect(result).toBe("special-material-id")
     })
@@ -63,10 +63,10 @@ describe("getMaterialIdFromIngredient", () => {
         quantity: 10,
         craftLevel: 2,
         overrides: {
-          "other-character": "special-material-id"
-        }
+          "other-character": "special-material-id",
+        },
       }
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs, "target-character")
       expect(result).toBe("common-mat-2")
     })
@@ -77,10 +77,10 @@ describe("getMaterialIdFromIngredient", () => {
         quantity: 10,
         craftLevel: 2,
         overrides: {
-          "special-character": "special-material-id"
-        }
+          "special-character": "special-material-id",
+        },
       }
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs)
       expect(result).toBe("common-mat-2")
     })
@@ -91,9 +91,9 @@ describe("getMaterialIdFromIngredient", () => {
       const ingredient: Ingredient = {
         type: "unknown" as any,
         quantity: 5,
-        craftLevel: 1
+        craftLevel: 1,
       }
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs)
       expect(result).toBeNull()
     })
@@ -101,9 +101,9 @@ describe("getMaterialIdFromIngredient", () => {
     it("should return direct ID for id-type definition", () => {
       const ingredient: Ingredient = {
         type: "ascension",
-        quantity: 5
+        quantity: 5,
       }
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs)
       expect(result).toBe("ascension-material")
     })
@@ -112,9 +112,9 @@ describe("getMaterialIdFromIngredient", () => {
       const ingredient: Ingredient = {
         type: "common",
         quantity: 10,
-        craftLevel: 1
+        craftLevel: 1,
       }
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs)
       expect(result).toBe("common-mat-1")
     })
@@ -123,9 +123,9 @@ describe("getMaterialIdFromIngredient", () => {
       const ingredient: Ingredient = {
         type: "primary",
         quantity: 8,
-        craftLevel: 2
+        craftLevel: 2,
       }
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs)
       expect(result).toBe("primary-mat-2")
     })
@@ -134,23 +134,23 @@ describe("getMaterialIdFromIngredient", () => {
       const ingredient: Ingredient = {
         type: "common",
         quantity: 10,
-        craftLevel: 999 // Non-existent craft level
+        craftLevel: 999, // Non-existent craft level
       }
-      
+
       expect(() => getMaterialIdFromIngredient(ingredient, mockMaterialDefs))
         .toThrow("Material not found for group common-group and craft level 999")
     })
 
     it("should throw error for invalid definition format", () => {
       const invalidDefs = {
-        "invalid": "invalid-format"
+        invalid: "invalid-format",
       }
-      
+
       const ingredient: Ingredient = {
         type: "invalid" as any,
-        quantity: 5
+        quantity: 5,
       }
-      
+
       expect(() => getMaterialIdFromIngredient(ingredient, invalidDefs))
         .toThrow("Parsing def error")
     })
@@ -158,14 +158,14 @@ describe("getMaterialIdFromIngredient", () => {
     it("should throw error for group definition without craftLevel", () => {
       const ingredient: Ingredient = {
         type: "ascension",
-        quantity: 5
+        quantity: 5,
         // Missing craftLevel for group type
       }
-      
+
       const groupDefs = {
-        "ascension": "group:some-group"
+        ascension: "group:some-group",
       }
-      
+
       expect(() => getMaterialIdFromIngredient(ingredient, groupDefs))
         .toThrow("Parsing def error")
     })
@@ -177,9 +177,9 @@ describe("getMaterialIdFromIngredient", () => {
         type: "common",
         quantity: 10,
         craftLevel: 1,
-        overrides: {}
+        overrides: {},
       }
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs, "any-character")
       expect(result).toBe("common-mat-1")
     })
@@ -187,9 +187,9 @@ describe("getMaterialIdFromIngredient", () => {
     it("should handle undefined type in TypedIngredient", () => {
       const ingredient = {
         type: undefined,
-        quantity: 5
+        quantity: 5,
       } as any
-      
+
       const result = getMaterialIdFromIngredient(ingredient, mockMaterialDefs)
       expect(result).toBeNull()
     })

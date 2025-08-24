@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest"
-import { 
-  toCharacterIdWithVariant, 
-  toCharacterId, 
-  toVariant 
+import {
+  toCharacterIdWithVariant,
+  toCharacterId,
+  toVariant,
 } from "../../utils/to-character-id-with-variant"
 
 describe("toCharacterIdWithVariant", () => {
