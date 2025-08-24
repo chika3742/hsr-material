@@ -139,7 +139,8 @@ describe("WarpsApi", () => {
       const { httpsCallable } = await import("firebase/functions")
       const mockCallable = vi.fn().mockResolvedValueOnce({
         data: { ticket: "test-ticket-123" },
-      })
+      }) as any
+      mockCallable.stream = vi.fn()
 
       vi.mocked(httpsCallable).mockReturnValueOnce(mockCallable)
 

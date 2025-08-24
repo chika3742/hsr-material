@@ -11,7 +11,7 @@ describe("levelsToLevelIngredients", () => {
 
   it("should convert single level", () => {
     const mockIngredients: Ingredient[] = [
-      { type: "character_exp", quantity: 1000 },
+      { fixedId: "travel-encounters", quantity: 1000 },
     ]
     const levels: EachLevels<Ingredient[]>["levels"] = {
       20: mockIngredients,
@@ -27,14 +27,14 @@ describe("levelsToLevelIngredients", () => {
 
   it("should convert multiple levels", () => {
     const ingredientsL20: Ingredient[] = [
-      { type: "character_exp", quantity: 1000 },
+      { fixedId: "travel-encounters", quantity: 1000 },
     ]
     const ingredientsL40: Ingredient[] = [
-      { type: "character_exp", quantity: 2000 },
-      { type: "credit", quantity: 5000 },
+      { fixedId: "adventure-log", quantity: 2000 },
+      { fixedId: "credit", quantity: 5000 },
     ]
     const ingredientsL60: Ingredient[] = [
-      { type: "character_exp", quantity: 3000 },
+      { fixedId: "travelers-guide", quantity: 3000 },
     ]
 
     const levels: EachLevels<Ingredient[]>["levels"] = {
@@ -52,9 +52,9 @@ describe("levelsToLevelIngredients", () => {
   })
 
   it("should handle unsorted level keys", () => {
-    const ingredientsL80: Ingredient[] = [{ type: "character_exp", quantity: 4000 }]
-    const ingredientsL20: Ingredient[] = [{ type: "character_exp", quantity: 1000 }]
-    const ingredientsL60: Ingredient[] = [{ type: "character_exp", quantity: 3000 }]
+    const ingredientsL80: Ingredient[] = [{ fixedId: "travelers-guide", quantity: 4000 }]
+    const ingredientsL20: Ingredient[] = [{ fixedId: "travel-encounters", quantity: 1000 }]
+    const ingredientsL60: Ingredient[] = [{ fixedId: "adventure-log", quantity: 3000 }]
 
     const levels: EachLevels<Ingredient[]>["levels"] = {
       80: ingredientsL80,
@@ -84,7 +84,7 @@ describe("levelsToLevelIngredients", () => {
   })
 
   it("should convert level strings to numbers correctly", () => {
-    const ingredients: Ingredient[] = [{ type: "character_exp", quantity: 1000 }]
+    const ingredients: Ingredient[] = [{ fixedId: "travel-encounters", quantity: 1000 }]
     const levels: EachLevels<Ingredient[]>["levels"] = {
       0: ingredients, // Edge case: level 0
       1: ingredients, // Single digit

@@ -48,7 +48,7 @@ export const useConfigStore = defineStore("config", {
      * If the theme is set to `auto`, it will return `dark` or `light` depending on the user's OS settings.
      * Otherwise, it will return the theme set in app.
      */
-    getCurrentTheme() {
+    getCurrentTheme(this: any) {
       if (this.theme === "auto") {
         if (import.meta.client) {
           return window.matchMedia("(prefers-color-scheme: dark)").matches
