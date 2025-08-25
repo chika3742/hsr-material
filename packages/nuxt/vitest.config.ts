@@ -9,6 +9,7 @@ export default defineConfig({
     globals: true,
     include: ["test/**/*.test.ts"],
     exclude: ["node_modules", ".nuxt"],
+    setupFiles: ["./test/setup.ts"],
   },
   resolve: {
     alias: {

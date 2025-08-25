@@ -1,345 +1,332 @@
-import { describe, expect, it } from "vitest"
+import { describe, expect, it, vi } from "vitest"
+import { mount } from "@vue/test-utils"
+import AppDrawer from "../../../components/app/AppDrawer.vue"
 import type { DrawerItemOrDivider } from "../../../components/app/AppDrawer.vue"
 
-describe("AppDrawer Component Types and Interface", () => {
-  describe("DrawerItem Type", () => {
-    it("should define correct DrawerItem interface", () => {
-      // Test the basic required properties
-      const minimalItem: DrawerItemOrDivider = {
-        icon: "mdi-home",
-        title: "Home"
-      }
+// Mock useDisplay composable before importing the component
+vi.mock("vuetify", () => ({
+  useDisplay: () => ({
+    mobile: { value: false },
+    xs: { value: false },
+    sm: { value: false },
+    md: { value: true },
+    lg: { value: false },
+    xl: { value: false },
+    xxl: { value: false },
+  }),
+}))
 
-      expect(typeof minimalItem).toBe('object')
-      expect(typeof minimalItem.icon).toBe('string')
-      expect(typeof minimalItem.title).toBe('string')
+describe("AppDrawer Component", () => {
+  const defaultProps = {
+    modelValue: true,
+    drawerItems: [
+      { icon: "mdi-home", title: "Home", to: "/home" },
+      "---" as const,
+      { icon: "mdi-settings", title: "Settings", to: "/settings" },
+    ] satisfies DrawerItemOrDivider[],
+  }
+
+  const mountOptions = {
+    global: {
+      provide: {
+        // Provide Vuetify display injection with correct symbol
+        [Symbol.for('vuetify:display')]: {
+          mobile: { value: false },
+          xs: { value: false },
+          sm: { value: false },
+          md: { value: true },
+          lg: { value: false },
+          xl: { value: false },
+          xxl: { value: false },
+        },
+      },
+    },
+  }
+
+  describe("Component Mounting and Rendering", () => {
+    it("should mount successfully", () => {
+      const wrapper = mount(AppDrawer, {
+        props: defaultProps,
+        ...mountOptions,
+      })
+
+      expect(wrapper.exists()).toBe(true)
+      // Test that the component renders some content
+      expect(wrapper.html()).toContain('v-navigation-drawer')
     })
 
-    it("should handle DrawerItem with all optional properties", () => {
-      const fullItem: DrawerItemOrDivider = {
-        icon: "mdi-settings",
-        title: "Settings",
-        to: "/settings",
-        href: "https://example.com",
+    it("should apply safe area directive", () => {
+      const wrapper = mount(AppDrawer, {
+        props: defaultProps,
+        ...mountOptions,
+      })
+
+      const safeAreaDiv = wrapper.find("div")
+      expect(safeAreaDiv.exists()).toBe(true)
+      // The directive should be applied
+      expect(safeAreaDiv.element.style.paddingTop).toBe("max(env(safe-area-inset-top), 0px)")
+      expect(safeAreaDiv.element.style.paddingLeft).toBe("max(env(safe-area-inset-left), 0px)")
+    })
+
+    it("should render with modelValue", () => {
+      const wrapper = mount(AppDrawer, {
+        props: defaultProps,
+        ...mountOptions,
+      })
+
+      // Check that modelValue is passed to the navigation drawer stub
+      expect(wrapper.html()).toContain('model-value="true"')
+    })
+  })
+
+  describe("Props Handling", () => {
+    it("should handle different modelValue", () => {
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, modelValue: false },
+        ...mountOptions,
+      })
+
+      expect(wrapper.html()).toContain('model-value="false"')
+    })
+
+    it("should render drawer items in template", () => {
+      const testItems: DrawerItemOrDivider[] = [
+        { icon: "mdi-home", title: "Home", to: "/home" },
+        { icon: "mdi-info", title: "About", href: "https://example.com", target: "_blank" },
+      ]
+
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: testItems },
+        ...mountOptions,
+      })
+
+      // Check that items are rendered in the template
+      expect(wrapper.html()).toContain('mdi-home')
+      expect(wrapper.html()).toContain('Home')
+      expect(wrapper.html()).toContain('mdi-info')
+      expect(wrapper.html()).toContain('About')
+    })
+
+    it("should handle dividers in template", () => {
+      const testItems: DrawerItemOrDivider[] = [
+        { icon: "mdi-home", title: "Home" },
+        "---",
+        { icon: "mdi-settings", title: "Settings" },
+      ]
+
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: testItems },
+        ...mountOptions,
+      })
+
+      // Should render items and dividers
+      expect(wrapper.html()).toContain('mdi-home')
+      expect(wrapper.html()).toContain('mdi-settings')
+      expect(wrapper.html()).toContain('v-divider')
+    })
+
+    it("should handle empty drawer items", () => {
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: [] },
+        ...mountOptions,
+      })
+
+      // Should still render the basic structure
+      expect(wrapper.exists()).toBe(true)
+      expect(wrapper.html()).toContain('v-navigation-drawer')
+    })
+  })
+
+  describe("Event Handling", () => {
+    it("should handle update:modelValue event", async () => {
+      const wrapper = mount(AppDrawer, {
+        props: defaultProps,
+        ...mountOptions,
+      })
+
+      // Find the v-navigation-drawer stub and emit an event
+      const navigationDrawer = wrapper.find('[model-value="true"]')
+      await navigationDrawer.trigger('update:model-value', false)
+
+      // Should emit the update:modelValue event
+      expect(wrapper.emitted()).toHaveProperty('update:modelValue')
+    })
+
+    it("should handle onClick for items", () => {
+      const mockOnClick = vi.fn()
+      const testItems: DrawerItemOrDivider[] = [
+        { icon: "mdi-action", title: "Action", onClick: mockOnClick },
+      ]
+
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: testItems },
+        ...mountOptions,
+      })
+
+      // The component should have the onClick function in its props data
+      expect(wrapper.vm.drawerItems[0]).toHaveProperty('onClick')
+      expect(typeof (wrapper.vm.drawerItems[0] as any).onClick).toBe('function')
+    })
+  })
+
+  describe("Component Lifecycle and Data", () => {
+    it("should handle mounting correctly", () => {
+      // Test that the component mounts without errors
+      expect(() => {
+        mount(AppDrawer, {
+          props: defaultProps,
+          ...mountOptions,
+        })
+      }).not.toThrow()
+    })
+
+    it("should access component data correctly", () => {
+      const wrapper = mount(AppDrawer, {
+        props: defaultProps,
+        ...mountOptions,
+      })
+
+      // Test that component has expected props
+      expect(wrapper.vm.modelValue).toBe(true)
+      expect(wrapper.vm.drawerItems).toHaveLength(3)
+      expect(wrapper.vm.drawerItems[0]).toEqual({ icon: "mdi-home", title: "Home", to: "/home" })
+      expect(wrapper.vm.drawerItems[1]).toBe("---")
+    })
+  })
+
+  describe("Drawer Item Types and Navigation", () => {
+    it("should handle navigation items with $localePath", () => {
+      const testItems: DrawerItemOrDivider[] = [
+        { icon: "mdi-home", title: "Home", to: "/home" },
+      ]
+
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: testItems },
+        ...mountOptions,
+      })
+
+      // Should process the 'to' property through $localePath
+      expect(wrapper.html()).toContain('/home')
+    })
+
+    it("should handle external links", () => {
+      const testItems: DrawerItemOrDivider[] = [
+        { icon: "mdi-link", title: "External", href: "https://example.com", target: "_blank" },
+      ]
+
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: testItems },
+        ...mountOptions,
+      })
+
+      expect(wrapper.html()).toContain('https://example.com')
+      expect(wrapper.html()).toContain('_blank')
+    })
+
+    it("should handle action items", () => {
+      const mockCallback = vi.fn()
+      const testItems: DrawerItemOrDivider[] = [
+        { icon: "mdi-action", title: "Action", onClick: mockCallback },
+      ]
+
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: testItems },
+        ...mountOptions,
+      })
+
+      expect(wrapper.vm.drawerItems[0]).toHaveProperty('onClick')
+    })
+  })
+
+  describe("Edge Cases", () => {
+    it("should handle items with special characters", () => {
+      const testItems: DrawerItemOrDivider[] = [
+        { icon: "mdi-test", title: "Special: éñü", to: "/special-chars_123" },
+      ]
+
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: testItems },
+        ...mountOptions,
+      })
+
+      expect(wrapper.html()).toContain('Special: éñü')
+      expect(wrapper.html()).toContain('/special-chars_123')
+    })
+
+    it("should handle arrays with only dividers", () => {
+      const testItems: DrawerItemOrDivider[] = ["---", "---", "---"]
+
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: testItems },
+        ...mountOptions,
+      })
+
+      expect(wrapper.vm.drawerItems).toHaveLength(3)
+      expect(wrapper.vm.drawerItems.every(item => item === "---")).toBe(true)
+    })
+
+    it("should handle mixed content patterns", () => {
+      const testItems: DrawerItemOrDivider[] = [
+        { icon: "mdi-start", title: "Start" },
+        "---",
+        { icon: "mdi-middle", title: "Middle" },
+        "---",
+        { icon: "mdi-end", title: "End" },
+      ]
+
+      const wrapper = mount(AppDrawer, {
+        props: { ...defaultProps, drawerItems: testItems },
+        ...mountOptions,
+      })
+
+      expect(wrapper.vm.drawerItems).toHaveLength(5)
+      expect(wrapper.html()).toContain('mdi-start')
+      expect(wrapper.html()).toContain('mdi-middle')
+      expect(wrapper.html()).toContain('mdi-end')
+      expect(wrapper.html()).toContain('v-divider')
+    })
+  })
+
+  describe("Type Safety and Interface Validation", () => {
+    it("should correctly type DrawerItem interface", () => {
+      const validItem: DrawerItemOrDivider = {
+        icon: "mdi-test",
+        title: "Test Item",
+        to: "/test",
+        href: "https://test.com",
         target: "_blank",
-        onClick: () => {}
+        onClick: () => {},
       }
 
-      expect(typeof fullItem).toBe('object')
-      expect(typeof fullItem.icon).toBe('string')
-      expect(typeof fullItem.title).toBe('string')
-      expect(typeof fullItem.to).toBe('string')
-      expect(typeof fullItem.href).toBe('string')
-      expect(typeof fullItem.target).toBe('string')
-      expect(typeof fullItem.onClick).toBe('function')
+      expect(typeof validItem).toBe('object')
+      if (typeof validItem === 'object') {
+        expect(typeof validItem.icon).toBe('string')
+        expect(typeof validItem.title).toBe('string')
+        expect(typeof validItem.to).toBe('string')
+        expect(typeof validItem.href).toBe('string')
+        expect(typeof validItem.target).toBe('string')
+        expect(typeof validItem.onClick).toBe('function')
+      }
     })
 
-    it("should handle divider strings", () => {
+    it("should correctly type divider strings", () => {
       const divider: DrawerItemOrDivider = "---"
-      
       expect(typeof divider).toBe('string')
       expect(divider).toBe("---")
     })
 
-    it("should validate mixed array of items and dividers", () => {
+    it("should handle mixed arrays correctly", () => {
       const mixedItems: DrawerItemOrDivider[] = [
-        {
-          icon: "mdi-home",
-          title: "Home",
-          to: "/home"
-        },
+        { icon: "mdi-home", title: "Home" },
         "---",
-        {
-          icon: "mdi-settings",
-          title: "Settings",
-          href: "https://example.com"
-        },
-        "---",
-        {
-          icon: "mdi-info",
-          title: "About"
-        }
+        { icon: "mdi-settings", title: "Settings" },
       ]
 
       expect(Array.isArray(mixedItems)).toBe(true)
-      expect(mixedItems).toHaveLength(5)
-      
-      // Check first item
+      expect(mixedItems).toHaveLength(3)
       expect(typeof mixedItems[0]).toBe('object')
-      if (typeof mixedItems[0] === 'object') {
-        expect(mixedItems[0].icon).toBe("mdi-home")
-        expect(mixedItems[0].title).toBe("Home")
-        expect(mixedItems[0].to).toBe("/home")
-      }
-      
-      // Check divider
-      expect(mixedItems[1]).toBe("---")
-      
-      // Check second item
+      expect(typeof mixedItems[1]).toBe('string')
       expect(typeof mixedItems[2]).toBe('object')
-      if (typeof mixedItems[2] === 'object') {
-        expect(mixedItems[2].icon).toBe("mdi-settings")
-        expect(mixedItems[2].href).toBe("https://example.com")
-      }
-    })
-  })
-
-  describe("Component Props Interface", () => {
-    it("should define correct props structure", () => {
-      interface ExpectedProps {
-        modelValue: boolean
-        drawerItems: DrawerItemOrDivider[]
-      }
-
-      const validProps: ExpectedProps = {
-        modelValue: true,
-        drawerItems: [
-          {
-            icon: "mdi-home",
-            title: "Home"
-          }
-        ]
-      }
-
-      expect(typeof validProps.modelValue).toBe('boolean')
-      expect(Array.isArray(validProps.drawerItems)).toBe(true)
-    })
-
-    it("should handle boolean modelValue variations", () => {
-      const testCases = [
-        { modelValue: true, expected: true },
-        { modelValue: false, expected: false }
-      ]
-
-      testCases.forEach(({ modelValue, expected }) => {
-        expect(typeof modelValue).toBe('boolean')
-        expect(modelValue).toBe(expected)
-      })
-    })
-
-    it("should handle empty drawer items array", () => {
-      const emptyItems: DrawerItemOrDivider[] = []
-      
-      expect(Array.isArray(emptyItems)).toBe(true)
-      expect(emptyItems).toHaveLength(0)
-    })
-  })
-
-  describe("Component Events Interface", () => {
-    it("should define correct emit types", () => {
-      interface ExpectedEmits {
-        (e: "update:modelValue", value: boolean): void
-      }
-
-      const mockEmit: ExpectedEmits = (event, value) => {
-        expect(event).toBe("update:modelValue")
-        expect(typeof value).toBe('boolean')
-      }
-
-      // Test emitting different boolean values
-      mockEmit("update:modelValue", true)
-      mockEmit("update:modelValue", false)
-    })
-  })
-
-  describe("DrawerItem Variations", () => {
-    it("should handle navigation items", () => {
-      const navItem: DrawerItemOrDivider = {
-        icon: "mdi-home",
-        title: "Home",
-        to: "/home"
-      }
-
-      expect(typeof navItem).toBe('object')
-      if (typeof navItem === 'object') {
-        expect(navItem.to).toBe("/home")
-        expect(navItem.href).toBeUndefined()
-        expect(navItem.onClick).toBeUndefined()
-      }
-    })
-
-    it("should handle external link items", () => {
-      const linkItem: DrawerItemOrDivider = {
-        icon: "mdi-link",
-        title: "External Link",
-        href: "https://example.com",
-        target: "_blank"
-      }
-
-      expect(typeof linkItem).toBe('object')
-      if (typeof linkItem === 'object') {
-        expect(linkItem.href).toBe("https://example.com")
-        expect(linkItem.target).toBe("_blank")
-        expect(linkItem.to).toBeUndefined()
-        expect(linkItem.onClick).toBeUndefined()
-      }
-    })
-
-    it("should handle action items with onClick", () => {
-      const actionCallback = () => "test action"
-      const actionItem: DrawerItemOrDivider = {
-        icon: "mdi-action",
-        title: "Action Item",
-        onClick: actionCallback
-      }
-
-      expect(typeof actionItem).toBe('object')
-      if (typeof actionItem === 'object') {
-        expect(typeof actionItem.onClick).toBe('function')
-        expect(actionItem.onClick).toBe(actionCallback)
-        expect(actionItem.to).toBeUndefined()
-        expect(actionItem.href).toBeUndefined()
-      }
-    })
-  })
-
-  describe("Edge Cases and Validation", () => {
-    it("should handle items with special characters", () => {
-      const specialItem: DrawerItemOrDivider = {
-        icon: "mdi-special",
-        title: "Special Characters: éñü",
-        to: "/special-path-with-chars_123"
-      }
-
-      expect(typeof specialItem).toBe('object')
-      if (typeof specialItem === 'object') {
-        expect(specialItem.title).toContain('é')
-        expect(specialItem.title).toContain('ñ')
-        expect(specialItem.title).toContain('ü')
-        expect(specialItem.to).toContain('_')
-      }
-    })
-
-    it("should handle long strings", () => {
-      const longItem: DrawerItemOrDivider = {
-        icon: "mdi-very-long-icon-name-with-many-characters",
-        title: "Very Long Title That Contains Many Characters And Might Overflow",
-        to: "/very/long/path/with/many/segments/that/might/be/problematic",
-        href: "https://example.com/very/long/url/with/many/segments/and/parameters?param1=value1&param2=value2",
-        target: "_blank"
-      }
-
-      expect(typeof longItem).toBe('object')
-      if (typeof longItem === 'object') {
-        expect(longItem.icon.length).toBeGreaterThan(10)
-        expect(longItem.title.length).toBeGreaterThan(20)
-        expect(longItem.to && longItem.to.length).toBeGreaterThan(10)
-        expect(longItem.href && longItem.href.length).toBeGreaterThan(20)
-      }
-    })
-
-    it("should handle arrays with only dividers", () => {
-      const onlyDividers: DrawerItemOrDivider[] = ["---", "---", "---"]
-      
-      expect(Array.isArray(onlyDividers)).toBe(true)
-      expect(onlyDividers).toHaveLength(3)
-      onlyDividers.forEach(item => {
-        expect(item).toBe("---")
-      })
-    })
-
-    it("should handle arrays with mixed content patterns", () => {
-      const patterns = [
-        // Empty array
-        [],
-        // Only items
-        [
-          { icon: "mdi-1", title: "Item 1" },
-          { icon: "mdi-2", title: "Item 2" }
-        ],
-        // Only dividers
-        ["---", "---"],
-        // Mixed
-        [
-          { icon: "mdi-start", title: "Start" },
-          "---",
-          { icon: "mdi-middle", title: "Middle" },
-          "---",
-          { icon: "mdi-end", title: "End" }
-        ]
-      ]
-
-      patterns.forEach(pattern => {
-        expect(Array.isArray(pattern)).toBe(true)
-        pattern.forEach(item => {
-          expect(typeof item === 'object' || typeof item === 'string').toBe(true)
-        })
-      })
-    })
-  })
-
-  describe("Type Safety and Constraints", () => {
-    it("should enforce required properties", () => {
-      // These should compile successfully with TypeScript
-      const validItems: DrawerItemOrDivider[] = [
-        { icon: "mdi-test", title: "Test" }, // minimal required
-        { icon: "mdi-full", title: "Full", to: "/test", href: "https://test.com", target: "_blank", onClick: () => {} } // all properties
-      ]
-
-      validItems.forEach(item => {
-        if (typeof item === 'object') {
-          expect(typeof item.icon).toBe('string')
-          expect(typeof item.title).toBe('string')
-        }
-      })
-    })
-
-    it("should validate icon string format", () => {
-      const iconFormats = [
-        "mdi-home",
-        "mdi-settings",
-        "mdi-account-circle",
-        "ms:history", // material symbols format
-        "custom-icon"
-      ]
-
-      iconFormats.forEach(icon => {
-        expect(typeof icon).toBe('string')
-        expect(icon.length).toBeGreaterThan(0)
-      })
-    })
-
-    it("should validate URL formats for href", () => {
-      const urls = [
-        "https://example.com",
-        "http://test.com",
-        "https://github.com/user/repo",
-        "https://ko-fi.com/user",
-        "/relative/path", // relative URLs should also work
-        "#anchor", // anchor links
-        "mailto:test@example.com" // other protocols
-      ]
-
-      urls.forEach(url => {
-        expect(typeof url).toBe('string')
-        expect(url.length).toBeGreaterThan(0)
-      })
-    })
-
-    it("should validate path formats for to", () => {
-      const paths = [
-        "/",
-        "/home",
-        "/settings",
-        "/user/profile",
-        "/path/with-dashes",
-        "/path_with_underscores",
-        "/path123/with456/numbers789"
-      ]
-
-      paths.forEach(path => {
-        expect(typeof path).toBe('string')
-        expect(path.startsWith('/')).toBe(true)
-      })
-    })
-
-    it("should validate target attribute values", () => {
-      const targets = ["_blank", "_self", "_parent", "_top"]
-      
-      targets.forEach(target => {
-        expect(typeof target).toBe('string')
-        expect(target.startsWith('_')).toBe(true)
-      })
     })
   })
 })

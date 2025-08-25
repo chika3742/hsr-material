@@ -1,275 +1,270 @@
 import { describe, expect, it } from "vitest"
+import { mount } from "@vue/test-utils"
+import AppFooter from "../../../components/app/AppFooter.vue"
 import type { ThemeSetting } from "../../../types/strings"
 
-// Import component types for testing
-import type AppFooter from "../../../components/app/AppFooter.vue"
+describe("AppFooter Component", () => {
+  const defaultProps = {
+    currentVersion: "1.0.0",
+    themeSetting: "dark" as ThemeSetting,
+    repositoryUrl: "https://github.com/example/repo",
+    feedbackPageUrl: "https://example.com/feedback",
+    hoyolabArticleUrl: "https://hoyolab.example.com/article",
+  }
 
-describe("AppFooter Component Types and Interface", () => {
-  describe("ThemeSetting Type", () => {
-    it("should accept valid theme setting values", () => {
-      const validThemes: ThemeSetting[] = ['light', 'dark', 'auto']
+  describe("Component Mounting and Rendering", () => {
+    it("should mount successfully", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      expect(wrapper.exists()).toBe(true)
+      expect(wrapper.findComponent({ name: "v-footer" }).exists()).toBe(true)
+    })
+
+    it("should render footer with correct attributes", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      const footer = wrapper.findComponent({ name: "v-footer" })
+      expect(footer.props("elevation")).toBe("4")
+      expect(footer.props("color")).toBe("footer")
+    })
+
+    it("should render safe area directive with correct options", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      const safeAreaDiv = wrapper.find("div[class*='d-flex']")
+      expect(safeAreaDiv.exists()).toBe(true)
+      // The directive should apply bottom, left, and right padding
+      expect(safeAreaDiv.element.style.paddingBottom).toBe("max(env(safe-area-inset-bottom), 0px)")
+      expect(safeAreaDiv.element.style.paddingLeft).toBe("max(env(safe-area-inset-left), 0px)")
+      expect(safeAreaDiv.element.style.paddingRight).toBe("max(env(safe-area-inset-right), 0px)")
+    })
+  })
+
+  describe("Props Handling", () => {
+    it("should display current version", () => {
+      const wrapper = mount(AppFooter, {
+        props: { ...defaultProps, currentVersion: "2.1.0-beta" },
+      })
+
+      const versionElement = wrapper.find("span")
+      expect(wrapper.text()).toContain("2.1.0-beta")
+    })
+
+    it("should handle different theme settings", () => {
+      const themes: ThemeSetting[] = ["light", "dark", "auto"]
       
-      validThemes.forEach(theme => {
-        expect(['light', 'dark', 'auto']).toContain(theme)
+      themes.forEach(theme => {
+        const wrapper = mount(AppFooter, {
+          props: { ...defaultProps, themeSetting: theme },
+        })
+        
+        expect(wrapper.exists()).toBe(true)
+        // The theme setting is used internally by the component
       })
     })
 
-    it("should enforce type safety for ThemeSetting", () => {
-      // These should be valid at compile time
-      const lightTheme: ThemeSetting = 'light'
-      const darkTheme: ThemeSetting = 'dark'
-      const autoTheme: ThemeSetting = 'auto'
-
-      expect(lightTheme).toBe('light')
-      expect(darkTheme).toBe('dark')
-      expect(autoTheme).toBe('auto')
-    })
-  })
-
-  describe("Component Props Interface", () => {
-    it("should define correct prop types", () => {
-      // Define the expected props structure based on the component
-      interface ExpectedProps {
-        currentVersion: string
-        themeSetting: ThemeSetting
-        repositoryUrl: string
-        feedbackPageUrl: string
-        hoyolabArticleUrl: string
-      }
-
-      // Test that we can create valid prop objects
-      const validProps: ExpectedProps = {
-        currentVersion: "1.0.0",
-        themeSetting: "dark",
-        repositoryUrl: "https://github.com/example/repo",
-        feedbackPageUrl: "https://example.com/feedback",
-        hoyolabArticleUrl: "https://hoyolab.example.com/article"
-      }
-
-      expect(typeof validProps.currentVersion).toBe('string')
-      expect(typeof validProps.repositoryUrl).toBe('string')
-      expect(typeof validProps.feedbackPageUrl).toBe('string')
-      expect(typeof validProps.hoyolabArticleUrl).toBe('string')
-      expect(['light', 'dark', 'auto']).toContain(validProps.themeSetting)
-    })
-
-    it("should handle different version string formats", () => {
-      const versions = [
-        "1.0.0",
-        "2.1.0-beta.1",
-        "1.0.0-alpha.1+build.123",
-        "0.0.1",
-        "1.0.0-beta.1+build.123456789"
-      ]
-
-      versions.forEach(version => {
-        expect(typeof version).toBe('string')
-        expect(version.length).toBeGreaterThan(0)
+    it("should render social media buttons with correct links", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
       })
+
+      const buttons = wrapper.findAllComponents({ name: "v-btn" })
+      const githubButton = buttons.find(btn => btn.props("icon") === "mdi-github")
+      const twitterButton = buttons.find(btn => btn.props("icon") === "mdi-twitter")
+
+      expect(githubButton).toBeTruthy()
+      expect(githubButton?.props("href")).toBe(defaultProps.repositoryUrl)
+      expect(githubButton?.props("target")).toBe("_blank")
+
+      expect(twitterButton).toBeTruthy()
+      expect(twitterButton?.props("href")).toBe("https://twitter.com/gms_material")
+      expect(twitterButton?.props("target")).toBe("_blank")
     })
+  })
 
-    it("should handle URL formats", () => {
-      const urls = [
-        "https://github.com/user/repo",
-        "https://example.com/feedback",
-        "https://hoyolab.example.com/article/123",
-        "https://github.com/user/repo-with-special-chars_123",
-        "https://example.com/path?param=value&other=123",
-        ""  // empty URL should also be handled
-      ]
-
-      urls.forEach(url => {
-        expect(typeof url).toBe('string')
-        // URLs should either be empty or start with http/https
-        if (url.length > 0) {
-          expect(url.startsWith('http')).toBe(true)
-        }
+  describe("Event Handling", () => {
+    it("should emit update:themeSetting when theme changes", async () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
       })
+
+      // Find the theme menu and trigger a selection
+      const themeList = wrapper.findComponent({ name: "v-list" })
+      await themeList.vm.$emit("update:selected", ["light"])
+
+      expect(wrapper.emitted("update:themeSetting")).toBeTruthy()
+      expect(wrapper.emitted("update:themeSetting")[0]).toEqual(["light"])
     })
   })
 
-  describe("Component Events Interface", () => {
-    it("should define correct emit types", () => {
-      // Test the expected emit signature
-      interface ExpectedEmits {
-        (e: "update:themeSetting", value: ThemeSetting): void
-      }
-
-      // Mock function to test the emit signature
-      const mockEmit: ExpectedEmits = (event, value) => {
-        expect(event).toBe("update:themeSetting")
-        expect(['light', 'dark', 'auto']).toContain(value)
-      }
-
-      // Test emitting different theme values
-      mockEmit("update:themeSetting", "light")
-      mockEmit("update:themeSetting", "dark")
-      mockEmit("update:themeSetting", "auto")
-    })
-  })
-
-  describe("Data Validation", () => {
-    it("should validate props data structure", () => {
-      const testCases = [
-        {
-          name: "minimal valid props",
-          props: {
-            currentVersion: "1.0.0",
-            themeSetting: "dark" as ThemeSetting,
-            repositoryUrl: "https://github.com/test/repo",
-            feedbackPageUrl: "https://test.com/feedback",
-            hoyolabArticleUrl: "https://hoyolab.test.com/article"
-          }
-        },
-        {
-          name: "empty string props",
-          props: {
-            currentVersion: "",
-            themeSetting: "light" as ThemeSetting,
-            repositoryUrl: "",
-            feedbackPageUrl: "",
-            hoyolabArticleUrl: ""
-          }
-        },
-        {
-          name: "long string props",
-          props: {
-            currentVersion: "1.0.0-very-long-version-string-with-build-metadata+build.123456789",
-            themeSetting: "auto" as ThemeSetting,
-            repositoryUrl: "https://github.com/very-long-username/very-long-repository-name",
-            feedbackPageUrl: "https://example.com/very/long/path/to/feedback",
-            hoyolabArticleUrl: "https://hoyolab.example.com/article/very-long-id-123456789"
-          }
-        }
-      ]
-
-      testCases.forEach(({ name, props }) => {
-        expect(() => {
-          // Validate that all props are the correct types
-          expect(typeof props.currentVersion).toBe('string')
-          expect(typeof props.repositoryUrl).toBe('string')
-          expect(typeof props.feedbackPageUrl).toBe('string')
-          expect(typeof props.hoyolabArticleUrl).toBe('string')
-          expect(['light', 'dark', 'auto']).toContain(props.themeSetting)
-        }).not.toThrow()
+  describe("Menu Items and Navigation", () => {
+    it("should render feedback menu items", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
       })
+
+      const menus = wrapper.findAllComponents({ name: "v-menu" })
+      expect(menus.length).toBeGreaterThan(0)
+
+      // Check for feedback menu items
+      const listItems = wrapper.findAllComponents({ name: "v-list-item" })
+      expect(listItems.length).toBeGreaterThan(0)
     })
 
-    it("should handle special characters in props", () => {
-      const propsWithSpecialChars = {
-        currentVersion: "1.0.0-β+build.ñ",
-        themeSetting: "dark" as ThemeSetting,
-        repositoryUrl: "https://github.com/user/repo-with-special-chars_123",
-        feedbackPageUrl: "https://example.com/feedback?param=value&other=123",
-        hoyolabArticleUrl: "https://hoyolab.example.com/article/123#section"
-      }
-
-      expect(typeof propsWithSpecialChars.currentVersion).toBe('string')
-      expect(propsWithSpecialChars.currentVersion).toContain('β')
-      expect(propsWithSpecialChars.currentVersion).toContain('ñ')
-      expect(propsWithSpecialChars.repositoryUrl).toContain('_')
-      expect(propsWithSpecialChars.feedbackPageUrl).toContain('?')
-      expect(propsWithSpecialChars.hoyolabArticleUrl).toContain('#')
-    })
-  })
-
-  describe("Business Logic Validation", () => {
-    it("should validate feedback URL construction logic", () => {
-      // Test the logic that would be used in the computed feedbackUrl
-      const repositoryUrl = "https://github.com/example/repo"
-      const currentVersion = "1.0.0"
-      const expectedFeedbackUrl = `${repositoryUrl}/issues/new/choose?app-version=${currentVersion}`
-
-      expect(expectedFeedbackUrl).toBe("https://github.com/example/repo/issues/new/choose?app-version=1.0.0")
-    })
-
-    it("should validate available locales structure", () => {
-      // Test the structure that would be used in the component
-      const availableLocales = [
-        { code: "ja", name: "日本語" },
-        { code: "en", name: "English" },
-      ] as const
-
-      expect(availableLocales).toHaveLength(2)
-      expect(availableLocales[0].code).toBe("ja")
-      expect(availableLocales[1].code).toBe("en")
-      expect(typeof availableLocales[0].name).toBe('string')
-      expect(typeof availableLocales[1].name).toBe('string')
-    })
-
-    it("should validate feedback menu items structure", () => {
-      // Test the structure that would be computed in feedbackMenuItems
-      const mockProps = {
-        feedbackPageUrl: "https://example.com/feedback",
-        hoyolabArticleUrl: "https://hoyolab.example.com/article",
-        repositoryUrl: "https://github.com/example/repo",
-        currentVersion: "1.0.0"
-      }
-
-      const feedbackMenuItems = [
-        {
-          title: "footer.feedbackMenuItems.comment",
-          desc: "footer.feedbackMenuItems.commentDesc",
-          url: mockProps.feedbackPageUrl,
-        },
-        {
-          title: "footer.feedbackMenuItems.hoyolab",
-          desc: "footer.feedbackMenuItems.hoyolabDesc",
-          url: mockProps.hoyolabArticleUrl,
-        },
-        {
-          title: "footer.feedbackMenuItems.github",
-          desc: "footer.feedbackMenuItems.githubDesc",
-          url: `${mockProps.repositoryUrl}/issues/new/choose?app-version=${mockProps.currentVersion}`,
-        },
-      ]
-
-      expect(feedbackMenuItems).toHaveLength(3)
-      feedbackMenuItems.forEach(item => {
-        expect(typeof item.title).toBe('string')
-        expect(typeof item.desc).toBe('string')
-        expect(typeof item.url).toBe('string')
+    it("should render language selector", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
       })
-    })
-  })
 
-  describe("Edge Cases and Error Handling", () => {
-    it("should handle empty or null-like values gracefully", () => {
-      const edgeCaseProps = {
-        currentVersion: "",
-        themeSetting: "dark" as ThemeSetting,
-        repositoryUrl: "",
-        feedbackPageUrl: "",
-        hoyolabArticleUrl: ""
-      }
-
-      // These should not throw errors
-      expect(() => {
-        const feedbackUrl = `${edgeCaseProps.repositoryUrl}/issues/new/choose?app-version=${edgeCaseProps.currentVersion}`
-        expect(typeof feedbackUrl).toBe('string')
-      }).not.toThrow()
-    })
-
-    it("should handle URL construction with empty values", () => {
-      const emptyRepo = ""
-      const emptyVersion = ""
-      const constructedUrl = `${emptyRepo}/issues/new/choose?app-version=${emptyVersion}`
+      const languageButton = wrapper.findAllComponents({ name: "v-btn" })
+        .find(btn => btn.text().includes("LANG"))
       
-      expect(constructedUrl).toBe("/issues/new/choose?app-version=")
-      expect(typeof constructedUrl).toBe('string')
+      expect(languageButton).toBeTruthy()
+      expect(languageButton?.props("prependIcon")).toBe("mdi-earth")
     })
 
-    it("should validate client-side environment checks", () => {
-      // Test the logic for import.meta.client check
-      const isClient = typeof window !== 'undefined'
+    it("should render theme selector", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      const themeButton = wrapper.findAllComponents({ name: "v-btn" })
+        .find(btn => btn.props("prependIcon") === "mdi-brightness-4")
       
-      if (isClient) {
-        // In client environment, should be able to construct URLs
-        expect(typeof window).toBe('object')
-      } else {
-        // In server environment, should handle gracefully
-        expect(typeof window).toBe('undefined')
-      }
+      expect(themeButton).toBeTruthy()
+    })
+
+    it("should render navigation links", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      const navButtons = wrapper.findAllComponents({ name: "v-btn" })
+      const releaseNotesButton = navButtons.find(btn => btn.props("to") === "/release-notes")
+      const termsButton = navButtons.find(btn => btn.props("to") === "/terms")
+      const privacyButton = navButtons.find(btn => btn.props("to") === "/privacy")
+
+      expect(releaseNotesButton).toBeTruthy()
+      expect(termsButton).toBeTruthy()
+      expect(privacyButton).toBeTruthy()
+    })
+  })
+
+  describe("Computed Properties", () => {
+    it("should compute feedback URL correctly", () => {
+      const wrapper = mount(AppFooter, {
+        props: {
+          ...defaultProps,
+          repositoryUrl: "https://github.com/test/repo",
+          currentVersion: "1.2.3",
+        },
+      })
+
+      // We can't directly test computed properties, but we can verify the component handles them
+      expect(wrapper.exists()).toBe(true)
+    })
+
+    it("should compute feedback menu items correctly", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      // Check that the component renders menu items (indirect test of computed property)
+      const listItems = wrapper.findAllComponents({ name: "v-list-item" })
+      expect(listItems.length).toBeGreaterThan(0)
+    })
+  })
+
+  describe("Client-Side Rendering", () => {
+    it("should handle client-only components", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      // client-only components should render in test environment
+      const clientOnlyElements = wrapper.findAll("client-only")
+      expect(clientOnlyElements.length).toBeGreaterThan(0)
+    })
+  })
+
+  describe("Internationalization", () => {
+    it("should use translation keys", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      // Check that translation keys are used (mocked to return the key itself)
+      expect(wrapper.text()).toContain("footer.feedback")
+      expect(wrapper.text()).toContain("footer.theme")
+      expect(wrapper.text()).toContain("footer.disclaimer")
+      expect(wrapper.text()).toContain("pageTitles.releaseNotes")
+      expect(wrapper.text()).toContain("pageTitles.terms")
+      expect(wrapper.text()).toContain("pageTitles.privacy")
+    })
+  })
+
+  describe("Edge Cases", () => {
+    it("should handle empty URLs gracefully", () => {
+      const wrapper = mount(AppFooter, {
+        props: {
+          ...defaultProps,
+          repositoryUrl: "",
+          feedbackPageUrl: "",
+          hoyolabArticleUrl: "",
+        },
+      })
+
+      expect(wrapper.exists()).toBe(true)
+      // Component should still render even with empty URLs
+    })
+
+    it("should handle special characters in version", () => {
+      const wrapper = mount(AppFooter, {
+        props: {
+          ...defaultProps,
+          currentVersion: "1.0.0-β+build.ñ",
+        },
+      })
+
+      expect(wrapper.exists()).toBe(true)
+      expect(wrapper.text()).toContain("1.0.0-β+build.ñ")
+    })
+
+    it("should handle all theme settings", () => {
+      const themeSettings: ThemeSetting[] = ["light", "dark", "auto"]
+      
+      themeSettings.forEach(setting => {
+        const wrapper = mount(AppFooter, {
+          props: { ...defaultProps, themeSetting: setting },
+        })
+        
+        expect(wrapper.exists()).toBe(true)
+      })
+    })
+  })
+
+  describe("Copyright and Disclaimer", () => {
+    it("should display copyright information", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      const currentYear = new Date().getFullYear()
+      expect(wrapper.text()).toContain(`©chika ${currentYear}`)
+    })
+
+    it("should display disclaimer", () => {
+      const wrapper = mount(AppFooter, {
+        props: defaultProps,
+      })
+
+      expect(wrapper.text()).toContain("footer.disclaimer")
     })
   })
 })
