@@ -1,30 +1,34 @@
 import { vi } from "vitest"
 import { config } from "@vue/test-utils"
 
-// Type declarations for global additions
+// Type declarations for global mocks
 declare global {
+  // eslint-disable-next-line no-var
   var onMounted: typeof vi.fn
+  // eslint-disable-next-line no-var
   var computed: typeof vi.fn
-  var useI18n: () => typeof mockI18n
+  // eslint-disable-next-line no-var
+  var useI18n: typeof vi.fn
 }
 
-// Mock useI18n composable
-const mockI18n = {
-  t: vi.fn((key: string) => key),
-  setLocale: vi.fn(),
-  locale: "en",
-}
-
-// Global mocks for Vue composables
-global.onMounted = vi.fn((callback: () => void) => {
+// Mock global composables for Nuxt auto-imports
+globalThis.onMounted = vi.fn((callback: () => void) => {
   queueMicrotask(callback)
 })
 
-global.computed = vi.fn((fn: () => any) => {
-  return { value: fn() }
+globalThis.computed = vi.fn((fn: () => any) => {
+  const result = fn()
+  if (Array.isArray(result)) {
+    return { value: result, ...result }
+  }
+  return { value: result }
 })
 
-global.useI18n = () => mockI18n
+globalThis.useI18n = vi.fn(() => ({
+  t: vi.fn((key: string) => key),
+  setLocale: vi.fn(),
+  locale: { value: "en" },
+}))
 
 // Mock Vuetify
 vi.mock("vuetify", () => ({
@@ -33,11 +37,15 @@ vi.mock("vuetify", () => ({
   }),
 }))
 
-// Configure Vue Test Utils
+// Configure Vue Test Utils with minimal mocks
 config.global.mocks = {
   $localePath: (path: string) => path,
   $t: (key: string) => key,
-  $i18n: mockI18n,
+  $i18n: {
+    locale: "en",
+    setLocale: vi.fn(),
+    t: vi.fn((key: string) => key),
+  },
 }
 
 config.global.stubs = {
