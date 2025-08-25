@@ -1,9 +1,11 @@
 import { resolve } from "path"
 import { defineConfig } from "vitest/config"
+import vue from "@vitejs/plugin-vue"
 
 export default defineConfig({
+  plugins: [vue()],
   test: {
-    environment: "node",
+    environment: "happy-dom",
     globals: true,
     include: ["test/**/*.test.ts"],
     exclude: ["node_modules", ".nuxt"],
@@ -13,6 +15,6 @@ export default defineConfig({
       "~": resolve(__dirname, "./"),
       "#shared": resolve(__dirname, "../../firebase/functions/src/types/shared"),
     },
-    extensions: [".ts", ".js", ".json", ".yaml"],
+    extensions: [".ts", ".js", ".json", ".yaml", ".vue"],
   },
 })
