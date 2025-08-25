@@ -38,3 +38,8 @@ jobs:
         if: always() && steps.install.outcome == 'success'
         working-directory: ./packages/nuxt
         run: bun typecheck
+
+      - name: Test
+        if: always() && steps.install.outcome == 'success'
+        working-directory: ./packages/nuxt
+        run: bun test
