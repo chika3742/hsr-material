@@ -1,0 +1,88 @@
+import { vi } from "vitest"
+import { config } from "@vue/test-utils"
+
+// Type declarations for global additions
+declare global {
+  var onMounted: typeof vi.fn
+  var computed: typeof vi.fn
+  var useI18n: () => typeof mockI18n
+}
+
+// Mock useI18n composable
+const mockI18n = {
+  t: vi.fn((key: string) => key),
+  setLocale: vi.fn(),
+  locale: "en",
+}
+
+// Global mocks for Vue composables
+global.onMounted = vi.fn((callback: () => void) => {
+  queueMicrotask(callback)
+})
+
+global.computed = vi.fn((fn: () => any) => {
+  return { value: fn() }
+})
+
+global.useI18n = () => mockI18n
+
+// Mock Vuetify
+vi.mock("vuetify", () => ({
+  useDisplay: () => ({
+    mobile: { value: false },
+  }),
+}))
+
+// Configure Vue Test Utils
+config.global.mocks = {
+  $localePath: (path: string) => path,
+  $t: (key: string) => key,
+  $i18n: mockI18n,
+}
+
+config.global.stubs = {
+  "v-navigation-drawer": {
+    template: "<div class=\"v-navigation-drawer\" v-bind=\"$attrs\"><slot /></div>",
+    props: ["modelValue"],
+    emits: ["update:modelValue"],
+  },
+  "v-footer": {
+    template: "<footer class=\"v-footer\" v-bind=\"$attrs\"><slot /></footer>",
+    props: ["elevation", "color"],
+  },
+  "v-list": {
+    template: "<div class=\"v-list\" v-bind=\"$attrs\"><slot /></div>",
+    props: ["nav", "selected"],
+    emits: ["update:selected"],
+  },
+  "v-list-item": {
+    template: "<div class=\"v-list-item\" v-bind=\"$attrs\" @click=\"$emit('click')\"><slot /></div>",
+    props: ["href", "prependIcon", "target", "title", "to", "density", "subtitle", "lines", "active", "value"],
+    emits: ["click"],
+  },
+  "v-list-item-title": {
+    template: "<div class=\"v-list-item-title\"><slot /></div>",
+  },
+  "v-divider": {
+    template: "<div class=\"v-divider\" v-bind=\"$attrs\"></div>",
+  },
+  "v-btn": {
+    template: "<button class=\"v-btn\" v-bind=\"$attrs\" @click=\"$emit('click')\"><slot /></button>",
+    props: ["icon", "href", "target", "variant", "density", "to", "color", "prependIcon"],
+    emits: ["click"],
+  },
+  "v-menu": {
+    template: "<div class=\"v-menu\"><slot /></div>",
+    props: ["activator"],
+  },
+  "v-spacer": {
+    template: "<div class=\"v-spacer\"></div>",
+  },
+  "client-only": {
+    template: "<div class=\"client-only\"><slot /></div>",
+  },
+}
+
+config.global.directives = {
+  "safe-area": {},
+}
