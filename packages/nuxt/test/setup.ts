@@ -1,14 +1,13 @@
 import { vi } from "vitest"
 import { config } from "@vue/test-utils"
 
-// Type declarations for global mocks
+// Type declarations for global mocks using proper interface augmentation
 declare global {
-  // eslint-disable-next-line no-var
-  var onMounted: typeof vi.fn
-  // eslint-disable-next-line no-var
-  var computed: typeof vi.fn
-  // eslint-disable-next-line no-var
-  var useI18n: typeof vi.fn
+  interface GlobalThis {
+    onMounted: typeof vi.fn
+    computed: typeof vi.fn
+    useI18n: typeof vi.fn
+  }
 }
 
 // Mock global composables for Nuxt auto-imports
