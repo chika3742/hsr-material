@@ -1,33 +1,25 @@
 import { vi } from "vitest"
 import { config } from "@vue/test-utils"
 
-// Type declarations for global mocks using proper interface augmentation
-declare global {
-  interface GlobalThis {
-    onMounted: typeof vi.fn
-    computed: typeof vi.fn
-    useI18n: typeof vi.fn
-  }
-}
-
-// Mock global composables for Nuxt auto-imports
-globalThis.onMounted = vi.fn((callback: () => void) => {
-  queueMicrotask(callback)
+// Mock Nuxt composables by adding them to global scope during tests only
+// These won't affect main app type checking since they're set up only in test context
+Object.assign(global, {
+  onMounted: vi.fn((callback: () => void) => {
+    queueMicrotask(callback)
+  }),
+  computed: vi.fn((fn: () => any) => {
+    const result = fn()
+    if (Array.isArray(result)) {
+      return { value: result, ...result }
+    }
+    return { value: result }
+  }),
+  useI18n: vi.fn(() => ({
+    t: vi.fn((key: string) => key),
+    setLocale: vi.fn(),
+    locale: { value: "en" },
+  })),
 })
-
-globalThis.computed = vi.fn((fn: () => any) => {
-  const result = fn()
-  if (Array.isArray(result)) {
-    return { value: result, ...result }
-  }
-  return { value: result }
-})
-
-globalThis.useI18n = vi.fn(() => ({
-  t: vi.fn((key: string) => key),
-  setLocale: vi.fn(),
-  locale: { value: "en" },
-}))
 
 // Mock Vuetify
 vi.mock("vuetify", () => ({
