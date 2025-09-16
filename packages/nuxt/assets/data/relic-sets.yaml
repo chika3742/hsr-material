@@ -633,3 +633,42 @@
           gains 1 stack of “Help,” stacking up to <2> time(s). If there are <2>
           stack(s) of “Help” when the wearer uses their Ultimate, consumes all
           “Help” to increase the wearer’s ATK by <48%> for <1> turn(s).
+- id: sacerdos-relived-ordeal
+  name:
+    locales:
+      ja: 再び苦難の道を歩む司祭
+      en: Sacerdos’ Relived Ordeal
+  yomi: フタタビクナンノミチヲアユムシサイ
+  type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 速度+<6%>。
+        en: Increases SPD by <6%>.
+    4pc:
+      locales:
+        ja: >-
+          味方単体に対して戦闘スキルまたは必殺技を発動する時、スキルターゲットの会心ダメージ+<18%>、<2>ターン継続。この効果は最大で<2>層累積できる。
+        en: >-
+          When using Skill or Ultimate on one ally target, increases the ability
+          target’s CRIT DMG by <18%>, lasting for <2> turn(s). This effect can
+          stack up to <2> time(s).
+- id: scholar-lost-in-erudition
+  name:
+    locales:
+      ja: 知識の海に溺れる学者
+      en: Scholar Lost in Erudition
+  yomi: チシキノウミニオボレルガクシャ
+  type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 会心率+<8%>。
+        en: Increases CRIT Rate by <8%>.
+    4pc:
+      locales:
+        ja: 戦闘スキルおよび必殺技によるダメージ+<20%>。必殺技を発動した後、次に戦闘スキルを発動する時、与ダメージがさらに+<25%>。
+        en: >-
+          Increases DMG dealt by Skill and Ultimate by <20%>. After using
+          Ultimate, additionally increases the DMG dealt by the next Skill by
+          <25%>.

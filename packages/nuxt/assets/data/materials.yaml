@@ -1088,3 +1088,11 @@
   yomi: ユウヤケノツボミ
   category: character_ascension
   rarity: 4
+- id: sea-sirens-torn-fin
+  name:
+    locales:
+      ja: セイレーンのひれ
+      en: Sea Siren’s Torn Fin
+  yomi: セイレーンノヒレ
+  category: character_ascension
+  rarity: 4

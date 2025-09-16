@@ -8,7 +8,8 @@
     "typecheck": "nuxt typecheck",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "prepack": "nuxt prepare"
+    "prepack": "nuxt prepare",
+    "test": "vitest"
   },
   "dependencies": {
     "@algolia/client-search": "5.25.0",

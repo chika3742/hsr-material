@@ -1086,3 +1086,67 @@
   yomi: センチョウノハトウブーツ
   type: feet
   setId: wavestrider-captain
+- id: sacerdos-melodic-earrings
+  name:
+    locales:
+      ja: 司祭の音律奏でる耳飾り
+      en: Sacerdos’ Melodic Earrings
+  yomi: シサイノオンリツカナデルミミカザリ
+  type: head
+  setId: sacerdos-relived-ordeal
+- id: sacerdos-welcoming-gloves
+  name:
+    locales:
+      ja: 司祭の招請用の手袋
+      en: Sacerdos’ Welcoming Gloves
+  yomi: シサイノショウセイヨウノテブクロ
+  type: hands
+  setId: sacerdos-relived-ordeal
+- id: sacerdos-ceremonial-garb
+  name:
+    locales:
+      ja: 司祭の聖職礼服
+      en: Sacerdos’ Ceremonial Garb
+  yomi: シサイノセイショクレイフク
+  type: body
+  setId: sacerdos-relived-ordeal
+- id: sacerdos-arduous-boots
+  name:
+    locales:
+      ja: 司祭の苦旅を共にするブーツ
+      en: Sacerdos’ Arduous Boots
+  yomi: シサイノクリョヲトモニスルブーツ
+  type: feet
+  setId: sacerdos-relived-ordeal
+- id: scholars-silver-rimmed-monocle
+  name:
+    locales:
+      ja: 学者の銀縁モノクル
+      en: Scholar’s Silver-Rimmed Monocle
+  yomi: ガクシャノギンフチモノクル
+  type: head
+  setId: scholar-lost-in-erudition
+- id: scholars-auxiliary-knuckle
+  name:
+    locales:
+      ja: 学者のナックルサポーター
+      en: Scholar’s Auxiliary Knuckle
+  yomi: ガクシャノナックルサポーター
+  type: hands
+  setId: scholar-lost-in-erudition
+- id: scholars-tweed-jacket
+  name:
+    locales:
+      ja: 学者のツイードジャケット
+      en: Scholar’s Tweed Jacket
+  yomi: ガクシャノツイードジャケット
+  type: body
+  setId: scholar-lost-in-erudition
+- id: scholars-felt-snowboots
+  name:
+    locales:
+      ja: 学者のスエードスノーブーツ
+      en: Scholar’s Felt Snowboots
+  yomi: ガクシャノスエードスノーブーツ
+  type: feet
+  setId: scholar-lost-in-erudition

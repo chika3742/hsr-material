@@ -2174,3 +2174,23 @@
       en: >-
         Increases the wearer’s ATK by <16%>. After the wearer uses Skill,
         increases ATK by <8%>, stacking up to 3 times.
+- id: epoch-etched-in-golden-blood
+  yomi: オウゴンノチデキザムジダイ
+  name:
+    locales:
+      ja: 黄金の血で刻む時代
+      en: Epoch Etched in Golden Blood
+  path: harmony
+  rarity: 5
+  materials:
+    primary: group:lcs010
+    common: group:lcs014
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの攻撃力+<64%>。必殺技で攻撃を行った後、SPを1回復する。装備キャラが味方単体キャラに戦闘スキルを発動した後、その味方の戦闘スキルダメージ+<54%>、3ターン継続。
+      en: >-
+        Increases the wearer’s ATK by <64%>. After using Ultimate to attack,
+        recovers 1 Skill Point(s). After the wearer uses their Skill on one ally
+        character, increases the Skill DMG dealt by the target by <54%> for 3
+        turn(s).
