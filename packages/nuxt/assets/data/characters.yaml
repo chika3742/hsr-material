@@ -2706,3 +2706,84 @@
         locales:
           ja: セイレーンの歓歌
           en: Sirenic Serenade
+- id: evernight
+  name:
+    locales:
+      ja: 長夜月
+      en: Evernight
+  yomi: ナガヨツキ
+  rarity: 5
+  path: remembrance
+  combatType: ice
+  ingredientsTable: r5Remembrance
+  materials:
+    ascension: id:sea-sirens-torn-fin
+    skills: group:lcs013
+    skillsAdvanced: id:daythunder-anamnesis
+    common: group:lcs014
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 歳月はここより霞む
+          en: Time Thence Blurs
+    skill:
+      name:
+        locales:
+          ja: 白昼は静かに去る
+          en: Day Gently Slips
+    ultimate:
+      name:
+        locales:
+          ja: 眠れぬ世界に永き眠りを
+          en: O Wakeful World, Goodnight
+    talent:
+      name:
+        locales:
+          ja: 今夜、アタシと共に
+          en: With Me, This Night
+    memospriteSkill:
+      name:
+        locales:
+          ja: 雨のように降る記憶
+          en: Remembrance, Whirling, Like Rain
+    memospriteTalent:
+      name:
+        locales:
+          ja: 暗闇に浮かぶ孤独
+          en: Solitude, Drifting, In Murk
+- id: dan-heng-permansor-terrae
+  name:
+    locales:
+      ja: 丹恒・騰荒
+      en: Dan Heng • Permansor Terrae
+  yomi: タンコウトウコウ
+  rarity: 5
+  path: preservation
+  combatType: physical
+  materials:
+    ascension: id:invasive-clot
+    skills: group:lcs011
+    skillsAdvanced: id:daythunder-anamnesis
+    common: group:com009
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 悪を鎮め、生を護る
+          en: Aegis Vitae
+    skill:
+      name:
+        locales:
+          ja: 屹立する山岳、八荒を支える大地
+          en: Terra Omnibus
+    ultimate:
+      name:
+        locales:
+          ja: 悔いなき亢龍、天地を拓く
+          en: A Dragon's Zenith Knows No Rue
+    talent:
+      name:
+        locales:
+          ja: 生は尊く、万物は流転す
+          en: Of Virtue, Forms Unfold
