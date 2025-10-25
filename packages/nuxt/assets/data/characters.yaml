@@ -2787,3 +2787,49 @@
         locales:
           ja: 生は尊く、万物は流転す
           en: Of Virtue, Forms Unfold
+- id: cyrene
+  name:
+    locales:
+      ja: キュレネ
+      en: Cyrene
+  yomi: キュレネ
+  rarity: 5
+  path: remembrance
+  combatType: ice
+  ingredientsTable: r5Remembrance
+  materials:
+    ascension: id:sea-sirens-torn-fin
+    skills: group:lcs013
+    skillsAdvanced: id:daythunder-anamnesis
+    common: group:com009
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: さあ、希望の始まりよ！
+          en: Lo, Hope Takes Flight!
+    skill:
+      name:
+        locales:
+          ja: 未来の楽園よ、咲き誇れ
+          en: Bloom, Elysium of Beyond
+    ultimate:
+      name:
+        locales:
+          ja: 見知らぬあなたと何度でも
+          en: Reunion at First Sight
+    talent:
+      name:
+        locales:
+          ja: みんなの願いよ、歌のように集え
+          en: Hearts Gather as One
+    memospriteSkill:
+      name:
+        locales:
+          ja: 花と矢の舞曲
+          en: Minuet of Blooms and Plumes
+    memospriteTalent:
+      name:
+        locales:
+          ja: すべての過去で待つ
+          en: Waiting, In Every Past

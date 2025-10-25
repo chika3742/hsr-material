@@ -2194,3 +2194,69 @@
         recovers 1 Skill Point(s). After the wearer uses their Skill on one ally
         character, increases the Skill DMG dealt by the target by <54%> for 3
         turn(s).
+- id: to-evernights-stars
+  yomi: ナガキヨルニカガヤクホシヘ
+  name:
+    locales:
+      ja: 長き夜に輝く星へ
+      en: To Evernight’s Stars
+  path: remembrance
+  rarity: 5
+  materials:
+    primary: group:lcs013
+    common: group:lcs014
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの最大HP+<30%>。装備キャラの記憶の精霊がスキルを発動する時、装備キャラは「夜色」を獲得する。装備キャラが「夜色」を持つ時、味方の記憶の精霊全体の与えるダメージはターゲットの防御力を<20%>分無視し、装備キャラとその記憶の精霊の与ダメージ+<30%>。装備キャラの記憶の精霊が退場した時、装備キャラのEPを<8>回復する。同系統のスキルは累積できない。
+      en: >-
+        Increases the wearer’s Max HP by <30%>. When the wearer’s memosprite
+        uses an ability, the wearer gains “Noctis.” While the wearer has
+        “Noctis,” the DMG dealt by all ally memosprites ignores <20%> of the
+        targets’ DEF. Increases the DMG dealt by the wearer and their memosprite
+        by <30%>. When the wearer’s memosprite disappears, the wearer recovers
+        <8> Energy. Effects of the same type cannot stack.
+- id: though-worlds-apart
+  yomi: バンリノサンガヲコエテ
+  name:
+    locales:
+      ja: 万里の山河を越えて
+      en: Though Worlds Apart
+  path: preservation
+  rarity: 5
+  materials:
+    primary: group:lcs011
+    common: group:com009
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの攻撃力+<64%>。装備キャラが必殺技を発動する時、味方全体のHPを装備キャラの攻撃力<10%>分回復し、さらに残りHPが最も低い味方キャラのHPを装備キャラの攻撃力<10%>分回復する。同時に、味方全体は「守護」を獲得する。「守護」は3ターン継続。「守護」を獲得した味方の与ダメージ+<24%>、さらに召喚物を持つ場合は追加で与ダメージ+<12%>。
+      en: >-
+        Increases the wearer’s ATK by <64%>. When the wearer uses Ultimate,
+        restores HP equal to <10%> of the wearer’s ATK for all allies, and
+        additionally restores HP equal to <10%> of the wearer’s ATK for the
+        character with the lowest current HP, and grants “Redoubt” to all allies
+        for 3 turn(s). Targets with “Redoubt” deal <24%> increased DMG, which
+        further increases by <12%> if the targets have summons.
+- id: this-love-forever
+  yomi: アイハイマエイエンニ
+  name:
+    locales:
+      ja: 愛はいま永遠に
+      en: This Love, Forever
+  path: remembrance
+  rarity: 5
+  materials:
+    primary: group:lcs013
+    common: group:com009
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの速度+<18%>。装備キャラの記憶の精霊は、味方単体に精霊スキルを発動する時に「空白」を獲得する。「空白」の効果：敵全体の受けるダメージ+<10%>。装備キャラの記憶の精霊は、敵に精霊スキルを発動する時に「詩句」を獲得する。「詩句」の効果：味方全体の会心ダメージ+<16%>。装備キャラの記憶の精霊が「空白」と「詩句」を同時に所持している時、「空白」と「詩句」の効果が<60%>アップする。
+      en: >-
+        Increases the wearer’s SPD by <18%>. When the wearer’s memosprite uses a
+        Memosprite Skill on an ally, gains “Blank,” which increases DMG taken by
+        all enemies by <10%>. When the wearer’s memosprite uses a Memosprite
+        Skill on an enemy, gains “Verse,” which increases CRIT DMG of all allies
+        by <16%>. When the wearer’s memosprite has both “Blank” and “Verse,”
+        increases the effects of “Blank” and “Verse” by <60%>.
