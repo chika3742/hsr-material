@@ -1,11 +1,21 @@
 # コピー用改行
 
+- date: 2025/11/08
+  version: 1.8.8
+  isMajor: false
+  isDataUpdateOnly: true
+  content: |
+    ### データ追加
+    - 崩壊：スターレイル v3.7対応
+    - 光円錐「ピンク色の明日へ」、遺物セット「天地再創の救世主」「星の光を隠した隠者」を追加しました。
+
 - date: 2025/10/25
   version: 1.8.7
   isMajor: false
   isDataUpdateOnly: true
   content: |
     ### データ追加
+    - 崩壊：スターレイル v3.7対応
     - キャラクター「キュレネ」、光円錐「長き夜に輝く星へ」「万里の山河を越えて」「愛はいま永遠に」を追加しました。
 
 - date: 2025/09/16
