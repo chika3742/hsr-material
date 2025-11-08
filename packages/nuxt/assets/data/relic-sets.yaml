@@ -672,3 +672,43 @@
           Increases DMG dealt by Skill and Ultimate by <20%>. After using
           Ultimate, additionally increases the DMG dealt by the next Skill by
           <25%>.
+- id: world-remaking-deliverer
+  name:
+    locales:
+      ja: 天地再創の救世主
+      en: World-Remaking Deliverer
+  yomi: テンチサイソウノキュウセイシュ
+  type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 会心率+<8%>。
+        en: Increases CRIT Rate by <8%>.
+    4pc:
+      locales:
+        ja: >-
+          装備キャラが通常攻撃または戦闘スキルを発動した後、装備キャラの記憶の精霊がフィールド上にいる場合、装備キャラとその記憶の精霊の最大HP+<24%>、味方全体の与ダメージ+<15%>、装備キャラが次に通常攻撃または戦闘スキルを発動した後まで継続。
+        en: >-
+          After the wearer uses Basic ATK or Skill, if the wearer’s memosprite
+          is on the field, increases Max HP of the wearer and their memosprite
+          by <24%>, and increases all allies’ dealt DMG by <15%>, lasting until
+          after the wearer’s next use of Basic ATK or Skill.
+- id: self-enshrouded-recluse
+  name:
+    locales:
+      ja: 星の光を隠した隠者
+      en: Self-Enshrouded Recluse
+  yomi: ホシノヒカリヲカクシタインジャ
+  type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 付与するバリアの耐久値+<10%>。
+        en: The provided Shield Effect increases by <10%>.
+    4pc:
+      locales:
+        ja: 装備キャラが付与するバリアの耐久値+<12%>。装備キャラが付与したバリアを持つ味方の会心ダメージ+<15%>。
+        en: >-
+          Increases the Shield Effect provided by the wearer by <12%>. When an
+          ally target holds a Shield provided by the wearer, the ally target’s
+          CRIT DMG increases by <15%>.

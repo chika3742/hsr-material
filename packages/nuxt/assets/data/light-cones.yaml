@@ -2260,3 +2260,22 @@
         Skill on an enemy, gains “Verse,” which increases CRIT DMG of all allies
         by <16%>. When the wearer’s memosprite has both “Blank” and “Verse,”
         increases the effects of “Blank” and “Verse” by <60%>.
+- id: fly-into-a-pink-tomorrow
+  yomi: ピンクイロノアスヘ
+  name:
+    locales:
+      ja: ピンク色の明日へ
+      en: Fly Into a Pink Tomorrow
+  path: remembrance
+  rarity: 4
+  materials:
+    primary: group:lcs013
+    common: group:lcs014
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの会心ダメージ+<12%>。開拓者・記憶が装備した場合、味方全体の与ダメージ+<8%>、強化通常攻撃「明日を一緒に紡ごう！」の与ダメージ+<60%>。
+      en: >-
+        Increases the wearer’s CRIT DMG by <12%>. When equipped by Trailblazer
+        (Remembrance), increases all ally targets’ DMG dealt by <8%> and DMG
+        dealt by Enhanced Basic ATK “Together, We Script Tomorrow!” by <60%>.
