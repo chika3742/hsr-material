@@ -1150,3 +1150,67 @@
   yomi: ガクシャノスエードスノーブーツ
   type: feet
   setId: scholar-lost-in-erudition
+- id: deliverers-hood
+  name:
+    locales:
+      ja: 救世主の旅立ちのフード
+      en: Deliverer’s Hood
+  yomi: キュウセイシュノタビダチノフード
+  type: head
+  setId: world-remaking-deliverer
+- id: deliverers-sword-gauntlet
+  name:
+    locales:
+      ja: 救世主の執剣グローブ
+      en: Deliverer’s Sword Gauntlet
+  yomi: キュウセイシュノシツケングローブ
+  type: hands
+  setId: world-remaking-deliverer
+- id: deliverers-robe-of-legacy
+  name:
+    locales:
+      ja: 救世主の託されたマント
+      en: Deliverer’s Robe of Legacy
+  yomi: キュウセイシュノタクサレタマント
+  type: body
+  setId: world-remaking-deliverer
+- id: deliverers-boots-of-pioneering
+  name:
+    locales:
+      ja: 救世主の開拓ブーツ
+      en: Deliverer’s Boots of Pioneering
+  yomi: キュウセイシュノカイタクブーツ
+  type: feet
+  setId: world-remaking-deliverer
+- id: recluses-wide-brimmed-fedora
+  name:
+    locales:
+      ja: 隠者のつば広帽子
+      en: Recluse’s Wide-Brimmed Fedora
+  yomi: インジャノツバヒロボウシ
+  type: head
+  setId: self-enshrouded-recluse
+- id: recluses-refined-timepiece
+  name:
+    locales:
+      ja: 隠者のシンプルな腕時計
+      en: Recluse’s Refined Timepiece
+  yomi: インジャノシンプルナウデドケイ
+  type: hands
+  setId: self-enshrouded-recluse
+- id: recluses-camel-colored-coat
+  name:
+    locales:
+      ja: 隠者の駱駝色ジャケット
+      en: Recluse’s Camel-Colored Coat
+  yomi: インジャノラクダイロジャケット
+  type: body
+  setId: self-enshrouded-recluse
+- id: recluses-soft-suede-boots
+  name:
+    locales:
+      ja: 隠者の鹿革ブーツ
+      en: Recluse’s Soft Suede Boots
+  yomi: インジャノシカガワブーツ
+  type: feet
+  setId: self-enshrouded-recluse
