@@ -10,7 +10,7 @@
     "build:nuxt": "bun --filter ./packages/nuxt generate"
   },
   "devDependencies": {
-    "eslint": "9.28.0"
+    "eslint": "9.39.1"
   },
   "packageManager": "bun@1.2.13",
   "trustedDependencies": [
