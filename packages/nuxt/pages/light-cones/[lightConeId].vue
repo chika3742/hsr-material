@@ -4,6 +4,7 @@ import EmphasizedText from "~/components/emphasized-text.vue"
 import characters from "~/assets/data/characters.yaml"
 import lightConeIngredients from "~/assets/data/light-cone-ingredients.yaml"
 import type { CharacterIdWithVariant, VariantlessHsrCharacter } from "~/types/data/src/characters"
+import type { EachLevels, Ingredient } from "~/types/data/ingredient"
 
 const route = useRoute()
 
@@ -14,18 +15,25 @@ if (!lightCones.some(e => e.id === route.params.lightConeId)) {
 const lightCone = lightCones.find(e => e.id === route.params.lightConeId)!
 usePageTitle(tx("pageTitles.lightConeDetails", { name: localize(lightCone.name) }))
 
-const levels = lightConeIngredients.ingredientsTables[(() => {
-  switch (lightCone.rarity) {
-    case 3:
-      return "r3Base"
-    case 4:
-      return "r4Base"
-    case 5:
-      return "r5Base"
-    default:
-      throw new Error("Invalid rarity")
+const levels: EachLevels<Ingredient[]> = (() => {
+  const table = lightConeIngredients.ingredientsTables[(() => {
+    switch (lightCone.rarity) {
+      case 3:
+        return "r3Base"
+      case 4:
+        return "r4Base"
+      case 5:
+        return "r5Base"
+      default:
+        throw new Error("Invalid rarity")
+    }
+  })()]
+  const ascension = table?.purposeTypes?.ascension
+  if (!ascension) {
+    throw new Error("Invalid light cone ingredients")
   }
-})()].purposeTypes.ascension!
+  return ascension
+})()
 
 const selectedCharacter = ref<CharacterIdWithVariant>()
 

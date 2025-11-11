@@ -44,7 +44,9 @@ const titleLines = (() => {
   const item = props.item
   switch (item.type) {
     case "relic_set": {
-      const relicSet = findRelicSet(item.relicSetIds[0])!
+      const firstSetId = item.relicSetIds[0]
+      if (!firstSetId) return []
+      const relicSet = findRelicSet(firstSetId)!
       const pcs = item.relicSetIds.length === 1 && relicSet.type === "cavern" ? "4pcs" : "2pcs"
       return item.relicSetIds.map(e => `${localize(findRelicSet(e).name)} (${tx(i18n, `relicDetailsPage.${pcs}`)})`)
     }

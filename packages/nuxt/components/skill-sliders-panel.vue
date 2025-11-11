@@ -28,22 +28,23 @@ const sliders = computed<Slider[]>(() => props.skills.map(e => ({
   levelIngredients: levelsToLevelIngredients(e.ingredients.levels),
 })))
 
-const ranges = ref(sliders.value.map((e) => {
+const ranges = ref<number[][]>(sliders.value.map((e) => {
   const sliderTicks = levelIngredientsToSliderTicks(e.levelIngredients)
-  return [sliderTicks[0], sliderTicks.slice(-1)[0]]
+  return [sliderTicks[0] ?? 0, sliderTicks.slice(-1)[0] ?? 0]
 }))
 const checkedList = ref(sliders.value.map(() => true))
 const setInitialRangeBasedOnBookmarks = async () => {
   // reinit ranges without considering bookmarks
   ranges.value = sliders.value.map((e) => {
     const sliderTicks = levelIngredientsToSliderTicks(e.levelIngredients)
-    return [sliderTicks[0], sliderTicks.slice(-1)[0]]
+    return [sliderTicks[0] ?? 0, sliderTicks.slice(-1)[0] ?? 0]
   })
 
   const checkedListTmp = sliders.value.map(() => false)
 
   for (let index = 0; index < sliders.value.length; index++) {
     const slider = sliders.value[index]
+    if (!slider) continue
 
     const bookmarks = await db.bookmarks.getByPurpose(
       props.characterId,
@@ -57,15 +58,16 @@ const setInitialRangeBasedOnBookmarks = async () => {
     if (bookmarks.length !== 0) {
       checkedListTmp[index] = true
 
-      const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-      const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+      const base = bookmarks[0]!
+      const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), base.usage.upperLevel)
+      const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), base.usage.upperLevel)
 
-      ranges.value[index] = [sliderTicks[sliderTicks.indexOf(min) - 1], max]
+      ranges.value[index] = [sliderTicks[sliderTicks.indexOf(min) - 1] ?? 0, max]
     } else {
       // restore minimum value from persist store (game data sync)
       const characterId = toCharacterIdWithVariant(props.characterId, props.variant)
       ranges.value[index]
-        = [config.characterLevels[characterId]?.[slider.type] ?? sliderTicks[0], sliderTicks.slice(-1)[0]]
+        = [config.characterLevels[characterId]?.[slider.type] ?? (sliderTicks[0] ?? 0), sliderTicks.slice(-1)[0] ?? 0]
     }
   }
 
@@ -87,7 +89,11 @@ const ingredients = computed<BookmarkableMaterial[]>(() => {
     if (!checkedList.value[i]) {
       return []
     }
-    const filtered = e.levelIngredients.filter(f => ranges.value[i][0] < f.level && f.level <= ranges.value[i][1])
+    const currentRange = ranges.value[i]
+    if (!currentRange) {
+      return []
+    }
+    const filtered = e.levelIngredients.filter(f => (currentRange[0] ?? 0) < f.level && f.level <= (currentRange[1] ?? 0))
     const characterIdWithVariant = toCharacterIdWithVariant(props.characterId, props.variant)
     const result: BookmarkableMaterial[] = []
 
@@ -152,6 +158,7 @@ export interface SliderSkill {
           </v-row>
           <v-expand-transition>
             <LevelSlider
+              v-if="ranges[i]"
               v-show="checkedList[i]"
               v-model="ranges[i]"
               :slider-ticks="levelIngredientsToSliderTicks(item.levelIngredients)"

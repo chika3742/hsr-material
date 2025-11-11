@@ -37,6 +37,9 @@ usePageTitle(computed(() => {
 }))
 
 const purposeTypes = computed<LevelsForPurposeTypes>(() => {
+  if (!currentVariant.value) {
+    throw new Error("Invalid variant")
+  }
   const getDefaultLitForRarity = () => {
     switch (character.rarity) {
       case 4:
@@ -48,10 +51,15 @@ const purposeTypes = computed<LevelsForPurposeTypes>(() => {
     }
   }
 
-  return characterIngredients.ingredientsTables[currentVariant.value.ingredientsTable ?? getDefaultLitForRarity()].purposeTypes
+  const table = characterIngredients.ingredientsTables[currentVariant.value.ingredientsTable ?? getDefaultLitForRarity()]
+  if (!table) {
+    throw new Error("Invalid ingredients table")
+  }
+  return table.purposeTypes
 })
 
 const skills = computed<SliderSkill[]>(() => {
+  if (!currentVariant.value) return []
   return Object.entries(currentVariant.value.skills).map(([k, v]) => ({
     purposeType: k as PurposeType,
     title: localize(v.name, i18n),

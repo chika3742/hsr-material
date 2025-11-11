@@ -97,7 +97,7 @@
             <v-menu activator="parent">
               <v-list
                 :selected="[themeSetting]"
-                @update:selected="$emit('update:themeSetting', $event[0])"
+                @update:selected="$event[0] && $emit('update:themeSetting', $event[0])"
               >
                 <v-list-item
                   :title="$t('footer.themeOptions.light')"

@@ -74,10 +74,10 @@ const lightConeUsage = getMaterialUsageLightCone(material.id)
       <v-list>
         <template
           v-for="group in splitByField(lightConeUsage, 'path')"
-          :key="group[0].id"
+          :key="group[0]?.id ?? ''"
         >
           <v-list-subheader>
-            {{ $t(`paths.${group[0].path}`) }}
+            {{ $t(`paths.${group[0]?.path ?? ''}`) }}
           </v-list-subheader>
 
           <ItemListItem

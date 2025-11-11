@@ -44,9 +44,11 @@ const currentExpItemIndex = ref(0)
 const farmingCountDivideByBase = 6
 
 const expItems = computed(() => {
-  if (props.items[0].type === "character_exp") {
+  const firstItem = props.items[0]
+  if (!firstItem) return null
+  if (firstItem.type === "character_exp") {
     return characterIngredients.expItems
-  } else if (props.items[0].type === "light_cone_exp") {
+  } else if (firstItem.type === "light_cone_exp") {
     return lightConeIngredients.expItems
   } else {
     return null
@@ -64,9 +66,9 @@ const forwardExpItem = () => {
 const material = computed(() => {
   const firstItem = props.items[0]
   let result: Material | undefined
-  if (isBookmarkableExp(firstItem)) {
+  if (firstItem && isBookmarkableExp(firstItem)) {
     result = materials.find(e => e.id === currentExpItem.value!.itemId)
-  } else {
+  } else if (firstItem) {
     result = materials.find(e => e.id === firstItem.materialId)
   }
   if (typeof result === "undefined") {
@@ -77,7 +79,8 @@ const material = computed(() => {
 })
 
 const quantity = computed(() => {
-  if (isBookmarkableExp(props.items[0])) {
+  const firstItem = props.items[0]
+  if (firstItem && isBookmarkableExp(firstItem)) {
     const items = props.items as BookmarkableExp[]
     const exp = items.reduce((acc, e) => acc + e.exp, 0)
     return Math.ceil(exp / currentExpItem.value!.expPerItem)
@@ -93,9 +96,10 @@ const savedBookmarks = (() => {
     return ref([])
   }
 
-  if (typeof props.itemId !== "undefined") {
+  const firstItem = props.items[0]
+  if (typeof props.itemId !== "undefined" && firstItem) {
     return useObservable<LevelingBookmark[], null>(from(liveQuery(() => {
-      return db.bookmarks.getLevelingItemByHash(hash(props.items[0]))
+      return db.bookmarks.getLevelingItemByHash(hash(firstItem))
     })), {
       initialValue: null,
     })
@@ -105,7 +109,7 @@ const savedBookmarks = (() => {
     db.bookmarks.getLevelingItems(
       props.items,
       props.purposeTypes,
-      typeof props.itemId !== "undefined" ? props.items[0].usage.upperLevel : undefined,
+      typeof props.itemId !== "undefined" && firstItem ? firstItem.usage.upperLevel : undefined,
     ))), {
     initialValue: null,
   })
@@ -198,7 +202,7 @@ const reBookmark = async () => {
     :loading="loading || bookmarkState === undefined"
     :bookmark-state="bookmarkState"
     :dimmed="typeof itemId !== 'undefined' && bookmarkState === 'none'"
-    :show-item-toggle-button="isBookmarkableExp(items[0])"
+    :show-item-toggle-button="items[0] ? isBookmarkableExp(items[0]) : false"
     :image-path="getMaterialImage(material.id)"
     :quantity="quantity"
     :rarity="material.rarity"

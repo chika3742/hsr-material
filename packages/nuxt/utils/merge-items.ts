@@ -18,10 +18,12 @@ export const mergeItems = (items: BookmarkableIngredient[]): BookmarkableIngredi
     const existing = (() => {
       if (isBookmarkableExp(item)) {
         // If the item is an exp item, add into existing exp item (exp item does not have id)
-        return result.find(e => isBookmarkableExp(e[0]))
+        const found = result.find(e => e[0] && isBookmarkableExp(e[0]))
+        return found
       } else {
         // If the item has an id, add into existing item has the same id
-        return result.find(e => !isBookmarkableExp(e[0]) && e[0].materialId === item.materialId)
+        const found = result.find(e => e[0] && !isBookmarkableExp(e[0]) && e[0].materialId === item.materialId)
+        return found
       }
     })()
     if (existing) {
@@ -46,6 +48,10 @@ export const mergeItems = (items: BookmarkableIngredient[]): BookmarkableIngredi
 export const materialSortFunc = (a: BookmarkableIngredient | BookmarkableIngredient[], b: BookmarkableIngredient | BookmarkableIngredient[]): number => {
   const aElement = isArray(a) ? a[0] : a
   const bElement = isArray(b) ? b[0] : b
+
+  if (!aElement || !bElement) {
+    return 0
+  }
 
   if (isBookmarkableExp(aElement) || isBookmarkableExp(bElement)) {
     return isBookmarkableExp(aElement) ? -1 : 1

@@ -10,7 +10,7 @@ export const splitByField = <T extends { [K in U]: unknown }, U extends keyof T>
   const result: T[][] = []
 
   for (const element of source) {
-    const existingGroup = result.find(group => group[0][field] === element[field])
+    const existingGroup = result.find(group => group[0]?.[field] === element[field])
 
     if (existingGroup) {
       existingGroup.push(element)

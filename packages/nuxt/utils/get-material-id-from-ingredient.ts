@@ -32,7 +32,7 @@ export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs
 
   const [defType, id] = defString.split(":")
   if (defType === "id") {
-    return id
+    return id ?? null
   } else if (defType === "group" && isCraftableIngredient(ingredient)) {
     const material = materials.find(e => e.groupId === id && e.craftLevel === ingredient.craftLevel)
     if (!material) {

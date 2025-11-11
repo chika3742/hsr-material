@@ -26,7 +26,10 @@ const groupedItems = computed(() => {
   }
 
   for (const e of props.items) {
-    result[e.groupKey].push(e)
+    if (!result[e.groupKey]) {
+      result[e.groupKey] = []
+    }
+    result[e.groupKey]!.push(e)
   }
 
   return result
@@ -70,7 +73,7 @@ export interface GroupedListGroup {
         >
           <template #prepend>
             <v-img
-              :src="groupedItems[group.groupKey][0].imagePath"
+              :src="groupedItems[group.groupKey]?.[0]?.imagePath ?? ''"
               class="mr-2"
               height="40px"
               width="40px"

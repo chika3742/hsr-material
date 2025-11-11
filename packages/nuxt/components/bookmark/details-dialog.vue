@@ -108,7 +108,7 @@ router.beforeEach(() => {
           <v-expansion-panel
             v-for="(levels, purpose) in purposes"
             :key="purpose"
-            :title="tx(`purposeTypes.${purpose}`, { title: getSkillTitle(Object.values(levels!)[0][0]) })"
+            :title="tx(`purposeTypes.${purpose}`, { title: (Object.values(levels!)[0]?.[0] ? getSkillTitle(Object.values(levels!)[0]![0]!) : '') })"
             :value="purpose"
           >
             <template #text>

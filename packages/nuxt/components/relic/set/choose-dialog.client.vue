@@ -64,7 +64,7 @@ watch(toRefs(props).modelValue, (value) => {
           :disabled="selectedItem.length === 0"
           :text="tx('common.ok')"
           variant="text"
-          @click="$emit('update:modelValue', false); $emit('okPressed', selectedItem[0])"
+          @click="selectedItem[0] && ($emit('update:modelValue', false), $emit('okPressed', selectedItem[0]))"
         />
       </template>
     </v-card>

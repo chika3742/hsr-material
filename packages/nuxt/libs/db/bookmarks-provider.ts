@@ -41,6 +41,9 @@ export class BookmarksProvider extends DbProvider {
    */
   getLevelingItems(items: BookmarkableIngredient[], purposeTypes: PurposeType[], upperLevel?: number) {
     const firstItem = items[0]
+    if (!firstItem) {
+      return Promise.resolve([])
+    }
     // query all bookmarks with the same characterId
     return this.bookmarks.where("characterId").equals(firstItem.characterId)
       .and((e) => {
@@ -130,7 +133,10 @@ export class BookmarksProvider extends DbProvider {
       // add bookmarks
       await this.bookmarks.bulkAdd(dataToSave, { allKeys: true })
     }).then(() => {
-      this.logger.logBookmarkAdded(data[0])
+      const firstItem = data[0]
+      if (firstItem) {
+        this.logger.logBookmarkAdded(firstItem)
+      }
 
       return null
     })
@@ -179,7 +185,7 @@ export class BookmarksProvider extends DbProvider {
               return e.usage.upperLevel <= character.level
             case "character_material":
               if (e.usage.purposeType !== "ascension") {
-                return e.usage.upperLevel <= skillLevels[e.usage.purposeType]
+                return e.usage.upperLevel <= (skillLevels[e.usage.purposeType] ?? 0)
               } else {
                 return upperLevelToPromotion(e.usage.upperLevel) <= character.promotion
               }

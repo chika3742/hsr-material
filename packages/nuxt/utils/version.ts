@@ -15,6 +15,7 @@ export const getCurrentVersion = () => releaseNotes[0]
 export const getCurrentVersionText = () => {
   const config = useRuntimeConfig()
   const cv = getCurrentVersion()
+  if (!cv) return ""
   let str = ""
 
   if (cv.version) {

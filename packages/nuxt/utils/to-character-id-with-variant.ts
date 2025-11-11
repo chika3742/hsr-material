@@ -11,7 +11,7 @@ export const toCharacterIdWithVariant = (characterId: string, variant: string | 
  * Extracts characterId from characterIdWithVariant.
  */
 export const toCharacterId = (characterIdWithVariant: CharacterIdWithVariant): CharacterId => {
-  return characterIdWithVariant.split("_")[0]
+  return (characterIdWithVariant.split("_")[0] ?? "") as CharacterId
 }
 
 /**

@@ -170,7 +170,7 @@ const deleteUser = () => {
 
     // find provider
     const provider = signInMethods.find((method) => {
-      return method.provider.providerId === currentUser.value?.providerData[0].providerId
+      return method.provider.providerId === currentUser.value?.providerData[0]?.providerId
     })?.provider
     if (!provider) {
       throw new Error("unknown provider")

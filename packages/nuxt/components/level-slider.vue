@@ -57,7 +57,7 @@ const rangeIndexes = computed({
     return props.modelValue.map(e => props.sliderTicks.indexOf(e))
   },
   set(value) {
-    emit("update:modelValue", value.map(e => props.sliderTicks[e]))
+    emit("update:modelValue", value.map(e => props.sliderTicks[e] ?? 0))
   },
 })
 </script>

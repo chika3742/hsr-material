@@ -5,7 +5,7 @@
   >
     <MaterialItem
       v-for="merged in mergeItems(items)"
-      :key="getMaterialId(merged[0]) + '-' + merged[0].characterId"
+      :key="(merged[0] ? getMaterialId(merged[0]) : '') + '-' + (merged[0]?.characterId ?? '')"
       :items="merged"
       :purpose-types="purposeTypes"
     />

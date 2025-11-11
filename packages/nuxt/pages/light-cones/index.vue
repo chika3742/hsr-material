@@ -57,7 +57,7 @@ onActivated(() => {
         return queryCharacter.path
       }
     })()
-    const index = spiltByPath.findIndex(e => e[0].path === variant)
+    const index = spiltByPath.findIndex(e => e[0]?.path === variant)
     if (index !== -1) {
       expanded.value = [index]
     }
@@ -82,12 +82,12 @@ onActivated(() => {
             <v-list v-model:selected="filteringRarity">
               <v-list-item
                 v-for="g in spiltByRarity"
-                :key="g[0].rarity"
-                :value="g[0].rarity"
+                :key="g[0]?.rarity ?? 0"
+                :value="g[0]?.rarity ?? 0"
               >
                 <v-row no-gutters>
                   <v-icon
-                    v-for="i in g[0].rarity"
+                    v-for="i in (g[0]?.rarity ?? 0)"
                     :key="i"
                     color="star"
                     size="18"

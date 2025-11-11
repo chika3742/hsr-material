@@ -34,7 +34,7 @@ const headerRelics = computed<HeaderRelic[]>(() => {
     let type: string
     switch (props.relicSets.length) {
       case 1:
-        if (props.relicSets[0].type === "cavern") {
+        if (props.relicSets[0]?.type === "cavern") {
           type = "4pcs"
         } else {
           type = "2pcs"
@@ -75,7 +75,8 @@ const radioGroups = computed<RadioGroup[]>(() => {
       throw new Error("Invalid relic set count")
     }
 
-    if (props.relicSets[0].type === "cavern") {
+    const firstSet = props.relicSets[0]
+    if (firstSet?.type === "cavern") {
       return [
         {
           type: "body",

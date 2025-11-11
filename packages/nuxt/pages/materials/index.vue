@@ -45,12 +45,12 @@ const groups = computed<GroupedListGroup[]>(() => {
           <v-list v-model:selected="filteringRarity">
             <v-list-item
               v-for="g in splitByField(materials, 'rarity')"
-              :key="g[0].rarity"
-              :value="g[0].rarity"
+              :key="g[0]?.rarity ?? 0"
+              :value="g[0]?.rarity ?? 0"
             >
               <v-row no-gutters>
                 <v-icon
-                  v-for="i in g[0].rarity"
+                  v-for="i in (g[0]?.rarity ?? 0)"
                   :key="i"
                   color="star"
                   size="18"

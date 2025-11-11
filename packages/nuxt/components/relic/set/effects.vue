@@ -17,7 +17,7 @@ withDefaults(defineProps<{
       </h4>
       <EmphasizedText
         :class="['pl-4', show2pcOnly ? '' : 'my-1']"
-        :text="localize(relicSet.effects['2pc'])"
+        :text="relicSet.effects['2pc'] ? localize(relicSet.effects['2pc']) : ''"
       />
     </section>
     <section

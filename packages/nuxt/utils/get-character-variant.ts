@@ -7,6 +7,6 @@ export const getCharacterVariant = (id: CharacterIdWithVariant, fallbackGroup: b
   if (character === undefined) return null
 
   return isCharacterGroup(character)
-    ? character.variants.find(e => e.variantId === toVariant(id)) ?? (fallbackGroup ? character.variants[0] : null)
+    ? character.variants.find(e => e.variantId === toVariant(id)) ?? (fallbackGroup ? (character.variants[0] ?? null) : null)
     : omit(character, ["id", "rarity", "yomi"])
 }

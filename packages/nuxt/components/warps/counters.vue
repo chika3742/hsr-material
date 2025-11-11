@@ -10,10 +10,10 @@
           <h4>{{ i18n.t("warpsPage.pityCountWithStar", { star: "5" }) }}</h4>
           <div class="card__content">
             <span
-              :class="pityInfo[5].count > pseudoPityBorder
-                ? 'text-red' : pityInfo[5].count > pseudoPityBorder - 10
+              :class="(pityInfo[5]?.count ?? 0) > pseudoPityBorder
+                ? 'text-red' : (pityInfo[5]?.count ?? 0) > pseudoPityBorder - 10
                   ? 'text-orange-darken-2' : ''"
-            >{{ pityInfo[5].count }}</span> / {{ star5Pity }}
+            >{{ pityInfo[5]?.count ?? 0 }}</span> / {{ star5Pity }}
           </div>
         </div>
         <div class="card__bar card__bar--rank5" />
@@ -23,7 +23,7 @@
         <div class="card">
           <h4>{{ i18n.t("warpsPage.lastPulled", { star: "5" }) }}</h4>
           <div class="card__content">
-            {{ $t(pityInfo[5].lastPulled) }}
+            {{ $t(pityInfo[5]?.lastPulled ?? "-") }}
           </div>
         </div>
         <div class="card__bar card__bar--rank5" />
@@ -33,7 +33,7 @@
         <div class="card">
           <h4>{{ i18n.t("warpsPage.pityCountWithStar", { star: "4" }) }}</h4>
           <div class="card__content">
-            <span>{{ pityInfo[4].count }}</span> / {{ star4Pity }}
+            <span>{{ pityInfo[4]?.count ?? 0 }}</span> / {{ star4Pity }}
           </div>
         </div>
         <div class="card__bar card__bar--rank4" />
@@ -43,7 +43,7 @@
         <div class="card">
           <h4>{{ i18n.t("warpsPage.lastPulled", { star: "4" }) }}</h4>
           <div class="card__content">
-            {{ $t(pityInfo[4].lastPulled) }}
+            {{ $t(pityInfo[4]?.lastPulled ?? "-") }}
           </div>
         </div>
         <div class="card__bar card__bar--rank4" />
@@ -212,13 +212,14 @@ const pityInfo = computed<Record<number, { count: number, lastPulled: string }>>
 
   for (let i = 0; i < props.warps.length; i++) {
     const warp = props.warps[props.warps.length - 1 - i]
+    if (!warp) continue
 
-    if (pityInfo[5].lastPulled === "-" && warp.rankType === "5") {
+    if (pityInfo[5]!.lastPulled === "-" && warp.rankType === "5") {
       pityInfo[5] = {
         count: i,
         lastPulled: getItemName(warp),
       }
-    } else if (pityInfo[4].lastPulled === "-" && warp.rankType === "4") {
+    } else if (pityInfo[4]!.lastPulled === "-" && warp.rankType === "4") {
       pityInfo[4] = {
         count: i,
         lastPulled: getItemName(warp),
@@ -242,15 +243,16 @@ const pityCountList = computed(() => {
   }
 
   for (const warp of props.warps) {
+    if (!warp) continue
     for (const key of Object.keys(pityCount)) {
-      pityCount[key]++
+      pityCount[key] = (pityCount[key] ?? 0) + 1
     }
 
     if (Object.keys(pityCount).includes(warp.rankType)) {
       result.push({
         name: getItemName(warp),
         type: warp.itemType,
-        count: warp.rankType !== "3" ? pityCount[warp.rankType] : null,
+        count: warp.rankType !== "3" ? (pityCount[warp.rankType] ?? 0) : null,
         offBanner: warp.gachaType !== "1" && offBannerItems.includes(getItemName(warp)),
         dateTime: DateTime.fromFormat(warp.time, "yyyy-MM-dd HH:mm:ss"),
         rank: warp.rankType,
@@ -306,7 +308,7 @@ const getTableNumberColorClass = (item: PityCountListItem) => {
 }
 
 const rank5Prob = computed(() => {
-  const trial = pityInfo.value[5].count + 10
+  const trial = (pityInfo.value[5]?.count ?? 0) + 10
 
   if (trial <= props.pseudoPityBorder) {
     return 1 - Math.pow(1 - props.singleProb, trial)

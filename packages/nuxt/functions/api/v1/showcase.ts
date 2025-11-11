@@ -1,10 +1,12 @@
+import type { PagesFunction } from "@cloudflare/workers-types"
+
 /**
  * Find the first occurrence of each unique key in the array.
  * @param arr input array
  * @param keyCallback function to extract the key from each element
  */
-const filterFirstOfEach = <T>(arr: T[], keyCallback: (e: T) => any, predicate: (e: T) => boolean): T[] => {
-  const obj = {}
+const filterFirstOfEach = <T extends Record<string, unknown>>(arr: T[], keyCallback: (e: T) => string | number, predicate: (e: T) => boolean): T[] => {
+  const obj: Record<string | number, T> = {}
 
   for (const e of arr) {
     const key = keyCallback(e)
@@ -22,9 +24,9 @@ const skillTypeMap = {
   Talent: "talent",
   MemospriteSkill: "memospriteSkill",
   MemospriteTalent: "memospriteTalent",
-}
+} as const
 
-export const onRequest: PagesFunction = async (context) => {
+export const onRequest = (async (context: any) => {
   if (context.request.method !== "GET") {
     return new Response(null, {
       status: 405,
@@ -62,8 +64,8 @@ export const onRequest: PagesFunction = async (context) => {
         num: number
       }[]
     }
-  } = await fetchResults[0].json()
-  const apiResult = await fetchResults[1].json<any>()
+  } = await fetchResults[0].json() as any
+  const apiResult = await fetchResults[1].json() as any
 
   const response = {
     uid: apiResult.player.uid,
@@ -88,6 +90,7 @@ export const onRequest: PagesFunction = async (context) => {
 
         for (let i = 1; i <= character.rank; i++) {
           const rankEntry = characterRanks[`${character.id}${i.toString().padStart(2, "0")}`]
+          if (!rankEntry) continue
           rankEntry.level_up_skills.forEach((levelUpSkill) => {
             if (levelUpSkill.id === skill.id) {
               extraLevel += levelUpSkill.num
@@ -97,7 +100,7 @@ export const onRequest: PagesFunction = async (context) => {
         }
 
         return {
-          type: skillTypeMap[skill.type],
+          type: skillTypeMap[skill.type as keyof typeof skillTypeMap],
           iconUrl: `https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${skill.icon}`,
           originalLevel,
           extraLevel,
@@ -111,4 +114,4 @@ export const onRequest: PagesFunction = async (context) => {
       "content-type": "application/json;charset=UTF-8",
     },
   })
-}
+}) as unknown as PagesFunction

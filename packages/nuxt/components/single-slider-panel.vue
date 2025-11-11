@@ -39,7 +39,7 @@ const levelIngredients = computed(() => {
 
 const sliderTicks = computed(() => levelIngredientsToSliderTicks(levelIngredients.value))
 
-const range = ref([sliderTicks.value[0], sliderTicks.value.slice(-1)[0]])
+const range = ref<number[]>([sliderTicks.value[0] ?? 0, sliderTicks.value.slice(-1)[0] ?? 0])
 
 const setInitialRangeBasedOnGameData = () => {
   const character = characters.find(c => c.id === props.characterId)
@@ -54,8 +54,8 @@ const setInitialRangeBasedOnGameData = () => {
       }
     }
   }
-  const sliderLowerRange = maxAscension ?? sliderTicks.value[0]
-  range.value = [sliderLowerRange, sliderTicks.value.slice(-1)[0]]
+  const sliderLowerRange = maxAscension ?? (sliderTicks.value[0] ?? 0)
+  range.value = [sliderLowerRange, sliderTicks.value.slice(-1)[0] ?? 0]
 }
 
 const setInitialRangeBasedOnBookmarks = async () => {
@@ -71,10 +71,11 @@ const setInitialRangeBasedOnBookmarks = async () => {
   )
 
   if (bookmarks.length !== 0) {
-    const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
-    const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), bookmarks[0].usage.upperLevel)
+    const base = bookmarks[0]!
+    const min = bookmarks.reduce((a, b) => Math.min(a, b.usage.upperLevel), base.usage.upperLevel)
+    const max = bookmarks.reduce((a, b) => Math.max(a, b.usage.upperLevel), base.usage.upperLevel)
 
-    range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1], max]
+    range.value = [sliderTicks.value[sliderTicks.value.indexOf(min) - 1] ?? 0, max]
   } else {
     setInitialRangeBasedOnGameData()
   }
@@ -84,7 +85,7 @@ watch(toRefs(props).characterId, () => {
 }, { immediate: true })
 
 const ingredientsWithinSelectedLevelRange = computed<LevelIngredients[]>(() => {
-  return levelIngredients.value.filter(e => range.value[0] < e.level && e.level <= range.value[1])
+  return levelIngredients.value.filter(e => (range.value[0] ?? 0) < e.level && e.level <= (range.value[1] ?? 0))
 })
 
 const ingredientsToBookmarkableIngredients = (ingredients: LevelIngredients[]): BookmarkableIngredient[] => {

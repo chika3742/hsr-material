@@ -61,12 +61,12 @@ describe("mergeItems", () => {
     expect(result).toHaveLength(2)
     // First group should be exp items
     expect(result[0]).toHaveLength(2)
-    expect(result[0][0].type).toBe("character_exp")
-    expect(result[0][1].type).toBe("character_exp")
+    expect(result[0]![0]!.type).toBe("character_exp")
+    expect(result[0]![1]!.type).toBe("character_exp")
 
     // Second group should be material item
     expect(result[1]).toHaveLength(1)
-    expect(result[1][0].type).toBe("character_material")
+    expect(result[1]![0]!.type).toBe("character_material")
   })
 
   it("should group materials with same materialId", () => {
@@ -82,14 +82,14 @@ describe("mergeItems", () => {
 
     // Find material-a group
     const materialAGroup = result.find(group =>
-      group[0].type === "character_material"
+      group[0] && group[0].type === "character_material"
       && (group[0] as any).materialId === "material-a",
     )
     expect(materialAGroup).toHaveLength(2)
 
     // Find material-b group
     const materialBGroup = result.find(group =>
-      group[0].type === "character_material"
+      group[0] && group[0].type === "character_material"
       && (group[0] as any).materialId === "material-b",
     )
     expect(materialBGroup).toHaveLength(1)
@@ -109,7 +109,7 @@ describe("mergeItems", () => {
     expect(result).toHaveLength(3)
 
     // Exp items should be first due to sorting
-    expect(result[0][0].type).toBe("character_exp")
+    expect(result[0]![0]!.type).toBe("character_exp")
     expect(result[0]).toHaveLength(2)
   })
 })

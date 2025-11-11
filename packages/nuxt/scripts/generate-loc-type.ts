@@ -12,11 +12,14 @@ export const generateLocType = () => {
   const missingKeys: string[] = []
   let locTs = "export type Loc =\n"
 
-  const getPropByDotNotation = (obj: LocObject, path: string) => {
-    let result: string | LocObject = obj
+  const getPropByDotNotation = (obj: LocObject, path: string): string | LocObject | undefined => {
+    let result: string | LocObject | undefined = obj
     for (const part of path.split(".")) {
-      if (typeof result === "object") {
+      if (typeof result === "object" && result !== undefined) {
         result = result[part]
+        if (result === undefined) {
+          return undefined
+        }
       } else {
         return undefined
       }

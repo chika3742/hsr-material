@@ -39,7 +39,10 @@ const toggleFilterDisabled = () => {
   isFilterDisabled.value = !isFilterDisabled.value
 
   if (props.modelValue && !vSelectItems.value.some(({ id }) => props.modelValue === id)) {
-    emit("update:modelValue", vSelectItems.value[0].id)
+    const firstItem = vSelectItems.value[0]
+    if (firstItem) {
+      emit("update:modelValue", firstItem.id)
+    }
   }
 }
 
@@ -61,7 +64,10 @@ onMounted(() => {
     }
     emit("update:modelValue", initialCharacter.id)
   } else {
-    emit("update:modelValue", filteredCharacters[0].id)
+    const firstFiltered = filteredCharacters[0]
+    if (firstFiltered) {
+      emit("update:modelValue", firstFiltered.id)
+    }
   }
 })
 </script>

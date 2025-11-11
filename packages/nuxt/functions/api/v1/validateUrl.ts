@@ -1,6 +1,7 @@
+import type { PagesFunction } from "@cloudflare/workers-types"
 import type { GetWarpHistoryErrorCode } from "../../../../firebase/functions/src/types/shared/get-warp-history-error"
 
-export const onRequest: PagesFunction = async (context) => {
+export const onRequest = (async (context: any) => {
   if (context.request.method !== "GET") {
     return new Response(null, {
       status: 405,
@@ -14,15 +15,15 @@ export const onRequest: PagesFunction = async (context) => {
   }
 
   const endpoint = "https://public-operation-hkrpg-sg.hoyoverse.com/common/gacha_record/api/getGachaLog"
-  const params = {
+  const params: Record<string, string> = {
     authkey_ver: "1",
     sign_type: "2",
     auth_appid: "webview_gacha",
     lang: "ja",
     game_biz: "hkrpg_global",
     size: "20",
-    authkey: reqUrl.searchParams.get("authKey"),
-    region: reqUrl.searchParams.get("region"),
+    authkey: reqUrl.searchParams.get("authKey")!,
+    region: reqUrl.searchParams.get("region")!,
     gacha_type: "11",
     end_id: "0",
   }
@@ -38,7 +39,7 @@ export const onRequest: PagesFunction = async (context) => {
     })
   }
 
-  const result = await fetchResult.json<{ retcode: number }>()
+  const result = await fetchResult.json() as { retcode: number }
 
   const response: { success: boolean, errorCode?: GetWarpHistoryErrorCode } = (() => {
     switch (result.retcode) {
@@ -74,4 +75,4 @@ export const onRequest: PagesFunction = async (context) => {
       "Content-Type": "application/json",
     },
   })
-}
+}) as unknown as PagesFunction

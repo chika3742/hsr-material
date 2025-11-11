@@ -51,8 +51,9 @@ const remainingTime = computed(() => {
   const units = _remainingTime.shiftToAll().toObject() as Record<string, number>
   const parts: string[] = []
   for (const unit of ["days", "hours", "minutes"]) {
-    if (units[unit] > 0) {
-      parts.push(i18n.t(`tpCalcPage.duration.${unit}`, units[unit]))
+    const value = units[unit] ?? 0
+    if (value > 0) {
+      parts.push(i18n.t(`tpCalcPage.duration.${unit}`, { count: value }))
     }
   }
   return parts.join(" ")

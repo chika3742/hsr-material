@@ -121,7 +121,7 @@ const detailsDialog = reactive({
             <MaterialItem
               v-for="(materials, mId) in groupBy(groupedBookmarks.characterMaterials, 'materialId') as Record<string, (Bookmark.CharacterMaterial | Bookmark.Exp)[]>"
               :key="mId"
-              :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
+              :initial-selected-exp-item="materials[0] && isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
               :items="materials"
               :purpose-types="purposeTypeList"
               :show-farming-count="showFarmingCount"
@@ -158,7 +158,7 @@ const detailsDialog = reactive({
                 <MaterialItem
                   v-for="(materials, mId) in groupBy(lcMaterials, 'materialId') as Record<string, (Bookmark.LightConeMaterial | Bookmark.Exp)[]>"
                   :key="mId"
-                  :initial-selected-exp-item="isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
+                  :initial-selected-exp-item="materials[0] && isBookmarkableExp(materials[0]) ? materials[0].selectedItem : undefined"
                   :items="materials"
                   :purpose-types="['ascension']"
                 />
