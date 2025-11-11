@@ -13,7 +13,7 @@
   "devDependencies": {
     "@types/dotenv": "8.2.3",
     "@types/js-yaml": "4.0.9",
-    "@types/node": "20.17.29",
+    "@types/node": "20.19.24",
     "typescript": "5.8.3"
   },
   "packageManager": "bun@1",
