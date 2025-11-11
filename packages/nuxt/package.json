@@ -18,7 +18,7 @@
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/i18n": "9.4.0",
     "@pinia-plugin-persistedstate/nuxt": "1.2.1",
-    "@pinia/nuxt": "0.11.0",
+    "@pinia/nuxt": "0.11.3",
     "@rollup/plugin-yaml": "4.1.2",
     "@vueuse/rxjs": "13.9.0",
     "dexie": "4.0.11",
