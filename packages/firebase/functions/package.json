@@ -12,9 +12,6 @@
     "emulators": "bunx firebase-tools emulators:start --import ./emulators-data --export-on-exit",
     "logs": "firebase functions:log"
   },
-  "engines": {
-    "node": "20"
-  },
   "main": "lib/index.js",
   "dependencies": {
     "axios": "1.9.0",
