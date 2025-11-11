@@ -77,6 +77,9 @@
       },
     },
   },
+  "trustedDependencies": [
+    "@hsr-material/nuxt",
+  ],
   "packages": {
     "@algolia/client-common": ["@algolia/client-common@5.25.0", "", {}, "sha512-il1zS/+Rc6la6RaCdSZ2YbJnkQC6W1wiBO8+SH+DE6CPMWBU6iDVzH0sCKSAtMWl9WBxoN6MhNjGBnCv9Yy2bA=="],
 
