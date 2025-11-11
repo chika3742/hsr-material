@@ -64,8 +64,8 @@ const setInitialRangeBasedOnBookmarks = async () => {
     } else {
       // restore minimum value from persist store (game data sync)
       const characterId = toCharacterIdWithVariant(props.characterId, props.variant)
-      ranges.value[index]
-        = [config.characterLevels[characterId]?.[slider.type] ?? sliderTicks[0], sliderTicks.slice(-1)[0]]
+      ranges.value[index] =
+        [config.characterLevels[characterId]?.[slider.type] ?? sliderTicks[0], sliderTicks.slice(-1)[0]]
     }
   }
 
