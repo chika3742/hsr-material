@@ -19,7 +19,7 @@
     "firebase-functions": "6.3.2"
   },
   "devDependencies": {
-    "typescript": "5.9.3"
+    "typescript": "catalog:"
   },
   "private": true,
   "packageManager": "bun@1"

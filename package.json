@@ -12,6 +12,9 @@
   "devDependencies": {
     "eslint": "9.39.1"
   },
+  "catalog": {
+    "typescript": "5.9.3"
+  },
   "packageManager": "bun@1.2.13",
   "trustedDependencies": [
     "@hsr-material/nuxt"
