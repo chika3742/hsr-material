@@ -26,7 +26,7 @@ const skillTypeMap = {
   MemospriteTalent: "memospriteTalent",
 } as const
 
-export const onRequest = (async (context: any) => {
+export const onRequest: PagesFunction = async (context) => {
   if (context.request.method !== "GET") {
     return new Response(null, {
       status: 405,
@@ -114,4 +114,4 @@ export const onRequest = (async (context: any) => {
       "content-type": "application/json;charset=UTF-8",
     },
   })
-}) as unknown as PagesFunction
+}
