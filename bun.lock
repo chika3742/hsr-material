@@ -36,7 +36,7 @@
     "packages/nuxt": {
       "name": "@hsr-material/nuxt",
       "dependencies": {
-        "@algolia/client-search": "5.25.0",
+        "@algolia/client-search": "5.43.0",
         "@mdi/font": "7.4.47",
         "@nuxtjs/google-fonts": "3.2.0",
         "@nuxtjs/i18n": "10.2.0",
@@ -2627,6 +2627,8 @@
 
     "@google-cloud/storage/uuid": ["uuid@8.3.2", "", { "bin": { "uuid": "dist/bin/uuid" } }, "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg=="],
 
+    "@hsr-material/nuxt/@algolia/client-search": ["@algolia/client-search@5.43.0", "", { "dependencies": { "@algolia/client-common": "5.43.0", "@algolia/requester-browser-xhr": "5.43.0", "@algolia/requester-fetch": "5.43.0", "@algolia/requester-node-http": "5.43.0" } }, "sha512-wKy6x6fKcnB1CsfeNNdGp4dzLzz04k8II3JLt6Sp81F8s57Ks3/K9qsysmL9SJa8P486s719bBttVLE8JJYurQ=="],
+
     "@intlify/bundle-utils/estree-walker": ["estree-walker@2.0.2", "", {}, "sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w=="],
 
     "@intlify/vue-i18n-extensions/@intlify/shared": ["@intlify/shared@10.0.8", "", {}, "sha512-BcmHpb5bQyeVNrptC3UhzpBZB/YHHDoEREOUERrmF2BRxsyOEuRrq+Z96C/D4+2KJb8kuHiouzAei7BXlG0YYw=="],
@@ -2910,6 +2912,14 @@
     "@eslint/config-inspector/find-up/path-exists": ["path-exists@5.0.0", "", {}, "sha512-RjhtfwJOxzcFmNOi6ltcbcu4Iu+FL3zEj83dk4kAS+fVpTxXLO1b38RvJgT/0QwvV/L3aY9TAnyv0EOqW4GoMQ=="],
 
     "@eslint/config-inspector/find-up/unicorn-magic": ["unicorn-magic@0.1.0", "", {}, "sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ=="],
+
+    "@hsr-material/nuxt/@algolia/client-search/@algolia/client-common": ["@algolia/client-common@5.43.0", "", {}, "sha512-RAFipkAnI8xhL/Sgi/gpXgNWN5HDM6F7z4NNNOcI8ZMYysZEBsqVXojg/WdKEKkQCOHVTZ3mooIjc5BaQdyVtA=="],
+
+    "@hsr-material/nuxt/@algolia/client-search/@algolia/requester-browser-xhr": ["@algolia/requester-browser-xhr@5.43.0", "", { "dependencies": { "@algolia/client-common": "5.43.0" } }, "sha512-jMkRLWJYr4Hcmpl89e4vIWs69Mkf8Uwx7MG5ZKk2UxW3G3TmouGjI0Ph5mVPmg3Jf1UG3AdmVDc4XupzycT1Jw=="],
+
+    "@hsr-material/nuxt/@algolia/client-search/@algolia/requester-fetch": ["@algolia/requester-fetch@5.43.0", "", { "dependencies": { "@algolia/client-common": "5.43.0" } }, "sha512-KyQiVz+HdYtissC0J9KIGhHhKytQyJX+82GVsbv5rSCXbETnAoojvUyCn+3KRtWUvMDYCsZ+Y7hM71STTUJUJg=="],
+
+    "@hsr-material/nuxt/@algolia/client-search/@algolia/requester-node-http": ["@algolia/requester-node-http@5.43.0", "", { "dependencies": { "@algolia/client-common": "5.43.0" } }, "sha512-UnUBNY0U+oT0bkYDsEqVsCkErC2w7idk4CRiLSzicqY8tGylD9oP0j13X/fse1CuiAFCCr3jfl+cBlN6dC0OFw=="],
 
     "@intlify/vue-i18n-extensions/vue-i18n/@intlify/core-base": ["@intlify/core-base@10.0.8", "", { "dependencies": { "@intlify/message-compiler": "10.0.8", "@intlify/shared": "10.0.8" } }, "sha512-FoHslNWSoHjdUBLy35bpm9PV/0LVI/DSv9L6Km6J2ad8r/mm0VaGg06C40FqlE8u2ADcGUM60lyoU7Myo4WNZQ=="],
 
