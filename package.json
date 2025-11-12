@@ -13,7 +13,8 @@
     "eslint": "9.39.1"
   },
   "catalog": {
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "@algolia/client-search": "5.43.0"
   },
   "packageManager": "bun@1.2.13",
   "trustedDependencies": [
