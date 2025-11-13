@@ -1,5 +1,23 @@
 <template>
   <div class="doc-container">
+    <v-banner
+      class="mb-4"
+      icon="mdi-alert-decagram"
+    >
+      <template #text>
+        {{ $t("warpsPage.banner") }}
+      </template>
+      <template #actions>
+        <v-btn
+          base-color="primary"
+          href="https://gc.chikach.net"
+          target="_blank"
+        >
+          {{ $t("warpsPage.tryItOut") }}
+        </v-btn>
+      </template>
+    </v-banner>
+
     <WarpsDescription />
 
     <client-only>

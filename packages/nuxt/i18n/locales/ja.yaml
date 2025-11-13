@@ -304,6 +304,9 @@ warpsPage:
             <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
         1. @:{'common.gameName'}を起動し、「跳躍」→「詳細を確認」を開きます。
         1. 自動的にURLがコピーされ、スクリプトが終了します。
+  banner: |
+    新しい統合版「天井カウンター」Webアプリをぜひお試しください。以前より高速に履歴が取得できます。
+  tryItOut: 試してみる
 
 tpCalcPage:
   baseTime: 基準時間

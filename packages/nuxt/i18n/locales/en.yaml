@@ -306,6 +306,8 @@ warpsPage:
             <div id="cmd-macos-2" class="d-flex flex-row-reverse align-center"><pre class="flex-grow-1"><code>{cmdline2}</code></pre></div>
         1. Run @:{'common.gameName'} and open **Warp** > **View Details**.
         1. URL will be copied and the script exits automatically.
+  banner: Please try the new unified "Pity Counter" web app. It retrieves history faster than before.
+  tryItOut: Try it out
 
 tpCalcPage:
   baseTime: Base time
