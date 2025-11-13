@@ -1,5 +1,12 @@
 # コピー用改行
 
+- date: 2025/11/13
+  version: 1.8.9
+  isMajor: false
+  isDataUpdateOnly: false
+  content: |
+    - 特に目新しい変更はありません。
+
 - date: 2025/11/08
   version: 1.8.8
   isMajor: false

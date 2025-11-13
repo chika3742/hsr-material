@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
-    "@pinia-plugin-persistedstate/nuxt",
+    "pinia-plugin-persistedstate/nuxt",
     "@nuxt/eslint",
   ],
   devtools: {
@@ -199,9 +199,6 @@ export default defineNuxtConfig({
     defaultLocale: "ja",
     compilation: {
       strictMessage: false,
-    },
-    bundle: {
-      optimizeTranslationDirective: false,
     },
   },
 

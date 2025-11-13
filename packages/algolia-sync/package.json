@@ -13,13 +13,13 @@
   "devDependencies": {
     "@types/dotenv": "8.2.3",
     "@types/js-yaml": "4.0.9",
-    "@types/node": "20.17.29",
-    "typescript": "5.8.3"
+    "@types/node": "24.10.0",
+    "typescript": "catalog:"
   },
   "packageManager": "bun@1",
   "dependencies": {
-    "@algolia/client-search": "5.25.0",
-    "dotenv": "16.4.7",
+    "@algolia/client-search": "catalog:",
+    "dotenv": "16.6.1",
     "js-yaml": "4.1.0"
   }
 }

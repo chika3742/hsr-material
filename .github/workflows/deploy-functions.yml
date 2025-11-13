@@ -26,11 +26,11 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 22
 
       - uses: oven-sh/setup-bun@v2
 
@@ -43,7 +43,7 @@ jobs:
 
       - name: 'Authenticate to Google Cloud'
         id: auth
-        uses: google-github-actions/auth@v2
+        uses: google-github-actions/auth@v3
         with:
           workload_identity_provider: ${{ github.ref_name == env.prod_branch_name && env.wi_provider_prod || env.wi_provider_dev }}
           service_account: ${{ github.ref_name == env.prod_branch_name && env.service_account_prod || env.service_account_dev }}

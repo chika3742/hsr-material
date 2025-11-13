@@ -7,11 +7,17 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "build:nuxt": "bun --filter ./packages/nuxt generate",
-    "postinstall": "bun --filter ./packages/nuxt prepack"
+    "build:nuxt": "bun --filter ./packages/nuxt generate"
   },
   "devDependencies": {
-    "eslint": "9.28.0"
+    "eslint": "9.39.1"
   },
-  "packageManager": "bun@1.2.13"
+  "catalog": {
+    "typescript": "5.9.3",
+    "@algolia/client-search": "5.43.0"
+  },
+  "packageManager": "bun@1.2.13",
+  "trustedDependencies": [
+    "@hsr-material/nuxt"
+  ]
 }

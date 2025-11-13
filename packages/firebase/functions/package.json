@@ -12,17 +12,14 @@
     "emulators": "bunx firebase-tools emulators:start --import ./emulators-data --export-on-exit",
     "logs": "firebase functions:log"
   },
-  "engines": {
-    "node": "20"
-  },
   "main": "lib/index.js",
   "dependencies": {
     "axios": "1.9.0",
-    "firebase-admin": "13.2.0",
-    "firebase-functions": "6.3.2"
+    "firebase-admin": "13.6.0",
+    "firebase-functions": "7.0.0"
   },
   "devDependencies": {
-    "typescript": "5.8.3"
+    "typescript": "catalog:"
   },
   "private": true,
   "packageManager": "bun@1"

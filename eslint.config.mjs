@@ -22,6 +22,11 @@ const commonRules = {
   "@stylistic/space-before-function-paren": ["error", {
     named: "never",
   }],
+  "@stylistic/operator-linebreak": ["error", "before", {
+    overrides: {
+      "=": "after",
+    },
+  }],
   "@stylistic/brace-style": ["error", "1tbs"],
   "no-useless-constructor": "off",
   "vue/multi-word-component-names": "off",
