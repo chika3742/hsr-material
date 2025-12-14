@@ -1096,3 +1096,19 @@
   yomi: セイレーンノヒレ
   category: character_ascension
   rarity: 4
+- id: radiant-prominence
+  name:
+    locales:
+      ja: 明輝の紅炎
+      en: Radiant Prominence
+  yomi: メイキノコウエン
+  category: character_ascension
+  rarity: 4
+- id: vanquished-flows-reticence
+  name:
+    locales:
+      ja: 滅流の沈黙
+      en: Vanquished Flow’s Reticence
+  yomi: メツリュウノチンモク
+  category: advanced_skill_upgrade
+  rarity: 4

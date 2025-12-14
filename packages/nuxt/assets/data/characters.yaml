@@ -2833,3 +2833,38 @@
         locales:
           ja: すべての過去で待つ
           en: Waiting, In Every Past
+- id: the-dahlia
+  name:
+    locales:
+      ja: ダリア
+      en: The Dahlia
+  yomi: ダリア
+  rarity: 5
+  path: nihility
+  combatType: fire
+  materials:
+    ascension: id:radiant-prominence
+    skills: group:lcs008
+    skillsAdvanced: id:vanquished-flows-reticence
+    common: group:com008
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 翻弄…綻びを引き裂く記憶
+          en: Fiddle... Fissured Memory
+    skill:
+      name:
+        locales:
+          ja: 舐る…炎の舌を伸ばす背叛
+          en: Lick... Enkindled Betrayal
+    ultimate:
+      name:
+        locales:
+          ja: 耽溺…墓場に舞い込む灰燼
+          en: Wallow...Entombed Ash
+    talent:
+      name:
+        locales:
+          ja: コンスタンスを恐れる者は？
+          en: Who's Afraid of Constance?
