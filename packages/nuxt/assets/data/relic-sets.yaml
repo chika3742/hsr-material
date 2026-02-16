@@ -712,3 +712,45 @@
           Increases the Shield Effect provided by the wearer by <12%>. When an
           ally target holds a Shield provided by the wearer, the ally target’s
           CRIT DMG increases by <15%>.
+- id: ever-glorious-magical-girl
+  name:
+    locales:
+      ja: 功績輝く魔法少女
+      en: Ever-Glorious Magical Girl
+  yomi: コウセキカガヤクマホウショウジョ
+  type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 会心ダメージ+<16%>。
+        en: Increases CRIT DMG by <16%>.
+    4pc:
+      locales:
+        ja: >-
+          装備キャラとその記憶の精霊が与える愉悦ダメージが、ターゲットの防御力を<10%>無視する。味方が「爆笑ネタ」を<5>個獲得するごとに、与える愉悦ダメージがさらにターゲットの防御力を<1%>無視する。最大で<10>層累積できる。
+        en: >-
+          The Elation DMG dealt by the wearer and their memosprites ignores
+          <10%> of targets’ DEF. For every <5> accumulated Punchline allies
+          gain, the Elation DMG dealt additionally ignores <1%> of targets’ DEF,
+          stacking up to <10> time(s).
+- id: diviner-of-distant-reach
+  name:
+    locales:
+      ja: 天命に従う旅の卜者
+      en: Diviner of Distant Reach
+  yomi: テンメイニシタガウタビノボクシャ
+  type: cavern
+  effects:
+    2pc:
+      locales:
+        ja: 速度+<6%>。
+        en: Increases SPD by <6%>.
+    4pc:
+      locales:
+        ja: >-
+          戦闘に入る前、装備キャラの速度が<120>/<160>以上の場合、装備キャラの会心率+<10%>/<18%>。装備キャラが一度の戦闘で初めて愉悦スキルを使用した時、味方全体の愉悦度+<10%>。この効果は累積できない。
+        en: >-
+          Before entering combat, if the wearer’s SPD is greater than or equal
+          to <120>/<160>, increases the wearer’s CRIT Rate by <10%>/<18%>. When
+          the wearer uses Elation Skill for the first time in each battle,
+          enhances all allies’ Elation by <10%>. This effect cannot stack.
