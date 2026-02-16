@@ -2279,3 +2279,27 @@
         Increases the wearer’s CRIT DMG by <12%>. When equipped by Trailblazer
         (Remembrance), increases all ally targets’ DMG dealt by <8%> and DMG
         dealt by Enhanced Basic ATK “Together, We Script Tomorrow!” by <60%>.
+- id: never-forget-her-flame
+  yomi: カノジョノホノオヲワスレズニ
+  name:
+    locales:
+      ja: 彼女の炎を忘れずに
+      en: Never Forget Her Flame
+  path: nihility
+  rarity: 5
+  materials:
+    primary: group:lcs008
+    common: group:com008
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの撃破特効+<60%>。戦闘に入る時、装備キャラおよび戦闘を開始した装備キャラ以外の味方の弱点撃破ダメージ+<32%>。なお、戦闘開始者が装備キャラだった場合、装備キャラおよび装備キャラを除いて最も撃破特効が高い味方の弱点撃破ダメージ+<32%>。同系統のスキルは累積できない。装備キャラが敵に弱点を付与した時、SPを1回復する。この効果は1回まで発動でき、必殺技を発動するたびに、発動可能回数がリセットされる。
+      en: >-
+        Increases the wearer’s Break Effect by <60%>. When entering combat,
+        increases Break DMG dealt by the wearer and another teammate who
+        triggered combat by <32%>. If there is no teammate who triggered combat,
+        applies this effect to the wearer and the teammate with the highest
+        Break Effect. Effects of the same type cannot be stacked. When the
+        wearer applies Weakness to an enemy target, recovers 1 Skill Point. This
+        effect can only trigger once, and trigger count resets when using
+        Ultimate.
