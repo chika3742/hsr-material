@@ -2303,3 +2303,121 @@
         wearer applies Weakness to an enemy target, recovers 1 Skill Point. This
         effect can only trigger once, and trigger count resets when using
         Ultimate.
+- id: sneering
+  yomi: シショウ
+  name:
+    locales:
+      ja: 嗤笑
+      en: Sneering
+  path: elation
+  rarity: 3
+  materials:
+    primary: group:lcs015
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: アッハタイムが発動時、装備キャラの愉悦度+<16%>、アッハタイムが終了するまで継続。
+      en: >-
+        When Aha Instant is activated, the wearer’s Elation increases by <16%>,
+        lasting until Aha Instant ends.
+- id: lingering-tear
+  yomi: ザンルイ
+  name:
+    locales:
+      ja: 残涙
+      en: Lingering Tear
+  path: elation
+  rarity: 3
+  materials:
+    primary: group:lcs015
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: 所持している爆笑ネタが10個以上の時、装備キャラの会心ダメージ+<20%>。
+      en: When Punchline is 10 or more, the wearer’s CRIT DMG increases by <20%>.
+- id: mushy-shroomys-adventures
+  yomi: タケタケボウケンキ
+  name:
+    locales:
+      ja: タケタケ冒険記
+      en: Mushy Shroomy’s Adventures
+  path: elation
+  rarity: 4
+  materials:
+    primary: group:lcs015
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: 装備キャラの愉悦度+<12%>。装備キャラが愉悦スキルを発動する時、敵全体が受ける愉悦ダメージ+<6%>、2ターン継続。
+      en: >-
+        Increases the wearer’s Elation by <12%>. When the wearer uses an Elation
+        Skill, increases Elation DMG taken by all enemies by <6%> for 2 turn(s).
+- id: todays-good-luck
+  yomi: キョウハコウウン
+  name:
+    locales:
+      ja: 今日は好運
+      en: Today’s Good Luck
+  path: elation
+  rarity: 4
+  materials:
+    primary: group:lcs015
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心率+<12%>。装備キャラが愉悦スキルを発動する時、愉悦度+<12%>、この効果は最大で2回累積できる。
+      en: >-
+        Increases the wearer’s CRIT Rate by <12%>. When the wearer uses an
+        Elation Skill, increases Elation by <12%>, stacking up to 2 times.
+- id: dazzled-by-a-flowery-world
+  yomi: キラビヤカナセカイ
+  name:
+    locales:
+      ja: きらびやかな世界
+      en: Dazzled by a Flowery World
+  path: elation
+  rarity: 5
+  materials:
+    primary: group:lcs015
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの会心ダメージ+<48%>。装備キャラがフィールド上にいる時、パーティにいる「愉悦」の運命を歩むキャラ1名につき、最大SP+1、最大で+3。装備キャラがSPを1消費するたびに、自身が与える愉悦ダメージは敵の防御力を<5%>無視する。最大で4層累積できる。
+
+        装備キャラが1ターン以内にSPを4以上消費した場合、「配信プッシュ」を獲得する。装備キャラが「配信プッシュ」を持つ時、味方全体の愉悦度+<20%>。同系統の光円錐効果は累積できない。
+      en: >-
+        Increases the wearer’s CRIT DMG by <48%>. While the wearer is on the
+        field, for every 1 Elation character in the team, increases the Skill
+        Point upper limit by 1, up to a max increase of 3. For every 1 Skill
+        Point the wearer consumes, enables the Elation DMG dealt by this unit to
+        ignore <5%> of enemy targets’ DEF, stacking up to 4 times. If 4 or more
+        Skill Points are consumed in the same turn, the wearer gains “Stream
+        Promo,” which increases all allies’ Elation by <20%>. Light Cone effects
+        of the same type cannot stack.
+- id: when-she-decided-to-see
+  yomi: カノジョガミルトキメタトキ
+  name:
+    locales:
+      ja: 彼女が視ると決めた時
+      en: When She Decided to See
+  path: elation
+  rarity: 5
+  materials:
+    primary: group:lcs015
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの速度+<18%>。装備キャラが戦闘に入る、または味方に必殺技を発動する時、装備キャラは「超大吉」を獲得する、3ターン継続。装備キャラが「超大吉」を持つ時、味方全体の会心率+<10%>、味方全体の会心ダメージ+<30%>、装備キャラのEP回復効率+<12%>。
+
+        各ウェーブ開始時、装備キャラのEPを固定で15回復する。
+      en: >-
+        Increases the wearer’s SPD by <18%>. When the wearer enters combat or
+        uses Ultimate on an ally target, the wearer gains “Great Fortune” for 3
+        turn(s). While the wearer holds “Great Fortune,” all allies’ CRIT Rate
+        increases by <10%>, CRIT DMG increases by <30%>, and the wearer’s Energy
+        Regeneration Rate increases by <12%>.
+
+        At the start of each wave, the wearer regenerates a fixed amount of 15
+        Energy.

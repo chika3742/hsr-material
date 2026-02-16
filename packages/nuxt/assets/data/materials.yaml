@@ -1112,3 +1112,60 @@
   yomi: メツリュウノチンモク
   category: advanced_skill_upgrade
   rarity: 4
+- id: the-fluffy-hand-drawn-storyboards
+  name:
+    locales:
+      ja: 『もふもふ号』の絵コンテ
+      en: The Fluffy Hand-drawn Storyboards
+  category: light_cone_or_skill_upgrade
+  groupId: lcs015
+  craftLevel: 1
+  rarity: 2
+- id: the-fluffy-serialization-memorial-issue
+  name:
+    locales:
+      ja: 『もふもふ号』連載記念号
+      en: The Fluffy Serialization Memorial Issue
+  category: light_cone_or_skill_upgrade
+  rarity: 3
+  groupId: lcs015
+  craftLevel: 2
+- id: the-fluffy-collectors-edition
+  name:
+    locales:
+      ja: 『もふもふ号』全集・豪華版
+      en: The Fluffy Collector's Edition
+  category: light_cone_or_skill_upgrade
+  rarity: 4
+  groupId: lcs015
+  craftLevel: 3
+- id: whimsy-wax
+  name:
+    locales:
+      ja: 童心のクレヨン
+      en: Whimsy Wax
+  yomi: ドウシンノクレヨン
+  category: common
+  rarity: 2
+  groupId: com010
+  craftLevel: 1
+- id: dreamweave-steel
+  name:
+    locales:
+      ja: 夢作りの鋼材
+      en: Dreamweave Steel
+  yomi: ユメヅクリノコウザイ
+  category: common
+  rarity: 3
+  groupId: com010
+  craftLevel: 2
+- id: lucid-awl
+  name:
+    locales:
+      ja: 夢見の絵筆
+      en: Lucid Awl
+  yomi: ユメミノエフデ
+  category: common
+  rarity: 4
+  groupId: com010
+  craftLevel: 3
