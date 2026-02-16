@@ -82,6 +82,7 @@ export const getMaterialUsageLightCone = (materialId: string): LightCone[] => {
     preservation: 6,
     abundance: 7,
     remembrance: 8,
+    elation: 9,
   }
 
   return lightCones.filter((lightCone) => {

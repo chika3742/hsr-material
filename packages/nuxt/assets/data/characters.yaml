@@ -2868,3 +2868,85 @@
         locales:
           ja: コンスタンスを恐れる者は？
           en: Who's Afraid of Constance?
+- id: sparxie
+  name:
+    locales:
+      ja: 火花
+      en: Sparxie
+  yomi: ヒバナ
+  rarity: 5
+  path: elation
+  combatType: fire
+  ingredientsTable: r5Elation
+  materials:
+    ascension: id:radiant-prominence
+    skills: group:lcs015
+    skillsAdvanced: id:vanquished-flows-reticence
+    common: group:com010
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 不発だった？
+          en: Cat Got Your Flametongue?
+    skill:
+      name:
+        locales:
+          ja: キャー！火花配信中
+          en: Boom! Sparxicle's Poppin'
+    ultimate:
+      name:
+        locales:
+          ja: 火花で盛り上がろう！カメラは止めないで
+          en: Party's Wildin' and Camera's Rollin'
+    talent:
+      name:
+        locales:
+          ja: 裏でタネを仕掛ける花
+          en: Sleight of Sparx Hand
+    elationSkill:
+      name:
+        locales:
+          ja: 電波最強：アンコール！
+          en: 'Signal Overflow: The Great Encore!'
+- id: yao-guang
+  name:
+    locales:
+      ja: 爻光
+      en: Yao Guang
+  yomi: コウコウ
+  rarity: 5
+  path: elation
+  combatType: physical
+  ingredientsTable: r5Elation
+  materials:
+    ascension: id:invasive-clot
+    skills: group:lcs015
+    skillsAdvanced: id:vanquished-flows-reticence
+    common: group:com010
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 孔雀の矢羽根、幸いを招く嚆矢
+          en: Whistlebolt Sings Joy
+    skill:
+      name:
+        locales:
+          ja: 十方に光映ゆ、万法を明かさん
+          en: Decalight Unveils All
+    ultimate:
+      name:
+        locales:
+          ja: 霓裳に鉄の羽、六爻はすべて吉
+          en: Hexagram of Feathered Fortune
+    talent:
+      name:
+        locales:
+          ja: 千の光を開き、遍く観自在なり
+          en: Behold Wherever Light Unfolds
+    elationSkill:
+      name:
+        locales:
+          ja: 君に卦を贈る、天を染める銀花
+          en: Let Thy Fortune Burst in Flames

@@ -1,5 +1,14 @@
 # コピー用改行
 
+- date: 2025/02/17
+  version: 1.8.11
+  isMajor: false
+  isDataUpdateOnly: true
+  content: |
+    ### データ追加
+    - 新運命「愉悦」をサポートしました。
+    - 崩壊：スターレイル v4.0に対応しました。
+
 - date: 2025/12/14
   version: 1.8.10
   isMajor: false

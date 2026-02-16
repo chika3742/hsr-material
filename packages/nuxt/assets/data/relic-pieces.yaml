@@ -1214,3 +1214,67 @@
   yomi: インジャノシカガワブーツ
   type: feet
   setId: self-enshrouded-recluse
+- id: magical-girls-shining-medal
+  name:
+    locales:
+      ja: 魔法少女の輝煌メダル
+      en: Magical Girl’s Shining Medal
+  yomi: マホウショウジョノキコウメダル
+  type: head
+  setId: ever-glorious-magical-girl
+- id: magical-girls-protective-gloves
+  name:
+    locales:
+      ja: 魔法少女の守護グローブ
+      en: Magical Girl’s Protective Gloves
+  yomi: マホウショウジョノシュゴグローブ
+  type: hands
+  setId: ever-glorious-magical-girl
+- id: magical-girls-everdance-battle-skirt
+  name:
+    locales:
+      ja: 魔法少女の戦舞ドレス
+      en: Magical Girl’s Everdance Battle Skirt
+  yomi: マホウショウジョノセンブドレス
+  type: body
+  setId: ever-glorious-magical-girl
+- id: magical-girls-contract-boots
+  name:
+    locales:
+      ja: 魔法少女の約束ブーツ
+      en: Magical Girl’s Contract Boots
+  yomi: マホウショウジョノヤクソクブーツ
+  type: feet
+  setId: ever-glorious-magical-girl
+- id: diviners-extrapolation-jade-abacus
+  name:
+    locales:
+      ja: 卜者の演算玉兆
+      en: Diviner’s Extrapolation Jade Abacus
+  yomi: ボクシャノエンザンギョクチョウ
+  type: head
+  setId: diviner-of-distant-reach
+- id: diviners-ingenium-prosthetic-hand
+  name:
+    locales:
+      ja: 卜者の機巧義手
+      en: Diviner’s Ingenium Prosthetic Hand
+  yomi: ボクシャノキコウギシュ
+  type: hands
+  setId: diviner-of-distant-reach
+- id: diviners-astral-robe
+  name:
+    locales:
+      ja: 卜者の観天星袍
+      en: Diviner’s Astral Robe
+  yomi: ボクシャノカンテンセイホウ
+  type: body
+  setId: diviner-of-distant-reach
+- id: diviners-cloud-soaring-boots
+  name:
+    locales:
+      ja: 卜者の飛躍雲靴
+      en: Diviner’s Cloud-Soaring Boots
+  yomi: ボクシャノヒヤクウンカ
+  type: feet
+  setId: diviner-of-distant-reach
