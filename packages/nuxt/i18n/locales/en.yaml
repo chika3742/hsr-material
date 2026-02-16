@@ -31,6 +31,7 @@ common:
     talent: Talent
     memospriteSkill: Memosprite Skill
     memospriteTalent: Memosprite Talent
+    elationSkill: Elation Skill
   updated: Updated to {version}.
 
 footer:
@@ -382,6 +383,7 @@ paths:
   preservation: Preservation
   the_hunt: The Hunt
   remembrance: Remembrance
+  elation: Elation
 
 combatTypes:
   fire: Fire
@@ -435,6 +437,7 @@ purposeTypes:
   ultimate: "@:{'common.skillTypes.ultimate'}: {title}"
   memospriteSkill: "@:{'common.skillTypes.memospriteSkill'}: {title}"
   memospriteTalent: "@:{'common.skillTypes.memospriteTalent'}: {title}"
+  elationSkill: "@:{'common.skillTypes.elationSkill'}: {title}"
 
 materialCategories:
   exp: EXP Materials

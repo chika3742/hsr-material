@@ -7,6 +7,7 @@ export const hsrPaths = [
   "preservation",
   "abundance",
   "remembrance",
+  "elation",
 ] as const
 export type HsrPath = (typeof hsrPaths)[number]
 

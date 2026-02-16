@@ -31,6 +31,7 @@ common:
     talent: 天賦
     memospriteSkill: 精霊スキル
     memospriteTalent: 精霊天賦
+    elationSkill: 愉悦スキル
   updated: "{version} に更新されました。"
 
 footer:
@@ -389,6 +390,7 @@ paths:
   preservation: 存護
   the_hunt: 巡狩
   remembrance: 記憶
+  elation: 愉悦
 
 combatTypes:
   fire: 炎
@@ -442,6 +444,7 @@ purposeTypes:
   ultimate: "@:{'common.skillTypes.ultimate'}: {title}"
   memospriteSkill: "@:{'common.skillTypes.memospriteSkill'}: {title}"
   memospriteTalent: "@:{'common.skillTypes.memospriteTalent'}: {title}"
+  elationSkill: "@:{'common.skillTypes.elationSkill'}: {title}"
 
 materialCategories:
   exp: 経験値素材

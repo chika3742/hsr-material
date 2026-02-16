@@ -41,6 +41,6 @@ export function getMaterialIdFromIngredient(ingredient: Ingredient, materialDefs
 
     return material.id
   } else {
-    throw new Error("Parsing def error")
+    throw new Error(`Parsing def error: ${defString}`)
   }
 }
