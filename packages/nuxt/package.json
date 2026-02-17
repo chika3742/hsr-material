@@ -51,7 +51,7 @@
     "@types/node": "24.10.0",
     "@types/object-hash": "3.0.6",
     "@types/sortablejs": "1.15.9",
-    "vitest": "3.2.4"
+    "vitest": "4.0.18"
   },
   "packageManager": "bun@1.2.13"
 }
