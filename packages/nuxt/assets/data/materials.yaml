@@ -1117,6 +1117,7 @@
     locales:
       ja: 『もふもふ号』の絵コンテ
       en: The Fluffy Hand-drawn Storyboards
+  yomi: モフモフゴウノエコンテ
   category: light_cone_or_skill_upgrade
   groupId: lcs015
   craftLevel: 1
@@ -1126,6 +1127,7 @@
     locales:
       ja: 『もふもふ号』連載記念号
       en: The Fluffy Serialization Memorial Issue
+  yomi: モフモフゴウレンサイキネンゴウ
   category: light_cone_or_skill_upgrade
   rarity: 3
   groupId: lcs015
@@ -1135,6 +1137,7 @@
     locales:
       ja: 『もふもふ号』全集・豪華版
       en: The Fluffy Collector's Edition
+  yomi: モフモフゴウゼンシュウゴウカバン
   category: light_cone_or_skill_upgrade
   rarity: 4
   groupId: lcs015
