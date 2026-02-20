@@ -59,7 +59,7 @@
         "sortablejs": "1.15.6",
         "ts-json-schema-generator": "2.4.0",
         "vue": "3.5.24",
-        "vuetify": "3.8.7",
+        "vuetify": "3.12.0",
         "workbox-build": "7.3.0",
         "yaml": "2.8.1",
       },
@@ -2510,7 +2510,7 @@
 
     "vue-router": ["vue-router@4.6.3", "", { "dependencies": { "@vue/devtools-api": "^6.6.4" }, "peerDependencies": { "vue": "^3.5.0" } }, "sha512-ARBedLm9YlbvQomnmq91Os7ck6efydTSpRP3nuOKCvgJOHNrhRoJDSKtee8kcL1Vf7nz6U+PMBL+hTvR3bTVQg=="],
 
-    "vuetify": ["vuetify@3.8.7", "", { "peerDependencies": { "typescript": ">=4.7", "vite-plugin-vuetify": ">=2.1.0", "vue": "^3.5.0", "webpack-plugin-vuetify": ">=3.1.0" }, "optionalPeers": ["typescript", "vite-plugin-vuetify", "webpack-plugin-vuetify"] }, "sha512-Xid5za36cOA9We0QShcjiI4qoWXcwABhlhDHi8/0qpjSrBgJ63GobQdZ9YYyRvjMT3XXJqgbkdis1RS/oGL8Bw=="],
+    "vuetify": ["vuetify@3.12.0", "", { "peerDependencies": { "typescript": ">=4.7", "vite-plugin-vuetify": ">=2.1.0", "vue": "^3.5.0", "webpack-plugin-vuetify": ">=3.1.0" }, "optionalPeers": ["typescript", "vite-plugin-vuetify", "webpack-plugin-vuetify"] }, "sha512-N1y3sxLAyrblBHJ6vFTQoTM9icwZd/jNUsmYVQTvHNQHN22XDqb0w2+ujaSoEn/JCHbtGb70tKRlB9SJ6HhVgg=="],
 
     "web-vitals": ["web-vitals@4.2.4", "", {}, "sha512-r4DIlprAGwJ7YM11VZp4R884m0Vmgr6EAKe3P+kO0PPj3Unqyvv59rczf6UiGcb9Z8QxZVcqKNwv/g0WNdWwsw=="],
 
