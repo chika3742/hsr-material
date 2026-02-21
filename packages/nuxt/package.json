@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "typescript": "catalog:",
-    "@cloudflare/workers-types": "4.20250529.0",
+    "@cloudflare/workers-types": "4.20260228.0",
     "@nuxt/devtools": "latest",
     "@nuxt/eslint": "1.10.0",
     "@types/lodash-es": "4.17.12",
