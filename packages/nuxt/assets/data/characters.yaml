@@ -2950,3 +2950,38 @@
         locales:
           ja: 君に卦を贈る、天を染める銀花
           en: Let Thy Fortune Burst in Flames
+- id: ashveil
+  name:
+    locales:
+      ja: 不死途
+      en: Ashveil
+  yomi: シナズ
+  rarity: 5
+  path: the_hunt
+  combatType: lightning
+  materials:
+    ascension: id:thunder-strum
+    skills: group:lcs016
+    skillsAdvanced: id:vanquished-flows-reticence
+    common: group:com010
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 鋭き爪よ、礼儀を授けよ
+          en: 'Talons: Inculcate Decorum'
+    skill:
+      name:
+        locales:
+          ja: 鞭と笛よ、悪獣を退けよ
+          en: 'Flog: Smite Evil'
+    ultimate:
+      name:
+        locales:
+          ja: 饗宴の幕、開けば閉じず
+          en: 'Banquet: Insatiable Appetite'
+    talent:
+      name:
+        locales:
+          ja: 深き怨み、牙で晴らそう
+          en: 'Rancor: Enmity Reprisal'

@@ -1172,3 +1172,41 @@
   rarity: 4
   groupId: com010
   craftLevel: 3
+- id: grit-of-strife
+  name:
+    locales:
+      ja: 紛争の血塵
+      en: Grit of Strife
+  yomi: フンソウノケツジン
+  category: light_cone_or_skill_upgrade
+  rarity: 2
+  groupId: lcs016
+  craftLevel: 1
+- id: resin-of-valor
+  name:
+    locales:
+      ja: 戦魂の血珀
+      en: Resin of Valor
+  yomi: センコンノケッパク
+  category: light_cone_or_skill_upgrade
+  rarity: 3
+  groupId: lcs016
+  craftLevel: 2
+- id: lance-of-retribution
+  name:
+    locales:
+      ja: 天罰の血槍
+      en: Lance of Retribution
+  yomi: テンバツノケッソウ
+  category: light_cone_or_skill_upgrade
+  rarity: 4
+  groupId: lcs016
+  craftLevel: 3
+- id: thunder-strum
+  name:
+    locales:
+      ja: 狂雷のストローク
+      en: Thunder Strum
+  yomi: キョウライノストローク
+  category: character_ascension
+  rarity: 4

@@ -2421,3 +2421,24 @@
 
         At the start of each wave, the wearer regenerates a fixed amount of 15
         Energy.
+- id: the-finale-of-a-lie
+  yomi: アルウソノシュウマク
+  name:
+    locales:
+      ja: 或る嘘の終幕
+      en: The Finale of a Lie
+  path: the_hunt
+  rarity: 5
+  materials:
+    primary: group:lcs016
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの会心率+<18%>。戦闘開始時、または装備キャラが追加攻撃を累計4回発動するたびに、装備キャラに「影喰い」を付与する、3ターン継続。装備キャラが「影喰い」を持つ時、攻撃力+<40%>、敵全体の受けるダメージ+<20%>。同系統のスキルは累積できない。
+      en: >-
+        Increases the wearer’s CRIT Rate by <18%>. At the start of battle or for
+        every 4 instance(s) of Follow-Up ATK the wearer uses, the wearer gains
+        “Umbra Devourer,” lasting for 3 turn(s). While the wearer holds “Umbra
+        Devourer,” increases ATK by <40%> and increases the DMG taken by all
+        enemies by <20%>. Effects of the same type cannot stack.
