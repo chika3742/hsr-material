@@ -20,6 +20,6 @@
   "dependencies": {
     "@algolia/client-search": "catalog:",
     "dotenv": "16.6.1",
-    "js-yaml": "4.1.0"
+    "js-yaml": "4.1.1"
   }
 }
