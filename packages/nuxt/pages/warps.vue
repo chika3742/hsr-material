@@ -2,10 +2,13 @@
   <div class="doc-container">
     <v-banner
       class="mb-4"
-      icon="mdi-alert-decagram"
+      icon="mdi-alert"
+      color="warning"
     >
       <template #text>
-        {{ $t("warpsPage.banner") }}
+        <p class="font-weight-bold">
+          {{ $t("warpsPage.banner") }}
+        </p>
       </template>
       <template #actions>
         <v-btn

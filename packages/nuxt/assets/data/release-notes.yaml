@@ -1,5 +1,13 @@
 # コピー用改行
 
+- date: 2025/05/14
+  version: 1.8.13
+  isMajor: false
+  isDataUpdateOnly: true
+  content: |
+    ### データ追加
+    - v4.2に対応しました。大幅に遅延し申し訳ありませんでした。
+
 - date: 2025/03/25
   version: 1.8.12
   isMajor: false
