@@ -2442,3 +2442,63 @@
         “Umbra Devourer,” lasting for 3 turn(s). While the wearer holds “Umbra
         Devourer,” increases ATK by <40%> and increases the DMG taken by all
         enemies by <20%>. Effects of the same type cannot stack.
+- id: tomorrow-together
+  yomi: ミンナデイッショニミライヘ
+  name:
+    locales:
+      ja: みんなで一緒に未来へ
+      en: Tomorrow, Together
+  path: elation
+  rarity: 4
+  materials:
+    primary: group:lcs015
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: 装備キャラの会心ダメージ+<12%>。装備キャラが必殺技を発動した後、味方全体の愉悦度+<8%>、1ターン継続。
+      en: >-
+        Increases the wearer’s CRIT DMG by <12%>. After the wearer uses their
+        Ultimate, increases all allies’ Elation by <8%>, lasting for 1 turn(s).
+- id: welcome-to-the-cosmic-city
+  yomi: ギンガシティヘヨウコソ
+  name:
+    locales:
+      ja: 銀河シティへようこそ
+      en: Welcome to the Cosmic City
+  path: elation
+  rarity: 5
+  materials:
+    primary: group:lcs015
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの速度+<18%>。装備キャラが与える愉悦ダメージはターゲットの防御力を<20%>無視する。装備キャラが自身単体に必殺技を発動する時、「爆笑ネタ」を<20>個獲得する。この効果は最大1回発動でき、通常攻撃を3回発動した後に発動可能回数がリセットされる。
+      en: >-
+        Increases the wearer’s SPD by <18%>. The Elation DMG dealt ignores <20%>
+        of the target’s DEF. When the wearer uses Ultimate on themselves, gains
+        <20> point(s) of “Punchline.” This effect can be triggered up to 1 time.
+        And resets this trigger count after using Basic ATK 3 time(s).
+- id: until-the-flowers-bloom-again
+  yomi: フタタビハナガサクキセツニ
+  name:
+    locales:
+      ja: 再び花が咲く季節に
+      en: Until the Flowers Bloom Again
+  path: elation
+  rarity: 5
+  materials:
+    primary: group:lcs015
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの会心ダメージ+<60%>、EP回復効率+<10%>。装備キャラの最大EPが120を超えている場合、超過分<10>につきEP回復効率がさらに+0.3%。超過分は最大で360までカウントされる。装備キャラが愉悦スキルを発動する時、敵全体の受けるダメージ+<15%>、2ターン継続。同系統のスキルは累積できない。
+      en: >-
+        Increases the wearer’s CRIT DMG by <60%> and Energy Regeneration Rate by
+        <10%>. When the wearer’s Max Energy is greater than 120, for every
+        <10> points of Max Energy that exceeds this amount,
+        further increases Energy Regeneration Rate by 0.3%. Up to a maximum of
+        360 points of excess Max Energy can be taken into account. When the
+        wearer uses Elation Skill, increases the DMG received by all enemies by
+        <15%> for 2 turn(s). Effects of the same type cannot stack.

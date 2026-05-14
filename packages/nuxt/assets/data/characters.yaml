@@ -2985,3 +2985,85 @@
         locales:
           ja: 深き怨み、牙で晴らそう
           en: 'Rancor: Enmity Reprisal'
+- id: silver-wolf-lv-999
+  name:
+    locales:
+      ja: 銀狼LV.999
+      en: Ashveil
+  yomi: ギンロウレベル999
+  rarity: 5
+  path: elation
+  combatType: imaginary
+  ingredientsTable: r5Elation
+  materials:
+    ascension: id:harbinger-of-strife
+    skills: group:lcs015
+    skillsAdvanced: id:vanquished-flows-reticence
+    common: group:com010
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 鉄拳制裁！
+          en: One Punch!
+    skill:
+      name:
+        locales:
+          ja: Shootモードオン
+          en: Trigger Happy
+    ultimate:
+      name:
+        locales:
+          ja: 無敵プレイヤー、ゲームスタート！
+          en: "God Mode: ON!"
+    talent:
+      name:
+        locales:
+          ja: 私がいればヌルゲー
+          en: I Carry, We Win
+    elationSkill:
+      name:
+        locales:
+          ja: 殿堂入り操作リプレイ/崩壊級ダメージ実演
+          en: Pro-Gamer Move / Honkai-DMG Demo
+- id: evanescia
+  name:
+    locales:
+      ja: 緋英
+      en: Evanescia
+  yomi: ヒエイ
+  rarity: 5
+  path: elation
+  combatType: physical
+  ingredientsTable: r5Elation
+  materials:
+    ascension: id:invasive-clot
+    skills: group:lcs015
+    skillsAdvanced: id:vanquished-flows-reticence
+    common: group:com010
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 指導・抜き打ち検査
+          en: 'Syllabus: Pop Quiz'
+    skill:
+      name:
+        locales:
+          ja: 風紀・量刀にて裁かん
+          en: 'Discipline: Final Verdict'
+    ultimate:
+      name:
+        locales:
+          ja: 剣歌・神鬼無赦
+          en: 'Swordsong: Absolution Denied'
+    talent:
+      name:
+        locales:
+          ja: 青春・果てなき春の光
+          en: 'Youth: Halcyon Evermore'
+    elationSkill:
+      name:
+        locales:
+          ja: 薄紅・不興なれば斬る
+          en: 'Scarlet: Elation or Execution'
