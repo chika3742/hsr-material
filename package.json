@@ -10,7 +10,7 @@
     "build:nuxt": "bun --filter ./packages/nuxt generate"
   },
   "devDependencies": {
-    "eslint": "9.39.1"
+    "eslint": "9.39.4"
   },
   "catalog": {
     "typescript": "5.9.3",
