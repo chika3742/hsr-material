@@ -204,6 +204,7 @@ warpsPage:
     1: 通常跳躍
   urlInput: URL入力
   get: "跳躍を取得"
+  export: "履歴をエクスポート"
   clear: "跳躍をクリア"
   progress: "取得済みの跳躍数: {gachaCount} ({gachaTypeCount}/{gachaTypeTotal})"
   preparing: 履歴取得の準備をしています...

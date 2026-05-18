@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hsr.matnote.app/schemas/warp-export.schema.json",
+  "title": "WarpExport",
+  "description": "Honkai: Star Rail warp history export format for hsr.matnote.app",
+  "type": "object",
+  "required": ["exportedAt", "schemaVersion", "banners"],
+  "additionalProperties": false,
+  "properties": {
+    "exportedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when the export was created"
+    },
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1,
+      "description": "Schema version number for forward compatibility"
+    },
+    "banners": {
+      "type": "array",
+      "description": "Warp data grouped by banner type",
+      "items": {
+        "$ref": "#/$defs/WarpExportBanner"
+      }
+    }
+  },
+  "$defs": {
+    "WarpExportBanner": {
+      "type": "object",
+      "required": ["type", "name", "currentPityCount5", "currentPityCount4", "warps"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["1", "11", "12", "21", "22"],
+          "description": "Banner type ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Banner display name"
+        },
+        "currentPityCount5": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Current 5-star pity count (pulls since last 5-star)"
+        },
+        "currentPityCount4": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Current 4-star pity count (pulls since last 4-star)"
+        },
+        "warps": {
+          "type": "array",
+          "description": "Warp history for this banner in chronological order (oldest first)",
+          "items": {
+            "$ref": "#/$defs/WarpExportItem"
+          }
+        }
+      }
+    },
+    "WarpExportItem": {
+      "type": "object",
+      "required": ["id", "gachaType", "time", "name", "itemType", "rankType"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique warp ID assigned by HoYoverse"
+        },
+        "gachaType": {
+          "type": "string",
+          "enum": ["1", "11", "12", "21", "22"],
+          "description": "Banner type ID"
+        },
+        "time": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$",
+          "description": "Date and time of the warp in format yyyy-MM-dd HH:mm:ss (server time)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Character or light cone name in Japanese"
+        },
+        "itemType": {
+          "type": "string",
+          "enum": ["キャラクター", "光円錐"],
+          "description": "Item type: キャラクター (character) or 光円錐 (light cone)"
+        },
+        "rankType": {
+          "type": "string",
+          "enum": ["3", "4", "5"],
+          "description": "Rarity: 3, 4, or 5 stars"
+        },
+        "pityCount": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of pulls in this pity cycle up to and including this item. Present only for 4-star and 5-star items."
+        }
+      }
+    }
+  }
+}
