@@ -12,10 +12,6 @@ export interface WarpExportItem {
 export interface WarpExportBanner {
   type: string
   name: string
-  /** Pulls since last 5-star */
-  currentPityCount5: number
-  /** Pulls since last 4-star */
-  currentPityCount4: number
   warps: WarpExportItem[]
 }
 

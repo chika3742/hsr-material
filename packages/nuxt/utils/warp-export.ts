@@ -6,26 +6,6 @@ interface BannerConfig {
   title: string
 }
 
-function computePityCounts(warps: Warp[]): { count5: number, count4: number } {
-  let count5 = warps.length
-  let count4 = warps.length
-
-  for (let i = 0; i < warps.length; i++) {
-    const warp = warps[warps.length - 1 - i]
-    if (count5 === warps.length && warp.rankType === "5") {
-      count5 = i
-    }
-    if (count4 === warps.length && warp.rankType === "4") {
-      count4 = i
-    }
-    if (count5 !== warps.length && count4 !== warps.length) {
-      break
-    }
-  }
-
-  return { count5, count4 }
-}
-
 function buildWarpExportItems(warps: Warp[]): WarpExportItem[] {
   const items: WarpExportItem[] = []
   const pityCount: Record<string, number> = { 4: 0, 5: 0 }
@@ -60,13 +40,10 @@ export function buildWarpExport(
 ): WarpExport {
   const banners: WarpExportBanner[] = bannerConfigs.map((config) => {
     const warps = groupedWarps[config.type] ?? []
-    const { count5, count4 } = computePityCounts(warps)
 
     return {
       type: config.type,
       name: config.title,
-      currentPityCount5: count5,
-      currentPityCount4: count4,
       warps: buildWarpExportItems(warps),
     }
   })

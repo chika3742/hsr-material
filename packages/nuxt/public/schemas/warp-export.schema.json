@@ -28,7 +28,7 @@
   "$defs": {
     "WarpExportBanner": {
       "type": "object",
-      "required": ["type", "name", "currentPityCount5", "currentPityCount4", "warps"],
+      "required": ["type", "name", "warps"],
       "additionalProperties": false,
       "properties": {
         "type": {
@@ -39,16 +39,6 @@
         "name": {
           "type": "string",
           "description": "Banner display name"
-        },
-        "currentPityCount5": {
-          "type": "integer",
-          "minimum": 0,
-          "description": "Current 5-star pity count (pulls since last 5-star)"
-        },
-        "currentPityCount4": {
-          "type": "integer",
-          "minimum": 0,
-          "description": "Current 4-star pity count (pulls since last 4-star)"
         },
         "warps": {
           "type": "array",
