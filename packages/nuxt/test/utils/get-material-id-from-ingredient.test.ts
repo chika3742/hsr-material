@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest"
-import { getMaterialIdFromIngredient } from "../../utils/get-material-id-from-ingredient"
-import type { Ingredient } from "../../types/data/ingredient"
+import { getMaterialIdFromIngredient } from "../../app/utils/get-material-id-from-ingredient"
+import type { Ingredient } from "../../app/types/data/ingredient"
 
 // Mock the materials data
 vi.mock("~/assets/data/materials.yaml", () => ({

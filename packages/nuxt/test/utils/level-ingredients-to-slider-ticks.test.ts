@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
-import { levelIngredientsToSliderTicks } from "../../utils/level-ingredients-to-slider-ticks"
-import type { LevelIngredients } from "../../types/level-ingredients"
+import { levelIngredientsToSliderTicks } from "../../app/utils/level-ingredients-to-slider-ticks"
+import type { LevelIngredients } from "../../app/types/level-ingredients"
 
 describe("levelIngredientsToSliderTicks", () => {
   it("should return [1] for empty array", () => {
