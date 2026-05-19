@@ -50,8 +50,16 @@
         <v-row
           no-gutters
           style="gap: 16px"
+          justify="end"
         >
           <v-spacer />
+          <v-btn
+            :disabled="warps.length === 0"
+            prepend-icon="mdi-download"
+            @click="exportWarps"
+          >
+            {{ $t("warpsPage.export") }}
+          </v-btn>
           <v-btn @click="clearWarps">
             {{ $t("warpsPage.clear") }}
           </v-btn>
@@ -107,6 +115,7 @@ import { warpHistoryTicketConverter } from "~/utils/warp-history-ticket-converte
 import { _db } from "~/dexie/db"
 import { db } from "~/libs/db/providers"
 import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
+import { buildWarpExport, downloadWarpExport } from "~/utils/warp-export"
 
 usePageTitle(tx("pageTitles.warps"))
 
@@ -207,6 +216,11 @@ const getWarps = async () => {
     fetching.value = false
     error.value = i18n.t("warpsPage.errors.internal")
   })
+}
+
+const exportWarps = () => {
+  const data = buildWarpExport(groupedWarps.value, warpTypes)
+  downloadWarpExport(data)
 }
 
 const clearWarps = () => {
