@@ -50,6 +50,7 @@
         <v-row
           no-gutters
           style="gap: 16px"
+          justify="end"
         >
           <v-spacer />
           <v-btn
