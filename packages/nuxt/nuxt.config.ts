@@ -141,7 +141,7 @@ export default defineNuxtConfig({
   },
 
   hooks: {
-    async "build:before"() {
+    async "prepare:types"() {
       await generateSchemas()
       generateLocType()
     },
