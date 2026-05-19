@@ -59,7 +59,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["assets/styles/global.sass"],
+  css: ["~/assets/styles/global.sass"],
 
   runtimeConfig: {
     public: {
@@ -87,11 +87,7 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
 
-  experimental: {
-    payloadExtraction: false,
-  },
-
-  compatibilityDate: "2025-01-19",
+  compatibilityDate: "2025-05-19",
 
   nitro: {
     preset: "cloudflare-pages-static",
@@ -151,7 +147,7 @@ export default defineNuxtConfig({
       if (_path.startsWith("types/data/")) {
         await generateSchemas()
       }
-      if (_path.startsWith("locales/")) {
+      if (_path.startsWith("i18n/locales/")) {
         generateLocType()
       }
     },
@@ -195,7 +191,8 @@ export default defineNuxtConfig({
         file: "en.yaml",
       },
     ],
-    langDir: "./locales/",
+    restructureDir: "app/i18n",
+    langDir: "locales",
     defaultLocale: "ja",
     compilation: {
       strictMessage: false,
