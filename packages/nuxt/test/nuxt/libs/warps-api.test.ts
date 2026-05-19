@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach } from "vitest"
-import { WarpsApi } from "../../libs/warps-api"
+import { WarpsApi } from "~/libs/warps-api"
 
 // Mock the global fetch
 global.fetch = vi.fn()

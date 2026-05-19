@@ -3,7 +3,7 @@ import {
   toCharacterIdWithVariant,
   toCharacterId,
   toVariant,
-} from "../../app/utils/to-character-id-with-variant"
+} from "~/utils/to-character-id-with-variant"
 
 describe("toCharacterIdWithVariant", () => {
   it("should return characterId when variant is null", () => {

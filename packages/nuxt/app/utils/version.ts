@@ -6,7 +6,7 @@ import releaseNotes from "~/assets/data/release-notes.yaml"
  *
  * @returns Release note of current version
  */
-export const getCurrentVersion = () => releaseNotes[0]
+export const getCurrentVersion = () => releaseNotes[0]!
 
 /**
  * @returns e.g. `v1.0.0_D1.0.0` when prod,

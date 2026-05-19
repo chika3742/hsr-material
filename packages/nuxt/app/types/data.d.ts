@@ -47,28 +47,28 @@ declare module "~/assets/data/materials-meta.yaml" {
   export default materialsMeta
 }
 
-declare module "assets/data/relic-sets.yaml" {
+declare module "~/assets/data/relic-sets.yaml" {
   import type { RelicSet } from "~/types/data/src/decoration-sets"
 
   const relicSets: RelicSet[]
   export default relicSets
 }
 
-declare module "assets/data/relic-pieces.yaml" {
+declare module "~/assets/data/relic-pieces.yaml" {
   import type { RelicPiece } from "~/types/data/src/decoration-pieces"
 
   const relicPieces: RelicPiece[]
   export default relicPieces
 }
 
-declare module "assets/data/relic-stats.yaml" {
+declare module "~/assets/data/relic-stats.yaml" {
   import type { HsrRelicStats } from "~/types/data/src/decoration-stats"
 
   const relicStats: HsrRelicStats
   export default relicStats
 }
 
-declare module "assets/data/drop-rates.yaml" {
+declare module "~/assets/data/drop-rates.yaml" {
   import type { DropRates } from "~/types/data/src/drop-rates"
 
   const dropRates: DropRates

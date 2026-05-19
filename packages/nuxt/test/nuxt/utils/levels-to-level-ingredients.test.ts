@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
-import { levelsToLevelIngredients } from "../../app/utils/levels-to-level-ingredients"
-import type { EachLevels, Ingredient } from "../../types/data/ingredient"
+import { levelsToLevelIngredients } from "~/utils/levels-to-level-ingredients"
+import type { EachLevels, Ingredient } from "~/types/data/ingredient"
 
 describe("levelsToLevelIngredients", () => {
   it("should convert empty levels object", () => {

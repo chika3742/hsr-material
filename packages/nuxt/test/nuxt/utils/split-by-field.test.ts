@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { splitByField } from "../../app/utils/split-by-field"
+import { splitByField } from "~/utils/split-by-field"
 
 describe("splitByField", () => {
   it("should split empty array", () => {
