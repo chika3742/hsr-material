@@ -5,8 +5,6 @@ export interface WarpExportItem {
   name: string
   itemType: "キャラクター" | "光円錐"
   rankType: string
-  /** Pity count for 4-star and 5-star items; absent for 3-star */
-  pityCount?: number
 }
 
 export interface WarpExportBanner {

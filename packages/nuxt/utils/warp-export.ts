@@ -7,31 +7,14 @@ interface BannerConfig {
 }
 
 function buildWarpExportItems(warps: Warp[]): WarpExportItem[] {
-  const items: WarpExportItem[] = []
-  const pityCount: Record<string, number> = { 4: 0, 5: 0 }
-
-  for (const warp of warps) {
-    pityCount[4]++
-    pityCount[5]++
-
-    const item: WarpExportItem = {
-      id: warp.id,
-      gachaType: warp.gachaType,
-      time: warp.time,
-      name: warp.name,
-      itemType: warp.itemType,
-      rankType: warp.rankType,
-    }
-
-    if (warp.rankType === "4" || warp.rankType === "5") {
-      item.pityCount = pityCount[warp.rankType]
-      pityCount[warp.rankType] = 0
-    }
-
-    items.push(item)
-  }
-
-  return items
+  return warps.map(warp => ({
+    id: warp.id,
+    gachaType: warp.gachaType,
+    time: warp.time,
+    name: warp.name,
+    itemType: warp.itemType,
+    rankType: warp.rankType,
+  }))
 }
 
 export function buildWarpExport(

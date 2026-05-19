@@ -81,11 +81,6 @@
           "type": "string",
           "enum": ["3", "4", "5"],
           "description": "Rarity: 3, 4, or 5 stars"
-        },
-        "pityCount": {
-          "type": "integer",
-          "minimum": 1,
-          "description": "Number of pulls in this pity cycle up to and including this item. Present only for 4-star and 5-star items."
         }
       }
     }
