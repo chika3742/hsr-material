@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest"
-import { mergeItems, materialSortFunc } from "../../utils/merge-items"
+import { mergeItems, materialSortFunc } from "../../app/utils/merge-items"
 import type { BookmarkableIngredient } from "../../types/bookmark/bookmarkables"
 
 // Mock the materials data

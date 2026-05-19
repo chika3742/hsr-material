@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { levelIngredientsToSliderTicks } from "../../utils/level-ingredients-to-slider-ticks"
+import { levelIngredientsToSliderTicks } from "../../app/utils/level-ingredients-to-slider-ticks"
 import type { LevelIngredients } from "../../types/level-ingredients"
 
 describe("levelIngredientsToSliderTicks", () => {
