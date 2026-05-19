@@ -1,5 +1,13 @@
 # コピー用改行
 
+- date: 2025/05/19
+  version: 1.9.0
+  isMajor: false
+  isDataUpdateOnly: false
+  content: |
+    ### 機能追加
+    - 跳躍履歴のエクスポート機能を追加しました。統合版天井カウンターの今後の更新で、インポート機能を追加する予定です。
+
 - date: 2025/05/14
   version: 1.8.13
   isMajor: false
