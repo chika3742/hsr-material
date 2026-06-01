@@ -219,7 +219,7 @@ const getWarps = async () => {
 }
 
 const exportWarps = () => {
-  const data = buildWarpExport(groupedWarps.value, warpTypes)
+  const data = buildWarpExport(groupedWarps.value, warpTypes, config.uid)
   downloadWarpExport(data)
 }
 

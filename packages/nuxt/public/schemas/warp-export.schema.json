@@ -4,7 +4,7 @@
   "title": "WarpExport",
   "description": "Honkai: Star Rail warp history export format for hsr.matnote.app",
   "type": "object",
-  "required": ["exportedAt", "schemaVersion", "banners"],
+  "required": ["exportedAt", "schemaVersion", "uid", "banners"],
   "additionalProperties": false,
   "properties": {
     "exportedAt": {
@@ -16,6 +16,10 @@
       "type": "integer",
       "const": 1,
       "description": "Schema version number for forward compatibility"
+    },
+    "uid": {
+      "type": "string",
+      "description": "Player UID"
     },
     "banners": {
       "type": "array",

@@ -20,6 +20,7 @@ function buildWarpExportItems(warps: Warp[]): WarpExportItem[] {
 export function buildWarpExport(
   groupedWarps: Record<string, Warp[]>,
   bannerConfigs: BannerConfig[],
+  uid: string,
 ): WarpExport {
   const banners: WarpExportBanner[] = bannerConfigs.map((config) => {
     const warps = groupedWarps[config.type] ?? []
@@ -34,6 +35,7 @@ export function buildWarpExport(
   return {
     exportedAt: new Date().toISOString(),
     schemaVersion: 1,
+    uid,
     banners,
   }
 }
