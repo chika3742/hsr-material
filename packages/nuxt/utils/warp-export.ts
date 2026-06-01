@@ -34,7 +34,7 @@ export function buildWarpExport(
 
   return {
     exportedAt: new Date().toISOString(),
-    schemaVersion: 1,
+    schemaVersion: 2,
     uid,
     banners,
   }

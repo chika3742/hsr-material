@@ -14,7 +14,7 @@
     },
     "schemaVersion": {
       "type": "integer",
-      "const": 1,
+      "const": 2,
       "description": "Schema version number for forward compatibility"
     },
     "uid": {

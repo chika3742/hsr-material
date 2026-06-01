@@ -16,7 +16,7 @@ export interface WarpExportBanner {
 export interface WarpExport {
   /** ISO 8601 timestamp */
   exportedAt: string
-  schemaVersion: 1
+  schemaVersion: 2
   /** Player UID */
   uid: string
   banners: WarpExportBanner[]
