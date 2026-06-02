@@ -66,12 +66,12 @@
 import { from, useObservable } from "@vueuse/rxjs"
 import { liveQuery } from "dexie"
 import { groupBy } from "lodash-es"
-import type { Warp } from "#shared/warp"
 import { ref } from "#imports"
 import { _db } from "~/dexie/db"
 import { db } from "~/libs/db/providers"
 import { FirestoreProvider } from "~/libs/firestore/firestore-provider"
 import { buildWarpExport, downloadWarpExport } from "~/utils/warp-export"
+import type { Warp } from "~/types/warp"
 
 usePageTitle(tx("pageTitles.warps"))
 

@@ -1,4 +1,4 @@
-import type { Warp } from "#shared/warp"
+import type { Warp } from "~/types/warp"
 import type { WarpExport, WarpExportBanner, WarpExportItem } from "~/types/warp-export"
 
 interface BannerConfig {
