@@ -1,4 +1,5 @@
-import { relative, resolve } from "path"
+import { dirname, relative, resolve } from "path"
+import { createRequire } from "node:module"
 import { execSync } from "child_process"
 import { Readable } from "stream"
 import fs from "node:fs/promises"
@@ -16,6 +17,11 @@ import { workboxBuild } from "./scripts/workbox-build"
 const prodBranch = "live"
 const hostname = "https://hsr.matnote.app"
 const routes: string[] = []
+
+// With Nuxt 4 + bun, vue gets installed as multiple physical copies, which splits the
+// `declare module "vue"` type augmentations (ComponentCustomProperties from vue-router/vuetify/i18n/own plugins).
+// Pin vue resolution to a single copy to unify module identity (affects type-checking only, not runtime).
+const vueDir = dirname(createRequire(import.meta.url).resolve("vue/package.json"))
 
 export default defineNuxtConfig({
   modules: [
@@ -134,6 +140,14 @@ export default defineNuxtConfig({
 
   typescript: {
     tsConfig: {
+      // TODO: enable noUncheckedIndexedAccess (Nuxt 4 default) in the future and fix the resulting indexed-access type errors
+      compilerOptions: {
+        noUncheckedIndexedAccess: false,
+        paths: {
+          "vue": [vueDir],
+          "vue/*": [`${vueDir}/*`],
+        },
+      },
       exclude: [
         "../functions",
       ],
@@ -147,11 +161,14 @@ export default defineNuxtConfig({
     },
     async "builder:watch"(_, _path) {
       const nuxt = useNuxt()
-      _path = relative(nuxt.options.srcDir, resolve(nuxt.options.srcDir, _path))
-      if (_path.startsWith("types/data/")) {
+      // Nuxt 4's builder:watch emits absolute paths. Match them relative to both srcDir (app/) and rootDir.
+      const absPath = resolve(nuxt.options.srcDir, _path)
+      const srcRel = relative(nuxt.options.srcDir, absPath)
+      const rootRel = relative(nuxt.options.rootDir, absPath)
+      if (srcRel.startsWith("types/data/")) {
         await generateSchemas()
       }
-      if (_path.startsWith("locales/")) {
+      if (rootRel.startsWith("i18n/locales/")) {
         generateLocType()
       }
     },
