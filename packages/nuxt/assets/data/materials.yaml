@@ -1210,3 +1210,33 @@
   yomi: キョウライノストローク
   category: character_ascension
   rarity: 4
+- id: tear-of-phagousa
+  name:
+    locales:
+      ja: ファジェイナの涙
+      en: Tear of Phagousa
+  yomi: ファジェイナノナミダ
+  category: light_cone_or_skill_upgrade
+  rarity: 2
+  groupId: lcs017
+  craftLevel: 1
+- id: wine-of-phagousa
+  name:
+    locales:
+      ja: ファジェイナの酒
+      en: Wine of Phagousa
+  yomi: ファジェイナノサケ
+  category: light_cone_or_skill_upgrade
+  rarity: 3
+  groupId: lcs017
+  craftLevel: 2
+- id: heart-of-phagousa
+  name:
+    locales:
+      ja: ファジェイナの心
+      en: Heart of Phagousa
+  yomi: ファジェイナノココロ
+  category: light_cone_or_skill_upgrade
+  rarity: 4
+  groupId: lcs017
+  craftLevel: 3

@@ -155,9 +155,9 @@
 
 <script lang="ts" setup>
 import { DateTime } from "luxon"
-import type { Warp } from "#shared/warp"
 import characters from "~/assets/data/characters.yaml"
 import lightCones from "~/assets/data/light-cones.yaml"
+import type { Warp } from "~/types/warp"
 
 const props = defineProps<{
   warps: Warp[]

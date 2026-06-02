@@ -1,10 +1,10 @@
 import type { Table } from "dexie"
 import Dexie from "dexie"
-import type { Warp } from "#shared/warp"
 import type { Bookmark } from "~/types/bookmark/bookmark"
 import type { SyncedUserData, UserDocument } from "~/types/firestore/user-document"
 import { DataSyncError } from "~/libs/data-sync-error"
 import { migrate } from "~/dexie/migrate"
+import type { Warp } from "~/types/warp"
 
 export class MySubClassedDexie extends Dexie {
   bookmarks!: Table<Bookmark>

@@ -2502,3 +2502,25 @@
         360 points of excess Max Energy can be taken into account. When the
         wearer uses Elation Skill, increases the DMG received by all enemies by
         <15%> for 2 turn(s). Effects of the same type cannot stack.
+- id: reforged-in-hellfire
+  yomi: レンゴクニヤカレシアラミ
+  name:
+    locales:
+      ja: 煉獄に焼かれし新身
+      en: Reforged in Hellfire
+  path: nihility
+  rarity: 5
+  materials:
+    primary: group:lcs017
+    common: group:com010
+  skillDescription:
+    locales:
+      ja: >-
+        装備キャラの最大HP+<30%>。装備キャラのターンが回ってくるたびに、固定でEPを20回復、この効果は各ウェーブで1回まで発動できる。装備キャラが戦闘スキルで攻撃した後、ターゲットを2ターン継続する「煉獄」状態にする。「煉獄」状態のターゲットが受ける会心ダメージ+<30%>、装備キャラから受ける会心ダメージはさらに+<30%>。
+      en: >-
+        Increases the wearer’s Max HP by <30%>. At the start of the wearer’s
+        turn, they regenerate a fixed amount of 20 Energy. This effect can
+        trigger 1 time each wave. After the wearer uses a Skill Attack, inflicts
+        the target with the “Purgatory” state, lasting for 2 turn(s). While in
+        the “Purgatory” state, CRIT DMG taken by the target increases by <30%>,
+        and CRIT DMG taken from the wearer additionally increases by <30%>.

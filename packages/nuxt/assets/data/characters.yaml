@@ -3067,3 +3067,38 @@
         locales:
           ja: 薄紅・不興なれば斬る
           en: 'Scarlet: Elation or Execution'
+- id: mortenax-blade
+  name:
+    locales:
+      ja: 千冶・刃
+      en: Mortenax Blade
+  yomi: センヤジン
+  rarity: 5
+  path: nihility
+  combatType: fire
+  materials:
+    ascension: id:radiant-prominence
+    skills: group:lcs017
+    skillsAdvanced: id:vanquished-flows-reticence
+    common: group:com010
+  skills:
+    basicAttack:
+      name:
+        locales:
+          ja: 刈り尽くす毀刃
+          en: A Broken Blade Still Slays
+    skill:
+      name:
+        locales:
+          ja: 葬り去る千刃
+          en: A Rain of Blades Seals Fate
+    ultimate:
+      name:
+        locales:
+          ja: 骨は炉に、血肉は薪にす
+          en: Fornax Ex Corpore
+    talent:
+      name:
+        locales:
+          ja: 因果清算
+          en: All Karma Comes Due
