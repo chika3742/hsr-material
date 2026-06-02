@@ -1278,3 +1278,67 @@
   yomi: ボクシャノヒヤクウンカ
   type: feet
   setId: diviner-of-distant-reach
+- id: navigators-deep-space-mirror
+  name:
+    locales:
+      ja: ナビゲーターの深宇宙スコープ
+      en: Navigator’s Deep Space Mirror
+  yomi: ナビゲーターノシンウチュウスコープ
+  type: head
+  setId: as-navigator-isee-sees-it
+- id: navigators-game-die
+  name:
+    locales:
+      ja: ナビゲーターの遊儀サイコロ
+      en: Navigator’s Game Die
+  yomi: ナビゲーターノユウギサイコロ
+  type: hands
+  setId: as-navigator-isee-sees-it
+- id: navigators-astral-chart-uniform
+  name:
+    locales:
+      ja: ナビゲーターの星図ユニフォーム
+      en: Navigator’s Astral Chart Uniform
+  yomi: ナビゲーターノセイズユニフォーム
+  type: body
+  setId: as-navigator-isee-sees-it
+- id: navigators-everstride-boots
+  name:
+    locales:
+      ja: ナビゲーターの永巡ブーツ
+      en: Navigator’s Everstride Boots
+  yomi: ナビゲーターノエイジュンブーツ
+  type: feet
+  setId: as-navigator-isee-sees-it
+- id: smiths-fire-beast-mask
+  name:
+    locales:
+      ja: 名匠の炎獣面
+      en: Smith’s Fire Beast Mask
+  yomi: メイショウノエンジュウメン
+  type: head
+  setId: divine-querying-master-smith
+- id: smiths-damascus-steel-gauntlets
+  name:
+    locales:
+      ja: 名匠の黒鉄籠手
+      en: Smith’s Damascus Steel Gauntlets
+  yomi: メイショウノコクテツコテ
+  type: hands
+  setId: divine-querying-master-smith
+- id: smiths-fireproof-garment
+  name:
+    locales:
+      ja: 名匠の火除け着
+      en: Smith’s Fireproof Garment
+  yomi: メイショウノヒヨケギ
+  type: body
+  setId: divine-querying-master-smith
+- id: smiths-unbridled-boots
+  name:
+    locales:
+      ja: 名匠の不縛靴
+      en: Smith’s Unbridled Boots
+  yomi: メイショウノフバクグツ
+  type: feet
+  setId: divine-querying-master-smith
