@@ -1,5 +1,16 @@
 # コピー用改行
 
+- date: 2025/06/02
+  version: 1.9.1
+  isMajor: false
+  isDataUpdateOnly: false
+  content: |
+    ### 機能削除
+    - 跳躍天井カウンター機能を削除しました。
+    
+    ### データ追加
+    - v4.3に対応しました。
+
 - date: 2025/05/19
   version: 1.9.0
   isMajor: false
