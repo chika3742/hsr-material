@@ -44,7 +44,7 @@
     "typescript": "catalog:",
     "@cloudflare/workers-types": "4.20250529.0",
     "@nuxt/devtools": "latest",
-    "@nuxt/eslint": "1.10.0",
+    "@nuxt/eslint": "1.15.2",
     "@types/lodash-es": "4.17.12",
     "@types/luxon": "3.7.1",
     "@types/marked": "6.0.0",
