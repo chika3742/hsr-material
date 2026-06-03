@@ -63,7 +63,7 @@
         "yaml": "2.8.1",
       },
       "devDependencies": {
-        "@cloudflare/workers-types": "4.20250529.0",
+        "@cloudflare/workers-types": "4.20260603.1",
         "@nuxt/devtools": "latest",
         "@nuxt/eslint": "1.15.2",
         "@types/lodash-es": "4.17.12",
@@ -299,7 +299,7 @@
 
     "@cloudflare/kv-asset-handler": ["@cloudflare/kv-asset-handler@0.4.2", "", {}, "sha512-SIOD2DxrRRwQ+jgzlXCqoEFiKOFqaPjhnNTGKXSRLvp1HiOvapLaFG2kEr9dYQTYe8rKrd9uvDUzmAITeNyaHQ=="],
 
-    "@cloudflare/workers-types": ["@cloudflare/workers-types@4.20250529.0", "", {}, "sha512-l6tVFpI6MUChMD0wK+Jhikb+aCbrmIR58CVpV/BhRT4THjl+nFhTT5N5ZqX42FDXdE3hCPLjueBMpPRhPUOB2A=="],
+    "@cloudflare/workers-types": ["@cloudflare/workers-types@4.20260603.1", "", {}, "sha512-TLeVHoBbcYv35S5TdRWUoj3IJ56BhHtrsuci+O7ithU8yz7ttNdCk6rAl1QUSGNVEWSIp54bWOuV/xmX1zu79g=="],
 
     "@colordx/core": ["@colordx/core@5.4.3", "", {}, "sha512-kIxYSfA5T8HXjav55UaaH/o/cKivF6jCCGIb8eqtcsfI46wsvlSiT8jMDyrl779qLec3c2c2oHBZo4oAhvbjrQ=="],
 
