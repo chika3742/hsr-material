@@ -8,6 +8,7 @@ node_modules
 dist
 /py/
 app/types/generated
+.data
 
 # service worker related
 public/sw-dev.js

@@ -26,10 +26,10 @@ const vueDir = dirname(createRequire(import.meta.url).resolve("vue/package.json"
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/i18n",
-    "@nuxtjs/google-fonts",
     "@pinia/nuxt",
     "pinia-plugin-persistedstate/nuxt",
     "@nuxt/eslint",
+    "@nuxt/fonts",
   ],
   devtools: {
     enabled: true,
@@ -136,6 +136,19 @@ export default defineNuxtConfig({
         exclude: "**/locales/**",
       }),
     ],
+    optimizeDeps: {
+      include: [
+        "@vueuse/rxjs",
+        "nuxt > @nuxt/devtools > @vitejs/devtools-kit/client",
+        "nuxt > @nuxt/devtools > @vitejs/devtools/client/inject",
+        "nuxt > @nuxt/devtools > @vue/devtools-core",
+        "nuxt > @nuxt/devtools > @vue/devtools-kit",
+        "nuxt > @nuxt/devtools > error-stack-parser-es",
+        "nuxt > @nuxt/devtools > vite-plugin-vue-tracer/client/overlay",
+        "sortablejs",
+        "marked",
+      ],
+    },
   },
 
   typescript: {
@@ -188,15 +201,14 @@ export default defineNuxtConfig({
     },
   },
 
-  googleFonts: {
-    download: false,
-    families: {
-      "M PLUS 2": [500, 700],
-      "Kaisei Opti": [700],
-      "Cairo": [700],
-      "Kiwi Maru": [500],
-      "Material Symbols Outlined": true,
-    },
+  fonts: {
+    families: [
+      { name: "M PLUS 2", weights: [500, 700], provider: "google" },
+      { name: "Kaisei Opti", weights: [700], provider: "google" },
+      { name: "Cairo", weights: [700], provider: "google" },
+      { name: "Kiwi Maru", weights: [500], provider: "google" },
+      { name: "Material Symbols Outlined", provider: "googleicons" },
+    ],
   },
 
   i18n: {
