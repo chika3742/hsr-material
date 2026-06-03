@@ -7,7 +7,8 @@ node_modules
 .env
 dist
 /py/
-types/generated
+app/types/generated
+.data
 
 # service worker related
 public/sw-dev.js
