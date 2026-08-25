@@ -51,7 +51,7 @@
               href="https://www.chikach.net/category/info/end-of-update-hsr-matnote"
               target="updateEndNotice"
             >{{ tx("common.updateEndNotice") }}</a></span>
-            <span v-if="isProd">{{ tx("common.nonProdWarning") }}</span>
+            <span v-if="!isProd">{{ tx("common.nonProdWarning") }}</span>
           </div>
 
           <!--          <div -->
