@@ -3,7 +3,7 @@ import * as path from "path"
 import { pascalCase } from "scule"
 import { createGenerator, type Config } from "ts-json-schema-generator"
 
-const typesDir = "./types/data/src"
+const typesDir = "./app/types/data/src"
 const schemasDir = "./schemas"
 
 export const generateSchemas = async () => {

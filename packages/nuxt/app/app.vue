@@ -46,11 +46,12 @@
 
           <v-spacer />
 
-          <div
-            v-if="!isProd"
-            class="warning-overlay-banner"
-          >
-            <span>{{ tx("common.nonProdWarning") }}</span>
+          <div class="warning-overlay-banner d-flex flex-column">
+            <span style="font-size: 1.2em"><a
+              href="https://www.chikach.net/category/info/end-of-update-hsr-matnote"
+              target="updateEndNotice"
+            >{{ tx("common.updateEndNotice") }}</a></span>
+            <span v-if="!isProd">{{ tx("common.nonProdWarning") }}</span>
           </div>
 
           <!--          <div -->
@@ -259,7 +260,7 @@ let unsubscribeAuthListener: Unsubscribe | null = null
 
 onBeforeMount(() => {
   if ("serviceWorker" in navigator) {
-    const scriptUrl = process.env.NODE_ENV === "production" ? "/sw.js" : "/sw-dev.js"
+    const scriptUrl = import.meta.env.PROD ? "/sw.js" : "/sw-dev.js"
     navigator.serviceWorker.register(scriptUrl).catch((e) => {
       console.error("Service worker registration failed:", e)
     })
@@ -369,4 +370,5 @@ router.afterEach(() => {
 
   a
     font-weight: bold
+    color: #fff
 </style>

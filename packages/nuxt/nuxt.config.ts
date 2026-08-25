@@ -1,4 +1,5 @@
-import { relative, resolve } from "path"
+import { dirname, relative, resolve } from "path"
+import { createRequire } from "node:module"
 import { execSync } from "child_process"
 import { Readable } from "stream"
 import fs from "node:fs/promises"
@@ -17,13 +18,18 @@ const prodBranch = "live"
 const hostname = "https://hsr.matnote.app"
 const routes: string[] = []
 
+// With Nuxt 4 + bun, vue gets installed as multiple physical copies, which splits the
+// `declare module "vue"` type augmentations (ComponentCustomProperties from vue-router/vuetify/i18n/own plugins).
+// Pin vue resolution to a single copy to unify module identity (affects type-checking only, not runtime).
+const vueDir = dirname(createRequire(import.meta.url).resolve("vue/package.json"))
+
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/i18n",
-    "@nuxtjs/google-fonts",
     "@pinia/nuxt",
     "pinia-plugin-persistedstate/nuxt",
     "@nuxt/eslint",
+    "@nuxt/fonts",
   ],
   devtools: {
     enabled: true,
@@ -87,10 +93,6 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
 
-  experimental: {
-    payloadExtraction: false,
-  },
-
   compatibilityDate: "2025-01-19",
 
   nitro: {
@@ -125,15 +127,35 @@ export default defineNuxtConfig({
       assetsInlineLimit: 0,
     },
     plugins: [
-      // @ts-ignore
       yaml({
         exclude: "**/locales/**",
       }),
     ],
+    optimizeDeps: {
+      include: [
+        "@vueuse/rxjs",
+        "nuxt > @nuxt/devtools > @vitejs/devtools-kit/client",
+        "nuxt > @nuxt/devtools > @vitejs/devtools/client/inject",
+        "nuxt > @nuxt/devtools > @vue/devtools-core",
+        "nuxt > @nuxt/devtools > @vue/devtools-kit",
+        "nuxt > @nuxt/devtools > error-stack-parser-es",
+        "nuxt > @nuxt/devtools > vite-plugin-vue-tracer/client/overlay",
+        "sortablejs",
+        "marked",
+      ],
+    },
   },
 
   typescript: {
     tsConfig: {
+      // TODO: enable noUncheckedIndexedAccess (Nuxt 4 default) in the future and fix the resulting indexed-access type errors
+      compilerOptions: {
+        noUncheckedIndexedAccess: false,
+        paths: {
+          "vue": [vueDir],
+          "vue/*": [`${vueDir}/*`],
+        },
+      },
       exclude: [
         "../functions",
       ],
@@ -147,11 +169,14 @@ export default defineNuxtConfig({
     },
     async "builder:watch"(_, _path) {
       const nuxt = useNuxt()
-      _path = relative(nuxt.options.srcDir, resolve(nuxt.options.srcDir, _path))
-      if (_path.startsWith("types/data/")) {
+      // Nuxt 4's builder:watch emits absolute paths. Match them relative to both srcDir (app/) and rootDir.
+      const absPath = resolve(nuxt.options.srcDir, _path)
+      const srcRel = relative(nuxt.options.srcDir, absPath)
+      const rootRel = relative(nuxt.options.rootDir, absPath)
+      if (srcRel.startsWith("types/data/")) {
         await generateSchemas()
       }
-      if (_path.startsWith("locales/")) {
+      if (rootRel.startsWith("i18n/locales/")) {
         generateLocType()
       }
     },
@@ -171,15 +196,14 @@ export default defineNuxtConfig({
     },
   },
 
-  googleFonts: {
-    download: false,
-    families: {
-      "M PLUS 2": [500, 700],
-      "Kaisei Opti": [700],
-      "Cairo": [700],
-      "Kiwi Maru": [500],
-      "Material Symbols Outlined": true,
-    },
+  fonts: {
+    families: [
+      { name: "M PLUS 2", weights: [500, 700], provider: "google" },
+      { name: "Kaisei Opti", weights: [700], provider: "google" },
+      { name: "Cairo", weights: [700], provider: "google" },
+      { name: "Kiwi Maru", weights: [500], provider: "google" },
+      { name: "Material Symbols Outlined", provider: "googleicons" },
+    ],
   },
 
   i18n: {

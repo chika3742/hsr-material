@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { migrate } from "../dexie/migrate"
+import { migrate } from "~/dexie/migrate"
 
 describe("Migration", () => {
   it("should migrate from v4 to v5", () => {

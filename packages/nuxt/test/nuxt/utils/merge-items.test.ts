@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest"
-import { mergeItems, materialSortFunc } from "../../utils/merge-items"
-import type { BookmarkableIngredient } from "../../types/bookmark/bookmarkables"
+import { mergeItems, materialSortFunc } from "~/utils/merge-items"
+import type { BookmarkableIngredient } from "~/types/bookmark/bookmarkables"
 
 // Mock the materials data
 vi.mock("~/assets/data/materials.yaml", () => ({
