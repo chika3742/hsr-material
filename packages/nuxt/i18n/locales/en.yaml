@@ -1,6 +1,7 @@
 common:
   appName: "Honkai: Star Rail Material Note"
   gameName: "Honkai: Star Rail"
+  updateEndNotice: "[Important] Updates to this app have ended. Learn more"
   nonProdWarning: This is an development version, so it may contain bugs or features that will be changed in the future.
   backToHome: Back to Home
   ok: OK
