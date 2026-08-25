@@ -1,5 +1,14 @@
 # コピー用改行
 
+- date: 2025/08/25
+  version: 1.9.2
+  isMajor: false
+  isDataUpdateOnly: false
+  content: |
+    ### その他
+    - 更新終了告知バナーを追加しました。
+    - Nuxtフレームワークをv4に更新しました。
+
 - date: 2025/06/02
   version: 1.9.1
   isMajor: false
