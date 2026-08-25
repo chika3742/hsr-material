@@ -93,10 +93,6 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
 
-  experimental: {
-    payloadExtraction: false,
-  },
-
   compatibilityDate: "2025-01-19",
 
   nitro: {
@@ -131,7 +127,6 @@ export default defineNuxtConfig({
       assetsInlineLimit: 0,
     },
     plugins: [
-      // @ts-ignore
       yaml({
         exclude: "**/locales/**",
       }),
