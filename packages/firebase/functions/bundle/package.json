@@ -2,7 +2,7 @@
   "name": "functions-bundle",
   "type": "module",
   "engines": {
-    "node": "22"
+    "node": "24"
   },
   "main": "./index.js",
   "private": true
